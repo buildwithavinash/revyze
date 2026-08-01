@@ -1,7 +1,10 @@
+import HomePage from "./pages/HomePage"
 
 const App = () => {
   return (
-    <div>Welcome to revyze!</div>
+    
+      <HomePage/>
+   
   )
 }
 
