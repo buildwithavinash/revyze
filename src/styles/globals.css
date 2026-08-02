@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   HOW LIGHT/DARK MODE WORKS HERE
+
+   1. The actual color VALUES live in :root (light mode) and .dark (dark mode)
+      as plain CSS variables.
+   2. The @theme block just points Tailwind's utility classes (bg-primary,
+      text-text, etc.) at those variables — it doesn't hold values itself.
+   3. To switch modes, add/remove the class "dark" on your <html> tag.
+      That's it — every class in your app updates automatically.
+
+   You're starting with light mode, so build your whole app first using
+   the classes below (bg-surface, text-text, etc.) — don't worry about
+   dark mode at all while building. When you're ready, just add the
+   "dark" class to <html> and everything will already work.
+=========================================================================== */
+
+@theme {
+  --color-background:     var(--background);
+  --color-surface:        var(--surface);
+  --color-surface-hover:  var(--surface-hover);
+  --color-border:         var(--border);
+  --color-text:           var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-primary:        var(--primary);
+  --color-primary-hover:  var(--primary-hover);
+  --color-success:        var(--success);
+  --color-error:         var(--error);
+  --color-warning:        var(--warning);
+
+  --radius-button: 0.5rem;
+  --radius-card:   0.75rem;
+  --radius-pill:   9999px;
+}
+
+/* --- LIGHT MODE (default) --- */
+:root {
+  --background:      #FFFFFF;
+  --surface:          #F5F6F8;
+  --surface-hover:    #EAEBEF;
+
+  --border:           #E2E4E9;
+
+  --text:             #14161A;
+  --text-secondary:   #5B616E;
+
+  --primary:          #1F9D63;   /* slightly darker green so it stays
+                                     readable on a white background */
+  --primary-hover:    #177C4E;
+
+  --success:          #1F9D63;
+  --error:           #D63C41;
+  --warning:          #B5790E;
+}
+
+/* --- DARK MODE (add class="dark" to <html>) --- */
+.dark {
+  --background:       #0E1117;
+  --surface:          #171B22;
+  --surface-hover:    #1F242E;
+
+  --border:           #2A2F3A;
+
+  --text:             #F5F5F5;
+  --text-secondary:   #A1A1AA;
+
+  --primary:          #3ECF8E;   /* brighter, reads well on dark backgrounds */
+  --primary-hover:    #2BB377;
+
+  --success:          #3ECF8E;
+  --error:           #E5484D;
+  --warning:          #E5A93E;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+* {
+  border: 1px solid black;
+}
+
+/* 
+bg-background	<body> / outermost wrapper
+bg-surface	Cards, quiz boxes, modals, nav bar
+bg-surface-hover	Hover state on the above
+border-border	Card outlines, dividers, input borders
+text-text	Headings, main text
+text-text-secondary	Subtitles, captions, helper text
+bg-primary / text-primary	Main CTA button, active tab, links
+text-success / border-success	Correct answer, "passed" state
+text-danger / border-danger	Wrong answer, errors
+text-warning / border-warning	Timer/attempt warnings
+*/
