@@ -15,9 +15,9 @@ const Header = () => {
           {/* container for the nav and actions */}
           <div className="flex justify-between gap-6">
             <ul className="flex gap-2 items-center">
-              {navLinks.map((link) => {
+              {navLinks.map((link, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <a href="" className="hover:text-primary-hover transition-all duration-200">{link}</a>
                   </li>
                 );

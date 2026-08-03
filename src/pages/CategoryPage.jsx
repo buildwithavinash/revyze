@@ -43,21 +43,29 @@ const CategoryPage = () => {
         </div>
       </div>
 
-      <div>
+      <section>
         <h2>Available Quizzes</h2>
 
-        <div className="grid grid-cols-3 gap-4">
+        {categoryQuizzes.length === 0 ? (
+            <p>No quizzes available.
+
+More quizzes coming soon.</p>
+        ) : (
+            <div className="grid grid-cols-3 gap-4">
         {categoryQuizzes.map((quiz) => (
-            <div className="border border-border rounded-md p-2">
+            <div key={quiz.id} className="border border-border rounded-md p-2">
                 <h3>{quiz.title}</h3>
                 <p>{quiz.description}</p>
                 <p>{quiz.totalQuestions} Questions</p>
                 <p>{quiz.duration} Minutes</p>
                 <p>{quiz.difficulty}</p>
+                <Link to={`/quiz/${quiz.slug}`}>Start Quiz</Link>
             </div>
         ))}
         </div>
-      </div>
+        )}
+        
+      </section>
     </div>
   );
 };
