@@ -2,16 +2,16 @@ import CategoryCard from "../components/common/CategoryCard"
 import Header from "../components/common/Header"
 import HeroSection from "../components/common/HeroSection"
 import Container from "../components/ui/Container"
-import categories from "../constants/categories"
+import categories from "../data/categories"
 
 const HomePage = () => {
   return (
     <div className="md:pb-24 pt-2 pb-12">
+          <Container>
         <Header/>
         <HeroSection/>
 
         {/* categories */}
-          <Container>
         <div className="mt-12">
 
         <div className="flex justify-between">

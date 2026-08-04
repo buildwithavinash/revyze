@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Container from "../ui/Container";
 
 const Header = () => {
@@ -8,9 +9,9 @@ const Header = () => {
         {/* container for the logo and links/actions */}
         <div className="flex justify-between">
           {/* logo */}
-          <div>
+          <Link to={'/'}>
             <h2 className="text-3xl font-bold text-primary">Revyze</h2>
-          </div>
+          </Link>
 
           {/* container for the nav and actions */}
           <div className="flex justify-between gap-6">
