@@ -1,10 +1,9 @@
 import { Link, useParams } from "react-router";
-import categories from "../data/categories";
 import Header from "../components/common/Header";
-import quizzes from "../data/quizzes";
 import Container from "../components/ui/Container";
 import QuizInfoModal from "../components/ui/QuizInfoModal";
 import { useState } from "react";
+import { getCategoryBySlug, getQuizzesByCategory } from "../services/quizService";
 
 const CategoryPage = () => {
   // Get the slug from the URL
@@ -12,7 +11,7 @@ const CategoryPage = () => {
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   // Find the matching category
-  const category = categories.find((category) => category.slug === slug);
+  const category = getCategoryBySlug(slug);
 
   // Handle invalid URL
   if (!category) {
@@ -20,7 +19,7 @@ const CategoryPage = () => {
   }
 
   // Get every quiz with category
-  const categoryQuizzes = quizzes.filter((quiz) => quiz.categorySlug === slug);
+  const categoryQuizzes = getQuizzesByCategory(category.id);
 
   return (
     <div className="md:pb-24 pt-2 pb-12">
@@ -44,7 +43,7 @@ const CategoryPage = () => {
 
         {/* category stats */}
         <div>
-          <div>Total Quizzes: {category.totalQuizzes}</div>
+          <div>Total Quizzes: {categoryQuizzes.length}</div>
         </div>
 
         {/* show all quizzes */}
@@ -70,7 +69,7 @@ const CategoryPage = () => {
                       {quiz.totalQuestions} Questions
                     </p>
                     <p className="border border-border rounded-md bg-surface-hover text-sm px-1 py-0.5">
-                      {quiz.duration} Minutes
+                      {quiz.estimatedTime} Minutes
                     </p>
                   </div>
                   <p>{quiz.difficulty}</p>

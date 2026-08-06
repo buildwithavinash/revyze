@@ -1,49 +1,58 @@
-import { Link, useParams } from "react-router";
-import quizzes from "../data/quizzes";
-import Header from "../components/common/Header";
-import Container from "../components/ui/Container";
+import { useParams } from "react-router";
+import { getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
+import QuizHeader from "../components/quiz/QuizHeader";
+import QuestionCard from "../components/quiz/QuestionCard";
+import Container from '../components/ui/Container'
+import QuizFooter from "../components/quiz/QuizFooter";
+import { useState } from "react";
 
 const QuizPage = () => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const { slug } = useParams();
+  const quiz = getQuizBySlug(slug);
+  const questions = getQuestionsByQuiz(quiz.id);
+  const currentQuestion = questions[currentQuestionIndex];
 
-  // find the selected quiz
-  const quiz = quizzes.find((quiz) => quiz.slug === slug);
+  const handleNext = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex((prev) => prev + 1);
+    }
+  };
 
-  if (!quiz) {
-    return <h1>Quiz not found!</h1>;
+  const handlePrevious = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((prev) => prev - 1);
+    }
+  };
+
+  if (questions.length === 0) {
+    return <h1>No questions found.</h1>;
   }
-
   return (
-    <>
-      <Header />
+    <div className="min-h-screen flex items-center justify-center">
+
       <Container>
-        <Link to={-1}>← Back</Link>
+        <div className="min-w-2xl">
 
-        <section>
-          <h1>{quiz.title}</h1>
-          <p>{quiz.description}</p>
-        </section>
+      <div className="border border-border rounded-md p-2 bg-surface">
 
-        <section>
-          <div>Questions: {quiz.totalQuestions}</div>
-          <div>Duration: {quiz.duration}</div>
-          <div>Difficulty: {quiz.difficulty}</div>
-        </section>
-
-        <section>
-          <h2>Instructions</h2>
-
-          <ul>
-            <li>You can change your answers.</li>
-            <li>You can go back to previous questions.</li>
-            <li>Your score is shown after submission.</li>
-            <li>Do not refresh the page during the quiz.</li>
-          </ul>
-        </section>
-
-        <button>Start Quiz</button>
-      </Container>
-    </>
+      <QuizHeader
+        quiz={quiz}
+        currentQuestionIndex={currentQuestionIndex + 1}
+        totalQuestions={questions.length}
+        />
+      <QuestionCard question={currentQuestion} questionNumber={currentQuestionIndex + 1}/>
+      <QuizFooter
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+        currentQuestionIndex={currentQuestionIndex}
+        totalQuestions={questions.length}
+        />
+        
+    </div>
+        </div>
+        </Container>
+        </div> 
   );
 };
 

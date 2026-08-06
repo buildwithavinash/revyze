@@ -1,10 +1,9 @@
 const categories = [
   {
-    id: crypto.randomUUID(),
+    id: 'cat_react',
     title: "React",
     slug: "react",
     description: "Practice React fundamentals and advanced concepts.",
-    totalQuizzes: 12,
     icon: "⚛️",
   },
   {
@@ -12,15 +11,13 @@ const categories = [
     title: "JavaScript",
     slug: "javascript",
     description: "Strengthen your JavaScript fundamentals and ES6+ knowledge.",
-    totalQuizzes: 18,
     icon: "🟨",
   },
   {
     id: crypto.randomUUID(),
     title: "HTML",
     slug: "html",
-    description: "Revise semantic HTML, forms, accessibility, and structure.",
-    totalQuizzes: 8,
+    description: "Revise semantic HTML, forms, accessibility, and structure.",   
     icon: "🟧",
   },
   {
@@ -28,8 +25,7 @@ const categories = [
     title: "CSS",
     slug: "css",
     description:
-      "Master layouts, Flexbox, Grid, animations, and responsive design.",
-    totalQuizzes: 14,
+      "Master layouts, Flexbox, Grid, animations, and responsive design.",   
     icon: "🎨",
   },
   {
@@ -38,7 +34,6 @@ const categories = [
     slug: "git-github",
     description:
       "Practice version control, branching, merging, and collaboration.",
-    totalQuizzes: 10,
     icon: "🌿",
   },
   {
@@ -46,8 +41,7 @@ const categories = [
     title: "TypeScript",
     slug: "typescript",
     description:
-      "Improve your understanding of types, interfaces, and generics.",
-    totalQuizzes: 11,
+      "Improve your understanding of types, interfaces, and generics.", 
     icon: "🔷",
   },
   {
@@ -55,8 +49,7 @@ const categories = [
     title: "Node.js",
     slug: "nodejs",
     description:
-      "Revise backend fundamentals, APIs, and asynchronous programming.",
-    totalQuizzes: 9,
+      "Revise backend fundamentals, APIs, and asynchronous programming.", 
     icon: "🟢",
   },
   {
@@ -65,7 +58,6 @@ const categories = [
     slug: "sql",
     description:
       "Practice database queries, joins, relationships, and indexing.",
-    totalQuizzes: 13,
     icon: "🗄️",
   },
 ];
