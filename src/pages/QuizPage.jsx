@@ -12,6 +12,7 @@ const QuizPage = () => {
   const quiz = getQuizBySlug(slug);
   const questions = getQuestionsByQuiz(quiz.id);
   const currentQuestion = questions[currentQuestionIndex];
+  const [answers, setAnswers] = useState({}); 
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -25,14 +26,21 @@ const QuizPage = () => {
     }
   };
 
+  const handleAnswerSelect = (questionId, optionId) => {
+    setAnswers((prevAnswers) => (
+      {...prevAnswers, [questionId]: optionId}
+    ));
+  }
   if (questions.length === 0) {
     return <h1>No questions found.</h1>;
   }
+
+  console.log(answers);
   return (
     <div className="min-h-screen flex items-center justify-center">
 
       <Container>
-        <div className="min-w-2xl">
+        <div className="w-2xl">
 
       <div className="border border-border rounded-md p-2 bg-surface">
 
@@ -41,7 +49,7 @@ const QuizPage = () => {
         currentQuestionIndex={currentQuestionIndex + 1}
         totalQuestions={questions.length}
         />
-      <QuestionCard question={currentQuestion} questionNumber={currentQuestionIndex + 1}/>
+      <QuestionCard question={currentQuestion} questionNumber={currentQuestionIndex + 1} onAnswerSelect={handleAnswerSelect} selectedAnswer={answers[currentQuestion.id]}/>
       <QuizFooter
         onNext={handleNext}
         onPrevious={handlePrevious}
