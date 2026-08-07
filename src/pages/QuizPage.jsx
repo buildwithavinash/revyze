@@ -1,10 +1,11 @@
 import { useParams } from "react-router";
-import { getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
+import { calculateQuizResults, getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
 import QuizHeader from "../components/quiz/QuizHeader";
 import QuestionCard from "../components/quiz/QuestionCard";
 import Container from '../components/ui/Container'
 import QuizFooter from "../components/quiz/QuizFooter";
 import { useState } from "react";
+import FinishQuizModal from "../components/quiz/FinishQuizModal";
 
 const QuizPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -13,6 +14,8 @@ const QuizPage = () => {
   const questions = getQuestionsByQuiz(quiz.id);
   const currentQuestion = questions[currentQuestionIndex];
   const [answers, setAnswers] = useState({}); 
+  const [showFinishModal, setShowFinishModal] = useState(false);
+
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -31,6 +34,17 @@ const QuizPage = () => {
       {...prevAnswers, [questionId]: optionId}
     ));
   }
+
+  const handleEndQuiz = () => {
+    setShowFinishModal(true);
+  }
+  const finishQuiz = () => {
+    setShowFinishModal(false)
+    const results = calculateQuizResults(questions, answers);
+
+    console.log(results);
+  }
+
   if (questions.length === 0) {
     return <h1>No questions found.</h1>;
   }
@@ -55,7 +69,13 @@ const QuizPage = () => {
         onPrevious={handlePrevious}
         currentQuestionIndex={currentQuestionIndex}
         totalQuestions={questions.length}
+        onEndQuiz={handleEndQuiz}
         />
+        {
+          showFinishModal && (
+            <FinishQuizModal attemptedQuestions={Object.keys(answers).length} totalQuestions={questions.length} onClose={() => setShowFinishModal(false)} onFinish={finishQuiz}/>
+          )
+        }
         
     </div>
         </div>

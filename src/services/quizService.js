@@ -24,3 +24,34 @@ export const getQuizBySlug = (slug) => {
 export const getQuestionsByQuiz = (quizId) => {
     return questionBank.filter((question) => question.quizId === quizId)
 }
+
+// calculate quiz results
+export const calculateQuizResults = (questions, answers) => {
+    let correct = 0;
+
+    questions.forEach((question) => {
+        const selectedAnswer = answers[question.id];
+
+        if(selectedAnswer === question.correctOptionId) {
+            correct++;
+        }
+    });
+
+    const totalQuestions = questions.length;
+    const attempted = Object.keys(answers).length;
+    const skipped = totalQuestions - attempted;
+    const wrong = attempted - correct;
+
+    const accuracy = attempted === 0 ? 0 : Math.round((correct/attempted)* 100);
+    const completion = Math.round((attempted/totalQuestions) * 100);
+
+    return {
+        totalQuestions,
+        attempted,
+        correct,
+        wrong,
+        skipped,
+        accuracy,
+        completion
+    };
+}
