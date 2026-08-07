@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { calculateQuizResults, getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
 import QuizHeader from "../components/quiz/QuizHeader";
 import QuestionCard from "../components/quiz/QuestionCard";
@@ -15,6 +15,7 @@ const QuizPage = () => {
   const currentQuestion = questions[currentQuestionIndex];
   const [answers, setAnswers] = useState({}); 
   const [showFinishModal, setShowFinishModal] = useState(false);
+  const navigate = useNavigate();
 
 
   const handleNext = () => {
@@ -42,7 +43,11 @@ const QuizPage = () => {
     setShowFinishModal(false)
     const results = calculateQuizResults(questions, answers);
 
-    console.log(results);
+    navigate('/results', { state: {
+      quiz, results
+    }})
+
+
   }
 
   if (questions.length === 0) {

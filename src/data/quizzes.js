@@ -13,7 +13,7 @@ const quizzes = [
   },
 
   {
-    id: "quiz_react_fundamentals",
+    id: "quiz_react_hooks",
     slug: "react-hooks",
     categoryId: "cat_react",
     title: "React Hooks",
@@ -26,7 +26,7 @@ const quizzes = [
   },
 
   {
-    id: "quiz_react_fundamentals",
+    id: "quiz_react_performance",
     slug: "react-performance",
     categoryId: "cat_react",
     title: "React Performance",
