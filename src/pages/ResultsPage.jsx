@@ -12,27 +12,70 @@ const ResultsPage = () => {
     )
   }
 
-  const {quiz, results} = state;
+  const {quiz, results, answers} = state;
   return (
-    <div>
+    <div className='flex justify-center items-center min-h-screen'>
       
 
-      <h1>{quiz.title}</h1>
+     <div className='border border-border rounded-lg p-4'>
+      {/* quiz header */}
+      <div className='flex flex-col items-center'>
+        <h3 className='text-xl font-semibold'>
+          Quiz Completed!
+        </h3>
+        <p className=''>{quiz.title}</p>
+      </div>
 
-      <h2>
-        {results.correct} / {results.totalQuestions}
-      </h2>
+      {/* quiz results */}
+      <div className='border border-border rounded-md p-2 flex flex-col gap-0.5 items-center mt-4'>
+        <p>{results.correct} / {results.attempted} (Total Questions: {results.totalQuestions})</p>
+        <p>Feedback message</p>
+      </div>
 
-      <p>Accuracy: {results.accuracy}%</p>
+      {/* meta stats */}
+      <div className='flex justify-between items-center gap-2 mt-4'>
+        <div className='border border-border flex-1 rounded-md p-1 flex flex-col items-center justify-center'>
+          <p className='text-lg'>{results.accuracy}%</p>
+          <h3 className='text-sm'>Accuracy</h3>
+        </div>
 
-      <p>Completion: {results.completion}%</p>
+        <div className='border border-border flex-1 rounded-md p-1 flex flex-col items-center justify-center'>
+          <p className='text-lg'>{results.completion}%</p>
+          <h3 className='text-sm'>Completion</h3>
+        </div>
+      </div>
 
-      <p>Correct: {results.correct}</p>
+      {/* stats */}
+      <div className='flex justify-between items-center gap-2 mt-4'>
+        <div className='border border-border rounded-md flex flex-col flex-1 items-center justify-center p-1'>
+          <p className='text-lg'>{results.correct}</p>
+          <h3 className='text-sm'>Correct</h3>
+        </div>
 
-      <p>Wrong: {results.wrong}</p>
+        <div className='border border-border rounded-md p-1 flex flex-col flex-1 items-center justify-center'>
+          <p className='text-lg'>{results.wrong}</p>
+          <h3 className='text-sm'>Wrong</h3>
+        </div>
 
-      <p>Skipped: {results.skipped}</p>
+        <div className='border border-border p-1 rounded-md flex flex-col flex-1 items-center justify-center'>
+          <p className='text-lg'>{results.skipped}</p>
+          <h3 className='text-sm'>Skipped</h3>
+        </div>
+      </div>
 
+      {/* long feedback */}
+      <div className='border border-border rounded-md flex flex-col items-center justify-center mt-4'>
+        <p className=''>Great Job</p>
+        <p>Placeholder for the message based on the result</p>
+      </div>
+
+      {/* actions */}
+      <div className='flex justify-between gap-2 mt-4'>
+        <button className='border border-border rounded-md px-2 py-1'>Review Answers</button>
+        <button className='border border-border rounded-md px-2 py-1'>Retry Quiz</button>
+        <button className='border border-border rounded-md px-2 py-1'>Back to Category</button>
+      </div>
+     </div>
     
     </div>
   )

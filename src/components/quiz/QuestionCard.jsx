@@ -1,7 +1,7 @@
 import OptionButton from "./OptionButton";
 
 const QuestionCard = ({question, questionNumber, onAnswerSelect, selectedAnswer}) => {
-    console.log(question);
+    
   return (
     <div className="mt-4">
         <div className="flex gap-1 font-semibold text-lg">

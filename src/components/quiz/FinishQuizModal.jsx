@@ -4,7 +4,7 @@ const FinishQuizModal = ({
   onClose,
   onFinish,
 }) => {
-  console.log("");
+  
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center">
       <div className="bg-background rounded-lg p-6 w-[500px] flex flex-col">

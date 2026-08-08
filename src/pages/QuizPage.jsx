@@ -43,8 +43,9 @@ const QuizPage = () => {
     setShowFinishModal(false)
     const results = calculateQuizResults(questions, answers);
 
+    console.log(results);
     navigate('/results', { state: {
-      quiz, results
+      quiz, results, answers
     }})
 
 
@@ -54,7 +55,6 @@ const QuizPage = () => {
     return <h1>No questions found.</h1>;
   }
 
-  console.log(answers);
   return (
     <div className="min-h-screen flex items-center justify-center">
 
