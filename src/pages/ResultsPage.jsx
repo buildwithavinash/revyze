@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router';
+import { getQuizFeedback } from '../services/quizService';
 const ResultsPage = () => {
   const {state} = useLocation();
 
@@ -13,6 +14,7 @@ const ResultsPage = () => {
   }
 
   const {quiz, results, answers} = state;
+  const feedback = getQuizFeedback(results.accuracy, results.completion);
   return (
     <div className='flex justify-center items-center min-h-screen'>
       
@@ -29,7 +31,6 @@ const ResultsPage = () => {
       {/* quiz results */}
       <div className='border border-border rounded-md p-2 flex flex-col gap-0.5 items-center mt-4'>
         <p>{results.correct} / {results.attempted} (Total Questions: {results.totalQuestions})</p>
-        <p>Feedback message</p>
       </div>
 
       {/* meta stats */}
@@ -65,13 +66,13 @@ const ResultsPage = () => {
 
       {/* long feedback */}
       <div className='border border-border rounded-md flex flex-col items-center justify-center mt-4'>
-        <p className=''>Great Job</p>
-        <p>Placeholder for the message based on the result</p>
+        <p className=''>{feedback.title}</p>
+        <p>{feedback.message}</p>
       </div>
 
       {/* actions */}
       <div className='flex justify-between gap-2 mt-4'>
-        <button className='border border-border rounded-md px-2 py-1'>Review Answers</button>
+        <Link to={`quiz/${quiz.slug}/review`} state={{answers}} className='border border-border rounded-md px-2 py-1'>Review Answers</Link>
         <button className='border border-border rounded-md px-2 py-1'>Retry Quiz</button>
         <button className='border border-border rounded-md px-2 py-1'>Back to Category</button>
       </div>

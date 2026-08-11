@@ -55,3 +55,38 @@ export const calculateQuizResults = (questions, answers) => {
         completion
     };
 }
+
+export const getQuizFeedback = (accuracy, completion) => {
+    if(completion === 0) {
+        return {
+            title: "Quiz not attempted",
+            message: "You didn't answer any questions.",
+        };
+    }
+
+    if(accuracy >= 90){
+        return {
+            title: "Excellent",
+            message: "You have a very strong understanding of this topic."
+        }
+    }
+
+    if(accuracy >= 75){
+        return {
+            title: "Great Job!",
+            message: "You have a solid understanding of this topic.",
+        };
+    }
+
+    if(accuracy >= 50){
+        return {
+            title: "Good Start",
+            message: "You understand some of the concepts, but there's room to improve."
+        }
+    }
+
+    return {
+        title: "Keep Revising",
+        message: "Review the topic and try the quiz again.",
+    }
+}
