@@ -11,6 +11,10 @@ export const getCategoryBySlug = (slug) => {
     return categories.find((cateogory) => cateogory.slug === slug);
 }
 
+export const getCategoryById = (id) => {
+    return categories.find((category)=> category.id === id)
+}
+
 // quizzes
 export const getQuizzesByCategory = (categoryId) => {
     return quizzes.filter((quiz) => quiz.categoryId === categoryId)

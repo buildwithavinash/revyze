@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router';
-import { getQuizFeedback } from '../services/quizService';
+import { getCategoryById, getQuizFeedback } from '../services/quizService';
 const ResultsPage = () => {
   const {state} = useLocation();
 
@@ -14,7 +14,22 @@ const ResultsPage = () => {
   }
 
   const {quiz, results, answers} = state;
+  const category = getCategoryById(quiz.categoryId);
+
+  if(!category){
+    return (
+      <div>
+        <h1>Category not found</h1>
+
+        <Link to='/'>
+        Back Home
+        </Link>
+      </div>
+    )
+  }
+
   const feedback = getQuizFeedback(results.accuracy, results.completion);
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       
@@ -74,9 +89,9 @@ const ResultsPage = () => {
       <div className='flex justify-between gap-2 mt-4'>
         <Link to={`/quiz/${quiz.slug}/review`} state={{quiz, results, answers}} className='border border-border rounded-md px-2 py-1'>Review Answers</Link>
         <Link to={`/quiz/${quiz.slug}`} className='border border-border rounded-md px-2 py-1'>Retry Quiz</Link>
-        <Link className='border border-border rounded-md px-2 py-1'>Back to Category</Link>
+        <Link to={`/category/${category.slug}`} className='border border-border rounded-md px-2 py-1'>Back to Category</Link>
       </div>
-     </div>
+     </div> 
     
     </div>
   )
