@@ -72,7 +72,7 @@ const ResultsPage = () => {
 
       {/* actions */}
       <div className='flex justify-between gap-2 mt-4'>
-        <Link to={`quiz/${quiz.slug}/review`} state={{answers}} className='border border-border rounded-md px-2 py-1'>Review Answers</Link>
+        <Link to={`/quiz/${quiz.slug}/review`} state={{quiz, results, answers}} className='border border-border rounded-md px-2 py-1'>Review Answers</Link>
         <button className='border border-border rounded-md px-2 py-1'>Retry Quiz</button>
         <button className='border border-border rounded-md px-2 py-1'>Back to Category</button>
       </div>

@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage"
 import CategoryPage from "./pages/CategoryPage"
 import QuizPage from "./pages/QuizPage"
 import ResultsPage from "./pages/ResultsPage"
+import ReviewAnswersPage from "./pages/ReviewAnswersPage"
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Route path="/category/:slug" element={<CategoryPage />} />
       <Route path="/quiz/:slug" element={<QuizPage />} />
       <Route path="/results" element={<ResultsPage />} />
+      <Route path="/quiz/:slug/review" element={<ReviewAnswersPage/>}/>
     </Routes>
    
   )
