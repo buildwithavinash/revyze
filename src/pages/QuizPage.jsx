@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { calculateQuizResults, getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
 import QuizHeader from "../components/quiz/QuizHeader";
 import QuestionCard from "../components/quiz/QuestionCard";
@@ -9,13 +9,35 @@ import FinishQuizModal from "../components/quiz/FinishQuizModal";
 
 const QuizPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const { slug } = useParams();
-  const quiz = getQuizBySlug(slug);
-  const questions = getQuestionsByQuiz(quiz.id);
-  const currentQuestion = questions[currentQuestionIndex];
   const [answers, setAnswers] = useState({}); 
   const [showFinishModal, setShowFinishModal] = useState(false);
+  const { slug } = useParams();
   const navigate = useNavigate();
+  const quiz = getQuizBySlug(slug);
+
+  if(!quiz) {
+    return (
+      <div>
+        <h1>Quiz not found!</h1>
+
+        <Link to='/'>Back Home</Link>
+      </div>
+    )
+  }
+
+  const questions = getQuestionsByQuiz(quiz.id);
+
+  if(questions.length === 0){
+    return (
+      <div>
+        <h1>No questions available</h1>
+
+        <Link to='/'>Back Home</Link>
+      </div>
+    )
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
 
 
   const handleNext = () => {
@@ -39,11 +61,11 @@ const QuizPage = () => {
   const handleEndQuiz = () => {
     setShowFinishModal(true);
   }
+
   const finishQuiz = () => {
     setShowFinishModal(false)
     const results = calculateQuizResults(questions, answers);
 
-    console.log(results);
     navigate('/results', { state: {
       quiz, results, answers
     }})
@@ -51,9 +73,6 @@ const QuizPage = () => {
 
   }
 
-  if (questions.length === 0) {
-    return <h1>No questions found.</h1>;
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center">
