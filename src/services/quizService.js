@@ -1,9 +1,9 @@
 import categories from "../data/categories";
-import reactQuestions from "../data/questions/react";
+import reactFundamentalsQuestions from "../data/questions/react/fundamentals";
 import quizzes from "../data/quizzes";
 
 const questionBank = [
-    ...reactQuestions,
+    ...reactFundamentalsQuestions,
 ];
 
 // categories

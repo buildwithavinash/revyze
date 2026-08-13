@@ -87,6 +87,7 @@ const QuizPage = () => {
         currentQuestionIndex={currentQuestionIndex + 1}
         totalQuestions={questions.length}
         />
+        
       <QuestionCard question={currentQuestion} questionNumber={currentQuestionIndex + 1} onAnswerSelect={handleAnswerSelect} selectedAnswer={answers[currentQuestion.id]}/>
       <QuizFooter
         onNext={handleNext}

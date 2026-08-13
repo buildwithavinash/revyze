@@ -7,21 +7,21 @@ const categories = [
     icon: "⚛️",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_javascript",
     title: "JavaScript",
     slug: "javascript",
     description: "Strengthen your JavaScript fundamentals and ES6+ knowledge.",
     icon: "🟨",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_html",
     title: "HTML",
     slug: "html",
     description: "Revise semantic HTML, forms, accessibility, and structure.",   
     icon: "🟧",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_css",
     title: "CSS",
     slug: "css",
     description:
@@ -29,7 +29,7 @@ const categories = [
     icon: "🎨",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_git",
     title: "Git & GitHub",
     slug: "git-github",
     description:
@@ -37,7 +37,7 @@ const categories = [
     icon: "🌿",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_typescript",
     title: "TypeScript",
     slug: "typescript",
     description:
@@ -45,7 +45,7 @@ const categories = [
     icon: "🔷",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_nodejs",
     title: "Node.js",
     slug: "nodejs",
     description:
@@ -53,7 +53,7 @@ const categories = [
     icon: "🟢",
   },
   {
-    id: crypto.randomUUID(),
+    id: "cat_sql",
     title: "SQL",
     slug: "sql",
     description:
