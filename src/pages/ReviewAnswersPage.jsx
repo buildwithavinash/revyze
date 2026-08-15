@@ -1,6 +1,13 @@
 import { Link, useLocation, useParams } from "react-router";
+import { ChevronRight } from "lucide-react";
 import { getQuestionsByQuiz, getQuizBySlug } from "../services/quizService";
 import Container from '../components/ui/Container'
+
+const badgeStyles = {
+  skipped: "bg-warning/10 text-warning",
+  correct: "bg-success/10 text-success",
+  wrong: "bg-danger/10 text-danger",
+};
 
 const ReviewAnswersPage = () => {
   const { slug } = useParams();
@@ -8,104 +15,116 @@ const ReviewAnswersPage = () => {
 
   if (!state?.answers) {
     return (
-      <div>
-        <h1>Review data not found</h1>
-
-        <Link to="/">Back Home</Link>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
+        <h1 className="text-lg font-semibold text-text">Review data not found</h1>
+        <Link to="/" className="text-sm text-primary hover:underline">
+          Back home
+        </Link>
       </div>
     );
   }
 
   const { answers } = state;
-
   const quiz = getQuizBySlug(slug);
 
   if (!quiz) {
     return (
-      <div>
-        <h1>Quiz not found!</h1>
-
-        <Link to="/">Back Home</Link>
+      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
+        <h1 className="text-lg font-semibold text-text">Quiz not found</h1>
+        <Link to="/" className="text-sm text-primary hover:underline">
+          Back home
+        </Link>
       </div>
     );
   }
 
   const questions = getQuestionsByQuiz(quiz.id);
+
   return (
-    <div>
+    <div className="min-h-screen py-8">
       <Container>
 
-      
-      <div>
-        <Link to="/results" state={state}>
-          Back to Results
-        </Link>
+        {/* breadcrumb + header */}
+        <div className="mb-6">
+          <div className="flex items-center gap-1.5 text-xs text-text-secondary mb-2">
+            <Link to="/results" state={state} className="hover:text-text transition-colors">
+              Results
+            </Link>
+            <ChevronRight className="w-3 h-3" strokeWidth={2} />
+            <span className="text-text">Review answers</span>
+          </div>
+          <h1 className="text-lg font-semibold text-text">{quiz.title}</h1>
+        </div>
 
-        <h1>Review Answers</h1>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+          {questions.map((question, index) => {
+            const selectedOptionId = answers[question.id];
+            const selectedOption = question.options.find(
+              (option) => option.id === selectedOptionId,
+            );
+            const correctOption = question.options.find(
+              (option) => option.id === question.correctOptionId,
+            );
 
-        <p>{quiz.title}</p>
-      </div>
+            const isSkipped = !selectedOptionId;
+            const isCorrect = selectedOptionId === question.correctOptionId;
+            const status = isSkipped ? "skipped" : isCorrect ? "correct" : "wrong";
+            const isCodeQuestion = question.question.includes("\n");
 
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-        {questions.map((question, index) => {
-          const selectedOptionId = answers[question.id];
-          const selectedOption = question.options.find(
-            (option) => option.id === selectedOptionId,
-          );
+            return (
+              <div
+                key={question.id}
+                className="border border-border rounded-card bg-surface p-4 flex flex-col"
+              >
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <h2 className="font-medium text-sm text-text leading-snug">
+                    {index + 1}. {isCodeQuestion ? question.question.split("\n")[0] : question.question}
+                  </h2>
+                  <span
+                    className={`shrink-0 text-xs font-medium px-2 py-0.5 rounded-pill ${badgeStyles[status]}`}
+                  >
+                    {status === "skipped" ? "Skipped" : status === "correct" ? "Correct" : "Wrong"}
+                  </span>
+                </div>
 
-          const correctOption = question.options.find(
-            (option) => option.id === question.correctOptionId,
-          );
-
-          const isSkipped = !selectedOptionId;
-
-          const isCorrect = selectedOptionId === question.correctOptionId;
-
-          return (
-            <div key={question.id} className="border border-border p-3 rounded-md relative shadow shadow-primary/20">
-              <h2 className="font-semibold">
-                {index + 1}. {question.question}
-              </h2>
-
-              <div>
-                {isSkipped ? (
-                  <p className="border border-yellow-500 text-yellow-600 border-dashed w-fit px-1 py-0.5 text-xs rounded-full bg-yellow-100 absolute -top-2 -right-2">Skipped</p>
-                ) : isCorrect ? (
-                  <div>
-                    <p className="border border-green-500 text-green-600 border-dashed w-fit px-1 py-0.5 text-xs rounded-md bg-green-100 absolute -top-2 -right-2">Correct</p>
-
-                    <p className="font-semibold text-text-secondary mt-1 bg-green-100 border-green-500 border-l-3 pl-2 py-1">
-                      Your Answer: {""}
-                      <span className="italic">{selectedOption.text}</span>
-                    </p>
-                  </div>
-                ) : (
-                  <div>
-                    <p className="border border-red-500 text-red-600 border-dashed w-fit px-1 py-0.5 text-xs rounded-md bg-red-100 absolute -top-2 -right-2">Wrong</p>
-
-                    <p className="font-semibold text-text-secondary mt-1 bg-red-100 border-red-500 border-l-3 pl-2 py-1">
-                      Your Answer: {""}
-                      <span className="italic">{selectedOption.text}</span>
-                    </p>
-
-                    <p className="font-semibold text-text-secondary mt-1 bg-green-100 border-green-500 border-l-3 pl-2 py-1">
-                      Correct Answer: {""}
-                      <span className="italic">{correctOption.text}</span>
-                    </p>
-                  </div>
+                {isCodeQuestion && (
+                  <pre className="bg-background border border-border rounded-button p-3 text-xs font-mono text-text overflow-x-auto mb-3 leading-relaxed">
+                    {question.question.split("\n").slice(1).join("\n")}
+                  </pre>
                 )}
-              </div>
 
-              {/* explanation */}
-              <div className="mt-1">
-                <p className="font-semibold text-slate-800">Explanation: <span>{question.explanation}</span></p>
+                <div className="flex flex-col gap-2 mb-3">
+                  {isSkipped ? (
+                    <p className="text-sm text-text-secondary bg-warning/10 border-l-2 border-warning pl-3 py-1.5 rounded-r-button">
+                      You didn't answer this question.
+                    </p>
+                  ) : isCorrect ? (
+                    <p className="text-sm bg-success/10 border-l-2 border-success pl-3 py-1.5 rounded-r-button">
+                      <span className="font-medium text-text-secondary">Your answer: </span>
+                      <span className="italic text-text">{selectedOption.text}</span>
+                    </p>
+                  ) : (
+                    <>
+                      <p className="text-sm bg-danger/10 border-l-2 border-danger pl-3 py-1.5 rounded-r-button">
+                        <span className="font-medium text-text-secondary">Your answer: </span>
+                        <span className="italic text-text">{selectedOption.text}</span>
+                      </p>
+                      <p className="text-sm bg-success/10 border-l-2 border-success pl-3 py-1.5 rounded-r-button">
+                        <span className="font-medium text-text-secondary">Correct answer: </span>
+                        <span className="italic text-text">{correctOption.text}</span>
+                      </p>
+                    </>
+                  )}
+                </div>
 
-                <p></p>
+                <p className="text-sm text-text-secondary mt-auto">
+                  <span className="font-medium text-text">Explanation: </span>
+                  {question.explanation}
+                </p>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
       </Container>
     </div>
   );

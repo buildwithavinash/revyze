@@ -81,7 +81,7 @@ const QuizPage = () => {
               totalQuestions={questions.length}
             />
 
-            <div className="flex-1 overflow-y-auto py-4 pr-1">
+            <div className="flex-1 py-4 pr-1">
               <QuestionCard
                 question={currentQuestion}
                 questionNumber={currentQuestionIndex + 1}
