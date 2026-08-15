@@ -46,7 +46,7 @@ const ReviewAnswersPage = () => {
         <p>{quiz.title}</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {questions.map((question, index) => {
           const selectedOptionId = answers[question.id];
           const selectedOption = question.options.find(
@@ -74,7 +74,7 @@ const ReviewAnswersPage = () => {
                   <div>
                     <p className="border border-green-500 text-green-600 border-dashed w-fit px-1 py-0.5 text-xs rounded-md bg-green-100 absolute -top-2 -right-2">Correct</p>
 
-                    <p className="font-semibold text-text-secondary">
+                    <p className="font-semibold text-text-secondary mt-1 bg-green-100 border-green-500 border-l-3 pl-2 py-1">
                       Your Answer: {""}
                       <span className="italic">{selectedOption.text}</span>
                     </p>
@@ -83,12 +83,12 @@ const ReviewAnswersPage = () => {
                   <div>
                     <p className="border border-red-500 text-red-600 border-dashed w-fit px-1 py-0.5 text-xs rounded-md bg-red-100 absolute -top-2 -right-2">Wrong</p>
 
-                    <p className="font-semibold text-text-secondary mt-1">
+                    <p className="font-semibold text-text-secondary mt-1 bg-red-100 border-red-500 border-l-3 pl-2 py-1">
                       Your Answer: {""}
                       <span className="italic">{selectedOption.text}</span>
                     </p>
 
-                    <p className="font-semibold text-primary mt-1">
+                    <p className="font-semibold text-text-secondary mt-1 bg-green-100 border-green-500 border-l-3 pl-2 py-1">
                       Correct Answer: {""}
                       <span className="italic">{correctOption.text}</span>
                     </p>

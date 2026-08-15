@@ -1,9 +1,11 @@
 import categories from "../data/categories";
-import reactFundamentalsQuestions from "../data/questions/react/fundamentals";
+import reactFundamentalsQuestions from "../data/questions/react/reactFundamentalsQuestions";
+import reactAllInOneQuestions from "../data/questions/react/reactAllInOneQuestions";
 import quizzes from "../data/quizzes";
 
 const questionBank = [
     ...reactFundamentalsQuestions,
+    ...reactAllInOneQuestions,
 ];
 
 // categories
