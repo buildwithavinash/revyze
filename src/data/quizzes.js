@@ -11,7 +11,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 22,
     passingScore: 70,
-    totalQuestions: 25,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -23,7 +23,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -35,7 +35,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -47,7 +47,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -59,7 +59,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -71,7 +71,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -83,7 +83,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -95,7 +95,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -107,7 +107,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -119,7 +119,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -135,7 +135,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 22,
     passingScore: 70,
-    totalQuestions: 25,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -147,7 +147,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -159,7 +159,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -171,7 +171,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -183,7 +183,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -195,7 +195,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -207,7 +207,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -219,7 +219,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -231,7 +231,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -243,7 +243,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -255,7 +255,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -267,7 +267,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -279,7 +279,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -291,7 +291,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -303,7 +303,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -319,7 +319,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -331,7 +331,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -343,7 +343,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -355,7 +355,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -367,7 +367,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -379,7 +379,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -395,7 +395,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 22,
     passingScore: 70,
-    totalQuestions: 25,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -407,7 +407,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -419,7 +419,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -431,7 +431,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -443,7 +443,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -455,7 +455,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -467,7 +467,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -479,7 +479,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -495,7 +495,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -507,7 +507,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -519,7 +519,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -531,7 +531,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -543,7 +543,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -555,7 +555,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -571,7 +571,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -583,7 +583,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -595,7 +595,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -607,7 +607,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -619,7 +619,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -631,7 +631,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -643,7 +643,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -659,7 +659,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -671,7 +671,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -683,7 +683,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -695,7 +695,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -707,7 +707,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -719,7 +719,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -731,7 +731,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 
@@ -747,7 +747,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 17,
     passingScore: 70,
-    totalQuestions: 20,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -759,7 +759,7 @@ const quizzes = [
     difficulty: "Beginner",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -771,7 +771,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -783,7 +783,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -795,7 +795,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -807,7 +807,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -819,7 +819,7 @@ const quizzes = [
     difficulty: "Advanced",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
   {
@@ -831,7 +831,7 @@ const quizzes = [
     difficulty: "Intermediate",
     estimatedTime: 12,
     passingScore: 70,
-    totalQuestions: 15,
+    totalQuestions: 50,
     isPublished: true,
   },
 ];

@@ -4,21 +4,21 @@ const categories = [
     title: "React",
     slug: "react",
     description: "Practice React fundamentals and advanced concepts.",
-    icon: "⚛️",
+    icon: new URL('../assets/category_icons/cat_react.svg', import.meta.url).href,
   },
   {
     id: "cat_javascript",
     title: "JavaScript",
     slug: "javascript",
     description: "Strengthen your JavaScript fundamentals and ES6+ knowledge.",
-    icon: "🟨",
+    icon: new URL('../assets/category_icons/cat_javascript.svg', import.meta.url).href,
   },
   {
     id: "cat_html",
     title: "HTML",
     slug: "html",
     description: "Revise semantic HTML, forms, accessibility, and structure.",   
-    icon: "🟧",
+    icon: new URL('../assets/category_icons/cat_html.svg', import.meta.url).href,
   },
   {
     id: "cat_css",
@@ -26,7 +26,7 @@ const categories = [
     slug: "css",
     description:
       "Master layouts, Flexbox, Grid, animations, and responsive design.",   
-    icon: "🎨",
+    icon: new URL('../assets/category_icons/cat_css.svg', import.meta.url).href,
   },
   {
     id: "cat_git",
@@ -34,7 +34,7 @@ const categories = [
     slug: "git-github",
     description:
       "Practice version control, branching, merging, and collaboration.",
-    icon: "🌿",
+    icon: new URL('../assets/category_icons/cat_git.svg', import.meta.url).href,
   },
   {
     id: "cat_typescript",
@@ -42,7 +42,7 @@ const categories = [
     slug: "typescript",
     description:
       "Improve your understanding of types, interfaces, and generics.", 
-    icon: "🔷",
+    icon: new URL('../assets/category_icons/cat_typescript.svg', import.meta.url).href,
   },
   {
     id: "cat_nodejs",
@@ -50,7 +50,7 @@ const categories = [
     slug: "nodejs",
     description:
       "Revise backend fundamentals, APIs, and asynchronous programming.", 
-    icon: "🟢",
+    icon: new URL('../assets/category_icons/cat_nodejs.svg', import.meta.url).href,
   },
   {
     id: "cat_sql",
@@ -58,7 +58,7 @@ const categories = [
     slug: "sql",
     description:
       "Practice database queries, joins, relationships, and indexing.",
-    icon: "🗄️",
+    icon: new URL('../assets/category_icons/cat_sql.svg', import.meta.url).href,
   },
 ];
 

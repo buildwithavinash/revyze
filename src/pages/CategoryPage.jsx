@@ -27,15 +27,15 @@ const CategoryPage = () => {
       <Container>
         <Link
           to={`/`}
-          className="border border-border rounded-md px-2 py-1 text-xs bg-surface text-text-secondary-secondary hover:bg-surface-hover transition-all duration-200 inline-block mt-4"
+          className="border border-border rounded-md px-1 py-0.5 text-xs bg-surface text-text-secondary-secondary hover:bg-surface-hover transition-all duration-200 inline-block mt-4"
         >
           Back to Homepage
         </Link>
 
         {/* category info */}
         <div className="mt-4">
-          <div className="flex gap-2 text-3xl">
-            <div>{category.icon}</div>
+          <div className="flex gap-2 items-center text-3xl">
+            <img src={category.icon} alt="" className="h-8 2-8"/>
             <h2 className="font-semibold text-text">{category.title}</h2>
           </div>
           <p className="text-text-secondary mt-1">{category.description}</p>
@@ -58,7 +58,7 @@ const CategoryPage = () => {
                 <div
                   key={quiz.id}
                   onClick={() => setSelectedQuiz(quiz)}
-                  className=" border border-border rounded-md p-2 cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col"
+                  className=" border border-border rounded-md p-2 cursor-pointer transition-all duration-200 hover:shadow-sm hover:-translate-y-0.5 flex flex-col"
                 >
                   <h3 className="text-text font-bold text-xl">{quiz.title}</h3>
                   <p className="text-text-secondary text-sm">
