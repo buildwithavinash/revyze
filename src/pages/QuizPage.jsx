@@ -71,17 +71,17 @@ const QuizPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-3 sm:px-4 py-6">
       <Container>
         <div className="flex justify-center">
-          <div className="w-2xl max-w-2xl h-[580px] flex flex-col border border-border rounded-card bg-surface p-5 md:p-6">
+          <div className="w-full max-w-2xl h-[560px] sm:h-[580px] flex flex-col border border-border rounded-card bg-surface p-4 sm:p-5 md:p-6">
             <QuizHeader
               quiz={quiz}
               currentQuestionIndex={currentQuestionIndex + 1}
               totalQuestions={questions.length}
             />
 
-            <div className="flex-1 py-4 pr-1">
+            <div className="flex-1 min-h-0 flex flex-col py-3 sm:py-4">
               <QuestionCard
                 question={currentQuestion}
                 questionNumber={currentQuestionIndex + 1}

@@ -4,13 +4,13 @@ const OptionButton = ({ option, onAnswerSelect, selectedAnswer, questionId }) =>
   return (
     <button
       onClick={() => onAnswerSelect(questionId, option.id)}
-      className={`w-full flex items-center gap-3 text-start px-3 py-2.5 rounded-button border text-sm transition-all duration-150 cursor-pointer text-text
+      className={`w-full flex items-center gap-2.5 sm:gap-3 text-start px-3 py-2 sm:py-2.5 rounded-button border text-xs sm:text-sm transition-all duration-150 cursor-pointer text-text
         ${isSelected
           ? "border-primary bg-primary/10"
           : "border-border bg-background hover:bg-surface-hover"}`}
     >
       <span
-        className={`w-4 h-4 rounded-pill border-2 flex-shrink-0 ${
+        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-pill border-2 flex-shrink-0 ${
           isSelected ? "border-primary bg-primary" : "border-border"
         }`}
       />

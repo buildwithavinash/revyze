@@ -8,17 +8,17 @@ const QuestionCard = ({ question, questionNumber, onAnswerSelect, selectedAnswer
 
   return (
     <div className="h-full flex flex-col">
-      <h2 className="font-semibold text-lg text-text leading-snug mb-3 shrink-0">
+      <h2 className="font-semibold text-base sm:text-lg text-text leading-snug mb-3 flex-shrink-0">
         {questionNumber}. {questionTitle}
       </h2>
 
       {isCodeQuestion && (
-        <pre className="bg-background border border-border rounded-button p-3.5 text-sm font-mono text-text overflow-y-auto mb-4 leading-relaxed flex-1 min-h-0 max-h-32">
+        <pre className="bg-background border border-border rounded-button p-3 sm:p-3.5 text-xs sm:text-sm font-mono text-text overflow-auto mb-3 sm:mb-4 leading-relaxed flex-1 min-h-0">
           {codeBlock.trim()}
         </pre>
       )}
 
-      <div className="flex flex-col gap-2.5 shrink-0">
+      <div className="flex flex-col gap-2 sm:gap-2.5 flex-shrink-0">
         {question.options.map((option) => (
           <OptionButton
             key={option.id}

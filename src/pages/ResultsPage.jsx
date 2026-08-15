@@ -33,51 +33,46 @@ const ResultsPage = () => {
   const feedback = getQuizFeedback(results.accuracy, results.completion);
 
   return (
-    <div className='flex justify-center items-center min-h-screen px-4'>
-      <div className='w-full max-w-md border border-border rounded-card bg-surface p-6 text-center'>
+    <div className='flex justify-center items-center min-h-screen px-4 py-8'>
+      <div className='w-full max-w-md border border-border rounded-card bg-surface p-5 sm:p-6 text-center'>
 
-        {/* quiz header */}
-        <div className='w-16 h-16 mx-auto mb-4 rounded-pill bg-primary/10 flex items-center justify-center'>
-          <ClipboardCheck className='w-7 h-7 text-primary' strokeWidth={2} />
+        <div className='w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-4 rounded-pill bg-primary/10 flex items-center justify-center'>
+          <ClipboardCheck className='w-6 h-6 sm:w-7 sm:h-7 text-primary' strokeWidth={2} />
         </div>
 
-        <h3 className='text-lg font-semibold text-text'>Quiz completed</h3>
-        <p className='text-sm text-text-secondary mb-5'>{quiz.title}</p>
+        <h3 className='text-base sm:text-lg font-semibold text-text'>Quiz completed</h3>
+        <p className='text-xs sm:text-sm text-text-secondary mb-5'>{quiz.title}</p>
 
-        {/* score */}
         <div className='mb-1'>
-          <span className='text-4xl font-semibold text-text'>{results.correct}</span>
-          <span className='text-lg text-text-secondary'> / {results.totalQuestions}</span>
+          <span className='text-3xl sm:text-4xl font-semibold text-text'>{results.correct}</span>
+          <span className='text-base sm:text-lg text-text-secondary'> / {results.totalQuestions}</span>
         </div>
-        <p className='text-sm text-text-secondary mb-5'>
+        <p className='text-xs sm:text-sm text-text-secondary mb-5'>
           {results.accuracy}% accuracy · {results.completion}% completed
         </p>
 
-        {/* stats */}
         <div className='grid grid-cols-3 gap-2 mb-5'>
-          <div className='rounded-button bg-success/10 py-2.5'>
-            <p className='text-lg font-semibold text-success'>{results.correct}</p>
-            <p className='text-xs text-success'>Correct</p>
+          <div className='rounded-button bg-success/10 py-2 sm:py-2.5'>
+            <p className='text-base sm:text-lg font-semibold text-success'>{results.correct}</p>
+            <p className='text-[11px] sm:text-xs text-success'>Correct</p>
           </div>
 
-          <div className='rounded-button bg-danger/10 py-2.5'>
-            <p className='text-lg font-semibold text-danger'>{results.wrong}</p>
-            <p className='text-xs text-danger'>Wrong</p>
+          <div className='rounded-button bg-danger/10 py-2 sm:py-2.5'>
+            <p className='text-base sm:text-lg font-semibold text-danger'>{results.wrong}</p>
+            <p className='text-[11px] sm:text-xs text-danger'>Wrong</p>
           </div>
 
-          <div className='rounded-button bg-surface-hover py-2.5'>
-            <p className='text-lg font-semibold text-text-secondary'>{results.skipped}</p>
-            <p className='text-xs text-text-secondary'>Skipped</p>
+          <div className='rounded-button bg-surface-hover py-2 sm:py-2.5'>
+            <p className='text-base sm:text-lg font-semibold text-text-secondary'>{results.skipped}</p>
+            <p className='text-[11px] sm:text-xs text-text-secondary'>Skipped</p>
           </div>
         </div>
 
-        {/* feedback */}
         <div className='mb-6'>
           <p className='text-sm font-medium text-text mb-0.5'>{feedback.title}</p>
-          <p className='text-sm text-text-secondary'>{feedback.message}</p>
+          <p className='text-xs sm:text-sm text-text-secondary'>{feedback.message}</p>
         </div>
 
-        {/* actions */}
         <div className='flex flex-col gap-2'>
           <Link
             to={`/quiz/${quiz.slug}`}
@@ -86,7 +81,7 @@ const ResultsPage = () => {
             Retry quiz
           </Link>
 
-          <div className='flex gap-2'>
+          <div className='flex flex-col sm:flex-row gap-2'>
             <Link
               to={`/quiz/${quiz.slug}/review`}
               state={{ quiz, results, answers }}
