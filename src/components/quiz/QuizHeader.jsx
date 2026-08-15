@@ -1,10 +1,18 @@
+const QuizHeader = ({ quiz, currentQuestionIndex, totalQuestions }) => {
+  const progress = (currentQuestionIndex / totalQuestions) * 100;
 
-const QuizHeader = ({quiz, currentQuestionIndex, totalQuestions}) => {
-    
   return (
-    <div className="flex justify-between border-b border-border pb-1 text-sm text-text-secondary">
-    <h3 className="">{quiz.title}</h3>
-    <h3 className="">Question {currentQuestionIndex} of {totalQuestions}</h3>
+    <div className="pb-3 border-b border-border shrink-0">
+      <div className="flex justify-between items-center text-sm text-text-secondary mb-2">
+        <span>{quiz.title}</span>
+        <span>Question {currentQuestionIndex} of {totalQuestions}</span>
+      </div>
+      <div className="h-1 bg-surface-hover rounded-pill overflow-hidden">
+        <div
+          className="h-full bg-primary rounded-pill transition-all duration-300"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
     </div>
   )
 }

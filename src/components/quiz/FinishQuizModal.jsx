@@ -1,41 +1,34 @@
-const FinishQuizModal = ({
-  attemptedQuestions,
-  totalQuestions,
-  onClose,
-  onFinish,
-}) => {
-  
+const FinishQuizModal = ({ attemptedQuestions, totalQuestions, onClose, onFinish }) => {
   return (
-    <div className="fixed inset-0 bg-black/70 flex items-center justify-center">
-      <div className="bg-background rounded-lg p-6 w-[500px] flex flex-col">
-        <h2 className="text-xl font-semibold mb-4">Finish Quiz?</h2>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center px-4 z-50">
+      <div className="bg-background rounded-card p-6 w-full max-w-sm">
+        <h2 className="text-lg font-semibold text-text mb-2">Finish quiz?</h2>
 
-        <p className="text-text mb-1">
-          You have answered
-          <span className="font-bold"> {attemptedQuestions} </span>
-          out of
-          <span className="font-bold"> {totalQuestions} </span>questions
+        <p className="text-sm text-text-secondary mb-1">
+          You've answered <span className="font-medium text-text">{attemptedQuestions}</span> out of{" "}
+          <span className="font-medium text-text">{totalQuestions}</span> questions.
+        </p>
+        <p className="text-sm text-text-secondary mb-6">
+          You can still go back and change your answers before submitting.
         </p>
 
-        <p className="text-text-secondary mb-4">You can still return and change your answers before submitting.</p>
-
-        <div className="flex mt-auto justify-end gap-2">
+        <div className="flex justify-end gap-2">
           <button
             onClick={onClose}
-            className="border border-border hover:bg-surface-hover px-4 py-2 rounded-md cursor-pointer transition-all duration-200"
+            className="px-4 py-2 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer"
           >
-            Continue Quiz
+            Continue quiz
           </button>
           <button
             onClick={onFinish}
-            className="bg-primary text-background px-4 py-2 rounded-md cursor-pointer hover:bg-primary-hover transition-all duration-200"
+            className="px-4 py-2 rounded-button bg-primary text-background text-sm font-medium hover:bg-primary-hover transition-all duration-200 cursor-pointer"
           >
-            Finish Quiz
+            Finish quiz
           </button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FinishQuizModal;
+export default FinishQuizModal
