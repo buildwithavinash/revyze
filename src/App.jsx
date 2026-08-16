@@ -5,9 +5,12 @@ import CategoryPage from "./pages/CategoryPage"
 import QuizPage from "./pages/QuizPage"
 import ResultsPage from "./pages/ResultsPage"
 import ReviewAnswersPage from "./pages/ReviewAnswersPage"
+import UpdatePrompt from "./components/common/UpdatePrompt"
 
 const App = () => {
   return (
+    <>
+    <UpdatePrompt/>
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/categories" element={<CategoriesPage />} />
@@ -16,6 +19,7 @@ const App = () => {
       <Route path="/results" element={<ResultsPage />} />
       <Route path="/quiz/:slug/review" element={<ReviewAnswersPage />} />
     </Routes>
+    </>
   )
 }
 
