@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-16 sm:py-16 md:py-24 px-4">
+    <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-24 px-3 md:px-4">
 
       <h1 className="text-2xl text-nowrap sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug text-text">
         Revise what you learned, <br /> before you forget it.
