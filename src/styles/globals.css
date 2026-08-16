@@ -97,10 +97,10 @@
 /* --- LIGHT MODE (default) --- */
 :root {
   --background:      #FFFFFF;
-  --surface:          #F9F9F9;
-  --surface-hover:    #EAEBEF;
+  --surface:          #FAFBFC;
+  --surface-hover:    #F1F3F5;
 
-  --border:           #E2E4E9;
+  --border:           #E8EAED;
 
   --text:             #14161A;
   --text-secondary:   #5B616E;
