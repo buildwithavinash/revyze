@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import Header from "../components/common/Header";
 import Container from "../components/ui/Container";
-import QuizInfoModal from "../components/ui/QuizInfoModal";
+import QuizInfoModal from "../components/quiz/QuizInfoModal";
 import { useState } from "react";
 import { getCategoryBySlug, getQuizzesByCategory } from "../services/quizService";
 import { ArrowLeft, Clock, HelpCircle } from "lucide-react";
@@ -32,7 +32,7 @@ const CategoryPage = () => {
   const categoryQuizzes = getQuizzesByCategory(category.id);
 
   return (
-    <div className="md:pb-24 pt-2 pb-12">
+    <div className="md:pb-24 pb-12">
       <Header />
       <Container>
         <Link
@@ -95,7 +95,7 @@ const CategoryPage = () => {
                         <Clock size={13} /> {quiz.estimatedTime} min
                       </span>
                     </div>
-                    <button className="border border-primary text-primary font-medium hover:bg-primary hover:text-background transition-all duration-200 rounded-button px-3 py-1.5 text-xs sm:text-sm cursor-pointer flex-shrink-0">
+                    <button className="border border-primary text-primary font-medium hover:bg-primary hover:text-background transition-all duration-200 rounded-button px-3 py-1.5 text-xs sm:text-sm cursor-pointer shrink-0">
                       Start quiz
                     </button>
                   </div>

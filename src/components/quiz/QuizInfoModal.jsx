@@ -20,7 +20,7 @@ const QuizInfoModal = ({ quiz, onClose }) => {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="flex-shrink-0 p-1.5 rounded-button hover:bg-surface-hover text-text-secondary transition-all duration-200 cursor-pointer"
+            className="shrink-0 p-1.5 rounded-button hover:bg-surface-hover text-text-secondary transition-all duration-200 cursor-pointer"
           >
             <X className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} />
           </button>

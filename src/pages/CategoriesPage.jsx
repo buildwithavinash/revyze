@@ -6,8 +6,8 @@ import categories from "../data/categories"
 const CategoriesPage = () => {
   return (
     <div className="pb-16 md:pb-24">
-      <Container>
         <Header />
+      <Container>
 
         <div className="mt-8 md:mt-10">
           <h1 className="text-lg sm:text-xl font-semibold text-text mb-1">All categories</h1>

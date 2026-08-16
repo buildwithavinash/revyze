@@ -15,8 +15,8 @@ const HomePage = () => {
 
   return (
     <div className="pb-16 md:pb-24">
-      <Container>
         <Header />
+      <Container>
         <HeroSection />
 
         <div className="mt-8">
