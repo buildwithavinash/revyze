@@ -1,3 +1,5 @@
+import { Link } from "react-router"
+
 const HeroSection = () => {
   return (
     <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-24 px-3 md:px-4">
@@ -10,9 +12,9 @@ const HeroSection = () => {
         Quick quizzes on React, JavaScript, SQL, and more - made for students who want concepts to actually stick, not just get skimmed once and forgotten.
       </p>
 
-      <button className="bg-primary text-background rounded-button px-5 py-2.5 font-medium hover:bg-primary-hover transition-all duration-150 cursor-pointer mt-6 w-full sm:w-auto">
+      <Link to={`/categories`} className="bg-primary text-background rounded-button px-5 py-2.5 font-medium hover:bg-primary-hover transition-all duration-150 cursor-pointer mt-6 w-full sm:w-auto">
         Start practicing - it's free
-      </button>
+      </Link>
 
       <p className="text-xs sm:text-sm text-text-secondary mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
         <span>2500+ Qs</span>
