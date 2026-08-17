@@ -6,6 +6,7 @@ import QuizPage from "./pages/QuizPage"
 import ResultsPage from "./pages/ResultsPage"
 import ReviewAnswersPage from "./pages/ReviewAnswersPage"
 import UpdatePrompt from "./components/common/UpdatePrompt"
+import HistoryPage from "./pages/HistoryPage"
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Route path="/quiz/:slug" element={<QuizPage />} />
       <Route path="/results" element={<ResultsPage />} />
       <Route path="/quiz/:slug/review" element={<ReviewAnswersPage />} />
+      <Route path="/history" element={<HistoryPage/>}/>
     </Routes>
     </>
   )

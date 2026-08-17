@@ -34,6 +34,12 @@ export const getQuizBySlug = (slug) => {
   );
 };
 
+export const getQuizById = (quizId) => {
+  return quizzes.find(
+    (quiz) => quiz.id === quizId
+  )
+}
+
 
 // ================================
 // QUIZ RESULTS
