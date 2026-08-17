@@ -115,8 +115,9 @@ const HistoryPage = () => {
               }
 
               return (
-                <div
+                <Link
                   key={attempt.id}
+                  to={`/history/${attempt.id}`}
                   className="border border-border rounded-card bg-surface p-4"
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -172,7 +173,7 @@ const HistoryPage = () => {
                     ).toLocaleString()}
                   </p>
 
-                </div>
+                </Link>
               );
             })}
 

@@ -22,6 +22,10 @@ export const getAllQuizAttempts = async () => {
     return await db.quizAttempts.orderBy('completedAt').reverse().toArray();
 }
 
+export const getQuizAttemptById = async (attemptId) => {
+    return await db.quizAttempts.get(attemptId)
+}
+
 // quiz progress
 export const saveQuizProgress = async (progress) => {
     return await db.quizProgress.put(progress);
