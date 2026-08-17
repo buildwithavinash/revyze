@@ -7,6 +7,7 @@ import QuizFooter from "../components/quiz/QuizFooter";
 import { useEffect, useState } from "react";
 import FinishQuizModal from "../components/quiz/FinishQuizModal";
 import { loadQuestionsForQuiz } from "../services/questionService";
+import { getAllQuizAttempts, saveQuizAttempt } from "../services/storageService";
 
 const QuizPage = () => {
   const { slug } = useParams();
@@ -21,6 +22,7 @@ const QuizPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showFinishModal, setShowFinishModal] = useState(false);
+  const [quizStartedAt] = useState(()=> Date.now());
 
   // Load questions for the selected quiz
   useEffect(() => {
@@ -137,13 +139,26 @@ const QuizPage = () => {
     setShowFinishModal(true);
   };
 
-  const finishQuiz = () => {
+  const finishQuiz = async () => {
     setShowFinishModal(false);
 
     const results = calculateQuizResults(
       questions,
       answers
     );
+
+    const attempt = {
+      quizId: quiz.id,
+      answers,
+      results,
+      startedAt: quizStartedAt,
+      completedAt: Date.now(),
+    }
+
+    await saveQuizAttempt(attempt)
+
+    const attempts = await getAllQuizAttempts();
+  console.log(attempts);
 
     navigate("/results", {
       state: {
@@ -153,6 +168,8 @@ const QuizPage = () => {
       },
     });
   };
+
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-1 sm:px-4">
