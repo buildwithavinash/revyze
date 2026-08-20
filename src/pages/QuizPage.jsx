@@ -7,7 +7,12 @@ import QuizFooter from "../components/quiz/QuizFooter";
 import { useEffect, useState } from "react";
 import FinishQuizModal from "../components/quiz/FinishQuizModal";
 import { loadQuestionsForQuiz } from "../services/questionService";
-import { deleteQuizProgress, getAllQuizAttempts, getQuizProgress, saveQuizAttempt, saveQuizProgress } from "../services/storageService";
+import {
+  deleteQuizProgress,
+  getQuizProgress,
+  saveQuizAttempt,
+  saveQuizProgress,
+} from "../services/storageService";
 import ResumeQuizModal from "../components/quiz/ResumeQuizModal";
 
 const QuizPage = () => {
@@ -24,7 +29,7 @@ const QuizPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showFinishModal, setShowFinishModal] = useState(false);
-  const [quizStartedAt] = useState(()=> Date.now());
+  const [quizStartedAt] = useState(() => Date.now());
   const [showResumeModal, setShowResumeModal] = useState(false);
 
   // Load questions for the selected quiz
@@ -52,35 +57,30 @@ const QuizPage = () => {
 
   // Load saved progress
   useEffect(() => {
-    if(!quiz) return;
+    if (!quiz) return;
 
     const loadSavedProgress = async () => {
       try {
         const progress = await getQuizProgress(quiz.id);
 
-        if(progress){
+        if (progress) {
           setSavedProgress(progress);
           setShowResumeModal(true);
         }
-      }catch(error){
-        console.error("Failed to laod quiz progress:", error)
+      } catch (error) {
+        console.error("Failed to laod quiz progress:", error);
       }
     };
 
     loadSavedProgress();
-  }, [quiz?.id])
+  }, [quiz?.id]);
   // Invalid quiz
   if (!quiz) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Quiz not found
-        </h1>
+        <h1 className="text-lg font-semibold text-text">Quiz not found</h1>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -104,14 +104,9 @@ const QuizPage = () => {
           Something went wrong
         </h1>
 
-        <p className="text-sm text-text-secondary">
-          {error}
-        </p>
+        <p className="text-sm text-text-secondary">{error}</p>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -126,10 +121,7 @@ const QuizPage = () => {
           No questions available
         </h1>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -139,41 +131,41 @@ const QuizPage = () => {
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleNext = async () => {
-     if (currentQuestionIndex < questions.length - 1) {
-    const nextQuestionIndex = currentQuestionIndex + 1;
+    if (currentQuestionIndex < questions.length - 1) {
+      const nextQuestionIndex = currentQuestionIndex + 1;
 
-    setCurrentQuestionIndex(nextQuestionIndex);
+      setCurrentQuestionIndex(nextQuestionIndex);
 
-    await saveQuizProgress({
-      quizId: quiz.id,
-      currentQuestionIndex: nextQuestionIndex,
-      answers,
-      startedAt: quizStartedAt,
-      updatedAt: Date.now(),
-    });
-  }
+      await saveQuizProgress({
+        quizId: quiz.id,
+        currentQuestionIndex: nextQuestionIndex,
+        answers,
+        startedAt: quizStartedAt,
+        updatedAt: Date.now(),
+      });
+    }
   };
 
- const handlePrevious = async () => {
-  if (currentQuestionIndex > 0) {
-    const previousQuestionIndex = currentQuestionIndex - 1;
+  const handlePrevious = async () => {
+    if (currentQuestionIndex > 0) {
+      const previousQuestionIndex = currentQuestionIndex - 1;
 
-    setCurrentQuestionIndex(previousQuestionIndex);
+      setCurrentQuestionIndex(previousQuestionIndex);
 
-    await saveQuizProgress({
-      quizId: quiz.id,
-      currentQuestionIndex: previousQuestionIndex,
-      answers,
-      startedAt: quizStartedAt,
-      updatedAt: Date.now(),
-    });
-  }
-};
+      await saveQuizProgress({
+        quizId: quiz.id,
+        currentQuestionIndex: previousQuestionIndex,
+        answers,
+        startedAt: quizStartedAt,
+        updatedAt: Date.now(),
+      });
+    }
+  };
 
   const handleAnswerSelect = async (questionId, optionId) => {
     const updatedAnswers = {
-      ...answers, 
-      [questionId]: optionId
+      ...answers,
+      [questionId]: optionId,
     };
 
     setAnswers(updatedAnswers);
@@ -188,25 +180,23 @@ const QuizPage = () => {
   };
 
   const handleContinueQuiz = () => {
-  if (!savedProgress) return;
+    if (!savedProgress) return;
 
-  setAnswers(savedProgress.answers || {});
+    setAnswers(savedProgress.answers || {});
 
-  setCurrentQuestionIndex(
-    savedProgress.currentQuestionIndex || 0
-  );
+    setCurrentQuestionIndex(savedProgress.currentQuestionIndex || 0);
 
-  setShowResumeModal(false);
-};
+    setShowResumeModal(false);
+  };
 
-const handleStartAgain = async () => {
-  await deleteQuizProgress(quiz.id);
+  const handleStartAgain = async () => {
+    await deleteQuizProgress(quiz.id);
 
-  setAnswers({});
-  setCurrentQuestionIndex(0);
-  setSavedProgress(null);
-  setShowResumeModal(false);
-};
+    setAnswers({});
+    setCurrentQuestionIndex(0);
+    setSavedProgress(null);
+    setShowResumeModal(false);
+  };
 
   const handleEndQuiz = () => {
     setShowFinishModal(true);
@@ -215,10 +205,7 @@ const handleStartAgain = async () => {
   const finishQuiz = async () => {
     setShowFinishModal(false);
 
-    const results = calculateQuizResults(
-      questions,
-      answers
-    );
+    const results = calculateQuizResults(questions, answers);
 
     const attempt = {
       quizId: quiz.id,
@@ -226,30 +213,30 @@ const handleStartAgain = async () => {
       results,
       startedAt: quizStartedAt,
       completedAt: Date.now(),
+    };
+
+    try {
+      await saveQuizAttempt(attempt);
+
+      await deleteQuizProgress(quiz.id);
+
+      navigate("/results", {
+        state: {
+          quiz,
+          results,
+          answers,
+        },
+      });
+    } catch (error) {
+      console.error("Failed to finish quiz:", error);
     }
-
-    await saveQuizAttempt(attempt)
-
-    const attempts = await getAllQuizAttempts();
-  console.log(attempts);
-
-    navigate("/results", {
-      state: {
-        quiz,
-        results,
-        answers,
-      },
-    });
   };
-
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center px-1 sm:px-4">
       <Container>
         <div className="flex justify-center">
           <div className="w-full max-w-2xl sm:w-xl lg:w-2xl h-[560px] sm:h-[580px] flex flex-col border border-border rounded-card bg-surface p-4 sm:p-5 md:p-6">
-
             <QuizHeader
               quiz={quiz}
               currentQuestionIndex={currentQuestionIndex + 1}
@@ -272,7 +259,6 @@ const handleStartAgain = async () => {
               totalQuestions={questions.length}
               onEndQuiz={handleEndQuiz}
             />
-
           </div>
         </div>
       </Container>
@@ -287,12 +273,12 @@ const handleStartAgain = async () => {
       )}
 
       {showResumeModal && savedProgress && (
-  <ResumeQuizModal
-    answeredQuestions={Object.keys(savedProgress.answers || {}).length}
-    onContinue={handleContinueQuiz}
-    onStartAgain={handleStartAgain}
-  />
-)}
+        <ResumeQuizModal
+          answeredQuestions={Object.keys(savedProgress.answers || {}).length}
+          onContinue={handleContinueQuiz}
+          onStartAgain={handleStartAgain}
+        />
+      )}
     </div>
   );
 };
