@@ -18,7 +18,7 @@ const HomePage = () => {
         <Header />
       <Container>
         <HeroSection />
-
+        <hr  className="text-primary opacity-15"/>
         <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-text">Categories</h3>

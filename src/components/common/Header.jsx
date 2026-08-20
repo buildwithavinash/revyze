@@ -21,7 +21,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="py-2 md:py-4 relative z-50 border-b border-b-border/50 shadow-xs">
+    <header className="py-2 md:py-4 relative z-50 border-b border-b-border/40 shadow-xs">
       <Container>
         <div className="flex items-center justify-between">
           <Link to="/" onClick={() => setIsMenuOpen(false)}>
