@@ -186,6 +186,15 @@ const HistoryAttemptPage = () => {
 
           </div>
 
+<div className="flex items-center justify-end">
+
+                <Link
+  to={`/history/${attempt.id}/review`}
+  className="inline-block  mt-5 bg-primary text-background px-4 py-2 rounded-button text-sm"
+>
+  Review Answers
+</Link>
+  </div>
         </div>
 
       </Container>

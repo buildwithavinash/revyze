@@ -8,6 +8,7 @@ import ReviewAnswersPage from "./pages/ReviewAnswersPage";
 import UpdatePrompt from "./components/common/UpdatePrompt";
 import HistoryPage from "./pages/HistoryPage";
 import HistoryAttemptPage from "./pages/HistoryAttemptPage";
+import HistoryReviewAnswersPage from "./pages/HistoryReviewAnswersPage";
 
 const App = () => {
   return (
@@ -22,6 +23,10 @@ const App = () => {
         <Route path="/quiz/:slug/review" element={<ReviewAnswersPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/history/:attemptId" element={<HistoryAttemptPage />} />
+        <Route
+  path="/history/:attemptId/review"
+  element={<HistoryReviewAnswersPage />}
+/>
       </Routes>
     </>
   );

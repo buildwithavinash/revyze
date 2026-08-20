@@ -1,83 +1,78 @@
-import { Link, useLocation, useParams } from "react-router";
-import { ChevronRight } from "lucide-react";
-import { getQuizBySlug } from "../services/quizService";
-import { loadQuestionsForQuiz } from "../services/questionService";
+import { Link, useParams } from "react-router";
 import { useEffect, useState } from "react";
+import { ChevronRight } from "lucide-react";
+
 import Container from "../components/ui/Container";
 import ReviewQuestionCard from "../components/quiz/ReviewQuestionCard";
 
-const ReviewAnswersPage = () => {
-  const { slug } = useParams();
-  const { state } = useLocation();
+import {
+  getQuizAttemptById,
+} from "../services/storageService";
 
-  const quiz = getQuizBySlug(slug);
+import {
+  getQuizById,
+} from "../services/quizService";
 
+import {
+  loadQuestionsForQuiz,
+} from "../services/questionService";
+
+
+const HistoryReviewAnswersPage = () => {
+  const { attemptId } = useParams();
+
+  const [attempt, setAttempt] = useState(null);
+  const [quiz, setQuiz] = useState(null);
   const [questions, setQuestions] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Load questions for this quiz
-  useEffect(() => {
-    if (!quiz || !state?.answers) {
-      return;
-    }
 
-    const loadReviewQuestions = async () => {
+  useEffect(() => {
+    const loadReviewData = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        const data = await loadQuestionsForQuiz(quiz);
+        // Get the saved attempt
+        const savedAttempt = await getQuizAttemptById(attemptId);
 
-        setQuestions(data);
+        if (!savedAttempt) {
+          setError("Quiz attempt not found.");
+          return;
+        }
+
+        setAttempt(savedAttempt);
+
+
+        // Get the quiz
+        const quizData = getQuizById(savedAttempt.quizId);
+
+        if (!quizData) {
+          setError("Quiz not found.");
+          return;
+        }
+
+        setQuiz(quizData);
+
+
+        // Load questions
+        const questionData = await loadQuestionsForQuiz(quizData);
+
+        setQuestions(questionData);
+
       } catch (error) {
         console.error(error);
-        setError("Unable to load review questions.");
+        setError("Unable to load review data.");
       } finally {
         setIsLoading(false);
       }
     };
 
-    loadReviewQuestions();
-  }, [quiz?.id, state?.answers]);
+    loadReviewData();
+  }, [attemptId]);
 
-  // Review data doesn't exist
-  if (!state?.answers) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Review data not found
-        </h1>
-
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
-          Back home
-        </Link>
-      </div>
-    );
-  }
-
-  const { answers } = state;
-
-  // Quiz doesn't exist
-  if (!quiz) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Quiz not found
-        </h1>
-
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
-          Back home
-        </Link>
-      </div>
-    );
-  }
 
   // Loading
   if (isLoading) {
@@ -90,12 +85,14 @@ const ReviewAnswersPage = () => {
     );
   }
 
+
   // Error
-  if (error) {
+  if (error || !attempt || !quiz) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
+
         <h1 className="text-lg font-semibold text-text">
-          Something went wrong
+          Unable to load review
         </h1>
 
         <p className="text-sm text-text-secondary">
@@ -103,48 +100,66 @@ const ReviewAnswersPage = () => {
         </p>
 
         <Link
-          to="/"
+          to="/history"
           className="text-sm text-primary hover:underline"
         >
-          Back home
+          Back to history
         </Link>
+
       </div>
     );
   }
+
 
   // No questions
   if (questions.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
+
         <h1 className="text-lg font-semibold text-text">
           No questions available
         </h1>
 
         <Link
-          to="/"
+          to="/history"
           className="text-sm text-primary hover:underline"
         >
-          Back home
+          Back to history
         </Link>
+
       </div>
     );
   }
 
+
   return (
     <div className="min-h-screen py-6 sm:py-8">
+
       <Container>
 
-        {/* Page header */}
+        {/* Header */}
+
         <div className="mb-5 sm:mb-6">
 
           <div className="flex items-center gap-1.5 text-xs text-text-secondary mb-2">
 
             <Link
-              to="/results"
-              state={state}
+              to="/history"
               className="hover:text-text transition-colors"
             >
-              Results
+              History
+            </Link>
+
+            <ChevronRight
+              className="w-3 h-3"
+              strokeWidth={2}
+            />
+
+            <Link
+              to={`/history/${attempt.id}`}
+              className="hover:text-text transition-colors"
+            >
+              Attempt
             </Link>
 
             <ChevronRight
@@ -158,14 +173,20 @@ const ReviewAnswersPage = () => {
 
           </div>
 
+
           <h1 className="text-base sm:text-lg font-semibold text-text">
             {quiz.title}
           </h1>
+
+          <p className="text-xs sm:text-sm text-text-secondary mt-1">
+            Review your answers from this attempt
+          </p>
 
         </div>
 
 
         {/* Questions */}
+
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 sm:gap-4">
 
           {questions.map((question, index) => (
@@ -173,15 +194,17 @@ const ReviewAnswersPage = () => {
               key={question.id}
               question={question}
               questionNumber={index + 1}
-              selectedOptionId={answers[question.id]}
+              selectedOptionId={attempt.answers[question.id]}
             />
           ))}
 
         </div>
 
       </Container>
+
     </div>
   );
 };
 
-export default ReviewAnswersPage;
+
+export default HistoryReviewAnswersPage;
