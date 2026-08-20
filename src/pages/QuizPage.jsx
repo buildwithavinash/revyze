@@ -7,7 +7,8 @@ import QuizFooter from "../components/quiz/QuizFooter";
 import { useEffect, useState } from "react";
 import FinishQuizModal from "../components/quiz/FinishQuizModal";
 import { loadQuestionsForQuiz } from "../services/questionService";
-import { getAllQuizAttempts, saveQuizAttempt } from "../services/storageService";
+import { deleteQuizProgress, getAllQuizAttempts, getQuizProgress, saveQuizAttempt, saveQuizProgress } from "../services/storageService";
+import ResumeQuizModal from "../components/quiz/ResumeQuizModal";
 
 const QuizPage = () => {
   const { slug } = useParams();
@@ -18,11 +19,13 @@ const QuizPage = () => {
   const [questions, setQuestions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [savedProgress, setSavedProgress] = useState(null);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showFinishModal, setShowFinishModal] = useState(false);
   const [quizStartedAt] = useState(()=> Date.now());
+  const [showResumeModal, setShowResumeModal] = useState(false);
 
   // Load questions for the selected quiz
   useEffect(() => {
@@ -47,6 +50,25 @@ const QuizPage = () => {
     loadQuizQuestions();
   }, [quiz?.id]);
 
+  // Load saved progress
+  useEffect(() => {
+    if(!quiz) return;
+
+    const loadSavedProgress = async () => {
+      try {
+        const progress = await getQuizProgress(quiz.id);
+
+        if(progress){
+          setSavedProgress(progress);
+          setShowResumeModal(true);
+        }
+      }catch(error){
+        console.error("Failed to laod quiz progress:", error)
+      }
+    };
+
+    loadSavedProgress();
+  }, [quiz?.id])
   // Invalid quiz
   if (!quiz) {
     return (
@@ -116,24 +138,75 @@ const QuizPage = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-    }
+  const handleNext = async () => {
+     if (currentQuestionIndex < questions.length - 1) {
+    const nextQuestionIndex = currentQuestionIndex + 1;
+
+    setCurrentQuestionIndex(nextQuestionIndex);
+
+    await saveQuizProgress({
+      quizId: quiz.id,
+      currentQuestionIndex: nextQuestionIndex,
+      answers,
+      startedAt: quizStartedAt,
+      updatedAt: Date.now(),
+    });
+  }
   };
 
-  const handlePrevious = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev - 1);
-    }
+ const handlePrevious = async () => {
+  if (currentQuestionIndex > 0) {
+    const previousQuestionIndex = currentQuestionIndex - 1;
+
+    setCurrentQuestionIndex(previousQuestionIndex);
+
+    await saveQuizProgress({
+      quizId: quiz.id,
+      currentQuestionIndex: previousQuestionIndex,
+      answers,
+      startedAt: quizStartedAt,
+      updatedAt: Date.now(),
+    });
+  }
+};
+
+  const handleAnswerSelect = async (questionId, optionId) => {
+    const updatedAnswers = {
+      ...answers, 
+      [questionId]: optionId
+    };
+
+    setAnswers(updatedAnswers);
+
+    await saveQuizProgress({
+      quizId: quiz.id,
+      currentQuestionIndex,
+      answers: updatedAnswers,
+      startedAt: quizStartedAt,
+      updatedAt: Date.now(),
+    });
   };
 
-  const handleAnswerSelect = (questionId, optionId) => {
-    setAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [questionId]: optionId,
-    }));
-  };
+  const handleContinueQuiz = () => {
+  if (!savedProgress) return;
+
+  setAnswers(savedProgress.answers || {});
+
+  setCurrentQuestionIndex(
+    savedProgress.currentQuestionIndex || 0
+  );
+
+  setShowResumeModal(false);
+};
+
+const handleStartAgain = async () => {
+  await deleteQuizProgress(quiz.id);
+
+  setAnswers({});
+  setCurrentQuestionIndex(0);
+  setSavedProgress(null);
+  setShowResumeModal(false);
+};
 
   const handleEndQuiz = () => {
     setShowFinishModal(true);
@@ -212,6 +285,14 @@ const QuizPage = () => {
           onFinish={finishQuiz}
         />
       )}
+
+      {showResumeModal && savedProgress && (
+  <ResumeQuizModal
+    answeredQuestions={Object.keys(savedProgress.answers || {}).length}
+    onContinue={handleContinueQuiz}
+    onStartAgain={handleStartAgain}
+  />
+)}
     </div>
   );
 };
