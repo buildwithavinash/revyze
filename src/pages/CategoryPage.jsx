@@ -15,9 +15,24 @@ const difficultyStyles = {
 const CategoryPage = () => {
   const { slug } = useParams();
   const [selectedQuiz, setSelectedQuiz] = useState(null);
-
+  const [searchQuery, setSearchQuery] = useState("");
+  
+  
+  
   const category = getCategoryBySlug(slug);
+  const quizzes = getQuizzesByCategory(category.id);
 
+  const filteredQuizzes = quizzes.filter((quiz) => {
+    const query = searchQuery.toLowerCase().trim();
+    
+    if(!query) {
+      return true;
+    }
+    
+    return (
+      quiz.title.toLowerCase().includes(query) || quiz.description.toLowerCase().includes(query)
+    );
+  })
   if (!category) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
@@ -55,6 +70,15 @@ const CategoryPage = () => {
           </p>
         </div>
 
+
+{/* categroy search */}
+<input
+  type="text"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  placeholder={`Search ${category.title} quizzes...`}
+  className="border border-border rounded-button px-3 py-2 w-full"
+/>
         {/* show all quizzes */}
         <section className="mt-6 sm:mt-8">
           <h2 className="text-text font-semibold text-base sm:text-lg mb-3 sm:mb-4">Available quizzes</h2>
@@ -65,7 +89,7 @@ const CategoryPage = () => {
             </p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-              {categoryQuizzes.map((quiz) => (
+              {filteredQuizzes.map((quiz) => (
                 <div
                   key={quiz.id}
                   onClick={() => setSelectedQuiz(quiz)}
