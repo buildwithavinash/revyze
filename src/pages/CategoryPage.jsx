@@ -16,22 +16,20 @@ const CategoryPage = () => {
   const { slug } = useParams();
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  
-  
-  
+  const [difficulty, setDifficulty] = useState("all");
+
   const category = getCategoryBySlug(slug);
   const quizzes = getQuizzesByCategory(category.id);
 
   const filteredQuizzes = quizzes.filter((quiz) => {
     const query = searchQuery.toLowerCase().trim();
     
-    if(!query) {
-      return true;
-    }
+    const matchesSearch = !query || quiz.title.toLowerCase().includes(query) || quiz.description.toLowerCase().includes(query);
+
+    const matchesDifficulty = difficulty === "all" || quiz.difficulty.toLowerCase() === difficulty.toLowerCase();
+
+    return matchesSearch && matchesDifficulty
     
-    return (
-      quiz.title.toLowerCase().includes(query) || quiz.description.toLowerCase().includes(query)
-    );
   })
   if (!category) {
     return (
@@ -44,6 +42,11 @@ const CategoryPage = () => {
     );
   }
 
+  const handleClearFilters = () => {
+  setSearchQuery("");
+  setDifficulty("all");
+};
+
   const categoryQuizzes = getQuizzesByCategory(category.id);
 
   return (
@@ -52,7 +55,7 @@ const CategoryPage = () => {
       <Container>
         <Link
           to="/"
-          className="inline-flex items-center gap-1.5 border border-border rounded-button px-3 py-1.5 text-xs text-text-secondary bg-surface hover:bg-surface-hover transition-all duration-200 mt-4"
+          className="inline-flex items-center gap-1.5  px-3 py-1.5 text-xs text-text-secondary mt-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" strokeWidth={2} />
           Back
@@ -66,19 +69,41 @@ const CategoryPage = () => {
           </div>
           <p className="text-sm sm:text-base text-text-secondary mt-2">{category.description}</p>
           <p className="text-xs sm:text-sm text-text-secondary mt-1">
-            {categoryQuizzes.length} quizzes available
+            {filteredQuizzes.length} {""}
+            {filteredQuizzes.length === 1 ? "quiz" : "quizzes"} found
           </p>
         </div>
 
 
 {/* categroy search */}
+<div className="mt-6 flex items-center gap-2 md:gap-4">
 <input
   type="text"
   value={searchQuery}
   onChange={(e) => setSearchQuery(e.target.value)}
   placeholder={`Search ${category.title} quizzes...`}
-  className="border border-border rounded-button px-3 py-2 w-full"
+  className="border border-border rounded-button px-2 py-1 w-full focus:border focus:border-primary outline-0 transition-all duration-200 text-sm md:px-4 md:py-2 md:text-base"
 />
+
+<select
+  value={difficulty}
+  onChange={(e) => setDifficulty(e.target.value)}
+  className="border border-border rounded-button px-2 py-1 w-full focus:border focus:border-primary outline-0 transition-all duration-200 text-sm md:px-4 md:py-2 md:text-base"
+>
+  <option value="all">All difficulties</option>
+  <option value="beginner">Beginner</option>
+  <option value="intermediate">Intermediate</option>
+  <option value="advanced">Advanced</option>
+</select>
+
+<button
+  onClick={handleClearFilters}
+  className="text-sm text-primary hover:underline text-nowrap cursor-pointer transition-all duration-200"
+>
+  Clear filters
+</button>
+</div>
+
         {/* show all quizzes */}
         <section className="mt-6 sm:mt-8">
           <h2 className="text-text font-semibold text-base sm:text-lg mb-3 sm:mb-4">Available quizzes</h2>

@@ -156,6 +156,8 @@ const ReviewAnswersPage = () => {
               Review answers
             </span>
 
+
+            <Link to="/" className="ml-auto">Back Home</Link>
           </div>
 
           <h1 className="text-base sm:text-lg font-semibold text-text">

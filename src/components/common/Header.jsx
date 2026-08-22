@@ -40,9 +40,9 @@ const Header = () => {
               ))}
             </ul>
 
-            <button className="px-4 py-1.5 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer">
+            {/* <button className="px-4 py-1.5 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer">
               Login
-            </button>
+            </button> */}
           </div>
 
           {/* mobile hamburger trigger */}
@@ -95,14 +95,14 @@ const Header = () => {
           ))}
         </ul>
 
-        <div className="px-3 mt-2">
+        {/* <div className="px-3 mt-2">
           <button
             onClick={() => setIsMenuOpen(false)}
             className="w-full px-4 py-2.5 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer"
           >
             Login
           </button>
-        </div>
+        </div> */}
       </div>
     </header>
   );
