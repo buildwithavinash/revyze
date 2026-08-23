@@ -43,3 +43,32 @@ export const getQuizProgressByIds = async (quizIds) => {
 return await db.quizProgress.where('quizId').anyOf(quizIds).toArray();
 }
 
+export const getQuizAttemptSummariesByIds = async (quizIds) => {
+    const attempts = await db.quizAttempts.where("quizId").anyOf(quizIds).toArray();
+
+    const summaries = {};
+
+    attempts.forEach((attempt) => {
+        const { quizId, results, completedAt} = attempt;
+
+        if(!summaries[quizId]){
+            summaries[quizId] = {
+                attemptCount: 0,
+                bestAccuracy: 0,
+                lastAttemptAt: null,
+            };
+        }
+
+        const summary = summaries[quizId];
+
+        summary.attemptCount += 1;
+
+        summary.bestAccuracy = Math.max(summary.bestAccuracy, results.accuracy);
+
+        if(!summary.lastAttemptAt || completedAt > summary.lastAttemptAt) {
+            summary.lastAttemptAt = completedAt;
+        }
+    });
+
+    return summaries;
+}
