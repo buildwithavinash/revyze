@@ -75,11 +75,11 @@ const HistoryPage = () => {
         {/* Header */}
         <div className="mb-6">
           <Link
-            to="/"
+            to={-1}
             className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-text transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" strokeWidth={2} />
-            Back home
+            Back
           </Link>
 
           <h1 className="text-2xl font-semibold text-text mt-4">

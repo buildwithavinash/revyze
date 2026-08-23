@@ -1,3 +1,6 @@
+import sqlConstraintsRelationshipsQuestions from "./sqlConstraintsRelationshipsQuestions"
+import sqlIndexingPerformanceQuestions from "./sqlIndexingPerformanceQuestions"
+
 const sqlAllInOneQuestions = [
   {
     id: "sql-all-in-one-q-001",
@@ -20,7 +23,6 @@ const sqlAllInOneQuestions = [
   {
     id: "sql-all-in-one-q-002",
     quizId: "quiz_sql_all_in_one",
-    order: 2,
     type: "mcq",
     difficulty: "Beginner",
     question: "Which clause is used to filter rows before they are returned?",
@@ -357,7 +359,9 @@ const sqlAllInOneQuestions = [
     correctOptionId: "B",
     explanation: "Query optimization should be evidence-driven. An execution plan can reveal issues such as full table scans, inefficient joins, or missing/unused indexes.",
     tags: ["query-optimization", "indexes", "performance"]
-  }
+  },
+  ...sqlConstraintsRelationshipsQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-all-in-one-q-${String(index + 21).padStart(3, "0")}`, quizId: "quiz_sql_all_in_one", order: index + 21 })),
+  ...sqlIndexingPerformanceQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-all-in-one-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_all_in_one", order: index + 36 }))
 ];
 
 export default sqlAllInOneQuestions;

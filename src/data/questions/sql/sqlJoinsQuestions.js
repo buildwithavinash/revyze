@@ -1,3 +1,6 @@
+import sqlConstraintsRelationshipsQuestions from "./sqlConstraintsRelationshipsQuestions"
+import sqlSubqueriesCtesQuestions from "./sqlSubqueriesCtesQuestions"
+
 const sqlJoinsQuestions = [
   {
     id: "sql-joins-q-001",
@@ -20,7 +23,6 @@ const sqlJoinsQuestions = [
 
   {
     id: "sql-joins-q-002",
-    quizId: "quiz_sql_joins",
     order: 2,
     type: "mcq",
     difficulty: "Intermediate",
@@ -292,7 +294,9 @@ const sqlJoinsQuestions = [
     explanation:
       "A LEFT JOIN followed by checking for NULL on the right table is a common pattern for finding records with no related match.",
     tags: ["left-join", "null", "interview"]
-  }
+  },
+  ...sqlConstraintsRelationshipsQuestions.slice(0, 20).map((question, index) => ({ ...question, id: `sql-joins-q-${String(index + 16).padStart(3, "0")}`, quizId: "quiz_sql_joins", order: index + 16 })),
+  ...sqlSubqueriesCtesQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-joins-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_joins", order: index + 36 }))
 ];
 
 export default sqlJoinsQuestions;

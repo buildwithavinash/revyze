@@ -1,3 +1,5 @@
+import sqlIndexingPerformanceQuestions from "./sqlIndexingPerformanceQuestions"
+
 const sqlWindowFunctionsQuestions = [
   {
     id: "sql-window-functions-q-001",
@@ -20,7 +22,6 @@ const sqlWindowFunctionsQuestions = [
   {
     id: "sql-window-functions-q-002",
     quizId: "quiz_sql_window_functions",
-    order: 2,
     type: "mcq",
     difficulty: "Intermediate",
     question: "Which keyword is commonly required to define the window for a window function?",
@@ -267,7 +268,9 @@ const sqlWindowFunctionsQuestions = [
     correctOptionId: "B",
     explanation: "The key mistake is trying to filter ROW_NUMBER() directly in the same WHERE clause where it is created. The window result normally needs to be produced first and filtered by an outer query or CTE.",
     tags: ["row-number", "common-mistakes", "top-n"]
-  }
+  },
+  ...sqlIndexingPerformanceQuestions.slice(0, 20).map((question, index) => ({ ...question, id: `sql-window-functions-q-${String(index + 16).padStart(3, "0")}`, quizId: "quiz_sql_window_functions", order: index + 16 })),
+  ...sqlIndexingPerformanceQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-window-functions-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_window_functions", order: index + 36 }))
 ];
 
 export default sqlWindowFunctionsQuestions;

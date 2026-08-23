@@ -105,9 +105,7 @@ const CategoryPage = () => {
   return (
     <div className="md:pb-24 pb-12">
       <Header />
-
-      <Container>
-        {/* Back */}
+{/* Back */}
         <Link
           to="/"
           className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-text-secondary mt-4"
@@ -115,6 +113,8 @@ const CategoryPage = () => {
           <ArrowLeft className="w-3.5 h-3.5" strokeWidth={2} />
           Back
         </Link>
+      <Container>
+        
 
         {/* Category info */}
         <div className="mt-5 sm:mt-6">

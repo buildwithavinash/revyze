@@ -1,3 +1,5 @@
+import sqlIndexingPerformanceQuestions from "./sqlIndexingPerformanceQuestions"
+
 const sqlAggregationGroupingQuestions = [
   {
     id: "sql-aggregation-grouping-q-001",
@@ -20,7 +22,6 @@ const sqlAggregationGroupingQuestions = [
   {
     id: "sql-aggregation-grouping-q-002",
     quizId: "quiz_sql_aggregation_grouping",
-    order: 2,
     type: "mcq",
     difficulty: "Beginner",
     question: "Which function counts rows?",
@@ -267,7 +268,9 @@ const sqlAggregationGroupingQuestions = [
     correctOptionId: "D",
     explanation: "AVG(salary) is calculated per department, so the aggregate condition belongs in HAVING.",
     tags: ["avg", "group-by", "having"]
-  }
+  },
+  ...sqlIndexingPerformanceQuestions.slice(0, 20).map((question, index) => ({ ...question, id: `sql-aggregation-grouping-q-${String(index + 16).padStart(3, "0")}`, quizId: "quiz_sql_aggregation_grouping", order: index + 16 })),
+  ...sqlIndexingPerformanceQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-aggregation-grouping-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_aggregation_grouping", order: index + 36 }))
 ];
 
 export default sqlAggregationGroupingQuestions;

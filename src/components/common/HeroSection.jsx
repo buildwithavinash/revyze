@@ -2,7 +2,8 @@ import { Link } from "react-router"
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-24 px-3 md:px-4">
+    <section className="hero-grid">
+      <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-34 md:py-24 px-4 md:px-4">
 
       <h1 className="text-2xl text-nowrap sm:text-3xl md:text-4xl font-semibold tracking-tight leading-snug text-text">
         Revise what you learned, <br /> before you forget it.
@@ -17,14 +18,15 @@ const HeroSection = () => {
       </Link>
 
       <p className="text-xs sm:text-sm text-text-secondary mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-        <span>2500+ Qs</span>
+        <span>3200+ Qs</span>
         <span className="">·</span>
         <span>15 categories</span>
         <span className="">·</span>
         <span>No sign-up required</span>
       </p>
 
-    </div>
+      </div>
+    </section>
   )
 }
 

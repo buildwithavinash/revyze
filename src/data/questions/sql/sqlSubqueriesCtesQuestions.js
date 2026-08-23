@@ -1,3 +1,6 @@
+import sqlWindowFunctionsQuestions from "./sqlWindowFunctionsQuestions"
+import sqlIndexingPerformanceQuestions from "./sqlIndexingPerformanceQuestions"
+
 const sqlSubqueriesCtesQuestions = [
   {
     id: "sql-subqueries-ctes-q-001",
@@ -20,7 +23,6 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-002",
-    quizId: "quiz_sql_subqueries",
     order: 2,
     type: "mcq",
     difficulty: "Intermediate",
@@ -289,7 +291,9 @@ const sqlSubqueriesCtesQuestions = [
     explanation:
       "A scalar subquery used with `=` must produce a single value. If it returns multiple rows, the query can fail depending on the database system.",
     tags: ["subquery", "scalar", "common-mistakes"]
-  }
+  },
+  ...sqlWindowFunctionsQuestions.slice(0, 20).map((question, index) => ({ ...question, id: `sql-subqueries-ctes-q-${String(index + 16).padStart(3, "0")}`, quizId: "quiz_sql_subqueries", order: index + 16 })),
+  ...sqlIndexingPerformanceQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-subqueries-ctes-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_subqueries", order: index + 36 }))
 ];
 
 export default sqlSubqueriesCtesQuestions;

@@ -1,3 +1,6 @@
+import sqlConstraintsRelationshipsQuestions from "./sqlConstraintsRelationshipsQuestions"
+import sqlDataModificationQuestions from "./sqlDataModificationQuestions"
+
 const sqlDatabaseDesignQuestions = [
   {
     id: "sql-database-design-q-001",
@@ -20,7 +23,6 @@ const sqlDatabaseDesignQuestions = [
 
   {
     id: "sql-database-design-q-002",
-    quizId: "quiz_sql_database_design",
     order: 2,
     type: "mcq",
     difficulty: "Intermediate",
@@ -285,7 +287,9 @@ const sqlDatabaseDesignQuestions = [
     explanation:
       "Good schema design starts with clear entities, relationships, constraints, and appropriate normalization. Performance-driven denormalization can then be introduced deliberately when justified by real workload requirements.",
     tags: ["database-design", "normalization", "architecture"]
-  }
+  },
+  ...sqlConstraintsRelationshipsQuestions.slice(0, 20).map((question, index) => ({ ...question, id: `sql-database-design-q-${String(index + 16).padStart(3, "0")}`, quizId: "quiz_sql_database_design", order: index + 16 })),
+  ...sqlDataModificationQuestions.slice(0, 15).map((question, index) => ({ ...question, id: `sql-database-design-q-${String(index + 36).padStart(3, "0")}`, quizId: "quiz_sql_database_design", order: index + 36 }))
 ];
 
 export default sqlDatabaseDesignQuestions;
