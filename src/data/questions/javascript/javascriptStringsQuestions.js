@@ -7,12 +7,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "Which of the following is a valid JavaScript string?",
     options: [
-      { id: "A", text: "\"Hello\"" },
-      { id: "B", text: "{Hello}" },
-      { id: "C", text: "[Hello]" },
+      { id: "A", text: "{Hello}" },
+      { id: "B", text: "[Hello]" },
+      { id: "C", text: "\"Hello\"" },
       { id: "D", text: "<Hello>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript strings can be created using single quotes, double quotes, or backticks.",
     tags: ["strings", "syntax"]
   },
@@ -25,12 +25,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "Which three delimiters can be used to create JavaScript strings?",
     options: [
-      { id: "A", text: "Single quotes, double quotes, and backticks" },
-      { id: "B", text: "Parentheses, brackets, and braces" },
-      { id: "C", text: "Only double quotes" },
-      { id: "D", text: "Only single quotes and parentheses" }
+      { id: "A", text: "Parentheses, brackets, and braces" },
+      { id: "B", text: "Only double quotes" },
+      { id: "C", text: "Only single quotes and parentheses" },
+      { id: "D", text: "Single quotes, double quotes, and backticks" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript supports `'...'`, `\"...\"`, and template literals using backticks: `` `...` ``.",
     tags: ["strings", "syntax"]
   },
@@ -61,12 +61,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst first = \"Hello\";\nconst second = \"World\";\nconsole.log(first + \" \" + second);",
     options: [
-      { id: "A", text: "Hello World" },
-      { id: "B", text: "HelloWorld" },
+      { id: "A", text: "HelloWorld" },
+      { id: "B", text: "Hello World" },
       { id: "C", text: "Hello + World" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `+` operator concatenates strings. The explicit `\" \"` adds a space between the two strings.",
     tags: ["strings", "concatenation"]
   },
@@ -79,12 +79,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is the value of `result`?\n\nconst result = \"Java\" + \"Script\";",
     options: [
-      { id: "A", text: "JavaScript" },
-      { id: "B", text: "Java Script" },
-      { id: "C", text: "Java+Script" },
+      { id: "A", text: "Java Script" },
+      { id: "B", text: "Java+Script" },
+      { id: "C", text: "JavaScript" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "String concatenation joins the two strings directly, producing `JavaScript`.",
     tags: ["strings", "concatenation"]
   },
@@ -97,12 +97,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What does the `length` property of a string represent?",
     options: [
-      { id: "A", text: "The number of UTF-16 code units in the string." },
-      { id: "B", text: "The number of words in the string." },
-      { id: "C", text: "The number of spaces in the string." },
-      { id: "D", text: "The number of methods available on the string." }
+      { id: "A", text: "The number of words in the string." },
+      { id: "B", text: "The number of spaces in the string." },
+      { id: "C", text: "The number of methods available on the string." },
+      { id: "D", text: "The number of UTF-16 code units in the string." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript's string `length` property reports the number of UTF-16 code units, which is usually the same as the number of visible characters for simple text.",
     tags: ["strings", "length"]
   },
@@ -133,12 +133,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"Hello\";\nconsole.log(text[0]);",
     options: [
-      { id: "A", text: "H" },
-      { id: "B", text: "e" },
+      { id: "A", text: "e" },
+      { id: "B", text: "H" },
       { id: "C", text: "Hello" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "String indexing starts at 0, so index 0 contains `H`.",
     tags: ["strings", "indexing"]
   },
@@ -151,12 +151,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"Hello\";\nconsole.log(text[4]);",
     options: [
-      { id: "A", text: "o" },
-      { id: "B", text: "l" },
-      { id: "C", text: "H" },
+      { id: "A", text: "l" },
+      { id: "B", text: "H" },
+      { id: "C", text: "o" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The indexes are H=0, e=1, l=2, l=3, o=4.",
     tags: ["strings", "indexing"]
   },
@@ -169,12 +169,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What happens here?\n\nconst text = \"Hello\";\ntext[0] = \"Y\";\nconsole.log(text);",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "Yello" },
-      { id: "C", text: "Y" },
-      { id: "D", text: "TypeError" }
+      { id: "A", text: "Yello" },
+      { id: "B", text: "Y" },
+      { id: "C", text: "TypeError" },
+      { id: "D", text: "Hello" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript strings are immutable. Individual characters cannot be changed by assigning to an index.",
     tags: ["strings", "immutability"]
   },
@@ -205,12 +205,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"hello world\";\nconsole.log(text.toUpperCase());",
     options: [
-      { id: "A", text: "HELLO WORLD" },
-      { id: "B", text: "Hello World" },
+      { id: "A", text: "Hello World" },
+      { id: "B", text: "HELLO WORLD" },
       { id: "C", text: "hello world" },
       { id: "D", text: "Hello world" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`toUpperCase()` converts all applicable letters to uppercase.",
     tags: ["strings", "toUpperCase"]
   },
@@ -223,12 +223,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "Which method converts a string to lowercase?",
     options: [
-      { id: "A", text: "toLowerCase()" },
-      { id: "B", text: "lower()" },
-      { id: "C", text: "lowercase()" },
+      { id: "A", text: "lower()" },
+      { id: "B", text: "lowercase()" },
+      { id: "C", text: "toLowerCase()" },
       { id: "D", text: "makeLower()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`toLowerCase()` returns a lowercase version of the string.",
     tags: ["strings", "toLowerCase"]
   },
@@ -241,12 +241,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"JAVASCRIPT\";\nconsole.log(text.toLowerCase());",
     options: [
-      { id: "A", text: "javascript" },
-      { id: "B", text: "JAVASCRIPT" },
-      { id: "C", text: "Javascript" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "JAVASCRIPT" },
+      { id: "B", text: "Javascript" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "javascript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`toLowerCase()` converts the uppercase letters to lowercase.",
     tags: ["strings", "toLowerCase"]
   },
@@ -277,12 +277,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst username = \"   avi   \";\nconsole.log(username.trim());",
     options: [
-      { id: "A", text: "avi" },
-      { id: "B", text: "   avi   " },
+      { id: "A", text: "   avi   " },
+      { id: "B", text: "avi" },
       { id: "C", text: "avi   " },
       { id: "D", text: "   avi" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`trim()` removes the leading and trailing whitespace while preserving the text itself.",
     tags: ["strings", "trim", "whitespace"]
   },
@@ -295,12 +295,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "Which method checks whether a string contains a specified substring?",
     options: [
-      { id: "A", text: "includes()" },
-      { id: "B", text: "contains()" },
-      { id: "C", text: "hasText()" },
+      { id: "A", text: "contains()" },
+      { id: "B", text: "hasText()" },
+      { id: "C", text: "includes()" },
       { id: "D", text: "exists()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`includes()` returns true when the specified substring occurs within the string.",
     tags: ["strings", "includes"]
   },
@@ -313,12 +313,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst email = \"avi@example.com\";\nconsole.log(email.includes(\"@\"));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "\"@\"" },
-      { id: "D", text: "1" }
+      { id: "A", text: "false" },
+      { id: "B", text: "\"@\"" },
+      { id: "C", text: "1" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `@` character exists in the string, so `includes()` returns true.",
     tags: ["strings", "includes", "validation"]
   },
@@ -349,12 +349,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst url = \"https://example.com\";\nconsole.log(url.startsWith(\"https\"));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
+      { id: "A", text: "false" },
+      { id: "B", text: "true" },
       { id: "C", text: "\"https\"" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The string begins with `https`, so `startsWith()` returns true.",
     tags: ["strings", "startsWith", "validation"]
   },
@@ -367,12 +367,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What does `endsWith()` check?",
     options: [
-      { id: "A", text: "Whether a string ends with a specified substring." },
-      { id: "B", text: "Whether a string begins with a specified substring." },
-      { id: "C", text: "Whether a string contains only numbers." },
+      { id: "A", text: "Whether a string begins with a specified substring." },
+      { id: "B", text: "Whether a string contains only numbers." },
+      { id: "C", text: "Whether a string ends with a specified substring." },
       { id: "D", text: "Whether the string is empty." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`endsWith()` checks whether the string ends with the specified sequence of characters.",
     tags: ["strings", "endsWith"]
   },
@@ -385,12 +385,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst file = \"photo.png\";\nconsole.log(file.endsWith(\".png\"));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "\".png\"" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "false" },
+      { id: "B", text: "\".png\"" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The filename ends with `.png`, so the method returns true.",
     tags: ["strings", "endsWith", "validation"]
   },
@@ -421,12 +421,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"JavaScript\";\nconsole.log(text.indexOf(\"Script\"));",
     options: [
-      { id: "A", text: "4" },
-      { id: "B", text: "5" },
+      { id: "A", text: "5" },
+      { id: "B", text: "4" },
       { id: "C", text: "-1" },
       { id: "D", text: "0" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Script` begins at index 4: J=0, a=1, v=2, a=3, S=4.",
     tags: ["strings", "indexOf"]
   },
@@ -439,12 +439,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "Which method returns the last occurrence of a substring?",
     options: [
-      { id: "A", text: "lastIndexOf()" },
-      { id: "B", text: "lastFind()" },
-      { id: "C", text: "reverseIndex()" },
+      { id: "A", text: "lastFind()" },
+      { id: "B", text: "reverseIndex()" },
+      { id: "C", text: "lastIndexOf()" },
       { id: "D", text: "endIndexOf()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`lastIndexOf()` searches from the end and returns the index of the last occurrence.",
     tags: ["strings", "lastIndexOf", "search"]
   },
@@ -457,12 +457,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst text = \"banana\";\nconsole.log(text.lastIndexOf(\"a\"));",
     options: [
-      { id: "A", text: "5" },
-      { id: "B", text: "3" },
-      { id: "C", text: "1" },
-      { id: "D", text: "-1" }
+      { id: "A", text: "3" },
+      { id: "B", text: "1" },
+      { id: "C", text: "-1" },
+      { id: "D", text: "5" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The last `a` in `banana` occurs at index 5.",
     tags: ["strings", "lastIndexOf"]
   },
@@ -493,12 +493,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"JavaScript\";\nconsole.log(text.slice(0, 4));",
     options: [
-      { id: "A", text: "Java" },
-      { id: "B", text: "JavaS" },
+      { id: "A", text: "JavaS" },
+      { id: "B", text: "Java" },
       { id: "C", text: "Script" },
       { id: "D", text: "Jav" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`slice(0, 4)` takes indexes 0 through 3, producing `Java`.",
     tags: ["strings", "slice"]
   },
@@ -511,12 +511,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst text = \"JavaScript\";\nconsole.log(text.slice(-6));",
     options: [
-      { id: "A", text: "Script" },
-      { id: "B", text: "Java" },
-      { id: "C", text: "JavaS" },
+      { id: "A", text: "Java" },
+      { id: "B", text: "JavaS" },
+      { id: "C", text: "Script" },
       { id: "D", text: "ipt" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A negative start index counts backward from the end. The final six characters are `Script`.",
     tags: ["strings", "slice", "negative-index"]
   },
@@ -529,12 +529,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What is the key difference between `slice()` and `substring()` for strings?",
     options: [
-      { id: "A", text: "`slice()` supports negative indexes, while `substring()` treats negative arguments as 0." },
-      { id: "B", text: "`substring()` mutates the string while `slice()` does not." },
-      { id: "C", text: "`slice()` only works with numbers." },
-      { id: "D", text: "They always produce different results." }
+      { id: "A", text: "`substring()` mutates the string while `slice()` does not." },
+      { id: "B", text: "`slice()` only works with numbers." },
+      { id: "C", text: "They always produce different results." },
+      { id: "D", text: "`slice()` supports negative indexes, while `substring()` treats negative arguments as 0." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Both can extract portions of strings, but their handling of negative arguments differs.",
     tags: ["strings", "slice", "substring"]
   },
@@ -565,12 +565,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What does `replace()` do when given a plain string as its first argument?",
     options: [
-      { id: "A", text: "It replaces the first matching occurrence of that substring." },
-      { id: "B", text: "It always replaces every occurrence." },
+      { id: "A", text: "It always replaces every occurrence." },
+      { id: "B", text: "It replaces the first matching occurrence of that substring." },
       { id: "C", text: "It removes the entire string." },
       { id: "D", text: "It mutates the original string." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When the search value is a string, `replace()` replaces the first matching occurrence and returns a new string.",
     tags: ["strings", "replace"]
   },
@@ -583,12 +583,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"I like cats\";\nconsole.log(text.replace(\"cats\", \"dogs\"));",
     options: [
-      { id: "A", text: "I like dogs" },
-      { id: "B", text: "I like cats" },
-      { id: "C", text: "dogs" },
+      { id: "A", text: "I like cats" },
+      { id: "B", text: "dogs" },
+      { id: "C", text: "I like dogs" },
       { id: "D", text: "I like" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`replace()` returns a new string where the first matching `cats` substring is replaced with `dogs`.",
     tags: ["strings", "replace"]
   },
@@ -601,12 +601,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "Which method splits a string into an array using a specified separator?",
     options: [
-      { id: "A", text: "split()" },
-      { id: "B", text: "divide()" },
-      { id: "C", text: "separate()" },
-      { id: "D", text: "explode()" }
+      { id: "A", text: "divide()" },
+      { id: "B", text: "separate()" },
+      { id: "C", text: "explode()" },
+      { id: "D", text: "split()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`split()` divides a string according to a separator and returns an array of substrings.",
     tags: ["strings", "split", "arrays"]
   },
@@ -637,12 +637,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst text = \"hello\";\nconsole.log(text.split(\"\"));",
     options: [
-      { id: "A", text: "[\"h\", \"e\", \"l\", \"l\", \"o\"]" },
-      { id: "B", text: "[\"hello\"]" },
+      { id: "A", text: "[\"hello\"]" },
+      { id: "B", text: "[\"h\", \"e\", \"l\", \"l\", \"o\"]" },
       { id: "C", text: "hello" },
       { id: "D", text: "[]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Splitting with an empty string separator creates an array containing the string's individual UTF-16 code units.",
     tags: ["strings", "split", "arrays"]
   },
@@ -655,12 +655,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "Which method repeats a string a specified number of times?",
     options: [
-      { id: "A", text: "repeat()" },
-      { id: "B", text: "duplicate()" },
-      { id: "C", text: "multiply()" },
+      { id: "A", text: "duplicate()" },
+      { id: "B", text: "multiply()" },
+      { id: "C", text: "repeat()" },
       { id: "D", text: "copy()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`repeat(count)` returns a new string containing the original string repeated the specified number of times.",
     tags: ["strings", "repeat"]
   },
@@ -673,12 +673,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(\"ha\".repeat(3));",
     options: [
-      { id: "A", text: "hahaha" },
-      { id: "B", text: "ha3" },
-      { id: "C", text: "ha ha ha" },
-      { id: "D", text: "ha" }
+      { id: "A", text: "ha3" },
+      { id: "B", text: "ha ha ha" },
+      { id: "C", text: "ha" },
+      { id: "D", text: "hahaha" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The string `ha` is repeated three times without an automatic separator.",
     tags: ["strings", "repeat"]
   },
@@ -709,12 +709,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst word = \"Developer\";\nconsole.log(word.charAt(3));",
     options: [
-      { id: "A", text: "e" },
-      { id: "B", text: "v" },
+      { id: "A", text: "v" },
+      { id: "B", text: "e" },
       { id: "C", text: "l" },
       { id: "D", text: "D" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The indexes are D=0, e=1, v=2, e=3, so `charAt(3)` returns `e`.",
     tags: ["strings", "charAt"]
   },
@@ -727,12 +727,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What does `charCodeAt()` return?",
     options: [
-      { id: "A", text: "The UTF-16 code unit value at the specified index." },
-      { id: "B", text: "The number of characters in the string." },
-      { id: "C", text: "The index of a character." },
+      { id: "A", text: "The number of characters in the string." },
+      { id: "B", text: "The index of a character." },
+      { id: "C", text: "The UTF-16 code unit value at the specified index." },
       { id: "D", text: "The string converted to an array." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`charCodeAt()` returns the numeric UTF-16 code unit value at the specified index.",
     tags: ["strings", "charCodeAt", "unicode"]
   },
@@ -745,12 +745,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(\"A\".charCodeAt(0));",
     options: [
-      { id: "A", text: "65" },
-      { id: "B", text: "97" },
-      { id: "C", text: "1" },
-      { id: "D", text: "\"A\"" }
+      { id: "A", text: "97" },
+      { id: "B", text: "1" },
+      { id: "C", text: "\"A\"" },
+      { id: "D", text: "65" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The UTF-16 code unit for uppercase `A` is 65.",
     tags: ["strings", "charCodeAt", "unicode"]
   },
@@ -781,12 +781,12 @@ const javascriptStringsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst name = \"Avi\";\nconst message = `Hello, ${name}!`;\nconsole.log(message);",
     options: [
-      { id: "A", text: "Hello, Avi!" },
-      { id: "B", text: "Hello, ${name}!" },
+      { id: "A", text: "Hello, ${name}!" },
+      { id: "B", text: "Hello, Avi!" },
       { id: "C", text: "Hello, name!" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Template literal interpolation evaluates the expression inside `${}` and inserts its value into the string.",
     tags: ["strings", "template-literals", "interpolation"]
   },
@@ -799,12 +799,12 @@ const javascriptStringsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst price = 100;\nconst quantity = 3;\n\nconsole.log(`Total: ${price * quantity}`);",
     options: [
-      { id: "A", text: "Total: 300" },
-      { id: "B", text: "Total: 1003" },
-      { id: "C", text: "Total: price * quantity" },
+      { id: "A", text: "Total: 1003" },
+      { id: "B", text: "Total: price * quantity" },
+      { id: "C", text: "Total: 300" },
       { id: "D", text: "300" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Expressions inside `${}` are evaluated before being inserted. `100 * 3` produces 300.",
     tags: ["strings", "template-literals", "expressions"]
   },
@@ -817,12 +817,12 @@ const javascriptStringsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst name = \"Avi\";\nconst age = 23;\n\nconst profile = `Name: ${name}\nAge: ${age}`;\n\nconsole.log(profile);",
     options: [
-      { id: "A", text: "Name: Avi\\nAge: 23" },
-      { id: "B", text: "Name: ${name}\\nAge: ${age}" },
-      { id: "C", text: "Name: Avi Age: 23" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "Name: ${name}\\nAge: ${age}" },
+      { id: "B", text: "Name: Avi Age: 23" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "Name: Avi\\nAge: 23" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Template literals preserve line breaks, and both `${name}` and `${age}` are interpolated.",
     tags: ["strings", "template-literals", "multiline"]
   },
@@ -853,12 +853,12 @@ const javascriptStringsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst input = \"  JavaScript,React,TypeScript  \";\n\nconst technologies = input\n  .trim()\n  .split(\",\")\n  .map(item => item.trim());\n\nconsole.log(technologies);",
     options: [
-      { id: "A", text: "[\"JavaScript\", \"React\", \"TypeScript\"]" },
-      { id: "B", text: "[\"JavaScript,React,TypeScript\"]" },
+      { id: "A", text: "[\"JavaScript,React,TypeScript\"]" },
+      { id: "B", text: "[\"JavaScript\", \"React\", \"TypeScript\"]" },
       { id: "C", text: "[\"  JavaScript\", \"React\", \"TypeScript  \"]" },
       { id: "D", text: "JavaScript React TypeScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`trim()` removes the outer spaces, `split()` creates the array, and `map()` removes any whitespace around each individual item.",
     tags: ["strings", "split", "map", "trim", "method-chaining"]
   },
@@ -871,12 +871,12 @@ const javascriptStringsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst sentence = \"JavaScript makes web development powerful\";\n\nconst words = sentence.split(\" \");\nconst longWords = words.filter(word => word.length > 6);\n\nconsole.log(longWords);",
     options: [
-      { id: "A", text: "[\"JavaScript\", \"development\", \"powerful\"]" },
-      { id: "B", text: "[\"JavaScript\", \"makes\", \"development\", \"powerful\"]" },
-      { id: "C", text: "[\"development\", \"powerful\"]" },
+      { id: "A", text: "[\"JavaScript\", \"makes\", \"development\", \"powerful\"]" },
+      { id: "B", text: "[\"development\", \"powerful\"]" },
+      { id: "C", text: "[\"JavaScript\", \"development\", \"powerful\"]" },
       { id: "D", text: "[\"JavaScript\"]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "After splitting the sentence into words, `filter()` keeps words whose length is greater than 6: JavaScript, development, and powerful.",
     tags: ["strings", "split", "filter", "arrays"]
   },
@@ -889,24 +889,12 @@ const javascriptStringsQuestions = [
     difficulty: "Advanced",
     question: "You are validating a user-entered username. Which approach is generally most appropriate before checking whether it starts with a required prefix?",
     options: [
-      {
-        id: "A",
-        text: "Normalize the input appropriately, such as trimming surrounding whitespace, then use startsWith() for the prefix check."
-      },
-      {
-        id: "B",
-        text: "Use split() because startsWith() only works on arrays."
-      },
-      {
-        id: "C",
-        text: "Use replace() without specifying what should be replaced."
-      },
-      {
-        id: "D",
-        text: "Compare the string's length instead of examining its contents."
-      }
+      { id: "A", text: "Use split() because startsWith() only works on arrays." },
+      { id: "B", text: "Use replace() without specifying what should be replaced." },
+      { id: "C", text: "Compare the string's length instead of examining its contents." },
+      { id: "D", text: "Normalize the input appropriately, such as trimming surrounding whitespace, then use startsWith() for the prefix check." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "String validation often involves normalizing expected input first, such as removing accidental surrounding whitespace, and then using an appropriate predicate such as `startsWith()`.",
     tags: ["strings", "validation", "trim", "startsWith", "best-practices"]
   }

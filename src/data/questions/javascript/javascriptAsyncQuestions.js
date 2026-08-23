@@ -25,12 +25,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "Which statement best describes a callback function?",
     options: [
-      { id: "A", text: "A function passed to another function so it can be called later" },
-      { id: "B", text: "A function that can only be used with Promises" },
+      { id: "A", text: "A function that can only be used with Promises" },
+      { id: "B", text: "A function passed to another function so it can be called later" },
       { id: "C", text: "A function that automatically runs before the program starts" },
       { id: "D", text: "A function that always returns a Promise" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A callback is simply a function supplied to another function so that the receiving function can invoke it at an appropriate time.",
     tags: ["callbacks", "async", "fundamentals"]
   },
@@ -43,12 +43,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "What is logged first?\n\nconsole.log(\"A\");\nsetTimeout(() => console.log(\"B\"), 0);\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "A" },
-      { id: "B", text: "B" },
-      { id: "C", text: "C" },
+      { id: "A", text: "B" },
+      { id: "B", text: "C" },
+      { id: "C", text: "A" },
       { id: "D", text: "A and B simultaneously" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first synchronous statement executes immediately. The timer callback is scheduled for later, so `A` is logged before `C`, and `B` runs after the current synchronous code finishes.",
     tags: ["setTimeout", "event-loop", "synchronous-code"]
   },
@@ -61,12 +61,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "What is the output order?\n\nconsole.log(\"start\");\nsetTimeout(() => console.log(\"timeout\"), 0);\nconsole.log(\"end\");",
     options: [
-      { id: "A", text: "start → end → timeout" },
-      { id: "B", text: "start → timeout → end" },
-      { id: "C", text: "timeout → start → end" },
-      { id: "D", text: "end → start → timeout" }
+      { id: "A", text: "start → timeout → end" },
+      { id: "B", text: "timeout → start → end" },
+      { id: "C", text: "end → start → timeout" },
+      { id: "D", text: "start → end → timeout" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Both `console.log()` calls are synchronous. The timer callback cannot execute until the current call stack is empty, so `end` is logged before `timeout`.",
     tags: ["setTimeout", "event-loop", "execution-order"]
   },
@@ -97,12 +97,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "What is a Promise in JavaScript?",
     options: [
-      { id: "A", text: "An object representing the eventual completion or failure of an asynchronous operation" },
-      { id: "B", text: "A callback that must always execute immediately" },
+      { id: "A", text: "A callback that must always execute immediately" },
+      { id: "B", text: "An object representing the eventual completion or failure of an asynchronous operation" },
       { id: "C", text: "A special type of array" },
       { id: "D", text: "A browser event listener" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A Promise represents the eventual result of an asynchronous operation. It can be pending, fulfilled, or rejected.",
     tags: ["promises", "async", "fundamentals"]
   },
@@ -115,12 +115,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "Which three states can a Promise have?",
     options: [
-      { id: "A", text: "pending, fulfilled, rejected" },
-      { id: "B", text: "waiting, running, stopped" },
-      { id: "C", text: "created, executing, destroyed" },
+      { id: "A", text: "waiting, running, stopped" },
+      { id: "B", text: "created, executing, destroyed" },
+      { id: "C", text: "pending, fulfilled, rejected" },
       { id: "D", text: "open, closed, paused" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A Promise begins as `pending` and eventually becomes either `fulfilled` or `rejected`. Once settled, its state does not change again.",
     tags: ["promises", "promise-states"]
   },
@@ -133,12 +133,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "What does this Promise eventually become?\n\nconst promise = new Promise((resolve, reject) => {\n  resolve(\"Success\");\n});",
     options: [
-      { id: "A", text: "Fulfilled with the value \"Success\"" },
-      { id: "B", text: "Rejected with the value \"Success\"" },
-      { id: "C", text: "Pending forever" },
-      { id: "D", text: "It throws automatically" }
+      { id: "A", text: "Rejected with the value \"Success\"" },
+      { id: "B", text: "Pending forever" },
+      { id: "C", text: "It throws automatically" },
+      { id: "D", text: "Fulfilled with the value \"Success\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Calling `resolve(\"Success\")` settles the Promise as fulfilled with `\"Success\"` as its fulfillment value.",
     tags: ["promises", "resolve", "fulfilled"]
   },
@@ -169,12 +169,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What does the .then() method primarily handle?",
     options: [
-      { id: "A", text: "The fulfillment value of a Promise" },
-      { id: "B", text: "Only synchronous exceptions thrown before the Promise exists" },
+      { id: "A", text: "Only synchronous exceptions thrown before the Promise exists" },
+      { id: "B", text: "The fulfillment value of a Promise" },
       { id: "C", text: "DOM rendering" },
       { id: "D", text: "Creating JavaScript modules" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A callback passed to `.then()` is executed when the Promise is fulfilled, receiving its fulfillment value.",
     tags: ["promises", "then", "fulfilled"]
   },
@@ -187,12 +187,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nPromise.resolve(10)\n  .then(value => value * 2)\n  .then(value => console.log(value));",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "10" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "10" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "20" },
       { id: "D", text: "Promise { 20 }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first `.then()` receives `10` and returns `20`. The next `.then()` receives that returned value and logs it.",
     tags: ["promises", "then", "promise-chaining"]
   },
@@ -205,12 +205,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "Why can Promise chains be written like this?\n\npromise.then(step1).then(step2).then(step3);",
     options: [
-      { id: "A", text: "Each then() returns a new Promise that can be chained" },
-      { id: "B", text: "then() always returns the original Promise" },
-      { id: "C", text: "JavaScript automatically converts functions into arrays" },
-      { id: "D", text: "Promises can only contain three callbacks" }
+      { id: "A", text: "then() always returns the original Promise" },
+      { id: "B", text: "JavaScript automatically converts functions into arrays" },
+      { id: "C", text: "Promises can only contain three callbacks" },
+      { id: "D", text: "Each then() returns a new Promise that can be chained" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`.then()` returns a new Promise. That returned Promise adopts the result of the callback, allowing subsequent asynchronous steps to be chained.",
     tags: ["promises", "then", "promise-chaining"]
   },
@@ -241,12 +241,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of .catch() in a Promise chain?",
     options: [
-      { id: "A", text: "To handle Promise rejections and errors propagated through the chain" },
-      { id: "B", text: "To convert every rejection into a DOM event" },
+      { id: "A", text: "To convert every rejection into a DOM event" },
+      { id: "B", text: "To handle Promise rejections and errors propagated through the chain" },
       { id: "C", text: "To make a Promise synchronous" },
       { id: "D", text: "To restart the JavaScript runtime" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`.catch()` registers a rejection handler. It can handle a rejection from the original Promise or an error/rejection propagated from an earlier step in the chain.",
     tags: ["promises", "catch", "error-handling"]
   },
@@ -259,12 +259,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nPromise.reject(\"error\")\n  .catch(error => {\n    console.log(error);\n    return \"recovered\";\n  })\n  .then(value => console.log(value));",
     options: [
-      { id: "A", text: "error, then recovered" },
-      { id: "B", text: "Only error" },
-      { id: "C", text: "Only recovered" },
+      { id: "A", text: "Only error" },
+      { id: "B", text: "Only recovered" },
+      { id: "C", text: "error, then recovered" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The rejection enters `.catch()`, which logs `error` and returns `recovered`. Returning normally from the catch handler fulfills the next Promise, so the following `.then()` logs `recovered`.",
     tags: ["promises", "catch", "recovery", "promise-chaining"]
   },
@@ -277,12 +277,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What happens when a Promise callback throws an error?",
     options: [
-      { id: "A", text: "The Promise returned by that callback's then() becomes rejected" },
-      { id: "B", text: "The error is always ignored" },
-      { id: "C", text: "The Promise automatically becomes fulfilled" },
-      { id: "D", text: "The entire browser crashes" }
+      { id: "A", text: "The error is always ignored" },
+      { id: "B", text: "The Promise automatically becomes fulfilled" },
+      { id: "C", text: "The entire browser crashes" },
+      { id: "D", text: "The Promise returned by that callback's then() becomes rejected" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "If a callback supplied to `.then()` throws, the Promise returned by that `.then()` becomes rejected with the thrown error.",
     tags: ["promises", "errors", "then", "rejection"]
   },
@@ -313,12 +313,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is the result?\n\nconst result = await Promise.all([\n  Promise.resolve(\"A\"),\n  Promise.resolve(\"B\"),\n  Promise.resolve(\"C\")\n]);",
     options: [
-      { id: "A", text: "[\"A\", \"B\", \"C\"]" },
-      { id: "B", text: "[\"C\", \"B\", \"A\"]" },
+      { id: "A", text: "[\"C\", \"B\", \"A\"]" },
+      { id: "B", text: "[\"A\", \"B\", \"C\"]" },
       { id: "C", text: "\"ABC\"" },
       { id: "D", text: "A single Promise object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Promise.all()` returns an array of fulfillment values in the same order as the input iterable.",
     tags: ["Promise.all", "promises", "await"]
   },
@@ -331,12 +331,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "Which method is appropriate when you need all Promise outcomes, including both fulfilled and rejected results?",
     options: [
-      { id: "A", text: "Promise.allSettled()" },
-      { id: "B", text: "Promise.onlySuccess()" },
-      { id: "C", text: "Promise.allRejected()" },
+      { id: "A", text: "Promise.onlySuccess()" },
+      { id: "B", text: "Promise.allRejected()" },
+      { id: "C", text: "Promise.allSettled()" },
       { id: "D", text: "Promise.collect()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Promise.allSettled()` waits for every input Promise to settle and returns an object describing whether each one fulfilled or rejected.",
     tags: ["Promise.allSettled", "promises", "concurrency"]
   },
@@ -349,12 +349,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What does Promise.race() return?",
     options: [
-      { id: "A", text: "A Promise that settles according to the first input Promise to settle" },
-      { id: "B", text: "The results of every Promise" },
-      { id: "C", text: "Only the first fulfilled Promise, ignoring rejections" },
-      { id: "D", text: "The slowest Promise" }
+      { id: "A", text: "The results of every Promise" },
+      { id: "B", text: "Only the first fulfilled Promise, ignoring rejections" },
+      { id: "C", text: "The slowest Promise" },
+      { id: "D", text: "A Promise that settles according to the first input Promise to settle" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Promise.race()` settles when the first input Promise settles, whether that first settlement is fulfillment or rejection.",
     tags: ["Promise.race", "promises", "concurrency"]
   },
@@ -385,12 +385,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What does this function return?\n\nasync function getValue() {\n  return 42;\n}",
     options: [
-      { id: "A", text: "A fulfilled Promise containing 42" },
-      { id: "B", text: "The number 42 directly" },
+      { id: "A", text: "The number 42 directly" },
+      { id: "B", text: "A fulfilled Promise containing 42" },
       { id: "C", text: "undefined" },
       { id: "D", text: "A rejected Promise" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Because the function is marked `async`, its returned value is automatically wrapped in a fulfilled Promise.",
     tags: ["async-functions", "return", "promises"]
   },
@@ -403,12 +403,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Beginner",
     question: "What does await do inside an async function?",
     options: [
-      { id: "A", text: "It waits for a Promise's settlement before continuing that async function's execution" },
-      { id: "B", text: "It blocks the entire JavaScript runtime until the Promise finishes" },
-      { id: "C", text: "It converts every Promise into a callback" },
+      { id: "A", text: "It blocks the entire JavaScript runtime until the Promise finishes" },
+      { id: "B", text: "It converts every Promise into a callback" },
+      { id: "C", text: "It waits for a Promise's settlement before continuing that async function's execution" },
       { id: "D", text: "It makes the Promise execute synchronously on the main thread" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`await` pauses the execution of the surrounding async function until the awaited Promise settles. It does not block the entire JavaScript thread.",
     tags: ["await", "async-await", "promises"]
   },
@@ -421,12 +421,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nasync function test() {\n  console.log(\"A\");\n  await Promise.resolve();\n  console.log(\"B\");\n}\n\ntest();\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "A → C → B" },
-      { id: "B", text: "A → B → C" },
-      { id: "C", text: "C → A → B" },
-      { id: "D", text: "B → A → C" }
+      { id: "A", text: "A → B → C" },
+      { id: "B", text: "C → A → B" },
+      { id: "C", text: "B → A → C" },
+      { id: "D", text: "A → C → B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`A` runs synchronously. When execution reaches `await`, the remainder of the async function is scheduled to continue later. The surrounding synchronous code logs `C` first, then the continuation logs `B`.",
     tags: ["await", "event-loop", "microtasks", "execution-order"]
   },
@@ -457,24 +457,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern correctly handles a rejected Promise with async/await?",
     options: [
-      {
-        id: "A",
-        text: "try { await operation(); } catch (error) { handle(error); }"
-      },
-      {
-        id: "B",
-        text: "try { operation(); } finally { await(error); }"
-      },
-      {
-        id: "C",
-        text: "catch { operation(); } without a try"
-      },
-      {
-        id: "D",
-        text: "await.catch(operation);"
-      }
+      { id: "A", text: "try { operation(); } finally { await(error); }" },
+      { id: "B", text: "try { await operation(); } catch (error) { handle(error); }" },
+      { id: "C", text: "catch { operation(); } without a try" },
+      { id: "D", text: "await.catch(operation);" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A `try/catch` surrounding an `await` can catch a rejection from the awaited Promise, allowing normal synchronous-style error handling.",
     tags: ["async-await", "try-catch", "error-handling"]
   },
@@ -487,12 +475,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is the result?\n\nasync function getUser() {\n  try {\n    return await Promise.reject(\"Failed\");\n  } catch (error) {\n    return \"Fallback\";\n  }\n}",
     options: [
-      { id: "A", text: "A fulfilled Promise containing \"Fallback\"" },
-      { id: "B", text: "A rejected Promise containing \"Failed\"" },
-      { id: "C", text: "The string \"Fallback\" directly" },
+      { id: "A", text: "A rejected Promise containing \"Failed\"" },
+      { id: "B", text: "The string \"Fallback\" directly" },
+      { id: "C", text: "A fulfilled Promise containing \"Fallback\"" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The rejected Promise is caught by `catch`, which returns `\"Fallback\"`. Since the surrounding function is async, the returned value becomes the fulfillment value of its returned Promise.",
     tags: ["async-await", "try-catch", "fallback", "promises"]
   },
@@ -505,12 +493,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is wrong with this sequential approach if the two requests are independent?\n\nconst users = await fetchUsers();\nconst posts = await fetchPosts();",
     options: [
-      { id: "A", text: "The second request is not started until the first request finishes" },
-      { id: "B", text: "Both requests are guaranteed to run simultaneously" },
-      { id: "C", text: "await cannot be used with fetch" },
-      { id: "D", text: "The code causes infinite recursion" }
+      { id: "A", text: "Both requests are guaranteed to run simultaneously" },
+      { id: "B", text: "await cannot be used with fetch" },
+      { id: "C", text: "The code causes infinite recursion" },
+      { id: "D", text: "The second request is not started until the first request finishes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The second `await` is reached only after `fetchUsers()` settles. When operations are independent, starting both first and awaiting them with `Promise.all()` can allow them to proceed concurrently.",
     tags: ["async-await", "Promise.all", "concurrency", "performance"]
   },
@@ -541,12 +529,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is fetch() primarily used for in browser JavaScript?",
     options: [
-      { id: "A", text: "Making network requests and returning a Promise for the Response" },
-      { id: "B", text: "Selecting DOM elements" },
+      { id: "A", text: "Selecting DOM elements" },
+      { id: "B", text: "Making network requests and returning a Promise for the Response" },
       { id: "C", text: "Compiling JavaScript" },
       { id: "D", text: "Creating CSS animations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`fetch()` provides a Promise-based API for making network requests. The Promise fulfills with a `Response` object when the response headers are available.",
     tags: ["fetch", "api", "networking", "promises"]
   },
@@ -559,12 +547,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What does this return?\n\nconst response = await fetch(\"/api/users\");",
     options: [
-      { id: "A", text: "A Response object" },
-      { id: "B", text: "The parsed JSON data automatically" },
-      { id: "C", text: "A DOM element" },
+      { id: "A", text: "The parsed JSON data automatically" },
+      { id: "B", text: "A DOM element" },
+      { id: "C", text: "A Response object" },
       { id: "D", text: "A JavaScript array automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`fetch()` resolves to a `Response` object. The response body must then be consumed, for example with `await response.json()` when the body contains JSON.",
     tags: ["fetch", "Response", "json", "api"]
   },
@@ -577,24 +565,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "Which code correctly parses a JSON response from fetch()?",
     options: [
-      {
-        id: "A",
-        text: "const response = await fetch(url); const data = await response.json();"
-      },
-      {
-        id: "B",
-        text: "const data = await fetch(url).json();"
-      },
-      {
-        id: "C",
-        text: "const data = JSON.parse(await fetch(url));"
-      },
-      {
-        id: "D",
-        text: "const data = response.parseJSON();"
-      }
+      { id: "A", text: "const data = await fetch(url).json();" },
+      { id: "B", text: "const data = JSON.parse(await fetch(url));" },
+      { id: "C", text: "const data = response.parseJSON();" },
+      { id: "D", text: "const response = await fetch(url); const data = await response.json();" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "First await the `fetch()` Promise to obtain the Response, then call `response.json()`, which itself returns a Promise for the parsed body.",
     tags: ["fetch", "json", "Response", "async-await"]
   },
@@ -625,24 +601,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern correctly treats a non-2xx HTTP response as an application error?",
     options: [
-      {
-        id: "A",
-        text: "const response = await fetch(url); if (!response.ok) throw new Error(`HTTP ${response.status}`);"
-      },
-      {
-        id: "B",
-        text: "const response = await fetch(url); if (response) throw new Error(\"Always failed\");"
-      },
-      {
-        id: "C",
-        text: "await fetch(url).rejectOn404();"
-      },
-      {
-        id: "D",
-        text: "if (!fetch(url)) throw new Error(\"HTTP error\");"
-      }
+      { id: "A", text: "const response = await fetch(url); if (response) throw new Error(\"Always failed\");" },
+      { id: "B", text: "const response = await fetch(url); if (!response.ok) throw new Error(`HTTP ${response.status}`);" },
+      { id: "C", text: "await fetch(url).rejectOn404();" },
+      { id: "D", text: "if (!fetch(url)) throw new Error(\"HTTP error\");" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`response.ok` is true for successful HTTP statuses in the 200–299 range. Checking it allows application code to explicitly reject unsuccessful HTTP responses.",
     tags: ["fetch", "response.ok", "http-errors", "error-handling"]
   },
@@ -655,12 +619,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is the JavaScript event loop responsible for at a high level?",
     options: [
-      { id: "A", text: "Coordinating execution of synchronous code with queued asynchronous callbacks" },
-      { id: "B", text: "Compiling JavaScript into machine code only" },
-      { id: "C", text: "Creating HTML elements" },
+      { id: "A", text: "Compiling JavaScript into machine code only" },
+      { id: "B", text: "Creating HTML elements" },
+      { id: "C", text: "Coordinating execution of synchronous code with queued asynchronous callbacks" },
       { id: "D", text: "Guaranteeing that every asynchronous operation runs immediately" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The event loop coordinates the call stack and task queues so JavaScript can process asynchronous callbacks after the current synchronous work has completed.",
     tags: ["event-loop", "call-stack", "async"]
   },
@@ -673,12 +637,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Intermediate",
     question: "What is the output order?\n\nconsole.log(\"A\");\nPromise.resolve().then(() => console.log(\"B\"));\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "A → C → B" },
-      { id: "B", text: "A → B → C" },
-      { id: "C", text: "B → A → C" },
-      { id: "D", text: "C → A → B" }
+      { id: "A", text: "A → B → C" },
+      { id: "B", text: "B → A → C" },
+      { id: "C", text: "C → A → B" },
+      { id: "D", text: "A → C → B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The synchronous logs `A` and `C` run first. The `.then()` callback is queued as a microtask and runs after the current synchronous execution completes.",
     tags: ["promises", "microtasks", "event-loop", "execution-order"]
   },
@@ -709,12 +673,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "In the common browser event-loop model, which generally runs before a queued timer callback after the current synchronous task finishes?",
     options: [
-      { id: "A", text: "Pending microtasks such as Promise reactions" },
-      { id: "B", text: "Every future timer regardless of its delay" },
+      { id: "A", text: "Every future timer regardless of its delay" },
+      { id: "B", text: "Pending microtasks such as Promise reactions" },
       { id: "C", text: "All network requests synchronously" },
       { id: "D", text: "The next page navigation" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "After the current task completes, the JavaScript environment processes pending microtasks before moving on to another task such as a timer callback.",
     tags: ["microtasks", "macrotasks", "event-loop"]
   },
@@ -727,12 +691,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nPromise.resolve()\n  .then(() => {\n    console.log(\"A\");\n    return Promise.resolve();\n  })\n  .then(() => console.log(\"B\"));\n\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "C → A → B" },
-      { id: "B", text: "A → B → C" },
-      { id: "C", text: "A → C → B" },
+      { id: "A", text: "A → B → C" },
+      { id: "B", text: "A → C → B" },
+      { id: "C", text: "C → A → B" },
       { id: "D", text: "C → B → A" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`C` is synchronous and runs first. The first Promise reaction then logs `A`. Returning a Promise causes the next `.then()` to wait for that returned Promise's settlement before its reaction runs, so `B` follows.",
     tags: ["promises", "microtasks", "promise-chaining", "event-loop"]
   },
@@ -745,12 +709,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "What is the output order?\n\nasync function test() {\n  console.log(\"A\");\n  await null;\n  console.log(\"B\");\n}\n\ntest();\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "A → C → B" },
-      { id: "B", text: "A → B → C" },
-      { id: "C", text: "C → A → B" },
-      { id: "D", text: "B → A → C" }
+      { id: "A", text: "A → B → C" },
+      { id: "B", text: "C → A → B" },
+      { id: "C", text: "B → A → C" },
+      { id: "D", text: "A → C → B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The code before `await` runs synchronously. Even though `null` is not a Promise, `await` resumes the async function asynchronously, so the surrounding synchronous `console.log(\"C\")` runs first.",
     tags: ["await", "microtasks", "async-functions", "event-loop"]
   },
@@ -781,12 +745,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "What is the problem with this pattern?\n\nconst data = await fetch(url).then(response => response.json());\n\nif (!response.ok) {\n  throw new Error(\"Request failed\");\n}",
     options: [
-      { id: "A", text: "response is not available in that scope, and the HTTP status should be checked before parsing the body" },
-      { id: "B", text: "fetch cannot be combined with then()" },
+      { id: "A", text: "fetch cannot be combined with then()" },
+      { id: "B", text: "response is not available in that scope, and the HTTP status should be checked before parsing the body" },
       { id: "C", text: "response.ok always throws automatically" },
       { id: "D", text: "json() returns a synchronous object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The variable named `response` exists only as the callback parameter inside `.then()`. A robust implementation should retain the Response, check `response.ok`, and then parse the body.",
     tags: ["fetch", "response.ok", "scope", "error-handling"]
   },
@@ -799,24 +763,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "Which implementation correctly handles both network failures and unsuccessful HTTP responses?\n\nasync function getData(url) {",
     options: [
-      {
-        id: "A",
-        text: "try { const response = await fetch(url); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { throw error; }"
-      },
-      {
-        id: "B",
-        text: "return fetch(url).json();"
-      },
-      {
-        id: "C",
-        text: "const response = fetch(url); return response.data;"
-      },
-      {
-        id: "D",
-        text: "fetch(url); return undefined;"
-      }
+      { id: "A", text: "return fetch(url).json();" },
+      { id: "B", text: "const response = fetch(url); return response.data;" },
+      { id: "C", text: "try { const response = await fetch(url); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { throw error; }" },
+      { id: "D", text: "fetch(url); return undefined;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `try/catch` handles rejected network requests. The explicit `response.ok` check converts unsuccessful HTTP responses into thrown errors, and `response.json()` parses a successful JSON response.",
     tags: ["fetch", "error-handling", "response.ok", "async-await"]
   },
@@ -829,12 +781,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "Why should you avoid unnecessarily awaiting independent operations one after another?",
     options: [
-      { id: "A", text: "It can introduce avoidable latency because each operation waits for the previous one before starting" },
-      { id: "B", text: "await permanently blocks the browser" },
-      { id: "C", text: "Promises cannot run independently" },
-      { id: "D", text: "It causes every Promise to reject" }
+      { id: "A", text: "await permanently blocks the browser" },
+      { id: "B", text: "Promises cannot run independently" },
+      { id: "C", text: "It causes every Promise to reject" },
+      { id: "D", text: "It can introduce avoidable latency because each operation waits for the previous one before starting" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Sequential awaits can serialize independent work. Starting independent operations before awaiting their combined results can reduce total waiting time.",
     tags: ["async-await", "concurrency", "performance"]
   },
@@ -865,12 +817,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "What is wrong with this retry implementation?\n\nasync function getData() {\n  try {\n    return await fetchData();\n  } catch (error) {\n    return getData();\n  }\n}",
     options: [
-      { id: "A", text: "A persistent failure can cause unbounded recursive retries" },
-      { id: "B", text: "async functions cannot call themselves" },
+      { id: "A", text: "async functions cannot call themselves" },
+      { id: "B", text: "A persistent failure can cause unbounded recursive retries" },
       { id: "C", text: "catch cannot return a Promise" },
       { id: "D", text: "fetchData can only be called once" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Every failure immediately calls `getData()` again without a retry limit, delay, or stopping condition. Persistent failures can therefore produce an unbounded retry loop.",
     tags: ["async-await", "error-handling", "retry", "recursion"]
   },
@@ -883,24 +835,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "Which approach is better for three independent API requests when you need all successful results together?",
     options: [
-      {
-        id: "A",
-        text: "const promises = [getUsers(), getPosts(), getProducts()]; const [users, posts, products] = await Promise.all(promises);"
-      },
-      {
-        id: "B",
-        text: "await getUsers(); await getPosts(); await getProducts();"
-      },
-      {
-        id: "C",
-        text: "setTimeout(getUsers, 0); setTimeout(getPosts, 0); setTimeout(getProducts, 0);"
-      },
-      {
-        id: "D",
-        text: "Only call getUsers() because Promise.all supports one Promise"
-      }
+      { id: "A", text: "await getUsers(); await getPosts(); await getProducts();" },
+      { id: "B", text: "setTimeout(getUsers, 0); setTimeout(getPosts, 0); setTimeout(getProducts, 0);" },
+      { id: "C", text: "const promises = [getUsers(), getPosts(), getProducts()]; const [users, posts, products] = await Promise.all(promises);" },
+      { id: "D", text: "Only call getUsers() because Promise.all supports one Promise" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The three functions are started without waiting for each other, and `Promise.all()` waits for all of them while preserving the input order of their results.",
     tags: ["Promise.all", "concurrency", "api", "performance"]
   },
@@ -913,12 +853,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\nasync function load() {\n  const response = await fetch(\"/api/data\");\n  const data = await response.json();\n  return data;\n}\n\nconst result = load();\nconsole.log(result);\n\nWhat is result?",
     options: [
-      { id: "A", text: "A Promise that will eventually fulfill with the parsed data" },
-      { id: "B", text: "The parsed data object immediately" },
-      { id: "C", text: "The Response object" },
-      { id: "D", text: "Always undefined" }
+      { id: "A", text: "The parsed data object immediately" },
+      { id: "B", text: "The Response object" },
+      { id: "C", text: "Always undefined" },
+      { id: "D", text: "A Promise that will eventually fulfill with the parsed data" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because `load()` is async, calling it returns a Promise. The Promise eventually fulfills with the value returned by the function, which is the parsed data.",
     tags: ["async-functions", "fetch", "promises", "return"]
   },
@@ -949,24 +889,12 @@ const javascriptAsyncQuestions = [
     difficulty: "Advanced",
     question: "You need to load a user and then use that user's ID to load their posts. Which implementation correctly models the dependency between the operations?",
     options: [
-      {
-        id: "A",
-        text: "const user = await getUser(); const posts = await getPosts(user.id);"
-      },
-      {
-        id: "B",
-        text: "const [user, posts] = await Promise.all([getUser(), getPosts(user.id)]);"
-      },
-      {
-        id: "C",
-        text: "const posts = await getPosts(user.id); const user = await getUser();"
-      },
-      {
-        id: "D",
-        text: "Promise.all() must always be used for dependent operations"
-      }
+      { id: "A", text: "const [user, posts] = await Promise.all([getUser(), getPosts(user.id)]);" },
+      { id: "B", text: "const user = await getUser(); const posts = await getPosts(user.id);" },
+      { id: "C", text: "const posts = await getPosts(user.id); const user = await getUser();" },
+      { id: "D", text: "Promise.all() must always be used for dependent operations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The second operation depends on the result of the first because it needs `user.id`. Therefore the user must be obtained before `getPosts(user.id)` can be started. `Promise.all()` is appropriate for independent operations, not operations with this dependency.",
     tags: ["async-await", "dependencies", "Promise.all", "api", "concurrency"]
   }

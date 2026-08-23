@@ -7,12 +7,12 @@ const reactHooksQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the useState Hook?",
     options: [
-      { id: "A", text: "To add state to a function component." },
-      { id: "B", text: "To create a database connection." },
-      { id: "C", text: "To define application routes." },
+      { id: "A", text: "To create a database connection." },
+      { id: "B", text: "To define application routes." },
+      { id: "C", text: "To add state to a function component." },
       { id: "D", text: "To directly manipulate CSS." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "useState lets a function component retain a value between renders and provides a setter for requesting updates to that value.",
     tags: ["useState", "state", "hooks"]
   },
@@ -26,11 +26,11 @@ const reactHooksQuestions = [
     question: "What does useState(0) return?",
     options: [
       { id: "A", text: "Only the number 0." },
-      { id: "B", text: "A state value and a state setter function." },
-      { id: "C", text: "An object containing value and update methods." },
-      { id: "D", text: "A Promise containing 0." }
+      { id: "B", text: "An object containing value and update methods." },
+      { id: "C", text: "A Promise containing 0." },
+      { id: "D", text: "A state value and a state setter function." }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "useState returns a two-item array: the current state value and a setter function.",
     tags: ["useState", "state", "hooks"]
   },
@@ -43,12 +43,12 @@ const reactHooksQuestions = [
     difficulty: "Beginner",
     question: "What is the initial value of count here?\n\nconst [count, setCount] = useState(10);",
     options: [
-      { id: "A", text: "0" },
-      { id: "B", text: "10" },
+      { id: "A", text: "10" },
+      { id: "B", text: "0" },
       { id: "C", text: "undefined" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The argument passed to useState is used as the initial state value, so count starts at 10.",
     tags: ["useState", "initial-state"]
   },
@@ -79,12 +79,12 @@ const reactHooksQuestions = [
     difficulty: "Beginner",
     question: "Why is directly modifying a state variable incorrect?\n\ncount = count + 1;",
     options: [
-      { id: "A", text: "It bypasses React's state update mechanism." },
-      { id: "B", text: "JavaScript does not allow arithmetic on state." },
-      { id: "C", text: "React state can only contain strings." },
+      { id: "A", text: "JavaScript does not allow arithmetic on state." },
+      { id: "B", text: "React state can only contain strings." },
+      { id: "C", text: "It bypasses React's state update mechanism." },
       { id: "D", text: "The browser automatically resets the value." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Direct assignment does not tell React that state changed. The setter should be used to request an update and corresponding render.",
     tags: ["useState", "state-updates", "common-mistakes"]
   },
@@ -97,12 +97,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "When should the functional updater form of a state setter be preferred?",
     options: [
-      { id: "A", text: "When the next state depends on the previous state." },
-      { id: "B", text: "Whenever the state is a string." },
-      { id: "C", text: "Only when using useEffect." },
-      { id: "D", text: "Only when state contains an object." }
+      { id: "A", text: "Whenever the state is a string." },
+      { id: "B", text: "Only when using useEffect." },
+      { id: "C", text: "Only when state contains an object." },
+      { id: "D", text: "When the next state depends on the previous state." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A functional updater receives the previous state value, making it the reliable form when calculating the next state from that previous value.",
     tags: ["useState", "functional-updater", "state"]
   },
@@ -115,12 +115,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What is the result after one click?\n\nconst [count, setCount] = useState(0);\n\nfunction handleClick() {\n  setCount(c => c + 1);\n}",
     options: [
-      { id: "A", text: "0" },
-      { id: "B", text: "1" },
+      { id: "A", text: "1" },
+      { id: "B", text: "0" },
       { id: "C", text: "2" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The updater receives the current state value, 0, and returns 1.",
     tags: ["useState", "functional-updater", "code-reading"]
   },
@@ -134,11 +134,11 @@ const reactHooksQuestions = [
     question: "What is the result of these two updater calls when count starts at 0?\n\nsetCount(c => c + 1);\nsetCount(c => c + 1);",
     options: [
       { id: "A", text: "0" },
-      { id: "B", text: "1" },
-      { id: "C", text: "2" },
+      { id: "B", text: "2" },
+      { id: "C", text: "1" },
       { id: "D", text: "It throws an error." }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Each functional updater receives the result of the preceding update, so the two increments produce 2.",
     tags: ["useState", "functional-updater", "batching"]
   },
@@ -151,12 +151,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What does the lazy initializer form of useState allow?",
     options: [
-      { id: "A", text: "It allows an expensive initial-state calculation to be provided as a function." },
-      { id: "B", text: "It makes every state update asynchronous." },
-      { id: "C", text: "It delays all component rendering indefinitely." },
+      { id: "A", text: "It makes every state update asynchronous." },
+      { id: "B", text: "It delays all component rendering indefinitely." },
+      { id: "C", text: "It allows an expensive initial-state calculation to be provided as a function." },
       { id: "D", text: "It stores state only in localStorage." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Passing a function to useState lets React use that function to calculate the initial state rather than requiring the calculation's result to be computed directly during the call.",
     tags: ["useState", "lazy-initialization", "performance"]
   },
@@ -169,12 +169,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "Which is a valid useState declaration for an object?",
     options: [
-      { id: "A", text: "const [user, setUser] = useState({ name: \"Avi\", age: 23 });" },
-      { id: "B", text: "const [user] = useState.object({ name: \"Avi\" });" },
-      { id: "C", text: "const user = useState({ name: \"Avi\" }).object();" },
-      { id: "D", text: "const [user, setUser] = state({ name: \"Avi\" });" }
+      { id: "A", text: "const [user] = useState.object({ name: \"Avi\" });" },
+      { id: "B", text: "const user = useState({ name: \"Avi\" }).object();" },
+      { id: "C", text: "const [user, setUser] = state({ name: \"Avi\" });" },
+      { id: "D", text: "const [user, setUser] = useState({ name: \"Avi\", age: 23 });" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "useState can hold objects just like other JavaScript values.",
     tags: ["useState", "objects", "state"]
   },
@@ -205,12 +205,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of useEffect?",
     options: [
-      { id: "A", text: "To synchronize a component with external systems and perform side effects." },
-      { id: "B", text: "To replace JSX." },
+      { id: "A", text: "To replace JSX." },
+      { id: "B", text: "To synchronize a component with external systems and perform side effects." },
       { id: "C", text: "To create CSS classes." },
       { id: "D", text: "To define component props." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "useEffect is designed for synchronizing React components with external systems and performing effects such as subscriptions, timers, and external data synchronization.",
     tags: ["useEffect", "side-effects", "hooks"]
   },
@@ -223,12 +223,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "When does an effect with no dependency array generally run?",
     options: [
-      { id: "A", text: "After every completed render." },
-      { id: "B", text: "Only before the first render." },
-      { id: "C", text: "Only when the component unmounts." },
+      { id: "A", text: "Only before the first render." },
+      { id: "B", text: "Only when the component unmounts." },
+      { id: "C", text: "After every completed render." },
       { id: "D", text: "It never runs." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When no dependency array is provided, the effect is run after each completed render.",
     tags: ["useEffect", "dependencies", "effects"]
   },
@@ -241,12 +241,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What does an empty dependency array mean in this effect?\n\nuseEffect(() => {\n  console.log(\"effect\");\n}, []);",
     options: [
-      { id: "A", text: "The effect has no listed reactive dependencies." },
-      { id: "B", text: "The effect runs after every render." },
-      { id: "C", text: "The effect never executes." },
-      { id: "D", text: "The effect automatically depends on every prop." }
+      { id: "A", text: "The effect runs after every render." },
+      { id: "B", text: "The effect never executes." },
+      { id: "C", text: "The effect automatically depends on every prop." },
+      { id: "D", text: "The effect has no listed reactive dependencies." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An empty dependency array means there are no dependencies listed for the effect. In the usual lifecycle, it runs after the initial commit and its cleanup runs when appropriate.",
     tags: ["useEffect", "dependencies"]
   },
@@ -277,12 +277,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "Consider:\n\nuseEffect(() => {\n  document.title = name;\n}, [name]);\n\nWhen does the effect re-run because of its dependency?",
     options: [
-      { id: "A", text: "When name changes between renders." },
-      { id: "B", text: "Only when the component receives a new DOM node." },
+      { id: "A", text: "Only when the component receives a new DOM node." },
+      { id: "B", text: "When name changes between renders." },
       { id: "C", text: "Every millisecond." },
       { id: "D", text: "Only when name is undefined." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "name is listed as a dependency, so a changed name value causes React to synchronize the effect again.",
     tags: ["useEffect", "dependencies", "side-effects"]
   },
@@ -295,12 +295,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What should an effect cleanup function commonly be used for?",
     options: [
-      { id: "A", text: "Releasing resources created by the effect, such as subscriptions or timers." },
-      { id: "B", text: "Updating state on every render." },
-      { id: "C", text: "Rendering JSX returned by the component." },
+      { id: "A", text: "Updating state on every render." },
+      { id: "B", text: "Rendering JSX returned by the component." },
+      { id: "C", text: "Releasing resources created by the effect, such as subscriptions or timers." },
       { id: "D", text: "Defining the component's props." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Cleanup lets an effect undo or disconnect external resources that it established.",
     tags: ["useEffect", "cleanup", "subscriptions"]
   },
@@ -313,12 +313,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "Which effect correctly cleans up a window event listener?",
     options: [
-      { id: "A", text: "return () => window.removeEventListener(\"resize\", handleResize);" },
-      { id: "B", text: "return window.removeEventListener(\"resize\", handleResize);" },
-      { id: "C", text: "cleanup(window.addEventListener(\"resize\", handleResize));" },
-      { id: "D", text: "window.cleanup(\"resize\", handleResize);" }
+      { id: "A", text: "return window.removeEventListener(\"resize\", handleResize);" },
+      { id: "B", text: "cleanup(window.addEventListener(\"resize\", handleResize));" },
+      { id: "C", text: "window.cleanup(\"resize\", handleResize);" },
+      { id: "D", text: "return () => window.removeEventListener(\"resize\", handleResize);" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The cleanup function should return a function that removes the listener established by the effect.",
     tags: ["useEffect", "cleanup", "events"]
   },
@@ -349,12 +349,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "What is a common problem with this effect?\n\nuseEffect(() => {\n  setCount(count + 1);\n}, [count]);",
     options: [
-      { id: "A", text: "It can repeatedly update count because changing count causes the effect to run again." },
-      { id: "B", text: "It can never update count." },
+      { id: "A", text: "It can never update count." },
+      { id: "B", text: "It can repeatedly update count because changing count causes the effect to run again." },
       { id: "C", text: "It automatically resets count to zero." },
       { id: "D", text: "The dependency array is ignored." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The effect changes count, and count is itself a dependency. The resulting state change can cause another effect execution, potentially creating an update loop.",
     tags: ["useEffect", "dependencies", "infinite-loop"]
   },
@@ -367,12 +367,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What is useRef primarily useful for?",
     options: [
-      { id: "A", text: "Holding a mutable value that persists across renders without causing a render when changed." },
-      { id: "B", text: "Replacing every useState variable." },
-      { id: "C", text: "Fetching data from APIs automatically." },
+      { id: "A", text: "Replacing every useState variable." },
+      { id: "B", text: "Fetching data from APIs automatically." },
+      { id: "C", text: "Holding a mutable value that persists across renders without causing a render when changed." },
       { id: "D", text: "Creating application routes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "useRef returns an object with a current property that persists across renders. Changing current does not itself trigger a re-render.",
     tags: ["useRef", "refs", "hooks"]
   },
@@ -386,11 +386,11 @@ const reactHooksQuestions = [
     question: "Which property is commonly used to access the value stored in a ref?",
     options: [
       { id: "A", text: "value" },
-      { id: "B", text: "current" },
-      { id: "C", text: "data" },
-      { id: "D", text: "refValue" }
+      { id: "B", text: "data" },
+      { id: "C", text: "refValue" },
+      { id: "D", text: "current" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A ref object returned by useRef exposes its mutable value through the current property.",
     tags: ["useRef", "current", "refs"]
   },
@@ -421,12 +421,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "Why would you choose useRef instead of useState for a value that should not trigger a re-render when changed?",
     options: [
-      { id: "A", text: "Updating ref.current does not itself schedule a React render." },
-      { id: "B", text: "useRef values are automatically persisted to a server." },
+      { id: "A", text: "useRef values are automatically persisted to a server." },
+      { id: "B", text: "Updating ref.current does not itself schedule a React render." },
       { id: "C", text: "useRef values can only contain DOM nodes." },
       { id: "D", text: "useState cannot store primitive values." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Refs are useful for mutable values that need to persist across renders but do not belong in the rendered UI.",
     tags: ["useRef", "useState", "rendering"]
   },
@@ -439,12 +439,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "What is a potential mistake when using a ref for data that should appear immediately in the UI?",
     options: [
-      { id: "A", text: "Changing ref.current does not trigger a re-render." },
-      { id: "B", text: "Refs cannot hold numbers." },
-      { id: "C", text: "Refs are automatically reset after every render." },
+      { id: "A", text: "Refs cannot hold numbers." },
+      { id: "B", text: "Refs are automatically reset after every render." },
+      { id: "C", text: "Changing ref.current does not trigger a re-render." },
       { id: "D", text: "Refs can only be used in class components." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "If changing a value should cause the displayed UI to update, state is generally more appropriate because ref mutations do not themselves trigger rendering.",
     tags: ["useRef", "state", "common-mistakes"]
   },
@@ -457,12 +457,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What is React Context primarily designed to help with?",
     options: [
-      { id: "A", text: "Making values available to descendants without passing them through every intermediate component." },
-      { id: "B", text: "Replacing all state management." },
-      { id: "C", text: "Creating CSS variables." },
-      { id: "D", text: "Making every component globally accessible." }
+      { id: "A", text: "Replacing all state management." },
+      { id: "B", text: "Creating CSS variables." },
+      { id: "C", text: "Making every component globally accessible." },
+      { id: "D", text: "Making values available to descendants without passing them through every intermediate component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Context provides a mechanism for sharing values with components deeper in a tree without manually threading props through every intermediate component.",
     tags: ["useContext", "context", "state-management"]
   },
@@ -493,12 +493,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What happens when a component calls useContext(MyContext) and no matching provider is above it?",
     options: [
-      { id: "A", text: "It receives the context's default value." },
-      { id: "B", text: "It automatically creates a provider." },
+      { id: "A", text: "It automatically creates a provider." },
+      { id: "B", text: "It receives the context's default value." },
       { id: "C", text: "It always returns undefined regardless of the default." },
       { id: "D", text: "It causes the application to reload." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When there is no matching provider in the component's ancestor tree, useContext returns the default value supplied when the context was created.",
     tags: ["useContext", "context", "default-value"]
   },
@@ -511,12 +511,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern correctly provides a context value?",
     options: [
-      { id: "A", text: "<ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>" },
-      { id: "B", text: "<ThemeContext value={theme}>{children}</ThemeContext>" },
-      { id: "C", text: "<ThemeContext.Context theme={theme}>{children}</ThemeContext.Context>" },
+      { id: "A", text: "<ThemeContext value={theme}>{children}</ThemeContext>" },
+      { id: "B", text: "<ThemeContext.Context theme={theme}>{children}</ThemeContext.Context>" },
+      { id: "C", text: "<ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>" },
       { id: "D", text: "<Provider.Theme value={theme}>{children}</Provider.Theme>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A Context provider supplies its value through the provider's value prop and makes that value available to descendant consumers.",
     tags: ["useContext", "context", "provider"]
   },
@@ -529,12 +529,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Why can putting frequently changing values into one broad Context cause performance concerns?",
     options: [
-      { id: "A", text: "Consumers of that context may update when the provided value changes." },
-      { id: "B", text: "Context values cannot contain changing data." },
-      { id: "C", text: "Context automatically forces a full browser reload." },
-      { id: "D", text: "Context disables React's rendering system." }
+      { id: "A", text: "Context values cannot contain changing data." },
+      { id: "B", text: "Context automatically forces a full browser reload." },
+      { id: "C", text: "Context disables React's rendering system." },
+      { id: "D", text: "Consumers of that context may update when the provided value changes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Components consuming a context respond to changes in its value. A very broad context with frequently changing data can therefore affect many consumers.",
     tags: ["useContext", "performance", "context"]
   },
@@ -565,12 +565,12 @@ const reactHooksQuestions = [
     difficulty: "Beginner",
     question: "What naming convention should a custom Hook normally follow?",
     options: [
-      { id: "A", text: "Its name should begin with use." },
-      { id: "B", text: "Its name must end with Hook." },
+      { id: "A", text: "Its name must end with Hook." },
+      { id: "B", text: "Its name should begin with use." },
       { id: "C", text: "Its name must contain React." },
       { id: "D", text: "Its name must be lowercase." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Custom Hook names conventionally begin with use, such as useOnlineStatus or useLocalStorage.",
     tags: ["custom-hooks", "naming", "rules-of-hooks"]
   },
@@ -583,12 +583,12 @@ const reactHooksQuestions = [
     difficulty: "Intermediate",
     question: "What is the main benefit of extracting repeated Hook logic into a custom Hook?",
     options: [
-      { id: "A", text: "It allows the stateful logic to be reused across components." },
-      { id: "B", text: "It makes all components share the same state automatically." },
-      { id: "C", text: "It converts local state into Context." },
+      { id: "A", text: "It makes all components share the same state automatically." },
+      { id: "B", text: "It converts local state into Context." },
+      { id: "C", text: "It allows the stateful logic to be reused across components." },
       { id: "D", text: "It prevents the custom Hook from re-rendering." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Custom Hooks share logic, not a single state instance. Each component calling the custom Hook normally gets its own Hook state.",
     tags: ["custom-hooks", "reusability", "state"]
   },
@@ -601,12 +601,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "If two components both call the same custom Hook containing useState, what normally happens?",
     options: [
-      { id: "A", text: "Each component receives its own independent state for that Hook call." },
-      { id: "B", text: "Both components automatically share one state value." },
-      { id: "C", text: "The second component cannot use the Hook." },
-      { id: "D", text: "The state is automatically moved into Context." }
+      { id: "A", text: "Both components automatically share one state value." },
+      { id: "B", text: "The second component cannot use the Hook." },
+      { id: "C", text: "The state is automatically moved into Context." },
+      { id: "D", text: "Each component receives its own independent state for that Hook call." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom Hooks share logic, not state instances. Each component invocation has its own Hook state associated with that component.",
     tags: ["custom-hooks", "state", "reusability"]
   },
@@ -637,12 +637,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Why should Hooks not normally be called conditionally?",
     options: [
-      { id: "A", text: "React relies on a consistent order of Hook calls between renders." },
-      { id: "B", text: "Conditional statements cannot contain JavaScript." },
+      { id: "A", text: "Conditional statements cannot contain JavaScript." },
+      { id: "B", text: "React relies on a consistent order of Hook calls between renders." },
       { id: "C", text: "Hooks only work in class components." },
       { id: "D", text: "Conditional Hooks are always converted into props." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "React associates Hook state with the order of Hook calls. Changing that order between renders can cause Hook state to become associated with the wrong call.",
     tags: ["rules-of-hooks", "hooks", "rendering"]
   },
@@ -655,12 +655,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Which example violates the Rules of Hooks?",
     options: [
-      { id: "A", text: "if (loggedIn) { useEffect(() => {}, []); }" },
-      { id: "B", text: "useEffect(() => {}, []);" },
-      { id: "C", text: "function useUser() { return useState(null); }" },
+      { id: "A", text: "useEffect(() => {}, []);" },
+      { id: "B", text: "function useUser() { return useState(null); }" },
+      { id: "C", text: "if (loggedIn) { useEffect(() => {}, []); }" },
       { id: "D", text: "function App() { const [open, setOpen] = useState(false); return null; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The Hook is called conditionally. Instead, call the Hook unconditionally and place the condition inside the effect or component logic as appropriate.",
     tags: ["rules-of-hooks", "useEffect", "common-mistakes"]
   },
@@ -673,12 +673,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "What is the best general approach when an effect should only perform an action if a condition is true?",
     options: [
-      { id: "A", text: "Call the Hook unconditionally and put the condition inside the effect logic." },
-      { id: "B", text: "Call the Hook only when the condition is true." },
-      { id: "C", text: "Move the Hook into a loop." },
-      { id: "D", text: "Replace the Hook with a DOM event." }
+      { id: "A", text: "Call the Hook only when the condition is true." },
+      { id: "B", text: "Move the Hook into a loop." },
+      { id: "C", text: "Replace the Hook with a DOM event." },
+      { id: "D", text: "Call the Hook unconditionally and put the condition inside the effect logic." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The Hook call itself should remain unconditional. Conditional behavior can be implemented inside the effect callback.",
     tags: ["rules-of-hooks", "useEffect", "conditional-logic"]
   },
@@ -709,12 +709,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "What is a potential issue with storing a value in a ref when that value is also displayed in JSX?",
     options: [
-      { id: "A", text: "Changing the ref does not automatically cause the displayed JSX to update." },
-      { id: "B", text: "Refs cannot be read during rendering." },
+      { id: "A", text: "Refs cannot be read during rendering." },
+      { id: "B", text: "Changing the ref does not automatically cause the displayed JSX to update." },
       { id: "C", text: "JSX cannot display numbers." },
       { id: "D", text: "Refs are reset after every event." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Ref mutations do not schedule renders. State is generally more appropriate when a value participates directly in the rendered UI.",
     tags: ["useRef", "rendering", "state"]
   },
@@ -727,12 +727,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\nfunction Timer() {\n  const id = useRef(null);\n\n  useEffect(() => {\n    id.current = setInterval(() => {}, 1000);\n    return () => clearInterval(id.current);\n  }, []);\n}\n\nWhy is the ref useful here?",
     options: [
-      { id: "A", text: "It provides a persistent place to store the interval ID without making that ID rendered state." },
-      { id: "B", text: "It causes the interval to render every second." },
-      { id: "C", text: "It automatically clears all browser timers." },
+      { id: "A", text: "It causes the interval to render every second." },
+      { id: "B", text: "It automatically clears all browser timers." },
+      { id: "C", text: "It provides a persistent place to store the interval ID without making that ID rendered state." },
       { id: "D", text: "It makes setInterval synchronous." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The interval ID is mutable information needed by the cleanup but does not need to appear in the UI, making a ref appropriate.",
     tags: ["useRef", "useEffect", "cleanup", "timers"]
   },
@@ -745,12 +745,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Why should an effect that creates a subscription usually return a cleanup function?",
     options: [
-      { id: "A", text: "To unsubscribe when the effect is no longer active." },
-      { id: "B", text: "To force the component to render twice." },
-      { id: "C", text: "To preserve the subscription forever." },
-      { id: "D", text: "To convert the subscription into state." }
+      { id: "A", text: "To force the component to render twice." },
+      { id: "B", text: "To preserve the subscription forever." },
+      { id: "C", text: "To convert the subscription into state." },
+      { id: "D", text: "To unsubscribe when the effect is no longer active." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Cleanup prevents stale subscriptions and resource leaks by disconnecting the external resource when the effect is cleaned up.",
     tags: ["useEffect", "cleanup", "subscriptions"]
   },
@@ -781,12 +781,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Which situation is most appropriate for useEffect?",
     options: [
-      { id: "A", text: "Connecting to an external subscription when a component needs to synchronize with it." },
-      { id: "B", text: "Calculating totalPrice directly from price and quantity during rendering." },
+      { id: "A", text: "Calculating totalPrice directly from price and quantity during rendering." },
+      { id: "B", text: "Connecting to an external subscription when a component needs to synchronize with it." },
       { id: "C", text: "Rendering a list using map." },
       { id: "D", text: "Formatting a string before displaying it." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Effects are intended for synchronization with external systems. Pure calculations based on current props and state generally do not require an effect.",
     tags: ["useEffect", "side-effects", "derived-data"]
   },
@@ -799,12 +799,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "Why is it often unnecessary to use useEffect to calculate a value directly derived from state?",
     options: [
-      { id: "A", text: "The value can usually be calculated during rendering without an extra synchronization step." },
-      { id: "B", text: "useEffect cannot access state." },
-      { id: "C", text: "State values cannot be calculated." },
+      { id: "A", text: "useEffect cannot access state." },
+      { id: "B", text: "State values cannot be calculated." },
+      { id: "C", text: "The value can usually be calculated during rendering without an extra synchronization step." },
       { id: "D", text: "React automatically calculates every derived value." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "If a value is purely derived from existing props or state, calculating it during rendering avoids unnecessary state and effect synchronization.",
     tags: ["useEffect", "derived-data", "state-design"]
   },
@@ -817,12 +817,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "A custom Hook contains useEffect and useState. What does the custom Hook primarily allow you to reuse?",
     options: [
-      { id: "A", text: "The logic involving state and effects." },
-      { id: "B", text: "The exact same state instance across every caller." },
-      { id: "C", text: "A global DOM node." },
-      { id: "D", text: "The component's JSX tree." }
+      { id: "A", text: "The exact same state instance across every caller." },
+      { id: "B", text: "A global DOM node." },
+      { id: "C", text: "The component's JSX tree." },
+      { id: "D", text: "The logic involving state and effects." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom Hooks extract reusable behavior and stateful logic. Each component using the Hook still has its own Hook state unless shared state is explicitly introduced through another mechanism.",
     tags: ["custom-hooks", "useState", "useEffect"]
   },
@@ -853,12 +853,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "What is the difference between sharing logic with a custom Hook and sharing state through Context?",
     options: [
-      { id: "A", text: "A custom Hook reuses logic, while Context can make a shared value available to many descendants." },
-      { id: "B", text: "They are exactly the same mechanism." },
+      { id: "A", text: "They are exactly the same mechanism." },
+      { id: "B", text: "A custom Hook reuses logic, while Context can make a shared value available to many descendants." },
       { id: "C", text: "Custom Hooks always create global state." },
       { id: "D", text: "Context can only be used for CSS." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Custom Hooks encapsulate reusable behavior, while Context provides a way to supply values through a component tree. They can also be used together.",
     tags: ["custom-hooks", "useContext", "state-management"]
   },
@@ -871,12 +871,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "A custom Hook returns [value, setValue]. What is the main advantage of this API design?",
     options: [
-      { id: "A", text: "It can expose a simple interface while hiding the Hook's internal implementation details." },
-      { id: "B", text: "It forces all consumers to share the same state." },
-      { id: "C", text: "It prevents the Hook from using useState." },
+      { id: "A", text: "It forces all consumers to share the same state." },
+      { id: "B", text: "It prevents the Hook from using useState." },
+      { id: "C", text: "It can expose a simple interface while hiding the Hook's internal implementation details." },
       { id: "D", text: "It automatically turns the Hook into Context." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Custom Hooks can encapsulate implementation details and expose only the values and functions a consuming component needs.",
     tags: ["custom-hooks", "abstraction", "reusability"]
   },
@@ -889,12 +889,12 @@ const reactHooksQuestions = [
     difficulty: "Advanced",
     question: "A component needs to remember the previous value of a prop between renders without causing another render when that remembered value changes. Which approach is most appropriate?",
     options: [
-      { id: "A", text: "Store the previous value in a ref and update the ref in an appropriate effect." },
-      { id: "B", text: "Always mutate the prop directly." },
-      { id: "C", text: "Store the value in Context regardless of the component tree." },
-      { id: "D", text: "Use a new state variable and update it during every render." }
+      { id: "A", text: "Always mutate the prop directly." },
+      { id: "B", text: "Store the value in Context regardless of the component tree." },
+      { id: "C", text: "Use a new state variable and update it during every render." },
+      { id: "D", text: "Store the previous value in a ref and update the ref in an appropriate effect." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A ref persists across renders without causing a render when its current value changes. A common previous-value pattern uses an effect to update the ref after rendering.",
     tags: ["useRef", "useEffect", "previous-value", "advanced"]
   }

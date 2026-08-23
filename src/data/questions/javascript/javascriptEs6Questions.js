@@ -25,12 +25,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst colors = [\"red\", \"green\", \"blue\"];\nconst [first, second, third] = colors;\nconsole.log(second);",
     options: [
-      { id: "A", text: "green" },
-      { id: "B", text: "red" },
+      { id: "A", text: "red" },
+      { id: "B", text: "green" },
       { id: "C", text: "blue" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Array destructuring assigns values according to position. `second` receives the value at index 1, which is `green`.",
     tags: ["es6", "destructuring", "arrays"]
   },
@@ -43,12 +43,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [10, 20, 30];\nconst [first, , third] = numbers;\nconsole.log(third);",
     options: [
-      { id: "A", text: "30" },
-      { id: "B", text: "20" },
-      { id: "C", text: "10" },
+      { id: "A", text: "20" },
+      { id: "B", text: "10" },
+      { id: "C", text: "30" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The empty slot skips the second element. `third` receives the value at index 2, which is 30.",
     tags: ["es6", "array-destructuring", "skipping-values"]
   },
@@ -61,12 +61,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [10];\nconst [first, second = 20] = numbers;\nconsole.log(second);",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "10" },
-      { id: "D", text: "null" }
+      { id: "A", text: "undefined" },
+      { id: "B", text: "10" },
+      { id: "C", text: "null" },
+      { id: "D", text: "20" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A destructuring default value is used when the corresponding array element is `undefined`.",
     tags: ["es6", "destructuring", "default-values"]
   },
@@ -97,12 +97,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconst { name: username } = user;\nconsole.log(username);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "username" },
+      { id: "A", text: "username" },
+      { id: "B", text: "Avi" },
       { id: "C", text: "undefined" },
       { id: "D", text: "name" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Object destructuring supports renaming. `name: username` means read the `name` property and store it in a variable called `username`.",
     tags: ["es6", "object-destructuring", "renaming"]
   },
@@ -115,12 +115,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\" };\nconst { name, age = 23 } = user;\nconsole.log(age);",
     options: [
-      { id: "A", text: "23" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "null" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "null" },
+      { id: "C", text: "23" },
       { id: "D", text: "0" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `age` property is missing, so its destructuring default value of 23 is used.",
     tags: ["es6", "object-destructuring", "default-values"]
   },
@@ -133,12 +133,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is the main difference between array and object destructuring?",
     options: [
-      { id: "A", text: "Array destructuring is position-based, while object destructuring is property-name-based." },
-      { id: "B", text: "Array destructuring only works with strings." },
-      { id: "C", text: "Object destructuring always requires numeric indexes." },
-      { id: "D", text: "There is no difference." }
+      { id: "A", text: "Array destructuring only works with strings." },
+      { id: "B", text: "Object destructuring always requires numeric indexes." },
+      { id: "C", text: "There is no difference." },
+      { id: "D", text: "Array destructuring is position-based, while object destructuring is property-name-based." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Array destructuring maps values based on position, whereas object destructuring normally maps values based on property names.",
     tags: ["es6", "destructuring", "arrays", "objects"]
   },
@@ -169,12 +169,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What does the rest element in array destructuring do?",
     options: [
-      { id: "A", text: "Collects remaining elements into a new array." },
-      { id: "B", text: "Deletes remaining elements." },
+      { id: "A", text: "Deletes remaining elements." },
+      { id: "B", text: "Collects remaining elements into a new array." },
       { id: "C", text: "Copies only the first element." },
       { id: "D", text: "Converts the array into an object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The rest element, written with `...`, collects all remaining array elements into a new array.",
     tags: ["es6", "rest", "destructuring"]
   },
@@ -187,12 +187,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [1, 2, 3, 4, 5];\nconst [first, second, ...rest] = numbers;\nconsole.log(rest);",
     options: [
-      { id: "A", text: "[3, 4, 5]" },
-      { id: "B", text: "[1, 2]" },
-      { id: "C", text: "3" },
+      { id: "A", text: "[1, 2]" },
+      { id: "B", text: "3" },
+      { id: "C", text: "[3, 4, 5]" },
       { id: "D", text: "[1, 2, 3, 4, 5]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first two elements are assigned to `first` and `second`; the rest are collected into the `rest` array.",
     tags: ["es6", "rest", "array-destructuring"]
   },
@@ -205,12 +205,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "Where must a rest element appear in an array destructuring pattern?",
     options: [
-      { id: "A", text: "At the end" },
-      { id: "B", text: "At the beginning" },
-      { id: "C", text: "Anywhere" },
-      { id: "D", text: "Only in the middle" }
+      { id: "A", text: "At the beginning" },
+      { id: "B", text: "Anywhere" },
+      { id: "C", text: "Only in the middle" },
+      { id: "D", text: "At the end" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A rest element must be the final element in an array or object destructuring pattern because it collects all remaining values.",
     tags: ["es6", "rest", "destructuring", "syntax"]
   },
@@ -241,12 +241,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst a = [1, 2];\nconst b = [3, 4];\nconst result = [...a, ...b];\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "[1, 2, 3, 4]" },
-      { id: "B", text: "[[1, 2], [3, 4]]" },
+      { id: "A", text: "[[1, 2], [3, 4]]" },
+      { id: "B", text: "[1, 2, 3, 4]" },
       { id: "C", text: "[1, 2, [3, 4]]" },
       { id: "D", text: "[3, 4, 1, 2]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Both arrays are expanded into the new array, producing `[1, 2, 3, 4]`.",
     tags: ["es6", "spread", "arrays"]
   },
@@ -259,12 +259,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst original = [1, 2, 3];\nconst copy = [...original];\n\nconsole.log(copy === original);",
     options: [
-      { id: "A", text: "false" },
-      { id: "B", text: "true" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "true" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "false" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Array spread creates a new array. The contents are copied, but the new array has a different reference.",
     tags: ["es6", "spread", "arrays", "references"]
   },
@@ -277,12 +277,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconst updated = { ...user, age: 24 };\n\nconsole.log(updated.age);",
     options: [
-      { id: "A", text: "24" },
-      { id: "B", text: "23" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "25" }
+      { id: "A", text: "23" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "25" },
+      { id: "D", text: "24" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Object spread copies the properties of `user`, and the later `age: 24` property overwrites the earlier copied `age` value.",
     tags: ["es6", "spread", "objects", "property-overwrite"]
   },
@@ -313,12 +313,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst defaults = { theme: \"light\", language: \"en\" };\nconst settings = { ...defaults, theme: \"dark\" };\n\nconsole.log(settings.theme);",
     options: [
-      { id: "A", text: "dark" },
-      { id: "B", text: "light" },
+      { id: "A", text: "light" },
+      { id: "B", text: "dark" },
       { id: "C", text: "undefined" },
       { id: "D", text: "lightdark" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The spread copies the defaults first. The later `theme: \"dark\"` overrides the copied `theme` property.",
     tags: ["es6", "spread", "objects", "configuration"]
   },
@@ -331,12 +331,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is the primary difference between rest parameters and spread syntax?",
     options: [
-      { id: "A", text: "Rest collects multiple values into one structure, while spread expands a structure into individual values." },
-      { id: "B", text: "Rest is used only for objects and spread only for arrays." },
-      { id: "C", text: "Rest modifies the original array while spread does not." },
+      { id: "A", text: "Rest is used only for objects and spread only for arrays." },
+      { id: "B", text: "Rest modifies the original array while spread does not." },
+      { id: "C", text: "Rest collects multiple values into one structure, while spread expands a structure into individual values." },
       { id: "D", text: "They are completely unrelated syntax features." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Rest gathers values, while spread performs the opposite operation by expanding an iterable or object into another expression.",
     tags: ["es6", "rest", "spread"]
   },
@@ -349,12 +349,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction sum(...numbers) {\n  return numbers.reduce((total, n) => total + n, 0);\n}\n\nconsole.log(sum(1, 2, 3));",
     options: [
-      { id: "A", text: "6" },
-      { id: "B", text: "123" },
-      { id: "C", text: "[1, 2, 3]" },
-      { id: "D", text: "3" }
+      { id: "A", text: "123" },
+      { id: "B", text: "[1, 2, 3]" },
+      { id: "C", text: "3" },
+      { id: "D", text: "6" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The rest parameter collects the arguments into `[1, 2, 3]`. `reduce()` then adds them to produce 6.",
     tags: ["es6", "rest-parameters", "functions", "reduce"]
   },
@@ -385,12 +385,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nfunction greet(name = \"Guest\") {\n  return `Hello ${name}`;\n}\n\nconsole.log(greet());",
     options: [
-      { id: "A", text: "Hello Guest" },
-      { id: "B", text: "Hello undefined" },
+      { id: "A", text: "Hello undefined" },
+      { id: "B", text: "Hello Guest" },
       { id: "C", text: "Guest" },
       { id: "D", text: "Hello null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Because no argument is supplied, the default parameter value `Guest` is used.",
     tags: ["es6", "default-parameters", "functions"]
   },
@@ -403,12 +403,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction greet(name = \"Guest\") {\n  return name;\n}\n\nconsole.log(greet(undefined));",
     options: [
-      { id: "A", text: "Guest" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "null" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "null" },
+      { id: "C", text: "Guest" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Passing `undefined` triggers the default parameter value, so `name` becomes `Guest`.",
     tags: ["es6", "default-parameters", "undefined"]
   },
@@ -421,12 +421,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction greet(name = \"Guest\") {\n  return name;\n}\n\nconsole.log(greet(null));",
     options: [
-      { id: "A", text: "null" },
-      { id: "B", text: "Guest" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "TypeError" }
+      { id: "A", text: "Guest" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "TypeError" },
+      { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Default parameters are used for `undefined`, not for `null`. Therefore `null` is preserved.",
     tags: ["es6", "default-parameters", "null", "undefined"]
   },
@@ -457,12 +457,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst double = n => n * 2;\nconsole.log(double(5));",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "25" },
+      { id: "A", text: "25" },
+      { id: "B", text: "10" },
       { id: "C", text: "5" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The arrow function receives 5 and implicitly returns `5 * 2`, which is 10.",
     tags: ["es6", "arrow-functions", "implicit-return"]
   },
@@ -475,12 +475,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst double = n => {\n  n * 2;\n};\n\nconsole.log(double(5));",
     options: [
-      { id: "A", text: "undefined" },
-      { id: "B", text: "10" },
-      { id: "C", text: "5" },
+      { id: "A", text: "10" },
+      { id: "B", text: "5" },
+      { id: "C", text: "undefined" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An arrow function with a block body requires an explicit `return`. The expression `n * 2` is evaluated but not returned.",
     tags: ["es6", "arrow-functions", "return"]
   },
@@ -493,12 +493,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is a key behavioral difference between arrow functions and regular functions regarding `this`?",
     options: [
-      { id: "A", text: "Arrow functions do not have their own this; they capture it lexically." },
-      { id: "B", text: "Arrow functions always bind this to the global object." },
-      { id: "C", text: "Arrow functions always bind this to the function itself." },
-      { id: "D", text: "Arrow functions cannot access this." }
+      { id: "A", text: "Arrow functions always bind this to the global object." },
+      { id: "B", text: "Arrow functions always bind this to the function itself." },
+      { id: "C", text: "Arrow functions cannot access this." },
+      { id: "D", text: "Arrow functions do not have their own this; they capture it lexically." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Arrow functions do not create their own `this` binding. They use the `this` value from their surrounding lexical scope.",
     tags: ["es6", "arrow-functions", "this", "lexical-this"]
   },
@@ -529,12 +529,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "Which syntax creates a multiline string without explicitly using newline escape sequences?",
     options: [
-      { id: "A", text: "Template literals using backticks" },
-      { id: "B", text: "Single-quoted strings only" },
+      { id: "A", text: "Single-quoted strings only" },
+      { id: "B", text: "Template literals using backticks" },
       { id: "C", text: "Double-quoted strings only" },
       { id: "D", text: "Regular expressions" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Template literals can span multiple lines directly because line breaks inside backticks are preserved.",
     tags: ["es6", "template-literals", "multiline"]
   },
@@ -547,12 +547,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst name = \"Avi\";\nconst age = 23;\nconst result = `${name} is ${age} years old`;\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "Avi is 23 years old" },
-      { id: "B", text: "${name} is ${age} years old" },
-      { id: "C", text: "Avi is age years old" },
+      { id: "A", text: "${name} is ${age} years old" },
+      { id: "B", text: "Avi is age years old" },
+      { id: "C", text: "Avi is 23 years old" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Expressions inside `${}` are evaluated and interpolated into the template literal.",
     tags: ["es6", "template-literals", "interpolation"]
   },
@@ -565,12 +565,12 @@ const javascriptEs6Questions = [
     difficulty: "Beginner",
     question: "Which declaration creates a block-scoped variable that can be reassigned?",
     options: [
-      { id: "A", text: "let" },
-      { id: "B", text: "const" },
-      { id: "C", text: "class" },
-      { id: "D", text: "import" }
+      { id: "A", text: "const" },
+      { id: "B", text: "class" },
+      { id: "C", text: "import" },
+      { id: "D", text: "let" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`let` creates a block-scoped binding that can later be assigned a different value.",
     tags: ["es6", "let", "block-scope"]
   },
@@ -601,12 +601,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\" };\nuser.name = \"Alex\";\n\nconsole.log(user.name);",
     options: [
-      { id: "A", text: "Alex" },
-      { id: "B", text: "Avi" },
+      { id: "A", text: "Avi" },
+      { id: "B", text: "Alex" },
       { id: "C", text: "TypeError" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`const` prevents reassignment of the variable binding, but it does not make the referenced object immutable. Its properties can still be changed.",
     tags: ["es6", "const", "objects", "immutability"]
   },
@@ -619,12 +619,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What happens when a `let` variable is accessed before its declaration within the same block?",
     options: [
-      { id: "A", text: "A ReferenceError occurs because of the temporal dead zone." },
-      { id: "B", text: "It returns undefined." },
-      { id: "C", text: "It returns null." },
+      { id: "A", text: "It returns undefined." },
+      { id: "B", text: "It returns null." },
+      { id: "C", text: "A ReferenceError occurs because of the temporal dead zone." },
       { id: "D", text: "It automatically creates a global variable." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`let` and `const` declarations are hoisted but remain inaccessible in the temporal dead zone until execution reaches their declaration.",
     tags: ["es6", "let", "const", "temporal-dead-zone"]
   },
@@ -637,12 +637,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [1, 2, 3];\nconst doubled = numbers.map(n => n * 2);\n\nconsole.log(doubled);",
     options: [
-      { id: "A", text: "[2, 4, 6]" },
-      { id: "B", text: "[1, 2, 3]" },
-      { id: "C", text: "6" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "[1, 2, 3]" },
+      { id: "B", text: "6" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "[2, 4, 6]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The arrow function transforms each element, producing a new array containing 2, 4, and 6.",
     tags: ["es6", "arrow-functions", "map", "arrays"]
   },
@@ -673,12 +673,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst name = \"Avi\";\nconst age = 23;\n\nconst user = { name, age };\nconsole.log(user.name);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "name" },
+      { id: "A", text: "name" },
+      { id: "B", text: "Avi" },
       { id: "C", text: "undefined" },
       { id: "D", text: "23" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Property shorthand allows `{ name, age }` to mean `{ name: name, age: age }` when variable and property names match.",
     tags: ["es6", "object-shorthand", "objects"]
   },
@@ -691,12 +691,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What does computed property syntax allow you to do in an object literal?",
     options: [
-      { id: "A", text: "Use an expression to determine a property key." },
-      { id: "B", text: "Automatically clone the object." },
-      { id: "C", text: "Convert every property into a method." },
+      { id: "A", text: "Automatically clone the object." },
+      { id: "B", text: "Convert every property into a method." },
+      { id: "C", text: "Use an expression to determine a property key." },
       { id: "D", text: "Make every property private." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Square brackets in an object literal allow an expression to be evaluated and used as the property key.",
     tags: ["es6", "computed-properties", "objects"]
   },
@@ -709,12 +709,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst key = \"username\";\nconst value = \"avi\";\n\nconst user = {\n  [key]: value\n};\n\nconsole.log(user.username);",
     options: [
-      { id: "A", text: "avi" },
-      { id: "B", text: "username" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "[key]" }
+      { id: "A", text: "username" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "[key]" },
+      { id: "D", text: "avi" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The expression `[key]` evaluates to `username`, creating the property `username` with the value `avi`.",
     tags: ["es6", "computed-properties", "objects"]
   },
@@ -745,12 +745,12 @@ const javascriptEs6Questions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [10, 20, 30];\n\nfor (const number of numbers) {\n  console.log(number);\n}",
     options: [
-      { id: "A", text: "10, then 20, then 30" },
-      { id: "B", text: "0, then 1, then 2" },
+      { id: "A", text: "0, then 1, then 2" },
+      { id: "B", text: "10, then 20, then 30" },
       { id: "C", text: "[10, 20, 30] as one value" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`for...of` iterates over the array's values, so the loop receives 10, 20, and 30.",
     tags: ["es6", "for-of", "arrays"]
   },
@@ -763,12 +763,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "Which statement about `for...in` and `for...of` is correct?",
     options: [
-      { id: "A", text: "`for...in` iterates enumerable property keys, while `for...of` iterates iterable values." },
-      { id: "B", text: "`for...in` always gives values and `for...of` always gives indexes." },
-      { id: "C", text: "They are interchangeable for all data structures." },
+      { id: "A", text: "`for...in` always gives values and `for...of` always gives indexes." },
+      { id: "B", text: "They are interchangeable for all data structures." },
+      { id: "C", text: "`for...in` iterates enumerable property keys, while `for...of` iterates iterable values." },
       { id: "D", text: "`for...of` only works with objects." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`for...in` is designed for enumerable property keys, while `for...of` consumes an object's iterator to obtain values.",
     tags: ["es6", "for-in", "for-of", "iteration"]
   },
@@ -781,12 +781,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst numbers = [1, 2, 3];\nconst result = ((...values) => values)(...numbers);\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "[1, 2, 3]" },
-      { id: "B", text: "[[1, 2, 3]]" },
-      { id: "C", text: "123" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "[[1, 2, 3]]" },
+      { id: "B", text: "123" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "[1, 2, 3]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The spread syntax expands `numbers` into separate arguments. The rest parameter then collects those arguments back into an array.",
     tags: ["es6", "spread", "rest", "functions"]
   },
@@ -817,12 +817,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction createUser(name, options = {}) {\n  const { role = \"user\", active = true } = options;\n  return { name, role, active };\n}\n\nconsole.log(createUser(\"Avi\", { role: \"admin\" }));",
     options: [
-      { id: "A", text: "{ name: \"Avi\", role: \"admin\", active: true }" },
-      { id: "B", text: "{ name: \"Avi\", role: \"user\", active: false }" },
+      { id: "A", text: "{ name: \"Avi\", role: \"user\", active: false }" },
+      { id: "B", text: "{ name: \"Avi\", role: \"admin\", active: true }" },
       { id: "C", text: "{ name: \"Avi\", role: \"admin\", active: false }" },
       { id: "D", text: "{ name: \"Avi\" }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The supplied `role` overrides its default, while `active` is missing and therefore uses the default value `true`.",
     tags: ["es6", "default-parameters", "destructuring", "defaults"]
   },
@@ -835,12 +835,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst base = {\n  settings: {\n    theme: \"light\"\n  }\n};\n\nconst copy = { ...base };\ncopy.settings.theme = \"dark\";\n\nconsole.log(base.settings.theme);",
     options: [
-      { id: "A", text: "dark" },
-      { id: "B", text: "light" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "light" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "dark" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Object spread creates a shallow copy. The nested `settings` object is still shared between `base` and `copy`, so changing it affects both references.",
     tags: ["es6", "spread", "shallow-copy", "references"]
   },
@@ -853,12 +853,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  address: {\n    city: \"Asansol\"\n  }\n};\n\nconst updatedUser = {\n  ...user,\n  address: {\n    ...user.address,\n    city: \"Kolkata\"\n  }\n};\n\nconsole.log(user.address.city);\nconsole.log(updatedUser.address.city);",
     options: [
-      { id: "A", text: "Asansol, then Kolkata" },
-      { id: "B", text: "Kolkata, then Kolkata" },
-      { id: "C", text: "Asansol, then Asansol" },
-      { id: "D", text: "Kolkata, then Asansol" }
+      { id: "A", text: "Kolkata, then Kolkata" },
+      { id: "B", text: "Asansol, then Asansol" },
+      { id: "C", text: "Kolkata, then Asansol" },
+      { id: "D", text: "Asansol, then Kolkata" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The nested object is also spread into a new object before changing `city`, so the original nested object remains unchanged.",
     tags: ["es6", "spread", "nested-objects", "immutability"]
   },
@@ -889,12 +889,12 @@ const javascriptEs6Questions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst users = [\n  { name: \"Avi\", role: \"developer\" },\n  { name: \"Sam\", role: \"designer\" }\n];\n\nconst result = users.map(({ name, role }) => `${name} - ${role}`);\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "[\"Avi - developer\", \"Sam - designer\"]" },
-      { id: "B", text: "[\"name - role\", \"name - role\"]" },
+      { id: "A", text: "[\"name - role\", \"name - role\"]" },
+      { id: "B", text: "[\"Avi - developer\", \"Sam - designer\"]" },
       { id: "C", text: "[\"Avi\", \"Sam\"]" },
       { id: "D", text: "[\"developer\", \"designer\"]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The arrow function destructures `name` and `role` directly from each object. The template literal then combines those values into a formatted string.",
     tags: ["es6", "destructuring", "arrow-functions", "map", "template-literals"]
   }

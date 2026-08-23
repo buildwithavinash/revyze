@@ -25,12 +25,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which keyword explicitly creates an exception?",
     options: [
-      { id: "A", text: "throw" },
-      { id: "B", text: "error" },
-      { id: "C", text: "raise" },
+      { id: "A", text: "error" },
+      { id: "B", text: "raise" },
+      { id: "C", text: "throw" },
       { id: "D", text: "except" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript uses the `throw` statement to explicitly throw an exception.",
     tags: ["throw", "errors"]
   },
@@ -45,10 +45,10 @@ const nodejsErrorHandlingQuestions = [
     options: [
       { id: "A", text: "catch" },
       { id: "B", text: "throw" },
-      { id: "C", text: "finally" },
-      { id: "D", text: "error" }
+      { id: "C", text: "error" },
+      { id: "D", text: "finally" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "The `finally` block is intended for cleanup that should run regardless of whether an exception was thrown.",
     tags: ["finally", "try-catch"]
   },
@@ -61,12 +61,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What does this code do?\n\n```js\nthrow new Error('Something went wrong');\n```",
     options: [
-      { id: "A", text: "Logs a warning and continues normally" },
-      { id: "B", text: "Creates a Promise that resolves with the message" },
-      { id: "C", text: "Creates a file named Error" },
-      { id: "D", text: "Throws an Error exception" }
+      { id: "A", text: "Throws an Error exception" },
+      { id: "B", text: "Logs a warning and continues normally" },
+      { id: "C", text: "Creates a Promise that resolves with the message" },
+      { id: "D", text: "Creates a file named Error" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "The `throw` statement immediately throws the created Error object.",
     tags: ["throw", "Error"]
   },
@@ -115,12 +115,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which property is especially useful for locating where an Error originated?",
     options: [
-      { id: "A", text: "stack" },
-      { id: "B", text: "locationOnly" },
-      { id: "C", text: "origin" },
-      { id: "D", text: "traceIdOnly" }
+      { id: "A", text: "locationOnly" },
+      { id: "B", text: "origin" },
+      { id: "C", text: "traceIdOnly" },
+      { id: "D", text: "stack" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `stack` property generally contains a stack trace showing where the error was created/thrown.",
     tags: ["Error", "stack", "debugging"]
   },
@@ -133,12 +133,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What happens if an exception is thrown inside a try block and there is a matching catch block?",
     options: [
-      { id: "A", text: "The exception is ignored" },
-      { id: "B", text: "The catch block receives the thrown value" },
+      { id: "A", text: "The catch block receives the thrown value" },
+      { id: "B", text: "The exception is ignored" },
       { id: "C", text: "The finally block is skipped" },
       { id: "D", text: "The process must always exit immediately" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A matching catch block receives the value thrown by the try block.",
     tags: ["try-catch", "errors"]
   },
@@ -152,11 +152,11 @@ const nodejsErrorHandlingQuestions = [
     question: "What happens if code inside a try block completes without throwing?",
     options: [
       { id: "A", text: "The catch block runs anyway" },
-      { id: "B", text: "The program terminates" },
-      { id: "C", text: "The catch block is skipped" },
+      { id: "B", text: "The catch block is skipped" },
+      { id: "C", text: "The program terminates" },
       { id: "D", text: "The finally block can never run" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "If no exception occurs, the catch block is skipped. The finally block, if present, still runs.",
     tags: ["try-catch", "finally"]
   },
@@ -169,12 +169,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What does `catch (error)` give you?",
     options: [
-      { id: "A", text: "The value that was thrown" },
-      { id: "B", text: "The Node.js process object" },
-      { id: "C", text: "The HTTP response" },
+      { id: "A", text: "The Node.js process object" },
+      { id: "B", text: "The HTTP response" },
+      { id: "C", text: "The value that was thrown" },
       { id: "D", text: "The current function's return value" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The catch parameter receives the value thrown by the exception.",
     tags: ["catch", "errors"]
   },
@@ -189,10 +189,10 @@ const nodejsErrorHandlingQuestions = [
     options: [
       { id: "A", text: "It only executes after errors" },
       { id: "B", text: "It only executes after successful code" },
-      { id: "C", text: "It is useful for cleanup that should happen regardless of success or failure" },
-      { id: "D", text: "It can only be used with Promises" }
+      { id: "C", text: "It can only be used with Promises" },
+      { id: "D", text: "It is useful for cleanup that should happen regardless of success or failure" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "`finally` is commonly used for cleanup such as releasing resources regardless of the outcome.",
     tags: ["finally", "cleanup"]
   },
@@ -259,12 +259,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern correctly catches a rejected Promise using async/await?",
     options: [
-      { id: "A", text: "Wrap the await expression in try/catch" },
-      { id: "B", text: "Put try/catch around the function declaration only" },
-      { id: "C", text: "Use finally instead of catch" },
-      { id: "D", text: "Ignore the returned Promise" }
+      { id: "A", text: "Put try/catch around the function declaration only" },
+      { id: "B", text: "Use finally instead of catch" },
+      { id: "C", text: "Ignore the returned Promise" },
+      { id: "D", text: "Wrap the await expression in try/catch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A rejected Promise awaited inside an async function throws at the await expression, allowing a surrounding try/catch to handle it.",
     tags: ["async", "await", "try-catch"]
   },
@@ -277,12 +277,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which is a valid way to handle a rejected Promise?",
     options: [
-      { id: "A", text: "promise.errorHandler()" },
-      { id: "B", text: "promise.catch(handler)" },
+      { id: "A", text: "promise.catch(handler)" },
+      { id: "B", text: "promise.errorHandler()" },
       { id: "C", text: "promise.handleErrorOnly()" },
       { id: "D", text: "promise.onError(handler)" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`.catch(handler)` registers a rejection handler for a Promise.",
     tags: ["promises", "catch"]
   },
@@ -295,12 +295,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What happens when an async function throws an Error?",
     options: [
-      { id: "A", text: "The returned Promise is rejected" },
-      { id: "B", text: "The returned Promise is fulfilled with the Error" },
+      { id: "A", text: "The returned Promise is fulfilled with the Error" },
+      { id: "B", text: "The returned Promise is rejected" },
       { id: "C", text: "The function automatically retries" },
       { id: "D", text: "The error is always ignored" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An exception thrown inside an async function causes its returned Promise to reject.",
     tags: ["async", "errors", "promises"]
   },
@@ -332,11 +332,11 @@ const nodejsErrorHandlingQuestions = [
     question: "What is an unhandled Promise rejection?",
     options: [
       { id: "A", text: "A Promise that fulfills twice" },
-      { id: "B", text: "A rejected Promise for which the application has not attached appropriate rejection handling" },
-      { id: "C", text: "A Promise containing an array" },
-      { id: "D", text: "A Promise that resolves synchronously" }
+      { id: "B", text: "A Promise containing an array" },
+      { id: "C", text: "A Promise that resolves synchronously" },
+      { id: "D", text: "A rejected Promise for which the application has not attached appropriate rejection handling" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A rejected Promise without appropriate rejection handling is considered unhandled.",
     tags: ["promises", "unhandled-rejection"]
   },
@@ -386,11 +386,11 @@ const nodejsErrorHandlingQuestions = [
     question: "Consider:\n\n```js\nfs.readFile('data.txt', (err, data) => {\n  if (err) {\n    return console.error(err);\n  }\n\n  console.log(data);\n});\n```\n\nWhy is `return` useful in the error branch?",
     options: [
       { id: "A", text: "It converts err into a Promise" },
-      { id: "B", text: "It prevents the rest of the callback from executing after the error is handled" },
-      { id: "C", text: "It closes the file automatically" },
+      { id: "B", text: "It closes the file automatically" },
+      { id: "C", text: "It prevents the rest of the callback from executing after the error is handled" },
       { id: "D", text: "It retries readFile()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Returning exits the callback after handling the error, preventing accidental execution of success-path code.",
     tags: ["callbacks", "errors", "control-flow"]
   },
@@ -403,12 +403,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is a custom Error class useful for?",
     options: [
-      { id: "A", text: "Creating meaningful error types for different application failure cases" },
-      { id: "B", text: "Preventing all errors" },
-      { id: "C", text: "Replacing HTTP entirely" },
-      { id: "D", text: "Making JavaScript execute faster" }
+      { id: "A", text: "Preventing all errors" },
+      { id: "B", text: "Replacing HTTP entirely" },
+      { id: "C", text: "Making JavaScript execute faster" },
+      { id: "D", text: "Creating meaningful error types for different application failure cases" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom error classes let applications distinguish different categories of failures while retaining Error behavior.",
     tags: ["custom-errors", "classes"]
   },
@@ -457,12 +457,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is the main purpose of logging an error stack trace during debugging?",
     options: [
-      { id: "A", text: "To identify the execution path leading to the error" },
-      { id: "B", text: "To restart the application" },
-      { id: "C", text: "To encrypt the error" },
+      { id: "A", text: "To restart the application" },
+      { id: "B", text: "To encrypt the error" },
+      { id: "C", text: "To identify the execution path leading to the error" },
       { id: "D", text: "To automatically repair the code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A stack trace provides valuable information about where the error originated and how execution reached that point.",
     tags: ["debugging", "stack"]
   },
@@ -475,12 +475,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What does a debugger breakpoint allow you to do?",
     options: [
-      { id: "A", text: "Pause execution at a chosen point and inspect program state" },
-      { id: "B", text: "Delete all runtime errors" },
-      { id: "C", text: "Convert Node.js to synchronous mode" },
-      { id: "D", text: "Restart the operating system" }
+      { id: "A", text: "Delete all runtime errors" },
+      { id: "B", text: "Convert Node.js to synchronous mode" },
+      { id: "C", text: "Restart the operating system" },
+      { id: "D", text: "Pause execution at a chosen point and inspect program state" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Breakpoints pause execution so developers can inspect variables, call stacks, and program state.",
     tags: ["debugging", "breakpoints"]
   },
@@ -493,12 +493,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Why can reproducing a bug consistently be valuable?",
     options: [
-      { id: "A", text: "It makes the bug impossible to fix" },
-      { id: "B", text: "It provides a repeatable scenario for isolating and testing the cause" },
+      { id: "A", text: "It provides a repeatable scenario for isolating and testing the cause" },
+      { id: "B", text: "It makes the bug impossible to fix" },
       { id: "C", text: "It guarantees the bug is caused by Node.js" },
       { id: "D", text: "It eliminates the need for logs" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A reliable reproduction makes debugging much easier because changes can be tested against the same failure.",
     tags: ["debugging", "testing"]
   },
@@ -511,12 +511,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which approach is generally better than logging `Something went wrong` for every failure?",
     options: [
-      { id: "A", text: "Log useful contextual information while avoiding sensitive data" },
-      { id: "B", text: "Never log anything" },
+      { id: "A", text: "Never log anything" },
+      { id: "B", text: "Log useful contextual information while avoiding sensitive data" },
       { id: "C", text: "Log every environment secret" },
       { id: "D", text: "Only log the word ERROR" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Useful structured context makes diagnosis easier, but logs must avoid passwords, tokens, and other sensitive information.",
     tags: ["logging", "debugging", "security"]
   },
@@ -530,11 +530,11 @@ const nodejsErrorHandlingQuestions = [
     question: "Why should production applications avoid exposing full stack traces in API responses?",
     options: [
       { id: "A", text: "Stack traces are invalid JSON" },
-      { id: "B", text: "They can expose internal implementation details and sensitive information" },
-      { id: "C", text: "Browsers cannot display them" },
+      { id: "B", text: "Browsers cannot display them" },
+      { id: "C", text: "They can expose internal implementation details and sensitive information" },
       { id: "D", text: "HTTP automatically deletes them" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Stack traces can reveal file paths, libraries, implementation details, and other information that should remain server-side.",
     tags: ["security", "errors", "api"]
   },
@@ -547,12 +547,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is an operational error?",
     options: [
-      { id: "A", text: "A normal runtime failure such as a missing file, timeout, or unavailable external service" },
-      { id: "B", text: "A syntax error in the JavaScript parser" },
-      { id: "C", text: "A typo that makes the application impossible to start" },
-      { id: "D", text: "A compiler warning only" }
+      { id: "A", text: "A syntax error in the JavaScript parser" },
+      { id: "B", text: "A typo that makes the application impossible to start" },
+      { id: "C", text: "A compiler warning only" },
+      { id: "D", text: "A normal runtime failure such as a missing file, timeout, or unavailable external service" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Operational errors are expected runtime failures that applications can often handle or recover from appropriately.",
     tags: ["errors", "operational-errors"]
   },
@@ -565,12 +565,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Which is an example of a programmer error?",
     options: [
-      { id: "A", text: "A third-party API timing out" },
-      { id: "B", text: "A database temporarily refusing connections" },
-      { id: "C", text: "Accessing a property incorrectly because of a programming bug" },
+      { id: "A", text: "Accessing a property incorrectly because of a programming bug" },
+      { id: "B", text: "A third-party API timing out" },
+      { id: "C", text: "A database temporarily refusing connections" },
       { id: "D", text: "A user submitting an invalid email address" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Programmer errors are defects in application logic that should generally be fixed in code rather than treated as ordinary operational conditions.",
     tags: ["errors", "programmer-errors"]
   },
@@ -583,12 +583,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Why is retrying every error automatically a bad strategy?",
     options: [
-      { id: "A", text: "Some failures are permanent or caused by invalid input, and retries can increase load" },
-      { id: "B", text: "Retries are impossible in JavaScript" },
+      { id: "A", text: "Retries are impossible in JavaScript" },
+      { id: "B", text: "Some failures are permanent or caused by invalid input, and retries can increase load" },
       { id: "C", text: "Retries always delete the original error" },
       { id: "D", text: "Retries only work for syntax errors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Retries should be selective. Retrying invalid requests or permanent failures wastes resources and may amplify outages.",
     tags: ["errors", "retries", "production"]
   },
@@ -601,12 +601,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is exponential backoff commonly used for?",
     options: [
-      { id: "A", text: "Increasing retry delays between repeated attempts to reduce pressure on a failing service" },
-      { id: "B", text: "Making every request execute immediately" },
-      { id: "C", text: "Deleting old logs" },
+      { id: "A", text: "Making every request execute immediately" },
+      { id: "B", text: "Deleting old logs" },
+      { id: "C", text: "Increasing retry delays between repeated attempts to reduce pressure on a failing service" },
       { id: "D", text: "Changing HTTP methods automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Exponential backoff progressively increases retry delays and can help prevent retry storms during temporary failures.",
     tags: ["retries", "backoff", "resilience"]
   },
@@ -620,11 +620,11 @@ const nodejsErrorHandlingQuestions = [
     question: "What is a timeout useful for when calling an external service?",
     options: [
       { id: "A", text: "It guarantees the external service will respond successfully" },
-      { id: "B", text: "It limits how long the application is willing to wait before treating the operation as failed" },
-      { id: "C", text: "It disables all network errors" },
-      { id: "D", text: "It converts the request into a synchronous operation" }
+      { id: "B", text: "It disables all network errors" },
+      { id: "C", text: "It converts the request into a synchronous operation" },
+      { id: "D", text: "It limits how long the application is willing to wait before treating the operation as failed" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Timeouts prevent resources from remaining occupied indefinitely when an external dependency becomes slow or unresponsive.",
     tags: ["timeouts", "resilience"]
   },
@@ -655,12 +655,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Why should `process.on('uncaughtException', ...)` not normally be treated as a complete recovery strategy?",
     options: [
-      { id: "A", text: "An uncaught exception can leave application state inconsistent, so continuing blindly can be unsafe" },
-      { id: "B", text: "The event never fires" },
+      { id: "A", text: "The event never fires" },
+      { id: "B", text: "An uncaught exception can leave application state inconsistent, so continuing blindly can be unsafe" },
       { id: "C", text: "It only works in browsers" },
       { id: "D", text: "It automatically fixes the original bug" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An uncaught exception represents an unexpected state. Logging and controlled shutdown/restart strategies are generally safer than assuming the process is fully healthy.",
     tags: ["uncaughtException", "production", "resilience"]
   },
@@ -692,11 +692,11 @@ const nodejsErrorHandlingQuestions = [
     question: "What is the best general role for `uncaughtException` or `unhandledRejection` monitoring in production?",
     options: [
       { id: "A", text: "Use them as the application's primary validation system" },
-      { id: "B", text: "Use them for visibility, logging, and controlled failure handling rather than masking application bugs" },
-      { id: "C", text: "Use them to silently continue every failed operation" },
-      { id: "D", text: "Use them to replace all try/catch statements" }
+      { id: "B", text: "Use them to silently continue every failed operation" },
+      { id: "C", text: "Use them to replace all try/catch statements" },
+      { id: "D", text: "Use them for visibility, logging, and controlled failure handling rather than masking application bugs" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Process-level error monitoring is valuable for detecting unexpected failures, but it should not replace appropriate local error handling.",
     tags: ["node", "production", "monitoring"]
   },
@@ -709,12 +709,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Why is centralized error handling useful in an Express application?",
     options: [
-      { id: "A", text: "It guarantees every database query succeeds" },
-      { id: "B", text: "It provides a consistent place to format/log application errors and send appropriate responses" },
+      { id: "A", text: "It provides a consistent place to format/log application errors and send appropriate responses" },
+      { id: "B", text: "It guarantees every database query succeeds" },
       { id: "C", text: "It removes the need for validation" },
       { id: "D", text: "It makes every route synchronous" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Centralized error middleware can provide consistent response formatting, logging, and handling policies.",
     tags: ["express", "errors", "middleware"]
   },
@@ -728,11 +728,11 @@ const nodejsErrorHandlingQuestions = [
     question: "What signature identifies Express error-handling middleware?",
     options: [
       { id: "A", text: "(req, res)" },
-      { id: "B", text: "(req, next)" },
-      { id: "C", text: "(error, request, response, next)" },
+      { id: "B", text: "(error, request, response, next)" },
+      { id: "C", text: "(req, next)" },
       { id: "D", text: "(request, response, error)" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Express recognizes error-handling middleware by its four parameters: `(err, req, res, next)`.",
     tags: ["express", "error-middleware"]
   },
@@ -765,10 +765,10 @@ const nodejsErrorHandlingQuestions = [
     options: [
       { id: "A", text: "Log passwords so debugging is easier" },
       { id: "B", text: "Log access tokens and cookies" },
-      { id: "C", text: "Log useful diagnostic context while redacting sensitive information" },
-      { id: "D", text: "Disable all logging" }
+      { id: "C", text: "Disable all logging" },
+      { id: "D", text: "Log useful diagnostic context while redacting sensitive information" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Logs should contain enough context for diagnosis without exposing passwords, tokens, secrets, or unnecessary personal data.",
     tags: ["logging", "security", "errors"]
   },
@@ -817,12 +817,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "An API returns HTTP 500 for invalid user input. What is the likely problem?",
     options: [
-      { id: "A", text: "Client input errors are often better represented by a 4xx status rather than a generic server-error 5xx status" },
-      { id: "B", text: "HTTP 500 is required for all API errors" },
-      { id: "C", text: "Invalid input must always produce 200" },
+      { id: "A", text: "HTTP 500 is required for all API errors" },
+      { id: "B", text: "Invalid input must always produce 200" },
+      { id: "C", text: "Client input errors are often better represented by a 4xx status rather than a generic server-error 5xx status" },
       { id: "D", text: "The client cannot receive JSON" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "4xx responses generally indicate client-side/request problems, while 5xx responses represent server-side failures.",
     tags: ["http", "api", "errors"]
   },
@@ -836,11 +836,11 @@ const nodejsErrorHandlingQuestions = [
     question: "A database connection temporarily fails. Which error-handling strategy is generally more appropriate than immediately crashing for every occurrence?",
     options: [
       { id: "A", text: "Ignore the failure completely" },
-      { id: "B", text: "Use appropriate timeout/retry/recovery policies and return a controlled error when recovery is not possible" },
-      { id: "C", text: "Retry forever with no delay" },
-      { id: "D", text: "Send the database password to the client" }
+      { id: "B", text: "Retry forever with no delay" },
+      { id: "C", text: "Send the database password to the client" },
+      { id: "D", text: "Use appropriate timeout/retry/recovery policies and return a controlled error when recovery is not possible" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Transient infrastructure failures may be recoverable, but retry policies need limits, backoff, and appropriate failure responses.",
     tags: ["database", "retries", "resilience"]
   },
@@ -853,12 +853,12 @@ const nodejsErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is a useful debugging sequence when a production request unexpectedly fails?",
     options: [
-      { id: "A", text: "Immediately rewrite the entire application" },
-      { id: "B", text: "Ignore logs and guess the cause" },
-      { id: "C", text: "Inspect logs/context, reproduce when possible, identify the failing layer, form a hypothesis, and verify it" },
+      { id: "A", text: "Inspect logs/context, reproduce when possible, identify the failing layer, form a hypothesis, and verify it" },
+      { id: "B", text: "Immediately rewrite the entire application" },
+      { id: "C", text: "Ignore logs and guess the cause" },
       { id: "D", text: "Restart the server repeatedly without investigating" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Systematic debugging uses evidence, reproduction, isolation, hypotheses, and verification rather than guesswork.",
     tags: ["debugging", "production"]
   },

@@ -44,11 +44,11 @@ const cssFlexboxQuestions = [
     question: "What is the default value of flex-direction?",
     options: [
       { id: "A", text: "column" },
-      { id: "B", text: "row" },
-      { id: "C", text: "row-reverse" },
+      { id: "B", text: "row-reverse" },
+      { id: "C", text: "row" },
       { id: "D", text: "column-reverse" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Flex containers default to flex-direction: row, so items are laid out horizontally.",
     tags: ["flex-direction", "flexbox"]
   },
@@ -62,11 +62,11 @@ const cssFlexboxQuestions = [
     question: "Which property changes the main-axis direction of a flex container?",
     options: [
       { id: "A", text: "align-direction" },
-      { id: "B", text: "flex-direction" },
-      { id: "C", text: "main-direction" },
-      { id: "D", text: "justify-direction" }
+      { id: "B", text: "main-direction" },
+      { id: "C", text: "justify-direction" },
+      { id: "D", text: "flex-direction" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "flex-direction determines whether the main axis runs as a row, row-reverse, column, or column-reverse.",
     tags: ["flex-direction", "main-axis"]
   },
@@ -79,12 +79,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "With flex-direction: column, what is the main axis?",
     options: [
-      { id: "A", text: "Horizontal" },
-      { id: "B", text: "Vertical" },
+      { id: "A", text: "Vertical" },
+      { id: "B", text: "Horizontal" },
       { id: "C", text: "Diagonal" },
       { id: "D", text: "There is no main axis" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "With column direction, the main axis runs vertically from top to bottom.",
     tags: ["flex-direction", "main-axis"]
   },
@@ -116,11 +116,11 @@ const cssFlexboxQuestions = [
     question: "Which property controls alignment along the main axis?",
     options: [
       { id: "A", text: "align-items" },
-      { id: "B", text: "justify-content" },
-      { id: "C", text: "align-content" },
+      { id: "B", text: "align-content" },
+      { id: "C", text: "justify-content" },
       { id: "D", text: "justify-items" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "justify-content distributes flex items along the main axis.",
     tags: ["justify-content", "main-axis"]
   },
@@ -134,11 +134,11 @@ const cssFlexboxQuestions = [
     question: "Which property normally controls alignment along the cross axis for flex items?",
     options: [
       { id: "A", text: "justify-content" },
-      { id: "B", text: "align-items" },
-      { id: "C", text: "flex-align" },
-      { id: "D", text: "cross-align" }
+      { id: "B", text: "flex-align" },
+      { id: "C", text: "cross-align" },
+      { id: "D", text: "align-items" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "align-items controls how flex items are aligned on the cross axis.",
     tags: ["align-items", "cross-axis"]
   },
@@ -169,12 +169,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does justify-content: center do in a single-line flex container?",
     options: [
-      { id: "A", text: "Centers items along the main axis" },
-      { id: "B", text: "Centers items along the cross axis" },
+      { id: "A", text: "Centers items along the cross axis" },
+      { id: "B", text: "Centers items along the main axis" },
       { id: "C", text: "Makes all items the same size" },
       { id: "D", text: "Centers text inside each item" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "justify-content controls main-axis distribution, so center centers the flex items along that axis.",
     tags: ["justify-content", "center"]
   },
@@ -187,12 +187,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does align-items: center do in a row flex container?",
     options: [
-      { id: "A", text: "Centers items vertically along the cross axis" },
-      { id: "B", text: "Centers items horizontally along the main axis" },
-      { id: "C", text: "Centers the text inside each item" },
+      { id: "A", text: "Centers items horizontally along the main axis" },
+      { id: "B", text: "Centers the text inside each item" },
+      { id: "C", text: "Centers items vertically along the cross axis" },
       { id: "D", text: "Centers the flex container itself" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "In a row flex container, the cross axis is vertical, so align-items: center centers items vertically.",
     tags: ["align-items", "cross-axis", "center"]
   },
@@ -205,12 +205,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which declaration is commonly used to center an item both horizontally and vertically in a row flex container?",
     options: [
-      { id: "A", text: "justify-content: center; align-items: center;" },
-      { id: "B", text: "justify-items: center; align-content: center;" },
-      { id: "C", text: "text-align: center; vertical-align: center;" },
-      { id: "D", text: "align-self: center; position: center;" }
+      { id: "A", text: "justify-items: center; align-content: center;" },
+      { id: "B", text: "text-align: center; vertical-align: center;" },
+      { id: "C", text: "align-self: center; position: center;" },
+      { id: "D", text: "justify-content: center; align-items: center;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "justify-content centers on the main axis and align-items centers on the cross axis.",
     tags: ["centering", "justify-content", "align-items"]
   },
@@ -223,12 +223,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does justify-content: space-between do?",
     options: [
-      { id: "A", text: "Adds equal space before and after every item" },
-      { id: "B", text: "Places equal space between items, with no distributed space at the outer edges" },
+      { id: "A", text: "Places equal space between items, with no distributed space at the outer edges" },
+      { id: "B", text: "Adds equal space before and after every item" },
       { id: "C", text: "Centers all items together" },
       { id: "D", text: "Makes every item the same width" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "space-between distributes the available free space between adjacent items, leaving no extra space at the two outer edges.",
     tags: ["justify-content", "space-between"]
   },
@@ -241,12 +241,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "How does space-around differ from space-between?",
     options: [
-      { id: "A", text: "space-around also distributes space around the outer edges" },
-      { id: "B", text: "space-around removes all spacing" },
+      { id: "A", text: "space-around removes all spacing" },
+      { id: "B", text: "space-around also distributes space around the outer edges" },
       { id: "C", text: "space-around only works vertically" },
       { id: "D", text: "There is no difference" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "space-around gives each item equal space around it, resulting in half-sized spaces at the outer edges compared with the spaces between items.",
     tags: ["justify-content", "space-around"]
   },
@@ -259,12 +259,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does justify-content: space-evenly do?",
     options: [
-      { id: "A", text: "Creates equal-sized gaps between items and the container's edges" },
-      { id: "B", text: "Creates no gap between items" },
-      { id: "C", text: "Only centers the first item" },
+      { id: "A", text: "Creates no gap between items" },
+      { id: "B", text: "Only centers the first item" },
+      { id: "C", text: "Creates equal-sized gaps between items and the container's edges" },
       { id: "D", text: "Makes items equal in width" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "space-evenly distributes free space so the gaps between items and the outer edges are equal.",
     tags: ["justify-content", "space-evenly"]
   },
@@ -278,11 +278,11 @@ const cssFlexboxQuestions = [
     question: "What is the default value of flex-wrap?",
     options: [
       { id: "A", text: "wrap" },
-      { id: "B", text: "nowrap" },
-      { id: "C", text: "wrap-reverse" },
-      { id: "D", text: "auto" }
+      { id: "B", text: "wrap-reverse" },
+      { id: "C", text: "auto" },
+      { id: "D", text: "nowrap" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Flex containers default to flex-wrap: nowrap, meaning items remain on one flex line unless other constraints cause different behavior.",
     tags: ["flex-wrap"]
   },
@@ -313,12 +313,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which shorthand combines flex-direction and flex-wrap?",
     options: [
-      { id: "A", text: "flex-flow" },
-      { id: "B", text: "flex-layout" },
+      { id: "A", text: "flex-layout" },
+      { id: "B", text: "flex-flow" },
       { id: "C", text: "flex-direction-wrap" },
       { id: "D", text: "flow-flex" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "flex-flow is shorthand for flex-direction and flex-wrap.",
     tags: ["flex-flow", "flex-direction", "flex-wrap"]
   },
@@ -331,12 +331,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which declaration creates a wrapping horizontal flex layout?",
     options: [
-      { id: "A", text: "flex-flow: row wrap;" },
-      { id: "B", text: "flex-flow: wrap row-only;" },
-      { id: "C", text: "flex: row wrap;" },
+      { id: "A", text: "flex-flow: wrap row-only;" },
+      { id: "B", text: "flex: row wrap;" },
+      { id: "C", text: "flex-flow: row wrap;" },
       { id: "D", text: "display: row wrap;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "flex-flow accepts the flex-direction followed by flex-wrap, so row wrap creates a horizontal wrapping layout.",
     tags: ["flex-flow", "flex-wrap"]
   },
@@ -350,11 +350,11 @@ const cssFlexboxQuestions = [
     question: "What is the default value of align-items?",
     options: [
       { id: "A", text: "center" },
-      { id: "B", text: "stretch" },
-      { id: "C", text: "flex-start" },
-      { id: "D", text: "baseline" }
+      { id: "B", text: "flex-start" },
+      { id: "C", text: "baseline" },
+      { id: "D", text: "stretch" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "align-items defaults to stretch, subject to the item's cross-size constraints.",
     tags: ["align-items", "defaults"]
   },
@@ -385,12 +385,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which property allows one flex item to override the container's align-items value for itself?",
     options: [
-      { id: "A", text: "align-self" },
-      { id: "B", text: "self-align" },
+      { id: "A", text: "self-align" },
+      { id: "B", text: "align-self" },
       { id: "C", text: "item-align" },
       { id: "D", text: "justify-self" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "align-self controls the cross-axis alignment of an individual flex item.",
     tags: ["align-self", "flex-items"]
   },
@@ -403,12 +403,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "A flex container has align-items: center. One item has align-self: flex-start. What happens?",
     options: [
-      { id: "A", text: "That item is aligned at the start of the cross axis while the others remain centered" },
-      { id: "B", text: "The entire container changes to flex-start" },
-      { id: "C", text: "The item is removed from the flex layout" },
+      { id: "A", text: "The entire container changes to flex-start" },
+      { id: "B", text: "The item is removed from the flex layout" },
+      { id: "C", text: "That item is aligned at the start of the cross axis while the others remain centered" },
       { id: "D", text: "align-self is ignored on flex items" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "align-self overrides align-items for an individual flex item.",
     tags: ["align-self", "align-items"]
   },
@@ -421,12 +421,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "What does the order property control on a flex item?",
     options: [
-      { id: "A", text: "Its visual ordering within the flex container" },
-      { id: "B", text: "Its DOM position" },
-      { id: "C", text: "Its z-index" },
-      { id: "D", text: "Its animation duration" }
+      { id: "A", text: "Its DOM position" },
+      { id: "B", text: "Its z-index" },
+      { id: "C", text: "Its animation duration" },
+      { id: "D", text: "Its visual ordering within the flex container" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "order changes the visual order of flex items without changing their DOM order.",
     tags: ["order", "flex-items"]
   },
@@ -475,12 +475,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which property controls how much a flex item can grow when extra space is available?",
     options: [
-      { id: "A", text: "flex-grow" },
-      { id: "B", text: "flex-expand" },
-      { id: "C", text: "grow-factor" },
+      { id: "A", text: "flex-expand" },
+      { id: "B", text: "grow-factor" },
+      { id: "C", text: "flex-grow" },
       { id: "D", text: "flex-size" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "flex-grow defines the item's grow factor when positive free space is distributed.",
     tags: ["flex-grow", "flex-items"]
   },
@@ -493,12 +493,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What is the default value of flex-grow?",
     options: [
-      { id: "A", text: "0" },
-      { id: "B", text: "1" },
-      { id: "C", text: "auto" },
-      { id: "D", text: "-1" }
+      { id: "A", text: "1" },
+      { id: "B", text: "auto" },
+      { id: "C", text: "-1" },
+      { id: "D", text: "0" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "flex-grow defaults to 0, so flex items do not grow to consume positive free space unless configured to do so.",
     tags: ["flex-grow", "defaults"]
   },
@@ -511,12 +511,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "Two flex items have flex-grow values of 1 and 2, with positive free space available. Which item receives more of that free space?",
     options: [
-      { id: "A", text: "The first item" },
-      { id: "B", text: "The second item" },
+      { id: "A", text: "The second item" },
+      { id: "B", text: "The first item" },
       { id: "C", text: "Both always receive exactly the same amount" },
       { id: "D", text: "Neither can grow" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The grow factors determine the proportional distribution of positive free space. A factor of 2 receives twice the share of a factor of 1, subject to other sizing constraints.",
     tags: ["flex-grow", "free-space"]
   },
@@ -529,12 +529,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "Which property controls how a flex item shrinks when there is insufficient space?",
     options: [
-      { id: "A", text: "flex-shrink" },
-      { id: "B", text: "flex-compress" },
+      { id: "A", text: "flex-compress" },
+      { id: "B", text: "flex-shrink" },
       { id: "C", text: "shrink-factor" },
       { id: "D", text: "flex-reduce" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "flex-shrink controls the shrink factor used when negative free space needs to be distributed.",
     tags: ["flex-shrink", "flex-items"]
   },
@@ -548,11 +548,11 @@ const cssFlexboxQuestions = [
     question: "What is the default value of flex-shrink?",
     options: [
       { id: "A", text: "0" },
-      { id: "B", text: "1" },
-      { id: "C", text: "2" },
+      { id: "B", text: "2" },
+      { id: "C", text: "1" },
       { id: "D", text: "auto" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "flex-shrink defaults to 1, allowing flex items to shrink when necessary.",
     tags: ["flex-shrink", "defaults"]
   },
@@ -565,12 +565,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does flex-basis define?",
     options: [
-      { id: "A", text: "The initial main-size contribution of a flex item before free-space distribution" },
-      { id: "B", text: "The item's final height only" },
-      { id: "C", text: "The item's z-index" },
-      { id: "D", text: "The cross-axis alignment" }
+      { id: "A", text: "The item's final height only" },
+      { id: "B", text: "The item's z-index" },
+      { id: "C", text: "The cross-axis alignment" },
+      { id: "D", text: "The initial main-size contribution of a flex item before free-space distribution" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "flex-basis establishes the initial main size used when calculating the flex layout before growing or shrinking.",
     tags: ["flex-basis", "main-size"]
   },
@@ -601,12 +601,12 @@ const cssFlexboxQuestions = [
     difficulty: "Beginner",
     question: "What does the flex shorthand represent?",
     options: [
-      { id: "A", text: "flex-grow, flex-shrink, and flex-basis" },
-      { id: "B", text: "flex-direction, flex-wrap, and order" },
+      { id: "A", text: "flex-direction, flex-wrap, and order" },
+      { id: "B", text: "flex-grow, flex-shrink, and flex-basis" },
       { id: "C", text: "justify-content, align-items, and gap" },
       { id: "D", text: "width, height, and margin" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The flex shorthand represents flex-grow, flex-shrink, and flex-basis.",
     tags: ["flex", "shorthand"]
   },
@@ -619,12 +619,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "What does flex: 1 commonly communicate in a simple flex layout?",
     options: [
-      { id: "A", text: "The item can grow and shrink and has a zero flex basis in the shorthand expansion" },
-      { id: "B", text: "The item can never shrink" },
-      { id: "C", text: "The item is exactly 1px wide" },
+      { id: "A", text: "The item can never shrink" },
+      { id: "B", text: "The item is exactly 1px wide" },
+      { id: "C", text: "The item can grow and shrink and has a zero flex basis in the shorthand expansion" },
       { id: "D", text: "The item receives order 1" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A single number in the flex shorthand is interpreted as flex-grow. The resulting shorthand behavior commonly corresponds to flex: 1 1 0%, allowing the item to grow and shrink from a zero flex basis.",
     tags: ["flex", "flex-grow", "shorthand"]
   },
@@ -637,12 +637,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "Which property creates a consistent gap between flex items without requiring margins on each item?",
     options: [
-      { id: "A", text: "gap" },
-      { id: "B", text: "item-spacing" },
-      { id: "C", text: "flex-gap-only" },
-      { id: "D", text: "spacing" }
+      { id: "A", text: "item-spacing" },
+      { id: "B", text: "flex-gap-only" },
+      { id: "C", text: "spacing" },
+      { id: "D", text: "gap" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The gap property controls spacing between items in flex and other layout contexts.",
     tags: ["gap", "spacing"]
   },
@@ -673,12 +673,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "What does align-content control in a multi-line flex container?",
     options: [
-      { id: "A", text: "Distribution of flex lines along the cross axis" },
-      { id: "B", text: "Alignment of one item along the main axis" },
+      { id: "A", text: "Alignment of one item along the main axis" },
+      { id: "B", text: "Distribution of flex lines along the cross axis" },
       { id: "C", text: "The order of individual items" },
       { id: "D", text: "The width of every flex item" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "align-content distributes multiple flex lines along the cross axis when there is extra cross-axis space.",
     tags: ["align-content", "flex-lines"]
   },
@@ -691,12 +691,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "When is align-content relevant in Flexbox?",
     options: [
-      { id: "A", text: "Primarily when the flex container has multiple lines" },
-      { id: "B", text: "Only when there is exactly one item" },
-      { id: "C", text: "Only for inline elements" },
+      { id: "A", text: "Only when there is exactly one item" },
+      { id: "B", text: "Only for inline elements" },
+      { id: "C", text: "Primarily when the flex container has multiple lines" },
       { id: "D", text: "Only when flex-direction is column" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "align-content affects the distribution of multiple flex lines. It does not perform the same role as align-items for individual items.",
     tags: ["align-content", "flex-wrap"]
   },
@@ -709,12 +709,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "Which statement correctly distinguishes align-items from align-content?",
     options: [
-      { id: "A", text: "align-items aligns items within a line; align-content distributes multiple lines" },
-      { id: "B", text: "align-items controls main-axis order; align-content controls item width" },
-      { id: "C", text: "They always do exactly the same thing" },
-      { id: "D", text: "align-content works only with grid" }
+      { id: "A", text: "align-items controls main-axis order; align-content controls item width" },
+      { id: "B", text: "They always do exactly the same thing" },
+      { id: "C", text: "align-content works only with grid" },
+      { id: "D", text: "align-items aligns items within a line; align-content distributes multiple lines" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "align-items handles cross-axis alignment of items, while align-content handles distribution of multiple flex lines.",
     tags: ["align-items", "align-content"]
   },
@@ -727,12 +727,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "A flex container has flex-direction: column. Which property would you use to center its items horizontally?",
     options: [
-      { id: "A", text: "justify-content: center" },
-      { id: "B", text: "align-items: center" },
+      { id: "A", text: "align-items: center" },
+      { id: "B", text: "justify-content: center" },
       { id: "C", text: "flex-center: horizontal" },
       { id: "D", text: "justify-items: center" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "With column direction, the main axis is vertical and the cross axis is horizontal. align-items controls the cross axis.",
     tags: ["flex-direction", "align-items", "cross-axis"]
   },
@@ -763,12 +763,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "What happens when flex-direction is changed from row to column?",
     options: [
-      { id: "A", text: "The main and cross axes change orientation" },
-      { id: "B", text: "Flexbox stops working" },
-      { id: "C", text: "All flex items become absolute" },
+      { id: "A", text: "Flexbox stops working" },
+      { id: "B", text: "All flex items become absolute" },
+      { id: "C", text: "The main and cross axes change orientation" },
       { id: "D", text: "justify-content becomes invalid" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Changing flex-direction changes the orientation of the main axis, which also changes the orientation of the cross axis.",
     tags: ["flex-direction", "axes"]
   },
@@ -781,12 +781,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "What does flex-direction: row-reverse do?",
     options: [
-      { id: "A", text: "Lays items along the row main axis in the reverse direction" },
-      { id: "B", text: "Moves items into a column" },
-      { id: "C", text: "Reverses the DOM order" },
-      { id: "D", text: "Reverses the cross axis only" }
+      { id: "A", text: "Moves items into a column" },
+      { id: "B", text: "Reverses the DOM order" },
+      { id: "C", text: "Reverses the cross axis only" },
+      { id: "D", text: "Lays items along the row main axis in the reverse direction" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "row-reverse reverses the direction of the row's main axis for flex layout.",
     tags: ["flex-direction", "row-reverse"]
   },
@@ -817,12 +817,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "You want three cards to share available horizontal space equally. Which approach is most appropriate?",
     options: [
-      { id: "A", text: "Give each card flex: 1" },
-      { id: "B", text: "Give each card position: absolute" },
+      { id: "A", text: "Give each card position: absolute" },
+      { id: "B", text: "Give each card flex: 1" },
       { id: "C", text: "Give each card order: 1" },
       { id: "D", text: "Give the container text-align: justify" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "flex: 1 is a common pattern for making sibling flex items share available space.",
     tags: ["flex", "flex-grow", "layout"]
   },
@@ -835,12 +835,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "Which layout is appropriate for placing a logo on the left and navigation links on the right of a header?",
     options: [
-      { id: "A", text: "display: flex with justify-content: space-between" },
-      { id: "B", text: "display: block with justify-content: space-between" },
-      { id: "C", text: "display: grid with flex-direction: row" },
+      { id: "A", text: "display: block with justify-content: space-between" },
+      { id: "B", text: "display: grid with flex-direction: row" },
+      { id: "C", text: "display: flex with justify-content: space-between" },
       { id: "D", text: "position: space-between" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A flex container with space-between places the first item at the start and the last item at the end, distributing remaining space between them.",
     tags: ["flexbox", "justify-content", "layout-patterns"]
   },
@@ -853,12 +853,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "A button inside a flex container should be pushed to the far end of the main axis while preceding content stays at the start. Which technique is commonly useful?",
     options: [
-      { id: "A", text: "margin-inline-start: auto on the button" },
-      { id: "B", text: "padding-inline-start: auto on the button" },
-      { id: "C", text: "align-items: auto on the button" },
-      { id: "D", text: "order: auto-end on the button" }
+      { id: "A", text: "padding-inline-start: auto on the button" },
+      { id: "B", text: "align-items: auto on the button" },
+      { id: "C", text: "order: auto-end on the button" },
+      { id: "D", text: "margin-inline-start: auto on the button" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An auto margin on the main-axis side can absorb available free space and push the item toward the opposite end.",
     tags: ["auto-margin", "flexbox", "layout-patterns"]
   },
@@ -889,12 +889,12 @@ const cssFlexboxQuestions = [
     difficulty: "Intermediate",
     question: "A developer uses justify-content: center expecting an item to be vertically centered, but the container uses flex-direction: column. What should they understand?",
     options: [
-      { id: "A", text: "With column direction, the main axis is vertical, so justify-content: center actually performs vertical main-axis centering" },
-      { id: "B", text: "justify-content always controls horizontal alignment regardless of direction" },
+      { id: "A", text: "justify-content always controls horizontal alignment regardless of direction" },
+      { id: "B", text: "With column direction, the main axis is vertical, so justify-content: center actually performs vertical main-axis centering" },
       { id: "C", text: "justify-content never works with column layouts" },
       { id: "D", text: "They must use position: absolute" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Flexbox alignment properties are relative to the flex axes. In a column layout, the main axis is vertical, so justify-content controls vertical distribution.",
     tags: ["justify-content", "flex-direction", "axes", "debugging"]
   }

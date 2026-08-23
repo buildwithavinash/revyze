@@ -7,12 +7,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What is a JavaScript module?",
     options: [
-      { id: "A", text: "A JavaScript file whose code can have its own module scope and explicitly import or export values" },
-      { id: "B", text: "A JavaScript object that can only contain functions" },
-      { id: "C", text: "A browser-only API for manipulating HTML" },
-      { id: "D", text: "A special type of JSON file" }
+      { id: "A", text: "A JavaScript object that can only contain functions" },
+      { id: "B", text: "A browser-only API for manipulating HTML" },
+      { id: "C", text: "A special type of JSON file" },
+      { id: "D", text: "A JavaScript file whose code can have its own module scope and explicitly import or export values" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A module is a unit of JavaScript code with its own scope that can explicitly expose values with exports and consume values with imports.",
     tags: ["modules", "fundamentals", "module-scope"]
   },
@@ -43,12 +43,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What does this statement do?\n\nexport const username = \"Avi\";",
     options: [
-      { id: "A", text: "Makes username available for import by other modules" },
-      { id: "B", text: "Makes username a global browser variable" },
+      { id: "A", text: "Makes username a global browser variable" },
+      { id: "B", text: "Makes username available for import by other modules" },
       { id: "C", text: "Imports username from another module" },
       { id: "D", text: "Deletes username after the module runs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`export` makes the declared binding available to other modules that import it.",
     tags: ["export", "named-exports", "ES-modules"]
   },
@@ -61,12 +61,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What does this statement do?\n\nimport { username } from \"./user.js\";",
     options: [
-      { id: "A", text: "Imports the named export username from user.js" },
-      { id: "B", text: "Exports username from the current module" },
-      { id: "C", text: "Creates a new global variable named username" },
+      { id: "A", text: "Exports username from the current module" },
+      { id: "B", text: "Creates a new global variable named username" },
+      { id: "C", text: "Imports the named export username from user.js" },
       { id: "D", text: "Executes user.js without importing anything" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The named import syntax `{ username }` requests the export named `username` from the specified module.",
     tags: ["import", "named-imports", "ES-modules"]
   },
@@ -79,12 +79,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What is a named export?",
     options: [
-      { id: "A", text: "An export identified by a specific exported name" },
-      { id: "B", text: "An export that can only contain strings" },
-      { id: "C", text: "An export that automatically becomes global" },
-      { id: "D", text: "An export available only inside the same file" }
+      { id: "A", text: "An export that can only contain strings" },
+      { id: "B", text: "An export that automatically becomes global" },
+      { id: "C", text: "An export available only inside the same file" },
+      { id: "D", text: "An export identified by a specific exported name" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Named exports expose specific bindings under specific names, which consumers can import using matching names or aliases.",
     tags: ["named-exports", "exports", "ES-modules"]
   },
@@ -115,12 +115,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What is a default export?",
     options: [
-      { id: "A", text: "The module's designated default exported value" },
-      { id: "B", text: "The first variable declared in a file" },
+      { id: "A", text: "The first variable declared in a file" },
+      { id: "B", text: "The module's designated default exported value" },
       { id: "C", text: "An export that must always be a string" },
       { id: "D", text: "An export automatically created by Node.js" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A module can have one default export, representing the module's primary exported value.",
     tags: ["default-export", "exports", "ES-modules"]
   },
@@ -133,12 +133,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "Which syntax correctly imports the default export from a module?",
     options: [
-      { id: "A", text: "import calculate from \"./math.js\";" },
-      { id: "B", text: "import { calculate } from \"./math.js\";" },
-      { id: "C", text: "import default calculate from \"./math.js\";" },
+      { id: "A", text: "import { calculate } from \"./math.js\";" },
+      { id: "B", text: "import default calculate from \"./math.js\";" },
+      { id: "C", text: "import calculate from \"./math.js\";" },
       { id: "D", text: "require default calculate from \"./math.js\";" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A default import does not use braces. The importing module can choose the local name for the default export.",
     tags: ["default-import", "default-export", "import"]
   },
@@ -151,12 +151,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What is exported by this module?\n\nexport default function greet() {\n  return \"Hello\";\n}",
     options: [
-      { id: "A", text: "The function greet as the module's default export" },
-      { id: "B", text: "A named export called default and a named export called greet" },
-      { id: "C", text: "Only the string \"Hello\"" },
-      { id: "D", text: "Nothing because functions cannot be exported" }
+      { id: "A", text: "A named export called default and a named export called greet" },
+      { id: "B", text: "Only the string \"Hello\"" },
+      { id: "C", text: "Nothing because functions cannot be exported" },
+      { id: "D", text: "The function greet as the module's default export" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`export default` marks the function as the module's default export. The function can still have the local name `greet` within the module.",
     tags: ["default-export", "functions", "ES-modules"]
   },
@@ -187,12 +187,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "Which syntax exports multiple existing bindings by name?",
     options: [
-      { id: "A", text: "export { add, subtract };" },
-      { id: "B", text: "export(add, subtract);" },
+      { id: "A", text: "export(add, subtract);" },
+      { id: "B", text: "export { add, subtract };" },
       { id: "C", text: "exports [add, subtract];" },
       { id: "D", text: "module.export(add, subtract);" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An export list can expose existing local bindings using `export { ... }`.",
     tags: ["named-exports", "export-list", "ES-modules"]
   },
@@ -205,12 +205,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What does this syntax accomplish?\n\nexport { calculate as total };",
     options: [
-      { id: "A", text: "Exports the local binding calculate under the name total" },
-      { id: "B", text: "Imports total as calculate" },
-      { id: "C", text: "Renames the local variable calculate to total" },
+      { id: "A", text: "Imports total as calculate" },
+      { id: "B", text: "Renames the local variable calculate to total" },
+      { id: "C", text: "Exports the local binding calculate under the name total" },
       { id: "D", text: "Creates a default export" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `as` keyword in an export list gives the exported binding a different public name without renaming the local variable.",
     tags: ["named-exports", "aliases", "as"]
   },
@@ -223,12 +223,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "Can an ES module have multiple named exports?",
     options: [
-      { id: "A", text: "Yes" },
-      { id: "B", text: "No, only one value can be exported" },
-      { id: "C", text: "Only if the exports are functions" },
-      { id: "D", text: "Only in Node.js" }
+      { id: "A", text: "No, only one value can be exported" },
+      { id: "B", text: "Only if the exports are functions" },
+      { id: "C", text: "Only in Node.js" },
+      { id: "D", text: "Yes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A module can expose many named exports. It can also have at most one default export.",
     tags: ["named-exports", "default-export", "ES-modules"]
   },
@@ -259,12 +259,12 @@ const javascriptModulesQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of this HTML attribute?\n\n<script type=\"module\" src=\"main.js\"></script>",
     options: [
-      { id: "A", text: "It tells the browser to treat main.js as an ES module" },
-      { id: "B", text: "It tells the browser to execute main.js as CommonJS" },
+      { id: "A", text: "It tells the browser to execute main.js as CommonJS" },
+      { id: "B", text: "It tells the browser to treat main.js as an ES module" },
       { id: "C", text: "It prevents main.js from executing" },
       { id: "D", text: "It converts main.js into TypeScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `type=\"module\"` attribute tells browsers to load and execute the script using ES module semantics.",
     tags: ["browser-modules", "script", "type-module"]
   },
@@ -277,12 +277,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "How does module scope differ from the traditional global script scope?",
     options: [
-      { id: "A", text: "Top-level declarations in a module are scoped to that module rather than automatically becoming global variables" },
-      { id: "B", text: "Every module variable automatically becomes a property of window" },
-      { id: "C", text: "Modules cannot declare variables" },
+      { id: "A", text: "Every module variable automatically becomes a property of window" },
+      { id: "B", text: "Modules cannot declare variables" },
+      { id: "C", text: "Top-level declarations in a module are scoped to that module rather than automatically becoming global variables" },
       { id: "D", text: "Modules always share one global lexical scope" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ES modules have their own top-level scope. Their declarations are not automatically exposed as globals.",
     tags: ["module-scope", "global-scope", "ES-modules"]
   },
@@ -295,12 +295,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What is true about this module?\n\nconst secret = 42;\n\nexport const value = 10;",
     options: [
-      { id: "A", text: "secret is private to the module unless it is exported, while value is available to importing modules" },
-      { id: "B", text: "Both secret and value automatically become global variables" },
-      { id: "C", text: "Neither variable exists after module evaluation" },
-      { id: "D", text: "secret is automatically exported because value is exported" }
+      { id: "A", text: "Both secret and value automatically become global variables" },
+      { id: "B", text: "Neither variable exists after module evaluation" },
+      { id: "C", text: "secret is automatically exported because value is exported" },
+      { id: "D", text: "secret is private to the module unless it is exported, while value is available to importing modules" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Only explicitly exported bindings are part of the module's public interface.",
     tags: ["module-scope", "exports", "encapsulation"]
   },
@@ -331,12 +331,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of this syntax?\n\nimport * as utils from \"./utils.js\";",
     options: [
-      { id: "A", text: "Imports the module's exported bindings into a namespace object called utils" },
-      { id: "B", text: "Imports only the default export" },
+      { id: "A", text: "Imports only the default export" },
+      { id: "B", text: "Imports the module's exported bindings into a namespace object called utils" },
       { id: "C", text: "Imports every variable from the module, including unexported variables" },
       { id: "D", text: "Renames the entire module file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Namespace imports provide access to the module's exports through an object-like namespace such as `utils.add`.",
     tags: ["namespace-import", "import", "ES-modules"]
   },
@@ -349,12 +349,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "Given this module:\n\nexport const add = (a, b) => a + b;\nexport const subtract = (a, b) => a - b;\n\nWhich expression accesses add after a namespace import?",
     options: [
-      { id: "A", text: "utils.add" },
-      { id: "B", text: "utils::add" },
-      { id: "C", text: "utils[add]" },
+      { id: "A", text: "utils::add" },
+      { id: "B", text: "utils[add]" },
+      { id: "C", text: "utils.add" },
       { id: "D", text: "add.utils" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "With `import * as utils`, exported names are accessed as properties such as `utils.add`.",
     tags: ["namespace-import", "named-exports", "module-api"]
   },
@@ -367,12 +367,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What does a relative module path such as \"./utils.js\" indicate?",
     options: [
-      { id: "A", text: "A module located relative to the importing module's location" },
-      { id: "B", text: "A module installed globally on the operating system" },
-      { id: "C", text: "A module that must exist on a remote server" },
-      { id: "D", text: "A built-in JavaScript module" }
+      { id: "A", text: "A module installed globally on the operating system" },
+      { id: "B", text: "A module that must exist on a remote server" },
+      { id: "C", text: "A built-in JavaScript module" },
+      { id: "D", text: "A module located relative to the importing module's location" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`./` represents the current directory context, so the path is resolved relative to the importing module.",
     tags: ["module-paths", "relative-imports", "ES-modules"]
   },
@@ -403,12 +403,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What happens when an ES module imports another module?",
     options: [
-      { id: "A", text: "The imported module is evaluated according to the module system's dependency rules and its exports become available to the importer" },
-      { id: "B", text: "The imported file is copied into the importer as plain text" },
+      { id: "A", text: "The imported file is copied into the importer as plain text" },
+      { id: "B", text: "The imported module is evaluated according to the module system's dependency rules and its exports become available to the importer" },
       { id: "C", text: "Only functions from the imported module execute" },
       { id: "D", text: "The imported module automatically becomes global" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "ES modules form a dependency graph. Imported modules are loaded and evaluated as required, and their exported bindings become available to the importer.",
     tags: ["module-loading", "dependency-graph", "ES-modules"]
   },
@@ -421,12 +421,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What is a module dependency graph?",
     options: [
-      { id: "A", text: "The network of modules connected through their import and export relationships" },
-      { id: "B", text: "A graph of DOM elements created by each module" },
-      { id: "C", text: "A list containing only npm packages" },
+      { id: "A", text: "A graph of DOM elements created by each module" },
+      { id: "B", text: "A list containing only npm packages" },
+      { id: "C", text: "The network of modules connected through their import and export relationships" },
       { id: "D", text: "A graph of JavaScript variables in memory" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Modules form a graph because one module can import from another, which can itself import additional modules.",
     tags: ["dependency-graph", "modules", "architecture"]
   },
@@ -439,12 +439,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What is CommonJS?",
     options: [
-      { id: "A", text: "A module system historically associated with Node.js that commonly uses require() and module.exports" },
-      { id: "B", text: "A browser-only replacement for HTML modules" },
-      { id: "C", text: "A CSS module system" },
-      { id: "D", text: "A JavaScript class inheritance mechanism" }
+      { id: "A", text: "A browser-only replacement for HTML modules" },
+      { id: "B", text: "A CSS module system" },
+      { id: "C", text: "A JavaScript class inheritance mechanism" },
+      { id: "D", text: "A module system historically associated with Node.js that commonly uses require() and module.exports" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "CommonJS is a module system widely used in Node.js ecosystems, using constructs such as `require()` and `module.exports`.",
     tags: ["CommonJS", "Node.js", "modules"]
   },
@@ -475,12 +475,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What does this CommonJS code expose?\n\nmodule.exports = {\n  add,\n  subtract\n};",
     options: [
-      { id: "A", text: "An object containing add and subtract as exported properties" },
-      { id: "B", text: "Two ES module named exports" },
+      { id: "A", text: "Two ES module named exports" },
+      { id: "B", text: "An object containing add and subtract as exported properties" },
       { id: "C", text: "Only the add function" },
       { id: "D", text: "Nothing because CommonJS cannot export objects" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`module.exports` is the value returned by `require()`. Here that value is an object with `add` and `subtract` properties.",
     tags: ["CommonJS", "module.exports", "exports"]
   },
@@ -493,12 +493,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "Which pair is most strongly associated with CommonJS?",
     options: [
-      { id: "A", text: "require() and module.exports" },
-      { id: "B", text: "import and export default" },
-      { id: "C", text: "extends and super" },
+      { id: "A", text: "import and export default" },
+      { id: "B", text: "extends and super" },
+      { id: "C", text: "require() and module.exports" },
       { id: "D", text: "async and await" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`require()` and `module.exports` are core CommonJS constructs.",
     tags: ["CommonJS", "require", "module.exports"]
   },
@@ -511,12 +511,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "Which pair is associated with ES Modules?",
     options: [
-      { id: "A", text: "import and export" },
-      { id: "B", text: "require and module.exports" },
-      { id: "C", text: "include and expose" },
-      { id: "D", text: "load and unload" }
+      { id: "A", text: "require and module.exports" },
+      { id: "B", text: "include and expose" },
+      { id: "C", text: "load and unload" },
+      { id: "D", text: "import and export" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "ES Modules use the standardized `import` and `export` syntax.",
     tags: ["ES-modules", "import", "export"]
   },
@@ -547,12 +547,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What does this syntax mean?\n\nexport { default as Button } from \"./Button.js\";",
     options: [
-      { id: "A", text: "Re-exports the default export from Button.js under the named export Button" },
-      { id: "B", text: "Imports Button locally and creates a new class" },
+      { id: "A", text: "Imports Button locally and creates a new class" },
+      { id: "B", text: "Re-exports the default export from Button.js under the named export Button" },
       { id: "C", text: "Exports every variable from Button.js" },
       { id: "D", text: "Converts Button.js into CommonJS" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "This is a re-export. It exposes another module's default export under the name `Button` without creating a local binding in the current module.",
     tags: ["re-export", "default-export", "module-organization"]
   },
@@ -565,12 +565,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "What is a barrel file commonly used for?",
     options: [
-      { id: "A", text: "Re-exporting related modules through a single entry point" },
-      { id: "B", text: "Storing binary data for Node.js" },
-      { id: "C", text: "Replacing package.json" },
+      { id: "A", text: "Storing binary data for Node.js" },
+      { id: "B", text: "Replacing package.json" },
+      { id: "C", text: "Re-exporting related modules through a single entry point" },
       { id: "D", text: "Preventing all modules from importing one another" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A barrel file commonly gathers exports from multiple modules, allowing consumers to import related functionality from one location.",
     tags: ["barrel-files", "re-exports", "module-organization"]
   },
@@ -583,12 +583,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "Consider this file:\n\nexport { add } from \"./math.js\";\nexport { formatCurrency } from \"./currency.js\";\n\nWhat is the role of this file?",
     options: [
-      { id: "A", text: "It acts as an entry point that re-exports functionality from other modules" },
-      { id: "B", text: "It creates copies of both functions in memory manually" },
-      { id: "C", text: "It converts both files into CommonJS" },
-      { id: "D", text: "It prevents either function from being imported elsewhere" }
+      { id: "A", text: "It creates copies of both functions in memory manually" },
+      { id: "B", text: "It converts both files into CommonJS" },
+      { id: "C", text: "It prevents either function from being imported elsewhere" },
+      { id: "D", text: "It acts as an entry point that re-exports functionality from other modules" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The file does not need to implement the functionality itself. It exposes selected exports from other modules through its own public interface.",
     tags: ["barrel-files", "re-exports", "module-api"]
   },
@@ -619,12 +619,12 @@ const javascriptModulesQuestions = [
     difficulty: "Intermediate",
     question: "Why are ES module imports and exports particularly useful for static analysis?",
     options: [
-      { id: "A", text: "Their syntax is statically structured, allowing tooling to analyze dependency relationships before execution" },
-      { id: "B", text: "They are always executed at runtime using eval()" },
+      { id: "A", text: "They are always executed at runtime using eval()" },
+      { id: "B", text: "Their syntax is statically structured, allowing tooling to analyze dependency relationships before execution" },
       { id: "C", text: "They automatically contain type information" },
       { id: "D", text: "They cannot reference other files" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "ES module dependency syntax is statically analyzable, which helps bundlers and development tools understand the module graph.",
     tags: ["static-analysis", "ES-modules", "bundlers"]
   },
@@ -637,12 +637,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "What is special about ES module bindings when an exported variable changes?",
     options: [
-      { id: "A", text: "Imports are live bindings that reflect updates to the exported binding" },
-      { id: "B", text: "Imports are always deep copies of the exported value" },
-      { id: "C", text: "Imports automatically become global variables" },
+      { id: "A", text: "Imports are always deep copies of the exported value" },
+      { id: "B", text: "Imports automatically become global variables" },
+      { id: "C", text: "Imports are live bindings that reflect updates to the exported binding" },
       { id: "D", text: "The exporting module is reloaded every time the variable changes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ES module imports are live bindings. The importer receives access to the exported binding rather than a simple independent copy of its value.",
     tags: ["live-bindings", "exports", "imports"]
   },
@@ -655,12 +655,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "Which statement about an imported binding is correct?\n\nimport { count } from \"./counter.js\";",
     options: [
-      { id: "A", text: "The importing module cannot directly reassign count" },
-      { id: "B", text: "The importing module owns an independent mutable copy of count" },
-      { id: "C", text: "count becomes a global variable" },
-      { id: "D", text: "count can always be reassigned with count = 10" }
+      { id: "A", text: "The importing module owns an independent mutable copy of count" },
+      { id: "B", text: "count becomes a global variable" },
+      { id: "C", text: "count can always be reassigned with count = 10" },
+      { id: "D", text: "The importing module cannot directly reassign count" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Imported bindings are read-only from the importer's perspective. The exporting module controls the binding itself.",
     tags: ["live-bindings", "imports", "read-only"]
   },
@@ -691,12 +691,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "Why can circular dependencies be problematic?",
     options: [
-      { id: "A", text: "Initialization order and partially initialized bindings can produce surprising behavior" },
-      { id: "B", text: "They always cause infinite loops in every JavaScript environment" },
+      { id: "A", text: "They always cause infinite loops in every JavaScript environment" },
+      { id: "B", text: "Initialization order and partially initialized bindings can produce surprising behavior" },
       { id: "C", text: "They prevent JavaScript from parsing any module" },
       { id: "D", text: "They automatically delete one of the modules" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Circular dependencies can be valid, but they make initialization order more difficult to reason about and can expose bindings before they are initialized.",
     tags: ["circular-dependencies", "initialization", "dependency-graph"]
   },
@@ -709,12 +709,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "What is dynamic import()?",
     options: [
-      { id: "A", text: "A function-like syntax that loads a module dynamically and returns a Promise" },
-      { id: "B", text: "A replacement for export default" },
-      { id: "C", text: "A CommonJS-only syntax for exporting modules" },
+      { id: "A", text: "A replacement for export default" },
+      { id: "B", text: "A CommonJS-only syntax for exporting modules" },
+      { id: "C", text: "A function-like syntax that loads a module dynamically and returns a Promise" },
       { id: "D", text: "A synchronous version of require()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Dynamic `import()` loads a module asynchronously and returns a Promise that resolves to the module namespace object.",
     tags: ["dynamic-import", "code-splitting", "ES-modules"]
   },
@@ -727,12 +727,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "What does this code return?\n\nconst module = import(\"./analytics.js\");",
     options: [
-      { id: "A", text: "A Promise" },
-      { id: "B", text: "The module namespace object immediately" },
-      { id: "C", text: "The default export immediately" },
-      { id: "D", text: "A string containing the file contents" }
+      { id: "A", text: "The module namespace object immediately" },
+      { id: "B", text: "The default export immediately" },
+      { id: "C", text: "A string containing the file contents" },
+      { id: "D", text: "A Promise" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Dynamic `import()` is asynchronous and returns a Promise that resolves to the imported module's namespace object.",
     tags: ["dynamic-import", "Promise", "ES-modules"]
   },
@@ -763,12 +763,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "What does this syntax do?\n\nexport * from \"./utils.js\";",
     options: [
-      { id: "A", text: "Re-exports the named exports from utils.js" },
-      { id: "B", text: "Re-exports the default export from utils.js automatically" },
+      { id: "A", text: "Re-exports the default export from utils.js automatically" },
+      { id: "B", text: "Re-exports the named exports from utils.js" },
       { id: "C", text: "Imports every private variable from utils.js" },
       { id: "D", text: "Copies utils.js into the current file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`export * from` re-exports the module's named exports. It does not re-export the default export through this syntax.",
     tags: ["re-export", "export-star", "named-exports"]
   },
@@ -781,12 +781,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "Which module organization is generally better for a large frontend application?",
     options: [
-      { id: "A", text: "Group related functionality into focused modules with clear public interfaces and avoid unnecessary dependencies" },
-      { id: "B", text: "Put every function in one enormous module" },
-      { id: "C", text: "Make every variable globally accessible" },
+      { id: "A", text: "Put every function in one enormous module" },
+      { id: "B", text: "Make every variable globally accessible" },
+      { id: "C", text: "Group related functionality into focused modules with clear public interfaces and avoid unnecessary dependencies" },
       { id: "D", text: "Make every module import every other module" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Focused modules with clear responsibilities reduce coupling and make code easier to test, maintain, reuse, and understand.",
     tags: ["module-organization", "architecture", "maintainability"]
   },
@@ -799,12 +799,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "What is a useful principle when designing a module's exports?",
     options: [
-      { id: "A", text: "Expose the smallest public interface necessary for other modules to use it" },
-      { id: "B", text: "Export every internal variable so other modules can inspect it" },
-      { id: "C", text: "Export only primitive values" },
-      { id: "D", text: "Avoid named exports completely" }
+      { id: "A", text: "Export every internal variable so other modules can inspect it" },
+      { id: "B", text: "Export only primitive values" },
+      { id: "C", text: "Avoid named exports completely" },
+      { id: "D", text: "Expose the smallest public interface necessary for other modules to use it" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A small, intentional public interface improves encapsulation and reduces coupling between modules.",
     tags: ["module-api", "encapsulation", "architecture"]
   },
@@ -835,12 +835,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "Suppose math.js contains:\n\nexport const add = (a, b) => a + b;\nexport const multiply = (a, b) => a * b;\n\nWhich statement imports only add?",
     options: [
-      { id: "A", text: "import { add } from \"./math.js\";" },
-      { id: "B", text: "import * as add from \"./math.js\";" },
+      { id: "A", text: "import * as add from \"./math.js\";" },
+      { id: "B", text: "import { add } from \"./math.js\";" },
       { id: "C", text: "import default add from \"./math.js\";" },
       { id: "D", text: "require { add } from \"./math.js\";" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A named import allows the consumer to request the specific exported binding it needs.",
     tags: ["named-imports", "module-api", "imports"]
   },
@@ -853,12 +853,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\n// config.js\nexport default {\n  apiUrl: \"https://example.com\"\n};\n\nWhich import is valid?",
     options: [
-      { id: "A", text: "import config from \"./config.js\";" },
-      { id: "B", text: "import { config } from \"./config.js\";" },
-      { id: "C", text: "import default { config } from \"./config.js\";" },
+      { id: "A", text: "import { config } from \"./config.js\";" },
+      { id: "B", text: "import default { config } from \"./config.js\";" },
+      { id: "C", text: "import config from \"./config.js\";" },
       { id: "D", text: "import * config from \"./config.js\";" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The module has a default export, so the consumer uses a default import without braces.",
     tags: ["default-export", "default-import", "ES-modules"]
   },
@@ -871,12 +871,12 @@ const javascriptModulesQuestions = [
     difficulty: "Advanced",
     question: "A project has this structure:\n\nsrc/\n  services/\n    api.js\n    auth.js\n  components/\n    Button.jsx\n  utils/\n    format.js\n\nWhich approach is most maintainable?",
     options: [
-      { id: "A", text: "Keep modules focused by responsibility and import only the functionality each file actually needs" },
-      { id: "B", text: "Make every component import every service and utility" },
-      { id: "C", text: "Move all functions into one global module" },
-      { id: "D", text: "Export every internal implementation detail from every file" }
+      { id: "A", text: "Make every component import every service and utility" },
+      { id: "B", text: "Move all functions into one global module" },
+      { id: "C", text: "Export every internal implementation detail from every file" },
+      { id: "D", text: "Keep modules focused by responsibility and import only the functionality each file actually needs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Organizing modules by responsibility and keeping dependencies focused improves maintainability and reduces coupling.",
     tags: ["module-organization", "architecture", "dependencies"]
   },

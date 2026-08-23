@@ -7,12 +7,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Beginner",
     question: "What does asynchronous programming allow a Node.js application to do?",
     options: [
-      { id: "A", text: "Execute every operation on a separate CPU automatically" },
-      { id: "B", text: "Avoid using JavaScript entirely while I/O happens" },
-      { id: "C", text: "Start an operation and continue handling other work while waiting for it to complete" },
+      { id: "A", text: "Start an operation and continue handling other work while waiting for it to complete" },
+      { id: "B", text: "Execute every operation on a separate CPU automatically" },
+      { id: "C", text: "Avoid using JavaScript entirely while I/O happens" },
       { id: "D", text: "Make every operation execute synchronously" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Asynchronous APIs allow Node.js to initiate work such as I/O and continue processing other JavaScript while waiting for the result.",
     tags: ["async", "node"]
   },
@@ -25,12 +25,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Beginner",
     question: "What is a callback?",
     options: [
-      { id: "A", text: "A function passed to another function to be invoked later" },
-      { id: "B", text: "A special type of database" },
+      { id: "A", text: "A special type of database" },
+      { id: "B", text: "A function passed to another function to be invoked later" },
       { id: "C", text: "A Node.js process ID" },
       { id: "D", text: "A replacement for variables" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A callback is a function supplied to another function so it can be invoked at an appropriate point later.",
     tags: ["callbacks", "async"]
   },
@@ -44,11 +44,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Which callback style is commonly associated with traditional Node.js APIs?",
     options: [
       { id: "A", text: "The callback receives only the successful result" },
-      { id: "B", text: "The callback receives the error first and the result second" },
-      { id: "C", text: "The callback must always return a Promise" },
+      { id: "B", text: "The callback must always return a Promise" },
+      { id: "C", text: "The callback receives the error first and the result second" },
       { id: "D", text: "The callback receives the result first and error second" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Traditional Node.js callback APIs commonly follow the error-first convention: `(err, result)`.",
     tags: ["callbacks", "error-first"]
   },
@@ -98,11 +98,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Which states can a JavaScript Promise have?",
     options: [
       { id: "A", text: "Started, stopped, and paused" },
-      { id: "B", text: "Open, closed, and waiting" },
-      { id: "C", text: "Pending, fulfilled, and rejected" },
+      { id: "B", text: "Pending, fulfilled, and rejected" },
+      { id: "C", text: "Open, closed, and waiting" },
       { id: "D", text: "Running, sleeping, and completed" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A Promise begins pending and eventually becomes fulfilled or rejected.",
     tags: ["promises", "states"]
   },
@@ -116,11 +116,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Which method handles a fulfilled Promise?",
     options: [
       { id: "A", text: "catch()" },
-      { id: "B", text: "then()" },
-      { id: "C", text: "finallyError()" },
+      { id: "B", text: "finallyError()" },
+      { id: "C", text: "then()" },
       { id: "D", text: "resolveOnly()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`then()` registers handlers for successful Promise fulfillment.",
     tags: ["promises", "then"]
   },
@@ -133,12 +133,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Beginner",
     question: "Which method handles a rejected Promise?",
     options: [
-      { id: "A", text: "catch()" },
-      { id: "B", text: "rejectHandlerOnly()" },
-      { id: "C", text: "error()" },
-      { id: "D", text: "failPromise()" }
+      { id: "A", text: "rejectHandlerOnly()" },
+      { id: "B", text: "error()" },
+      { id: "C", text: "failPromise()" },
+      { id: "D", text: "catch()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`catch()` registers a rejection handler for a Promise chain.",
     tags: ["promises", "catch", "errors"]
   },
@@ -151,12 +151,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Beginner",
     question: "What does an async function return?",
     options: [
-      { id: "A", text: "A callback" },
-      { id: "B", text: "A Promise" },
+      { id: "A", text: "A Promise" },
+      { id: "B", text: "A callback" },
       { id: "C", text: "A stream" },
       { id: "D", text: "A synchronous value only" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "An `async` function always returns a Promise.",
     tags: ["async", "promises"]
   },
@@ -170,11 +170,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What does `await` normally do inside an async function?",
     options: [
       { id: "A", text: "Stops the entire Node.js process" },
-      { id: "B", text: "Converts the Promise into a callback" },
-      { id: "C", text: "Waits for a Promise's settlement before continuing that async function" },
+      { id: "B", text: "Waits for a Promise's settlement before continuing that async function" },
+      { id: "C", text: "Converts the Promise into a callback" },
       { id: "D", text: "Makes the underlying operation CPU-bound" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`await` pauses the continuation of the current async function until the awaited value settles; it does not block the entire Node.js process.",
     tags: ["async", "await"]
   },
@@ -187,12 +187,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Beginner",
     question: "What happens when an async function returns a normal value?",
     options: [
-      { id: "A", text: "The value is automatically wrapped in a fulfilled Promise" },
-      { id: "B", text: "The value is discarded" },
-      { id: "C", text: "The function becomes synchronous permanently" },
+      { id: "A", text: "The value is discarded" },
+      { id: "B", text: "The function becomes synchronous permanently" },
+      { id: "C", text: "The value is automatically wrapped in a fulfilled Promise" },
       { id: "D", text: "Node.js throws an error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Returning a normal value from an async function produces a fulfilled Promise containing that value.",
     tags: ["async", "promises"]
   },
@@ -206,11 +206,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What happens when an async function throws an error?",
     options: [
       { id: "A", text: "The error is always ignored" },
-      { id: "B", text: "The returned Promise is rejected with that error" },
-      { id: "C", text: "The error becomes a resolved value" },
-      { id: "D", text: "The Node process must always terminate immediately" }
+      { id: "B", text: "The error becomes a resolved value" },
+      { id: "C", text: "The Node process must always terminate immediately" },
+      { id: "D", text: "The returned Promise is rejected with that error" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "An exception thrown inside an async function causes its returned Promise to reject.",
     tags: ["async", "errors"]
   },
@@ -223,12 +223,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "What does `Promise.resolve(42)` produce?",
     options: [
-      { id: "A", text: "The number 42 synchronously" },
-      { id: "B", text: "A rejected Promise" },
-      { id: "C", text: "A fulfilled Promise containing 42" },
+      { id: "A", text: "A fulfilled Promise containing 42" },
+      { id: "B", text: "The number 42 synchronously" },
+      { id: "C", text: "A rejected Promise" },
       { id: "D", text: "A callback containing 42" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`Promise.resolve()` creates or adopts a fulfilled Promise for the supplied value.",
     tags: ["promises", "resolve"]
   },
@@ -241,12 +241,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "What does `Promise.reject(new Error('Failed'))` produce?",
     options: [
-      { id: "A", text: "A rejected Promise" },
-      { id: "B", text: "A fulfilled Promise" },
+      { id: "A", text: "A fulfilled Promise" },
+      { id: "B", text: "A rejected Promise" },
       { id: "C", text: "A callback" },
       { id: "D", text: "A synchronous exception before creating anything" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Promise.reject()` creates a Promise already rejected with the supplied reason.",
     tags: ["promises", "reject", "errors"]
   },
@@ -261,10 +261,10 @@ const nodejsAsyncEventLoopQuestions = [
     options: [
       { id: "A", text: "It only runs when a Promise succeeds" },
       { id: "B", text: "It only runs when a Promise fails" },
-      { id: "C", text: "It converts a Promise into a callback" },
-      { id: "D", text: "It runs cleanup logic regardless of whether the Promise fulfills or rejects" }
+      { id: "C", text: "It runs cleanup logic regardless of whether the Promise fulfills or rejects" },
+      { id: "D", text: "It converts a Promise into a callback" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "`finally()` is useful for cleanup that should occur regardless of the Promise's outcome.",
     tags: ["promises", "finally"]
   },
@@ -278,11 +278,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Consider:\n\n```js\nPromise.resolve(10)\n  .then(value => value * 2)\n  .then(value => console.log(value));\n```\n\nWhat is printed?",
     options: [
       { id: "A", text: "10" },
-      { id: "B", text: "20" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "A Promise object" }
+      { id: "B", text: "undefined" },
+      { id: "C", text: "A Promise object" },
+      { id: "D", text: "20" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The first `then()` transforms 10 into 20, which becomes the fulfillment value for the next `then()`.",
     tags: ["promises", "then", "chaining"]
   },
@@ -367,12 +367,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "What does `setTimeout(callback, 0)` mean?",
     options: [
-      { id: "A", text: "The callback runs before the current synchronous code" },
-      { id: "B", text: "The callback is scheduled after at least the requested delay, subject to event-loop scheduling" },
+      { id: "A", text: "The callback is scheduled after at least the requested delay, subject to event-loop scheduling" },
+      { id: "B", text: "The callback runs before the current synchronous code" },
       { id: "C", text: "The callback runs immediately without entering the event loop" },
       { id: "D", text: "The callback executes on a guaranteed separate CPU core" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A zero delay does not mean immediate execution. The callback becomes eligible after the timer threshold and when the event loop reaches the relevant phase.",
     tags: ["timers", "event-loop"]
   },
@@ -386,11 +386,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What is a microtask in JavaScript?",
     options: [
       { id: "A", text: "A small CPU thread created for each Promise" },
-      { id: "B", text: "A synchronous function that cannot be delayed" },
-      { id: "C", text: "Queued work such as Promise reactions that is processed at microtask checkpoints" },
+      { id: "B", text: "Queued work such as Promise reactions that is processed at microtask checkpoints" },
+      { id: "C", text: "A synchronous function that cannot be delayed" },
       { id: "D", text: "An npm package smaller than 1 KB" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Promise reactions and other microtasks are queued separately from timer callbacks and are processed at defined microtask checkpoints.",
     tags: ["microtasks", "promises", "event-loop"]
   },
@@ -403,12 +403,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "Consider:\n\n```js\nconsole.log('A');\nPromise.resolve().then(() => console.log('B'));\nconsole.log('C');\n```\n\nWhat is the output order?",
     options: [
-      { id: "A", text: "A, C, B" },
-      { id: "B", text: "B, A, C" },
-      { id: "C", text: "A, B, C" },
+      { id: "A", text: "B, A, C" },
+      { id: "B", text: "A, B, C" },
+      { id: "C", text: "A, C, B" },
       { id: "D", text: "C, A, B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Synchronous code runs first. The Promise reaction is queued as a microtask and runs after the current synchronous execution completes.",
     tags: ["microtasks", "promises", "event-loop"]
   },
@@ -422,11 +422,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Consider:\n\n```js\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');\n```\n\nWhat is the typical output order?",
     options: [
       { id: "A", text: "A, B, C, D" },
-      { id: "B", text: "A, D, C, B" },
-      { id: "C", text: "C, A, D, B" },
-      { id: "D", text: "A, D, B, C" }
+      { id: "B", text: "C, A, D, B" },
+      { id: "C", text: "A, D, B, C" },
+      { id: "D", text: "A, D, C, B" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Synchronous code runs first (`A`, `D`), then the Promise microtask (`C`), and the timer callback is processed afterward (`B`).",
     tags: ["microtasks", "timers", "event-loop"]
   },
@@ -458,11 +458,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What does `Promise.all()` do?",
     options: [
       { id: "A", text: "Runs only the first Promise" },
-      { id: "B", text: "Converts all Promises into callbacks" },
-      { id: "C", text: "Waits for all input Promises to fulfill, or rejects when one rejects" },
+      { id: "B", text: "Waits for all input Promises to fulfill, or rejects when one rejects" },
+      { id: "C", text: "Converts all Promises into callbacks" },
       { id: "D", text: "Always waits for every rejection before settling" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`Promise.all()` fulfills with all results when every input fulfills and rejects when an input rejects.",
     tags: ["Promise.all", "promises"]
   },
@@ -475,12 +475,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "When is `Promise.all()` especially useful?",
     options: [
-      { id: "A", text: "When several independent asynchronous operations can run concurrently" },
-      { id: "B", text: "When operations must always execute strictly one after another" },
-      { id: "C", text: "When you want to ignore all errors" },
+      { id: "A", text: "When operations must always execute strictly one after another" },
+      { id: "B", text: "When you want to ignore all errors" },
+      { id: "C", text: "When several independent asynchronous operations can run concurrently" },
       { id: "D", text: "When you need synchronous file I/O" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Independent operations can be started together and awaited as a group with `Promise.all()`.",
     tags: ["Promise.all", "concurrency"]
   },
@@ -494,11 +494,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What is the key difference between `Promise.all()` and `Promise.allSettled()`?",
     options: [
       { id: "A", text: "all() ignores rejection while allSettled() throws immediately" },
-      { id: "B", text: "allSettled() waits for every input to settle and reports each result, while all() rejects on rejection" },
-      { id: "C", text: "all() only accepts one Promise" },
-      { id: "D", text: "They have identical behavior" }
+      { id: "B", text: "all() only accepts one Promise" },
+      { id: "C", text: "They have identical behavior" },
+      { id: "D", text: "allSettled() waits for every input to settle and reports each result, while all() rejects on rejection" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`allSettled()` is useful when you need the outcome of every operation regardless of whether some fail.",
     tags: ["Promise.all", "allSettled"]
   },
@@ -530,11 +530,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Which Promise utility waits for the first Promise to fulfill while ignoring earlier rejections?",
     options: [
       { id: "A", text: "Promise.all()" },
-      { id: "B", text: "Promise.race()" },
-      { id: "C", text: "Promise.any()" },
+      { id: "B", text: "Promise.any()" },
+      { id: "C", text: "Promise.race()" },
       { id: "D", text: "Promise.resolve()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`Promise.any()` fulfills when the first input fulfills and rejects with an AggregateError only if all inputs reject.",
     tags: ["Promise.any", "promises"]
   },
@@ -548,11 +548,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What is sequential async execution?",
     options: [
       { id: "A", text: "Starting all operations at exactly the same time" },
-      { id: "B", text: "Waiting for one asynchronous operation to finish before starting the next" },
-      { id: "C", text: "Running asynchronous operations without Promises" },
+      { id: "B", text: "Running asynchronous operations without Promises" },
+      { id: "C", text: "Waiting for one asynchronous operation to finish before starting the next" },
       { id: "D", text: "Blocking the event loop permanently" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Sequential execution intentionally waits for one operation before beginning the next, which is sometimes necessary when later work depends on earlier results.",
     tags: ["async", "sequencing"]
   },
@@ -567,10 +567,10 @@ const nodejsAsyncEventLoopQuestions = [
     options: [
       { id: "A", text: "await requestA(); await requestB();" },
       { id: "B", text: "Use synchronous versions of both requests" },
-      { id: "C", text: "Start both and await Promise.all([requestA(), requestB()])" },
-      { id: "D", text: "Run requestA() only after requestB() finishes" }
+      { id: "C", text: "Run requestA() only after requestB() finishes" },
+      { id: "D", text: "Start both and await Promise.all([requestA(), requestB()])" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Starting independent operations together allows their waiting periods to overlap.",
     tags: ["async", "concurrency", "Promise.all"]
   },
@@ -583,12 +583,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "Which approach is required if `requestB()` needs the result of `requestA()`?",
     options: [
-      { id: "A", text: "Run them independently with Promise.all() regardless of the dependency" },
-      { id: "B", text: "Wait for requestA() before using its result to start requestB()" },
+      { id: "A", text: "Wait for requestA() before using its result to start requestB()" },
+      { id: "B", text: "Run them independently with Promise.all() regardless of the dependency" },
       { id: "C", text: "Use setTimeout() with a guessed delay" },
       { id: "D", text: "Run requestB() before requestA()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "When there is a data dependency, the second operation cannot correctly start until the required result from the first is available.",
     tags: ["async", "sequencing", "dependencies"]
   },
@@ -601,12 +601,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "What is wrong with this pattern?\n\n```js\ntry {\n  fetchData().then(data => console.log(data));\n} catch (error) {\n  console.log(error);\n}\n```",
     options: [
-      { id: "A", text: "try/catch around the registration does not generally catch a later Promise rejection" },
-      { id: "B", text: "fetchData() cannot return a Promise" },
+      { id: "A", text: "fetchData() cannot return a Promise" },
+      { id: "B", text: "try/catch around the registration does not generally catch a later Promise rejection" },
       { id: "C", text: "then() is synchronous" },
       { id: "D", text: "try/catch cannot exist in Node.js" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A later Promise rejection must be handled with `.catch()` or by awaiting the Promise inside a suitable try/catch.",
     tags: ["promises", "errors", "try-catch"]
   },
@@ -619,12 +619,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern correctly handles an awaited Promise rejection?",
     options: [
-      { id: "A", text: "Use try/catch around the await inside an async function" },
-      { id: "B", text: "Put catch around the function declaration" },
-      { id: "C", text: "Use console.log() before await" },
+      { id: "A", text: "Put catch around the function declaration" },
+      { id: "B", text: "Use console.log() before await" },
+      { id: "C", text: "Use try/catch around the await inside an async function" },
       { id: "D", text: "Wrap await in setTimeout()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An awaited rejected Promise throws at the await expression, so a surrounding try/catch can handle it.",
     tags: ["async", "await", "errors"]
   },
@@ -639,10 +639,10 @@ const nodejsAsyncEventLoopQuestions = [
     options: [
       { id: "A", text: "The object directly" },
       { id: "B", text: "A rejected Promise" },
-      { id: "C", text: "A fulfilled Promise containing the object" },
-      { id: "D", text: "A callback" }
+      { id: "C", text: "A callback" },
+      { id: "D", text: "A fulfilled Promise containing the object" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Async functions wrap returned values in fulfilled Promises.",
     tags: ["async", "promises"]
   },
@@ -655,12 +655,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "What happens here?\n\n```js\nasync function test() {\n  throw new Error('Boom');\n}\n\ntest().catch(console.log);\n```",
     options: [
-      { id: "A", text: "The error is converted into a fulfilled Promise" },
-      { id: "B", text: "test() returns a rejected Promise and catch() receives the error" },
+      { id: "A", text: "test() returns a rejected Promise and catch() receives the error" },
+      { id: "B", text: "The error is converted into a fulfilled Promise" },
       { id: "C", text: "The process must always terminate before catch() runs" },
       { id: "D", text: "The function returns undefined synchronously" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Throwing inside an async function rejects its returned Promise, allowing `.catch()` to handle the error.",
     tags: ["async", "errors"]
   },
@@ -674,11 +674,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Why can an unhandled Promise rejection be dangerous in a production application?",
     options: [
       { id: "A", text: "It guarantees a memory leak" },
-      { id: "B", text: "It guarantees the request will succeed" },
-      { id: "C", text: "It means the Promise will retry forever" },
-      { id: "D", text: "It can leave failures improperly handled and, depending on runtime behavior and application setup, can contribute to process-level problems" }
+      { id: "B", text: "It can leave failures improperly handled and, depending on runtime behavior and application setup, can contribute to process-level problems" },
+      { id: "C", text: "It guarantees the request will succeed" },
+      { id: "D", text: "It means the Promise will retry forever" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "B",
     explanation: "Unhandled rejections indicate missing error handling. Their consequences depend on the Node.js version and application behavior, but they should not be ignored.",
     tags: ["promises", "errors", "production"]
   },
@@ -691,12 +691,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\n```js\nasync function load() {\n  const a = await getA();\n  const b = await getB();\n  return [a, b];\n}\n```\n\nIf `getA()` and `getB()` are independent, what is a potential optimization?",
     options: [
-      { id: "A", text: "Run both operations concurrently with Promise.all()" },
-      { id: "B", text: "Make both functions synchronous" },
-      { id: "C", text: "Add a longer setTimeout()" },
+      { id: "A", text: "Make both functions synchronous" },
+      { id: "B", text: "Add a longer setTimeout()" },
+      { id: "C", text: "Run both operations concurrently with Promise.all()" },
       { id: "D", text: "Remove both awaits and ignore their results" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Independent operations can overlap their waiting time by starting both before awaiting their combined results.",
     tags: ["async", "concurrency", "optimization"]
   },
@@ -710,11 +710,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "What is the main danger of using `await` sequentially inside a loop when every iteration is independent?",
     options: [
       { id: "A", text: "The loop becomes impossible to debug" },
-      { id: "B", text: "It can unnecessarily serialize operations and increase total waiting time" },
-      { id: "C", text: "It always causes a syntax error" },
-      { id: "D", text: "It converts all values to strings" }
+      { id: "B", text: "It always causes a syntax error" },
+      { id: "C", text: "It converts all values to strings" },
+      { id: "D", text: "It can unnecessarily serialize operations and increase total waiting time" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Sequential awaits force each iteration to wait for the previous one. Independent operations may be better handled concurrently.",
     tags: ["async", "loops", "concurrency"]
   },
@@ -727,12 +727,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "Why might blindly using `Promise.all()` on thousands of operations be a bad idea?",
     options: [
-      { id: "A", text: "Promise.all() is synchronous" },
-      { id: "B", text: "Promises cannot contain more than one value" },
-      { id: "C", text: "It may create excessive concurrency and overwhelm resources such as APIs, sockets, memory, or databases" },
+      { id: "A", text: "It may create excessive concurrency and overwhelm resources such as APIs, sockets, memory, or databases" },
+      { id: "B", text: "Promise.all() is synchronous" },
+      { id: "C", text: "Promises cannot contain more than one value" },
       { id: "D", text: "Promise.all() always executes operations sequentially" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Concurrency should be controlled when dealing with large workloads. Limiting concurrency can protect external services and application resources.",
     tags: ["Promise.all", "concurrency", "performance"]
   },
@@ -764,11 +764,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "Which statement about asynchronous I/O and CPU-heavy work is most accurate?",
     options: [
       { id: "A", text: "Async I/O automatically makes CPU-heavy JavaScript non-blocking" },
-      { id: "B", text: "CPU-heavy JavaScript can still block the main event-loop thread even in an asynchronous application" },
-      { id: "C", text: "Promises always execute CPU work on another thread" },
+      { id: "B", text: "Promises always execute CPU work on another thread" },
+      { id: "C", text: "CPU-heavy JavaScript can still block the main event-loop thread even in an asynchronous application" },
       { id: "D", text: "await automatically moves JavaScript execution to another CPU core" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Asynchronous I/O does not make CPU-bound JavaScript automatically parallel. Heavy synchronous computation can still block the event loop.",
     tags: ["event-loop", "cpu", "performance"]
   },
@@ -781,12 +781,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "Which Node.js feature can be used when CPU-intensive JavaScript should run separately from the main thread?",
     options: [
-      { id: "A", text: "worker_threads" },
-      { id: "B", text: "Promise.resolve()" },
-      { id: "C", text: "process.env" },
-      { id: "D", text: "console.log()" }
+      { id: "A", text: "Promise.resolve()" },
+      { id: "B", text: "process.env" },
+      { id: "C", text: "console.log()" },
+      { id: "D", text: "worker_threads" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Node.js worker threads provide a mechanism for running JavaScript in separate threads, useful for CPU-intensive workloads.",
     tags: ["worker-threads", "cpu", "performance"]
   },
@@ -799,12 +799,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "What does `process.nextTick()` schedule?",
     options: [
-      { id: "A", text: "A callback that runs after a one-second timer" },
-      { id: "B", text: "A callback that is queued to run after the current operation completes, before the event loop proceeds to later phases" },
+      { id: "A", text: "A callback that is queued to run after the current operation completes, before the event loop proceeds to later phases" },
+      { id: "B", text: "A callback that runs after a one-second timer" },
       { id: "C", text: "A callback on a guaranteed worker thread" },
       { id: "D", text: "A callback that runs only after all network requests finish" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`process.nextTick()` schedules work for the next tick of the current turn and has higher priority than many later event-loop phases. Excessive use can starve the event loop.",
     tags: ["process.nextTick", "event-loop"]
   },
@@ -817,12 +817,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "Why can excessive recursive use of `process.nextTick()` be problematic?",
     options: [
-      { id: "A", text: "It can prevent the event loop from reaching other phases for too long" },
-      { id: "B", text: "It automatically creates infinite HTTP requests" },
+      { id: "A", text: "It automatically creates infinite HTTP requests" },
+      { id: "B", text: "It can prevent the event loop from reaching other phases for too long" },
       { id: "C", text: "It disables Promise support" },
       { id: "D", text: "It deletes the callback queue" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An excessive nextTick queue can starve I/O and other event-loop work because nextTick callbacks are processed with high priority.",
     tags: ["process.nextTick", "event-loop", "performance"]
   },
@@ -854,11 +854,11 @@ const nodejsAsyncEventLoopQuestions = [
     question: "A service calls an external API that sometimes takes 30 seconds. Which design concern is especially important?",
     options: [
       { id: "A", text: "Assume the request will always finish quickly" },
-      { id: "B", text: "Use timeouts or cancellation mechanisms so slow external operations do not consume resources indefinitely" },
-      { id: "C", text: "Block the event loop until the API responds" },
-      { id: "D", text: "Retry infinitely without limits" }
+      { id: "B", text: "Block the event loop until the API responds" },
+      { id: "C", text: "Retry infinitely without limits" },
+      { id: "D", text: "Use timeouts or cancellation mechanisms so slow external operations do not consume resources indefinitely" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Timeouts and cancellation help prevent slow or stuck external operations from consuming connections, memory, and other resources indefinitely.",
     tags: ["async", "timeouts", "api", "production"]
   },
@@ -871,12 +871,12 @@ const nodejsAsyncEventLoopQuestions = [
     difficulty: "Advanced",
     question: "What is the best explanation of the relationship between Promises and the event loop?",
     options: [
-      { id: "A", text: "Promises replace the event loop" },
-      { id: "B", text: "Promises create a new JavaScript engine for every operation" },
-      { id: "C", text: "Promises represent asynchronous results, while the runtime schedules their reactions for execution through the event-loop machinery" },
+      { id: "A", text: "Promises represent asynchronous results, while the runtime schedules their reactions for execution through the event-loop machinery" },
+      { id: "B", text: "Promises replace the event loop" },
+      { id: "C", text: "Promises create a new JavaScript engine for every operation" },
       { id: "D", text: "Promises make every operation run in parallel CPU threads" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Promises provide a model for representing asynchronous results. Their reactions are scheduled by the JavaScript runtime and processed as microtasks.",
     tags: ["promises", "event-loop", "async"]
   },

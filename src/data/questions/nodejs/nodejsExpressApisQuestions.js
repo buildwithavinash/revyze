@@ -25,12 +25,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "Which code creates a basic Express application?",
     options: [
-      { id: "A", text: "const app = express();" },
-      { id: "B", text: "const app = new ExpressServer();" },
-      { id: "C", text: "const app = Express.create();" },
+      { id: "A", text: "const app = new ExpressServer();" },
+      { id: "B", text: "const app = Express.create();" },
+      { id: "C", text: "const app = express();" },
       { id: "D", text: "const app = requireServer('express');" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Calling the imported `express` function creates an Express application instance.",
     tags: ["express", "app"]
   },
@@ -45,10 +45,10 @@ const nodejsExpressApisQuestions = [
     options: [
       { id: "A", text: "POST" },
       { id: "B", text: "PATCH" },
-      { id: "C", text: "GET" },
-      { id: "D", text: "DELETE" }
+      { id: "C", text: "DELETE" },
+      { id: "D", text: "GET" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "GET is conventionally used to retrieve resources without intending to modify server state.",
     tags: ["http", "rest", "get"]
   },
@@ -61,12 +61,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "Which Express method defines a route that responds to GET requests?",
     options: [
-      { id: "A", text: "app.fetch()" },
-      { id: "B", text: "app.routeGet()" },
-      { id: "C", text: "app.get()" },
+      { id: "A", text: "app.get()" },
+      { id: "B", text: "app.fetch()" },
+      { id: "C", text: "app.routeGet()" },
       { id: "D", text: "app.request()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`app.get(path, handler)` registers a handler for HTTP GET requests matching the path.",
     tags: ["express", "routing", "get"]
   },
@@ -115,12 +115,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "Where would you normally access a route parameter such as `/users/:id`?",
     options: [
-      { id: "A", text: "req.params.id" },
-      { id: "B", text: "req.body.id" },
-      { id: "C", text: "req.query.id" },
-      { id: "D", text: "req.routeId" }
+      { id: "A", text: "req.body.id" },
+      { id: "B", text: "req.query.id" },
+      { id: "C", text: "req.routeId" },
+      { id: "D", text: "req.params.id" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Express stores named route parameters in `req.params`.",
     tags: ["express", "routing", "params"]
   },
@@ -133,12 +133,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "For a URL such as `/products?category=books&page=2`, where would Express expose `category` and `page`?",
     options: [
-      { id: "A", text: "req.params" },
-      { id: "B", text: "req.body" },
-      { id: "C", text: "req.query" },
+      { id: "A", text: "req.query" },
+      { id: "B", text: "req.params" },
+      { id: "C", text: "req.body" },
       { id: "D", text: "req.searchParamsOnly" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Query-string parameters are available through `req.query`.",
     tags: ["express", "query", "routing"]
   },
@@ -151,12 +151,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "Which middleware is commonly used to parse incoming JSON request bodies?",
     options: [
-      { id: "A", text: "express.json()" },
-      { id: "B", text: "express.bodyParserJSONOnly()" },
+      { id: "A", text: "express.bodyParserJSONOnly()" },
+      { id: "B", text: "express.json()" },
       { id: "C", text: "express.parse()" },
       { id: "D", text: "express.requestJSON()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`express.json()` returns middleware that parses incoming requests with JSON payloads.",
     tags: ["express", "middleware", "json"]
   },
@@ -170,11 +170,11 @@ const nodejsExpressApisQuestions = [
     question: "What is middleware in Express?",
     options: [
       { id: "A", text: "A database table used by Express" },
-      { id: "B", text: "A function that can process a request/response and pass control onward" },
-      { id: "C", text: "A replacement for HTTP" },
+      { id: "B", text: "A replacement for HTTP" },
+      { id: "C", text: "A function that can process a request/response and pass control onward" },
       { id: "D", text: "A special type of frontend component" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Middleware functions can inspect or modify the request and response and either end the response or call `next()`.",
     tags: ["express", "middleware"]
   },
@@ -189,10 +189,10 @@ const nodejsExpressApisQuestions = [
     options: [
       { id: "A", text: "It restarts the Node.js process" },
       { id: "B", text: "It sends the response automatically" },
-      { id: "C", text: "It passes control to the next matching middleware or route handler" },
-      { id: "D", text: "It creates another HTTP request" }
+      { id: "C", text: "It creates another HTTP request" },
+      { id: "D", text: "It passes control to the next matching middleware or route handler" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Calling `next()` tells Express to continue processing the request through the middleware stack.",
     tags: ["express", "middleware", "next"]
   },
@@ -241,12 +241,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Beginner",
     question: "Which HTTP method is commonly used to remove a resource?",
     options: [
-      { id: "A", text: "DELETE" },
-      { id: "B", text: "PATCH" },
-      { id: "C", text: "OPTIONS" },
+      { id: "A", text: "PATCH" },
+      { id: "B", text: "OPTIONS" },
+      { id: "C", text: "DELETE" },
       { id: "D", text: "CONNECT" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "DELETE is conventionally used to request removal of a resource.",
     tags: ["http", "rest", "delete"]
   },
@@ -331,12 +331,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "Which status code usually indicates that the client sent an invalid request?",
     options: [
-      { id: "A", text: "400" },
-      { id: "B", text: "201" },
-      { id: "C", text: "204" },
-      { id: "D", text: "302" }
+      { id: "A", text: "201" },
+      { id: "B", text: "204" },
+      { id: "C", text: "302" },
+      { id: "D", text: "400" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "400 Bad Request is commonly used when the server cannot process the request because of invalid client input.",
     tags: ["http", "status-codes", "validation"]
   },
@@ -349,12 +349,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "What does `res.status(404).json({ error: 'Not found' })` do?",
     options: [
-      { id: "A", text: "Redirects the client to `/404`" },
-      { id: "B", text: "Sets the response status to 404 and sends a JSON response" },
+      { id: "A", text: "Sets the response status to 404 and sends a JSON response" },
+      { id: "B", text: "Redirects the client to `/404`" },
       { id: "C", text: "Throws a JavaScript syntax error" },
       { id: "D", text: "Deletes the requested resource" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`res.status(404)` sets the HTTP status, and `.json()` sends the JSON response.",
     tags: ["express", "response", "status-codes"]
   },
@@ -367,12 +367,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "Which method is commonly used for partially updating an existing resource?",
     options: [
-      { id: "A", text: "PATCH" },
-      { id: "B", text: "GET" },
+      { id: "A", text: "GET" },
+      { id: "B", text: "PATCH" },
       { id: "C", text: "HEAD" },
       { id: "D", text: "OPTIONS" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "PATCH is commonly used for partial modifications to an existing resource.",
     tags: ["http", "rest", "patch"]
   },
@@ -386,11 +386,11 @@ const nodejsExpressApisQuestions = [
     question: "What is a common distinction between PUT and PATCH?",
     options: [
       { id: "A", text: "PUT is only for reading and PATCH is only for deleting" },
-      { id: "B", text: "PATCH normally represents partial modification, while PUT commonly represents replacement/update of a resource representation" },
-      { id: "C", text: "They are completely unrelated to HTTP" },
+      { id: "B", text: "They are completely unrelated to HTTP" },
+      { id: "C", text: "PATCH normally represents partial modification, while PUT commonly represents replacement/update of a resource representation" },
       { id: "D", text: "PUT can only be used with HTML forms" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "PATCH is generally associated with partial updates, while PUT commonly represents replacing or fully updating a resource representation.",
     tags: ["http", "put", "patch", "rest"]
   },
@@ -404,11 +404,11 @@ const nodejsExpressApisQuestions = [
     question: "Which Express method is used to define a POST route?",
     options: [
       { id: "A", text: "app.submit()" },
-      { id: "B", text: "app.post()" },
-      { id: "C", text: "app.create()" },
-      { id: "D", text: "app.send()" }
+      { id: "B", text: "app.create()" },
+      { id: "C", text: "app.send()" },
+      { id: "D", text: "app.post()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`app.post()` registers a handler for HTTP POST requests.",
     tags: ["express", "routing", "post"]
   },
@@ -440,11 +440,11 @@ const nodejsExpressApisQuestions = [
     question: "If a router is mounted with `app.use('/api/users', userRouter)`, what path would a router route `router.get('/')` match?",
     options: [
       { id: "A", text: "/users" },
-      { id: "B", text: "/" },
-      { id: "C", text: "/api/users" },
+      { id: "B", text: "/api/users" },
+      { id: "C", text: "/" },
       { id: "D", text: "/api" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The router's `/` path is combined with its mount path, resulting in `/api/users`.",
     tags: ["express", "router", "routing"]
   },
@@ -459,10 +459,10 @@ const nodejsExpressApisQuestions = [
     options: [
       { id: "A", text: "{ \"id\": \"users\" }" },
       { id: "B", text: "{ \"id\": 42 }" },
-      { id: "C", text: "{ \"id\": \"/42\" }" },
-      { id: "D", text: "{ \"id\": \"42\" }" }
+      { id: "C", text: "{ \"id\": \"42\" }" },
+      { id: "D", text: "{ \"id\": \"/42\" }" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "Route parameters are strings by default, so `req.params.id` is the string `\"42\"`.",
     tags: ["express", "params", "routing"]
   },
@@ -476,11 +476,11 @@ const nodejsExpressApisQuestions = [
     question: "Where would JSON sent in the body of a POST request normally be available after `express.json()`?",
     options: [
       { id: "A", text: "req.params" },
-      { id: "B", text: "req.body" },
-      { id: "C", text: "req.query" },
-      { id: "D", text: "req.payloadOnly" }
+      { id: "B", text: "req.query" },
+      { id: "C", text: "req.payloadOnly" },
+      { id: "D", text: "req.body" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "After JSON body parsing middleware runs, parsed request data is available through `req.body`.",
     tags: ["express", "middleware", "body"]
   },
@@ -493,12 +493,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "What is the correct order for this common Express setup?",
     options: [
-      { id: "A", text: "Define routes, then create the app, then import Express" },
-      { id: "B", text: "Create app → configure middleware/routes → start listening" },
+      { id: "A", text: "Create app → configure middleware/routes → start listening" },
+      { id: "B", text: "Define routes, then create the app, then import Express" },
       { id: "C", text: "Start listening → configure middleware → create app" },
       { id: "D", text: "Create database → start listening → import Express" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A typical Express application creates the app, configures middleware/routes, and then starts the server.",
     tags: ["express", "architecture"]
   },
@@ -511,12 +511,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "What does `app.use('/api', router)` generally do?",
     options: [
-      { id: "A", text: "Mounts the router under the `/api` path prefix" },
-      { id: "B", text: "Makes every request POST" },
+      { id: "A", text: "Makes every request POST" },
+      { id: "B", text: "Mounts the router under the `/api` path prefix" },
       { id: "C", text: "Creates an API database" },
       { id: "D", text: "Converts all responses to XML" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`app.use()` can mount middleware or routers at a path prefix.",
     tags: ["express", "router", "middleware"]
   },
@@ -530,11 +530,11 @@ const nodejsExpressApisQuestions = [
     question: "What is the primary purpose of request validation in an API?",
     options: [
       { id: "A", text: "To make HTTP faster automatically" },
-      { id: "B", text: "To ensure incoming data satisfies the API's expected rules before processing it" },
-      { id: "C", text: "To remove the need for authentication" },
+      { id: "B", text: "To remove the need for authentication" },
+      { id: "C", text: "To ensure incoming data satisfies the API's expected rules before processing it" },
       { id: "D", text: "To convert every request to GET" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Validation protects application logic by ensuring incoming data has the expected shape and values.",
     tags: ["api", "validation", "security"]
   },
@@ -549,10 +549,10 @@ const nodejsExpressApisQuestions = [
     options: [
       { id: "A", text: "Silently ignore the failure" },
       { id: "B", text: "Send multiple responses to ensure the client receives one" },
-      { id: "C", text: "Propagate the error to centralized Express error-handling logic" },
-      { id: "D", text: "Restart the server for every error" }
+      { id: "C", text: "Restart the server for every error" },
+      { id: "D", text: "Propagate the error to centralized Express error-handling logic" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Centralized error handling keeps route handlers simpler and provides consistent API error responses.",
     tags: ["express", "errors", "architecture"]
   },
@@ -584,11 +584,11 @@ const nodejsExpressApisQuestions = [
     question: "What does calling `next(err)` generally signal to Express?",
     options: [
       { id: "A", text: "The request should be treated as successful" },
-      { id: "B", text: "The current route should be repeated" },
-      { id: "C", text: "An error should be passed through the error-handling middleware chain" },
+      { id: "B", text: "An error should be passed through the error-handling middleware chain" },
+      { id: "C", text: "The current route should be repeated" },
       { id: "D", text: "The server should shut down" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Passing an error to `next()` tells Express to enter error-handling middleware.",
     tags: ["express", "errors", "next"]
   },
@@ -601,12 +601,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Intermediate",
     question: "Why should an Express API avoid sending sensitive internal error details directly to clients in production?",
     options: [
-      { id: "A", text: "Detailed errors can expose implementation or security information" },
-      { id: "B", text: "JSON cannot contain error messages" },
-      { id: "C", text: "HTTP does not support errors" },
+      { id: "A", text: "JSON cannot contain error messages" },
+      { id: "B", text: "HTTP does not support errors" },
+      { id: "C", text: "Detailed errors can expose implementation or security information" },
       { id: "D", text: "Express automatically deletes detailed errors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Stack traces, database errors, file paths, and internal details can expose information useful to attackers.",
     tags: ["express", "errors", "security"]
   },
@@ -620,11 +620,11 @@ const nodejsExpressApisQuestions = [
     question: "An endpoint returns a user's data. Which approach is generally best for deciding what fields to return?",
     options: [
       { id: "A", text: "Return the entire database record automatically" },
-      { id: "B", text: "Return only fields the API intentionally exposes" },
-      { id: "C", text: "Return passwords because HTTPS encrypts them" },
-      { id: "D", text: "Return every internal field and let the frontend filter it" }
+      { id: "B", text: "Return passwords because HTTPS encrypts them" },
+      { id: "C", text: "Return every internal field and let the frontend filter it" },
+      { id: "D", text: "Return only fields the API intentionally exposes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "APIs should explicitly shape responses and avoid accidentally exposing sensitive or internal fields.",
     tags: ["api", "security", "responses"]
   },
@@ -637,12 +637,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Which route design is most REST-like for retrieving a specific user?",
     options: [
-      { id: "A", text: "GET /getUser?id=42" },
-      { id: "B", text: "POST /user/get" },
-      { id: "C", text: "GET /users/42" },
+      { id: "A", text: "GET /users/42" },
+      { id: "B", text: "GET /getUser?id=42" },
+      { id: "C", text: "POST /user/get" },
       { id: "D", text: "GET /users?action=retrieve&id=42" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "A resource-oriented API commonly represents a specific user as `/users/:id` and retrieves it with GET.",
     tags: ["rest", "routing", "api-design"]
   },
@@ -655,12 +655,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Which route is most appropriate for creating a new user in a resource-oriented API?",
     options: [
-      { id: "A", text: "POST /users" },
-      { id: "B", text: "GET /createUser" },
+      { id: "A", text: "GET /createUser" },
+      { id: "B", text: "POST /users" },
       { id: "C", text: "POST /users/:id/create" },
       { id: "D", text: "GET /users/new/save" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "POSTing to the collection `/users` conventionally represents creating a new user resource.",
     tags: ["rest", "api-design", "post"]
   },
@@ -674,11 +674,11 @@ const nodejsExpressApisQuestions = [
     question: "Which status code is commonly appropriate when authentication credentials are missing or invalid?",
     options: [
       { id: "A", text: "200" },
-      { id: "B", text: "401" },
-      { id: "C", text: "204" },
+      { id: "B", text: "204" },
+      { id: "C", text: "401" },
       { id: "D", text: "301" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "401 Unauthorized is used when valid authentication credentials are required but are missing or invalid.",
     tags: ["http", "authentication", "status-codes"]
   },
@@ -691,12 +691,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Which status code is commonly associated with an authenticated user lacking permission to access a resource?",
     options: [
-      { id: "A", text: "403" },
-      { id: "B", text: "201" },
-      { id: "C", text: "302" },
-      { id: "D", text: "304" }
+      { id: "A", text: "201" },
+      { id: "B", text: "302" },
+      { id: "C", text: "304" },
+      { id: "D", text: "403" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "403 Forbidden indicates that the server understood the request but refuses to authorize access.",
     tags: ["http", "authorization", "status-codes"]
   },
@@ -709,12 +709,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "What is one major reason to separate Express routes, controllers, and business logic in a larger application?",
     options: [
-      { id: "A", text: "It guarantees zero bugs" },
-      { id: "B", text: "It makes JavaScript execute synchronously" },
-      { id: "C", text: "It improves organization, testing, and maintainability" },
+      { id: "A", text: "It improves organization, testing, and maintainability" },
+      { id: "B", text: "It guarantees zero bugs" },
+      { id: "C", text: "It makes JavaScript execute synchronously" },
       { id: "D", text: "It eliminates the need for HTTP status codes" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Separating responsibilities keeps HTTP-specific concerns separate from application and business logic.",
     tags: ["express", "architecture", "maintainability"]
   },
@@ -727,12 +727,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\n```js\napp.use((req, res, next) => {\n  console.log(req.method);\n  next();\n});\n```\n\nWhat does this middleware do?",
     options: [
-      { id: "A", text: "Logs the HTTP method and allows the request to continue" },
-      { id: "B", text: "Ends every request" },
+      { id: "A", text: "Ends every request" },
+      { id: "B", text: "Logs the HTTP method and allows the request to continue" },
       { id: "C", text: "Only runs after the response is sent" },
       { id: "D", text: "Converts the request method to POST" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The middleware logs the method and calls `next()`, allowing later middleware or routes to process the request.",
     tags: ["express", "middleware", "logging"]
   },
@@ -745,12 +745,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of CORS middleware in an API?",
     options: [
-      { id: "A", text: "It controls browser cross-origin access according to HTTP CORS rules" },
-      { id: "B", text: "It encrypts database passwords" },
-      { id: "C", text: "It replaces authentication" },
+      { id: "A", text: "It encrypts database passwords" },
+      { id: "B", text: "It replaces authentication" },
+      { id: "C", text: "It controls browser cross-origin access according to HTTP CORS rules" },
       { id: "D", text: "It converts REST APIs into GraphQL APIs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "CORS controls which browser origins are permitted to make cross-origin requests to a server.",
     tags: ["express", "cors", "security"]
   },
@@ -764,11 +764,11 @@ const nodejsExpressApisQuestions = [
     question: "Why might an API use pagination for `GET /products` instead of returning every product?",
     options: [
       { id: "A", text: "Pagination prevents HTTP from returning JSON" },
-      { id: "B", text: "It can reduce response size and server/client processing for large collections" },
-      { id: "C", text: "Pagination is required for all GET requests" },
-      { id: "D", text: "It makes the database unnecessary" }
+      { id: "B", text: "Pagination is required for all GET requests" },
+      { id: "C", text: "It makes the database unnecessary" },
+      { id: "D", text: "It can reduce response size and server/client processing for large collections" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Pagination limits how much data is transferred and processed per request, which improves scalability.",
     tags: ["api", "pagination", "performance"]
   },
@@ -781,12 +781,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "A client sends `GET /products?limit=20&offset=40`. What are `limit` and `offset` most naturally considered?",
     options: [
-      { id: "A", text: "Route parameters" },
-      { id: "B", text: "Request body fields" },
-      { id: "C", text: "Query parameters" },
+      { id: "A", text: "Query parameters" },
+      { id: "B", text: "Route parameters" },
+      { id: "C", text: "Request body fields" },
       { id: "D", text: "HTTP headers" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Values following `?` in the URL query string are query parameters and are available through `req.query`.",
     tags: ["express", "query", "pagination"]
   },
@@ -799,12 +799,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Why should an API validate pagination values such as `limit`?",
     options: [
-      { id: "A", text: "A client could request an excessively large amount of data and create unnecessary load" },
-      { id: "B", text: "Query parameters cannot contain numbers" },
+      { id: "A", text: "Query parameters cannot contain numbers" },
+      { id: "B", text: "A client could request an excessively large amount of data and create unnecessary load" },
       { id: "C", text: "Express automatically rejects all numeric values" },
       { id: "D", text: "Pagination only works with strings" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Unbounded pagination parameters can lead to expensive database queries and oversized responses, so they should be validated and constrained.",
     tags: ["api", "pagination", "validation", "performance"]
   },
@@ -835,12 +835,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\n```js\napp.get('/users', (req, res) => {\n  res.json({ users: [] });\n  console.log('after response');\n});\n```\n\nWhich statement is correct?",
     options: [
-      { id: "A", text: "The console statement can still execute because sending the response does not terminate JavaScript execution" },
-      { id: "B", text: "The console statement can never execute" },
-      { id: "C", text: "Express restarts the handler after `res.json()`" },
-      { id: "D", text: "res.json() throws automatically after sending" }
+      { id: "A", text: "The console statement can never execute" },
+      { id: "B", text: "Express restarts the handler after `res.json()`" },
+      { id: "C", text: "res.json() throws automatically after sending" },
+      { id: "D", text: "The console statement can still execute because sending the response does not terminate JavaScript execution" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Sending a response does not automatically stop execution of the current JavaScript function. Developers often use `return res.json(...)` when they want to exit the handler.",
     tags: ["express", "response", "control-flow"]
   },
@@ -853,12 +853,12 @@ const nodejsExpressApisQuestions = [
     difficulty: "Advanced",
     question: "Which pattern is useful when a route should immediately stop after sending an error response?",
     options: [
-      { id: "A", text: "res.json(error); continue();" },
-      { id: "B", text: "return res.status(400).json({ error: 'Invalid input' });" },
+      { id: "A", text: "return res.status(400).json({ error: 'Invalid input' });" },
+      { id: "B", text: "res.json(error); continue();" },
       { id: "C", text: "res.status(400); nextResponse();" },
       { id: "D", text: "res.errorAndRestart();" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Returning the response expression exits the current route handler, preventing later code from accidentally attempting another response.",
     tags: ["express", "response", "control-flow"]
   },

@@ -7,12 +7,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of a CSS transition?",
     options: [
-      { id: "A", text: "To gradually animate a change between CSS property values" },
-      { id: "B", text: "To create a new HTML element" },
+      { id: "A", text: "To create a new HTML element" },
+      { id: "B", text: "To gradually animate a change between CSS property values" },
       { id: "C", text: "To permanently change the DOM structure" },
       { id: "D", text: "To execute JavaScript code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A transition smoothly interpolates between an element's previous and new values for supported CSS properties.",
     tags: ["transitions", "fundamentals"]
   },
@@ -26,11 +26,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which CSS property specifies how long a transition should take?",
     options: [
       { id: "A", text: "transition-delay" },
-      { id: "B", text: "transition-duration" },
-      { id: "C", text: "animation-duration" },
+      { id: "B", text: "animation-duration" },
+      { id: "C", text: "transition-duration" },
       { id: "D", text: "transition-speed" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "transition-duration defines how long the transition takes to complete.",
     tags: ["transition-duration", "transitions"]
   },
@@ -43,12 +43,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Beginner",
     question: "What does transition-property determine?",
     options: [
-      { id: "A", text: "Which CSS property or properties should transition" },
-      { id: "B", text: "How many keyframes an animation has" },
-      { id: "C", text: "The number of elements on the page" },
-      { id: "D", text: "The animation's frame rate" }
+      { id: "A", text: "How many keyframes an animation has" },
+      { id: "B", text: "The number of elements on the page" },
+      { id: "C", text: "The animation's frame rate" },
+      { id: "D", text: "Which CSS property or properties should transition" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "transition-property specifies the CSS properties whose value changes should be animated.",
     tags: ["transition-property", "transitions"]
   },
@@ -61,12 +61,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Beginner",
     question: "Which value makes a transition begin slowly, speed up, and then slow down?",
     options: [
-      { id: "A", text: "linear" },
-      { id: "B", text: "steps(1)" },
-      { id: "C", text: "ease" },
+      { id: "A", text: "ease" },
+      { id: "B", text: "linear" },
+      { id: "C", text: "steps(1)" },
       { id: "D", text: "none" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The default ease timing function starts relatively slowly, accelerates, and slows again toward the end.",
     tags: ["timing-functions", "ease"]
   },
@@ -98,11 +98,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "What happens when this CSS is applied?\n\n.button {\n  transition: background-color 300ms ease;\n}\n\n.button:hover {\n  background-color: black;\n}",
     options: [
       { id: "A", text: "The background color changes instantly" },
-      { id: "B", text: "The background color transitions over 300ms when the hover state changes" },
-      { id: "C", text: "The button becomes invisible after 300ms" },
+      { id: "B", text: "The button becomes invisible after 300ms" },
+      { id: "C", text: "The background color transitions over 300ms when the hover state changes" },
       { id: "D", text: "The button moves 300px" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The transition declaration tells the browser to animate changes to background-color over 300 milliseconds using the ease timing function.",
     tags: ["transition", "hover"]
   },
@@ -117,10 +117,10 @@ const cssAnimationsTransitionsQuestions = [
     options: [
       { id: "A", text: "ease-in" },
       { id: "B", text: "ease-out" },
-      { id: "C", text: "linear" },
-      { id: "D", text: "ease-in-out" }
+      { id: "C", text: "ease-in-out" },
+      { id: "D", text: "linear" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "linear uses a constant rate of change from start to finish.",
     tags: ["linear", "timing-functions"]
   },
@@ -152,11 +152,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which syntax correctly defines a keyframe animation?",
     options: [
       { id: "A", text: "@animation fade { ... }" },
-      { id: "B", text: "@frames fade { ... }" },
-      { id: "C", text: "@keyframes fade { ... }" },
+      { id: "B", text: "@keyframes fade { ... }" },
+      { id: "C", text: "@frames fade { ... }" },
       { id: "D", text: "@animate fade { ... }" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "CSS keyframe animations are defined using the @keyframes at-rule.",
     tags: ["keyframes", "syntax"]
   },
@@ -169,12 +169,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Beginner",
     question: "What does animation-duration specify?",
     options: [
-      { id: "A", text: "How long one animation cycle takes" },
-      { id: "B", text: "How many times the animation repeats" },
-      { id: "C", text: "Which element receives the animation" },
+      { id: "A", text: "How many times the animation repeats" },
+      { id: "B", text: "Which element receives the animation" },
+      { id: "C", text: "How long one animation cycle takes" },
       { id: "D", text: "How far an element moves" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "animation-duration specifies the amount of time required for one complete animation cycle.",
     tags: ["animation-duration", "animations"]
   },
@@ -189,10 +189,10 @@ const cssAnimationsTransitionsQuestions = [
     options: [
       { id: "A", text: "animation-count" },
       { id: "B", text: "animation-repeat" },
-      { id: "C", text: "animation-iteration-count" },
-      { id: "D", text: "animation-loop" }
+      { id: "C", text: "animation-loop" },
+      { id: "D", text: "animation-iteration-count" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "animation-iteration-count specifies the number of times an animation should play. It can also be set to infinite.",
     tags: ["animation-iteration-count", "animations"]
   },
@@ -243,10 +243,10 @@ const cssAnimationsTransitionsQuestions = [
     options: [
       { id: "A", text: "repeat" },
       { id: "B", text: "forever" },
-      { id: "C", text: "loop" },
-      { id: "D", text: "infinite" }
+      { id: "C", text: "infinite" },
+      { id: "D", text: "loop" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "animation-iteration-count: infinite makes the animation repeat indefinitely.",
     tags: ["iteration-count", "infinite"]
   },
@@ -260,11 +260,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "What does this animation do?\n\n@keyframes fade {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}",
     options: [
       { id: "A", text: "Moves the element from left to right" },
-      { id: "B", text: "Changes the element from transparent to fully opaque" },
-      { id: "C", text: "Rotates the element" },
-      { id: "D", text: "Changes the element's width" }
+      { id: "B", text: "Rotates the element" },
+      { id: "C", text: "Changes the element's width" },
+      { id: "D", text: "Changes the element from transparent to fully opaque" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The opacity changes from 0 to 1, creating a fade-in effect when the animation is applied.",
     tags: ["keyframes", "opacity", "fade"]
   },
@@ -295,12 +295,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between ease-in and ease-out?",
     options: [
-      { id: "A", text: "ease-in accelerates toward the end, while ease-out decelerates toward the end" },
-      { id: "B", text: "They are exactly the same" },
+      { id: "A", text: "They are exactly the same" },
+      { id: "B", text: "ease-in accelerates toward the end, while ease-out decelerates toward the end" },
       { id: "C", text: "ease-in changes color while ease-out changes position" },
       { id: "D", text: "ease-in repeats the animation while ease-out stops it" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "ease-in starts relatively slowly and accelerates, while ease-out starts faster and decelerates toward the end.",
     tags: ["ease-in", "ease-out", "timing-functions"]
   },
@@ -313,12 +313,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS property controls the direction in which an animation plays?",
     options: [
-      { id: "A", text: "animation-direction" },
-      { id: "B", text: "animation-flow" },
-      { id: "C", text: "animation-order" },
+      { id: "A", text: "animation-flow" },
+      { id: "B", text: "animation-order" },
+      { id: "C", text: "animation-direction" },
       { id: "D", text: "animation-path" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "animation-direction controls whether the animation plays normally, in reverse, alternates, or alternates in reverse.",
     tags: ["animation-direction"]
   },
@@ -332,11 +332,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "What does animation-direction: alternate do?",
     options: [
       { id: "A", text: "Runs the animation once and stops" },
-      { id: "B", text: "Plays forward, then backward on the next iteration, repeating that pattern" },
-      { id: "C", text: "Starts every iteration from the middle" },
-      { id: "D", text: "Randomizes the animation direction" }
+      { id: "B", text: "Starts every iteration from the middle" },
+      { id: "C", text: "Randomizes the animation direction" },
+      { id: "D", text: "Plays forward, then backward on the next iteration, repeating that pattern" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "alternate makes odd iterations play forward and even iterations play backward.",
     tags: ["animation-direction", "alternate"]
   },
@@ -367,12 +367,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "What does animation-fill-mode: backwards do during an animation delay?",
     options: [
-      { id: "A", text: "It applies the first relevant keyframe styles during the delay" },
-      { id: "B", text: "It permanently reverses the animation" },
+      { id: "A", text: "It permanently reverses the animation" },
+      { id: "B", text: "It applies the first relevant keyframe styles during the delay" },
       { id: "C", text: "It skips the delay" },
       { id: "D", text: "It doubles the animation duration" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "backwards applies the appropriate starting keyframe styles during the animation's delay period.",
     tags: ["animation-fill-mode", "backwards"]
   },
@@ -385,12 +385,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "What does animation-play-state control?",
     options: [
-      { id: "A", text: "Whether an animation is running or paused" },
-      { id: "B", text: "The number of keyframes" },
-      { id: "C", text: "The animation's color" },
+      { id: "A", text: "The number of keyframes" },
+      { id: "B", text: "The animation's color" },
+      { id: "C", text: "Whether an animation is running or paused" },
       { id: "D", text: "The element's display type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "animation-play-state accepts values such as running and paused.",
     tags: ["animation-play-state", "paused"]
   },
@@ -404,11 +404,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which CSS correctly pauses an animation?",
     options: [
       { id: "A", text: "animation-state: stopped;" },
-      { id: "B", text: "animation-play-state: paused;" },
-      { id: "C", text: "animation: pause;" },
-      { id: "D", text: "animation-status: pause;" }
+      { id: "B", text: "animation: pause;" },
+      { id: "C", text: "animation-status: pause;" },
+      { id: "D", text: "animation-play-state: paused;" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "animation-play-state: paused pauses a running CSS animation at its current progress.",
     tags: ["animation-play-state", "paused"]
   },
@@ -439,12 +439,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which is a key difference between transitions and keyframe animations?",
     options: [
-      { id: "A", text: "Keyframe animations can define multiple intermediate stages and run independently of a simple state change" },
-      { id: "B", text: "Transitions can only use JavaScript" },
+      { id: "A", text: "Transitions can only use JavaScript" },
+      { id: "B", text: "Keyframe animations can define multiple intermediate stages and run independently of a simple state change" },
       { id: "C", text: "Keyframes cannot change CSS properties" },
       { id: "D", text: "Transitions always repeat forever" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Transitions are generally tied to a change between states, while keyframe animations can define multiple stages and can run automatically according to animation settings.",
     tags: ["transitions", "animations", "keyframes"]
   },
@@ -457,12 +457,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which property is commonly considered a good candidate for performant animation?",
     options: [
-      { id: "A", text: "transform" },
-      { id: "B", text: "width" },
-      { id: "C", text: "top" },
+      { id: "A", text: "width" },
+      { id: "B", text: "top" },
+      { id: "C", text: "transform" },
       { id: "D", text: "margin-left" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "transform is commonly preferred for movement and scaling animations because it can often be handled efficiently by the browser's rendering pipeline.",
     tags: ["transform", "performance"]
   },
@@ -476,11 +476,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which CSS property is commonly used to create a rotation without changing document flow?",
     options: [
       { id: "A", text: "position" },
-      { id: "B", text: "transform" },
-      { id: "C", text: "float" },
-      { id: "D", text: "display" }
+      { id: "B", text: "float" },
+      { id: "C", text: "display" },
+      { id: "D", text: "transform" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "transform: rotate(...) visually rotates an element without changing its normal layout position.",
     tags: ["transform", "rotate"]
   },
@@ -529,12 +529,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which property controls the origin point around which transforms occur?",
     options: [
-      { id: "A", text: "transform-origin" },
-      { id: "B", text: "transform-point" },
-      { id: "C", text: "origin-transform" },
+      { id: "A", text: "transform-point" },
+      { id: "B", text: "origin-transform" },
+      { id: "C", text: "transform-origin" },
       { id: "D", text: "transform-anchor" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "transform-origin defines the point around which transformations such as rotation and scaling are applied.",
     tags: ["transform-origin", "transforms"]
   },
@@ -547,12 +547,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "What is the effect of this CSS?\n\n.card {\n  transition: transform 200ms ease;\n}\n.card:hover {\n  transform: scale(1.05);\n}",
     options: [
-      { id: "A", text: "The card smoothly grows slightly when hovered" },
-      { id: "B", text: "The card disappears on hover" },
-      { id: "C", text: "The card moves 200px" },
-      { id: "D", text: "The card rotates 200 degrees" }
+      { id: "A", text: "The card disappears on hover" },
+      { id: "B", text: "The card moves 200px" },
+      { id: "C", text: "The card rotates 200 degrees" },
+      { id: "D", text: "The card smoothly grows slightly when hovered" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The hover state changes the transform scale to 1.05, and the transition smoothly interpolates that change over 200ms.",
     tags: ["hover", "scale", "transition"]
   },
@@ -583,12 +583,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which property is commonly animated together with transform for simple fade-and-move effects?",
     options: [
-      { id: "A", text: "opacity" },
-      { id: "B", text: "content" },
+      { id: "A", text: "content" },
+      { id: "B", text: "opacity" },
       { id: "C", text: "display" },
       { id: "D", text: "position-type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "opacity can be combined with transform to create effects such as fading in while moving upward.",
     tags: ["opacity", "transform", "animations"]
   },
@@ -601,12 +601,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which animation correctly moves an element from left to right?",
     options: [
-      { id: "A", text: "@keyframes move { from { transform: translateX(0); } to { transform: translateX(100px); } }" },
-      { id: "B", text: "@keyframes move { from { color: 0; } to { color: 100px; } }" },
-      { id: "C", text: "@keyframes move { from { width: 0deg; } to { width: 100deg; } }" },
+      { id: "A", text: "@keyframes move { from { color: 0; } to { color: 100px; } }" },
+      { id: "B", text: "@keyframes move { from { width: 0deg; } to { width: 100deg; } }" },
+      { id: "C", text: "@keyframes move { from { transform: translateX(0); } to { transform: translateX(100px); } }" },
       { id: "D", text: "@keyframes move { from { rotateX: 0; } to { rotateX: 100px; } }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "translateX() changes the element's horizontal position visually, making it suitable for this animation.",
     tags: ["keyframes", "translateX", "transform"]
   },
@@ -619,12 +619,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "What does the transition shorthand represent in this declaration?\n\ntransition: opacity 300ms ease-in 100ms;",
     options: [
-      { id: "A", text: "Property, duration, timing function, and delay" },
-      { id: "B", text: "Duration, property, delay, and iteration count" },
-      { id: "C", text: "Property, iteration count, direction, and delay" },
-      { id: "D", text: "Delay, property, duration, and keyframe name" }
+      { id: "A", text: "Duration, property, delay, and iteration count" },
+      { id: "B", text: "Property, iteration count, direction, and delay" },
+      { id: "C", text: "Delay, property, duration, and keyframe name" },
+      { id: "D", text: "Property, duration, timing function, and delay" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The shorthand specifies the property, duration, timing function, and delay.",
     tags: ["transition-shorthand", "transitions"]
   },
@@ -655,12 +655,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Why can transition: all be undesirable in production UI code?",
     options: [
-      { id: "A", text: "It can cause unintended properties to animate and make performance or visual behavior harder to control" },
-      { id: "B", text: "It disables every transition" },
+      { id: "A", text: "It disables every transition" },
+      { id: "B", text: "It can cause unintended properties to animate and make performance or visual behavior harder to control" },
       { id: "C", text: "It only works in Internet Explorer" },
       { id: "D", text: "It prevents hover states" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Explicitly naming the properties you want to animate gives better control and avoids unexpected animations when unrelated properties change.",
     tags: ["transition-all", "best-practices"]
   },
@@ -673,12 +673,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS feature can create discrete, step-like timing instead of continuous interpolation?",
     options: [
-      { id: "A", text: "steps()" },
-      { id: "B", text: "smooth()" },
-      { id: "C", text: "frames()" },
+      { id: "A", text: "smooth()" },
+      { id: "B", text: "frames()" },
+      { id: "C", text: "steps()" },
       { id: "D", text: "jump()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The steps() timing function divides the animation into a specified number of discrete intervals.",
     tags: ["steps", "timing-functions"]
   },
@@ -691,12 +691,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "Which CSS property can be used to hint that an element is likely to be transformed in the near future?",
     options: [
-      { id: "A", text: "will-change" },
-      { id: "B", text: "future-transform" },
-      { id: "C", text: "prepare" },
-      { id: "D", text: "animation-hint" }
+      { id: "A", text: "future-transform" },
+      { id: "B", text: "prepare" },
+      { id: "C", text: "animation-hint" },
+      { id: "D", text: "will-change" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "will-change allows a developer to indicate properties that are expected to change, potentially allowing the browser to optimize ahead of time.",
     tags: ["will-change", "performance"]
   },
@@ -728,11 +728,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which property is generally not a good choice for smooth interpolation because it is a discrete property?",
     options: [
       { id: "A", text: "opacity" },
-      { id: "B", text: "transform" },
-      { id: "C", text: "display" },
+      { id: "B", text: "display" },
+      { id: "C", text: "transform" },
       { id: "D", text: "background-color" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "display traditionally switches between discrete states rather than smoothly interpolating like opacity or transform.",
     tags: ["animatable-properties", "display"]
   },
@@ -745,12 +745,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "What is a common reason to avoid animating width and height when transform can achieve the same visual effect?",
     options: [
-      { id: "A", text: "Changing width or height can trigger layout work, potentially making animations more expensive" },
-      { id: "B", text: "width and height cannot be changed with CSS" },
-      { id: "C", text: "transform cannot be animated" },
+      { id: "A", text: "width and height cannot be changed with CSS" },
+      { id: "B", text: "transform cannot be animated" },
+      { id: "C", text: "Changing width or height can trigger layout work, potentially making animations more expensive" },
       { id: "D", text: "width only works on text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Layout-affecting properties can cause the browser to recalculate layout. transform can often provide similar visual scaling with less layout work.",
     tags: ["performance", "transform", "layout"]
   },
@@ -764,11 +764,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "Which CSS creates an animation that runs for 2 seconds, repeats forever, and alternates direction?",
     options: [
       { id: "A", text: "animation: 2s infinite alternate;" },
-      { id: "B", text: "animation: move 2s infinite alternate;" },
-      { id: "C", text: "animation: move infinite 2px alternate;" },
-      { id: "D", text: "animation: alternate move infinite;" }
+      { id: "B", text: "animation: move infinite 2px alternate;" },
+      { id: "C", text: "animation: alternate move infinite;" },
+      { id: "D", text: "animation: move 2s infinite alternate;" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The shorthand includes the keyframe name (move), duration (2s), iteration count (infinite), and direction (alternate).",
     tags: ["animation-shorthand", "alternate", "infinite"]
   },
@@ -799,12 +799,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "What will this animation do?\n\n@keyframes pulse {\n  0% { transform: scale(1); }\n  50% { transform: scale(1.1); }\n  100% { transform: scale(1); }\n}",
     options: [
-      { id: "A", text: "The element grows slightly halfway through the animation and returns to its original size" },
-      { id: "B", text: "The element rotates 360 degrees" },
+      { id: "A", text: "The element rotates 360 degrees" },
+      { id: "B", text: "The element grows slightly halfway through the animation and returns to its original size" },
       { id: "C", text: "The element becomes invisible halfway through" },
       { id: "D", text: "The element permanently grows to 110%" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The scale increases to 1.1 at 50% progress and returns to 1 at the end, producing a pulse effect.",
     tags: ["keyframes", "scale", "pulse"]
   },
@@ -817,12 +817,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "Which animation approach is generally better for respecting users who prefer reduced motion?",
     options: [
-      { id: "A", text: "Use prefers-reduced-motion to reduce or remove non-essential animations" },
-      { id: "B", text: "Force all animations to infinite" },
-      { id: "C", text: "Increase animation duration for everyone" },
+      { id: "A", text: "Force all animations to infinite" },
+      { id: "B", text: "Increase animation duration for everyone" },
+      { id: "C", text: "Use prefers-reduced-motion to reduce or remove non-essential animations" },
       { id: "D", text: "Disable all CSS regardless of user preference" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The prefers-reduced-motion media feature allows developers to provide a less motion-intensive experience for users who request it.",
     tags: ["accessibility", "prefers-reduced-motion"]
   },
@@ -835,12 +835,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "Which implementation is most appropriate for a hover effect that moves a button upward without affecting surrounding layout?",
     options: [
-      { id: "A", text: ".button:hover { transform: translateY(-4px); }" },
-      { id: "B", text: ".button:hover { margin-top: -4px; }" },
-      { id: "C", text: ".button:hover { top: -4px; position: relative; }" },
-      { id: "D", text: ".button:hover { height: calc(100% - 4px); }" }
+      { id: "A", text: ".button:hover { margin-top: -4px; }" },
+      { id: "B", text: ".button:hover { top: -4px; position: relative; }" },
+      { id: "C", text: ".button:hover { height: calc(100% - 4px); }" },
+      { id: "D", text: ".button:hover { transform: translateY(-4px); }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "transform visually moves the element without changing normal document flow, making it a good fit for this type of hover effect.",
     tags: ["transform", "hover", "performance"]
   },
@@ -871,12 +871,12 @@ const cssAnimationsTransitionsQuestions = [
     difficulty: "Advanced",
     question: "Which statement about CSS animations and JavaScript is most accurate?",
     options: [
-      { id: "A", text: "CSS can handle many visual animations declaratively, while JavaScript is useful when animation behavior depends on application logic or complex interaction" },
-      { id: "B", text: "CSS animations always require JavaScript" },
+      { id: "A", text: "CSS animations always require JavaScript" },
+      { id: "B", text: "CSS can handle many visual animations declaratively, while JavaScript is useful when animation behavior depends on application logic or complex interaction" },
       { id: "C", text: "JavaScript cannot control CSS animations" },
       { id: "D", text: "CSS animations are only possible with React" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "CSS animations and transitions are powerful for declarative visual effects. JavaScript can complement them when animation needs to respond to complex application state or custom logic.",
     tags: ["css-animations", "javascript", "architecture"]
   },
@@ -890,11 +890,11 @@ const cssAnimationsTransitionsQuestions = [
     question: "You are building a production React application with hover effects, loading states, modals, and complex visual transitions. Which strategy is strongest?",
     options: [
       { id: "A", text: "Animate every CSS property with transition: all and use infinite animations everywhere" },
-      { id: "B", text: "Prefer targeted transitions and transform/opacity for common visual effects, use keyframes for multi-stage animations, respect reduced-motion preferences, and avoid unnecessary performance-heavy animations" },
-      { id: "C", text: "Use JavaScript timers for every hover animation" },
+      { id: "B", text: "Use JavaScript timers for every hover animation" },
+      { id: "C", text: "Prefer targeted transitions and transform/opacity for common visual effects, use keyframes for multi-stage animations, respect reduced-motion preferences, and avoid unnecessary performance-heavy animations" },
       { id: "D", text: "Use width, height, top, and left for every animation because they are always fastest" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A production-quality animation strategy uses the right tool for each job: transitions for state changes, keyframes for multi-stage sequences, transform and opacity where appropriate for performance, and reduced-motion handling for accessibility.",
     tags: ["animations", "transitions", "performance", "accessibility", "best-practices"]
   }

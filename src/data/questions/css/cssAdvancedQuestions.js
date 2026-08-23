@@ -8,11 +8,11 @@ const cssAdvancedQuestions = [
     question: "What is a CSS custom property?",
     options: [
       { id: "A", text: "A JavaScript variable stored inside CSS" },
-      { id: "B", text: "A user-defined CSS value declared with a -- prefix" },
-      { id: "C", text: "A browser-specific CSS selector" },
+      { id: "B", text: "A browser-specific CSS selector" },
+      { id: "C", text: "A user-defined CSS value declared with a -- prefix" },
       { id: "D", text: "A replacement for HTML attributes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "CSS custom properties are user-defined properties whose names begin with -- and whose values can be reused with var().",
     tags: ["custom-properties", "variables"]
   },
@@ -25,12 +25,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does this CSS define?\n\n:root {\n  --primary-color: #2563eb;\n}",
     options: [
-      { id: "A", text: "A CSS custom property named --primary-color" },
-      { id: "B", text: "A JavaScript variable named primary-color" },
-      { id: "C", text: "A new CSS selector called primary-color" },
-      { id: "D", text: "A browser environment variable" }
+      { id: "A", text: "A JavaScript variable named primary-color" },
+      { id: "B", text: "A new CSS selector called primary-color" },
+      { id: "C", text: "A browser environment variable" },
+      { id: "D", text: "A CSS custom property named --primary-color" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The --primary-color declaration creates a CSS custom property on :root, making it available throughout the document through inheritance.",
     tags: ["custom-properties", "root"]
   },
@@ -43,12 +43,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "How do you read a CSS custom property?",
     options: [
-      { id: "A", text: "value(--primary-color)" },
-      { id: "B", text: "get(--primary-color)" },
-      { id: "C", text: "var(--primary-color)" },
+      { id: "A", text: "var(--primary-color)" },
+      { id: "B", text: "value(--primary-color)" },
+      { id: "C", text: "get(--primary-color)" },
       { id: "D", text: "css(--primary-color)" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The var() function retrieves the value of a CSS custom property.",
     tags: ["var", "custom-properties"]
   },
@@ -61,12 +61,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does this CSS do?\n\n:root {\n  --spacing: 1rem;\n}\n\n.card {\n  padding: var(--spacing);\n}",
     options: [
-      { id: "A", text: "It sets the card padding to the value stored in --spacing" },
-      { id: "B", text: "It creates a 1px padding" },
+      { id: "A", text: "It creates a 1px padding" },
+      { id: "B", text: "It sets the card padding to the value stored in --spacing" },
       { id: "C", text: "It makes padding responsive to viewport width" },
       { id: "D", text: "It disables padding inheritance" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "var(--spacing) resolves to the custom property's value, so the card receives 1rem of padding.",
     tags: ["var", "custom-properties"]
   },
@@ -79,12 +79,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Why are custom properties useful for design systems?",
     options: [
-      { id: "A", text: "They allow shared values such as colors, spacing, and typography to be centrally controlled" },
-      { id: "B", text: "They automatically generate HTML components" },
-      { id: "C", text: "They eliminate the CSS cascade" },
+      { id: "A", text: "They automatically generate HTML components" },
+      { id: "B", text: "They eliminate the CSS cascade" },
+      { id: "C", text: "They allow shared values such as colors, spacing, and typography to be centrally controlled" },
       { id: "D", text: "They replace all CSS selectors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Design tokens can be represented with custom properties, allowing a change to a shared value to propagate throughout the interface.",
     tags: ["design-systems", "custom-properties", "architecture"]
   },
@@ -97,12 +97,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Where are CSS custom properties commonly declared when they should be globally available?",
     options: [
-      { id: "A", text: ":root" },
-      { id: "B", text: "::global" },
-      { id: "C", text: "html-global" },
-      { id: "D", text: "@variables" }
+      { id: "A", text: "::global" },
+      { id: "B", text: "html-global" },
+      { id: "C", text: "@variables" },
+      { id: "D", text: ":root" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: ":root is commonly used to define global custom properties because custom properties participate in inheritance.",
     tags: ["root", "custom-properties"]
   },
@@ -115,12 +115,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What happens here?\n\n:root {\n  --color: blue;\n}\n\n.card {\n  --color: red;\n  color: var(--color);\n}",
     options: [
-      { id: "A", text: "The card uses blue because :root always has higher priority" },
-      { id: "B", text: "The card uses red because the custom property is overridden on the card itself" },
+      { id: "A", text: "The card uses red because the custom property is overridden on the card itself" },
+      { id: "B", text: "The card uses blue because :root always has higher priority" },
       { id: "C", text: "The CSS becomes invalid" },
       { id: "D", text: "Both colors are applied simultaneously" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Custom properties inherit, but a value declared directly on an element overrides its inherited value.",
     tags: ["custom-properties", "inheritance", "cascade"]
   },
@@ -133,12 +133,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of a fallback in var()?",
     options: [
-      { id: "A", text: "To provide a value if the referenced custom property is invalid or unavailable" },
-      { id: "B", text: "To create a second CSS selector" },
+      { id: "A", text: "To create a second CSS selector" },
+      { id: "B", text: "To provide a value if the referenced custom property is invalid or unavailable" },
       { id: "C", text: "To force inheritance" },
       { id: "D", text: "To prevent media queries" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "var(--name, fallback) provides a fallback value if the custom property's value cannot be used.",
     tags: ["var", "fallback", "custom-properties"]
   },
@@ -169,12 +169,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS function performs arithmetic calculations?",
     options: [
-      { id: "A", text: "calc()" },
-      { id: "B", text: "math()" },
-      { id: "C", text: "compute()" },
-      { id: "D", text: "formula()" }
+      { id: "A", text: "math()" },
+      { id: "B", text: "compute()" },
+      { id: "C", text: "formula()" },
+      { id: "D", text: "calc()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "calc() allows arithmetic expressions involving CSS values and units.",
     tags: ["calc", "css-functions"]
   },
@@ -187,12 +187,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does this do?\n\nwidth: calc(100% - 2rem);",
     options: [
-      { id: "A", text: "Makes the element exactly 2rem wide" },
-      { id: "B", text: "Makes the width equal to 100% minus 2rem" },
+      { id: "A", text: "Makes the width equal to 100% minus 2rem" },
+      { id: "B", text: "Makes the element exactly 2rem wide" },
       { id: "C", text: "Subtracts 100% from 2rem" },
       { id: "D", text: "Sets width to 102rem" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "calc() allows compatible CSS units to participate in arithmetic expressions.",
     tags: ["calc", "css-functions"]
   },
@@ -205,12 +205,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does min() return?",
     options: [
-      { id: "A", text: "The smallest computed value among its arguments" },
-      { id: "B", text: "The largest computed value among its arguments" },
+      { id: "A", text: "The largest computed value among its arguments" },
+      { id: "B", text: "The smallest computed value among its arguments" },
       { id: "C", text: "The average of its arguments" },
       { id: "D", text: "The first argument regardless of value" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "min() evaluates its arguments and uses the smallest resulting value.",
     tags: ["min", "css-functions"]
   },
@@ -224,11 +224,11 @@ const cssAdvancedQuestions = [
     question: "What does max() return?",
     options: [
       { id: "A", text: "The smallest value" },
-      { id: "B", text: "The largest computed value among its arguments" },
-      { id: "C", text: "The average value" },
+      { id: "B", text: "The average value" },
+      { id: "C", text: "The largest computed value among its arguments" },
       { id: "D", text: "Only the first valid value" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "max() evaluates its arguments and chooses the largest resulting value.",
     tags: ["max", "css-functions"]
   },
@@ -241,12 +241,12 @@ const cssAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of clamp()?",
     options: [
-      { id: "A", text: "To constrain a value between a minimum, preferred value, and maximum" },
-      { id: "B", text: "To remove all CSS animations" },
-      { id: "C", text: "To disable inheritance" },
-      { id: "D", text: "To create a media query" }
+      { id: "A", text: "To remove all CSS animations" },
+      { id: "B", text: "To disable inheritance" },
+      { id: "C", text: "To create a media query" },
+      { id: "D", text: "To constrain a value between a minimum, preferred value, and maximum" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "clamp(min, preferred, max) provides a bounded responsive value.",
     tags: ["clamp", "css-functions"]
   },
@@ -277,12 +277,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a major difference between CSS custom properties and preprocessor variables such as Sass variables?",
     options: [
-      { id: "A", text: "Custom properties exist at runtime in the browser and participate in inheritance, while Sass variables are resolved during preprocessing" },
-      { id: "B", text: "Sass variables are runtime values while custom properties only exist before compilation" },
+      { id: "A", text: "Sass variables are runtime values while custom properties only exist before compilation" },
+      { id: "B", text: "Custom properties exist at runtime in the browser and participate in inheritance, while Sass variables are resolved during preprocessing" },
       { id: "C", text: "They are identical in every way" },
       { id: "D", text: "Custom properties cannot be changed after compilation" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "CSS custom properties remain in the resulting CSS and can be changed dynamically, while Sass variables are processed before the CSS reaches the browser.",
     tags: ["custom-properties", "sass", "architecture"]
   },
@@ -295,12 +295,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why can CSS custom properties be changed with JavaScript without recompiling CSS?",
     options: [
-      { id: "A", text: "Because custom properties are part of the browser's CSSOM and exist at runtime" },
-      { id: "B", text: "Because JavaScript automatically recompiles Sass" },
-      { id: "C", text: "Because CSS variables are JavaScript variables" },
+      { id: "A", text: "Because JavaScript automatically recompiles Sass" },
+      { id: "B", text: "Because CSS variables are JavaScript variables" },
+      { id: "C", text: "Because custom properties are part of the browser's CSSOM and exist at runtime" },
       { id: "D", text: "Because browsers ignore CSS declarations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Custom properties are runtime CSS values, so JavaScript can modify them through style APIs.",
     tags: ["custom-properties", "cssom", "javascript"]
   },
@@ -313,12 +313,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which JavaScript statement correctly changes a CSS custom property on the root element?",
     options: [
-      { id: "A", text: "document.documentElement.style.setProperty('--primary', 'red')" },
-      { id: "B", text: "document.css.set('--primary', 'red')" },
-      { id: "C", text: "document.root.variable('--primary', 'red')" },
-      { id: "D", text: "document.documentElement.setCSS('--primary', 'red')" }
+      { id: "A", text: "document.css.set('--primary', 'red')" },
+      { id: "B", text: "document.root.variable('--primary', 'red')" },
+      { id: "C", text: "document.documentElement.setCSS('--primary', 'red')" },
+      { id: "D", text: "document.documentElement.style.setProperty('--primary', 'red')" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "setProperty() can update custom properties through an element's style declaration.",
     tags: ["custom-properties", "javascript", "setProperty"]
   },
@@ -349,12 +349,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this registered custom property specify?\n\n@property --progress {\n  syntax: '<number>';\n  inherits: false;\n  initial-value: 0;\n}",
     options: [
-      { id: "A", text: "--progress accepts number values, does not inherit, and defaults to 0" },
-      { id: "B", text: "--progress can only contain colors" },
+      { id: "A", text: "--progress can only contain colors" },
+      { id: "B", text: "--progress accepts number values, does not inherit, and defaults to 0" },
       { id: "C", text: "--progress is automatically an animation" },
       { id: "D", text: "--progress becomes a JavaScript variable" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The registration defines the property's expected syntax, inheritance behavior, and initial value.",
     tags: ["@property", "syntax", "inheritance"]
   },
@@ -367,12 +367,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of CSS cascade layers?",
     options: [
-      { id: "A", text: "To explicitly organize groups of styles into cascade layers with predictable precedence" },
-      { id: "B", text: "To create visual 3D layers" },
-      { id: "C", text: "To replace z-index" },
+      { id: "A", text: "To create visual 3D layers" },
+      { id: "B", text: "To replace z-index" },
+      { id: "C", text: "To explicitly organize groups of styles into cascade layers with predictable precedence" },
       { id: "D", text: "To make every selector equally specific" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Cascade layers provide an explicit ordering mechanism for groups of CSS rules, helping large stylesheets manage precedence.",
     tags: ["cascade-layers", "architecture", "cascade"]
   },
@@ -385,12 +385,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which syntax declares a cascade layer?",
     options: [
-      { id: "A", text: "@layer components { ... }" },
-      { id: "B", text: "@cascade components { ... }" },
-      { id: "C", text: "@css-layer components { ... }" },
-      { id: "D", text: "@style-layer components { ... }" }
+      { id: "A", text: "@cascade components { ... }" },
+      { id: "B", text: "@css-layer components { ... }" },
+      { id: "C", text: "@style-layer components { ... }" },
+      { id: "D", text: "@layer components { ... }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "@layer is the CSS at-rule used to define cascade layers.",
     tags: ["@layer", "cascade-layers"]
   },
@@ -421,12 +421,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which architecture generally makes a large CSS codebase easier to maintain?",
     options: [
-      { id: "A", text: "Clear organization of tokens, base styles, components, utilities, and responsive rules" },
-      { id: "B", text: "One enormous selector containing every possible rule" },
+      { id: "A", text: "One enormous selector containing every possible rule" },
+      { id: "B", text: "Clear organization of tokens, base styles, components, utilities, and responsive rules" },
       { id: "C", text: "Random global styles added whenever a component needs a change" },
       { id: "D", text: "Using !important for most declarations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A deliberate architecture creates clear responsibilities and reduces unintended interactions between unrelated styles.",
     tags: ["css-architecture", "maintainability"]
   },
@@ -439,12 +439,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the main idea behind a CSS utility class architecture?",
     options: [
-      { id: "A", text: "Create small reusable classes that apply focused styling responsibilities" },
-      { id: "B", text: "Put all styles into one component selector" },
-      { id: "C", text: "Avoid reusable styles" },
+      { id: "A", text: "Put all styles into one component selector" },
+      { id: "B", text: "Avoid reusable styles" },
+      { id: "C", text: "Create small reusable classes that apply focused styling responsibilities" },
       { id: "D", text: "Use JavaScript instead of CSS" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Utility-oriented CSS uses small classes with focused responsibilities, which can make composition and reuse easier.",
     tags: ["utilities", "css-architecture"]
   },
@@ -457,12 +457,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a common problem with excessive use of !important?",
     options: [
-      { id: "A", text: "It makes the cascade harder to reason about and often leads to further specificity conflicts" },
-      { id: "B", text: "It disables CSS variables" },
-      { id: "C", text: "It makes CSS execute as JavaScript" },
-      { id: "D", text: "It always improves maintainability" }
+      { id: "A", text: "It disables CSS variables" },
+      { id: "B", text: "It makes CSS execute as JavaScript" },
+      { id: "C", text: "It always improves maintainability" },
+      { id: "D", text: "It makes the cascade harder to reason about and often leads to further specificity conflicts" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Overusing !important can create a cycle where developers need even stronger overrides, making the stylesheet difficult to maintain.",
     tags: ["important", "cascade", "architecture"]
   },
@@ -493,12 +493,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why can this be preferable to margin-left?\n\nmargin-inline-start: 1rem;",
     options: [
-      { id: "A", text: "It respects the document's writing direction" },
-      { id: "B", text: "It always creates a larger margin" },
+      { id: "A", text: "It always creates a larger margin" },
+      { id: "B", text: "It respects the document's writing direction" },
       { id: "C", text: "It disables margin collapsing" },
       { id: "D", text: "It only works in CSS Grid" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "margin-inline-start maps to the appropriate inline-start side based on writing direction, making the layout more adaptable to RTL and other writing modes.",
     tags: ["logical-properties", "rtl"]
   },
@@ -511,12 +511,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of the :is() pseudo-class?",
     options: [
-      { id: "A", text: "To group multiple selectors while keeping the selector concise" },
-      { id: "B", text: "To test JavaScript conditions" },
-      { id: "C", text: "To create an animation" },
+      { id: "A", text: "To test JavaScript conditions" },
+      { id: "B", text: "To create an animation" },
+      { id: "C", text: "To group multiple selectors while keeping the selector concise" },
       { id: "D", text: "To select only IDs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: ":is() accepts a selector list and matches an element against any selector in that list.",
     tags: ["is", "selectors"]
   },
@@ -529,12 +529,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this selector do?\n\n:is(h1, h2, h3) {\n  font-weight: 700;\n}",
     options: [
-      { id: "A", text: "Applies the rule to h1, h2, and h3 elements" },
-      { id: "B", text: "Applies only to h1" },
-      { id: "C", text: "Creates three new elements" },
-      { id: "D", text: "Selects only headings with IDs" }
+      { id: "A", text: "Applies only to h1" },
+      { id: "B", text: "Creates three new elements" },
+      { id: "C", text: "Selects only headings with IDs" },
+      { id: "D", text: "Applies the rule to h1, h2, and h3 elements" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: ":is() groups the listed selectors so the same declarations can be applied to all matching elements.",
     tags: ["is", "selectors"]
   },
@@ -565,12 +565,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does :has() allow CSS to express?",
     options: [
-      { id: "A", text: "A selector can match an element based on a relative selector condition involving its descendants or related elements" },
-      { id: "B", text: "Only direct ID selection" },
+      { id: "A", text: "Only direct ID selection" },
+      { id: "B", text: "A selector can match an element based on a relative selector condition involving its descendants or related elements" },
       { id: "C", text: "JavaScript event handling" },
       { id: "D", text: "CSS variable declarations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: ":has() is often called a relational pseudo-class because it enables selection based on what exists within or relative to an element.",
     tags: ["has", "relational-selectors"]
   },
@@ -583,12 +583,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this selector target?\n\n.card:has(img) { ... }",
     options: [
-      { id: "A", text: "Cards that contain a matching img descendant" },
-      { id: "B", text: "Every img element inside the card" },
-      { id: "C", text: "Only cards with an image ID" },
+      { id: "A", text: "Every img element inside the card" },
+      { id: "B", text: "Only cards with an image ID" },
+      { id: "C", text: "Cards that contain a matching img descendant" },
       { id: "D", text: "Cards that are images themselves" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: ":has(img) matches .card elements for which an img descendant satisfies the relative selector.",
     tags: ["has", "relational-selectors"]
   },
@@ -601,12 +601,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the main benefit of container queries for component architecture?",
     options: [
-      { id: "A", text: "Components can adapt based on their container's available space rather than relying solely on viewport width" },
-      { id: "B", text: "They remove the need for CSS classes" },
-      { id: "C", text: "They only work for full-page layouts" },
-      { id: "D", text: "They replace all media queries" }
+      { id: "A", text: "They remove the need for CSS classes" },
+      { id: "B", text: "They only work for full-page layouts" },
+      { id: "C", text: "They replace all media queries" },
+      { id: "D", text: "Components can adapt based on their container's available space rather than relying solely on viewport width" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Container queries make components more portable because their responsive behavior can depend on the local container in which they are placed.",
     tags: ["container-queries", "components", "architecture"]
   },
@@ -637,12 +637,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of CSS nesting?",
     options: [
-      { id: "A", text: "To express related selectors in a nested structure directly in CSS" },
-      { id: "B", text: "To create nested HTML elements automatically" },
+      { id: "A", text: "To create nested HTML elements automatically" },
+      { id: "B", text: "To express related selectors in a nested structure directly in CSS" },
       { id: "C", text: "To replace CSS variables" },
       { id: "D", text: "To create JavaScript objects" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Native CSS nesting allows related rules to be expressed in a nested form, improving organization in suitable codebases.",
     tags: ["css-nesting", "architecture"]
   },
@@ -655,12 +655,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which example demonstrates CSS nesting?",
     options: [
-      { id: "A", text: ".card { color: black; & .title { font-weight: 700; } }" },
-      { id: "B", text: ".card => .title { font-weight: 700; }" },
-      { id: "C", text: ".card { nested: .title; }" },
+      { id: "A", text: ".card => .title { font-weight: 700; }" },
+      { id: "B", text: ".card { nested: .title; }" },
+      { id: "C", text: ".card { color: black; & .title { font-weight: 700; } }" },
       { id: "D", text: "@nested .card .title { ... }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The nested selector using & expresses the relationship to the parent selector.",
     tags: ["css-nesting", "nesting"]
   },
@@ -673,12 +673,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why can low-specificity CSS architecture be beneficial?",
     options: [
-      { id: "A", text: "It makes styles easier to override intentionally without relying heavily on !important" },
-      { id: "B", text: "It prevents inheritance completely" },
-      { id: "C", text: "It makes every declaration globally important" },
-      { id: "D", text: "It eliminates the cascade" }
+      { id: "A", text: "It prevents inheritance completely" },
+      { id: "B", text: "It makes every declaration globally important" },
+      { id: "C", text: "It eliminates the cascade" },
+      { id: "D", text: "It makes styles easier to override intentionally without relying heavily on !important" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Keeping specificity manageable makes the cascade more predictable and allows later or more appropriate styles to override earlier ones.",
     tags: ["specificity", "architecture", "maintainability"]
   },
@@ -709,12 +709,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What problem does a design-token approach solve?",
     options: [
-      { id: "A", text: "It creates a shared vocabulary for values such as colors, spacing, typography, and sizing" },
-      { id: "B", text: "It removes the need for semantic HTML" },
+      { id: "A", text: "It removes the need for semantic HTML" },
+      { id: "B", text: "It creates a shared vocabulary for values such as colors, spacing, typography, and sizing" },
       { id: "C", text: "It guarantees zero CSS bugs" },
       { id: "D", text: "It replaces all component styles with JavaScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Design tokens centralize reusable design decisions and make them easier to keep consistent across a product.",
     tags: ["design-tokens", "design-systems"]
   },
@@ -727,12 +727,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which is a good example of semantic design tokens?",
     options: [
-      { id: "A", text: ":root { --color-text-primary: #111; --color-surface: #fff; }" },
-      { id: "B", text: ":root { --blue-500-only: 1px; }" },
-      { id: "C", text: ":root { --random-a: red; --random-b: 12px; }" },
+      { id: "A", text: ":root { --blue-500-only: 1px; }" },
+      { id: "B", text: ":root { --random-a: red; --random-b: 12px; }" },
+      { id: "C", text: ":root { --color-text-primary: #111; --color-surface: #fff; }" },
       { id: "D", text: ":root { --button123: true; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Semantic tokens describe the role a value plays rather than only its raw value or implementation detail.",
     tags: ["design-tokens", "semantic-tokens"]
   },
@@ -745,12 +745,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why is separating raw tokens from semantic tokens useful?",
     options: [
-      { id: "A", text: "A semantic token can reference a raw value while allowing the design meaning to remain stable if the underlying value changes" },
-      { id: "B", text: "It prevents custom properties from inheriting" },
-      { id: "C", text: "It makes CSS impossible to override" },
-      { id: "D", text: "It eliminates the need for components" }
+      { id: "A", text: "It prevents custom properties from inheriting" },
+      { id: "B", text: "It makes CSS impossible to override" },
+      { id: "C", text: "It eliminates the need for components" },
+      { id: "D", text: "A semantic token can reference a raw value while allowing the design meaning to remain stable if the underlying value changes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "For example, --color-blue-500 can be a raw palette value while --color-primary references it. The semantic role can remain stable even if the palette changes.",
     tags: ["design-tokens", "semantic-tokens", "architecture"]
   },
@@ -781,12 +781,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the main purpose of CSS architecture patterns in a large project?",
     options: [
-      { id: "A", text: "To establish predictable organization, naming, ownership, and reuse of styles" },
-      { id: "B", text: "To make CSS as short as possible regardless of readability" },
+      { id: "A", text: "To make CSS as short as possible regardless of readability" },
+      { id: "B", text: "To establish predictable organization, naming, ownership, and reuse of styles" },
       { id: "C", text: "To eliminate components" },
       { id: "D", text: "To prevent responsive design" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Architecture gives a large stylesheet or component system predictable conventions so developers can understand and change styles safely.",
     tags: ["css-architecture", "scalability"]
   },
@@ -799,12 +799,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which practice is generally better for scalable CSS?",
     options: [
-      { id: "A", text: "Keep component styles locally scoped where appropriate and minimize unnecessary global selectors" },
-      { id: "B", text: "Make every component depend on global element selectors" },
-      { id: "C", text: "Use !important for every component" },
+      { id: "A", text: "Make every component depend on global element selectors" },
+      { id: "B", text: "Use !important for every component" },
+      { id: "C", text: "Keep component styles locally scoped where appropriate and minimize unnecessary global selectors" },
       { id: "D", text: "Use deeply nested selectors everywhere" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Reducing unnecessary global coupling helps prevent unrelated components from affecting each other.",
     tags: ["scalable-css", "components", "architecture"]
   },
@@ -817,12 +817,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which CSS feature is especially useful for creating a reusable theme without duplicating an entire stylesheet?",
     options: [
-      { id: "A", text: "Custom properties" },
-      { id: "B", text: "Absolute positioning" },
-      { id: "C", text: "Float" },
-      { id: "D", text: "Table layout" }
+      { id: "A", text: "Absolute positioning" },
+      { id: "B", text: "Float" },
+      { id: "C", text: "Table layout" },
+      { id: "D", text: "Custom properties" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Themes can override a set of custom properties while components continue referencing the semantic tokens.",
     tags: ["themes", "custom-properties", "design-systems"]
   },
@@ -853,12 +853,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a major advantage of CSS functions such as calc(), min(), max(), and clamp()?",
     options: [
-      { id: "A", text: "They allow CSS values to express dynamic relationships and constraints directly in styles" },
-      { id: "B", text: "They replace all media queries automatically" },
+      { id: "A", text: "They replace all media queries automatically" },
+      { id: "B", text: "They allow CSS values to express dynamic relationships and constraints directly in styles" },
       { id: "C", text: "They only work with colors" },
       { id: "D", text: "They require JavaScript to evaluate" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "CSS functions can express relationships between units and constraints directly in CSS, reducing the need for hard-coded values.",
     tags: ["css-functions", "calc", "clamp", "responsive"]
   },
@@ -871,12 +871,12 @@ const cssAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which combination represents a strong scalable CSS strategy for a large React application?",
     options: [
-      { id: "A", text: "Design tokens, custom properties, clear component boundaries, controlled specificity, and a deliberate cascade strategy" },
-      { id: "B", text: "Global selectors, !important everywhere, and fixed pixel values" },
-      { id: "C", text: "Inline styles for every property and no shared tokens" },
+      { id: "A", text: "Global selectors, !important everywhere, and fixed pixel values" },
+      { id: "B", text: "Inline styles for every property and no shared tokens" },
+      { id: "C", text: "Design tokens, custom properties, clear component boundaries, controlled specificity, and a deliberate cascade strategy" },
       { id: "D", text: "One massive stylesheet with deeply nested selectors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Scalable CSS depends on predictable ownership and reuse, consistent design tokens, manageable specificity, and deliberate cascade organization.",
     tags: ["architecture", "react", "design-systems", "scalability"]
   },
@@ -890,11 +890,11 @@ const cssAdvancedQuestions = [
     question: "You are designing the CSS architecture for a large production React application. Which approach is the strongest?",
     options: [
       { id: "A", text: "Use global element selectors heavily so every component shares the same styles" },
-      { id: "B", text: "Combine semantic design tokens with custom properties, component-oriented styles, low and intentional specificity, cascade layers where useful, modern CSS functions, and clear conventions for responsive and reusable components" },
-      { id: "C", text: "Use !important whenever styles conflict and add more specificity when problems appear" },
-      { id: "D", text: "Avoid custom properties and duplicate all design values inside every component" }
+      { id: "B", text: "Use !important whenever styles conflict and add more specificity when problems appear" },
+      { id: "C", text: "Avoid custom properties and duplicate all design values inside every component" },
+      { id: "D", text: "Combine semantic design tokens with custom properties, component-oriented styles, low and intentional specificity, cascade layers where useful, modern CSS functions, and clear conventions for responsive and reusable components" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A scalable production architecture should make styling predictable and reusable. Design tokens provide consistency, custom properties enable runtime theming, component boundaries reduce coupling, controlled specificity keeps the cascade manageable, and modern CSS features reduce unnecessary duplication.",
     tags: ["css-architecture", "design-systems", "custom-properties", "scalability", "production"]
   }

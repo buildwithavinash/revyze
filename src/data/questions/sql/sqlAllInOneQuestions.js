@@ -8,11 +8,11 @@ const sqlAllInOneQuestions = [
     question: "Which SQL statement is used to retrieve data from a table?",
     options: [
       { id: "A", text: "FETCH" },
-      { id: "B", text: "SELECT" },
-      { id: "C", text: "GET" },
+      { id: "B", text: "GET" },
+      { id: "C", text: "SELECT" },
       { id: "D", text: "READ" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "SELECT is the standard SQL statement used to retrieve data from one or more tables.",
     tags: ["select", "fundamentals"]
   },
@@ -25,12 +25,12 @@ const sqlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which clause is used to filter rows before they are returned?",
     options: [
-      { id: "A", text: "WHERE" },
-      { id: "B", text: "ORDER BY" },
-      { id: "C", text: "GROUP BY" },
-      { id: "D", text: "HAVING" }
+      { id: "A", text: "ORDER BY" },
+      { id: "B", text: "GROUP BY" },
+      { id: "C", text: "HAVING" },
+      { id: "D", text: "WHERE" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "WHERE filters individual rows based on a condition.",
     tags: ["where", "filtering"]
   },
@@ -43,12 +43,12 @@ const sqlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What does this query return?\n\n```sql\nSELECT name, age\nFROM users\nWHERE age > 18;\n```",
     options: [
-      { id: "A", text: "All users regardless of age" },
-      { id: "B", text: "Users whose age is exactly 18" },
-      { id: "C", text: "The name and age of users older than 18" },
+      { id: "A", text: "The name and age of users older than 18" },
+      { id: "B", text: "All users regardless of age" },
+      { id: "C", text: "Users whose age is exactly 18" },
       { id: "D", text: "Only users younger than 18" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "WHERE age > 18 keeps only rows where age is greater than 18, while SELECT returns name and age.",
     tags: ["select", "where"]
   },
@@ -62,11 +62,11 @@ const sqlAllInOneQuestions = [
     question: "Which clause is used to sort query results?",
     options: [
       { id: "A", text: "SORT BY" },
-      { id: "B", text: "GROUP BY" },
-      { id: "C", text: "ORDER BY" },
+      { id: "B", text: "ORDER BY" },
+      { id: "C", text: "GROUP BY" },
       { id: "D", text: "ARRANGE BY" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "ORDER BY sorts the result set according to one or more columns.",
     tags: ["order-by", "sorting"]
   },
@@ -79,12 +79,12 @@ const sqlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What does `ORDER BY salary DESC` do?",
     options: [
-      { id: "A", text: "Sorts salary from highest to lowest" },
-      { id: "B", text: "Sorts salary from lowest to highest" },
-      { id: "C", text: "Deletes salaries in descending order" },
+      { id: "A", text: "Sorts salary from lowest to highest" },
+      { id: "B", text: "Deletes salaries in descending order" },
+      { id: "C", text: "Sorts salary from highest to lowest" },
       { id: "D", text: "Groups employees by salary" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "DESC sorts values in descending order, so larger salaries appear first.",
     tags: ["order-by", "desc"]
   },
@@ -99,10 +99,10 @@ const sqlAllInOneQuestions = [
     options: [
       { id: "A", text: "TOTAL()" },
       { id: "B", text: "SUM()" },
-      { id: "C", text: "COUNT()" },
-      { id: "D", text: "ROWS()" }
+      { id: "C", text: "ROWS()" },
+      { id: "D", text: "COUNT()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "COUNT() is an aggregate function used to count rows or non-NULL values depending on its expression.",
     tags: ["aggregate", "count"]
   },
@@ -153,10 +153,10 @@ const sqlAllInOneQuestions = [
     options: [
       { id: "A", text: "LEFT JOIN" },
       { id: "B", text: "FULL JOIN" },
-      { id: "C", text: "RIGHT JOIN" },
-      { id: "D", text: "INNER JOIN" }
+      { id: "C", text: "INNER JOIN" },
+      { id: "D", text: "RIGHT JOIN" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "INNER JOIN returns rows where the join condition matches in both tables.",
     tags: ["joins", "inner-join"]
   },
@@ -170,11 +170,11 @@ const sqlAllInOneQuestions = [
     question: "Suppose `users` contains 100 users and only 80 have orders. What does a LEFT JOIN from users to orders guarantee?",
     options: [
       { id: "A", text: "Only the 80 users with orders appear" },
-      { id: "B", text: "All 100 users can appear, with NULL values for missing order matches" },
-      { id: "C", text: "Only users without orders appear" },
-      { id: "D", text: "The query automatically creates orders for the remaining 20 users" }
+      { id: "B", text: "Only users without orders appear" },
+      { id: "C", text: "The query automatically creates orders for the remaining 20 users" },
+      { id: "D", text: "All 100 users can appear, with NULL values for missing order matches" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A LEFT JOIN preserves all rows from the left table. Missing matches on the right produce NULL values.",
     tags: ["joins", "left-join"]
   },
@@ -224,11 +224,11 @@ const sqlAllInOneQuestions = [
     question: "Which statement adds new rows to a table?",
     options: [
       { id: "A", text: "APPEND" },
-      { id: "B", text: "INSERT" },
-      { id: "C", text: "ADD ROW" },
+      { id: "B", text: "ADD ROW" },
+      { id: "C", text: "INSERT" },
       { id: "D", text: "CREATE ROW" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "INSERT INTO is used to add new records to a table.",
     tags: ["insert", "data-modification"]
   },
@@ -243,10 +243,10 @@ const sqlAllInOneQuestions = [
     options: [
       { id: "A", text: "CHANGE" },
       { id: "B", text: "MODIFY" },
-      { id: "C", text: "UPDATE" },
-      { id: "D", text: "ALTER ROW" }
+      { id: "C", text: "ALTER ROW" },
+      { id: "D", text: "UPDATE" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "UPDATE changes existing records that satisfy its WHERE condition.",
     tags: ["update", "data-modification"]
   },
@@ -278,11 +278,11 @@ const sqlAllInOneQuestions = [
     question: "What is the main purpose of an index?",
     options: [
       { id: "A", text: "To guarantee that every query becomes faster" },
-      { id: "B", text: "To reduce the number of columns in a table" },
-      { id: "C", text: "To help the database locate matching rows more efficiently for suitable queries" },
+      { id: "B", text: "To help the database locate matching rows more efficiently for suitable queries" },
+      { id: "C", text: "To reduce the number of columns in a table" },
       { id: "D", text: "To replace primary keys" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Indexes provide additional data structures that can make certain lookups, filtering, joins, and sorting operations faster.",
     tags: ["indexes", "performance"]
   },
@@ -295,12 +295,12 @@ const sqlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is a potential downside of adding too many indexes?",
     options: [
-      { id: "A", text: "Indexes can increase storage usage and make INSERT/UPDATE/DELETE operations more expensive" },
-      { id: "B", text: "Indexes prevent SELECT queries from working" },
-      { id: "C", text: "Indexes always delete duplicate rows" },
+      { id: "A", text: "Indexes prevent SELECT queries from working" },
+      { id: "B", text: "Indexes always delete duplicate rows" },
+      { id: "C", text: "Indexes can increase storage usage and make INSERT/UPDATE/DELETE operations more expensive" },
       { id: "D", text: "Indexes disable transactions" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Indexes consume storage and must be maintained when indexed data changes, so unnecessary indexes can hurt write performance.",
     tags: ["indexes", "performance"]
   },
@@ -314,11 +314,11 @@ const sqlAllInOneQuestions = [
     question: "What does `COUNT(*)` generally count?",
     options: [
       { id: "A", text: "Only rows where every column is non-NULL" },
-      { id: "B", text: "The number of rows in the result set" },
-      { id: "C", text: "Only rows containing numeric values" },
-      { id: "D", text: "The number of columns" }
+      { id: "B", text: "Only rows containing numeric values" },
+      { id: "C", text: "The number of columns" },
+      { id: "D", text: "The number of rows in the result set" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "COUNT(*) counts rows produced by the query, including rows containing NULL values.",
     tags: ["count", "aggregation", "null"]
   },
@@ -331,12 +331,12 @@ const sqlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which query correctly finds departments having more than 5 employees?",
     options: [
-      { id: "A", text: "SELECT department FROM employees WHERE COUNT(*) > 5 GROUP BY department;" },
-      { id: "B", text: "SELECT department FROM employees GROUP BY department WHERE COUNT(*) > 5;" },
-      { id: "C", text: "SELECT department FROM employees GROUP BY department HAVING COUNT(*) > 5;" },
+      { id: "A", text: "SELECT department FROM employees GROUP BY department HAVING COUNT(*) > 5;" },
+      { id: "B", text: "SELECT department FROM employees WHERE COUNT(*) > 5 GROUP BY department;" },
+      { id: "C", text: "SELECT department FROM employees GROUP BY department WHERE COUNT(*) > 5;" },
       { id: "D", text: "SELECT department FROM employees HAVING COUNT(*) > 5;" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "COUNT() is an aggregate, so the condition belongs in HAVING after GROUP BY.",
     tags: ["group-by", "having", "count"]
   },
@@ -350,11 +350,11 @@ const sqlAllInOneQuestions = [
     question: "What is generally the best first step when optimizing a slow SQL query?",
     options: [
       { id: "A", text: "Add indexes to every column immediately" },
-      { id: "B", text: "Rewrite the entire database" },
-      { id: "C", text: "Remove all WHERE clauses" },
-      { id: "D", text: "Inspect the query and its execution plan to identify the actual bottleneck" }
+      { id: "B", text: "Inspect the query and its execution plan to identify the actual bottleneck" },
+      { id: "C", text: "Rewrite the entire database" },
+      { id: "D", text: "Remove all WHERE clauses" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "B",
     explanation: "Query optimization should be evidence-driven. An execution plan can reveal issues such as full table scans, inefficient joins, or missing/unused indexes.",
     tags: ["query-optimization", "indexes", "performance"]
   }

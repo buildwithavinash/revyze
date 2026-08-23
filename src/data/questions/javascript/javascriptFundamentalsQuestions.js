@@ -25,12 +25,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which statement correctly describes `const`?",
     options: [
-      { id: "A", text: "It prevents reassignment of the binding." },
-      { id: "B", text: "It makes every referenced object deeply immutable." },
+      { id: "A", text: "It makes every referenced object deeply immutable." },
+      { id: "B", text: "It prevents reassignment of the binding." },
       { id: "C", text: "It creates a function-scoped variable." },
       { id: "D", text: "It can never refer to an object that changes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`const` prevents reassignment of the variable binding. It does not automatically make referenced objects or arrays immutable.",
     tags: ["variables", "const", "immutability"]
   },
@@ -43,12 +43,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which keyword is function-scoped rather than block-scoped?",
     options: [
-      { id: "A", text: "var" },
-      { id: "B", text: "let" },
-      { id: "C", text: "const" },
+      { id: "A", text: "let" },
+      { id: "B", text: "const" },
+      { id: "C", text: "var" },
       { id: "D", text: "class" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`var` is function-scoped. `let` and `const` are block-scoped.",
     tags: ["variables", "var", "scope"]
   },
@@ -61,12 +61,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What happens when this code runs?\n\nlet score = 10;\nscore = 20;\nconsole.log(score);",
     options: [
-      { id: "A", text: "20 is printed." },
-      { id: "B", text: "10 is printed." },
-      { id: "C", text: "A TypeError is thrown." },
-      { id: "D", text: "undefined is printed." }
+      { id: "A", text: "10 is printed." },
+      { id: "B", text: "A TypeError is thrown." },
+      { id: "C", text: "undefined is printed." },
+      { id: "D", text: "20 is printed." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A variable declared with `let` can be reassigned, so `score` becomes 20.",
     tags: ["let", "reassignment", "variables"]
   },
@@ -97,12 +97,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which of the following is a JavaScript primitive value?",
     options: [
-      { id: "A", text: "string" },
-      { id: "B", text: "array" },
+      { id: "A", text: "array" },
+      { id: "B", text: "string" },
       { id: "C", text: "object" },
       { id: "D", text: "function" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Strings are primitive values. Arrays, ordinary objects, and functions are objects.",
     tags: ["data-types", "primitives", "strings"]
   },
@@ -115,12 +115,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which set contains only JavaScript primitive types?",
     options: [
-      { id: "A", text: "string, number, boolean, undefined" },
-      { id: "B", text: "array, object, function, string" },
-      { id: "C", text: "object, array, null, function" },
+      { id: "A", text: "array, object, function, string" },
+      { id: "B", text: "object, array, null, function" },
+      { id: "C", text: "string, number, boolean, undefined" },
       { id: "D", text: "Map, Set, number, object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript primitive types include string, number, bigint, boolean, undefined, symbol, and null.",
     tags: ["data-types", "primitives"]
   },
@@ -133,12 +133,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which JavaScript primitive represents an intentionally absent value?",
     options: [
-      { id: "A", text: "null" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "NaN" },
-      { id: "D", text: "false" }
+      { id: "A", text: "undefined" },
+      { id: "B", text: "NaN" },
+      { id: "C", text: "false" },
+      { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`null` is commonly used to explicitly represent the intentional absence of an object or value.",
     tags: ["null", "primitives", "data-types"]
   },
@@ -169,12 +169,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nlet username;\nconsole.log(username);",
     options: [
-      { id: "A", text: "undefined" },
-      { id: "B", text: "null" },
+      { id: "A", text: "null" },
+      { id: "B", text: "undefined" },
       { id: "C", text: "\"\"" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The variable is declared but no value is assigned, so its value is `undefined`.",
     tags: ["undefined", "variables"]
   },
@@ -187,12 +187,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `typeof 42` return?",
     options: [
-      { id: "A", text: "\"number\"" },
-      { id: "B", text: "\"integer\"" },
-      { id: "C", text: "\"numeric\"" },
+      { id: "A", text: "\"integer\"" },
+      { id: "B", text: "\"numeric\"" },
+      { id: "C", text: "\"number\"" },
       { id: "D", text: "\"float\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript uses the `number` type for both integer and floating-point numeric values.",
     tags: ["typeof", "number", "data-types"]
   },
@@ -205,12 +205,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `typeof \"hello\"` return?",
     options: [
-      { id: "A", text: "\"string\"" },
-      { id: "B", text: "\"text\"" },
-      { id: "C", text: "\"char\"" },
-      { id: "D", text: "\"StringObject\"" }
+      { id: "A", text: "\"text\"" },
+      { id: "B", text: "\"char\"" },
+      { id: "C", text: "\"StringObject\"" },
+      { id: "D", text: "\"string\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A JavaScript primitive string has the type reported as `\"string\"` by `typeof`.",
     tags: ["typeof", "string", "data-types"]
   },
@@ -241,12 +241,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `typeof undefined` return?",
     options: [
-      { id: "A", text: "\"undefined\"" },
-      { id: "B", text: "\"null\"" },
+      { id: "A", text: "\"null\"" },
+      { id: "B", text: "\"undefined\"" },
       { id: "C", text: "\"empty\"" },
       { id: "D", text: "\"void\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`typeof` reports the primitive `undefined` using the string `\"undefined\"`.",
     tags: ["typeof", "undefined"]
   },
@@ -259,12 +259,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `typeof null` return?",
     options: [
-      { id: "A", text: "\"object\"" },
-      { id: "B", text: "\"null\"" },
-      { id: "C", text: "\"undefined\"" },
+      { id: "A", text: "\"null\"" },
+      { id: "B", text: "\"undefined\"" },
+      { id: "C", text: "\"object\"" },
       { id: "D", text: "\"empty\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`typeof null` returns `\"object\"`. This is a historical JavaScript quirk rather than an indication that null is actually an object.",
     tags: ["typeof", "null", "JavaScript-quirks"]
   },
@@ -277,12 +277,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `typeof []` return?",
     options: [
-      { id: "A", text: "\"object\"" },
-      { id: "B", text: "\"array\"" },
-      { id: "C", text: "\"list\"" },
-      { id: "D", text: "\"collection\"" }
+      { id: "A", text: "\"array\"" },
+      { id: "B", text: "\"list\"" },
+      { id: "C", text: "\"collection\"" },
+      { id: "D", text: "\"object\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Arrays are objects in JavaScript, so `typeof []` returns `\"object\"`. `Array.isArray([])` is the appropriate way to specifically test whether a value is an array.",
     tags: ["typeof", "arrays", "objects"]
   },
@@ -313,12 +313,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which value represents a number that is not a valid numeric result?",
     options: [
-      { id: "A", text: "NaN" },
-      { id: "B", text: "null" },
+      { id: "A", text: "null" },
+      { id: "B", text: "NaN" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Infinity" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`NaN` means Not-a-Number and is used to represent an invalid numeric result. Interestingly, its type is still `number`.",
     tags: ["NaN", "number", "data-types"]
   },
@@ -331,12 +331,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(typeof NaN);",
     options: [
-      { id: "A", text: "\"number\"" },
-      { id: "B", text: "\"NaN\"" },
-      { id: "C", text: "\"undefined\"" },
+      { id: "A", text: "\"NaN\"" },
+      { id: "B", text: "\"undefined\"" },
+      { id: "C", text: "\"number\"" },
       { id: "D", text: "\"invalid\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`NaN` is a special numeric value, so `typeof NaN` returns `\"number\"`.",
     tags: ["NaN", "typeof", "number"]
   },
@@ -349,12 +349,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about JavaScript numbers is correct?",
     options: [
-      { id: "A", text: "The standard Number type represents both integers and floating-point values." },
-      { id: "B", text: "JavaScript has separate primitive types named integer and float." },
-      { id: "C", text: "All JavaScript numbers are strings internally." },
-      { id: "D", text: "Decimal values require BigInt." }
+      { id: "A", text: "JavaScript has separate primitive types named integer and float." },
+      { id: "B", text: "All JavaScript numbers are strings internally." },
+      { id: "C", text: "Decimal values require BigInt." },
+      { id: "D", text: "The standard Number type represents both integers and floating-point values." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript's standard `Number` type represents both integer and floating-point numeric values.",
     tags: ["number", "data-types", "numeric-values"]
   },
@@ -385,12 +385,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(\"5\" + 2);",
     options: [
-      { id: "A", text: "\"52\"" },
-      { id: "B", text: "7" },
+      { id: "A", text: "7" },
+      { id: "B", text: "\"52\"" },
       { id: "C", text: "\"7\"" },
       { id: "D", text: "NaN" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When `+` involves a string, JavaScript performs string concatenation. The number 2 is converted to a string, producing `\"52\"`.",
     tags: ["type-coercion", "addition", "strings"]
   },
@@ -403,12 +403,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(\"5\" - 2);",
     options: [
-      { id: "A", text: "3" },
-      { id: "B", text: "\"3\"" },
-      { id: "C", text: "\"52\"" },
+      { id: "A", text: "\"3\"" },
+      { id: "B", text: "\"52\"" },
+      { id: "C", text: "3" },
       { id: "D", text: "NaN" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Unlike `+`, the subtraction operator expects numeric operands, so the string `\"5\"` is coerced to the number 5.",
     tags: ["type-coercion", "subtraction", "operators"]
   },
@@ -421,12 +421,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(\"10\" * \"2\");",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "\"102\"" },
-      { id: "C", text: "1020" },
-      { id: "D", text: "NaN" }
+      { id: "A", text: "\"102\"" },
+      { id: "B", text: "1020" },
+      { id: "C", text: "NaN" },
+      { id: "D", text: "20" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The multiplication operator coerces both numeric strings into numbers, so the result is 20.",
     tags: ["type-coercion", "multiplication", "operators"]
   },
@@ -457,12 +457,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `String(123)` produce?",
     options: [
-      { id: "A", text: "\"123\"" },
-      { id: "B", text: "123" },
+      { id: "A", text: "123" },
+      { id: "B", text: "\"123\"" },
       { id: "C", text: "true" },
       { id: "D", text: "NaN" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`String()` explicitly converts its argument into a string, so the number 123 becomes `\"123\"`.",
     tags: ["type-conversion", "String"]
   },
@@ -475,12 +475,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `Boolean(0)` return?",
     options: [
-      { id: "A", text: "false" },
-      { id: "B", text: "true" },
-      { id: "C", text: "0" },
+      { id: "A", text: "true" },
+      { id: "B", text: "0" },
+      { id: "C", text: "false" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Zero is a falsy value, so explicitly converting it to Boolean produces `false`.",
     tags: ["Boolean", "truthy", "falsy"]
   },
@@ -493,12 +493,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which value is truthy?",
     options: [
-      { id: "A", text: "\"false\"" },
-      { id: "B", text: "0" },
-      { id: "C", text: "\"\"" },
-      { id: "D", text: "null" }
+      { id: "A", text: "0" },
+      { id: "B", text: "\"\"" },
+      { id: "C", text: "null" },
+      { id: "D", text: "\"false\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Any non-empty string is truthy, including the string `\"false\"`. The other options are falsy.",
     tags: ["truthy", "falsy", "boolean"]
   },
@@ -529,12 +529,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which group contains JavaScript's commonly encountered falsy values?",
     options: [
-      { id: "A", text: "false, 0, \"\", null, undefined, NaN" },
-      { id: "B", text: "false, 1, \"0\", [], {}" },
+      { id: "A", text: "false, 1, \"0\", [], {}" },
+      { id: "B", text: "false, 0, \"\", null, undefined, NaN" },
       { id: "C", text: "null, \"null\", [], 1" },
       { id: "D", text: "undefined, \"\", \"false\", {}" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The standard falsy values are `false`, `0`, `-0`, `0n`, `\"\"`, `null`, `undefined`, and `NaN`.",
     tags: ["truthy", "falsy", "boolean"]
   },
@@ -547,12 +547,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the difference between `==` and `===`?",
     options: [
-      { id: "A", text: "`==` may perform type coercion, while `===` performs strict equality without that coercion." },
-      { id: "B", text: "`===` converts both values to strings, while `==` does not." },
-      { id: "C", text: "`==` compares only types, while `===` compares only values." },
+      { id: "A", text: "`===` converts both values to strings, while `==` does not." },
+      { id: "B", text: "`==` compares only types, while `===` compares only values." },
+      { id: "C", text: "`==` may perform type coercion, while `===` performs strict equality without that coercion." },
       { id: "D", text: "There is no difference." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Loose equality `==` allows certain type conversions before comparison. Strict equality `===` requires the operands to have compatible types and equal values without such coercion.",
     tags: ["equality", "type-coercion", "operators"]
   },
@@ -565,12 +565,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(5 == \"5\");",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "\"true\"" },
-      { id: "D", text: "TypeError" }
+      { id: "A", text: "false" },
+      { id: "B", text: "\"true\"" },
+      { id: "C", text: "TypeError" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Loose equality allows type coercion, so the string `\"5\"` is compared numerically with 5 and the result is true.",
     tags: ["==", "type-coercion", "equality"]
   },
@@ -601,12 +601,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(null == undefined);",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
+      { id: "A", text: "false" },
+      { id: "B", text: "true" },
       { id: "C", text: "null" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Under the special rules of loose equality, `null` and `undefined` compare equal to each other.",
     tags: ["null", "undefined", "loose-equality"]
   },
@@ -619,12 +619,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(null === undefined);",
     options: [
-      { id: "A", text: "false" },
-      { id: "B", text: "true" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "true" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "false" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`null` and `undefined` are different primitive values and therefore are not strictly equal.",
     tags: ["null", "undefined", "strict-equality"]
   },
@@ -637,12 +637,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which operator returns the right-hand value only when the left-hand value is null or undefined?",
     options: [
-      { id: "A", text: "??" },
-      { id: "B", text: "||" },
-      { id: "C", text: "&&" },
-      { id: "D", text: "??=" + " only" }
+      { id: "A", text: "||" },
+      { id: "B", text: "&&" },
+      { id: "C", text: "??= only" },
+      { id: "D", text: "??" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The nullish coalescing operator `??` uses the right-hand operand when the left-hand operand is `null` or `undefined`.",
     tags: ["nullish-coalescing", "operators", "null", "undefined"]
   },
@@ -673,12 +673,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(null ?? 10);",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "null" },
+      { id: "A", text: "null" },
+      { id: "B", text: "10" },
       { id: "C", text: "0" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Because the left-hand operand is nullish, `??` evaluates to the right-hand operand, 10.",
     tags: ["nullish-coalescing", "null", "operators"]
   },
@@ -691,12 +691,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "How does `||` differ from `??`?",
     options: [
-      { id: "A", text: "`||` falls back for any falsy left-hand value, while `??` falls back only for null or undefined." },
-      { id: "B", text: "`||` only checks null, while `??` checks every falsy value." },
-      { id: "C", text: "They always produce identical results." },
+      { id: "A", text: "`||` only checks null, while `??` checks every falsy value." },
+      { id: "B", text: "They always produce identical results." },
+      { id: "C", text: "`||` falls back for any falsy left-hand value, while `??` falls back only for null or undefined." },
       { id: "D", text: "`??` converts both operands to strings." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`||` treats values such as 0, false, and the empty string as falsy. `??` treats only `null` and `undefined` as absent.",
     tags: ["logical-operators", "nullish-coalescing", "falsy"]
   },
@@ -709,12 +709,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(0 || 10);",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "0" },
-      { id: "C", text: "false" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "0" },
+      { id: "B", text: "false" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "10" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "0 is falsy, so the `||` operator evaluates to the right-hand operand, 10.",
     tags: ["logical-operators", "OR", "falsy"]
   },
@@ -745,12 +745,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(!0);",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
+      { id: "A", text: "false" },
+      { id: "B", text: "true" },
       { id: "C", text: "0" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "0 is falsy. Applying `!` converts it to false and then negates it, producing true.",
     tags: ["logical-operators", "NOT", "truthy-falsy"]
   },
@@ -763,12 +763,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the `+` operator do when both operands are numbers?",
     options: [
-      { id: "A", text: "Performs numeric addition." },
-      { id: "B", text: "Always converts the result to a string." },
-      { id: "C", text: "Performs multiplication." },
+      { id: "A", text: "Always converts the result to a string." },
+      { id: "B", text: "Performs multiplication." },
+      { id: "C", text: "Performs numeric addition." },
       { id: "D", text: "Performs strict equality." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When both operands are numeric values, `+` performs arithmetic addition.",
     tags: ["operators", "addition", "numbers"]
   },
@@ -781,12 +781,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconsole.log(10 / 2);",
     options: [
-      { id: "A", text: "5" },
-      { id: "B", text: "\"5\"" },
-      { id: "C", text: "20" },
-      { id: "D", text: "NaN" }
+      { id: "A", text: "\"5\"" },
+      { id: "B", text: "20" },
+      { id: "C", text: "NaN" },
+      { id: "D", text: "5" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The division operator divides 10 by 2, producing the number 5.",
     tags: ["operators", "division", "numbers"]
   },
@@ -817,12 +817,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(2 ** 3);",
     options: [
-      { id: "A", text: "8" },
-      { id: "B", text: "6" },
+      { id: "A", text: "6" },
+      { id: "B", text: "8" },
       { id: "C", text: "9" },
       { id: "D", text: "5" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The exponentiation operator `**` raises the left operand to the power of the right operand: 2³ = 8.",
     tags: ["operators", "exponentiation", "numbers"]
   },
@@ -835,12 +835,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does the increment operator `++` do to a numeric variable?",
     options: [
-      { id: "A", text: "Increases its value by 1." },
-      { id: "B", text: "Multiplies its value by 2." },
-      { id: "C", text: "Converts it to a string." },
+      { id: "A", text: "Multiplies its value by 2." },
+      { id: "B", text: "Converts it to a string." },
+      { id: "C", text: "Increases its value by 1." },
       { id: "D", text: "Decreases its value by 1." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`++` increments a numeric value by one. Its prefix and postfix forms differ in when the old versus new value is produced by the expression.",
     tags: ["operators", "increment", "numbers"]
   },
@@ -853,12 +853,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nlet x = 5;\nconst y = x++;\nconsole.log(x, y);",
     options: [
-      { id: "A", text: "6 5" },
-      { id: "B", text: "5 6" },
-      { id: "C", text: "6 6" },
-      { id: "D", text: "5 5" }
+      { id: "A", text: "5 6" },
+      { id: "B", text: "6 6" },
+      { id: "C", text: "5 5" },
+      { id: "D", text: "6 5" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The postfix increment returns the original value before incrementing the variable. Therefore `y` receives 5, while `x` becomes 6.",
     tags: ["operators", "postfix-increment", "evaluation"]
   },
@@ -889,12 +889,12 @@ const javascriptFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "A developer receives user input as the string `\"0\"` and wants to use it as a numeric value. Which approach is safest for understanding the actual data type?",
     options: [
-      { id: "A", text: "Explicitly convert it with Number(input) and then validate whether the result is a valid number." },
-      { id: "B", text: "Use Boolean(input) because all numeric strings become numbers automatically." },
+      { id: "A", text: "Use Boolean(input) because all numeric strings become numbers automatically." },
+      { id: "B", text: "Explicitly convert it with Number(input) and then validate whether the result is a valid number." },
       { id: "C", text: "Use input === 0 because strict equality always converts strings to numbers." },
       { id: "D", text: "Use typeof input === \"number\" because strings containing digits are automatically numbers." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Values received from forms, URLs, and many APIs often arrive as strings. Explicit conversion with `Number()` makes the intended type clear, after which the result can be validated with an appropriate numeric check such as `Number.isNaN()`.",
     tags: ["type-conversion", "Number", "validation", "user-input"]
   }

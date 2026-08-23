@@ -7,12 +7,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the <form> element?",
     options: [
-      { id: "A", text: "To group controls used to collect and submit user input" },
-      { id: "B", text: "To style form controls" },
-      { id: "C", text: "To create a database table" },
-      { id: "D", text: "To automatically validate every input" }
+      { id: "A", text: "To style form controls" },
+      { id: "B", text: "To create a database table" },
+      { id: "C", text: "To automatically validate every input" },
+      { id: "D", text: "To group controls used to collect and submit user input" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<form>` element groups interactive controls and provides the structure for submitting user-provided data.",
     tags: ["forms", "form", "fundamentals"]
   },
@@ -43,12 +43,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which input type is appropriate for a user's password?",
     options: [
-      { id: "A", text: "password" },
-      { id: "B", text: "secret" },
+      { id: "A", text: "secret" },
+      { id: "B", text: "password" },
       { id: "C", text: "hidden-text" },
       { id: "D", text: "private" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`type=\"password\"` creates a control that obscures the entered characters visually.",
     tags: ["input", "password", "forms"]
   },
@@ -61,12 +61,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What does this input create?\n\n<input type=\"email\">",
     options: [
-      { id: "A", text: "An email-oriented input control" },
-      { id: "B", text: "A password field" },
-      { id: "C", text: "A file upload control" },
+      { id: "A", text: "A password field" },
+      { id: "B", text: "A file upload control" },
+      { id: "C", text: "An email-oriented input control" },
       { id: "D", text: "A multiline text field" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`type=\"email\"` identifies the field as an email input and enables browser-level email-oriented validation and appropriate input behavior.",
     tags: ["input", "email", "validation"]
   },
@@ -79,12 +79,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which input type is designed for numeric values?",
     options: [
-      { id: "A", text: "number" },
-      { id: "B", text: "numeric" },
-      { id: "C", text: "integer" },
-      { id: "D", text: "decimal" }
+      { id: "A", text: "numeric" },
+      { id: "B", text: "integer" },
+      { id: "C", text: "decimal" },
+      { id: "D", text: "number" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`type=\"number\"` represents a numeric input and can support attributes such as `min`, `max`, and `step`.",
     tags: ["input", "number", "validation"]
   },
@@ -115,12 +115,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which input type is normally used when the user should select one option from a group?",
     options: [
-      { id: "A", text: "radio" },
-      { id: "B", text: "single" },
+      { id: "A", text: "single" },
+      { id: "B", text: "radio" },
       { id: "C", text: "option" },
       { id: "D", text: "select-one" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Radio buttons are designed for mutually exclusive choices when related radio inputs share the same `name`.",
     tags: ["input", "radio", "forms"]
   },
@@ -133,24 +133,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which group correctly allows the user to choose one payment method?",
     options: [
-      {
-        id: "A",
-        text: "<input type=\"radio\" name=\"payment\" value=\"card\"><input type=\"radio\" name=\"payment\" value=\"cash\">"
-      },
-      {
-        id: "B",
-        text: "<input type=\"radio\" name=\"card\"><input type=\"radio\" name=\"cash\">"
-      },
-      {
-        id: "C",
-        text: "<input type=\"checkbox\" name=\"payment\" value=\"card\"><input type=\"checkbox\" name=\"payment\" value=\"cash\">"
-      },
-      {
-        id: "D",
-        text: "<input type=\"radio\" value=\"card\"><input type=\"radio\" value=\"cash\">"
-      }
+      { id: "A", text: "<input type=\"radio\" name=\"card\"><input type=\"radio\" name=\"cash\">" },
+      { id: "B", text: "<input type=\"checkbox\" name=\"payment\" value=\"card\"><input type=\"checkbox\" name=\"payment\" value=\"cash\">" },
+      { id: "C", text: "<input type=\"radio\" name=\"payment\" value=\"card\"><input type=\"radio\" name=\"payment\" value=\"cash\">" },
+      { id: "D", text: "<input type=\"radio\" value=\"card\"><input type=\"radio\" value=\"cash\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Radio inputs with the same `name` form a group, allowing the user to select one option from that group.",
     tags: ["radio", "name", "forms"]
   },
@@ -163,12 +151,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which input type allows the user to upload a file?",
     options: [
-      { id: "A", text: "file" },
-      { id: "B", text: "upload" },
-      { id: "C", text: "attachment" },
-      { id: "D", text: "document" }
+      { id: "A", text: "upload" },
+      { id: "B", text: "attachment" },
+      { id: "C", text: "document" },
+      { id: "D", text: "file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`type=\"file\"` creates a file-selection control that allows the user to select files from their device.",
     tags: ["input", "file", "forms"]
   },
@@ -199,12 +187,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What does the name attribute of a form control primarily provide?",
     options: [
-      { id: "A", text: "The key under which its submitted value is identified" },
-      { id: "B", text: "The visible label of the control" },
+      { id: "A", text: "The visible label of the control" },
+      { id: "B", text: "The key under which its submitted value is identified" },
       { id: "C", text: "The CSS class of the control" },
       { id: "D", text: "The browser tab title" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When form data is submitted, the control's `name` identifies the field/value pair sent to the server.",
     tags: ["name", "form-submission", "forms"]
   },
@@ -217,12 +205,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What key/value pair is conceptually submitted for this control?\n\n<input name=\"username\" value=\"avi\">",
     options: [
-      { id: "A", text: "username=avi" },
-      { id: "B", text: "input=avi" },
-      { id: "C", text: "name=username" },
+      { id: "A", text: "input=avi" },
+      { id: "B", text: "name=username" },
+      { id: "C", text: "username=avi" },
       { id: "D", text: "value=username" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `name` becomes the field name and the current value becomes its submitted value, producing the conceptual pair `username=avi`.",
     tags: ["name", "value", "form-submission"]
   },
@@ -235,12 +223,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What does the placeholder attribute provide?",
     options: [
-      { id: "A", text: "A temporary hint displayed inside an empty control" },
-      { id: "B", text: "The value permanently submitted to the server" },
-      { id: "C", text: "A replacement for the label" },
-      { id: "D", text: "A validation rule" }
+      { id: "A", text: "The value permanently submitted to the server" },
+      { id: "B", text: "A replacement for the label" },
+      { id: "C", text: "A validation rule" },
+      { id: "D", text: "A temporary hint displayed inside an empty control" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`placeholder` provides a short hint about the expected input. It is not a replacement for a proper `<label>`.",
     tags: ["placeholder", "forms", "labels"]
   },
@@ -271,12 +259,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "What happens when a required empty input is submitted?",
     options: [
-      { id: "A", text: "The browser's native constraint validation can prevent submission" },
-      { id: "B", text: "The browser automatically sends an empty value without validation" },
+      { id: "A", text: "The browser automatically sends an empty value without validation" },
+      { id: "B", text: "The browser's native constraint validation can prevent submission" },
       { id: "C", text: "The input is automatically removed" },
       { id: "D", text: "The browser crashes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A required control fails native constraint validation when it has no acceptable value, so normal form submission is prevented until the constraint is satisfied.",
     tags: ["required", "validation", "form-submission"]
   },
@@ -289,12 +277,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which attribute can constrain the minimum number of characters in a text input?",
     options: [
-      { id: "A", text: "minlength" },
-      { id: "B", text: "minchars" },
-      { id: "C", text: "characters-min" },
+      { id: "A", text: "minchars" },
+      { id: "B", text: "characters-min" },
+      { id: "C", text: "minlength" },
       { id: "D", text: "length-min" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`minlength` defines the minimum number of UTF-16 code units required for the control's value.",
     tags: ["minlength", "validation", "text-input"]
   },
@@ -307,12 +295,12 @@ const htmlFormsQuestions = [
     difficulty: "Beginner",
     question: "Which attribute constrains the maximum length of a text input?",
     options: [
-      { id: "A", text: "maxlength" },
-      { id: "B", text: "maxchars" },
-      { id: "C", text: "length-max" },
-      { id: "D", text: "characters" }
+      { id: "A", text: "maxchars" },
+      { id: "B", text: "length-max" },
+      { id: "C", text: "characters" },
+      { id: "D", text: "maxlength" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`maxlength` specifies the maximum permitted length for applicable text controls.",
     tags: ["maxlength", "validation", "text-input"]
   },
@@ -343,12 +331,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute specifies the minimum numeric value allowed by a number input?",
     options: [
-      { id: "A", text: "min" },
-      { id: "B", text: "minimum" },
+      { id: "A", text: "minimum" },
+      { id: "B", text: "min" },
       { id: "C", text: "minvalue" },
       { id: "D", text: "lowest" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "For applicable numeric controls, `min` specifies the minimum permitted value.",
     tags: ["number", "min", "validation"]
   },
@@ -361,12 +349,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute specifies the maximum numeric value allowed?",
     options: [
-      { id: "A", text: "max" },
-      { id: "B", text: "maximum" },
-      { id: "C", text: "maxvalue" },
+      { id: "A", text: "maximum" },
+      { id: "B", text: "maxvalue" },
+      { id: "C", text: "max" },
       { id: "D", text: "highest" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`max` defines the maximum permitted value for applicable input types.",
     tags: ["number", "max", "validation"]
   },
@@ -379,12 +367,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What constraint does this input express?\n\n<input type=\"number\" min=\"18\" max=\"100\">",
     options: [
-      { id: "A", text: "The value should be between 18 and 100 inclusive" },
-      { id: "B", text: "The input must contain 18 to 100 characters" },
-      { id: "C", text: "The user must enter exactly 100" },
-      { id: "D", text: "The input accepts only negative numbers" }
+      { id: "A", text: "The input must contain 18 to 100 characters" },
+      { id: "B", text: "The user must enter exactly 100" },
+      { id: "C", text: "The input accepts only negative numbers" },
+      { id: "D", text: "The value should be between 18 and 100 inclusive" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`min` and `max` define the numeric range accepted by the control's constraint validation.",
     tags: ["number", "min", "max", "validation"]
   },
@@ -415,12 +403,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute allows a developer to provide a custom pattern that an input value should match?",
     options: [
-      { id: "A", text: "pattern" },
-      { id: "B", text: "regex" },
+      { id: "A", text: "regex" },
+      { id: "B", text: "pattern" },
       { id: "C", text: "match" },
       { id: "D", text: "format" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `pattern` attribute specifies a regular-expression-based constraint for applicable text-like inputs.",
     tags: ["pattern", "regex", "validation"]
   },
@@ -433,12 +421,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of this pattern?\n\n<input pattern=\"[A-Za-z]+\">",
     options: [
-      { id: "A", text: "It constrains the value to letters according to the specified pattern" },
-      { id: "B", text: "It forces the value to contain exactly one letter" },
-      { id: "C", text: "It automatically converts the input to uppercase" },
+      { id: "A", text: "It forces the value to contain exactly one letter" },
+      { id: "B", text: "It automatically converts the input to uppercase" },
+      { id: "C", text: "It constrains the value to letters according to the specified pattern" },
       { id: "D", text: "It makes the field required" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The pattern expresses a regular-expression constraint requiring the value to conform to the specified sequence of alphabetic characters.",
     tags: ["pattern", "regex", "validation"]
   },
@@ -451,12 +439,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute controls where form data is submitted?",
     options: [
-      { id: "A", text: "action" },
-      { id: "B", text: "target-url" },
-      { id: "C", text: "submit-to" },
-      { id: "D", text: "endpoint" }
+      { id: "A", text: "target-url" },
+      { id: "B", text: "submit-to" },
+      { id: "C", text: "endpoint" },
+      { id: "D", text: "action" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The form's `action` attribute specifies the URL to which the form submission is directed.",
     tags: ["form", "action", "form-submission"]
   },
@@ -487,12 +475,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What is the main difference between GET and POST in typical HTML form submission?",
     options: [
-      { id: "A", text: "GET commonly encodes submitted data into the URL, while POST sends it in the request body" },
-      { id: "B", text: "GET can only submit passwords and POST can only submit usernames" },
+      { id: "A", text: "GET can only submit passwords and POST can only submit usernames" },
+      { id: "B", text: "GET commonly encodes submitted data into the URL, while POST sends it in the request body" },
       { id: "C", text: "POST always encrypts submitted data" },
       { id: "D", text: "GET is used only for file uploads" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "With a typical GET form submission, successful controls are encoded into the request URL. POST places the form data in the request body. POST itself does not automatically provide encryption.",
     tags: ["get", "post", "http", "form-submission"]
   },
@@ -505,12 +493,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What URL structure would commonly result from submitting this GET form?\n\n<form action=\"/search\" method=\"get\">\n  <input name=\"q\" value=\"react\">\n</form>",
     options: [
-      { id: "A", text: "/search?q=react" },
-      { id: "B", text: "/search/react" },
-      { id: "C", text: "/search#q=react" },
+      { id: "A", text: "/search/react" },
+      { id: "B", text: "/search#q=react" },
+      { id: "C", text: "/search?q=react" },
       { id: "D", text: "/search?value=react" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "GET form controls are commonly serialized into the query string. Since the control's name is `q` and its value is `react`, the query becomes `?q=react`.",
     tags: ["get", "query-string", "form-submission"]
   },
@@ -523,12 +511,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What is the default type of a <button> when it is associated with a form and no type attribute is specified?",
     options: [
-      { id: "A", text: "submit" },
-      { id: "B", text: "button" },
-      { id: "C", text: "reset" },
-      { id: "D", text: "action" }
+      { id: "A", text: "button" },
+      { id: "B", text: "reset" },
+      { id: "C", text: "action" },
+      { id: "D", text: "submit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `<button>` inside a form defaults to `type=\"submit\"` when no type is specified. Explicitly setting the type avoids accidental submissions when a button is intended only for another action.",
     tags: ["button", "submit", "forms"]
   },
@@ -559,12 +547,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which button type does not submit the form by itself?",
     options: [
-      { id: "A", text: "button" },
-      { id: "B", text: "submit" },
+      { id: "A", text: "submit" },
+      { id: "B", text: "button" },
       { id: "C", text: "send" },
       { id: "D", text: "form" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`type=\"button\"` creates a generic button with no default form-submission behavior, making it useful for client-side actions.",
     tags: ["button", "forms", "javascript"]
   },
@@ -577,12 +565,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What does <button type=\"reset\"> do in a form?",
     options: [
-      { id: "A", text: "Resets form controls to their initial values" },
-      { id: "B", text: "Deletes the form from the page" },
-      { id: "C", text: "Sends the form using POST" },
+      { id: "A", text: "Deletes the form from the page" },
+      { id: "B", text: "Sends the form using POST" },
+      { id: "C", text: "Resets form controls to their initial values" },
       { id: "D", text: "Reloads the browser" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A reset button restores the form controls to their initial values rather than submitting the form.",
     tags: ["button", "reset", "forms"]
   },
@@ -595,12 +583,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which element is commonly used to provide a predefined set of choices for an input?",
     options: [
-      { id: "A", text: "<datalist>" },
-      { id: "B", text: "<choices>" },
-      { id: "C", text: "<options-list>" },
-      { id: "D", text: "<suggestions>" }
+      { id: "A", text: "<choices>" },
+      { id: "B", text: "<options-list>" },
+      { id: "C", text: "<suggestions>" },
+      { id: "D", text: "<datalist>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<datalist>` provides a set of suggested options that can be associated with an input using the input's `list` attribute.",
     tags: ["datalist", "input", "forms"]
   },
@@ -613,22 +601,10 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly connects an input to a datalist?",
     options: [
-      {
-        id: "A",
-        text: "<input list=\"languages\"><datalist id=\"languages\"><option value=\"JavaScript\"><option value=\"Python\"></datalist>"
-      },
-      {
-        id: "B",
-        text: "<input datalist=\"languages\"><list id=\"languages\"><option>JavaScript</option></list>"
-      },
-      {
-        id: "C",
-        text: "<input options=\"languages\"><datalist name=\"languages\"></datalist>"
-      },
-      {
-        id: "D",
-        text: "<input list=\"languages\"><datalist name=\"languages\"></datalist>"
-      }
+      { id: "A", text: "<input list=\"languages\"><datalist id=\"languages\"><option value=\"JavaScript\"><option value=\"Python\"></datalist>" },
+      { id: "B", text: "<input datalist=\"languages\"><list id=\"languages\"><option>JavaScript</option></list>" },
+      { id: "C", text: "<input options=\"languages\"><datalist name=\"languages\"></datalist>" },
+      { id: "D", text: "<input list=\"languages\"><datalist name=\"languages\"></datalist>" }
     ],
     correctOptionId: "A",
     explanation: "The input's `list` attribute must match the `id` of the `<datalist>` element. The datalist then contains `<option>` suggestions.",
@@ -643,12 +619,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which element creates a dropdown selection control?",
     options: [
-      { id: "A", text: "<select>" },
-      { id: "B", text: "<dropdown>" },
+      { id: "A", text: "<dropdown>" },
+      { id: "B", text: "<select>" },
       { id: "C", text: "<menu-select>" },
       { id: "D", text: "<choices>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<select>` element represents a selection control, with individual choices typically represented by `<option>` elements.",
     tags: ["select", "option", "forms"]
   },
@@ -661,24 +637,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly creates a country dropdown?",
     options: [
-      {
-        id: "A",
-        text: "<select name=\"country\"><option value=\"in\">India</option><option value=\"us\">USA</option></select>"
-      },
-      {
-        id: "B",
-        text: "<dropdown name=\"country\"><item value=\"in\">India</item><item value=\"us\">USA</item></dropdown>"
-      },
-      {
-        id: "C",
-        text: "<select name=\"country\"><choice>India</choice><choice>USA</choice></select>"
-      },
-      {
-        id: "D",
-        text: "<option name=\"country\">India</option><option name=\"country\">USA</option>"
-      }
+      { id: "A", text: "<dropdown name=\"country\"><item value=\"in\">India</item><item value=\"us\">USA</item></dropdown>" },
+      { id: "B", text: "<select name=\"country\"><choice>India</choice><choice>USA</choice></select>" },
+      { id: "C", text: "<select name=\"country\"><option value=\"in\">India</option><option value=\"us\">USA</option></select>" },
+      { id: "D", text: "<option name=\"country\">India</option><option name=\"country\">USA</option>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A `<select>` contains `<option>` elements. Each option can provide a `value` that represents the submitted value.",
     tags: ["select", "option", "forms"]
   },
@@ -691,12 +655,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What does the selected attribute on an <option> indicate?",
     options: [
-      { id: "A", text: "That the option is selected by default" },
-      { id: "B", text: "That the option cannot be selected" },
-      { id: "C", text: "That the option is hidden" },
-      { id: "D", text: "That the option is required" }
+      { id: "A", text: "That the option cannot be selected" },
+      { id: "B", text: "That the option is hidden" },
+      { id: "C", text: "That the option is required" },
+      { id: "D", text: "That the option is selected by default" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The boolean `selected` attribute indicates that an option should be initially selected.",
     tags: ["select", "option", "selected"]
   },
@@ -727,12 +691,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "How is readonly different from disabled for a text input?",
     options: [
-      { id: "A", text: "A readonly value cannot normally be edited but can still participate in form submission, while a disabled control generally cannot" },
-      { id: "B", text: "Readonly hides the input while disabled only changes its color" },
+      { id: "A", text: "Readonly hides the input while disabled only changes its color" },
+      { id: "B", text: "A readonly value cannot normally be edited but can still participate in form submission, while a disabled control generally cannot" },
       { id: "C", text: "Readonly makes an input required" },
       { id: "D", text: "There is no difference" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A readonly text control remains part of the form data in normal submission, while a disabled control is generally excluded from submission and cannot be interacted with.",
     tags: ["readonly", "disabled", "form-submission"]
   },
@@ -745,12 +709,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which control will normally be included when its form is submitted?",
     options: [
-      { id: "A", text: "<input name=\"email\" value=\"a@example.com\" readonly>" },
-      { id: "B", text: "<input name=\"email\" value=\"a@example.com\" disabled>" },
-      { id: "C", text: "<input value=\"a@example.com\" disabled>" },
+      { id: "A", text: "<input name=\"email\" value=\"a@example.com\" disabled>" },
+      { id: "B", text: "<input value=\"a@example.com\" disabled>" },
+      { id: "C", text: "<input name=\"email\" value=\"a@example.com\" readonly>" },
       { id: "D", text: "<input disabled>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A readonly input can still be submitted when it has a name and value. Disabled controls are generally excluded from form submission.",
     tags: ["readonly", "disabled", "form-submission"]
   },
@@ -763,12 +727,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of autocomplete on a form control?",
     options: [
-      { id: "A", text: "It controls whether the browser may offer previously entered or known values" },
-      { id: "B", text: "It automatically submits the form" },
-      { id: "C", text: "It validates the input using a regular expression" },
-      { id: "D", text: "It encrypts the submitted value" }
+      { id: "A", text: "It automatically submits the form" },
+      { id: "B", text: "It validates the input using a regular expression" },
+      { id: "C", text: "It encrypts the submitted value" },
+      { id: "D", text: "It controls whether the browser may offer previously entered or known values" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `autocomplete` attribute provides guidance about whether and how the browser may offer stored or predicted values for a field.",
     tags: ["autocomplete", "forms", "user-experience"]
   },
@@ -799,12 +763,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which input type is intended for a telephone number?",
     options: [
-      { id: "A", text: "tel" },
-      { id: "B", text: "phone" },
+      { id: "A", text: "phone" },
+      { id: "B", text: "tel" },
       { id: "C", text: "telephone-number" },
       { id: "D", text: "mobile" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`type=\"tel\"` identifies the field as a telephone-number input and can help browsers provide an appropriate virtual keyboard.",
     tags: ["input", "tel", "mobile"]
   },
@@ -817,12 +781,12 @@ const htmlFormsQuestions = [
     difficulty: "Intermediate",
     question: "Which input type is intended for a URL?",
     options: [
-      { id: "A", text: "url" },
-      { id: "B", text: "link" },
-      { id: "C", text: "website" },
+      { id: "A", text: "link" },
+      { id: "B", text: "website" },
+      { id: "C", text: "url" },
       { id: "D", text: "href" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`type=\"url\"` identifies an input as a URL and enables browser-level URL-oriented constraint validation.",
     tags: ["input", "url", "validation"]
   },
@@ -835,12 +799,12 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "A login form contains an email input without a name attribute. What is the major problem if the form relies on normal HTML form submission?",
     options: [
-      { id: "A", text: "Its value will not have a field name and therefore is generally not included as a successful form data entry" },
-      { id: "B", text: "The browser automatically treats it as a password" },
-      { id: "C", text: "The form cannot contain an email input" },
-      { id: "D", text: "The email is automatically sent to the browser vendor" }
+      { id: "A", text: "The browser automatically treats it as a password" },
+      { id: "B", text: "The form cannot contain an email input" },
+      { id: "C", text: "The email is automatically sent to the browser vendor" },
+      { id: "D", text: "Its value will not have a field name and therefore is generally not included as a successful form data entry" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `name` attribute is important for normal form serialization. A form control without a name generally does not contribute a named value to the submitted form data.",
     tags: ["name", "form-submission", "forms"]
   },
@@ -853,22 +817,10 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "A developer wants a newsletter signup with a required email field and a submit button. Which implementation is the most appropriate?",
     options: [
-      {
-        id: "A",
-        text: "<form><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" required><button type=\"submit\">Subscribe</button></form>"
-      },
-      {
-        id: "B",
-        text: "<form><input type=\"email\" placeholder=\"Email\"><button type=\"button\">Subscribe</button></form>"
-      },
-      {
-        id: "C",
-        text: "<div><label>Email</label><input type=\"text\"><button>Subscribe</button></div>"
-      },
-      {
-        id: "D",
-        text: "<form><input id=\"email\" required><button type=\"button\">Subscribe</button></form>"
-      }
+      { id: "A", text: "<form><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" required><button type=\"submit\">Subscribe</button></form>" },
+      { id: "B", text: "<form><input type=\"email\" placeholder=\"Email\"><button type=\"button\">Subscribe</button></form>" },
+      { id: "C", text: "<div><label>Email</label><input type=\"text\"><button>Subscribe</button></div>" },
+      { id: "D", text: "<form><input id=\"email\" required><button type=\"button\">Subscribe</button></form>" }
     ],
     correctOptionId: "A",
     explanation: "The first option combines a form, explicit label association, semantic email input, required validation, a name for submission, and an explicit submit button.",
@@ -883,12 +835,12 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "A form has two radio buttons: `name=\"plan\" value=\"basic\"` and `name=\"plan\" value=\"pro\"`. If the user chooses Pro, what value is submitted for the group?",
     options: [
-      { id: "A", text: "plan=pro" },
-      { id: "B", text: "plan=basic&plan=pro" },
+      { id: "A", text: "plan=basic&plan=pro" },
+      { id: "B", text: "plan=pro" },
       { id: "C", text: "radio=pro" },
       { id: "D", text: "value=plan" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Because both controls share the same `name`, they form one radio group. Only the selected radio contributes its name/value pair, so the result is `plan=pro`.",
     tags: ["radio", "name", "value", "form-submission"]
   },
@@ -901,12 +853,12 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "A developer has a button inside a form that opens a client-side modal instead of submitting the form. Which choice is safest if the button should not submit the form?",
     options: [
-      { id: "A", text: "<button type=\"button\">Open Modal</button>" },
-      { id: "B", text: "<button>Open Modal</button>" },
-      { id: "C", text: "<button type=\"submit\">Open Modal</button>" },
+      { id: "A", text: "<button>Open Modal</button>" },
+      { id: "B", text: "<button type=\"submit\">Open Modal</button>" },
+      { id: "C", text: "<button type=\"button\">Open Modal</button>" },
       { id: "D", text: "<submit type=\"button\">Open Modal</submit>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A button inside a form defaults to submit behavior when its type is omitted. Explicitly using `type=\"button\"` prevents accidental form submission.",
     tags: ["button", "submit", "forms", "javascript"]
   },
@@ -919,24 +871,12 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "Which implementation provides the strongest basic accessibility relationship for a username field?",
     options: [
-      {
-        id: "A",
-        text: "<label for=\"username\">Username</label><input id=\"username\" name=\"username\" type=\"text\">"
-      },
-      {
-        id: "B",
-        text: "<span>Username</span><input name=\"username\" type=\"text\">"
-      },
-      {
-        id: "C",
-        text: "<input placeholder=\"Username\" name=\"username\" type=\"text\">"
-      },
-      {
-        id: "D",
-        text: "<label>Username</label><input name=\"username\" type=\"text\">"
-      }
+      { id: "A", text: "<span>Username</span><input name=\"username\" type=\"text\">" },
+      { id: "B", text: "<input placeholder=\"Username\" name=\"username\" type=\"text\">" },
+      { id: "C", text: "<label>Username</label><input name=\"username\" type=\"text\">" },
+      { id: "D", text: "<label for=\"username\">Username</label><input id=\"username\" name=\"username\" type=\"text\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The label's `for` value explicitly matches the input's `id`, creating a clear programmatic association. A placeholder alone is not a substitute for a label.",
     tags: ["label", "id", "accessibility", "forms"]
   },
@@ -949,22 +889,10 @@ const htmlFormsQuestions = [
     difficulty: "Advanced",
     question: "A developer is building a registration form. Which implementation demonstrates the strongest use of native HTML form features?",
     options: [
-      {
-        id: "A",
-        text: "<form action=\"/register\" method=\"post\"><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" required autocomplete=\"email\"><label for=\"age\">Age</label><input id=\"age\" name=\"age\" type=\"number\" min=\"13\" max=\"120\" required><button type=\"submit\">Create Account</button></form>"
-      },
-      {
-        id: "B",
-        text: "<div><input placeholder=\"Email\"><input placeholder=\"Age\"><div onclick=\"submit()\">Create Account</div></div>"
-      },
-      {
-        id: "C",
-        text: "<form><input type=\"text\"><button type=\"button\">Create Account</button></form>"
-      },
-      {
-        id: "D",
-        text: "<form action=\"/register\"><input type=\"email\"><input type=\"number\"><button>Register</button></form>"
-      }
+      { id: "A", text: "<form action=\"/register\" method=\"post\"><label for=\"email\">Email</label><input id=\"email\" name=\"email\" type=\"email\" required autocomplete=\"email\"><label for=\"age\">Age</label><input id=\"age\" name=\"age\" type=\"number\" min=\"13\" max=\"120\" required><button type=\"submit\">Create Account</button></form>" },
+      { id: "B", text: "<div><input placeholder=\"Email\"><input placeholder=\"Age\"><div onclick=\"submit()\">Create Account</div></div>" },
+      { id: "C", text: "<form><input type=\"text\"><button type=\"button\">Create Account</button></form>" },
+      { id: "D", text: "<form action=\"/register\"><input type=\"email\"><input type=\"number\"><button>Register</button></form>" }
     ],
     correctOptionId: "A",
     explanation: "The first implementation uses semantic form structure, explicit labels, meaningful names, appropriate input types, native validation constraints, autocomplete guidance, an explicit HTTP method, and a real submit button. It uses the browser's built-in form capabilities instead of relying entirely on custom JavaScript.",

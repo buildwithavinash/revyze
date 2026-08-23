@@ -8,11 +8,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What is a Git remote?",
     options: [
       { id: "A", text: "A commit stored in the staging area" },
-      { id: "B", text: "A reference to another repository used for exchanging Git data" },
-      { id: "C", text: "A special type of local branch" },
-      { id: "D", text: "A Git configuration file" }
+      { id: "B", text: "A special type of local branch" },
+      { id: "C", text: "A Git configuration file" },
+      { id: "D", text: "A reference to another repository used for exchanging Git data" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A remote represents another repository, commonly hosted on a service such as GitHub, that your local repository can fetch from or push to.",
     tags: ["remote", "git-basics"]
   },
@@ -43,12 +43,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "Which command shows the configured remote repositories?",
     options: [
-      { id: "A", text: "git remote" },
-      { id: "B", text: "git repositories" },
+      { id: "A", text: "git repositories" },
+      { id: "B", text: "git remote" },
       { id: "C", text: "git show-remotes-only" },
       { id: "D", text: "git server" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git remote` lists the names of configured remotes, such as `origin`.",
     tags: ["git-remote", "remotes"]
   },
@@ -80,11 +80,11 @@ const gitRemoteCollaborationQuestions = [
     question: "Which command connects an existing local repository to a remote URL named `origin`?",
     options: [
       { id: "A", text: "git connect origin URL" },
-      { id: "B", text: "git remote add origin URL" },
-      { id: "C", text: "git origin add URL" },
-      { id: "D", text: "git remote create origin URL" }
+      { id: "B", text: "git origin add URL" },
+      { id: "C", text: "git remote create origin URL" },
+      { id: "D", text: "git remote add origin URL" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`git remote add origin URL` creates a remote named `origin` pointing to the specified repository URL.",
     tags: ["git-remote", "remote-add"]
   },
@@ -97,12 +97,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "What does `git clone` generally do?",
     options: [
-      { id: "A", text: "Deletes the remote repository after copying it" },
-      { id: "B", text: "Creates a local copy of a repository and configures its source remote" },
+      { id: "A", text: "Creates a local copy of a repository and configures its source remote" },
+      { id: "B", text: "Deletes the remote repository after copying it" },
       { id: "C", text: "Only downloads the latest file without Git history" },
       { id: "D", text: "Creates a GitHub pull request" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Cloning creates a local Git repository containing the repository's history and normally configures the source repository as `origin`.",
     tags: ["clone", "remote"]
   },
@@ -115,12 +115,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "After cloning a repository, what is usually already configured?",
     options: [
-      { id: "A", text: "A remote named origin pointing to the cloned repository" },
-      { id: "B", text: "A GitHub pull request" },
+      { id: "A", text: "A GitHub pull request" },
+      { id: "B", text: "A remote named origin pointing to the cloned repository" },
       { id: "C", text: "A second Git installation" },
       { id: "D", text: "An automatically merged feature branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Git normally configures the repository that was cloned as the `origin` remote.",
     tags: ["clone", "origin"]
   },
@@ -134,11 +134,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What does `git push` generally do?",
     options: [
       { id: "A", text: "Copies commits from a remote repository into the working tree" },
-      { id: "B", text: "Sends local commits to a remote repository" },
-      { id: "C", text: "Creates a new local repository" },
+      { id: "B", text: "Creates a new local repository" },
+      { id: "C", text: "Sends local commits to a remote repository" },
       { id: "D", text: "Deletes all local commits" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`git push` transfers commits and related Git objects from your local repository to a remote repository and updates the appropriate remote branch reference.",
     tags: ["push", "remote"]
   },
@@ -151,12 +151,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "What does `git fetch` do?",
     options: [
-      { id: "A", text: "Downloads changes from a remote without merging them into your current branch" },
-      { id: "B", text: "Automatically merges remote changes into main" },
-      { id: "C", text: "Uploads local commits" },
-      { id: "D", text: "Deletes remote-tracking branches" }
+      { id: "A", text: "Automatically merges remote changes into main" },
+      { id: "B", text: "Uploads local commits" },
+      { id: "C", text: "Deletes remote-tracking branches" },
+      { id: "D", text: "Downloads changes from a remote without merging them into your current branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git fetch` retrieves new commits and updates remote-tracking references without changing your current branch's working tree.",
     tags: ["fetch", "remote"]
   },
@@ -169,12 +169,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "What is the key difference between `git fetch` and `git pull`?",
     options: [
-      { id: "A", text: "fetch downloads nothing, while pull uploads commits" },
-      { id: "B", text: "fetch changes GitHub settings, while pull changes Git configuration" },
-      { id: "C", text: "fetch retrieves remote changes without integrating them into the current branch, while pull also integrates them" },
+      { id: "A", text: "fetch retrieves remote changes without integrating them into the current branch, while pull also integrates them" },
+      { id: "B", text: "fetch downloads nothing, while pull uploads commits" },
+      { id: "C", text: "fetch changes GitHub settings, while pull changes Git configuration" },
       { id: "D", text: "There is no difference" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`git fetch` retrieves remote updates without integrating them into the current branch. `git pull` typically performs a fetch followed by an integration step such as merge or rebase.",
     tags: ["fetch", "pull", "remote"]
   },
@@ -187,12 +187,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Beginner",
     question: "Which command is commonly used to fetch changes from `origin` and integrate the tracked branch into the current branch?",
     options: [
-      { id: "A", text: "git pull origin" },
-      { id: "B", text: "git clone origin" },
+      { id: "A", text: "git clone origin" },
+      { id: "B", text: "git pull origin" },
       { id: "C", text: "git upload origin" },
       { id: "D", text: "git sync origin-only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git pull origin` fetches from the `origin` remote and then integrates the fetched changes according to the configured pull behavior.",
     tags: ["pull", "origin"]
   },
@@ -206,11 +206,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What does a remote-tracking branch such as `origin/main` represent?",
     options: [
       { id: "A", text: "The local main branch itself" },
-      { id: "B", text: "A local reference to the last known state of main on origin" },
-      { id: "C", text: "A GitHub issue named main" },
+      { id: "B", text: "A GitHub issue named main" },
+      { id: "C", text: "A local reference to the last known state of main on origin" },
       { id: "D", text: "A branch that exists only inside GitHub and nowhere locally" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`origin/main` is a local remote-tracking reference showing the state of the remote's main branch as last observed by your local repository.",
     tags: ["remote-tracking", "origin", "branches"]
   },
@@ -225,10 +225,10 @@ const gitRemoteCollaborationQuestions = [
     options: [
       { id: "A", text: "Your current branch is automatically rebased" },
       { id: "B", text: "Your local commits are deleted" },
-      { id: "C", text: "Remote-tracking references may be updated with newly fetched commits" },
-      { id: "D", text: "A pull request is automatically opened" }
+      { id: "C", text: "A pull request is automatically opened" },
+      { id: "D", text: "Remote-tracking references may be updated with newly fetched commits" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Fetching retrieves objects from the remote and updates relevant remote-tracking references such as `origin/main`.",
     tags: ["fetch", "remote-tracking"]
   },
@@ -260,11 +260,11 @@ const gitRemoteCollaborationQuestions = [
     question: "Which command pushes the local `main` branch to the remote named `origin`?",
     options: [
       { id: "A", text: "git upload main origin" },
-      { id: "B", text: "git push main origin" },
-      { id: "C", text: "git push origin main" },
+      { id: "B", text: "git push origin main" },
+      { id: "C", text: "git push main origin" },
       { id: "D", text: "git send origin/main" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The standard syntax is `git push <remote> <branch>`, so `git push origin main` pushes local main to origin's main branch.",
     tags: ["push", "origin", "branches"]
   },
@@ -278,11 +278,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What is an upstream branch in Git?",
     options: [
       { id: "A", text: "A branch that contains only old commits" },
-      { id: "B", text: "A remote-tracking branch associated with a local branch for operations such as pull and push" },
-      { id: "C", text: "The first branch ever created" },
+      { id: "B", text: "The first branch ever created" },
+      { id: "C", text: "A remote-tracking branch associated with a local branch for operations such as pull and push" },
       { id: "D", text: "A branch that can never be deleted" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A local branch can track an upstream branch, allowing Git to know the default remote branch for operations such as `git pull` and certain forms of `git push`.",
     tags: ["upstream", "tracking", "branches"]
   },
@@ -296,11 +296,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What does `git push -u origin feature` do when the local feature branch is being published for the first time?",
     options: [
       { id: "A", text: "Deletes the remote feature branch" },
-      { id: "B", text: "Pushes feature and sets its upstream tracking relationship" },
-      { id: "C", text: "Merges feature into origin/main" },
-      { id: "D", text: "Creates a fork automatically" }
+      { id: "B", text: "Merges feature into origin/main" },
+      { id: "C", text: "Creates a fork automatically" },
+      { id: "D", text: "Pushes feature and sets its upstream tracking relationship" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The `-u` option sets the upstream tracking relationship while pushing the branch to the specified remote.",
     tags: ["push", "upstream", "tracking"]
   },
@@ -349,12 +349,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Why might a developer fork a public GitHub repository?",
     options: [
-      { id: "A", text: "To create their own repository where they can develop changes without direct write access to the original" },
-      { id: "B", text: "To erase the original repository's history" },
-      { id: "C", text: "To convert Git into SVN" },
+      { id: "A", text: "To erase the original repository's history" },
+      { id: "B", text: "To convert Git into SVN" },
+      { id: "C", text: "To create their own repository where they can develop changes without direct write access to the original" },
       { id: "D", text: "To prevent pull requests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Forks allow contributors to work in their own repository when they do not have direct write access to the upstream project.",
     tags: ["fork", "github", "collaboration"]
   },
@@ -368,11 +368,11 @@ const gitRemoteCollaborationQuestions = [
     question: "In a common fork-based workflow, what does `upstream` usually refer to?",
     options: [
       { id: "A", text: "The contributor's fork" },
-      { id: "B", text: "The original repository from which the fork was created" },
-      { id: "C", text: "The local staging area" },
-      { id: "D", text: "The GitHub Actions runner" }
+      { id: "B", text: "The local staging area" },
+      { id: "C", text: "The GitHub Actions runner" },
+      { id: "D", text: "The original repository from which the fork was created" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Many developers name the original project repository `upstream` and their personal fork `origin`, although these names are conventions rather than requirements.",
     tags: ["upstream", "fork", "github"]
   },
@@ -439,12 +439,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Which workflow is most appropriate when contributing to an open-source repository where you do not have write access?",
     options: [
-      { id: "A", text: "Fork → clone fork → create branch → make changes → push → open pull request" },
-      { id: "B", text: "Delete the original repository → create main" },
-      { id: "C", text: "Push directly to the original repository without permission" },
-      { id: "D", text: "Create a local branch and never push it" }
+      { id: "A", text: "Delete the original repository → create main" },
+      { id: "B", text: "Push directly to the original repository without permission" },
+      { id: "C", text: "Create a local branch and never push it" },
+      { id: "D", text: "Fork → clone fork → create branch → make changes → push → open pull request" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A fork-based contribution workflow gives the contributor their own remote repository and provides a pull request path back to the original project.",
     tags: ["fork", "pull-request", "open-source"]
   },
@@ -457,12 +457,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `git remote add upstream URL` in a fork-based workflow?",
     options: [
-      { id: "A", text: "It makes upstream the user's personal fork" },
-      { id: "B", text: "It records the original repository as another remote" },
+      { id: "A", text: "It records the original repository as another remote" },
+      { id: "B", text: "It makes upstream the user's personal fork" },
       { id: "C", text: "It creates a new GitHub organization" },
       { id: "D", text: "It merges the fork into the original repository" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Adding an `upstream` remote lets the local repository fetch changes from the original project separately from the contributor's fork.",
     tags: ["upstream", "fork", "remote"]
   },
@@ -475,12 +475,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Why might a contributor periodically fetch from `upstream`?",
     options: [
-      { id: "A", text: "To keep their local knowledge of the original project up to date" },
-      { id: "B", text: "To automatically delete their fork" },
+      { id: "A", text: "To automatically delete their fork" },
+      { id: "B", text: "To keep their local knowledge of the original project up to date" },
       { id: "C", text: "To disable pull requests" },
       { id: "D", text: "To remove all local branches" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Fetching from upstream allows contributors to see new commits and updates from the original repository.",
     tags: ["upstream", "fetch", "fork"]
   },
@@ -493,12 +493,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the main risk of running `git push --force` on a shared branch?",
     options: [
-      { id: "A", text: "It can overwrite remote history and make other contributors' commits harder to reach" },
-      { id: "B", text: "It only changes local files" },
-      { id: "C", text: "It creates an automatic backup branch" },
+      { id: "A", text: "It only changes local files" },
+      { id: "B", text: "It creates an automatic backup branch" },
+      { id: "C", text: "It can overwrite remote history and make other contributors' commits harder to reach" },
       { id: "D", text: "It prevents all future commits" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Force pushing can replace the remote branch reference with a rewritten history, potentially discarding or obscuring commits others have based work on.",
     tags: ["push", "force-push", "collaboration"]
   },
@@ -512,11 +512,11 @@ const gitRemoteCollaborationQuestions = [
     question: "Why is `git push --force-with-lease` generally safer than `git push --force`?",
     options: [
       { id: "A", text: "It never rewrites history" },
-      { id: "B", text: "It checks that the remote branch is still at the expected state before forcing the update" },
-      { id: "C", text: "It prevents all merge conflicts" },
-      { id: "D", text: "It pushes to every remote simultaneously" }
+      { id: "B", text: "It prevents all merge conflicts" },
+      { id: "C", text: "It pushes to every remote simultaneously" },
+      { id: "D", text: "It checks that the remote branch is still at the expected state before forcing the update" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`--force-with-lease` adds a safety check intended to prevent overwriting remote changes that appeared after your last known state.",
     tags: ["force-push", "force-with-lease", "collaboration"]
   },
@@ -548,11 +548,11 @@ const gitRemoteCollaborationQuestions = [
     question: "You receive a non-fast-forward rejection while pushing `main`. What is a reasonable first step?",
     options: [
       { id: "A", text: "Delete the remote repository" },
-      { id: "B", text: "Force push immediately without checking anything" },
-      { id: "C", text: "Fetch the remote changes and inspect how the histories differ" },
+      { id: "B", text: "Fetch the remote changes and inspect how the histories differ" },
+      { id: "C", text: "Force push immediately without checking anything" },
       { id: "D", text: "Remove the `.git` directory" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Fetching and inspecting the remote changes lets you understand what changed before choosing merge, rebase, or another appropriate strategy.",
     tags: ["push", "fetch", "non-fast-forward"]
   },
@@ -566,11 +566,11 @@ const gitRemoteCollaborationQuestions = [
     question: "What does `git push origin feature:main` mean?",
     options: [
       { id: "A", text: "Push local main to remote feature" },
-      { id: "B", text: "Push local feature to the remote branch main" },
-      { id: "C", text: "Rename feature to main locally" },
+      { id: "B", text: "Rename feature to main locally" },
+      { id: "C", text: "Push local feature to the remote branch main" },
       { id: "D", text: "Merge main into feature locally" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The refspec `feature:main` means the local branch `feature` is used to update the remote branch named `main` on `origin`.",
     tags: ["push", "refspec", "remote"]
   },
@@ -583,12 +583,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `git remote set-url origin NEW_URL`?",
     options: [
-      { id: "A", text: "It changes the URL associated with the origin remote" },
-      { id: "B", text: "It renames the main branch" },
-      { id: "C", text: "It changes the current commit" },
-      { id: "D", text: "It deletes all remote branches" }
+      { id: "A", text: "It renames the main branch" },
+      { id: "B", text: "It changes the current commit" },
+      { id: "C", text: "It deletes all remote branches" },
+      { id: "D", text: "It changes the URL associated with the origin remote" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git remote set-url` updates the URL stored for a configured remote.",
     tags: ["git-remote", "remote-url"]
   },
@@ -601,12 +601,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What happens when you run `git pull --rebase`?",
     options: [
-      { id: "A", text: "Remote commits are deleted" },
-      { id: "B", text: "Fetched changes are integrated by rebasing local commits on top of them" },
+      { id: "A", text: "Fetched changes are integrated by rebasing local commits on top of them" },
+      { id: "B", text: "Remote commits are deleted" },
       { id: "C", text: "A fork is created automatically" },
       { id: "D", text: "The remote branch is renamed" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`git pull --rebase` fetches remote changes and then rebases the local commits that are not on the remote onto the updated remote history.",
     tags: ["pull", "rebase", "remote"]
   },
@@ -619,12 +619,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Why can rebasing local commits before pushing be useful?",
     options: [
-      { id: "A", text: "It can create a linear history by replaying local commits on top of updated remote history" },
-      { id: "B", text: "It prevents all conflicts permanently" },
+      { id: "A", text: "It prevents all conflicts permanently" },
+      { id: "B", text: "It can create a linear history by replaying local commits on top of updated remote history" },
       { id: "C", text: "It deletes the remote repository" },
       { id: "D", text: "It converts commits into GitHub issues" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Rebasing can integrate the latest base changes while keeping the local commits in a linear sequence, although conflicts may still need to be resolved.",
     tags: ["rebase", "pull", "history"]
   },
@@ -637,12 +637,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between `origin` and `upstream` in many fork workflows?",
     options: [
-      { id: "A", text: "origin usually refers to the contributor's fork, while upstream commonly refers to the original repository" },
-      { id: "B", text: "origin is always local and upstream is always a branch" },
-      { id: "C", text: "upstream is always GitHub's default branch" },
+      { id: "A", text: "origin is always local and upstream is always a branch" },
+      { id: "B", text: "upstream is always GitHub's default branch" },
+      { id: "C", text: "origin usually refers to the contributor's fork, while upstream commonly refers to the original repository" },
       { id: "D", text: "They are required Git keywords with fixed meanings" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "These are conventional remote names. In a common fork workflow, origin points to the contributor's fork and upstream points to the original project.",
     tags: ["origin", "upstream", "fork"]
   },
@@ -655,12 +655,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of a pull request review?",
     options: [
-      { id: "A", text: "To inspect and discuss proposed changes before integration" },
-      { id: "B", text: "To create the local `.git` directory" },
-      { id: "C", text: "To replace Git commits with files" },
-      { id: "D", text: "To make all contributors administrators" }
+      { id: "A", text: "To create the local `.git` directory" },
+      { id: "B", text: "To replace Git commits with files" },
+      { id: "C", text: "To make all contributors administrators" },
+      { id: "D", text: "To inspect and discuss proposed changes before integration" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Code review gives collaborators an opportunity to examine the proposed implementation, identify issues, and discuss improvements before merging.",
     tags: ["pull-request", "code-review"]
   },
@@ -673,12 +673,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is a common reason to protect a main branch on GitHub?",
     options: [
-      { id: "A", text: "To prevent Git from creating local branches" },
-      { id: "B", text: "To require review or status checks before changes reach an important branch" },
+      { id: "A", text: "To require review or status checks before changes reach an important branch" },
+      { id: "B", text: "To prevent Git from creating local branches" },
       { id: "C", text: "To disable all commits in the repository" },
       { id: "D", text: "To prevent repository cloning" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Branch protection rules can require reviews, passing checks, or other conditions before changes are merged into important branches.",
     tags: ["github", "branch-protection", "pull-request"]
   },
@@ -709,12 +709,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Which command lets you inspect commits that exist on `origin/main` but not on your local main after fetching?",
     options: [
-      { id: "A", text: "git log main..origin/main" },
-      { id: "B", text: "git delete origin/main" },
-      { id: "C", text: "git clone main..origin/main" },
+      { id: "A", text: "git delete origin/main" },
+      { id: "B", text: "git clone main..origin/main" },
+      { id: "C", text: "git log main..origin/main" },
       { id: "D", text: "git push main..origin/main" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The range `main..origin/main` identifies commits reachable from origin/main that are not reachable from local main.",
     tags: ["git-log", "remote-tracking", "comparison"]
   },
@@ -727,12 +727,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Why is it useful to create a separate branch before making a feature change?",
     options: [
-      { id: "A", text: "It allows the feature to be developed independently and reviewed before integration" },
-      { id: "B", text: "It makes commits unnecessary" },
-      { id: "C", text: "It automatically deploys the feature" },
-      { id: "D", text: "It prevents the repository from having remotes" }
+      { id: "A", text: "It makes commits unnecessary" },
+      { id: "B", text: "It automatically deploys the feature" },
+      { id: "C", text: "It prevents the repository from having remotes" },
+      { id: "D", text: "It allows the feature to be developed independently and reviewed before integration" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Separate branches isolate work and make it easier to review, test, and integrate changes without directly modifying the main development line.",
     tags: ["branches", "collaboration", "workflow"]
   },
@@ -745,12 +745,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What happens if you clone a repository and then create a new local branch?",
     options: [
-      { id: "A", text: "The original remote is automatically deleted" },
-      { id: "B", text: "The branch exists locally until it is pushed to a remote" },
+      { id: "A", text: "The branch exists locally until it is pushed to a remote" },
+      { id: "B", text: "The original remote is automatically deleted" },
       { id: "C", text: "GitHub automatically opens a pull request" },
       { id: "D", text: "The branch becomes a fork" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Creating a local branch does not publish it remotely. You must push it if you want a corresponding remote branch.",
     tags: ["branches", "push", "remote"]
   },
@@ -764,11 +764,11 @@ const gitRemoteCollaborationQuestions = [
     question: "Which sequence is appropriate for publishing a new local feature branch?",
     options: [
       { id: "A", text: "git delete feature → git push" },
-      { id: "B", text: "git fetch feature → git clone feature" },
-      { id: "C", text: "git push -u origin feature" },
+      { id: "B", text: "git push -u origin feature" },
+      { id: "C", text: "git fetch feature → git clone feature" },
       { id: "D", text: "git pull -u origin feature" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`git push -u origin feature` publishes the feature branch to origin and establishes its upstream relationship.",
     tags: ["push", "upstream", "feature-branches"]
   },
@@ -781,12 +781,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between a Git remote and a GitHub repository?",
     options: [
-      { id: "A", text: "A remote is a Git concept referring to another repository; GitHub is a platform that can host repositories" },
-      { id: "B", text: "They are technically identical concepts" },
-      { id: "C", text: "A remote can only exist on GitHub" },
+      { id: "A", text: "They are technically identical concepts" },
+      { id: "B", text: "A remote can only exist on GitHub" },
+      { id: "C", text: "A remote is a Git concept referring to another repository; GitHub is a platform that can host repositories" },
       { id: "D", text: "GitHub repositories cannot have remotes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Git's remote concept is platform-independent. GitHub is one service that can host a repository referenced by a Git remote.",
     tags: ["remote", "github", "git-basics"]
   },
@@ -801,10 +801,10 @@ const gitRemoteCollaborationQuestions = [
     options: [
       { id: "A", text: "No, Git supports exactly one remote" },
       { id: "B", text: "Only if the repository has no branches" },
-      { id: "C", text: "Yes, a repository can have multiple remotes with different names" },
-      { id: "D", text: "Only GitHub Enterprise supports multiple remotes" }
+      { id: "C", text: "Only GitHub Enterprise supports multiple remotes" },
+      { id: "D", text: "Yes, a repository can have multiple remotes with different names" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Git repositories can configure multiple remotes, such as `origin`, `upstream`, or other custom names.",
     tags: ["remotes", "origin", "upstream"]
   },
@@ -854,11 +854,11 @@ const gitRemoteCollaborationQuestions = [
     question: "Which statement about pull requests is most accurate?",
     options: [
       { id: "A", text: "A pull request is the same thing as `git pull`" },
-      { id: "B", text: "A pull request is primarily a collaboration and review mechanism provided by platforms such as GitHub" },
-      { id: "C", text: "A pull request can only contain one commit" },
+      { id: "B", text: "A pull request can only contain one commit" },
+      { id: "C", text: "A pull request is primarily a collaboration and review mechanism provided by platforms such as GitHub" },
       { id: "D", text: "A pull request exists entirely inside the local Git repository" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A GitHub pull request is a platform-level collaboration mechanism for proposing, reviewing, discussing, and integrating changes.",
     tags: ["pull-request", "github", "collaboration"]
   },
@@ -873,10 +873,10 @@ const gitRemoteCollaborationQuestions = [
     options: [
       { id: "A", text: "Git failed to contact the remote" },
       { id: "B", text: "Git has successfully integrated everything automatically" },
-      { id: "C", text: "The fetched remote changes could not be integrated automatically with the local changes" },
-      { id: "D", text: "The local repository has been deleted" }
+      { id: "C", text: "The local repository has been deleted" },
+      { id: "D", text: "The fetched remote changes could not be integrated automatically with the local changes" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "A conflict means Git could not automatically reconcile changes from the integration with local changes and requires manual resolution.",
     tags: ["pull", "conflicts", "merge"]
   },
@@ -889,12 +889,12 @@ const gitRemoteCollaborationQuestions = [
     difficulty: "Intermediate",
     question: "Which workflow best represents a professional GitHub collaboration process for a feature?",
     options: [
-      { id: "A", text: "Edit main directly, force-push repeatedly, and skip review" },
-      { id: "B", text: "Create feature branch → commit changes → push branch → open pull request → review/checks → merge" },
+      { id: "A", text: "Create feature branch → commit changes → push branch → open pull request → review/checks → merge" },
+      { id: "B", text: "Edit main directly, force-push repeatedly, and skip review" },
       { id: "C", text: "Create a fork → delete the original project → merge locally" },
       { id: "D", text: "Clone → delete `.git` → upload files manually" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A feature branch, focused commits, remote publication, pull request review, automated checks, and controlled merging form a common collaborative workflow.",
     tags: ["workflow", "pull-request", "branches", "github"]
   }

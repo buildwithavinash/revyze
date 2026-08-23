@@ -7,12 +7,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which keyword is commonly used to declare a variable whose type should not be reassigned?",
     options: [
-      { id: "A", text: "var" },
-      { id: "B", text: "let" },
-      { id: "C", text: "const" },
+      { id: "A", text: "const" },
+      { id: "B", text: "var" },
+      { id: "C", text: "let" },
       { id: "D", text: "static" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`const` prevents reassignment of the variable binding. TypeScript can also infer the variable's type from its initializer.",
     tags: ["variables", "const"]
   },
@@ -25,12 +25,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which annotation correctly declares `username` as a string?",
     options: [
-      { id: "A", text: "let username: string;" },
-      { id: "B", text: "let username -> string;" },
+      { id: "A", text: "let username -> string;" },
+      { id: "B", text: "let username: string;" },
       { id: "C", text: "let username = string;" },
       { id: "D", text: "string username;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "TypeScript annotations use a colon followed by the type, such as `let username: string;`.",
     tags: ["type-annotations", "string"]
   },
@@ -44,11 +44,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which TypeScript type represents numeric values?",
     options: [
       { id: "A", text: "integer" },
-      { id: "B", text: "number" },
-      { id: "C", text: "numeric" },
+      { id: "B", text: "numeric" },
+      { id: "C", text: "number" },
       { id: "D", text: "float" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "TypeScript uses the `number` type for JavaScript numbers, including integers and floating-point values.",
     tags: ["primitive-types", "number"]
   },
@@ -63,10 +63,10 @@ const typescriptFundamentalsQuestions = [
     options: [
       { id: "A", text: "bool" },
       { id: "B", text: "BooleanValue" },
-      { id: "C", text: "boolean" },
-      { id: "D", text: "logical" }
+      { id: "C", text: "logical" },
+      { id: "D", text: "boolean" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "The primitive TypeScript type for `true` and `false` is `boolean`.",
     tags: ["primitive-types", "boolean"]
   },
@@ -115,12 +115,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What happens here?\n\n`let age: number = \"23\";`",
     options: [
-      { id: "A", text: "TypeScript reports a type error" },
-      { id: "B", text: "TypeScript automatically converts the string to a number" },
-      { id: "C", text: "The variable becomes type any" },
+      { id: "A", text: "TypeScript automatically converts the string to a number" },
+      { id: "B", text: "The variable becomes type any" },
+      { id: "C", text: "TypeScript reports a type error" },
       { id: "D", text: "The code is always valid" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A string value cannot be assigned to a variable explicitly typed as `number` without an appropriate conversion.",
     tags: ["type-errors", "type-annotations"]
   },
@@ -134,11 +134,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which syntax correctly declares an array of strings?",
     options: [
       { id: "A", text: "string{}" },
-      { id: "B", text: "string[]" },
-      { id: "C", text: "array<string>" },
-      { id: "D", text: "strings[]" }
+      { id: "B", text: "array<string>" },
+      { id: "C", text: "strings[]" },
+      { id: "D", text: "string[]" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`string[]` is the standard shorthand syntax for an array whose elements are strings.",
     tags: ["arrays", "type-annotations"]
   },
@@ -151,12 +151,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which alternative is equivalent to `number[]`?",
     options: [
-      { id: "A", text: "Numbers<number>" },
-      { id: "B", text: "List(number)" },
-      { id: "C", text: "Array<number>" },
+      { id: "A", text: "Array<number>" },
+      { id: "B", text: "Numbers<number>" },
+      { id: "C", text: "List(number)" },
       { id: "D", text: "number<Array>" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`Array<number>` and `number[]` both describe arrays whose elements are numbers.",
     tags: ["arrays", "generics"]
   },
@@ -170,11 +170,11 @@ const typescriptFundamentalsQuestions = [
     question: "What type should normally be used for a function that returns no useful value?",
     options: [
       { id: "A", text: "empty" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "void" },
+      { id: "B", text: "void" },
+      { id: "C", text: "undefined" },
       { id: "D", text: "none" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`void` is commonly used to describe functions whose return value is not intended to be used.",
     tags: ["functions", "void"]
   },
@@ -187,12 +187,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which function declaration correctly types both its parameter and return value?",
     options: [
-      { id: "A", text: "function add(a: number, b: number): number { return a + b; }" },
-      { id: "B", text: "function add(a number, b number) number { return a + b; }" },
-      { id: "C", text: "function add(number a, number b): number { return a + b; }" },
+      { id: "A", text: "function add(a number, b number) number { return a + b; }" },
+      { id: "B", text: "function add(number a, number b): number { return a + b; }" },
+      { id: "C", text: "function add(a: number, b: number): number { return a + b; }" },
       { id: "D", text: "function add(a -> number, b -> number): number { return a + b; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Parameters are annotated with `: type`, and the return type is placed after the closing parameter list.",
     tags: ["functions", "type-annotations"]
   },
@@ -207,10 +207,10 @@ const typescriptFundamentalsQuestions = [
     options: [
       { id: "A", text: "Yes, every function must have one" },
       { id: "B", text: "Only arrow functions require one" },
-      { id: "C", text: "No, TypeScript can often infer the return type" },
-      { id: "D", text: "Only functions returning strings require one" }
+      { id: "C", text: "Only functions returning strings require one" },
+      { id: "D", text: "No, TypeScript can often infer the return type" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "TypeScript can infer function return types from the implementation, although explicit annotations can improve clarity and enforce intended APIs.",
     tags: ["functions", "type-inference"]
   },
@@ -223,12 +223,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the main benefit of type inference?",
     options: [
-      { id: "A", text: "It removes JavaScript from the project" },
-      { id: "B", text: "It reduces unnecessary annotations while still providing static type information" },
+      { id: "A", text: "It reduces unnecessary annotations while still providing static type information" },
+      { id: "B", text: "It removes JavaScript from the project" },
       { id: "C", text: "It disables compiler errors" },
       { id: "D", text: "It makes all values immutable" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Inference allows TypeScript to determine types automatically, keeping code concise without giving up static checking.",
     tags: ["type-inference", "fundamentals"]
   },
@@ -242,11 +242,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which type represents a value that may be either a string or a number?",
     options: [
       { id: "A", text: "string & number" },
-      { id: "B", text: "string + number" },
-      { id: "C", text: "string | number" },
+      { id: "B", text: "string | number" },
+      { id: "C", text: "string + number" },
       { id: "D", text: "string / number" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The `|` operator creates a union type, meaning the value can be one of the specified types.",
     tags: ["union-types", "types"]
   },
@@ -260,11 +260,11 @@ const typescriptFundamentalsQuestions = [
     question: "Why is `unknown` safer than `any`?",
     options: [
       { id: "A", text: "unknown prevents all values from being stored" },
-      { id: "B", text: "unknown requires appropriate narrowing before most operations" },
-      { id: "C", text: "unknown automatically validates external data" },
+      { id: "B", text: "unknown automatically validates external data" },
+      { id: "C", text: "unknown requires appropriate narrowing before most operations" },
       { id: "D", text: "unknown converts values to strings" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`unknown` can contain any value, but TypeScript requires you to establish a more specific type before performing many operations.",
     tags: ["unknown", "any", "type-safety"]
   },
@@ -313,12 +313,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `undefined` commonly represent?",
     options: [
-      { id: "A", text: "A value that has not been assigned or is absent" },
-      { id: "B", text: "A value that must always be zero" },
+      { id: "A", text: "A value that must always be zero" },
+      { id: "B", text: "A value that has not been assigned or is absent" },
       { id: "C", text: "A failed TypeScript compilation" },
       { id: "D", text: "An empty object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`undefined` is commonly used when a value is absent or has not been assigned.",
     tags: ["undefined", "primitive-types"]
   },
@@ -350,11 +350,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which statement best describes TypeScript's primitive `string` type?",
     options: [
       { id: "A", text: "It represents only strings created with the String constructor" },
-      { id: "B", text: "It represents JavaScript primitive string values" },
-      { id: "C", text: "It represents arrays of characters only" },
-      { id: "D", text: "It represents both strings and numbers" }
+      { id: "B", text: "It represents arrays of characters only" },
+      { id: "C", text: "It represents both strings and numbers" },
+      { id: "D", text: "It represents JavaScript primitive string values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The lowercase `string` type describes JavaScript primitive string values.",
     tags: ["string", "primitive-types"]
   },
@@ -385,12 +385,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which statement about TypeScript is correct?",
     options: [
-      { id: "A", text: "TypeScript types are primarily checked at compile time" },
-      { id: "B", text: "TypeScript types automatically validate every API response at runtime" },
+      { id: "A", text: "TypeScript types automatically validate every API response at runtime" },
+      { id: "B", text: "TypeScript types are primarily checked at compile time" },
       { id: "C", text: "TypeScript replaces JavaScript's runtime engine" },
       { id: "D", text: "TypeScript prevents all runtime errors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "TypeScript provides static analysis during development and compilation. It does not automatically provide runtime validation.",
     tags: ["compile-time", "runtime", "fundamentals"]
   },
@@ -404,11 +404,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which syntax creates a tuple containing a string followed by a number?",
     options: [
       { id: "A", text: "string[number]" },
-      { id: "B", text: "[string, number]" },
-      { id: "C", text: "(string, number)" },
+      { id: "B", text: "(string, number)" },
+      { id: "C", text: "[string, number]" },
       { id: "D", text: "tuple<string, number>" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`[string, number]` describes a tuple with a string at position 0 and a number at position 1.",
     tags: ["tuples", "arrays"]
   },
@@ -422,11 +422,11 @@ const typescriptFundamentalsQuestions = [
     question: "What does the type `object` generally describe?",
     options: [
       { id: "A", text: "Only plain objects created with `{}`" },
-      { id: "B", text: "Non-primitive values" },
-      { id: "C", text: "Only arrays" },
-      { id: "D", text: "Only functions" }
+      { id: "B", text: "Only arrays" },
+      { id: "C", text: "Only functions" },
+      { id: "D", text: "Non-primitive values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The TypeScript `object` type represents non-primitive values, including arrays and functions.",
     tags: ["object-type", "primitive-types"]
   },
@@ -439,12 +439,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Why is using `Object` with a capital O generally discouraged as a TypeScript type?",
     options: [
-      { id: "A", text: "It is not valid TypeScript" },
-      { id: "B", text: "It describes a broad boxed-object type and is usually less precise than more specific types" },
+      { id: "A", text: "It describes a broad boxed-object type and is usually less precise than more specific types" },
+      { id: "B", text: "It is not valid TypeScript" },
       { id: "C", text: "It only represents numbers" },
       { id: "D", text: "It prevents object creation" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The capitalized `Object` type is usually too broad and can accept values that developers may not intend. More precise types are preferable.",
     tags: ["object-type", "best-practices"]
   },
@@ -458,11 +458,11 @@ const typescriptFundamentalsQuestions = [
     question: "What does the `never` type indicate in a basic sense?",
     options: [
       { id: "A", text: "A value can be any type" },
-      { id: "B", text: "A value can be undefined" },
-      { id: "C", text: "A value represents a state that should never occur" },
+      { id: "B", text: "A value represents a state that should never occur" },
+      { id: "C", text: "A value can be undefined" },
       { id: "D", text: "A value must be null" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`never` represents impossible states or code paths that cannot produce a normal value.",
     tags: ["never", "types"]
   },
@@ -475,12 +475,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which return type is appropriate for a function that always throws an error?",
     options: [
-      { id: "A", text: "never" },
-      { id: "B", text: "void" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "void" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "never" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A function that always throws and therefore never completes normally can have the return type `never`.",
     tags: ["never", "functions"]
   },
@@ -494,11 +494,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which type is used for a function that does not return a useful result?",
     options: [
       { id: "A", text: "never" },
-      { id: "B", text: "void" },
-      { id: "C", text: "empty" },
-      { id: "D", text: "none" }
+      { id: "B", text: "empty" },
+      { id: "C", text: "none" },
+      { id: "D", text: "void" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`void` is commonly used when a function executes an action but its returned value is not useful to the caller.",
     tags: ["void", "functions"]
   },
@@ -511,12 +511,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does a union type allow?",
     options: [
-      { id: "A", text: "A value to satisfy multiple types simultaneously" },
-      { id: "B", text: "A value to be one of several possible types" },
+      { id: "A", text: "A value to be one of several possible types" },
+      { id: "B", text: "A value to satisfy multiple types simultaneously" },
       { id: "C", text: "A value to skip type checking" },
       { id: "D", text: "A value to become immutable" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Union types express alternatives, such as `string | number`.",
     tags: ["union-types"]
   },
@@ -530,11 +530,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which operator is used to create a union type?",
     options: [
       { id: "A", text: "&" },
-      { id: "B", text: "?" },
-      { id: "C", text: "|" },
+      { id: "B", text: "|" },
+      { id: "C", text: "?" },
       { id: "D", text: ":" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The vertical bar `|` combines types into a union.",
     tags: ["union-types", "syntax"]
   },
@@ -547,12 +547,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does a type annotation on a function parameter primarily accomplish?",
     options: [
-      { id: "A", text: "It tells TypeScript what type of argument the function expects" },
-      { id: "B", text: "It converts the argument at runtime" },
-      { id: "C", text: "It makes the argument constant" },
+      { id: "A", text: "It converts the argument at runtime" },
+      { id: "B", text: "It makes the argument constant" },
+      { id: "C", text: "It tells TypeScript what type of argument the function expects" },
       { id: "D", text: "It automatically validates API input" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Parameter annotations provide compile-time information about what values a function is intended to accept.",
     tags: ["functions", "parameters"]
   },
@@ -566,11 +566,11 @@ const typescriptFundamentalsQuestions = [
     question: "Which declaration correctly describes an optional function parameter?",
     options: [
       { id: "A", text: "function greet(name: string optional)" },
-      { id: "B", text: "function greet(name?: string)" },
-      { id: "C", text: "function greet(optional name: string)" },
-      { id: "D", text: "function greet(name: optional<string>)" }
+      { id: "B", text: "function greet(optional name: string)" },
+      { id: "C", text: "function greet(name: optional<string>)" },
+      { id: "D", text: "function greet(name?: string)" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A `?` after the parameter name marks it as optional.",
     tags: ["functions", "optional-parameters"]
   },
@@ -601,12 +601,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which syntax correctly types an object with `name` and `age`?",
     options: [
-      { id: "A", text: "let user: { name: string; age: number };" },
-      { id: "B", text: "let user: object(name: string, age: number);" },
+      { id: "A", text: "let user: object(name: string, age: number);" },
+      { id: "B", text: "let user: { name: string; age: number };" },
       { id: "C", text: "let user: [name: string, age: number];" },
       { id: "D", text: "let user: <name: string, age: number>;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An inline object type uses braces with property names and their types.",
     tags: ["object-types", "type-annotations"]
   },
@@ -620,11 +620,11 @@ const typescriptFundamentalsQuestions = [
     question: "What does `readonly` communicate in a TypeScript property declaration?",
     options: [
       { id: "A", text: "The property cannot be read" },
-      { id: "B", text: "The property cannot be assigned through that type after initialization" },
-      { id: "C", text: "The property is hidden from JavaScript" },
+      { id: "B", text: "The property is hidden from JavaScript" },
+      { id: "C", text: "The property cannot be assigned through that type after initialization" },
       { id: "D", text: "The property is automatically private" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`readonly` prevents assignments through the TypeScript type system after initialization; it does not make the property runtime-private or deeply immutable.",
     tags: ["readonly", "object-types"]
   },
@@ -638,11 +638,11 @@ const typescriptFundamentalsQuestions = [
     question: "What does the `any` type allow?",
     options: [
       { id: "A", text: "Only strings and numbers" },
-      { id: "B", text: "A value to bypass many TypeScript type checks" },
-      { id: "C", text: "Only null and undefined" },
-      { id: "D", text: "Only object values" }
+      { id: "B", text: "Only null and undefined" },
+      { id: "C", text: "Only object values" },
+      { id: "D", text: "A value to bypass many TypeScript type checks" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`any` opts a value out of much of TypeScript's static type checking.",
     tags: ["any", "type-safety"]
   },
@@ -655,12 +655,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is the main difference between `unknown` and `any`?",
     options: [
-      { id: "A", text: "unknown is only for strings" },
-      { id: "B", text: "any cannot store objects" },
-      { id: "C", text: "unknown requires narrowing before unsafe operations, while any generally does not" },
+      { id: "A", text: "unknown requires narrowing before unsafe operations, while any generally does not" },
+      { id: "B", text: "unknown is only for strings" },
+      { id: "C", text: "any cannot store objects" },
       { id: "D", text: "They are exactly the same" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`unknown` preserves type safety by requiring the value to be narrowed before most operations, whereas `any` largely bypasses those checks.",
     tags: ["unknown", "any", "narrowing"]
   },
@@ -691,12 +691,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does TypeScript infer for `const user = { name: \"Avi\", age: 23 }`?",
     options: [
-      { id: "A", text: "{ name: string; age: number }" },
-      { id: "B", text: "string" },
-      { id: "C", text: "any" },
+      { id: "A", text: "string" },
+      { id: "B", text: "any" },
+      { id: "C", text: "{ name: string; age: number }" },
       { id: "D", text: "unknown" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "TypeScript infers the object's property types from their values, producing an object shape with `name: string` and `age: number`.",
     tags: ["type-inference", "objects"]
   },
@@ -711,10 +711,10 @@ const typescriptFundamentalsQuestions = [
     options: [
       { id: "A", text: "Every const variable is always inferred as a literal type" },
       { id: "B", text: "const has no effect on inference" },
-      { id: "C", text: "A const primitive may retain a literal type, but object properties can still be widened" },
-      { id: "D", text: "const automatically makes every nested property readonly" }
+      { id: "C", text: "const automatically makes every nested property readonly" },
+      { id: "D", text: "A const primitive may retain a literal type, but object properties can still be widened" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "TypeScript often gives `const` primitive variables narrower literal types, while mutable object properties are generally widened unless additional measures such as `as const` are used.",
     tags: ["type-inference", "const", "literal-types"]
   },
@@ -727,12 +727,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `as const` generally do?",
     options: [
-      { id: "A", text: "Converts the value to a JavaScript constant at runtime" },
-      { id: "B", text: "Narrows literal values and applies readonly semantics to the resulting structure" },
+      { id: "A", text: "Narrows literal values and applies readonly semantics to the resulting structure" },
+      { id: "B", text: "Converts the value to a JavaScript constant at runtime" },
       { id: "C", text: "Converts every value to a string" },
       { id: "D", text: "Turns the value into any" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`as const` gives the expression the narrowest literal types and makes object properties and tuple elements readonly in the type system.",
     tags: ["as-const", "literal-types"]
   },
@@ -763,12 +763,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is the benefit of enabling `strict` mode in a TypeScript project?",
     options: [
-      { id: "A", text: "It enables a collection of stronger type-checking rules" },
-      { id: "B", text: "It disables all compiler errors" },
-      { id: "C", text: "It automatically validates API responses" },
+      { id: "A", text: "It disables all compiler errors" },
+      { id: "B", text: "It automatically validates API responses" },
+      { id: "C", text: "It enables a collection of stronger type-checking rules" },
       { id: "D", text: "It prevents JavaScript from executing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`strict` enables a broad family of strictness checks designed to catch more potential type errors.",
     tags: ["strict-mode", "compiler-options"]
   },
@@ -782,11 +782,11 @@ const typescriptFundamentalsQuestions = [
     question: "What does `noImplicitAny` help detect?",
     options: [
       { id: "A", text: "Every explicit use of unknown" },
-      { id: "B", text: "Cases where TypeScript would otherwise assign an implicit any" },
-      { id: "C", text: "All runtime JavaScript errors" },
-      { id: "D", text: "Every nullable value" }
+      { id: "B", text: "All runtime JavaScript errors" },
+      { id: "C", text: "Every nullable value" },
+      { id: "D", text: "Cases where TypeScript would otherwise assign an implicit any" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`noImplicitAny` reports locations where TypeScript would otherwise infer an implicit `any` type.",
     tags: ["noImplicitAny", "compiler-options"]
   },
@@ -799,12 +799,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which example demonstrates type inference rather than explicit annotation?",
     options: [
-      { id: "A", text: "let name: string = \"Avi\";" },
-      { id: "B", text: "let name = \"Avi\";" },
+      { id: "A", text: "let name = \"Avi\";" },
+      { id: "B", text: "let name: string = \"Avi\";" },
       { id: "C", text: "let name: unknown = \"Avi\";" },
       { id: "D", text: "let name: any = \"Avi\";" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "In `let name = \"Avi\"`, TypeScript determines the type from the initializer without an explicit type annotation.",
     tags: ["type-inference", "type-annotations"]
   },
@@ -817,12 +817,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement best describes TypeScript's type system?",
     options: [
-      { id: "A", text: "It is primarily a static type system used during development and compilation" },
-      { id: "B", text: "It replaces JavaScript's runtime type system" },
+      { id: "A", text: "It replaces JavaScript's runtime type system" },
+      { id: "B", text: "It is primarily a static type system used during development and compilation" },
       { id: "C", text: "It guarantees that no runtime errors can occur" },
       { id: "D", text: "It automatically validates all data received from users" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "TypeScript analyzes types statically. Runtime behavior remains JavaScript behavior, so runtime errors and untrusted data still require appropriate handling.",
     tags: ["type-system", "runtime", "compile-time"]
   },
@@ -836,11 +836,11 @@ const typescriptFundamentalsQuestions = [
     question: "Suppose `let value: string | number`. Why can't TypeScript always allow `value.toUpperCase()` immediately?",
     options: [
       { id: "A", text: "Because TypeScript does not support strings" },
-      { id: "B", text: "Because number may not have the `toUpperCase` method" },
-      { id: "C", text: "Because union types cannot contain strings" },
+      { id: "B", text: "Because union types cannot contain strings" },
+      { id: "C", text: "Because number may not have the `toUpperCase` method" },
       { id: "D", text: "Because methods cannot be called in TypeScript" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The variable could currently be a number, and numbers do not have `toUpperCase`. The value must first be narrowed to string.",
     tags: ["union-types", "narrowing", "methods"]
   },
@@ -853,12 +853,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which check can narrow a `string | number` value to a string?",
     options: [
-      { id: "A", text: "if (typeof value === \"string\")" },
-      { id: "B", text: "if (value === number)" },
-      { id: "C", text: "if (value.type === string)" },
-      { id: "D", text: "if (typeof string === value)" }
+      { id: "A", text: "if (value === number)" },
+      { id: "B", text: "if (value.type === string)" },
+      { id: "C", text: "if (typeof string === value)" },
+      { id: "D", text: "if (typeof value === \"string\")" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `typeof` check is a standard narrowing mechanism for primitive unions.",
     tags: ["narrowing", "typeof", "union-types"]
   },
@@ -871,12 +871,12 @@ const typescriptFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which approach is generally better when TypeScript already has enough information to infer a variable's type?",
     options: [
-      { id: "A", text: "Always add redundant annotations to every variable" },
-      { id: "B", text: "Prefer inference when it keeps the code clear, while using annotations where they improve intent or API contracts" },
+      { id: "A", text: "Prefer inference when it keeps the code clear, while using annotations where they improve intent or API contracts" },
+      { id: "B", text: "Always add redundant annotations to every variable" },
       { id: "C", text: "Convert the variable to any" },
       { id: "D", text: "Disable type checking" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Good TypeScript code balances inference and explicit annotations. Annotations are especially valuable at public boundaries, function contracts, and places where intent would otherwise be unclear.",
     tags: ["type-inference", "best-practices"]
   },
@@ -890,11 +890,11 @@ const typescriptFundamentalsQuestions = [
     question: "A function receives data from an API and the data's shape is not trusted. Which approach best follows TypeScript fundamentals?",
     options: [
       { id: "A", text: "Type the response as any and access properties freely" },
-      { id: "B", text: "Assume the API always matches the expected interface" },
-      { id: "C", text: "Treat the external value as unknown, validate or narrow it, then use a specific type" },
+      { id: "B", text: "Treat the external value as unknown, validate or narrow it, then use a specific type" },
+      { id: "C", text: "Assume the API always matches the expected interface" },
       { id: "D", text: "Disable strict type checking for the API module" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "TypeScript types alone do not validate runtime data. Treating untrusted data as `unknown` and validating it before use preserves a stronger type-safety boundary.",
     tags: ["unknown", "api", "runtime-validation", "type-safety"]
   }

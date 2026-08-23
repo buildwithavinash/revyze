@@ -7,12 +7,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "Which function correctly declares that it accepts a string and returns a number?",
     options: [
-      { id: "A", text: "function length(value: string): number { return value.length; }" },
-      { id: "B", text: "function length(value: number): string { return value.length; }" },
-      { id: "C", text: "function length(value: string) -> number { return value.length; }" },
-      { id: "D", text: "function length(value: string): string { return value.length; }" }
+      { id: "A", text: "function length(value: number): string { return value.length; }" },
+      { id: "B", text: "function length(value: string) -> number { return value.length; }" },
+      { id: "C", text: "function length(value: string): string { return value.length; }" },
+      { id: "D", text: "function length(value: string): number { return value.length; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "TypeScript uses `parameter: Type` for parameters and `: ReturnType` after the parameter list for the return type.",
     tags: ["functions", "return-types", "parameters"]
   },
@@ -25,12 +25,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "What does the `void` return type indicate for a function?",
     options: [
-      { id: "A", text: "The function can never execute" },
-      { id: "B", text: "The function does not produce a useful return value" },
+      { id: "A", text: "The function does not produce a useful return value" },
+      { id: "B", text: "The function can never execute" },
       { id: "C", text: "The function always returns null" },
       { id: "D", text: "The function must return undefined explicitly" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`void` is commonly used for functions whose return value should not be used, such as functions that perform side effects.",
     tags: ["functions", "void"]
   },
@@ -61,12 +61,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "Which function correctly uses a default parameter?",
     options: [
-      { id: "A", text: "function greet(name: string = \"Guest\") { return name; }" },
-      { id: "B", text: "function greet(name =: string \"Guest\") { return name; }" },
-      { id: "C", text: "function greet(default name: string) { return name; }" },
+      { id: "A", text: "function greet(name =: string \"Guest\") { return name; }" },
+      { id: "B", text: "function greet(default name: string) { return name; }" },
+      { id: "C", text: "function greet(name: string = \"Guest\") { return name; }" },
       { id: "D", text: "function greet(name: string default \"Guest\") { return name; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A default parameter can also be type annotated: `name: string = \"Guest\"`.",
     tags: ["functions", "default-parameters"]
   },
@@ -81,10 +81,10 @@ const typescriptFunctionsGenericsQuestions = [
     options: [
       { id: "A", text: "string" },
       { id: "B", text: "boolean" },
-      { id: "C", text: "number" },
-      { id: "D", text: "any" }
+      { id: "C", text: "any" },
+      { id: "D", text: "number" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "TypeScript can infer the return type from the returned expression. Since both operands are numbers, the return type is `number`.",
     tags: ["functions", "type-inference"]
   },
@@ -115,12 +115,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "Which type describes a function that accepts two numbers and returns a number?",
     options: [
-      { id: "A", text: "(a: number, b: number) => number" },
-      { id: "B", text: "number => (a: number, b: number)" },
+      { id: "A", text: "number => (a: number, b: number)" },
+      { id: "B", text: "(a: number, b: number) => number" },
       { id: "C", text: "(a, b): number -> number" },
       { id: "D", text: "function<number>(a, b)" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Function types use `(parameters) => returnType` syntax.",
     tags: ["functions", "function-types"]
   },
@@ -133,12 +133,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "Which function signature allows any number of string arguments?",
     options: [
-      { id: "A", text: "function join(...items: string[]): string" },
-      { id: "B", text: "function join(items...: string): string" },
-      { id: "C", text: "function join(...items: string): string" },
+      { id: "A", text: "function join(items...: string): string" },
+      { id: "B", text: "function join(...items: string): string" },
+      { id: "C", text: "function join(...items: string[]): string" },
       { id: "D", text: "function join(items: ...string[]): string" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Rest parameters use `...name: Type[]` to collect an arbitrary number of arguments.",
     tags: ["functions", "rest-parameters"]
   },
@@ -151,12 +151,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of a function overload signature?",
     options: [
-      { id: "A", text: "To provide multiple valid call signatures for one implementation" },
-      { id: "B", text: "To execute two function bodies simultaneously" },
-      { id: "C", text: "To make a function run asynchronously" },
-      { id: "D", text: "To disable return type checking" }
+      { id: "A", text: "To execute two function bodies simultaneously" },
+      { id: "B", text: "To make a function run asynchronously" },
+      { id: "C", text: "To disable return type checking" },
+      { id: "D", text: "To provide multiple valid call signatures for one implementation" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Function overloads allow callers to see multiple supported signatures while the implementation provides the actual runtime behavior.",
     tags: ["functions", "overloads"]
   },
@@ -206,11 +206,11 @@ const typescriptFunctionsGenericsQuestions = [
     question: "What does this generic function preserve?\n\n`function identity<T>(value: T): T { return value; }`",
     options: [
       { id: "A", text: "The input and output must both be strings" },
-      { id: "B", text: "The specific input type is preserved as the output type" },
-      { id: "C", text: "The input is always converted to any" },
+      { id: "B", text: "The input is always converted to any" },
+      { id: "C", text: "The specific input type is preserved as the output type" },
       { id: "D", text: "The output is always unknown" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The same type parameter `T` appears in both the parameter and return type, preserving their relationship.",
     tags: ["generics", "type-relationships"]
   },
@@ -225,10 +225,10 @@ const typescriptFunctionsGenericsQuestions = [
     options: [
       { id: "A", text: "string" },
       { id: "B", text: "boolean" },
-      { id: "C", text: "number" },
-      { id: "D", text: "unknown" }
+      { id: "C", text: "unknown" },
+      { id: "D", text: "number" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "TypeScript infers `T` as `number` from the argument `42`, so `result` is a number.",
     tags: ["generics", "inference"]
   },
@@ -259,12 +259,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "Which call explicitly supplies `string` as the generic type argument?",
     options: [
-      { id: "A", text: "identity<string>(\"hello\")" },
-      { id: "B", text: "identity<string>(number, \"hello\")" },
+      { id: "A", text: "identity<string>(number, \"hello\")" },
+      { id: "B", text: "identity<string>(\"hello\")" },
       { id: "C", text: "identity(string)<\"hello\">" },
       { id: "D", text: "identity<T = string>(\"hello\")" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Generic type arguments are supplied using angle brackets after the function name.",
     tags: ["generics", "type-arguments"]
   },
@@ -278,11 +278,11 @@ const typescriptFunctionsGenericsQuestions = [
     question: "What does this constraint mean?\n\n`function getId<T extends { id: number }>(item: T): number { return item.id; }`",
     options: [
       { id: "A", text: "T must be exactly `{ id: number }`" },
-      { id: "B", text: "T must have at least an `id` property compatible with number" },
-      { id: "C", text: "T must be a number" },
+      { id: "B", text: "T must be a number" },
+      { id: "C", text: "T must have at least an `id` property compatible with number" },
       { id: "D", text: "T cannot have additional properties" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A generic constraint specifies the minimum structure T must satisfy. T can contain additional properties.",
     tags: ["generics", "constraints"]
   },
@@ -295,12 +295,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "Why is `T extends { length: number }` useful?",
     options: [
-      { id: "A", text: "It allows the function to safely access `length` on T" },
-      { id: "B", text: "It forces T to be an array only" },
-      { id: "C", text: "It converts T into an object" },
-      { id: "D", text: "It makes length optional" }
+      { id: "A", text: "It forces T to be an array only" },
+      { id: "B", text: "It converts T into an object" },
+      { id: "C", text: "It makes length optional" },
+      { id: "D", text: "It allows the function to safely access `length` on T" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The constraint guarantees that values of T have a numeric `length` property, allowing the function to use it safely.",
     tags: ["generics", "constraints"]
   },
@@ -331,12 +331,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "Which function safely returns the first element of an array while preserving its element type?",
     options: [
-      { id: "A", text: "function first<T>(items: T[]): T { return items[0]; }" },
-      { id: "B", text: "function first(items: any[]): string { return items[0]; }" },
+      { id: "A", text: "function first(items: any[]): string { return items[0]; }" },
+      { id: "B", text: "function first<T>(items: T[]): T { return items[0]; }" },
       { id: "C", text: "function first<T>(items: T[]): any[] { return items[0]; }" },
       { id: "D", text: "function first(items: object[]): object[] { return items[0]; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The generic parameter represents the array's element type and is also used as the return type.",
     tags: ["generics", "arrays", "type-relationships"]
   },
@@ -350,11 +350,11 @@ const typescriptFunctionsGenericsQuestions = [
     question: "What is the inferred return type of `first([\"a\", \"b\"])` for the generic function `first<T>(items: T[]): T`?",
     options: [
       { id: "A", text: "number" },
-      { id: "B", text: "string" },
-      { id: "C", text: "string[]" },
+      { id: "B", text: "string[]" },
+      { id: "C", text: "string" },
       { id: "D", text: "unknown[]" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The array contains strings, so T is inferred as `string` and the function returns a `string`.",
     tags: ["generics", "inference", "arrays"]
   },
@@ -367,12 +367,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "Which generic function correctly accepts two values of the same type?",
     options: [
-      { id: "A", text: "function pair<T>(a: T, b: T): [T, T] { return [a, b]; }" },
-      { id: "B", text: "function pair<T>(a: T, b: number): [T, T] { return [a, b]; }" },
-      { id: "C", text: "function pair<T>(a: T): [T, T] { return [a, a]; }" },
-      { id: "D", text: "function pair<T>(a: any, b: any): T[] { return [a, b]; }" }
+      { id: "A", text: "function pair<T>(a: T, b: number): [T, T] { return [a, b]; }" },
+      { id: "B", text: "function pair<T>(a: T): [T, T] { return [a, a]; }" },
+      { id: "C", text: "function pair<T>(a: any, b: any): T[] { return [a, b]; }" },
+      { id: "D", text: "function pair<T>(a: T, b: T): [T, T] { return [a, b]; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Using T for both parameters establishes that both arguments should share the same inferred type.",
     tags: ["generics", "tuples", "type-relationships"]
   },
@@ -403,12 +403,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "Which function correctly models a key-value pair with independent key and value types?",
     options: [
-      { id: "A", text: "function makePair<K, V>(key: K, value: V): [K, V] { return [key, value]; }" },
-      { id: "B", text: "function makePair<K>(key: K, value: K): [K, K] { return [key, value]; }" },
+      { id: "A", text: "function makePair<K>(key: K, value: K): [K, K] { return [key, value]; }" },
+      { id: "B", text: "function makePair<K, V>(key: K, value: V): [K, V] { return [key, value]; }" },
       { id: "C", text: "function makePair<V>(key: K, value: V): [K, V] { return [key, value]; }" },
       { id: "D", text: "function makePair(key: K, value: V): [K, V] { return [key, value]; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "K and V independently represent the key and value types.",
     tags: ["generics", "multiple-type-parameters", "tuples"]
   },
@@ -421,12 +421,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `keyof` in a generic constraint such as `K extends keyof T`?",
     options: [
-      { id: "A", text: "It restricts K to keys that exist on T" },
-      { id: "B", text: "It converts K into a value" },
-      { id: "C", text: "It makes every property of T optional" },
+      { id: "A", text: "It converts K into a value" },
+      { id: "B", text: "It makes every property of T optional" },
+      { id: "C", text: "It restricts K to keys that exist on T" },
       { id: "D", text: "It restricts T to strings only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`keyof T` produces a union of the known property keys of T, allowing K to be constrained to valid keys.",
     tags: ["generics", "keyof", "constraints"]
   },
@@ -439,12 +439,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Intermediate",
     question: "What does this function provide?\n\n`function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] { return obj[key]; }`",
     options: [
-      { id: "A", text: "A type-safe way to access a property while preserving its specific property type" },
-      { id: "B", text: "A way to access only numeric properties" },
-      { id: "C", text: "A way to turn every property into string" },
-      { id: "D", text: "A runtime reflection API" }
+      { id: "A", text: "A way to access only numeric properties" },
+      { id: "B", text: "A way to turn every property into string" },
+      { id: "C", text: "A runtime reflection API" },
+      { id: "D", text: "A type-safe way to access a property while preserving its specific property type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "K is restricted to valid keys of T, and `T[K]` represents the type of the selected property.",
     tags: ["generics", "keyof", "indexed-access"]
   },
@@ -475,12 +475,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "What is a generic constraint primarily used for?",
     options: [
-      { id: "A", text: "To specify requirements that a generic type argument must satisfy" },
-      { id: "B", text: "To prevent all generic inference" },
+      { id: "A", text: "To prevent all generic inference" },
+      { id: "B", text: "To specify requirements that a generic type argument must satisfy" },
       { id: "C", text: "To make a type parameter runtime-visible" },
       { id: "D", text: "To force every generic type to be identical" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Constraints limit which types may be supplied while allowing the generic to remain reusable.",
     tags: ["generics", "constraints"]
   },
@@ -493,12 +493,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which constraint allows a generic function to call `.toUpperCase()` safely?",
     options: [
-      { id: "A", text: "T extends string" },
-      { id: "B", text: "T extends number" },
-      { id: "C", text: "T extends boolean" },
+      { id: "A", text: "T extends number" },
+      { id: "B", text: "T extends boolean" },
+      { id: "C", text: "T extends string" },
       { id: "D", text: "T extends object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Only a constraint compatible with string guarantees that `.toUpperCase()` exists.",
     tags: ["generics", "constraints", "strings"]
   },
@@ -511,12 +511,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which function correctly constrains its generic parameter to objects containing an `id`?",
     options: [
-      { id: "A", text: "function save<T extends { id: number }>(item: T): T { return item; }" },
-      { id: "B", text: "function save<T implements { id: number }>(item: T): T { return item; }" },
-      { id: "C", text: "function save<T requires { id: number }>(item: T): T { return item; }" },
-      { id: "D", text: "function save<T = { id: number }>(item: T): T { return item; }" }
+      { id: "A", text: "function save<T implements { id: number }>(item: T): T { return item; }" },
+      { id: "B", text: "function save<T requires { id: number }>(item: T): T { return item; }" },
+      { id: "C", text: "function save<T = { id: number }>(item: T): T { return item; }" },
+      { id: "D", text: "function save<T extends { id: number }>(item: T): T { return item; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Generic constraints use `extends`, and the structural constraint guarantees the required `id` property.",
     tags: ["generics", "constraints"]
   },
@@ -547,12 +547,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Consider `function wrap<T>(value: T): T[] { return [value]; }`. What is the return type of `wrap({ id: 1 })`?",
     options: [
-      { id: "A", text: "{ id: number }[]" },
-      { id: "B", text: "object" },
+      { id: "A", text: "object" },
+      { id: "B", text: "{ id: number }[]" },
       { id: "C", text: "number[]" },
       { id: "D", text: "any[]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "T is inferred from the object argument, so the function returns an array containing that same object shape.",
     tags: ["generics", "inference", "arrays"]
   },
@@ -565,12 +565,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which generic signature best represents a function that transforms a value of type T into a value of type U?",
     options: [
-      { id: "A", text: "function mapValue<T, U>(value: T, transform: (value: T) => U): U" },
-      { id: "B", text: "function mapValue<T>(value: T, transform: string): T" },
-      { id: "C", text: "function mapValue<U>(value: T, transform: U): T" },
+      { id: "A", text: "function mapValue<T>(value: T, transform: string): T" },
+      { id: "B", text: "function mapValue<U>(value: T, transform: U): T" },
+      { id: "C", text: "function mapValue<T, U>(value: T, transform: (value: T) => U): U" },
       { id: "D", text: "function mapValue<T, U>(value: T): T { return value; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "T represents the input type and U represents the transformed output type.",
     tags: ["generics", "higher-order-functions", "type-relationships"]
   },
@@ -583,12 +583,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Why can a generic callback type be more precise than `(value: any) => any`?",
     options: [
-      { id: "A", text: "It preserves relationships between the callback input and output types" },
-      { id: "B", text: "It automatically validates data at runtime" },
-      { id: "C", text: "It prevents callbacks from being called" },
-      { id: "D", text: "It removes all type inference" }
+      { id: "A", text: "It automatically validates data at runtime" },
+      { id: "B", text: "It prevents callbacks from being called" },
+      { id: "C", text: "It removes all type inference" },
+      { id: "D", text: "It preserves relationships between the callback input and output types" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Generics allow callback signatures to express how one type relates to another without abandoning static type information.",
     tags: ["generics", "callbacks", "type-safety"]
   },
@@ -637,12 +637,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which generic constraint allows indexing an object using a key parameter?",
     options: [
-      { id: "A", text: "K extends keyof T" },
-      { id: "B", text: "K extends typeof T" },
-      { id: "C", text: "K extends valueof T" },
+      { id: "A", text: "K extends typeof T" },
+      { id: "B", text: "K extends valueof T" },
+      { id: "C", text: "K extends keyof T" },
       { id: "D", text: "K extends properties T" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`keyof T` produces the keys of T, and constraining K with it ensures the key is valid for that object type.",
     tags: ["generics", "keyof", "constraints"]
   },
@@ -656,11 +656,11 @@ const typescriptFunctionsGenericsQuestions = [
     question: "What does `T[K]` represent when `K extends keyof T`?",
     options: [
       { id: "A", text: "The runtime value of K" },
-      { id: "B", text: "The type of the property selected by K on T" },
-      { id: "C", text: "All keys of T" },
-      { id: "D", text: "A boolean indicating whether K exists" }
+      { id: "B", text: "All keys of T" },
+      { id: "C", text: "A boolean indicating whether K exists" },
+      { id: "D", text: "The type of the property selected by K on T" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`T[K]` is an indexed access type that retrieves the type associated with property key K in T.",
     tags: ["generics", "indexed-access", "keyof"]
   },
@@ -691,12 +691,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "What problem does this constraint solve?\n\n`function sortBy<T, K extends keyof T>(items: T[], key: K)`",
     options: [
-      { id: "A", text: "It prevents callers from specifying a property that does not exist on T" },
-      { id: "B", text: "It forces all T properties to be numbers" },
+      { id: "A", text: "It forces all T properties to be numbers" },
+      { id: "B", text: "It prevents callers from specifying a property that does not exist on T" },
       { id: "C", text: "It converts K into a runtime string" },
       { id: "D", text: "It prevents arrays from being passed" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "K can only be one of T's known keys, so invalid property names are rejected by the type system.",
     tags: ["generics", "keyof", "constraints"]
   },
@@ -711,10 +711,10 @@ const typescriptFunctionsGenericsQuestions = [
     options: [
       { id: "A", text: "A constraint can require certain properties" },
       { id: "B", text: "A constraint can use another type parameter" },
-      { id: "C", text: "A constrained type parameter can still represent many concrete types" },
-      { id: "D", text: "A constraint means T must be exactly equal to the constraint type" }
+      { id: "C", text: "A constraint means T must be exactly equal to the constraint type" },
+      { id: "D", text: "A constrained type parameter can still represent many concrete types" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "A constraint specifies a minimum requirement. T may be a more specific subtype that satisfies the constraint.",
     tags: ["generics", "constraints"]
   },
@@ -727,12 +727,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which function signature correctly models a callback that receives T and returns U?",
     options: [
-      { id: "A", text: "function transform<T, U>(value: T, callback: (input: T) => U): U" },
-      { id: "B", text: "function transform<T, U>(value: T, callback: U): T" },
-      { id: "C", text: "function transform<T>(value: T, callback: U): U" },
-      { id: "D", text: "function transform<T, U>(value: U, callback: (input: T) => T): T" }
+      { id: "A", text: "function transform<T, U>(value: T, callback: U): T" },
+      { id: "B", text: "function transform<T>(value: T, callback: U): U" },
+      { id: "C", text: "function transform<T, U>(value: U, callback: (input: T) => T): T" },
+      { id: "D", text: "function transform<T, U>(value: T, callback: (input: T) => U): U" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The callback consumes T and produces U, so the overall function also returns U.",
     tags: ["generics", "callbacks", "type-relationships"]
   },
@@ -763,12 +763,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which declaration uses a default generic type parameter correctly?",
     options: [
-      { id: "A", text: "function createBox<T = string>(value: T): T { return value; }" },
-      { id: "B", text: "function createBox<T: string>(value: T): T { return value; }" },
+      { id: "A", text: "function createBox<T: string>(value: T): T { return value; }" },
+      { id: "B", text: "function createBox<T = string>(value: T): T { return value; }" },
       { id: "C", text: "function createBox<T default string>(value: T): T { return value; }" },
       { id: "D", text: "function createBox<T == string>(value: T): T { return value; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Generic defaults use the `=` syntax: `<T = string>`.",
     tags: ["generics", "default-type-parameters"]
   },
@@ -781,12 +781,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Why might a developer choose a generic over several overloads for a simple identity-like function?",
     options: [
-      { id: "A", text: "A generic can express the relationship once without listing every possible concrete type" },
-      { id: "B", text: "Generics are always shorter than every function" },
-      { id: "C", text: "Overloads cannot return values" },
+      { id: "A", text: "Generics are always shorter than every function" },
+      { id: "B", text: "Overloads cannot return values" },
+      { id: "C", text: "A generic can express the relationship once without listing every possible concrete type" },
       { id: "D", text: "Generics execute faster at runtime" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Generics can capture a reusable relationship between input and output types without enumerating every possible type.",
     tags: ["generics", "overloads", "design"]
   },
@@ -799,12 +799,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "What is a major advantage of generic constraints over using `any` when a function needs specific members?",
     options: [
-      { id: "A", text: "Constraints preserve type safety while guaranteeing the members the implementation needs" },
-      { id: "B", text: "Constraints disable all checking" },
-      { id: "C", text: "Constraints create runtime validation automatically" },
-      { id: "D", text: "Constraints make every argument a string" }
+      { id: "A", text: "Constraints disable all checking" },
+      { id: "B", text: "Constraints create runtime validation automatically" },
+      { id: "C", text: "Constraints make every argument a string" },
+      { id: "D", text: "Constraints preserve type safety while guaranteeing the members the implementation needs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A constraint tells TypeScript what the generic must support, allowing safe member access without abandoning the specific type.",
     tags: ["generics", "constraints", "any", "type-safety"]
   },
@@ -835,12 +835,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which design best represents a function that accepts an object and a valid property key, then returns that property's value?",
     options: [
-      { id: "A", text: "function pick<T, K extends keyof T>(obj: T, key: K): T[K]" },
-      { id: "B", text: "function pick<T>(obj: T, key: string): T" },
+      { id: "A", text: "function pick<T>(obj: T, key: string): T" },
+      { id: "B", text: "function pick<T, K extends keyof T>(obj: T, key: K): T[K]" },
       { id: "C", text: "function pick<T>(obj: object, key: any): object" },
       { id: "D", text: "function pick<K>(obj: K, key: K): K[]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "This pattern combines generics, `keyof`, and indexed access to preserve the exact relationship between the object, key, and returned property type.",
     tags: ["generics", "keyof", "indexed-access"]
   },
@@ -853,12 +853,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes generic inference?",
     options: [
-      { id: "A", text: "TypeScript can often determine generic type arguments from the function's arguments" },
-      { id: "B", text: "Generic arguments must always be manually specified" },
-      { id: "C", text: "Generic inference happens only at runtime" },
+      { id: "A", text: "Generic arguments must always be manually specified" },
+      { id: "B", text: "Generic inference happens only at runtime" },
+      { id: "C", text: "TypeScript can often determine generic type arguments from the function's arguments" },
       { id: "D", text: "Generic inference always produces any" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "TypeScript frequently infers generic parameters from the values passed to a function.",
     tags: ["generics", "inference"]
   },
@@ -871,12 +871,12 @@ const typescriptFunctionsGenericsQuestions = [
     difficulty: "Advanced",
     question: "What is the strongest reason to avoid unnecessarily using `any` in generic utility functions?",
     options: [
-      { id: "A", text: "It can erase relationships and guarantees that generics can preserve" },
-      { id: "B", text: "It makes JavaScript syntax invalid" },
-      { id: "C", text: "It prevents functions from accepting objects" },
-      { id: "D", text: "It always causes a runtime exception" }
+      { id: "A", text: "It makes JavaScript syntax invalid" },
+      { id: "B", text: "It prevents functions from accepting objects" },
+      { id: "C", text: "It always causes a runtime exception" },
+      { id: "D", text: "It can erase relationships and guarantees that generics can preserve" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Generics allow utilities to remain flexible while preserving useful type relationships. `any` often discards that information.",
     tags: ["generics", "any", "type-safety"]
   },

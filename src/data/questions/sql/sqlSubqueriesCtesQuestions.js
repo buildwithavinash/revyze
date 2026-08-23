@@ -1,18 +1,18 @@
 const sqlSubqueriesCtesQuestions = [
   {
     id: "sql-subqueries-ctes-q-001",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 1,
     type: "mcq",
     difficulty: "Intermediate",
     question: "What is a subquery?",
     options: [
-      { id: "A", text: "A query nested inside another SQL query" },
-      { id: "B", text: "A database backup" },
-      { id: "C", text: "A query that can only contain SELECT *" },
-      { id: "D", text: "A temporary database server" }
+      { id: "A", text: "A database backup" },
+      { id: "B", text: "A query that can only contain SELECT *" },
+      { id: "C", text: "A temporary database server" },
+      { id: "D", text: "A query nested inside another SQL query" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation:
       "A subquery is a query embedded inside another SQL statement and can be used in places such as WHERE, FROM, or SELECT.",
     tags: ["subquery", "fundamentals"]
@@ -20,18 +20,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-002",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 2,
     type: "mcq",
     difficulty: "Intermediate",
     question: "Where can a subquery commonly appear?",
     options: [
-      { id: "A", text: "Only inside ORDER BY" },
-      { id: "B", text: "Only inside INSERT" },
-      { id: "C", text: "In places such as WHERE, FROM, and SELECT depending on the query" },
+      { id: "A", text: "In places such as WHERE, FROM, and SELECT depending on the query" },
+      { id: "B", text: "Only inside ORDER BY" },
+      { id: "C", text: "Only inside INSERT" },
       { id: "D", text: "Only inside CREATE TABLE" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation:
       "Subqueries can be used in several parts of SQL statements depending on their purpose and the SQL dialect.",
     tags: ["subquery", "syntax"]
@@ -39,7 +39,7 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-003",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 3,
     type: "mcq",
     difficulty: "Intermediate",
@@ -59,18 +59,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-004",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 4,
     type: "mcq",
     difficulty: "Intermediate",
     question: "What is a scalar subquery?",
     options: [
-      { id: "A", text: "A subquery that returns exactly one value" },
-      { id: "B", text: "A subquery that must return an entire table" },
-      { id: "C", text: "A query containing only numeric columns" },
+      { id: "A", text: "A subquery that must return an entire table" },
+      { id: "B", text: "A query containing only numeric columns" },
+      { id: "C", text: "A subquery that returns exactly one value" },
       { id: "D", text: "A query that cannot be nested" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation:
       "A scalar subquery returns a single value and can often be used where a single expression is expected.",
     tags: ["subquery", "scalar"]
@@ -78,18 +78,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-005",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 5,
     type: "mcq",
     difficulty: "Intermediate",
     question: "Which operator is commonly used when a subquery returns multiple possible values?",
     options: [
       { id: "A", text: "EQUALS ONLY" },
-      { id: "B", text: "IN" },
-      { id: "C", text: "SINGLE" },
-      { id: "D", text: "MATCH ONE" }
+      { id: "B", text: "SINGLE" },
+      { id: "C", text: "MATCH ONE" },
+      { id: "D", text: "IN" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation:
       "IN checks whether a value matches any value returned by a subquery or listed set.",
     tags: ["subquery", "in"]
@@ -97,19 +97,19 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-006",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 6,
     type: "mcq",
     difficulty: "Intermediate",
     question:
       "What does EXISTS check?",
     options: [
-      { id: "A", text: "Whether a database contains any tables" },
-      { id: "B", text: "Whether a subquery returns at least one row" },
+      { id: "A", text: "Whether a subquery returns at least one row" },
+      { id: "B", text: "Whether a database contains any tables" },
       { id: "C", text: "Whether a column is numeric" },
       { id: "D", text: "Whether every row is unique" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation:
       "EXISTS evaluates whether its subquery produces at least one row.",
     tags: ["exists", "subquery"]
@@ -117,18 +117,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-007",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 7,
     type: "mcq",
     difficulty: "Intermediate",
     question: "What is a correlated subquery?",
     options: [
-      { id: "A", text: "A subquery that references a column from the outer query" },
-      { id: "B", text: "A subquery that cannot contain WHERE" },
+      { id: "A", text: "A subquery that cannot contain WHERE" },
+      { id: "B", text: "A subquery that references a column from the outer query" },
       { id: "C", text: "A subquery that always returns one row" },
       { id: "D", text: "A subquery that creates a new database" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation:
       "A correlated subquery references values from the outer query, meaning its result can depend on the current outer row.",
     tags: ["correlated-subquery", "subquery"]
@@ -136,7 +136,7 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-008",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 8,
     type: "mcq",
     difficulty: "Advanced",
@@ -156,18 +156,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-009",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 9,
     type: "mcq",
     difficulty: "Intermediate",
     question: "What does CTE stand for?",
     options: [
-      { id: "A", text: "Common Table Expression" },
-      { id: "B", text: "Computed Table Engine" },
-      { id: "C", text: "Central Transaction Expression" },
-      { id: "D", text: "Common Transaction Endpoint" }
+      { id: "A", text: "Computed Table Engine" },
+      { id: "B", text: "Central Transaction Expression" },
+      { id: "C", text: "Common Transaction Endpoint" },
+      { id: "D", text: "Common Table Expression" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation:
       "CTE stands for Common Table Expression and is introduced using the WITH clause.",
     tags: ["cte", "with"]
@@ -175,18 +175,18 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-010",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 10,
     type: "mcq",
     difficulty: "Intermediate",
     question: "Which keyword is used to define a CTE?",
     options: [
-      { id: "A", text: "TEMP" },
-      { id: "B", text: "WITH" },
+      { id: "A", text: "WITH" },
+      { id: "B", text: "TEMP" },
       { id: "C", text: "DEFINE" },
       { id: "D", text: "CTE" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation:
       "A CTE is introduced with the WITH keyword before the main query.",
     tags: ["cte", "with"]
@@ -194,31 +194,19 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-011",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 11,
     type: "mcq",
     difficulty: "Intermediate",
     question:
       "Which query correctly defines and uses a CTE?",
     options: [
-      {
-        id: "A",
-        text: "WITH active_users AS (SELECT * FROM users WHERE active = true) SELECT * FROM active_users;"
-      },
-      {
-        id: "B",
-        text: "CTE active_users = SELECT * FROM users;"
-      },
-      {
-        id: "C",
-        text: "CREATE CTE active_users FROM users;"
-      },
-      {
-        id: "D",
-        text: "SELECT WITH active_users FROM users;"
-      }
+      { id: "A", text: "CTE active_users = SELECT * FROM users;" },
+      { id: "B", text: "WITH active_users AS (SELECT * FROM users WHERE active = true) SELECT * FROM active_users;" },
+      { id: "C", text: "CREATE CTE active_users FROM users;" },
+      { id: "D", text: "SELECT WITH active_users FROM users;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation:
       "The WITH clause defines the CTE, which can then be referenced by the main query.",
     tags: ["cte", "syntax"]
@@ -226,7 +214,7 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-012",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 12,
     type: "mcq",
     difficulty: "Advanced",
@@ -245,7 +233,7 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-013",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 13,
     type: "mcq",
     difficulty: "Advanced",
@@ -265,7 +253,7 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-014",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 14,
     type: "mcq",
     difficulty: "Advanced",
@@ -285,19 +273,19 @@ const sqlSubqueriesCtesQuestions = [
 
   {
     id: "sql-subqueries-ctes-q-015",
-    quizId: "quiz_sql_subqueries_ctes",
+    quizId: "quiz_sql_subqueries",
     order: 15,
     type: "mcq",
     difficulty: "Advanced",
     question:
       "What is a common mistake when using a scalar subquery with an operator such as `=`?",
     options: [
-      { id: "A", text: "The subquery returns more than one row when only one value is expected" },
-      { id: "B", text: "The subquery contains a SELECT statement" },
+      { id: "A", text: "The subquery contains a SELECT statement" },
+      { id: "B", text: "The subquery returns more than one row when only one value is expected" },
       { id: "C", text: "The subquery uses a WHERE clause" },
       { id: "D", text: "The outer query contains a table name" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation:
       "A scalar subquery used with `=` must produce a single value. If it returns multiple rows, the query can fail depending on the database system.",
     tags: ["subquery", "scalar", "common-mistakes"]

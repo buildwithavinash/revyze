@@ -8,11 +8,11 @@ const typescriptAllInOneQuestions = [
     question: "What is the primary purpose of TypeScript?",
     options: [
       { id: "A", text: "To replace JavaScript with a completely different runtime" },
-      { id: "B", text: "To add static type checking and other developer tooling on top of JavaScript" },
-      { id: "C", text: "To make JavaScript run only in browsers" },
+      { id: "B", text: "To make JavaScript run only in browsers" },
+      { id: "C", text: "To add static type checking and other developer tooling on top of JavaScript" },
       { id: "D", text: "To prevent JavaScript from using objects" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "TypeScript extends JavaScript with a type system and tooling that can catch many problems during development before the code runs.",
     tags: ["typescript", "types", "fundamentals"]
   },
@@ -25,12 +25,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is type inference in TypeScript?",
     options: [
-      { id: "A", text: "TypeScript automatically determines a type from available code information" },
-      { id: "B", text: "TypeScript converts every value to string" },
-      { id: "C", text: "TypeScript requires every variable to have an explicit annotation" },
-      { id: "D", text: "TypeScript removes all types during compilation" }
+      { id: "A", text: "TypeScript converts every value to string" },
+      { id: "B", text: "TypeScript requires every variable to have an explicit annotation" },
+      { id: "C", text: "TypeScript removes all types during compilation" },
+      { id: "D", text: "TypeScript automatically determines a type from available code information" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "TypeScript can often infer a variable's type from its initializer or surrounding context, reducing the need for explicit annotations.",
     tags: ["type-inference", "fundamentals"]
   },
@@ -43,12 +43,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What type does TypeScript infer for `age`?",
     options: [
-      { id: "A", text: "string" },
-      { id: "B", text: "any" },
-      { id: "C", text: "number" },
+      { id: "A", text: "number" },
+      { id: "B", text: "string" },
+      { id: "C", text: "any" },
       { id: "D", text: "unknown" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The numeric literal `23` causes TypeScript to infer `age` as a number.",
     tags: ["type-inference", "primitive-types"]
   },
@@ -62,11 +62,11 @@ const typescriptAllInOneQuestions = [
     question: "Which TypeScript type represents a JavaScript string value?",
     options: [
       { id: "A", text: "String" },
-      { id: "B", text: "text" },
-      { id: "C", text: "str" },
-      { id: "D", text: "string" }
+      { id: "B", text: "string" },
+      { id: "C", text: "text" },
+      { id: "D", text: "str" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "B",
     explanation: "The primitive TypeScript type for JavaScript strings is lowercase `string`.",
     tags: ["primitive-types", "string"]
   },
@@ -79,12 +79,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which type is generally preferable to `any` when you receive a value whose type is not yet known?",
     options: [
-      { id: "A", text: "unknown" },
-      { id: "B", text: "never" },
-      { id: "C", text: "void" },
+      { id: "A", text: "never" },
+      { id: "B", text: "void" },
+      { id: "C", text: "unknown" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`unknown` can hold any value but requires appropriate type narrowing before most operations, making it safer than `any`.",
     tags: ["unknown", "any", "type-safety"]
   },
@@ -98,11 +98,11 @@ const typescriptAllInOneQuestions = [
     question: "Why can `any` reduce TypeScript's safety?",
     options: [
       { id: "A", text: "It makes values immutable" },
-      { id: "B", text: "It disables many type-checking restrictions for the value" },
-      { id: "C", text: "It prevents functions from being called" },
-      { id: "D", text: "It only allows numbers" }
+      { id: "B", text: "It prevents functions from being called" },
+      { id: "C", text: "It only allows numbers" },
+      { id: "D", text: "It disables many type-checking restrictions for the value" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Once a value is typed as `any`, TypeScript generally allows operations that would otherwise require type checking.",
     tags: ["any", "type-safety"]
   },
@@ -115,12 +115,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does the union type `string | number` mean?",
     options: [
-      { id: "A", text: "The value must simultaneously be both a string and a number" },
-      { id: "B", text: "The value can be either a string or a number" },
+      { id: "A", text: "The value can be either a string or a number" },
+      { id: "B", text: "The value must simultaneously be both a string and a number" },
       { id: "C", text: "The value can only be null" },
       { id: "D", text: "The value is automatically converted between both types" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A union type allows a value to belong to one of several specified types.",
     tags: ["union-types", "type-system"]
   },
@@ -134,11 +134,11 @@ const typescriptAllInOneQuestions = [
     question: "What is the purpose of type narrowing?",
     options: [
       { id: "A", text: "To reduce the number of files in a project" },
-      { id: "B", text: "To remove all union types from the source code" },
-      { id: "C", text: "To allow TypeScript to determine a more specific type within a particular code path" },
+      { id: "B", text: "To allow TypeScript to determine a more specific type within a particular code path" },
+      { id: "C", text: "To remove all union types from the source code" },
       { id: "D", text: "To convert TypeScript into JavaScript manually" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Narrowing uses control-flow information such as `typeof`, equality checks, or custom type guards to determine a more specific type.",
     tags: ["narrowing", "union-types"]
   },
@@ -151,12 +151,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does TypeScript know about `value` inside the `if` block?",
     options: [
-      { id: "A", text: "It is narrowed to string" },
-      { id: "B", text: "It is narrowed to boolean" },
-      { id: "C", text: "It is narrowed to number" },
+      { id: "A", text: "It is narrowed to boolean" },
+      { id: "B", text: "It is narrowed to number" },
+      { id: "C", text: "It is narrowed to string" },
       { id: "D", text: "It remains exactly `string | number`" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `typeof value === \"string\"` check narrows the union to `string` inside that branch.",
     tags: ["narrowing", "typeof"]
   },
@@ -241,12 +241,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does an intersection type such as `A & B` represent?",
     options: [
-      { id: "A", text: "A value that must satisfy both type A and type B" },
-      { id: "B", text: "A value that satisfies either A or B" },
-      { id: "C", text: "A value that must be null" },
-      { id: "D", text: "A type that can never contain properties" }
+      { id: "A", text: "A value that satisfies either A or B" },
+      { id: "B", text: "A value that must be null" },
+      { id: "C", text: "A type that can never contain properties" },
+      { id: "D", text: "A value that must satisfy both type A and type B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An intersection combines multiple types, requiring the resulting value to satisfy the members of all intersected types.",
     tags: ["intersection-types", "type-aliases"]
   },
@@ -259,12 +259,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What problem do generics primarily solve?",
     options: [
-      { id: "A", text: "They eliminate the need for JavaScript" },
-      { id: "B", text: "They allow reusable code to work with different types while preserving type information" },
+      { id: "A", text: "They allow reusable code to work with different types while preserving type information" },
+      { id: "B", text: "They eliminate the need for JavaScript" },
       { id: "C", text: "They make every value type `any`" },
       { id: "D", text: "They only work with classes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Generics allow reusable functions, types, classes, and other constructs to operate over different types while maintaining relationships between those types.",
     tags: ["generics", "type-safety"]
   },
@@ -278,11 +278,11 @@ const typescriptAllInOneQuestions = [
     question: "What type does `result` have when calling `identity(42)`?",
     options: [
       { id: "A", text: "string" },
-      { id: "B", text: "any" },
-      { id: "C", text: "unknown" },
-      { id: "D", text: "number" }
+      { id: "B", text: "number" },
+      { id: "C", text: "any" },
+      { id: "D", text: "unknown" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "B",
     explanation: "The generic type parameter is inferred from the argument, so `T` becomes `number` and the result is typed as `number`.",
     tags: ["generics", "inference"]
   },
@@ -295,12 +295,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `keyof User` produce conceptually?",
     options: [
-      { id: "A", text: "A union of the property keys of User" },
-      { id: "B", text: "An array containing every User object" },
-      { id: "C", text: "The runtime values of User" },
+      { id: "A", text: "An array containing every User object" },
+      { id: "B", text: "The runtime values of User" },
+      { id: "C", text: "A union of the property keys of User" },
       { id: "D", text: "A new interface named User" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`keyof` produces a union of the known property keys of a type.",
     tags: ["keyof", "generics", "type-operators"]
   },
@@ -314,11 +314,11 @@ const typescriptAllInOneQuestions = [
     question: "What does `typeof` do in a TypeScript type position?",
     options: [
       { id: "A", text: "It always performs JavaScript runtime type checking" },
-      { id: "B", text: "It can obtain the type of an existing value for use in a type expression" },
-      { id: "C", text: "It converts a value into a string" },
-      { id: "D", text: "It creates a new interface" }
+      { id: "B", text: "It converts a value into a string" },
+      { id: "C", text: "It creates a new interface" },
+      { id: "D", text: "It can obtain the type of an existing value for use in a type expression" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "In a type context, `typeof` can derive a type from an existing value, such as `typeof config`.",
     tags: ["typeof", "type-operators"]
   },
@@ -331,12 +331,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a type assertion?",
     options: [
-      { id: "A", text: "A runtime conversion that changes the underlying JavaScript value" },
-      { id: "B", text: "A way to tell TypeScript how you want a value to be treated when you have more specific type knowledge" },
+      { id: "A", text: "A way to tell TypeScript how you want a value to be treated when you have more specific type knowledge" },
+      { id: "B", text: "A runtime conversion that changes the underlying JavaScript value" },
       { id: "C", text: "A way to make every value immutable" },
       { id: "D", text: "A replacement for interfaces" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A type assertion affects TypeScript's understanding of a value but does not perform runtime conversion.",
     tags: ["type-assertions", "type-system"]
   },
@@ -349,12 +349,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which syntax is a valid TypeScript type assertion?",
     options: [
-      { id: "A", text: "value as string" },
-      { id: "B", text: "assert value string" },
+      { id: "A", text: "assert value string" },
+      { id: "B", text: "value as string" },
       { id: "C", text: "value => string" },
       { id: "D", text: "value type string" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `as` syntax is commonly used for TypeScript type assertions.",
     tags: ["type-assertions"]
   },
@@ -368,11 +368,11 @@ const typescriptAllInOneQuestions = [
     question: "What is a tuple in TypeScript?",
     options: [
       { id: "A", text: "An object with no properties" },
-      { id: "B", text: "An array type with a known number and types of elements at specific positions" },
-      { id: "C", text: "A union of every primitive type" },
+      { id: "B", text: "A union of every primitive type" },
+      { id: "C", text: "An array type with a known number and types of elements at specific positions" },
       { id: "D", text: "A function with multiple return values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Tuples describe arrays with a fixed positional structure, such as `[string, number]`.",
     tags: ["tuples", "arrays"]
   },
@@ -386,11 +386,11 @@ const typescriptAllInOneQuestions = [
     question: "Which type represents an array of numbers?",
     options: [
       { id: "A", text: "number{}" },
-      { id: "B", text: "Array<number>" },
-      { id: "C", text: "number()" },
-      { id: "D", text: "numbers[]" }
+      { id: "B", text: "number()" },
+      { id: "C", text: "numbers[]" },
+      { id: "D", text: "Array<number>" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`Array<number>` is the generic array syntax for an array whose elements are numbers. `number[]` is an equivalent shorthand.",
     tags: ["arrays", "generics"]
   },
@@ -403,12 +403,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does the `never` type generally represent?",
     options: [
-      { id: "A", text: "A value that can be any type" },
-      { id: "B", text: "A value that is always undefined" },
-      { id: "C", text: "A value that never occurs, often seen in functions that never successfully return" },
+      { id: "A", text: "A value that never occurs, often seen in functions that never successfully return" },
+      { id: "B", text: "A value that can be any type" },
+      { id: "C", text: "A value that is always undefined" },
       { id: "D", text: "A nullable value" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`never` represents impossible values or code paths that cannot complete normally, such as a function that always throws.",
     tags: ["never", "advanced-types"]
   },
@@ -439,12 +439,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is an enum in TypeScript?",
     options: [
-      { id: "A", text: "A construct for defining a set of named constants" },
-      { id: "B", text: "A replacement for every interface" },
-      { id: "C", text: "A special kind of generic function" },
+      { id: "A", text: "A replacement for every interface" },
+      { id: "B", text: "A special kind of generic function" },
+      { id: "C", text: "A construct for defining a set of named constants" },
       { id: "D", text: "A JavaScript module loader" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Enums provide a way to define named constants, though many modern TypeScript codebases also use unions of literal types for similar modeling needs.",
     tags: ["enums", "literal-types"]
   },
@@ -458,11 +458,11 @@ const typescriptAllInOneQuestions = [
     question: "What is a string literal type?",
     options: [
       { id: "A", text: "A string that can contain any value" },
-      { id: "B", text: "A type representing one or more specific string values" },
-      { id: "C", text: "A runtime string object" },
-      { id: "D", text: "A string that cannot be changed at runtime" }
+      { id: "B", text: "A runtime string object" },
+      { id: "C", text: "A string that cannot be changed at runtime" },
+      { id: "D", text: "A type representing one or more specific string values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Literal types restrict a value to specific literal values, such as `'admin' | 'user'`.",
     tags: ["literal-types", "unions"]
   },
@@ -511,12 +511,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does an index signature describe?",
     options: [
-      { id: "A", text: "A type that allows properties accessed through a specified key type" },
-      { id: "B", text: "A database index" },
-      { id: "C", text: "A function's call stack" },
+      { id: "A", text: "A database index" },
+      { id: "B", text: "A function's call stack" },
+      { id: "C", text: "A type that allows properties accessed through a specified key type" },
       { id: "D", text: "A TypeScript compiler option" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Index signatures describe objects where property names are not known ahead of time but follow a specified key/value type relationship.",
     tags: ["index-signatures", "object-types"]
   },
@@ -530,11 +530,11 @@ const typescriptAllInOneQuestions = [
     question: "What does `Partial<T>` do?",
     options: [
       { id: "A", text: "Makes all properties of T required" },
-      { id: "B", text: "Makes all properties of T optional" },
-      { id: "C", text: "Removes every property from T" },
-      { id: "D", text: "Converts T into a union" }
+      { id: "B", text: "Removes every property from T" },
+      { id: "C", text: "Converts T into a union" },
+      { id: "D", text: "Makes all properties of T optional" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`Partial<T>` is a mapped utility type that makes each property of `T` optional.",
     tags: ["utility-types", "partial"]
   },
@@ -565,12 +565,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `Pick<T, K>` produce?",
     options: [
-      { id: "A", text: "A type containing only the selected properties K from T" },
-      { id: "B", text: "A type containing every property except K" },
+      { id: "A", text: "A type containing every property except K" },
+      { id: "B", text: "A type containing only the selected properties K from T" },
       { id: "C", text: "A tuple containing values from T" },
       { id: "D", text: "A runtime copy of T" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Pick` constructs a type by selecting a subset of properties from another type.",
     tags: ["utility-types", "pick"]
   },
@@ -584,11 +584,11 @@ const typescriptAllInOneQuestions = [
     question: "What does `Omit<T, K>` do?",
     options: [
       { id: "A", text: "Selects only K from T" },
-      { id: "B", text: "Removes the specified properties K from T" },
-      { id: "C", text: "Makes every property nullable" },
+      { id: "B", text: "Makes every property nullable" },
+      { id: "C", text: "Removes the specified properties K from T" },
       { id: "D", text: "Converts T to any" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`Omit<T, K>` creates a type by removing the specified keys from `T`.",
     tags: ["utility-types", "omit"]
   },
@@ -601,12 +601,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `Record<K, T>` commonly represent?",
     options: [
-      { id: "A", text: "An object type whose keys are K and whose values are T" },
-      { id: "B", text: "A tuple containing K and T" },
-      { id: "C", text: "A function returning K" },
-      { id: "D", text: "A readonly array" }
+      { id: "A", text: "A tuple containing K and T" },
+      { id: "B", text: "A function returning K" },
+      { id: "C", text: "A readonly array" },
+      { id: "D", text: "An object type whose keys are K and whose values are T" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Record<K, T>` constructs an object type with keys from `K` and values of type `T`.",
     tags: ["utility-types", "record"]
   },
@@ -637,12 +637,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does the `infer` keyword allow inside certain conditional types?",
     options: [
-      { id: "A", text: "It allows TypeScript to infer and capture part of a type for use in the conditional branch" },
-      { id: "B", text: "It forces a runtime conversion" },
+      { id: "A", text: "It forces a runtime conversion" },
+      { id: "B", text: "It allows TypeScript to infer and capture part of a type for use in the conditional branch" },
       { id: "C", text: "It disables type inference" },
       { id: "D", text: "It makes all properties readonly" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`infer` introduces a type variable that TypeScript can infer from a matched type structure.",
     tags: ["infer", "conditional-types"]
   },
@@ -655,12 +655,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is a mapped type?",
     options: [
-      { id: "A", text: "A type that transforms properties of another type by iterating over its keys" },
-      { id: "B", text: "A runtime object mapper" },
-      { id: "C", text: "A JavaScript array method" },
+      { id: "A", text: "A runtime object mapper" },
+      { id: "B", text: "A JavaScript array method" },
+      { id: "C", text: "A type that transforms properties of another type by iterating over its keys" },
       { id: "D", text: "A TypeScript module resolver" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Mapped types create new types by iterating over keys, allowing modifiers and property types to be transformed systematically.",
     tags: ["mapped-types", "advanced-types"]
   },
@@ -674,11 +674,11 @@ const typescriptAllInOneQuestions = [
     question: "What does a generic constraint such as `T extends { id: number }` mean?",
     options: [
       { id: "A", text: "T must be exactly the object `{ id: number }`" },
-      { id: "B", text: "T must have at least the required structure described by `{ id: number }`" },
-      { id: "C", text: "T cannot contain additional properties" },
-      { id: "D", text: "T must be a primitive number" }
+      { id: "B", text: "T cannot contain additional properties" },
+      { id: "C", text: "T must be a primitive number" },
+      { id: "D", text: "T must have at least the required structure described by `{ id: number }`" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A generic constraint restricts what types can be supplied. `T` must be assignable to the constraint but can contain additional properties.",
     tags: ["generics", "constraints"]
   },
@@ -709,12 +709,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `T extends keyof U` communicate in a generic type?",
     options: [
-      { id: "A", text: "T must be a key that exists in U" },
-      { id: "B", text: "T must be an object containing U" },
+      { id: "A", text: "T must be an object containing U" },
+      { id: "B", text: "T must be a key that exists in U" },
       { id: "C", text: "U must be a string" },
       { id: "D", text: "T must equal U" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The constraint means the supplied type for `T` must be assignable to the union of keys produced by `keyof U`.",
     tags: ["generics", "keyof", "constraints"]
   },
@@ -727,12 +727,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is structural typing in TypeScript?",
     options: [
-      { id: "A", text: "Compatibility is primarily determined by the structure and members of types rather than their declared names" },
-      { id: "B", text: "Only class names determine compatibility" },
-      { id: "C", text: "Every type must explicitly extend another type" },
+      { id: "A", text: "Only class names determine compatibility" },
+      { id: "B", text: "Every type must explicitly extend another type" },
+      { id: "C", text: "Compatibility is primarily determined by the structure and members of types rather than their declared names" },
       { id: "D", text: "Types are checked only at runtime" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "TypeScript uses structural typing: if a value has the required compatible members, it can generally be assignable even when the types have different names.",
     tags: ["structural-typing", "type-system"]
   },
@@ -745,12 +745,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `satisfies` provide when used with an expression?",
     options: [
-      { id: "A", text: "It checks that an expression conforms to a type while generally preserving the expression's more specific inferred type" },
-      { id: "B", text: "It converts the expression to the target type at runtime" },
-      { id: "C", text: "It disables excess property checking" },
-      { id: "D", text: "It makes every property optional" }
+      { id: "A", text: "It converts the expression to the target type at runtime" },
+      { id: "B", text: "It disables excess property checking" },
+      { id: "C", text: "It makes every property optional" },
+      { id: "D", text: "It checks that an expression conforms to a type while generally preserving the expression's more specific inferred type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`satisfies` validates compatibility with a type without simply replacing the expression's inferred type in the way a traditional annotation can.",
     tags: ["satisfies", "type-inference", "advanced-types"]
   },
@@ -799,12 +799,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `strictNullChecks` primarily change?",
     options: [
-      { id: "A", text: "It makes null and undefined distinct types that must be handled appropriately" },
-      { id: "B", text: "It disables all strict compiler options" },
-      { id: "C", text: "It converts null into an empty string" },
+      { id: "A", text: "It disables all strict compiler options" },
+      { id: "B", text: "It converts null into an empty string" },
+      { id: "C", text: "It makes null and undefined distinct types that must be handled appropriately" },
       { id: "D", text: "It removes undefined from JavaScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "With `strictNullChecks`, `null` and `undefined` are not freely assignable to unrelated types and often need explicit handling.",
     tags: ["strict-null-checks", "strict-mode"]
   },
@@ -817,12 +817,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of the `noImplicitAny` compiler option?",
     options: [
-      { id: "A", text: "It reports errors when TypeScript would otherwise infer an implicit any in certain locations" },
-      { id: "B", text: "It converts every explicit any into unknown" },
-      { id: "C", text: "It prevents all JavaScript files from compiling" },
-      { id: "D", text: "It disables type inference" }
+      { id: "A", text: "It converts every explicit any into unknown" },
+      { id: "B", text: "It prevents all JavaScript files from compiling" },
+      { id: "C", text: "It disables type inference" },
+      { id: "D", text: "It reports errors when TypeScript would otherwise infer an implicit any in certain locations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`noImplicitAny` helps prevent unintended implicit `any` types by reporting them where TypeScript cannot infer a safer type.",
     tags: ["compiler-options", "any", "strict-mode"]
   },
@@ -853,12 +853,12 @@ const typescriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes TypeScript's type system at runtime?",
     options: [
-      { id: "A", text: "TypeScript types generally do not exist at runtime after compilation to JavaScript" },
-      { id: "B", text: "Every TypeScript type becomes a JavaScript object at runtime" },
+      { id: "A", text: "Every TypeScript type becomes a JavaScript object at runtime" },
+      { id: "B", text: "TypeScript types generally do not exist at runtime after compilation to JavaScript" },
       { id: "C", text: "TypeScript automatically validates all runtime values" },
       { id: "D", text: "Interfaces are automatically available as runtime constructors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Most TypeScript type information is erased during compilation. Runtime validation must be implemented separately when needed.",
     tags: ["type-erasure", "runtime", "fundamentals"]
   },
@@ -872,11 +872,11 @@ const typescriptAllInOneQuestions = [
     question: "Which approach is most appropriate when receiving untrusted JSON and wanting strong TypeScript guarantees?",
     options: [
       { id: "A", text: "Use a type assertion and assume the JSON is correct" },
-      { id: "B", text: "Use runtime validation and then expose the validated result with an appropriate TypeScript type" },
-      { id: "C", text: "Convert the JSON to any immediately" },
+      { id: "B", text: "Convert the JSON to any immediately" },
+      { id: "C", text: "Use runtime validation and then expose the validated result with an appropriate TypeScript type" },
       { id: "D", text: "Disable strict type checking" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "TypeScript alone does not validate runtime JSON. Runtime validation should establish that the data actually matches the expected shape before treating it as trusted.",
     tags: ["runtime-validation", "api", "type-safety"]
   },
@@ -890,11 +890,11 @@ const typescriptAllInOneQuestions = [
     question: "A React API function receives unknown data, needs to return only objects containing `id` and `name`, and should remain reusable for different object types. Which TypeScript concepts are most directly useful?",
     options: [
       { id: "A", text: "any, enum, and type assertions only" },
-      { id: "B", text: "Generics, constraints, and type-safe narrowing or validation" },
-      { id: "C", text: "Only readonly properties" },
-      { id: "D", text: "Only tuples and enums" }
+      { id: "B", text: "Only readonly properties" },
+      { id: "C", text: "Only tuples and enums" },
+      { id: "D", text: "Generics, constraints, and type-safe narrowing or validation" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Generics can preserve the relationship between input and output types, constraints can require fields such as `id` and `name`, and narrowing or runtime validation can establish what the unknown data actually contains.",
     tags: ["generics", "constraints", "unknown", "api", "react"]
   }

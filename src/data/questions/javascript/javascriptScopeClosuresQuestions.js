@@ -25,12 +25,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "Which scope exists for code declared outside functions and blocks in a normal script?",
     options: [
-      { id: "A", text: "Global scope" },
-      { id: "B", text: "Function scope" },
+      { id: "A", text: "Function scope" },
+      { id: "B", text: "Global scope" },
       { id: "C", text: "Local scope" },
       { id: "D", text: "Parameter scope" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Code at the top level of a classic script is in the global scope.",
     tags: ["global-scope", "scope"]
   },
@@ -43,12 +43,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst message = \"Hello\";\n\nfunction greet() {\n  console.log(message);\n}\n\ngreet();",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "ReferenceError" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "Hello" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The function does not have a local `message`, so JavaScript looks outward and finds the variable in the outer scope.",
     tags: ["scope-chain", "lexical-scope"]
   },
@@ -61,12 +61,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What happens?\n\nfunction test() {\n  const secret = 42;\n}\n\nconsole.log(secret);",
     options: [
-      { id: "A", text: "ReferenceError" },
-      { id: "B", text: "42" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "null" }
+      { id: "A", text: "42" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "null" },
+      { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`secret` is declared inside `test`, so it belongs to that function's scope and cannot be accessed from outside.",
     tags: ["function-scope", "local-scope"]
   },
@@ -97,12 +97,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst x = 10;\n\nfunction outer() {\n  const x = 20;\n  console.log(x);\n}\n\nouter();",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "10" },
+      { id: "A", text: "10" },
+      { id: "B", text: "20" },
       { id: "C", text: "30" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The function has its own `x`, which shadows the outer `x`. Name lookup finds the nearest matching declaration.",
     tags: ["scope", "shadowing"]
   },
@@ -115,12 +115,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is variable shadowing?",
     options: [
-      { id: "A", text: "A declaration in an inner scope uses the same name as a declaration in an outer scope." },
-      { id: "B", text: "A variable is automatically deleted." },
-      { id: "C", text: "A variable changes from one type to another." },
+      { id: "A", text: "A variable is automatically deleted." },
+      { id: "B", text: "A variable changes from one type to another." },
+      { id: "C", text: "A declaration in an inner scope uses the same name as a declaration in an outer scope." },
       { id: "D", text: "A function is called recursively." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An inner declaration with the same identifier hides the outer declaration within the inner scope.",
     tags: ["shadowing", "scope"]
   },
@@ -133,12 +133,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nlet value = \"outer\";\n\n{\n  let value = \"inner\";\n  console.log(value);\n}\n\nconsole.log(value);",
     options: [
-      { id: "A", text: "inner, then outer" },
-      { id: "B", text: "outer, then inner" },
-      { id: "C", text: "inner, then inner" },
-      { id: "D", text: "ReferenceError" }
+      { id: "A", text: "outer, then inner" },
+      { id: "B", text: "inner, then inner" },
+      { id: "C", text: "ReferenceError" },
+      { id: "D", text: "inner, then outer" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The block has its own `value`. Inside the block it shadows the outer variable, but outside the block the outer variable remains visible.",
     tags: ["block-scope", "let", "shadowing"]
   },
@@ -169,12 +169,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What happens?\n\nif (true) {\n  let count = 5;\n}\n\nconsole.log(count);",
     options: [
-      { id: "A", text: "ReferenceError" },
-      { id: "B", text: "5" },
+      { id: "A", text: "5" },
+      { id: "B", text: "ReferenceError" },
       { id: "C", text: "undefined" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`count` is block-scoped because it was declared with `let`. The declaration is not accessible outside the `if` block.",
     tags: ["block-scope", "let"]
   },
@@ -187,12 +187,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nif (true) {\n  var count = 5;\n}\n\nconsole.log(count);",
     options: [
-      { id: "A", text: "5" },
-      { id: "B", text: "ReferenceError" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "ReferenceError" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "5" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`var` is not block-scoped. In this top-level script example, the variable remains accessible outside the `if` block.",
     tags: ["var", "block-scope", "function-scope"]
   },
@@ -205,12 +205,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What kind of scope does `var` use inside a function?",
     options: [
-      { id: "A", text: "Function scope" },
-      { id: "B", text: "Block scope" },
-      { id: "C", text: "Module scope only" },
-      { id: "D", text: "No scope" }
+      { id: "A", text: "Block scope" },
+      { id: "B", text: "Module scope only" },
+      { id: "C", text: "No scope" },
+      { id: "D", text: "Function scope" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`var` declarations are function-scoped when declared inside a function. They do not become limited to individual blocks within that function.",
     tags: ["var", "function-scope"]
   },
@@ -241,12 +241,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is the scope chain?",
     options: [
-      { id: "A", text: "The hierarchy JavaScript follows when looking for an identifier in the current and outer lexical scopes." },
-      { id: "B", text: "The order in which functions are stored in memory." },
+      { id: "A", text: "The order in which functions are stored in memory." },
+      { id: "B", text: "The hierarchy JavaScript follows when looking for an identifier in the current and outer lexical scopes." },
       { id: "C", text: "The sequence of function calls in a recursive function." },
       { id: "D", text: "The order in which variables are declared." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When JavaScript cannot find an identifier in the current scope, it searches enclosing scopes according to the lexical scope chain.",
     tags: ["scope-chain", "lexical-scope"]
   },
@@ -259,12 +259,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst a = \"global\";\n\nfunction outer() {\n  const b = \"outer\";\n\n  function inner() {\n    console.log(a, b);\n  }\n\n  inner();\n}\n\nouter();",
     options: [
-      { id: "A", text: "global outer" },
-      { id: "B", text: "outer global" },
-      { id: "C", text: "ReferenceError" },
+      { id: "A", text: "outer global" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "global outer" },
       { id: "D", text: "undefined undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`inner` can access both its parent scope's `b` and the global scope's `a` through lexical scope lookup.",
     tags: ["scope-chain", "nested-functions"]
   },
@@ -277,12 +277,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "Which direction does lexical scope access work?",
     options: [
-      { id: "A", text: "An inner scope can access declarations from its outer scopes, but an outer scope cannot directly access declarations exclusive to an inner scope." },
-      { id: "B", text: "Only outer scopes can access inner declarations." },
-      { id: "C", text: "Every scope can access every declaration." },
-      { id: "D", text: "Scope access depends only on execution order." }
+      { id: "A", text: "Only outer scopes can access inner declarations." },
+      { id: "B", text: "Every scope can access every declaration." },
+      { id: "C", text: "Scope access depends only on execution order." },
+      { id: "D", text: "An inner scope can access declarations from its outer scopes, but an outer scope cannot directly access declarations exclusive to an inner scope." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Child scopes can look outward through their scope chain. Parent scopes cannot look inward into child-only declarations.",
     tags: ["scope-chain", "lexical-scope"]
   },
@@ -313,12 +313,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is hoisting commonly used to describe?",
     options: [
-      { id: "A", text: "JavaScript's behavior where certain declarations are processed before normal execution reaches their source position." },
-      { id: "B", text: "Moving every assignment to the top of a file." },
+      { id: "A", text: "Moving every assignment to the top of a file." },
+      { id: "B", text: "JavaScript's behavior where certain declarations are processed before normal execution reaches their source position." },
       { id: "C", text: "Automatically moving all code into functions." },
       { id: "D", text: "Copying variables into global scope." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Hoisting is a general term describing observable behavior around declarations being available or affecting a scope before their textual position is executed.",
     tags: ["hoisting", "scope"]
   },
@@ -331,12 +331,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconsole.log(value);\nvar value = 10;",
     options: [
-      { id: "A", text: "undefined" },
-      { id: "B", text: "10" },
-      { id: "C", text: "ReferenceError" },
+      { id: "A", text: "10" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "undefined" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`var` declarations are hoisted, but the assignment is not. Before the assignment executes, `value` has the value `undefined`.",
     tags: ["hoisting", "var"]
   },
@@ -349,12 +349,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "Which part of `var value = 10` is effectively hoisted?",
     options: [
-      { id: "A", text: "The declaration of `value`, not the assignment of 10." },
-      { id: "B", text: "Only the value 10." },
-      { id: "C", text: "The entire statement including the assignment." },
-      { id: "D", text: "Nothing." }
+      { id: "A", text: "Only the value 10." },
+      { id: "B", text: "The entire statement including the assignment." },
+      { id: "C", text: "Nothing." },
+      { id: "D", text: "The declaration of `value`, not the assignment of 10." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The variable declaration is processed before execution, while its initialization with 10 occurs when execution reaches the assignment.",
     tags: ["hoisting", "var", "initialization"]
   },
@@ -385,12 +385,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is the Temporal Dead Zone (TDZ)?",
     options: [
-      { id: "A", text: "The period in a scope where a `let` or `const` binding exists but cannot be accessed before its declaration is initialized." },
-      { id: "B", text: "The time after a variable is garbage-collected." },
+      { id: "A", text: "The time after a variable is garbage-collected." },
+      { id: "B", text: "The period in a scope where a `let` or `const` binding exists but cannot be accessed before its declaration is initialized." },
       { id: "C", text: "The period when a function is executing asynchronously." },
       { id: "D", text: "A period when `var` variables are undefined forever." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Lexical declarations such as `let` and `const` cannot be accessed from the start of their scope until execution reaches their declaration.",
     tags: ["tdz", "let", "const", "hoisting"]
   },
@@ -403,12 +403,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What happens?\n\nconst value = 10;\n\n{\n  console.log(value);\n  const value = 20;\n}",
     options: [
-      { id: "A", text: "ReferenceError" },
-      { id: "B", text: "10" },
-      { id: "C", text: "20" },
+      { id: "A", text: "10" },
+      { id: "B", text: "20" },
+      { id: "C", text: "ReferenceError" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The inner `const value` creates a binding for the entire block. Before its initialization, accessing that binding triggers a TDZ `ReferenceError` rather than falling back to the outer `value`.",
     tags: ["tdz", "const", "shadowing"]
   },
@@ -421,12 +421,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nsayHello();\n\nfunction sayHello() {\n  console.log(\"Hello\");\n}",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "ReferenceError" },
-      { id: "D", text: "TypeError" }
+      { id: "A", text: "undefined" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "TypeError" },
+      { id: "D", text: "Hello" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Function declarations are hoisted with their function value, so the declaration can be called before its textual position.",
     tags: ["hoisting", "function-declaration"]
   },
@@ -457,12 +457,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is a closure?",
     options: [
-      { id: "A", text: "A function together with access to variables from its surrounding lexical environment." },
-      { id: "B", text: "A function that can only be called once." },
+      { id: "A", text: "A function that can only be called once." },
+      { id: "B", text: "A function together with access to variables from its surrounding lexical environment." },
       { id: "C", text: "A variable that is automatically made global." },
       { id: "D", text: "A function that has no parameters." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A closure allows a function to retain access to variables from the lexical environment in which it was created.",
     tags: ["closures", "lexical-scope"]
   },
@@ -475,12 +475,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction outer() {\n  const message = \"Hello\";\n\n  return function inner() {\n    return message;\n  };\n}\n\nconst greet = outer();\nconsole.log(greet());",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "ReferenceError" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "Hello" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`inner` closes over `message`. Even after `outer` finishes, the returned function retains access to that lexical binding.",
     tags: ["closures", "nested-functions", "lexical-scope"]
   },
@@ -493,12 +493,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "Why can a returned inner function still access a variable from its parent function?",
     options: [
-      { id: "A", text: "Because the inner function forms a closure over its surrounding lexical environment." },
-      { id: "B", text: "Because all local variables automatically become global." },
-      { id: "C", text: "Because JavaScript copies every variable into the child function." },
-      { id: "D", text: "Because the parent function runs again whenever the child is called." }
+      { id: "A", text: "Because all local variables automatically become global." },
+      { id: "B", text: "Because JavaScript copies every variable into the child function." },
+      { id: "C", text: "Because the parent function runs again whenever the child is called." },
+      { id: "D", text: "Because the inner function forms a closure over its surrounding lexical environment." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The inner function retains access to the lexical environment containing the captured variable.",
     tags: ["closures", "lexical-environment"]
   },
@@ -529,12 +529,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What useful property does a closure-based counter provide?",
     options: [
-      { id: "A", text: "It allows state to persist between function calls without exposing the state variable directly." },
-      { id: "B", text: "It makes the state variable global." },
+      { id: "A", text: "It makes the state variable global." },
+      { id: "B", text: "It allows state to persist between function calls without exposing the state variable directly." },
       { id: "C", text: "It resets the variable after every call." },
       { id: "D", text: "It prevents the returned function from being called multiple times." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The closed-over variable remains available to the returned function while remaining inaccessible directly from outside the closure.",
     tags: ["closures", "encapsulation", "state"]
   },
@@ -547,12 +547,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction createCounter() {\n  let count = 0;\n  return () => ++count;\n}\n\nconst a = createCounter();\nconst b = createCounter();\n\nconsole.log(a());\nconsole.log(a());\nconsole.log(b());",
     options: [
-      { id: "A", text: "1, 2, 1" },
-      { id: "B", text: "1, 1, 1" },
-      { id: "C", text: "1, 2, 3" },
+      { id: "A", text: "1, 1, 1" },
+      { id: "B", text: "1, 2, 3" },
+      { id: "C", text: "1, 2, 1" },
       { id: "D", text: "0, 1, 0" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Each call to `createCounter()` creates a separate lexical environment and therefore a separate `count` binding. `a` and `b` maintain independent state.",
     tags: ["closures", "state", "factory-functions"]
   },
@@ -565,12 +565,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What does a closure-based factory function typically do?",
     options: [
-      { id: "A", text: "Creates and returns functions that retain access to state created during the factory call." },
-      { id: "B", text: "Converts all local variables into global variables." },
-      { id: "C", text: "Prevents functions from retaining state." },
-      { id: "D", text: "Automatically creates JavaScript classes." }
+      { id: "A", text: "Converts all local variables into global variables." },
+      { id: "B", text: "Prevents functions from retaining state." },
+      { id: "C", text: "Automatically creates JavaScript classes." },
+      { id: "D", text: "Creates and returns functions that retain access to state created during the factory call." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Factory functions can create private state and return functions that close over that state.",
     tags: ["closures", "factory-functions"]
   },
@@ -601,12 +601,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "Can a closure capture a variable declared with `let`?",
     options: [
-      { id: "A", text: "Yes." },
-      { id: "B", text: "No, closures only work with `var`." },
+      { id: "A", text: "No, closures only work with `var`." },
+      { id: "B", text: "Yes." },
       { id: "C", text: "Only inside arrow functions." },
       { id: "D", text: "Only if the variable is global." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Closures can capture bindings from surrounding lexical environments, including variables declared with `let`.",
     tags: ["closures", "let", "lexical-scope"]
   },
@@ -619,12 +619,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nlet value = 10;\n\nfunction outer() {\n  function inner() {\n    console.log(value);\n  }\n\n  inner();\n}\n\nouter();",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "ReferenceError" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "ReferenceError" },
+      { id: "C", text: "10" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`inner` can access the outer lexical environment, eventually finding the global `value`.",
     tags: ["closures", "scope-chain", "lexical-scope"]
   },
@@ -637,12 +637,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Intermediate",
     question: "Does a closure capture only the value of a variable at the moment the function is created?",
     options: [
-      { id: "A", text: "No. A closure retains access to the binding, so later changes to that binding can be observed." },
-      { id: "B", text: "Yes, every closure permanently copies primitive values." },
-      { id: "C", text: "Yes, but only for `let`." },
-      { id: "D", text: "Yes, but only for `const`." }
+      { id: "A", text: "Yes, every closure permanently copies primitive values." },
+      { id: "B", text: "Yes, but only for `let`." },
+      { id: "C", text: "Yes, but only for `const`." },
+      { id: "D", text: "No. A closure retains access to the binding, so later changes to that binding can be observed." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Closures retain access to bindings rather than simply freezing a snapshot of their values. If the binding changes, later calls can observe the new value.",
     tags: ["closures", "bindings", "lexical-environment"]
   },
@@ -673,12 +673,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "Which is a practical use of closures?",
     options: [
-      { id: "A", text: "Encapsulating private state behind functions." },
-      { id: "B", text: "Making every variable globally accessible." },
+      { id: "A", text: "Making every variable globally accessible." },
+      { id: "B", text: "Encapsulating private state behind functions." },
       { id: "C", text: "Disabling lexical scope." },
       { id: "D", text: "Preventing functions from returning values." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Closures can expose controlled operations while keeping the captured state inaccessible directly from outside.",
     tags: ["closures", "encapsulation", "private-state"]
   },
@@ -691,12 +691,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction outer() {\n  let value = 10;\n\n  return function inner() {\n    value += 5;\n    return value;\n  };\n}\n\nconst fn = outer();\nconsole.log(fn());\nconsole.log(fn());",
     options: [
-      { id: "A", text: "15, then 20" },
-      { id: "B", text: "15, then 15" },
-      { id: "C", text: "10, then 15" },
+      { id: "A", text: "15, then 15" },
+      { id: "B", text: "10, then 15" },
+      { id: "C", text: "15, then 20" },
       { id: "D", text: "20, then 25" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The same closed-over `value` binding is updated on each invocation: 10 → 15 → 20.",
     tags: ["closures", "state", "mutation"]
   },
@@ -709,12 +709,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What happens to a lexical environment captured by a closure after the outer function finishes?",
     options: [
-      { id: "A", text: "It can remain reachable because the closure still references the bindings it needs." },
-      { id: "B", text: "It is always immediately destroyed." },
-      { id: "C", text: "All captured variables become global." },
-      { id: "D", text: "The closure becomes automatically undefined." }
+      { id: "A", text: "It is always immediately destroyed." },
+      { id: "B", text: "All captured variables become global." },
+      { id: "C", text: "The closure becomes automatically undefined." },
+      { id: "D", text: "It can remain reachable because the closure still references the bindings it needs." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "If a returned or otherwise reachable function still references the environment, the relevant state remains reachable and can continue to be used.",
     tags: ["closures", "memory", "lexical-environment"]
   },
@@ -745,12 +745,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction createFunctions() {\n  const functions = [];\n\n  for (var i = 0; i < 3; i++) {\n    functions.push(() => i);\n  }\n\n  return functions;\n}\n\nconst functions = createFunctions();\nconsole.log(functions[0](), functions[1](), functions[2]());",
     options: [
-      { id: "A", text: "3 3 3" },
-      { id: "B", text: "0 1 2" },
+      { id: "A", text: "0 1 2" },
+      { id: "B", text: "3 3 3" },
       { id: "C", text: "0 0 0" },
       { id: "D", text: "1 2 3" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`var` creates one function-scoped binding for `i`. All three closures reference that same binding, whose final value after the loop is 3.",
     tags: ["closures", "var", "loops"]
   },
@@ -763,12 +763,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "Why does replacing `var` with `let` in many closure-in-loop examples change the result?",
     options: [
-      { id: "A", text: "`let` creates block-scoped bindings with a distinct binding for each loop iteration." },
-      { id: "B", text: "`let` disables closures." },
-      { id: "C", text: "`let` automatically copies functions." },
+      { id: "A", text: "`let` disables closures." },
+      { id: "B", text: "`let` automatically copies functions." },
+      { id: "C", text: "`let` creates block-scoped bindings with a distinct binding for each loop iteration." },
       { id: "D", text: "`let` makes all variables global." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "For a `for` loop, `let` provides per-iteration bindings, allowing closures created in different iterations to retain different values.",
     tags: ["closures", "let", "loops", "var"]
   },
@@ -781,12 +781,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction makeLogger(message) {\n  return () => console.log(message);\n}\n\nconst logHello = makeLogger(\"Hello\");\nconst logBye = makeLogger(\"Bye\");\n\nlogHello();\nlogBye();",
     options: [
-      { id: "A", text: "Hello, then Bye" },
-      { id: "B", text: "Bye, then Hello" },
-      { id: "C", text: "Hello, then Hello" },
-      { id: "D", text: "undefined, then undefined" }
+      { id: "A", text: "Bye, then Hello" },
+      { id: "B", text: "Hello, then Hello" },
+      { id: "C", text: "undefined, then undefined" },
+      { id: "D", text: "Hello, then Bye" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Each call to `makeLogger` creates a separate lexical environment containing its own `message`. Each returned closure retains its corresponding value.",
     tags: ["closures", "factory-functions", "lexical-scope"]
   },
@@ -817,12 +817,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nlet x = \"global\";\n\nfunction outer() {\n  let x = \"outer\";\n\n  return function inner() {\n    console.log(x);\n  };\n}\n\nconst fn = outer();\nfn();",
     options: [
-      { id: "A", text: "outer" },
-      { id: "B", text: "global" },
+      { id: "A", text: "global" },
+      { id: "B", text: "outer" },
       { id: "C", text: "undefined" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`inner` resolves `x` through its lexical environment. The nearest matching declaration is `outer`'s `x`, which the closure retains.",
     tags: ["closures", "shadowing", "scope-chain"]
   },
@@ -835,12 +835,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "Suppose an inner function and an outer function both declare a variable named `count`. Which `count` does the inner function normally use when it references `count`?",
     options: [
-      { id: "A", text: "The nearest `count` in its lexical scope chain." },
-      { id: "B", text: "Always the global `count`." },
-      { id: "C", text: "Always the outermost `count`." },
+      { id: "A", text: "Always the global `count`." },
+      { id: "B", text: "Always the outermost `count`." },
+      { id: "C", text: "The nearest `count` in its lexical scope chain." },
       { id: "D", text: "A random declaration chosen at runtime." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Identifier resolution searches the current lexical environment first, then proceeds outward until a matching binding is found.",
     tags: ["scope-chain", "shadowing", "lexical-scope"]
   },
@@ -853,12 +853,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction outer() {\n  let count = 0;\n\n  function increment() {\n    count++;\n  }\n\n  function getCount() {\n    return count;\n  }\n\n  increment();\n  increment();\n\n  return getCount;\n}\n\nconst getCount = outer();\nconsole.log(getCount());",
     options: [
-      { id: "A", text: "2" },
-      { id: "B", text: "0" },
-      { id: "C", text: "1" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "0" },
+      { id: "B", text: "1" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`increment` and `getCount` close over the same `count` binding. The two increments occur before `getCount` is returned, leaving count equal to 2.",
     tags: ["closures", "shared-state", "nested-functions"]
   },
@@ -889,24 +889,12 @@ const javascriptScopeClosuresQuestions = [
     difficulty: "Advanced",
     question: "Which statement best summarizes the relationship between lexical scope, scope chains, and closures?",
     options: [
-      {
-        id: "A",
-        text: "Lexical scope determines where identifiers are available, the scope chain determines where JavaScript searches for them, and closures allow functions to retain access to relevant surrounding lexical environments."
-      },
-      {
-        id: "B",
-        text: "Lexical scope makes all variables global, while closures remove the need for scope chains."
-      },
-      {
-        id: "C",
-        text: "Scope chains are created only for asynchronous functions, and closures only work with `var`."
-      },
-      {
-        id: "D",
-        text: "Closures replace lexical scope and make variable declarations unnecessary."
-      }
+      { id: "A", text: "Lexical scope makes all variables global, while closures remove the need for scope chains." },
+      { id: "B", text: "Lexical scope determines where identifiers are available, the scope chain determines where JavaScript searches for them, and closures allow functions to retain access to relevant surrounding lexical environments." },
+      { id: "C", text: "Scope chains are created only for asynchronous functions, and closures only work with `var`." },
+      { id: "D", text: "Closures replace lexical scope and make variable declarations unnecessary." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "These three ideas are closely connected: lexical scope establishes visibility based on source-code structure, the scope chain governs identifier lookup through nested environments, and closures preserve access to surrounding environments when functions outlive their original execution context.",
     tags: ["scope", "scope-chain", "lexical-scope", "closures"]
   }

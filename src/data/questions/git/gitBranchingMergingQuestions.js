@@ -8,11 +8,11 @@ const gitBranchingMergingQuestions = [
     question: "What is a Git branch primarily used for?",
     options: [
       { id: "A", text: "Uploading files to GitHub" },
-      { id: "B", text: "Creating a separate line of development" },
-      { id: "C", text: "Deleting repository history" },
-      { id: "D", text: "Installing Git extensions" }
+      { id: "B", text: "Deleting repository history" },
+      { id: "C", text: "Installing Git extensions" },
+      { id: "D", text: "Creating a separate line of development" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A branch is a lightweight reference that lets developers work on a separate line of development without immediately changing another branch.",
     tags: ["branches", "branching"]
   },
@@ -44,11 +44,11 @@ const gitBranchingMergingQuestions = [
     question: "Which command creates a new branch and switches to it?",
     options: [
       { id: "A", text: "git branch --move feature" },
-      { id: "B", text: "git switch feature" },
-      { id: "C", text: "git switch -c feature" },
+      { id: "B", text: "git switch -c feature" },
+      { id: "C", text: "git switch feature" },
       { id: "D", text: "git branch feature --checkout" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`git switch -c feature` creates the new branch and switches the current branch to it.",
     tags: ["git-switch", "branch-creation"]
   },
@@ -63,10 +63,10 @@ const gitBranchingMergingQuestions = [
     options: [
       { id: "A", text: "The remote repository" },
       { id: "B", text: "The staging area" },
-      { id: "C", text: "The first commit in the repository" },
-      { id: "D", text: "The currently checked-out commit or branch reference" }
+      { id: "C", text: "The currently checked-out commit or branch reference" },
+      { id: "D", text: "The first commit in the repository" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "`HEAD` identifies the currently checked-out position in the repository, normally through the current branch reference.",
     tags: ["HEAD", "branches"]
   },
@@ -79,12 +79,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Beginner",
     question: "What does switching from `main` to `feature` change?",
     options: [
-      { id: "A", text: "The branch Git considers current and the files checked out from that branch" },
-      { id: "B", text: "The remote repository's default branch automatically" },
-      { id: "C", text: "Every commit in the repository" },
-      { id: "D", text: "The Git installation itself" }
+      { id: "A", text: "The remote repository's default branch automatically" },
+      { id: "B", text: "Every commit in the repository" },
+      { id: "C", text: "The Git installation itself" },
+      { id: "D", text: "The branch Git considers current and the files checked out from that branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Switching branches moves HEAD to another branch and updates the working tree to reflect that branch's state.",
     tags: ["branch-switching", "HEAD"]
   },
@@ -97,12 +97,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Beginner",
     question: "Which command lists local branches?",
     options: [
-      { id: "A", text: "git show-branches" },
-      { id: "B", text: "git branch" },
+      { id: "A", text: "git branch" },
+      { id: "B", text: "git show-branches" },
       { id: "C", text: "git list" },
       { id: "D", text: "git branches --local-only" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Running `git branch` without additional arguments lists local branches and marks the current branch with `*`.",
     tags: ["git-branch", "branch-listing"]
   },
@@ -116,11 +116,11 @@ const gitBranchingMergingQuestions = [
     question: "In the output of `git branch`, what does the `*` indicate?",
     options: [
       { id: "A", text: "The branch is protected" },
-      { id: "B", text: "The branch exists remotely" },
-      { id: "C", text: "The branch contains the latest commit" },
-      { id: "D", text: "The branch is currently checked out" }
+      { id: "B", text: "The branch is currently checked out" },
+      { id: "C", text: "The branch exists remotely" },
+      { id: "D", text: "The branch contains the latest commit" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "B",
     explanation: "Git marks the currently checked-out branch with an asterisk in branch listings.",
     tags: ["git-branch", "current-branch"]
   },
@@ -151,12 +151,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Beginner",
     question: "What does merging a branch accomplish?",
     options: [
-      { id: "A", text: "It combines the history and changes from one branch into another" },
-      { id: "B", text: "It permanently deletes the source branch" },
-      { id: "C", text: "It converts the branch into a remote repository" },
-      { id: "D", text: "It rewrites every commit in the repository" }
+      { id: "A", text: "It permanently deletes the source branch" },
+      { id: "B", text: "It converts the branch into a remote repository" },
+      { id: "C", text: "It rewrites every commit in the repository" },
+      { id: "D", text: "It combines the history and changes from one branch into another" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A merge integrates the changes represented by one branch into the branch you are currently on.",
     tags: ["merge", "branching"]
   },
@@ -169,12 +169,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Beginner",
     question: "If you want to merge `feature` into `main`, which branch should normally be checked out first?",
     options: [
-      { id: "A", text: "feature" },
-      { id: "B", text: "main" },
+      { id: "A", text: "main" },
+      { id: "B", text: "feature" },
       { id: "C", text: "A newly created branch" },
       { id: "D", text: "Any remote branch" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The merge target should be checked out. You would switch to `main`, then run `git merge feature`.",
     tags: ["merge", "branching", "workflow"]
   },
@@ -188,11 +188,11 @@ const gitBranchingMergingQuestions = [
     question: "What does this sequence accomplish?\n\n```bash\ngit switch main\ngit merge feature\n```",
     options: [
       { id: "A", text: "It merges main into feature" },
-      { id: "B", text: "It deletes feature" },
-      { id: "C", text: "It merges feature into main" },
+      { id: "B", text: "It merges feature into main" },
+      { id: "C", text: "It deletes feature" },
       { id: "D", text: "It creates a new remote named feature" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Because `main` is checked out when `git merge feature` runs, Git attempts to integrate feature into main.",
     tags: ["merge", "git-switch"]
   },
@@ -206,11 +206,11 @@ const gitBranchingMergingQuestions = [
     question: "What is a fast-forward merge?",
     options: [
       { id: "A", text: "A merge that always creates a merge commit" },
-      { id: "B", text: "A merge where the target branch can simply move forward to the source branch tip" },
-      { id: "C", text: "A merge that happens only on GitHub" },
+      { id: "B", text: "A merge that happens only on GitHub" },
+      { id: "C", text: "A merge where the target branch can simply move forward to the source branch tip" },
       { id: "D", text: "A merge involving exactly three developers" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A fast-forward is possible when the target branch is an ancestor of the branch being merged, so Git can move the target reference forward without creating a merge commit.",
     tags: ["fast-forward", "merge"]
   },
@@ -223,12 +223,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Consider this history:\n\n```text\nA---B---C  main\n         \\\n          D---E  feature\n```\n\nIf `main` has not received any commits after branching, what type of merge can Git perform when merging feature into main?",
     options: [
-      { id: "A", text: "Fast-forward merge" },
-      { id: "B", text: "Three-way merge" },
-      { id: "C", text: "Octopus merge" },
-      { id: "D", text: "Conflict-only merge" }
+      { id: "A", text: "Three-way merge" },
+      { id: "B", text: "Octopus merge" },
+      { id: "C", text: "Conflict-only merge" },
+      { id: "D", text: "Fast-forward merge" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Here main points to an ancestor of feature's tip, so Git can simply move main forward to E.",
     tags: ["fast-forward", "merge-history"]
   },
@@ -241,12 +241,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What usually prevents a fast-forward merge?",
     options: [
-      { id: "A", text: "Having a `.gitignore` file" },
-      { id: "B", text: "Having a commit on the target branch that is not an ancestor of the source branch" },
+      { id: "A", text: "Having a commit on the target branch that is not an ancestor of the source branch" },
+      { id: "B", text: "Having a `.gitignore` file" },
       { id: "C", text: "Using descriptive commit messages" },
       { id: "D", text: "Creating the branch locally" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "When both branches have diverged with unique commits, the target cannot simply move its reference to the source tip.",
     tags: ["fast-forward", "branch-divergence"]
   },
@@ -260,11 +260,11 @@ const gitBranchingMergingQuestions = [
     question: "What is a three-way merge based on?",
     options: [
       { id: "A", text: "Three developers working simultaneously" },
-      { id: "B", text: "Three remote repositories" },
-      { id: "C", text: "The two branch tips and their common ancestor" },
+      { id: "B", text: "The two branch tips and their common ancestor" },
+      { id: "C", text: "Three remote repositories" },
       { id: "D", text: "Three consecutive commits from the target branch" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A three-way merge uses the tips of the two branches and their common ancestor, often called the merge base, to determine how changes should be combined.",
     tags: ["three-way-merge", "merge-base"]
   },
@@ -277,12 +277,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Why is the common ancestor important during a three-way merge?",
     options: [
-      { id: "A", text: "It provides the baseline from which Git can determine what changed on each branch" },
-      { id: "B", text: "It determines the GitHub username of the developer" },
-      { id: "C", text: "It permanently becomes the merge commit" },
+      { id: "A", text: "It determines the GitHub username of the developer" },
+      { id: "B", text: "It permanently becomes the merge commit" },
+      { id: "C", text: "It provides the baseline from which Git can determine what changed on each branch" },
       { id: "D", text: "It prevents branches from being deleted" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Comparing each branch against their common ancestor allows Git to identify changes made independently on the two branches.",
     tags: ["three-way-merge", "merge-base"]
   },
@@ -296,11 +296,11 @@ const gitBranchingMergingQuestions = [
     question: "What is branch divergence?",
     options: [
       { id: "A", text: "When two branches are deleted at the same time" },
-      { id: "B", text: "When branches have developed different commits after sharing a common history" },
-      { id: "C", text: "When Git cannot initialize a repository" },
-      { id: "D", text: "When a branch exists only on GitHub" }
+      { id: "B", text: "When Git cannot initialize a repository" },
+      { id: "C", text: "When a branch exists only on GitHub" },
+      { id: "D", text: "When branches have developed different commits after sharing a common history" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Branches diverge when each branch gains commits that are not present on the other branch.",
     tags: ["branch-divergence", "history"]
   },
@@ -313,12 +313,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Which command can force Git to create a merge commit even when a fast-forward is possible?",
     options: [
-      { id: "A", text: "git merge --force-commit feature" },
-      { id: "B", text: "git merge --three-way feature" },
-      { id: "C", text: "git merge --always feature" },
-      { id: "D", text: "git merge --no-ff feature" }
+      { id: "A", text: "git merge --no-ff feature" },
+      { id: "B", text: "git merge --force-commit feature" },
+      { id: "C", text: "git merge --three-way feature" },
+      { id: "D", text: "git merge --always feature" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "`--no-ff` tells Git not to perform a fast-forward when merging, causing a merge commit to be created.",
     tags: ["merge", "no-ff", "fast-forward"]
   },
@@ -331,12 +331,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Why might a team intentionally use `--no-ff` when merging feature branches?",
     options: [
-      { id: "A", text: "To preserve an explicit merge point representing the feature integration" },
-      { id: "B", text: "To prevent the feature branch from being created" },
+      { id: "A", text: "To prevent the feature branch from being created" },
+      { id: "B", text: "To preserve an explicit merge point representing the feature integration" },
       { id: "C", text: "To automatically delete all feature commits" },
       { id: "D", text: "To prevent Git from tracking branch names" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A merge commit can preserve a visible boundary showing that a group of commits was integrated as a feature.",
     tags: ["no-ff", "merge", "history"]
   },
@@ -350,11 +350,11 @@ const gitBranchingMergingQuestions = [
     question: "If a merge produces no conflicts, what does that tell you?",
     options: [
       { id: "A", text: "The branches contained no changes" },
-      { id: "B", text: "Git was able to determine the resulting file contents automatically" },
-      { id: "C", text: "The merge was necessarily fast-forward" },
+      { id: "B", text: "The merge was necessarily fast-forward" },
+      { id: "C", text: "Git was able to determine the resulting file contents automatically" },
       { id: "D", text: "The source branch was deleted" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A conflict-free merge means Git could automatically reconcile the relevant changes. It does not necessarily mean the merge was fast-forward.",
     tags: ["merge", "conflicts"]
   },
@@ -369,10 +369,10 @@ const gitBranchingMergingQuestions = [
     options: [
       { id: "A", text: "No, every three-way merge causes a conflict" },
       { id: "B", text: "Only when using GitHub" },
-      { id: "C", text: "Yes, Git can automatically combine non-conflicting changes" },
-      { id: "D", text: "Only if the branches have identical commits" }
+      { id: "C", text: "Only if the branches have identical commits" },
+      { id: "D", text: "Yes, Git can automatically combine non-conflicting changes" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "A three-way merge does not imply a conflict. Git can automatically merge changes when they do not conflict.",
     tags: ["three-way-merge", "conflicts"]
   },
@@ -385,12 +385,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What happens to the source branch automatically after a successful merge?",
     options: [
-      { id: "A", text: "It is always deleted" },
-      { id: "B", text: "It is converted into a tag" },
-      { id: "C", text: "It becomes the default branch" },
-      { id: "D", text: "It normally remains unless you explicitly delete it" }
+      { id: "A", text: "It normally remains unless you explicitly delete it" },
+      { id: "B", text: "It is always deleted" },
+      { id: "C", text: "It is converted into a tag" },
+      { id: "D", text: "It becomes the default branch" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "Merging does not automatically delete the source branch. Teams may delete it separately when it is no longer needed.",
     tags: ["merge", "branches"]
   },
@@ -403,12 +403,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Which command deletes a local branch that has already been merged?",
     options: [
-      { id: "A", text: "git branch -d feature" },
-      { id: "B", text: "git remove feature" },
+      { id: "A", text: "git remove feature" },
+      { id: "B", text: "git branch -d feature" },
       { id: "C", text: "git branch --destroy feature" },
       { id: "D", text: "git delete-branch feature" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git branch -d feature` safely deletes the local branch when Git considers its changes merged.",
     tags: ["git-branch", "branch-deletion"]
   },
@@ -439,12 +439,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Why should `git branch -D` be used carefully?",
     options: [
-      { id: "A", text: "It can delete a branch containing commits that have not been merged elsewhere" },
-      { id: "B", text: "It deletes the entire repository" },
-      { id: "C", text: "It pushes the branch to GitHub" },
-      { id: "D", text: "It changes every commit hash" }
+      { id: "A", text: "It deletes the entire repository" },
+      { id: "B", text: "It pushes the branch to GitHub" },
+      { id: "C", text: "It changes every commit hash" },
+      { id: "D", text: "It can delete a branch containing commits that have not been merged elsewhere" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Forced branch deletion bypasses Git's normal merged-history safety check, so commits reachable only from that branch may become harder to access.",
     tags: ["branch-deletion", "data-loss"]
   },
@@ -457,12 +457,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What does `git branch -a` typically display?",
     options: [
-      { id: "A", text: "Only branches that contain commits" },
-      { id: "B", text: "Local and remote-tracking branches" },
+      { id: "A", text: "Local and remote-tracking branches" },
+      { id: "B", text: "Only branches that contain commits" },
       { id: "C", text: "Only the default branch" },
       { id: "D", text: "Only deleted branches" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`git branch -a` lists both local branches and remote-tracking branches known to the local repository.",
     tags: ["git-branch", "remote-branches"]
   },
@@ -476,11 +476,11 @@ const gitBranchingMergingQuestions = [
     question: "What is a remote-tracking branch such as `origin/main`?",
     options: [
       { id: "A", text: "A local branch that is automatically merged into main" },
-      { id: "B", text: "A GitHub pull request" },
-      { id: "C", text: "A local reference representing the last known state of a branch on a remote" },
+      { id: "B", text: "A local reference representing the last known state of a branch on a remote" },
+      { id: "C", text: "A GitHub pull request" },
       { id: "D", text: "A second working tree" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A remote-tracking branch records your local repository's last known view of a branch on the remote repository.",
     tags: ["remote-tracking", "branches"]
   },
@@ -493,12 +493,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What does `git switch -c bugfix` do?",
     options: [
-      { id: "A", text: "Creates and switches to a new branch named bugfix" },
-      { id: "B", text: "Merges bugfix into main" },
-      { id: "C", text: "Deletes bugfix" },
+      { id: "A", text: "Merges bugfix into main" },
+      { id: "B", text: "Deletes bugfix" },
+      { id: "C", text: "Creates and switches to a new branch named bugfix" },
       { id: "D", text: "Creates a remote repository called bugfix" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `-c` option tells `git switch` to create a new branch before switching to it.",
     tags: ["git-switch", "branch-creation"]
   },
@@ -512,11 +512,11 @@ const gitBranchingMergingQuestions = [
     question: "What is the purpose of keeping feature work on a separate branch?",
     options: [
       { id: "A", text: "To prevent commits from being created" },
-      { id: "B", text: "To isolate development from another branch such as main" },
-      { id: "C", text: "To make Git stop tracking changes" },
-      { id: "D", text: "To eliminate the need for commits" }
+      { id: "B", text: "To make Git stop tracking changes" },
+      { id: "C", text: "To eliminate the need for commits" },
+      { id: "D", text: "To isolate development from another branch such as main" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Feature branches isolate work so developers can make and review changes without directly modifying the main development line.",
     tags: ["feature-branches", "workflow"]
   },
@@ -529,12 +529,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Suppose `main` and `feature` both contain new commits after their common ancestor. What kind of merge is generally required?",
     options: [
-      { id: "A", text: "Fast-forward merge" },
-      { id: "B", text: "No merge is possible" },
-      { id: "C", text: "Three-way merge" },
+      { id: "A", text: "Three-way merge" },
+      { id: "B", text: "Fast-forward merge" },
+      { id: "C", text: "No merge is possible" },
       { id: "D", text: "Repository initialization" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Because both branches have diverged, Git generally needs a three-way merge using the two tips and their common ancestor.",
     tags: ["three-way-merge", "branch-divergence"]
   },
@@ -547,12 +547,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about a merge commit is correct?",
     options: [
-      { id: "A", text: "It can record the integration of two divergent histories" },
-      { id: "B", text: "It always has exactly one parent" },
+      { id: "A", text: "It always has exactly one parent" },
+      { id: "B", text: "It can record the integration of two divergent histories" },
       { id: "C", text: "It can only be created on GitHub" },
       { id: "D", text: "It replaces every previous commit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A typical merge commit has two parents and records the point where divergent histories were integrated.",
     tags: ["merge-commit", "history"]
   },
@@ -566,11 +566,11 @@ const gitBranchingMergingQuestions = [
     question: "Why does a fast-forward merge not need a merge commit?",
     options: [
       { id: "A", text: "Because Git deletes the source branch" },
-      { id: "B", text: "Because the target branch can simply move to an existing descendant commit" },
-      { id: "C", text: "Because no commits exist on the source branch" },
+      { id: "B", text: "Because no commits exist on the source branch" },
+      { id: "C", text: "Because the target branch can simply move to an existing descendant commit" },
       { id: "D", text: "Because GitHub automatically creates the commit later" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Since the target branch is already an ancestor of the source tip, moving the target reference forward fully incorporates the source history.",
     tags: ["fast-forward", "merge"]
   },
@@ -585,10 +585,10 @@ const gitBranchingMergingQuestions = [
     options: [
       { id: "A", text: "A merge conflict" },
       { id: "B", text: "A merge commit" },
-      { id: "C", text: "The merge to be possible as a fast-forward" },
-      { id: "D", text: "The source branch to be remote" }
+      { id: "C", text: "The source branch to be remote" },
+      { id: "D", text: "The merge to be possible as a fast-forward" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "`--ff-only` tells Git to refuse the merge unless the target can be advanced through a fast-forward.",
     tags: ["fast-forward", "merge"]
   },
@@ -601,12 +601,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What happens if `git merge --ff-only feature` encounters divergent history?",
     options: [
-      { id: "A", text: "Git automatically creates a merge commit" },
-      { id: "B", text: "Git deletes feature" },
-      { id: "C", text: "Git resets main to the common ancestor" },
-      { id: "D", text: "Git refuses to perform the merge" }
+      { id: "A", text: "Git refuses to perform the merge" },
+      { id: "B", text: "Git automatically creates a merge commit" },
+      { id: "C", text: "Git deletes feature" },
+      { id: "D", text: "Git resets main to the common ancestor" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "Because `--ff-only` permits only fast-forward merges, Git aborts when a fast-forward is not possible.",
     tags: ["fast-forward", "merge", "ff-only"]
   },
@@ -655,12 +655,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What should you generally do before merging a feature branch into main in a team workflow?",
     options: [
-      { id: "A", text: "Verify the feature branch and target branch are in an appropriate state and run relevant tests" },
-      { id: "B", text: "Delete the target branch first" },
-      { id: "C", text: "Remove the `.git` directory" },
-      { id: "D", text: "Force-reset the feature branch" }
+      { id: "A", text: "Delete the target branch first" },
+      { id: "B", text: "Remove the `.git` directory" },
+      { id: "C", text: "Force-reset the feature branch" },
+      { id: "D", text: "Verify the feature branch and target branch are in an appropriate state and run relevant tests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Before integrating work, developers should ensure the branch is up to date as appropriate and that relevant tests/checks pass.",
     tags: ["merge", "workflow", "best-practices"]
   },
@@ -673,12 +673,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Why can merging an outdated feature branch be risky?",
     options: [
-      { id: "A", text: "Git will always delete the branch" },
-      { id: "B", text: "The feature branch may not include recent changes from the target branch, increasing integration risk" },
+      { id: "A", text: "The feature branch may not include recent changes from the target branch, increasing integration risk" },
+      { id: "B", text: "Git will always delete the branch" },
       { id: "C", text: "Git stops recording commits" },
       { id: "D", text: "The branch becomes a tag automatically" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A feature branch that has not incorporated relevant recent target-branch changes may encounter conflicts or integration problems during merging.",
     tags: ["merge", "branch-sync", "workflow"]
   },
@@ -691,12 +691,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What is the effect of merging a branch into itself?",
     options: [
-      { id: "A", text: "It normally has nothing new to integrate" },
-      { id: "B", text: "It creates a completely new branch" },
+      { id: "A", text: "It creates a completely new branch" },
+      { id: "B", text: "It normally has nothing new to integrate" },
       { id: "C", text: "It deletes the branch" },
       { id: "D", text: "It automatically rebases the branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A branch already contains its own history, so attempting to merge the same branch into itself has no meaningful new changes to integrate.",
     tags: ["merge", "branches"]
   },
@@ -710,11 +710,11 @@ const gitBranchingMergingQuestions = [
     question: "What does branch deletion after a successful merge usually communicate?",
     options: [
       { id: "A", text: "The commits were destroyed" },
-      { id: "B", text: "The feature branch is no longer needed as a separate line of development" },
-      { id: "C", text: "The main branch has been deleted" },
+      { id: "B", text: "The main branch has been deleted" },
+      { id: "C", text: "The feature branch is no longer needed as a separate line of development" },
       { id: "D", text: "The repository is now read-only" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Once feature work has been integrated, deleting the feature branch can keep the repository's branch list clean without deleting the commits already reachable through the merged history.",
     tags: ["branch-deletion", "merge", "workflow"]
   },
@@ -727,12 +727,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What is the key difference between creating a branch and merging a branch?",
     options: [
-      { id: "A", text: "Creating a branch creates a new line of development reference; merging integrates histories" },
-      { id: "B", text: "Creating a branch always uploads code; merging downloads code" },
-      { id: "C", text: "Both operations permanently rewrite history" },
-      { id: "D", text: "Merging only creates empty branches" }
+      { id: "A", text: "Creating a branch always uploads code; merging downloads code" },
+      { id: "B", text: "Both operations permanently rewrite history" },
+      { id: "C", text: "Merging only creates empty branches" },
+      { id: "D", text: "Creating a branch creates a new line of development reference; merging integrates histories" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Branch creation establishes another reference to a commit, while merging combines changes and history from branches.",
     tags: ["branches", "merge"]
   },
@@ -745,12 +745,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "A developer creates `feature` from `main`, makes three commits on feature, and makes no commits on main. After merging feature into main, what happens in a normal fast-forward merge?",
     options: [
-      { id: "A", text: "A new merge commit with two parents is required" },
-      { id: "B", text: "main moves directly to feature's latest commit" },
+      { id: "A", text: "main moves directly to feature's latest commit" },
+      { id: "B", text: "A new merge commit with two parents is required" },
       { id: "C", text: "The three feature commits disappear" },
       { id: "D", text: "Git creates three additional duplicate commits" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Because main remained at the ancestor from which feature was created, Git can fast-forward main to feature's tip.",
     tags: ["fast-forward", "merge"]
   },
@@ -764,11 +764,11 @@ const gitBranchingMergingQuestions = [
     question: "A developer creates `feature` from `main`. Both branches then receive commits. What is the most important consequence for merging?",
     options: [
       { id: "A", text: "Git can always fast-forward" },
-      { id: "B", text: "The feature branch automatically becomes main" },
-      { id: "C", text: "The histories have diverged, so Git must reconcile both lines of development" },
+      { id: "B", text: "The histories have diverged, so Git must reconcile both lines of development" },
+      { id: "C", text: "The feature branch automatically becomes main" },
       { id: "D", text: "Git refuses to store either branch" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Once both branches have unique commits, their histories diverge and integration requires comparing and reconciling both lines.",
     tags: ["branch-divergence", "merge"]
   },
@@ -781,12 +781,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about branches is most accurate?",
     options: [
-      { id: "A", text: "A branch is essentially a movable reference to a commit" },
-      { id: "B", text: "Every branch stores a complete independent copy of the repository" },
-      { id: "C", text: "A branch can contain only one commit" },
+      { id: "A", text: "Every branch stores a complete independent copy of the repository" },
+      { id: "B", text: "A branch can contain only one commit" },
+      { id: "C", text: "A branch is essentially a movable reference to a commit" },
       { id: "D", text: "Branches exist only on GitHub" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A Git branch is a lightweight movable reference to a commit rather than a full duplicate copy of the repository.",
     tags: ["branches", "references"]
   },
@@ -800,11 +800,11 @@ const gitBranchingMergingQuestions = [
     question: "Why is branching considered inexpensive in Git?",
     options: [
       { id: "A", text: "Branches require no commits" },
-      { id: "B", text: "Git does not copy the entire working directory for every branch" },
-      { id: "C", text: "Branches are stored only on GitHub" },
-      { id: "D", text: "Git automatically compresses the application code into one file" }
+      { id: "B", text: "Branches are stored only on GitHub" },
+      { id: "C", text: "Git automatically compresses the application code into one file" },
+      { id: "D", text: "Git does not copy the entire working directory for every branch" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Git branches are lightweight references to commits, so creating one does not require duplicating the entire project directory.",
     tags: ["branches", "git-internals"]
   },
@@ -817,12 +817,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What happens to the commits on a feature branch after a successful fast-forward merge?",
     options: [
-      { id: "A", text: "They become unreachable immediately" },
-      { id: "B", text: "They are rewritten into different commits" },
-      { id: "C", text: "They remain in history and are now reachable through the updated target branch" },
+      { id: "A", text: "They remain in history and are now reachable through the updated target branch" },
+      { id: "B", text: "They become unreachable immediately" },
+      { id: "C", text: "They are rewritten into different commits" },
       { id: "D", text: "They are automatically converted into tags" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "A fast-forward simply moves the target branch reference to the feature tip, so the existing commits remain unchanged.",
     tags: ["fast-forward", "history"]
   },
@@ -835,12 +835,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "What is one reason a team may prefer merge commits over always fast-forwarding?",
     options: [
-      { id: "A", text: "Merge commits can preserve the fact that a feature branch was integrated as a distinct unit" },
-      { id: "B", text: "Merge commits prevent all conflicts" },
+      { id: "A", text: "Merge commits prevent all conflicts" },
+      { id: "B", text: "Merge commits can preserve the fact that a feature branch was integrated as a distinct unit" },
       { id: "C", text: "Merge commits remove the need for branches" },
       { id: "D", text: "Merge commits automatically deploy applications" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A merge commit can provide a visible integration point in history, which some teams find useful for understanding feature development.",
     tags: ["merge-commit", "history", "workflow"]
   },
@@ -854,11 +854,11 @@ const gitBranchingMergingQuestions = [
     question: "Which workflow best represents a typical feature-branch approach?",
     options: [
       { id: "A", text: "Edit main directly → delete main → recreate it" },
-      { id: "B", text: "Create feature branch → develop and commit → merge into main after appropriate review/testing" },
-      { id: "C", text: "Create feature branch → never commit → delete main" },
+      { id: "B", text: "Create feature branch → never commit → delete main" },
+      { id: "C", text: "Create feature branch → develop and commit → merge into main after appropriate review/testing" },
       { id: "D", text: "Push every unfinished edit directly into production" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Feature branching isolates development and provides a controlled point where the work can be reviewed and integrated into the main line.",
     tags: ["feature-branches", "workflow", "merge"]
   },
@@ -871,12 +871,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "A feature branch is two commits ahead of main, and main has not changed since the feature branch was created. Which statement is correct?",
     options: [
-      { id: "A", text: "The merge can normally be a fast-forward" },
-      { id: "B", text: "A conflict is guaranteed" },
-      { id: "C", text: "A three-way merge is mandatory" },
-      { id: "D", text: "The branches cannot be merged" }
+      { id: "A", text: "A conflict is guaranteed" },
+      { id: "B", text: "A three-way merge is mandatory" },
+      { id: "C", text: "The branches cannot be merged" },
+      { id: "D", text: "The merge can normally be a fast-forward" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Since main is an ancestor of the feature branch and has not diverged, Git can normally fast-forward main to the feature tip.",
     tags: ["fast-forward", "branch-divergence"]
   },
@@ -889,12 +889,12 @@ const gitBranchingMergingQuestions = [
     difficulty: "Intermediate",
     question: "You are on `main`. The history has diverged because both `main` and `feature` contain unique commits. You want to integrate feature while preserving an explicit merge point. Which command is most appropriate?",
     options: [
-      { id: "A", text: "git branch -D feature" },
-      { id: "B", text: "git merge --ff-only feature" },
-      { id: "C", text: "git merge --no-ff feature" },
+      { id: "A", text: "git merge --no-ff feature" },
+      { id: "B", text: "git branch -D feature" },
+      { id: "C", text: "git merge --ff-only feature" },
       { id: "D", text: "git switch -c feature" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`git merge --no-ff feature` integrates the divergent feature history while ensuring a merge commit is created, preserving an explicit integration point.",
     tags: ["merge", "no-ff", "three-way-merge", "workflow"]
   }

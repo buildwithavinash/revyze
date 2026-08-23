@@ -7,12 +7,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Beginner",
     question: "What is a database constraint?",
     options: [
-      { id: "A", text: "A rule enforced by the database to restrict or validate stored data" },
-      { id: "B", text: "A command that always creates an index" },
-      { id: "C", text: "A temporary query result" },
-      { id: "D", text: "A database backup mechanism" }
+      { id: "A", text: "A command that always creates an index" },
+      { id: "B", text: "A temporary query result" },
+      { id: "C", text: "A database backup mechanism" },
+      { id: "D", text: "A rule enforced by the database to restrict or validate stored data" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Constraints enforce rules that help maintain data integrity.",
     tags: ["constraints", "fundamentals"]
   },
@@ -25,12 +25,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Beginner",
     question: "What is the main purpose of a primary key?",
     options: [
-      { id: "A", text: "To store multiple values in one column" },
-      { id: "B", text: "To uniquely identify each row in a table" },
+      { id: "A", text: "To uniquely identify each row in a table" },
+      { id: "B", text: "To store multiple values in one column" },
       { id: "C", text: "To automatically encrypt records" },
       { id: "D", text: "To connect every table in a database" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A primary key provides a unique identifier for each row.",
     tags: ["primary-key", "constraints"]
   },
@@ -44,11 +44,11 @@ const sqlConstraintsRelationshipsQuestions = [
     question: "Which property is normally required of a primary key?",
     options: [
       { id: "A", text: "It must contain duplicate values" },
-      { id: "B", text: "It must contain only text" },
-      { id: "C", text: "It must uniquely identify rows and cannot contain NULL values" },
+      { id: "B", text: "It must uniquely identify rows and cannot contain NULL values" },
+      { id: "C", text: "It must contain only text" },
       { id: "D", text: "It must always be a foreign key" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A primary key must uniquely identify each row and cannot be NULL.",
     tags: ["primary-key"]
   },
@@ -61,12 +61,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Beginner",
     question: "What does a FOREIGN KEY constraint primarily enforce?",
     options: [
-      { id: "A", text: "A relationship between rows in related tables" },
-      { id: "B", text: "A maximum table size" },
-      { id: "C", text: "Alphabetical ordering" },
+      { id: "A", text: "A maximum table size" },
+      { id: "B", text: "Alphabetical ordering" },
+      { id: "C", text: "A relationship between rows in related tables" },
       { id: "D", text: "Automatic encryption" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A foreign key references a key in another table and helps enforce referential integrity.",
     tags: ["foreign-key", "relationships"]
   },
@@ -80,11 +80,11 @@ const sqlConstraintsRelationshipsQuestions = [
     question: "What does a UNIQUE constraint generally guarantee?",
     options: [
       { id: "A", text: "Every row must have the same value" },
-      { id: "B", text: "Values within the constrained key must not duplicate according to the database's uniqueness rules" },
-      { id: "C", text: "The column cannot contain NULL under every database system" },
-      { id: "D", text: "The column automatically becomes a primary key" }
+      { id: "B", text: "The column cannot contain NULL under every database system" },
+      { id: "C", text: "The column automatically becomes a primary key" },
+      { id: "D", text: "Values within the constrained key must not duplicate according to the database's uniqueness rules" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "UNIQUE prevents duplicate constrained values. NULL handling can vary by database system.",
     tags: ["unique", "constraints"]
   },
@@ -153,10 +153,10 @@ const sqlConstraintsRelationshipsQuestions = [
     options: [
       { id: "A", text: "Many-to-many" },
       { id: "B", text: "One-to-one" },
-      { id: "C", text: "One-to-many" },
-      { id: "D", text: "Many-to-zero" }
+      { id: "C", text: "Many-to-zero" },
+      { id: "D", text: "One-to-many" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "One customer can have many orders, making this a one-to-many relationship.",
     tags: ["relationships", "one-to-many"]
   },
@@ -187,12 +187,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "In an `orders` table, what would `customer_id` typically be?",
     options: [
-      { id: "A", text: "A foreign key referencing the customer table" },
-      { id: "B", text: "A CHECK constraint" },
+      { id: "A", text: "A CHECK constraint" },
+      { id: "B", text: "A foreign key referencing the customer table" },
       { id: "C", text: "A database name" },
       { id: "D", text: "An index type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "customer_id can reference the primary key of the customers table.",
     tags: ["foreign-key", "relationships"]
   },
@@ -205,12 +205,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is referential integrity?",
     options: [
-      { id: "A", text: "Ensuring references between related tables remain valid according to their constraints" },
-      { id: "B", text: "Ensuring every table has exactly 10 rows" },
-      { id: "C", text: "Ensuring all values are strings" },
+      { id: "A", text: "Ensuring every table has exactly 10 rows" },
+      { id: "B", text: "Ensuring all values are strings" },
+      { id: "C", text: "Ensuring references between related tables remain valid according to their constraints" },
       { id: "D", text: "Ensuring every query uses an index" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Referential integrity prevents invalid relationships such as a child row referencing a nonexistent parent.",
     tags: ["referential-integrity", "foreign-key"]
   },
@@ -223,12 +223,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What can happen if you insert a foreign-key value that does not exist in the referenced parent table?",
     options: [
-      { id: "A", text: "The database generally rejects the operation when the foreign-key constraint is enforced" },
-      { id: "B", text: "The parent row is automatically created in every database" },
-      { id: "C", text: "The foreign key becomes a primary key" },
-      { id: "D", text: "The invalid value is always converted to zero" }
+      { id: "A", text: "The parent row is automatically created in every database" },
+      { id: "B", text: "The foreign key becomes a primary key" },
+      { id: "C", text: "The invalid value is always converted to zero" },
+      { id: "D", text: "The database generally rejects the operation when the foreign-key constraint is enforced" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A foreign-key constraint generally prevents references to nonexistent parent keys.",
     tags: ["foreign-key", "referential-integrity"]
   },
@@ -241,12 +241,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What does ON DELETE CASCADE generally do?",
     options: [
-      { id: "A", text: "Prevents every DELETE statement" },
-      { id: "B", text: "Automatically deletes related child rows when the referenced parent row is deleted" },
+      { id: "A", text: "Automatically deletes related child rows when the referenced parent row is deleted" },
+      { id: "B", text: "Prevents every DELETE statement" },
       { id: "C", text: "Copies the parent into another table" },
       { id: "D", text: "Turns the foreign key into a UNIQUE constraint" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "CASCADE defines a referential action that propagates deletion from the referenced parent to related child rows.",
     tags: ["foreign-key", "cascade"]
   },
@@ -259,12 +259,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is one potential danger of ON DELETE CASCADE?",
     options: [
-      { id: "A", text: "It can cause more related rows to be deleted than someone expected" },
-      { id: "B", text: "It prevents foreign keys from working" },
+      { id: "A", text: "It prevents foreign keys from working" },
+      { id: "B", text: "It can cause more related rows to be deleted than someone expected" },
       { id: "C", text: "It always creates duplicate rows" },
       { id: "D", text: "It disables transactions" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Cascading deletion can propagate through relationships, so it should be designed carefully.",
     tags: ["cascade", "delete", "relationships"]
   },
@@ -277,12 +277,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is a composite primary key?",
     options: [
-      { id: "A", text: "A primary key made from multiple columns together" },
-      { id: "B", text: "A primary key stored in two databases" },
-      { id: "C", text: "Two unrelated primary keys on the same row" },
+      { id: "A", text: "A primary key stored in two databases" },
+      { id: "B", text: "Two unrelated primary keys on the same row" },
+      { id: "C", text: "A primary key made from multiple columns together" },
       { id: "D", text: "A primary key that allows duplicates" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A composite primary key uses a combination of columns to uniquely identify a row.",
     tags: ["composite-key", "primary-key"]
   },
@@ -295,12 +295,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "Which scenario is a common use case for a composite primary key?",
     options: [
-      { id: "A", text: "A junction table representing a student-course relationship" },
-      { id: "B", text: "A table storing one database password" },
-      { id: "C", text: "A table with no rows" },
-      { id: "D", text: "A configuration file" }
+      { id: "A", text: "A table storing one database password" },
+      { id: "B", text: "A table with no rows" },
+      { id: "C", text: "A configuration file" },
+      { id: "D", text: "A junction table representing a student-course relationship" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A junction table can use `(student_id, course_id)` as a composite key to prevent duplicate relationships.",
     tags: ["composite-key", "many-to-many"]
   },
@@ -331,12 +331,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is a natural key?",
     options: [
-      { id: "A", text: "A key based on data that already has meaningful business identity" },
-      { id: "B", text: "A randomly generated database password" },
+      { id: "A", text: "A randomly generated database password" },
+      { id: "B", text: "A key based on data that already has meaningful business identity" },
       { id: "C", text: "A temporary transaction ID" },
       { id: "D", text: "An automatically created index" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A natural key uses meaningful domain data, such as a government-issued identifier where appropriate.",
     tags: ["natural-key", "keys"]
   },
@@ -349,12 +349,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "Why might a surrogate key be preferred over a natural key?",
     options: [
-      { id: "A", text: "It can provide a stable identifier independent of changing business attributes" },
-      { id: "B", text: "It guarantees every query is faster" },
-      { id: "C", text: "It eliminates all foreign keys" },
+      { id: "A", text: "It guarantees every query is faster" },
+      { id: "B", text: "It eliminates all foreign keys" },
+      { id: "C", text: "It can provide a stable identifier independent of changing business attributes" },
       { id: "D", text: "It makes normalization unnecessary" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Business attributes can change, while a surrogate identifier can remain stable as the record's identity.",
     tags: ["surrogate-key", "database-design"]
   },
@@ -367,12 +367,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is normalization primarily intended to reduce?",
     options: [
-      { id: "A", text: "Data redundancy and modification anomalies" },
-      { id: "B", text: "The number of valid users" },
-      { id: "C", text: "The number of SQL statements supported" },
-      { id: "D", text: "The need for primary keys" }
+      { id: "A", text: "The number of valid users" },
+      { id: "B", text: "The number of SQL statements supported" },
+      { id: "C", text: "The need for primary keys" },
+      { id: "D", text: "Data redundancy and modification anomalies" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Normalization structures data to reduce unnecessary duplication and anomalies.",
     tags: ["normalization"]
   },
@@ -421,12 +421,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What problem can occur when customer information is duplicated in every order row?",
     options: [
-      { id: "A", text: "Update anomalies and unnecessary redundancy" },
-      { id: "B", text: "Foreign keys become impossible" },
-      { id: "C", text: "SQL SELECT stops working" },
+      { id: "A", text: "Foreign keys become impossible" },
+      { id: "B", text: "SQL SELECT stops working" },
+      { id: "C", text: "Update anomalies and unnecessary redundancy" },
       { id: "D", text: "Primary keys automatically disappear" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Repeated customer data can become inconsistent when one copy is updated and others are not.",
     tags: ["normalization", "redundancy"]
   },
@@ -439,12 +439,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is an update anomaly?",
     options: [
-      { id: "A", text: "A situation where duplicated information must be updated in multiple places and can become inconsistent" },
-      { id: "B", text: "A query that uses UPDATE correctly" },
-      { id: "C", text: "A failed SELECT statement" },
-      { id: "D", text: "A database backup problem" }
+      { id: "A", text: "A query that uses UPDATE correctly" },
+      { id: "B", text: "A failed SELECT statement" },
+      { id: "C", text: "A database backup problem" },
+      { id: "D", text: "A situation where duplicated information must be updated in multiple places and can become inconsistent" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Update anomalies arise when the same fact is duplicated and changes are not consistently applied everywhere.",
     tags: ["normalization", "update-anomaly"]
   },
@@ -475,12 +475,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Intermediate",
     question: "What is a deletion anomaly?",
     options: [
-      { id: "A", text: "Deleting one fact unintentionally removes another fact that should have been preserved" },
-      { id: "B", text: "A DELETE syntax error" },
+      { id: "A", text: "A DELETE syntax error" },
+      { id: "B", text: "Deleting one fact unintentionally removes another fact that should have been preserved" },
       { id: "C", text: "A failed database connection" },
       { id: "D", text: "An index being created" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Deletion anomalies result from storing independent facts together so that deleting one can remove the other.",
     tags: ["normalization", "delete-anomaly"]
   },
@@ -493,12 +493,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What is the main concern addressed by Second Normal Form (2NF)?",
     options: [
-      { id: "A", text: "Removing partial dependencies on part of a composite key" },
-      { id: "B", text: "Removing all foreign keys" },
-      { id: "C", text: "Removing every NULL value" },
+      { id: "A", text: "Removing all foreign keys" },
+      { id: "B", text: "Removing every NULL value" },
+      { id: "C", text: "Removing partial dependencies on part of a composite key" },
       { id: "D", text: "Adding an index to every column" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "2NF addresses non-key attributes that depend on only part of a composite candidate key.",
     tags: ["2nf", "normalization"]
   },
@@ -511,12 +511,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What is a partial dependency?",
     options: [
-      { id: "A", text: "A non-key attribute depends on only part of a composite candidate key" },
-      { id: "B", text: "A foreign key contains NULL" },
-      { id: "C", text: "A table contains only one row" },
-      { id: "D", text: "A query has a partial WHERE clause" }
+      { id: "A", text: "A foreign key contains NULL" },
+      { id: "B", text: "A table contains only one row" },
+      { id: "C", text: "A query has a partial WHERE clause" },
+      { id: "D", text: "A non-key attribute depends on only part of a composite candidate key" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Partial dependency is relevant when a candidate key contains multiple attributes and a non-key attribute depends on only a subset.",
     tags: ["2nf", "dependencies"]
   },
@@ -547,12 +547,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Consider `employees(employee_id, department_id, department_name)`. If department_name depends on department_id rather than employee_id, what design issue exists?",
     options: [
-      { id: "A", text: "A transitive dependency" },
-      { id: "B", text: "A missing SELECT statement" },
+      { id: "A", text: "A missing SELECT statement" },
+      { id: "B", text: "A transitive dependency" },
       { id: "C", text: "A many-to-many relationship" },
       { id: "D", text: "A composite index" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "department_name depends on department_id, which itself is associated with the employee key, creating a transitive dependency.",
     tags: ["3nf", "normalization"]
   },
@@ -566,11 +566,11 @@ const sqlConstraintsRelationshipsQuestions = [
     question: "Which design is generally more normalized?",
     options: [
       { id: "A", text: "A users table containing department_name repeatedly for every user" },
-      { id: "B", text: "A users table referencing a separate departments table through department_id" },
-      { id: "C", text: "A users table storing all departments as comma-separated text" },
+      { id: "B", text: "A users table storing all departments as comma-separated text" },
+      { id: "C", text: "A users table referencing a separate departments table through department_id" },
       { id: "D", text: "One table containing every entity and repeated attributes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Separating department data and referencing it avoids unnecessary duplication.",
     tags: ["normalization", "foreign-key"]
   },
@@ -583,12 +583,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "When might denormalization be deliberately introduced?",
     options: [
-      { id: "A", text: "When controlled redundancy can improve read performance or simplify frequently used queries" },
-      { id: "B", text: "Whenever foreign keys are required" },
-      { id: "C", text: "To guarantee zero storage usage" },
-      { id: "D", text: "To remove all integrity rules" }
+      { id: "A", text: "Whenever foreign keys are required" },
+      { id: "B", text: "To guarantee zero storage usage" },
+      { id: "C", text: "To remove all integrity rules" },
+      { id: "D", text: "When controlled redundancy can improve read performance or simplify frequently used queries" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Denormalization can be a deliberate performance trade-off, particularly in read-heavy workloads.",
     tags: ["denormalization", "performance"]
   },
@@ -619,12 +619,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "A `users` table has a UNIQUE constraint on `email`. What rule does this represent?",
     options: [
-      { id: "A", text: "Two users cannot have the same email value under the constraint's uniqueness rules" },
-      { id: "B", text: "Every user must have two emails" },
+      { id: "A", text: "Every user must have two emails" },
+      { id: "B", text: "Two users cannot have the same email value under the constraint's uniqueness rules" },
       { id: "C", text: "Email becomes the foreign key automatically" },
       { id: "D", text: "Email values can never be NULL in every database" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A UNIQUE constraint prevents duplicate constrained values. Handling of NULL can differ across database systems.",
     tags: ["unique", "constraints"]
   },
@@ -638,11 +638,11 @@ const sqlConstraintsRelationshipsQuestions = [
     question: "Can a table have multiple UNIQUE constraints?",
     options: [
       { id: "A", text: "No, only one UNIQUE constraint is allowed" },
-      { id: "B", text: "Yes, a table can have multiple unique constraints" },
-      { id: "C", text: "Only if it has no primary key" },
+      { id: "B", text: "Only if it has no primary key" },
+      { id: "C", text: "Yes, a table can have multiple unique constraints" },
       { id: "D", text: "Only when all columns are numeric" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A table can have multiple unique constraints on different columns or combinations of columns.",
     tags: ["unique", "constraints"]
   },
@@ -655,12 +655,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What is a candidate key?",
     options: [
-      { id: "A", text: "A minimal set of attributes capable of uniquely identifying a row" },
-      { id: "B", text: "Any column containing NULL" },
-      { id: "C", text: "A foreign key that points nowhere" },
-      { id: "D", text: "A temporary index" }
+      { id: "A", text: "Any column containing NULL" },
+      { id: "B", text: "A foreign key that points nowhere" },
+      { id: "C", text: "A temporary index" },
+      { id: "D", text: "A minimal set of attributes capable of uniquely identifying a row" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A candidate key is a minimal unique identifier. One candidate key is chosen as the primary key.",
     tags: ["candidate-key", "keys"]
   },
@@ -691,12 +691,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What is the difference between a primary key and a foreign key?",
     options: [
-      { id: "A", text: "A primary key identifies rows in its own table, while a foreign key references a key in another table" },
-      { id: "B", text: "A primary key always references another table" },
+      { id: "A", text: "A primary key always references another table" },
+      { id: "B", text: "A primary key identifies rows in its own table, while a foreign key references a key in another table" },
       { id: "C", text: "A foreign key must uniquely identify every row in its own table" },
       { id: "D", text: "They are always identical constraints" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Primary keys identify records; foreign keys establish references between tables.",
     tags: ["primary-key", "foreign-key"]
   },
@@ -710,11 +710,11 @@ const sqlConstraintsRelationshipsQuestions = [
     question: "Can a foreign key contain duplicate values?",
     options: [
       { id: "A", text: "No, foreign keys must always be unique" },
-      { id: "B", text: "Yes, unless another constraint prevents duplicates" },
-      { id: "C", text: "Only if the parent table has no primary key" },
+      { id: "B", text: "Only if the parent table has no primary key" },
+      { id: "C", text: "Yes, unless another constraint prevents duplicates" },
       { id: "D", text: "Only for numeric values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Many child rows can reference the same parent, so foreign-key values commonly repeat.",
     tags: ["foreign-key", "one-to-many"]
   },
@@ -727,12 +727,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What does a one-to-one relationship mean?",
     options: [
-      { id: "A", text: "Each entity instance is associated with at most one corresponding instance on the other side, according to the model" },
-      { id: "B", text: "Every row references every other row" },
-      { id: "C", text: "One parent must have thousands of children" },
-      { id: "D", text: "No foreign keys are required" }
+      { id: "A", text: "Every row references every other row" },
+      { id: "B", text: "One parent must have thousands of children" },
+      { id: "C", text: "No foreign keys are required" },
+      { id: "D", text: "Each entity instance is associated with at most one corresponding instance on the other side, according to the model" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A one-to-one relationship associates each entity with at most one related entity, subject to the constraints defined.",
     tags: ["one-to-one", "relationships"]
   },
@@ -763,12 +763,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Which design is preferable for storing products belonging to multiple categories?",
     options: [
-      { id: "A", text: "A junction table such as product_categories(product_id, category_id)" },
-      { id: "B", text: "A comma-separated category list in products" },
+      { id: "A", text: "A comma-separated category list in products" },
+      { id: "B", text: "A junction table such as product_categories(product_id, category_id)" },
       { id: "C", text: "A separate database for every category" },
       { id: "D", text: "A single category column containing all categories" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Products and categories form a many-to-many relationship, which is naturally represented using a junction table.",
     tags: ["many-to-many", "junction-table"]
   },
@@ -781,12 +781,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Why might a junction table use `(product_id, category_id)` as a composite primary key?",
     options: [
-      { id: "A", text: "To prevent the same product-category relationship from being inserted twice" },
-      { id: "B", text: "To allow unlimited duplicate relationships" },
-      { id: "C", text: "To remove both foreign keys" },
+      { id: "A", text: "To allow unlimited duplicate relationships" },
+      { id: "B", text: "To remove both foreign keys" },
+      { id: "C", text: "To prevent the same product-category relationship from being inserted twice" },
       { id: "D", text: "To store product names automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The composite key uniquely identifies each relationship pair.",
     tags: ["junction-table", "composite-key"]
   },
@@ -799,12 +799,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "What is a self-referencing foreign key?",
     options: [
-      { id: "A", text: "A foreign key in a table that references a key in the same table" },
-      { id: "B", text: "A foreign key with no constraint" },
-      { id: "C", text: "A foreign key referencing a different database server only" },
-      { id: "D", text: "A primary key with duplicate values" }
+      { id: "A", text: "A foreign key with no constraint" },
+      { id: "B", text: "A foreign key referencing a different database server only" },
+      { id: "C", text: "A primary key with duplicate values" },
+      { id: "D", text: "A foreign key in a table that references a key in the same table" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A self-referencing foreign key is useful for hierarchical structures such as employees and managers.",
     tags: ["self-reference", "foreign-key"]
   },
@@ -835,12 +835,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Why should business rules be enforced with database constraints when appropriate rather than relying only on application validation?",
     options: [
-      { id: "A", text: "Constraints provide a database-level integrity boundary that can protect data from multiple clients or code paths" },
-      { id: "B", text: "Application validation can never work" },
+      { id: "A", text: "Application validation can never work" },
+      { id: "B", text: "Constraints provide a database-level integrity boundary that can protect data from multiple clients or code paths" },
       { id: "C", text: "Constraints automatically replace authentication" },
       { id: "D", text: "Constraints make indexes unnecessary" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Database constraints provide centralized protection even when data can be modified by different applications, scripts, or services.",
     tags: ["constraints", "data-integrity"]
   },
@@ -853,12 +853,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Which design best represents a normalized customer/order system?",
     options: [
-      { id: "A", text: "customers(id, name) and orders(id, customer_id, total), with customer_id referencing customers(id)" },
-      { id: "B", text: "orders(id, customer_name, customer_email, customer_address, total) with customer data duplicated for every order" },
-      { id: "C", text: "A single comma-separated customer/order field" },
+      { id: "A", text: "orders(id, customer_name, customer_email, customer_address, total) with customer data duplicated for every order" },
+      { id: "B", text: "A single comma-separated customer/order field" },
+      { id: "C", text: "customers(id, name) and orders(id, customer_id, total), with customer_id referencing customers(id)" },
       { id: "D", text: "A table with no keys and no relationships" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Separating customers from orders and connecting them through customer_id reduces duplicated customer information.",
     tags: ["normalization", "foreign-key", "database-design"]
   },
@@ -873,10 +873,10 @@ const sqlConstraintsRelationshipsQuestions = [
     options: [
       { id: "A", text: "Always denormalize everything" },
       { id: "B", text: "Always normalize to the maximum possible level regardless of workload" },
-      { id: "C", text: "Start with sound normalized relationships and introduce deliberate denormalization only when justified by requirements and measurements" },
-      { id: "D", text: "Avoid constraints so either approach works automatically" }
+      { id: "C", text: "Avoid constraints so either approach works automatically" },
+      { id: "D", text: "Start with sound normalized relationships and introduce deliberate denormalization only when justified by requirements and measurements" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "A well-structured normalized model is usually a strong starting point. Performance-driven denormalization should be deliberate and backed by actual workload requirements.",
     tags: ["normalization", "denormalization", "architecture"]
   },
@@ -889,12 +889,12 @@ const sqlConstraintsRelationshipsQuestions = [
     difficulty: "Advanced",
     question: "Which combination provides the strongest foundation for relational data integrity?",
     options: [
-      { id: "A", text: "Comma-separated relationships and application comments" },
-      { id: "B", text: "Primary keys, appropriate foreign keys, relevant UNIQUE/NOT NULL/CHECK constraints, and a well-designed normalized schema" },
+      { id: "A", text: "Primary keys, appropriate foreign keys, relevant UNIQUE/NOT NULL/CHECK constraints, and a well-designed normalized schema" },
+      { id: "B", text: "Comma-separated relationships and application comments" },
       { id: "C", text: "Only indexes with no constraints" },
       { id: "D", text: "One giant table containing all application data" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Keys, constraints, relationships, and appropriate normalization work together to maintain consistent relational data.",
     tags: ["constraints", "relationships", "normalization", "database-design"]
   }

@@ -25,12 +25,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Beginner",
     question: "Which element is most appropriate for the primary navigation of a website?",
     options: [
-      { id: "A", text: "<nav>" },
-      { id: "B", text: "<navigation>" },
+      { id: "A", text: "<navigation>" },
+      { id: "B", text: "<nav>" },
       { id: "C", text: "<links>" },
       { id: "D", text: "<menu-bar>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The <nav> element identifies a section containing navigation links.",
     tags: ["nav", "semantic-html", "navigation"]
   },
@@ -43,12 +43,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Beginner",
     question: "Which element identifies the dominant content of a document?",
     options: [
-      { id: "A", text: "<main>" },
-      { id: "B", text: "<content>" },
-      { id: "C", text: "<primary>" },
+      { id: "A", text: "<content>" },
+      { id: "B", text: "<primary>" },
+      { id: "C", text: "<main>" },
       { id: "D", text: "<body-content>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The <main> element represents the dominant content of the document. Content repeated across pages, such as site-wide navigation, generally does not belong inside it.",
     tags: ["main", "semantic-html", "landmarks"]
   },
@@ -61,12 +61,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Beginner",
     question: "Which element is appropriate for a self-contained blog post?",
     options: [
-      { id: "A", text: "<article>" },
-      { id: "B", text: "<post>" },
-      { id: "C", text: "<content>" },
-      { id: "D", text: "<blog-entry>" }
+      { id: "A", text: "<post>" },
+      { id: "B", text: "<content>" },
+      { id: "C", text: "<blog-entry>" },
+      { id: "D", text: "<article>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "<article> represents a self-contained composition that could potentially be distributed or understood independently, such as a blog post or news article.",
     tags: ["article", "semantic-html", "content"]
   },
@@ -97,12 +97,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Beginner",
     question: "Which element is intended for introductory content for a page or section?",
     options: [
-      { id: "A", text: "<header>" },
-      { id: "B", text: "<intro>" },
+      { id: "A", text: "<intro>" },
+      { id: "B", text: "<header>" },
       { id: "C", text: "<top>" },
       { id: "D", text: "<heading-area>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "<header> represents introductory or navigational content for its nearest sectioning context. It is not limited to the top of the entire page.",
     tags: ["header", "semantic-html", "sections"]
   },
@@ -115,12 +115,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Beginner",
     question: "Which statement about <footer> is correct?",
     options: [
-      { id: "A", text: "It can represent footer information for the page or a particular section" },
-      { id: "B", text: "It can only appear once in an HTML document" },
-      { id: "C", text: "It must always be the last element in <body>" },
+      { id: "A", text: "It can only appear once in an HTML document" },
+      { id: "B", text: "It must always be the last element in <body>" },
+      { id: "C", text: "It can represent footer information for the page or a particular section" },
       { id: "D", text: "It is only used for copyright text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A <footer> can belong to the overall page or to a sectioning element such as an article. Multiple footer elements can therefore exist in a document.",
     tags: ["footer", "semantic-html", "sections"]
   },
@@ -133,12 +133,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What is the main semantic difference between <section> and <div>?",
     options: [
-      { id: "A", text: "<section> represents a thematic grouping, while <div> has no inherent semantic meaning" },
-      { id: "B", text: "<div> is semantic but <section> is not" },
-      { id: "C", text: "<section> can only contain text" },
-      { id: "D", text: "<div> automatically creates a landmark" }
+      { id: "A", text: "<div> is semantic but <section> is not" },
+      { id: "B", text: "<section> can only contain text" },
+      { id: "C", text: "<div> automatically creates a landmark" },
+      { id: "D", text: "<section> represents a thematic grouping, while <div> has no inherent semantic meaning" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "<section> communicates a thematic grouping of content. <div> is a generic container and should generally be used when no more meaningful semantic element fits.",
     tags: ["section", "div", "semantic-html"]
   },
@@ -169,12 +169,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which implementation is the most semantically appropriate for a button that opens a settings panel?",
     options: [
-      { id: "A", text: "<button type=\"button\">Settings</button>" },
-      { id: "B", text: "<div onclick=\"openSettings()\">Settings</div>" },
+      { id: "A", text: "<div onclick=\"openSettings()\">Settings</div>" },
+      { id: "B", text: "<button type=\"button\">Settings</button>" },
       { id: "C", text: "<span onclick=\"openSettings()\">Settings</span>" },
       { id: "D", text: "<p onclick=\"openSettings()\">Settings</p>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A control that performs an action should use the native button element whenever possible. It provides the appropriate interaction model without requiring developers to recreate keyboard and accessibility behavior.",
     tags: ["button", "interaction", "accessibility"]
   },
@@ -187,12 +187,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What does ARIA stand for?",
     options: [
-      { id: "A", text: "Accessible Rich Internet Applications" },
-      { id: "B", text: "Advanced Responsive Internet Architecture" },
-      { id: "C", text: "Accessible Responsive Interface API" },
+      { id: "A", text: "Advanced Responsive Internet Architecture" },
+      { id: "B", text: "Accessible Responsive Interface API" },
+      { id: "C", text: "Accessible Rich Internet Applications" },
       { id: "D", text: "Application Role Interaction Architecture" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ARIA stands for Accessible Rich Internet Applications. It provides attributes that can communicate roles, states, properties, and relationships to assistive technologies.",
     tags: ["aria", "accessibility"]
   },
@@ -205,12 +205,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What is the preferred general approach when native HTML already provides the required semantics?",
     options: [
-      { id: "A", text: "Prefer the native HTML element instead of adding unnecessary ARIA" },
-      { id: "B", text: "Always add a matching ARIA role anyway" },
-      { id: "C", text: "Replace native HTML with div elements and ARIA" },
-      { id: "D", text: "Avoid semantic HTML entirely" }
+      { id: "A", text: "Always add a matching ARIA role anyway" },
+      { id: "B", text: "Replace native HTML with div elements and ARIA" },
+      { id: "C", text: "Avoid semantic HTML entirely" },
+      { id: "D", text: "Prefer the native HTML element instead of adding unnecessary ARIA" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Native HTML elements generally provide reliable semantics and built-in behavior. ARIA should supplement native HTML when needed rather than unnecessarily replacing it.",
     tags: ["aria", "semantic-html", "accessibility"]
   },
@@ -241,12 +241,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which ARIA role can communicate that a generic element is intended to behave as a button?",
     options: [
-      { id: "A", text: "role=\"button\"" },
-      { id: "B", text: "role=\"clickable\"" },
+      { id: "A", text: "role=\"clickable\"" },
+      { id: "B", text: "role=\"button\"" },
       { id: "C", text: "role=\"action\"" },
       { id: "D", text: "role=\"control\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "role=\"button\" communicates the intended button semantics. However, a native <button> is generally preferable because the native element also supplies the expected interaction behavior.",
     tags: ["aria", "role", "button"]
   },
@@ -259,12 +259,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Why does role=\"button\" on a <div> not automatically make it equivalent to a native <button>?",
     options: [
-      { id: "A", text: "The developer may still need to implement keyboard interaction, focus behavior, and activation correctly" },
-      { id: "B", text: "ARIA roles only affect CSS" },
-      { id: "C", text: "A div can never receive focus" },
+      { id: "A", text: "ARIA roles only affect CSS" },
+      { id: "B", text: "A div can never receive focus" },
+      { id: "C", text: "The developer may still need to implement keyboard interaction, focus behavior, and activation correctly" },
       { id: "D", text: "role=\"button\" is ignored by every browser" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ARIA primarily communicates semantics; it does not automatically recreate every behavior of a native control. A custom button needs appropriate focus and keyboard interaction handling as well.",
     tags: ["aria", "button", "keyboard-accessibility"]
   },
@@ -277,12 +277,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What does aria-label provide?",
     options: [
-      { id: "A", text: "An accessible name supplied directly through an ARIA attribute" },
-      { id: "B", text: "A visible CSS label" },
-      { id: "C", text: "A browser tooltip only" },
-      { id: "D", text: "A form submission value" }
+      { id: "A", text: "A visible CSS label" },
+      { id: "B", text: "A browser tooltip only" },
+      { id: "C", text: "A form submission value" },
+      { id: "D", text: "An accessible name supplied directly through an ARIA attribute" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "aria-label can provide an accessible name when appropriate. It should not be used to unnecessarily replace visible, meaningful text.",
     tags: ["aria-label", "accessible-name", "accessibility"]
   },
@@ -313,12 +313,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of aria-labelledby?",
     options: [
-      { id: "A", text: "To use the accessible text of another element as the current element's accessible name" },
-      { id: "B", text: "To create a CSS selector" },
+      { id: "A", text: "To create a CSS selector" },
+      { id: "B", text: "To use the accessible text of another element as the current element's accessible name" },
       { id: "C", text: "To associate a form value with a server endpoint" },
       { id: "D", text: "To hide an element visually" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "aria-labelledby references one or more element IDs whose accessible text provides the accessible name for the current element.",
     tags: ["aria-labelledby", "accessible-name", "aria"]
   },
@@ -331,12 +331,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly associates a dialog with its visible heading as its accessible name?",
     options: [
-      { id: "A", text: "<div role=\"dialog\" aria-labelledby=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
-      { id: "B", text: "<div role=\"dialog\" label=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
-      { id: "C", text: "<div role=\"dialog\" for=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
+      { id: "A", text: "<div role=\"dialog\" label=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
+      { id: "B", text: "<div role=\"dialog\" for=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
+      { id: "C", text: "<div role=\"dialog\" aria-labelledby=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" },
       { id: "D", text: "<div role=\"dialog\" heading=\"dialog-title\"><h2 id=\"dialog-title\">Delete account?</h2></div>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "aria-labelledby references the ID of the visible heading, allowing that heading to provide the dialog's accessible name.",
     tags: ["dialog", "aria-labelledby", "accessibility"]
   },
@@ -349,12 +349,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What does aria-describedby primarily communicate?",
     options: [
-      { id: "A", text: "Additional descriptive text associated with an element" },
-      { id: "B", text: "The element's CSS class" },
-      { id: "C", text: "The element's URL" },
-      { id: "D", text: "The element's keyboard shortcut" }
+      { id: "A", text: "The element's CSS class" },
+      { id: "B", text: "The element's URL" },
+      { id: "C", text: "The element's keyboard shortcut" },
+      { id: "D", text: "Additional descriptive text associated with an element" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "aria-describedby associates an element with one or more other elements that provide additional descriptive information.",
     tags: ["aria-describedby", "aria", "accessibility"]
   },
@@ -385,12 +385,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which button state correctly communicates that its associated menu is currently open?",
     options: [
-      { id: "A", text: "<button aria-expanded=\"true\">Menu</button>" },
-      { id: "B", text: "<button aria-open=\"true\">Menu</button>" },
+      { id: "A", text: "<button aria-open=\"true\">Menu</button>" },
+      { id: "B", text: "<button aria-expanded=\"true\">Menu</button>" },
       { id: "C", text: "<button expanded=\"true\">Menu</button>" },
       { id: "D", text: "<button state=\"open\">Menu</button>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "aria-expanded=\"true\" communicates that the controlled expandable content is currently expanded.",
     tags: ["aria-expanded", "menu", "accessibility"]
   },
@@ -403,12 +403,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What does aria-hidden=\"true\" generally communicate?",
     options: [
-      { id: "A", text: "The element should be excluded from the accessibility tree" },
-      { id: "B", text: "The element should become display:none in CSS" },
-      { id: "C", text: "The element should be invisible to everyone" },
+      { id: "A", text: "The element should become display:none in CSS" },
+      { id: "B", text: "The element should be invisible to everyone" },
+      { id: "C", text: "The element should be excluded from the accessibility tree" },
       { id: "D", text: "The element should be removed from the DOM" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "aria-hidden=\"true\" hides an element from the accessibility tree. It does not automatically remove the element visually, from the DOM, or from all forms of interaction.",
     tags: ["aria-hidden", "aria", "accessibility-tree"]
   },
@@ -421,12 +421,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which is the most appropriate use of aria-hidden=\"true\"?",
     options: [
-      { id: "A", text: "A decorative icon that conveys no information beyond adjacent text" },
-      { id: "B", text: "A form field that the user must complete" },
-      { id: "C", text: "A button whose only accessible name is its icon" },
-      { id: "D", text: "A heading that identifies the current page" }
+      { id: "A", text: "A form field that the user must complete" },
+      { id: "B", text: "A button whose only accessible name is its icon" },
+      { id: "C", text: "A heading that identifies the current page" },
+      { id: "D", text: "A decorative icon that conveys no information beyond adjacent text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Decorative content that adds no useful information can often be hidden from assistive technologies so it does not create redundant or confusing output.",
     tags: ["aria-hidden", "decorative-content", "accessibility"]
   },
@@ -457,12 +457,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Why is heading hierarchy important for accessibility?",
     options: [
-      { id: "A", text: "Assistive technology users can use headings to understand and navigate the structure of a page" },
-      { id: "B", text: "Screen readers only read h1 elements" },
+      { id: "A", text: "Screen readers only read h1 elements" },
+      { id: "B", text: "Assistive technology users can use headings to understand and navigate the structure of a page" },
       { id: "C", text: "Browsers refuse to display skipped heading levels" },
       { id: "D", text: "Heading levels determine CSS specificity" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Headings communicate content hierarchy. Users of screen readers can navigate between headings, so heading structure should reflect the actual organization of the content.",
     tags: ["headings", "accessibility", "document-structure"]
   },
@@ -475,12 +475,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "A developer chooses <h4> because it visually matches the desired font size, even though the section is actually a direct subsection of an <h2>. What is the main concern?",
     options: [
-      { id: "A", text: "The heading level no longer accurately represents the content hierarchy" },
-      { id: "B", text: "h4 elements cannot be styled with CSS" },
-      { id: "C", text: "h4 elements are invisible to browsers" },
+      { id: "A", text: "h4 elements cannot be styled with CSS" },
+      { id: "B", text: "h4 elements are invisible to browsers" },
+      { id: "C", text: "The heading level no longer accurately represents the content hierarchy" },
       { id: "D", text: "Only h1 elements can contain text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Heading levels should communicate hierarchy rather than be selected purely for visual sizing. CSS should be used to control presentation.",
     tags: ["headings", "semantic-html", "accessibility"]
   },
@@ -493,12 +493,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What is an accessibility landmark?",
     options: [
-      { id: "A", text: "A semantic region that helps users identify and navigate major areas of a page" },
-      { id: "B", text: "A visual border around a component" },
-      { id: "C", text: "A CSS positioning technique" },
-      { id: "D", text: "A browser bookmark" }
+      { id: "A", text: "A visual border around a component" },
+      { id: "B", text: "A CSS positioning technique" },
+      { id: "C", text: "A browser bookmark" },
+      { id: "D", text: "A semantic region that helps users identify and navigate major areas of a page" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Landmarks expose meaningful regions such as navigation, main content, banners, and complementary content, helping assistive technology users navigate large pages.",
     tags: ["landmarks", "accessibility", "semantic-html"]
   },
@@ -529,24 +529,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which page structure provides the clearest semantic landmarks?",
     options: [
-      {
-        id: "A",
-        text: "<header>Site header</header><nav>Navigation</nav><main>Main content</main><aside>Related content</aside><footer>Footer</footer>"
-      },
-      {
-        id: "B",
-        text: "<div>Site header</div><div>Navigation</div><div>Main content</div><div>Related content</div><div>Footer</div>"
-      },
-      {
-        id: "C",
-        text: "<span>Site header</span><span>Navigation</span><span>Main content</span>"
-      },
-      {
-        id: "D",
-        text: "<p>Site header</p><p>Navigation</p><p>Main content</p>"
-      }
+      { id: "A", text: "<div>Site header</div><div>Navigation</div><div>Main content</div><div>Related content</div><div>Footer</div>" },
+      { id: "B", text: "<header>Site header</header><nav>Navigation</nav><main>Main content</main><aside>Related content</aside><footer>Footer</footer>" },
+      { id: "C", text: "<span>Site header</span><span>Navigation</span><span>Main content</span>" },
+      { id: "D", text: "<p>Site header</p><p>Navigation</p><p>Main content</p>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The semantic elements communicate the role of each major region directly, making the structure easier for browsers, assistive technologies, and developers to understand.",
     tags: ["landmarks", "semantic-html", "page-structure"]
   },
@@ -559,12 +547,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Why should a form input generally have a proper <label> rather than relying only on placeholder text?",
     options: [
-      { id: "A", text: "A label provides a persistent semantic association, while placeholder text can disappear when the user enters a value" },
-      { id: "B", text: "Placeholder text cannot be displayed in modern browsers" },
-      { id: "C", text: "Labels only exist for CSS styling" },
+      { id: "A", text: "Placeholder text cannot be displayed in modern browsers" },
+      { id: "B", text: "Labels only exist for CSS styling" },
+      { id: "C", text: "A label provides a persistent semantic association, while placeholder text can disappear when the user enters a value" },
       { id: "D", text: "Inputs cannot contain placeholders" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A proper label identifies the control persistently and programmatically. Placeholder text is intended as a hint and should not replace a label.",
     tags: ["forms", "label", "accessibility"]
   },
@@ -577,12 +565,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which markup provides an explicit accessible relationship between the label and input?",
     options: [
-      { id: "A", text: "<label for=\"email\">Email</label><input id=\"email\" type=\"email\">" },
-      { id: "B", text: "<label href=\"email\">Email</label><input id=\"email\" type=\"email\">" },
-      { id: "C", text: "<label target=\"email\">Email</label><input name=\"email\" type=\"email\">" },
-      { id: "D", text: "<label id=\"email\">Email</label><input for=\"email\" type=\"email\">" }
+      { id: "A", text: "<label href=\"email\">Email</label><input id=\"email\" type=\"email\">" },
+      { id: "B", text: "<label target=\"email\">Email</label><input name=\"email\" type=\"email\">" },
+      { id: "C", text: "<label id=\"email\">Email</label><input for=\"email\" type=\"email\">" },
+      { id: "D", text: "<label for=\"email\">Email</label><input id=\"email\" type=\"email\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The label's `for` attribute references the input's `id`, establishing an explicit programmatic association.",
     tags: ["label", "forms", "accessibility"]
   },
@@ -613,12 +601,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which alt text is most appropriate for a decorative divider image?",
     options: [
-      { id: "A", text: "alt=\"\"" },
-      { id: "B", text: "alt=\"Decorative divider image separating content\"" },
+      { id: "A", text: "alt=\"Decorative divider image separating content\"" },
+      { id: "B", text: "alt=\"\"" },
       { id: "C", text: "alt=\"Image\"" },
       { id: "D", text: "alt=\"Divider important\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When an image is purely decorative and adds no meaningful information, an empty alt attribute allows assistive technologies to skip it.",
     tags: ["alt", "decorative-images", "accessibility"]
   },
@@ -631,12 +619,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "Which element is generally preferable for navigation instead of a generic div containing links?",
     options: [
-      { id: "A", text: "<nav>" },
-      { id: "B", text: "<div role=\"box\">" },
-      { id: "C", text: "<span>" },
+      { id: "A", text: "<div role=\"box\">" },
+      { id: "B", text: "<span>" },
+      { id: "C", text: "<nav>" },
       { id: "D", text: "<p>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The native <nav> element already communicates the semantic purpose of the region and exposes appropriate navigation semantics.",
     tags: ["nav", "semantic-html", "landmarks"]
   },
@@ -649,12 +637,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the tabindex attribute?",
     options: [
-      { id: "A", text: "It influences an element's focusability and keyboard focus order" },
-      { id: "B", text: "It changes the visual stacking order" },
-      { id: "C", text: "It changes the heading level" },
-      { id: "D", text: "It defines the element's ARIA role" }
+      { id: "A", text: "It changes the visual stacking order" },
+      { id: "B", text: "It changes the heading level" },
+      { id: "C", text: "It defines the element's ARIA role" },
+      { id: "D", text: "It influences an element's focusability and keyboard focus order" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "tabindex controls aspects of keyboard focus behavior. Positive tabindex values should generally be avoided because they can create a confusing custom focus order.",
     tags: ["tabindex", "keyboard", "focus", "accessibility"]
   },
@@ -685,12 +673,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "What does tabindex=\"0\" generally do?",
     options: [
-      { id: "A", text: "It places an otherwise focusable-capable element into the normal sequential keyboard focus order" },
-      { id: "B", text: "It removes the element from keyboard navigation" },
+      { id: "A", text: "It removes the element from keyboard navigation" },
+      { id: "B", text: "It places an otherwise focusable-capable element into the normal sequential keyboard focus order" },
       { id: "C", text: "It forces the element to receive focus immediately" },
       { id: "D", text: "It gives the element the highest focus priority" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "tabindex=\"0\" allows an element that is not natively sequentially focusable to participate in the normal tab order. It does not make the element automatically behave like a native button or link.",
     tags: ["tabindex", "focus", "keyboard"]
   },
@@ -703,12 +691,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "What does tabindex=\"-1\" generally allow?",
     options: [
-      { id: "A", text: "The element can be focused programmatically but is excluded from normal sequential Tab navigation" },
-      { id: "B", text: "The element becomes permanently disabled" },
-      { id: "C", text: "The element becomes the first Tab stop" },
+      { id: "A", text: "The element becomes permanently disabled" },
+      { id: "B", text: "The element becomes the first Tab stop" },
+      { id: "C", text: "The element can be focused programmatically but is excluded from normal sequential Tab navigation" },
       { id: "D", text: "The element becomes hidden from assistive technology" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "tabindex=\"-1\" removes an element from sequential keyboard navigation while still allowing focus to be moved to it programmatically.",
     tags: ["tabindex", "focus", "keyboard"]
   },
@@ -721,12 +709,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "A custom modal opens. Which behavior is most important for keyboard accessibility?",
     options: [
-      { id: "A", text: "Manage focus so keyboard users can meaningfully interact with the dialog and return focus appropriately when it closes" },
-      { id: "B", text: "Remove all headings from the modal" },
-      { id: "C", text: "Disable the Tab key globally" },
-      { id: "D", text: "Automatically scroll the entire page to the top" }
+      { id: "A", text: "Remove all headings from the modal" },
+      { id: "B", text: "Disable the Tab key globally" },
+      { id: "C", text: "Automatically scroll the entire page to the top" },
+      { id: "D", text: "Manage focus so keyboard users can meaningfully interact with the dialog and return focus appropriately when it closes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Dialogs require deliberate focus management. When opened, focus should move appropriately into the dialog, keyboard interaction should remain usable, and focus should be restored appropriately when the dialog closes.",
     tags: ["dialog", "focus-management", "keyboard", "accessibility"]
   },
@@ -757,12 +745,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "A developer creates a custom toggle using a div:\n\n<div role=\"switch\" aria-checked=\"false\">Dark mode</div>\n\nWhat is still missing for a robust accessible interactive control?",
     options: [
-      { id: "A", text: "Appropriate keyboard interaction, focus management, and state updates when the user toggles it" },
-      { id: "B", text: "A second role attribute" },
+      { id: "A", text: "A second role attribute" },
+      { id: "B", text: "Appropriate keyboard interaction, focus management, and state updates when the user toggles it" },
       { id: "C", text: "A CSS display property" },
       { id: "D", text: "A second div containing the word switch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "ARIA communicates semantics and state, but it does not automatically implement the interaction model. A custom switch must support appropriate focus and keyboard interaction and keep aria-checked synchronized with its actual state.",
     tags: ["aria", "switch", "keyboard", "state"]
   },
@@ -775,12 +763,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "Why can adding an ARIA role that contradicts an element's native meaning be harmful?",
     options: [
-      { id: "A", text: "It can expose misleading semantics to assistive technologies and create an inconsistent interaction model" },
-      { id: "B", text: "ARIA roles only affect visual styling" },
-      { id: "C", text: "Browsers automatically delete conflicting elements" },
+      { id: "A", text: "ARIA roles only affect visual styling" },
+      { id: "B", text: "Browsers automatically delete conflicting elements" },
+      { id: "C", text: "It can expose misleading semantics to assistive technologies and create an inconsistent interaction model" },
       { id: "D", text: "All ARIA roles are purely decorative" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Accessibility APIs depend on accurate semantics. Incorrect or contradictory roles can cause assistive technologies to interpret a control differently from how it actually behaves.",
     tags: ["aria", "roles", "accessibility"]
   },
@@ -793,12 +781,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "Which implementation is preferable for a collapsible FAQ item when the control is simply showing or hiding content?",
     options: [
-      { id: "A", text: "<button type=\"button\" aria-expanded=\"false\">What is HTML?</button>" },
-      { id: "B", text: "<div role=\"button\" aria-expanded=\"false\">What is HTML?</div>" },
-      { id: "C", text: "<span onclick=\"toggle()\">What is HTML?</span>" },
-      { id: "D", text: "<p onclick=\"toggle()\">What is HTML?</p>" }
+      { id: "A", text: "<div role=\"button\" aria-expanded=\"false\">What is HTML?</div>" },
+      { id: "B", text: "<span onclick=\"toggle()\">What is HTML?</span>" },
+      { id: "C", text: "<p onclick=\"toggle()\">What is HTML?</p>" },
+      { id: "D", text: "<button type=\"button\" aria-expanded=\"false\">What is HTML?</button>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The native button provides the correct interactive semantics and keyboard behavior. aria-expanded can communicate the state of the associated expandable content.",
     tags: ["button", "aria-expanded", "faq", "accessibility"]
   },
@@ -829,12 +817,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "Which implementation gives a search input a clear accessible label?",
     options: [
-      { id: "A", text: "<label for=\"site-search\">Search</label><input id=\"site-search\" type=\"search\" name=\"q\">" },
-      { id: "B", text: "<input type=\"search\" placeholder=\"Search\">" },
+      { id: "A", text: "<input type=\"search\" placeholder=\"Search\">" },
+      { id: "B", text: "<label for=\"site-search\">Search</label><input id=\"site-search\" type=\"search\" name=\"q\">" },
       { id: "C", text: "<span>Search</span><input type=\"search\">" },
       { id: "D", text: "<input type=\"search\" title=\"Search field\" name=\"q\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The explicit label-to-input association provides a robust accessible name and also gives users a visible description of the field.",
     tags: ["label", "search", "accessible-name"]
   },
@@ -847,12 +835,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "A developer has this structure:\n\n<div class=\"header\">...</div>\n<div class=\"nav\">...</div>\n<div class=\"content\">...</div>\n<div class=\"footer\">...</div>\n\nWhat is the strongest semantic improvement?",
     options: [
-      { id: "A", text: "Replace the generic containers with appropriate semantic elements such as <header>, <nav>, <main>, and <footer>" },
-      { id: "B", text: "Add more CSS classes to each div" },
-      { id: "C", text: "Add role=\"container\" to every div" },
+      { id: "A", text: "Add more CSS classes to each div" },
+      { id: "B", text: "Add role=\"container\" to every div" },
+      { id: "C", text: "Replace the generic containers with appropriate semantic elements such as <header>, <nav>, <main>, and <footer>" },
       { id: "D", text: "Replace every div with a span" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The content already has identifiable structural roles. Native semantic elements communicate those roles directly and avoid unnecessary custom ARIA or generic containers.",
     tags: ["semantic-html", "landmarks", "accessibility"]
   },
@@ -865,24 +853,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "Which implementation best represents a navigation menu containing three links?",
     options: [
-      {
-        id: "A",
-        text: "<nav aria-label=\"Main navigation\"><ul><li><a href=\"/\">Home</a></li><li><a href=\"/projects\">Projects</a></li><li><a href=\"/contact\">Contact</a></li></ul></nav>"
-      },
-      {
-        id: "B",
-        text: "<div role=\"navigation\"><span onclick=\"goHome()\">Home</span><span onclick=\"goProjects()\">Projects</span><span onclick=\"goContact()\">Contact</span></div>"
-      },
-      {
-        id: "C",
-        text: "<nav><div>Home</div><div>Projects</div><div>Contact</div></nav>"
-      },
-      {
-        id: "D",
-        text: "<section><button>Home</button><button>Projects</button><button>Contact</button></section>"
-      }
+      { id: "A", text: "<div role=\"navigation\"><span onclick=\"goHome()\">Home</span><span onclick=\"goProjects()\">Projects</span><span onclick=\"goContact()\">Contact</span></div>" },
+      { id: "B", text: "<nav><div>Home</div><div>Projects</div><div>Contact</div></nav>" },
+      { id: "C", text: "<section><button>Home</button><button>Projects</button><button>Contact</button></section>" },
+      { id: "D", text: "<nav aria-label=\"Main navigation\"><ul><li><a href=\"/\">Home</a></li><li><a href=\"/projects\">Projects</a></li><li><a href=\"/contact\">Contact</a></li></ul></nav>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The native nav landmark communicates the region's purpose, aria-label distinguishes this navigation when needed, list semantics represent the collection, and anchors provide native navigation behavior.",
     tags: ["nav", "aria-label", "links", "lists", "landmarks"]
   },
@@ -913,24 +889,12 @@ const htmlSemanticAccessibilityQuestions = [
     difficulty: "Advanced",
     question: "You are reviewing a production dashboard. Which implementation demonstrates the strongest overall semantic and accessibility approach?",
     options: [
-      {
-        id: "A",
-        text: "<header><h1>Analytics Dashboard</h1><nav aria-label=\"Dashboard navigation\"><a href=\"/overview\">Overview</a><a href=\"/reports\">Reports</a></nav></header><main><section aria-labelledby=\"sales-title\"><h2 id=\"sales-title\">Sales</h2><p>Monthly sales increased by 12%.</p><button type=\"button\" aria-expanded=\"false\">Show details</button></section></main><footer><p>Last updated today</p></footer>"
-      },
-      {
-        id: "B",
-        text: "<div class=\"header\"><div class=\"title\">Analytics Dashboard</div><div onclick=\"navigate()\">Overview</div><div onclick=\"navigate()\">Reports</div></div><div class=\"content\"><div class=\"title\">Sales</div><div>Monthly sales increased by 12%.</div><div onclick=\"showDetails()\">Show details</div></div>"
-      },
-      {
-        id: "C",
-        text: "<header><h1>Analytics Dashboard</h1><div role=\"button\">Overview</div><div role=\"button\">Reports</div></header><div><span>Sales</span><div>Monthly sales increased by 12%.</div></div>"
-      },
-      {
-        id: "D",
-        text: "<div><h1>Analytics Dashboard</h1><span>Overview</span><span>Reports</span><h4>Sales</h4><p>Monthly sales increased by 12%.</p><div>Show details</div></div>"
-      }
+      { id: "A", text: "<div class=\"header\"><div class=\"title\">Analytics Dashboard</div><div onclick=\"navigate()\">Overview</div><div onclick=\"navigate()\">Reports</div></div><div class=\"content\"><div class=\"title\">Sales</div><div>Monthly sales increased by 12%.</div><div onclick=\"showDetails()\">Show details</div></div>" },
+      { id: "B", text: "<header><h1>Analytics Dashboard</h1><nav aria-label=\"Dashboard navigation\"><a href=\"/overview\">Overview</a><a href=\"/reports\">Reports</a></nav></header><main><section aria-labelledby=\"sales-title\"><h2 id=\"sales-title\">Sales</h2><p>Monthly sales increased by 12%.</p><button type=\"button\" aria-expanded=\"false\">Show details</button></section></main><footer><p>Last updated today</p></footer>" },
+      { id: "C", text: "<header><h1>Analytics Dashboard</h1><div role=\"button\">Overview</div><div role=\"button\">Reports</div></header><div><span>Sales</span><div>Monthly sales increased by 12%.</div></div>" },
+      { id: "D", text: "<div><h1>Analytics Dashboard</h1><span>Overview</span><span>Reports</span><h4>Sales</h4><p>Monthly sales increased by 12%.</p><div>Show details</div></div>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The first implementation uses native semantic landmarks, a logical heading hierarchy, real navigation links, a labeled navigation region, a main content region, a section with an explicit relationship to its heading, and a native button with state information. It communicates structure and interaction without unnecessarily recreating native HTML behavior.",
     tags: ["semantic-html", "accessibility", "aria", "landmarks", "headings", "navigation"]
   }

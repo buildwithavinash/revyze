@@ -134,11 +134,11 @@ const nodejsFundamentalsQuestions = [
     question: "What does `npm init -y` do?",
     options: [
       { id: "A", text: "Installs every dependency automatically" },
-      { id: "B", text: "Creates package.json using default answers" },
-      { id: "C", text: "Deletes package.json" },
-      { id: "D", text: "Runs the production build" }
+      { id: "B", text: "Deletes package.json" },
+      { id: "C", text: "Runs the production build" },
+      { id: "D", text: "Creates package.json using default answers" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`-y` accepts the default answers and creates package.json without the interactive questionnaire.",
     tags: ["npm", "package-json"]
   },
@@ -170,11 +170,11 @@ const nodejsFundamentalsQuestions = [
     question: "Where are normal runtime dependencies listed in package.json?",
     options: [
       { id: "A", text: "scripts" },
-      { id: "B", text: "engines" },
-      { id: "C", text: "dependencies" },
+      { id: "B", text: "dependencies" },
+      { id: "C", text: "engines" },
       { id: "D", text: "runtime" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Packages required by the application at runtime are normally listed under `dependencies`.",
     tags: ["npm", "dependencies"]
   },
@@ -187,12 +187,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Where are packages needed primarily for development commonly listed?",
     options: [
-      { id: "A", text: "devDependencies" },
-      { id: "B", text: "developmentPackages" },
-      { id: "C", text: "devModules" },
+      { id: "A", text: "developmentPackages" },
+      { id: "B", text: "devModules" },
+      { id: "C", text: "devDependencies" },
       { id: "D", text: "tools" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`devDependencies` contains packages primarily needed during development, testing, linting, or building.",
     tags: ["npm", "devDependencies"]
   },
@@ -206,11 +206,11 @@ const nodejsFundamentalsQuestions = [
     question: "Which command is commonly used to install a package as a development dependency?",
     options: [
       { id: "A", text: "npm install package --runtime" },
-      { id: "B", text: "npm install package --save-dev" },
-      { id: "C", text: "npm add package --production-only" },
-      { id: "D", text: "node install package --dev" }
+      { id: "B", text: "npm add package --production-only" },
+      { id: "C", text: "node install package --dev" },
+      { id: "D", text: "npm install package --save-dev" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`npm install package --save-dev` records the package in `devDependencies`.",
     tags: ["npm", "devDependencies"]
   },
@@ -259,12 +259,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is package-lock.json primarily used for?",
     options: [
-      { id: "A", text: "Storing the exact resolved dependency tree" },
-      { id: "B", text: "Storing environment secrets" },
-      { id: "C", text: "Replacing package.json" },
+      { id: "A", text: "Storing environment secrets" },
+      { id: "B", text: "Replacing package.json" },
+      { id: "C", text: "Storing the exact resolved dependency tree" },
       { id: "D", text: "Storing application source code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The lockfile records resolved package versions and dependency information to support reproducible installs.",
     tags: ["npm", "package-lock"]
   },
@@ -278,11 +278,11 @@ const nodejsFundamentalsQuestions = [
     question: "What is the key benefit of committing package-lock.json?",
     options: [
       { id: "A", text: "It prevents JavaScript from running" },
-      { id: "B", text: "It helps teams and CI install the same resolved dependency tree" },
-      { id: "C", text: "It stores database passwords" },
-      { id: "D", text: "It replaces node_modules permanently" }
+      { id: "B", text: "It stores database passwords" },
+      { id: "C", text: "It replaces node_modules permanently" },
+      { id: "D", text: "It helps teams and CI install the same resolved dependency tree" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The lockfile helps make dependency installation more reproducible across environments.",
     tags: ["npm", "package-lock"]
   },
@@ -331,12 +331,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "In CommonJS, what does `module.exports` represent?",
     options: [
-      { id: "A", text: "The value exposed by that module to other modules" },
-      { id: "B", text: "The npm registry" },
-      { id: "C", text: "The current operating system" },
+      { id: "A", text: "The npm registry" },
+      { id: "B", text: "The current operating system" },
+      { id: "C", text: "The value exposed by that module to other modules" },
       { id: "D", text: "The package-lock file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`module.exports` defines the value that another CommonJS module receives when it requires the module.",
     tags: ["commonjs", "module-exports"]
   },
@@ -350,11 +350,11 @@ const nodejsFundamentalsQuestions = [
     question: "Consider:\n\n`module.exports = { add, subtract };`\n\nWhat does another CommonJS module receive from `require('./math')`?",
     options: [
       { id: "A", text: "A string containing the file path" },
-      { id: "B", text: "An object containing add and subtract" },
-      { id: "C", text: "Only the add function" },
-      { id: "D", text: "undefined" }
+      { id: "B", text: "Only the add function" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "An object containing add and subtract" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The object assigned to `module.exports` becomes the exported module value.",
     tags: ["commonjs", "require", "exports"]
   },
@@ -421,12 +421,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of a Node.js module?",
     options: [
-      { id: "A", text: "To organize and encapsulate reusable code" },
-      { id: "B", text: "To replace the operating system" },
-      { id: "C", text: "To store only CSS variables" },
-      { id: "D", text: "To automatically create databases" }
+      { id: "A", text: "To replace the operating system" },
+      { id: "B", text: "To store only CSS variables" },
+      { id: "C", text: "To automatically create databases" },
+      { id: "D", text: "To organize and encapsulate reusable code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Modules help divide applications into smaller, reusable, maintainable pieces.",
     tags: ["modules", "architecture"]
   },
@@ -439,12 +439,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which of the following is a built-in Node.js module?",
     options: [
-      { id: "A", text: "react" },
-      { id: "B", text: "express" },
-      { id: "C", text: "fs" },
+      { id: "A", text: "fs" },
+      { id: "B", text: "react" },
+      { id: "C", text: "express" },
       { id: "D", text: "axios" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`fs` is provided by Node.js itself, while the others are external packages.",
     tags: ["built-in-modules", "fs"]
   },
@@ -457,12 +457,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which built-in module is used for working with file paths?",
     options: [
-      { id: "A", text: "path" },
-      { id: "B", text: "route" },
+      { id: "A", text: "route" },
+      { id: "B", text: "path" },
       { id: "C", text: "filesystem-paths" },
       { id: "D", text: "directory" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `path` module provides platform-aware utilities for constructing and manipulating file paths.",
     tags: ["path", "built-in-modules"]
   },
@@ -475,12 +475,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `__dirname` represent in a CommonJS module?",
     options: [
-      { id: "A", text: "The absolute path of the current module's directory" },
-      { id: "B", text: "The npm registry URL" },
-      { id: "C", text: "The current Git branch" },
+      { id: "A", text: "The npm registry URL" },
+      { id: "B", text: "The current Git branch" },
+      { id: "C", text: "The absolute path of the current module's directory" },
       { id: "D", text: "The process ID" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "In CommonJS, `__dirname` contains the absolute path to the directory containing the current module.",
     tags: ["commonjs", "dirname", "paths"]
   },
@@ -493,12 +493,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `__filename` represent in CommonJS?",
     options: [
-      { id: "A", text: "The absolute path to the current module file" },
-      { id: "B", text: "The npm package name" },
-      { id: "C", text: "The operating-system version" },
-      { id: "D", text: "The current process environment" }
+      { id: "A", text: "The npm package name" },
+      { id: "B", text: "The operating-system version" },
+      { id: "C", text: "The current process environment" },
+      { id: "D", text: "The absolute path to the current module file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`__filename` gives the absolute path of the current CommonJS module file.",
     tags: ["commonjs", "filename", "paths"]
   },
@@ -547,12 +547,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `npm run build` generally do?",
     options: [
-      { id: "A", text: "Executes the command defined under the build script" },
-      { id: "B", text: "Always installs every package" },
-      { id: "C", text: "Deletes package-lock.json" },
+      { id: "A", text: "Always installs every package" },
+      { id: "B", text: "Deletes package-lock.json" },
+      { id: "C", text: "Executes the command defined under the build script" },
       { id: "D", text: "Starts the Node runtime automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`npm run <script>` executes the matching script from package.json.",
     tags: ["npm", "scripts"]
   },
@@ -565,12 +565,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What does `npm uninstall express` do?",
     options: [
-      { id: "A", text: "Removes the Express package from the project dependencies" },
-      { id: "B", text: "Uninstalls Node.js itself" },
-      { id: "C", text: "Deletes all npm projects" },
-      { id: "D", text: "Removes every package globally" }
+      { id: "A", text: "Uninstalls Node.js itself" },
+      { id: "B", text: "Deletes all npm projects" },
+      { id: "C", text: "Removes every package globally" },
+      { id: "D", text: "Removes the Express package from the project dependencies" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`npm uninstall` removes the specified package from the project and updates dependency metadata.",
     tags: ["npm", "dependencies"]
   },
@@ -637,12 +637,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between a built-in module and an npm package?",
     options: [
-      { id: "A", text: "Built-in modules are supplied by Node.js, while npm packages are typically installed separately" },
-      { id: "B", text: "They are always identical" },
-      { id: "C", text: "npm packages can only contain CSS" },
-      { id: "D", text: "Built-in modules require npm installation before use" }
+      { id: "A", text: "They are always identical" },
+      { id: "B", text: "npm packages can only contain CSS" },
+      { id: "C", text: "Built-in modules require npm installation before use" },
+      { id: "D", text: "Built-in modules are supplied by Node.js, while npm packages are typically installed separately" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Node ships with built-in modules such as `fs` and `path`; external packages are commonly installed from registries such as npm.",
     tags: ["built-in-modules", "npm"]
   },
@@ -692,11 +692,11 @@ const nodejsFundamentalsQuestions = [
     question: "What does a dependency version such as `^1.4.2` generally allow under npm's semver rules?",
     options: [
       { id: "A", text: "Only exactly version 1.4.2" },
-      { id: "B", text: "Compatible versions within the same major version, subject to semver rules" },
-      { id: "C", text: "Any future major version" },
+      { id: "B", text: "Any future major version" },
+      { id: "C", text: "Compatible versions within the same major version, subject to semver rules" },
       { id: "D", text: "Only patch version 1.4.2" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "For a normal semver range beginning with `^1.4.2`, versions compatible within major version 1 can generally satisfy the range.",
     tags: ["semver", "npm"]
   },
@@ -709,12 +709,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "Why is dependency versioning important in a Node.js project?",
     options: [
-      { id: "A", text: "It helps control which package versions can be installed and reduces unexpected compatibility problems" },
-      { id: "B", text: "It determines the CPU architecture automatically" },
-      { id: "C", text: "It replaces source control" },
-      { id: "D", text: "It prevents all security vulnerabilities" }
+      { id: "A", text: "It determines the CPU architecture automatically" },
+      { id: "B", text: "It replaces source control" },
+      { id: "C", text: "It prevents all security vulnerabilities" },
+      { id: "D", text: "It helps control which package versions can be installed and reduces unexpected compatibility problems" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Dependency ranges and lockfiles help control dependency versions and improve reproducibility.",
     tags: ["npm", "dependencies", "semver"]
   },
@@ -727,12 +727,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "A project has `package.json` but no `node_modules` directory. What is normally required before running the project locally?",
     options: [
-      { id: "A", text: "Rename package.json" },
-      { id: "B", text: "Install the project's dependencies" },
+      { id: "A", text: "Install the project's dependencies" },
+      { id: "B", text: "Rename package.json" },
       { id: "C", text: "Delete package.json" },
       { id: "D", text: "Convert package.json into JavaScript" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Running `npm install` installs dependencies described by package.json and the lockfile when available.",
     tags: ["npm", "dependencies"]
   },
@@ -745,12 +745,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "A teammate clones your Node.js project and runs `npm install`. What is npm primarily using to determine what to install?",
     options: [
-      { id: "A", text: "package.json and, when present, the lockfile" },
-      { id: "B", text: "Only the README" },
+      { id: "A", text: "Only the README" },
+      { id: "B", text: "package.json and, when present, the lockfile" },
       { id: "C", text: "Only the Git history" },
       { id: "D", text: "Only the operating-system version" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "npm uses dependency metadata from package.json and lockfile information to construct the installed dependency tree.",
     tags: ["npm", "package-json", "package-lock"]
   },
@@ -763,12 +763,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "Why is it useful to separate application code into modules instead of putting everything in one file?",
     options: [
-      { id: "A", text: "It improves organization, reuse, testing, and maintainability" },
-      { id: "B", text: "Node.js only allows one function per file" },
-      { id: "C", text: "Modules automatically make code bug-free" },
+      { id: "A", text: "Node.js only allows one function per file" },
+      { id: "B", text: "Modules automatically make code bug-free" },
+      { id: "C", text: "It improves organization, reuse, testing, and maintainability" },
       { id: "D", text: "Modules eliminate the need for dependencies" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Modular design separates responsibilities and makes code easier to maintain and reuse.",
     tags: ["modules", "architecture"]
   },
@@ -781,12 +781,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "You have this CommonJS module:\n\n`module.exports = function greet(name) { return \\'Hello \\' + name; }`\n\nHow should another CommonJS file use it?",
     options: [
-      { id: "A", text: "const greet = require('./greet')" },
-      { id: "B", text: "const greet = import './greet'" },
-      { id: "C", text: "require = greet('./greet')" },
-      { id: "D", text: "include greet from './greet'" }
+      { id: "A", text: "const greet = import './greet'" },
+      { id: "B", text: "require = greet('./greet')" },
+      { id: "C", text: "include greet from './greet'" },
+      { id: "D", text: "const greet = require('./greet')" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because the module exports the function directly, `require()` receives that function.",
     tags: ["commonjs", "require", "module-exports"]
   },
@@ -835,12 +835,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "A developer changes `package.json` but forgets to update the lockfile manually. What should normally happen when using npm to install/update dependencies?",
     options: [
-      { id: "A", text: "npm can update the lockfile as part of dependency installation" },
-      { id: "B", text: "The project becomes permanently unusable" },
-      { id: "C", text: "Node.js automatically deletes package.json" },
+      { id: "A", text: "The project becomes permanently unusable" },
+      { id: "B", text: "Node.js automatically deletes package.json" },
+      { id: "C", text: "npm can update the lockfile as part of dependency installation" },
       { id: "D", text: "The lockfile is unrelated to dependencies" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "npm manages package-lock.json during dependency operations so the lockfile reflects the resolved dependency tree.",
     tags: ["npm", "package-lock"]
   },
@@ -853,12 +853,12 @@ const nodejsFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "Why should you avoid blindly copying random npm packages into a production project?",
     options: [
-      { id: "A", text: "Dependencies introduce maintenance, compatibility, and security considerations" },
-      { id: "B", text: "Node.js cannot use third-party packages" },
-      { id: "C", text: "npm packages always slow the CPU permanently" },
-      { id: "D", text: "Every npm package is automatically malicious" }
+      { id: "A", text: "Node.js cannot use third-party packages" },
+      { id: "B", text: "npm packages always slow the CPU permanently" },
+      { id: "C", text: "Every npm package is automatically malicious" },
+      { id: "D", text: "Dependencies introduce maintenance, compatibility, and security considerations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Third-party dependencies should be evaluated for maintenance, security, compatibility, licensing, and necessity.",
     tags: ["npm", "security", "dependencies"]
   },
@@ -890,11 +890,11 @@ const nodejsFundamentalsQuestions = [
     question: "You are starting a production Node.js project. Which setup best follows the fundamentals covered in this quiz?",
     options: [
       { id: "A", text: "Put all code in one file and install every package globally" },
-      { id: "B", text: "Avoid package.json and manually copy dependencies" },
-      { id: "C", text: "Use modules to separate responsibilities, manage dependencies with package.json/lockfile, and choose CommonJS or ESM deliberately" },
+      { id: "B", text: "Use modules to separate responsibilities, manage dependencies with package.json/lockfile, and choose CommonJS or ESM deliberately" },
+      { id: "C", text: "Avoid package.json and manually copy dependencies" },
       { id: "D", text: "Commit node_modules and ignore dependency versions" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A maintainable Node.js project uses modules for organization, npm for dependency management, lockfiles for reproducibility, and a deliberate module-system choice.",
     tags: ["node", "modules", "npm", "architecture"]
   }

@@ -7,12 +7,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which HTML element is used to display an image?",
     options: [
-      { id: "A", text: "<img>" },
-      { id: "B", text: "<image>" },
+      { id: "A", text: "<image>" },
+      { id: "B", text: "<img>" },
       { id: "C", text: "<picture-img>" },
       { id: "D", text: "<src>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The <img> element embeds an image resource into a document.",
     tags: ["images", "img", "html"]
   },
@@ -25,12 +25,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which attribute specifies the image resource that should be loaded?",
     options: [
-      { id: "A", text: "src" },
-      { id: "B", text: "href" },
-      { id: "C", text: "url" },
+      { id: "A", text: "href" },
+      { id: "B", text: "url" },
+      { id: "C", text: "src" },
       { id: "D", text: "source" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The src attribute specifies the URL or path of the image resource.",
     tags: ["img", "src", "images"]
   },
@@ -43,12 +43,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the alt attribute on an image?",
     options: [
-      { id: "A", text: "To provide alternative text describing the image's purpose or content" },
-      { id: "B", text: "To specify the image file location" },
-      { id: "C", text: "To control image dimensions" },
-      { id: "D", text: "To preload the image" }
+      { id: "A", text: "To specify the image file location" },
+      { id: "B", text: "To control image dimensions" },
+      { id: "C", text: "To preload the image" },
+      { id: "D", text: "To provide alternative text describing the image's purpose or content" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "alt provides a text alternative for the image. This is especially important when the image conveys information that users need.",
     tags: ["img", "alt", "accessibility"]
   },
@@ -79,12 +79,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to embed audio content?",
     options: [
-      { id: "A", text: "<audio>" },
-      { id: "B", text: "<sound>" },
+      { id: "A", text: "<sound>" },
+      { id: "B", text: "<audio>" },
       { id: "C", text: "<music>" },
       { id: "D", text: "<media-audio>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The <audio> element provides a native way to embed sound content in an HTML document.",
     tags: ["audio", "media", "html"]
   },
@@ -97,12 +97,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to embed video content?",
     options: [
-      { id: "A", text: "<video>" },
-      { id: "B", text: "<movie>" },
-      { id: "C", text: "<media-video>" },
+      { id: "A", text: "<movie>" },
+      { id: "B", text: "<media-video>" },
+      { id: "C", text: "<video>" },
       { id: "D", text: "<film>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The <video> element provides native HTML support for embedding video content.",
     tags: ["video", "media", "html"]
   },
@@ -115,12 +115,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What does the controls attribute do on an <audio> or <video> element?",
     options: [
-      { id: "A", text: "It asks the browser to display native media controls" },
-      { id: "B", text: "It automatically downloads the media" },
-      { id: "C", text: "It converts the media format" },
-      { id: "D", text: "It makes the media autoplay" }
+      { id: "A", text: "It automatically downloads the media" },
+      { id: "B", text: "It converts the media format" },
+      { id: "C", text: "It makes the media autoplay" },
+      { id: "D", text: "It asks the browser to display native media controls" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The controls attribute enables the browser's native user interface for controlling playback.",
     tags: ["audio", "video", "controls"]
   },
@@ -151,12 +151,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What does the muted attribute do on a video?",
     options: [
-      { id: "A", text: "It causes the video's audio output to start muted" },
-      { id: "B", text: "It removes the audio track permanently" },
+      { id: "A", text: "It removes the audio track permanently" },
+      { id: "B", text: "It causes the video's audio output to start muted" },
       { id: "C", text: "It prevents the video from playing" },
       { id: "D", text: "It hides the video controls" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "muted sets the video's default muted state. Muted autoplay is commonly used for background or preview videos because browsers are more likely to permit it.",
     tags: ["video", "muted", "autoplay"]
   },
@@ -169,12 +169,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What does the loop attribute do for audio or video?",
     options: [
-      { id: "A", text: "It requests that playback restart automatically after reaching the end" },
-      { id: "B", text: "It downloads the media repeatedly" },
-      { id: "C", text: "It plays the media at double speed" },
+      { id: "A", text: "It downloads the media repeatedly" },
+      { id: "B", text: "It plays the media at double speed" },
+      { id: "C", text: "It requests that playback restart automatically after reaching the end" },
       { id: "D", text: "It prevents the media from loading" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The loop attribute causes the media to repeat when playback reaches its end.",
     tags: ["audio", "video", "loop"]
   },
@@ -187,12 +187,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the poster attribute on a <video> element?",
     options: [
-      { id: "A", text: "It specifies an image to display before the video starts playing" },
-      { id: "B", text: "It specifies the video's file format" },
-      { id: "C", text: "It adds subtitles automatically" },
-      { id: "D", text: "It controls playback speed" }
+      { id: "A", text: "It specifies the video's file format" },
+      { id: "B", text: "It adds subtitles automatically" },
+      { id: "C", text: "It controls playback speed" },
+      { id: "D", text: "It specifies an image to display before the video starts playing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "poster specifies an image that can be displayed as a preview before video playback begins.",
     tags: ["video", "poster", "media"]
   },
@@ -223,24 +223,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly provides multiple video formats?",
     options: [
-      {
-        id: "A",
-        text: "<video controls><source src=\"movie.mp4\" type=\"video/mp4\"><source src=\"movie.webm\" type=\"video/webm\"></video>"
-      },
-      {
-        id: "B",
-        text: "<video><format src=\"movie.mp4\"><format src=\"movie.webm\"></video>"
-      },
-      {
-        id: "C",
-        text: "<video sources=\"movie.mp4,movie.webm\"></video>"
-      },
-      {
-        id: "D",
-        text: "<video><option src=\"movie.mp4\"><option src=\"movie.webm\"></video>"
-      }
+      { id: "A", text: "<video><format src=\"movie.mp4\"><format src=\"movie.webm\"></video>" },
+      { id: "B", text: "<video controls><source src=\"movie.mp4\" type=\"video/mp4\"><source src=\"movie.webm\" type=\"video/webm\"></video>" },
+      { id: "C", text: "<video sources=\"movie.mp4,movie.webm\"></video>" },
+      { id: "D", text: "<video><option src=\"movie.mp4\"><option src=\"movie.webm\"></video>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Multiple <source> elements allow the browser to choose a compatible media resource.",
     tags: ["video", "source", "formats"]
   },
@@ -253,12 +241,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the type attribute on a <source> element?",
     options: [
-      { id: "A", text: "It identifies the media type of the referenced resource" },
-      { id: "B", text: "It sets the CSS type of the player" },
-      { id: "C", text: "It sets the playback speed" },
+      { id: "A", text: "It sets the CSS type of the player" },
+      { id: "B", text: "It sets the playback speed" },
+      { id: "C", text: "It identifies the media type of the referenced resource" },
       { id: "D", text: "It identifies the user who uploaded the file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The type attribute provides the MIME type of the resource, helping the browser determine whether it can use that source.",
     tags: ["source", "mime-types", "media"]
   },
@@ -271,12 +259,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which HTML element is commonly used to embed another webpage or external browsing context?",
     options: [
-      { id: "A", text: "<iframe>" },
-      { id: "B", text: "<embed-page>" },
-      { id: "C", text: "<frame-page>" },
-      { id: "D", text: "<webview>" }
+      { id: "A", text: "<embed-page>" },
+      { id: "B", text: "<frame-page>" },
+      { id: "C", text: "<webview>" },
+      { id: "D", text: "<iframe>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The <iframe> element embeds another HTML document within the current document.",
     tags: ["iframe", "embedding", "html"]
   },
@@ -307,12 +295,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Beginner",
     question: "Which iframe attribute can provide an accessible name describing the embedded content?",
     options: [
-      { id: "A", text: "title" },
-      { id: "B", text: "label" },
+      { id: "A", text: "label" },
+      { id: "B", text: "title" },
       { id: "C", text: "description" },
       { id: "D", text: "name-text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The title attribute provides a textual description of the iframe, which is important for users of assistive technologies.",
     tags: ["iframe", "title", "accessibility"]
   },
@@ -325,12 +313,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Why should an iframe generally have a meaningful title?",
     options: [
-      { id: "A", text: "It helps users of assistive technologies understand what the embedded browsing context contains" },
-      { id: "B", text: "It makes the iframe load faster" },
-      { id: "C", text: "It changes the iframe's URL" },
+      { id: "A", text: "It makes the iframe load faster" },
+      { id: "B", text: "It changes the iframe's URL" },
+      { id: "C", text: "It helps users of assistive technologies understand what the embedded browsing context contains" },
       { id: "D", text: "It enables JavaScript execution" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An iframe creates a separate browsing context. A meaningful title helps users identify its purpose when navigating through page content.",
     tags: ["iframe", "accessibility", "title"]
   },
@@ -343,12 +331,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What does the loading=\"lazy\" attribute generally request for an iframe or image?",
     options: [
-      { id: "A", text: "Delay loading the resource until it is closer to the user's viewport" },
-      { id: "B", text: "Never load the resource" },
-      { id: "C", text: "Load the resource twice" },
-      { id: "D", text: "Compress the resource before loading" }
+      { id: "A", text: "Never load the resource" },
+      { id: "B", text: "Load the resource twice" },
+      { id: "C", text: "Compress the resource before loading" },
+      { id: "D", text: "Delay loading the resource until it is closer to the user's viewport" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "loading=\"lazy\" allows the browser to defer loading resources that are not immediately needed, potentially reducing initial page work.",
     tags: ["lazy-loading", "iframe", "images", "performance"]
   },
@@ -379,12 +367,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the <picture> element?",
     options: [
-      { id: "A", text: "To provide different image resources or presentations depending on conditions such as viewport or format support" },
-      { id: "B", text: "To create a photo gallery automatically" },
+      { id: "A", text: "To create a photo gallery automatically" },
+      { id: "B", text: "To provide different image resources or presentations depending on conditions such as viewport or format support" },
       { id: "C", text: "To replace CSS completely" },
       { id: "D", text: "To embed video content" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The <picture> element allows authors to provide multiple image sources, often using media or type conditions, with an img fallback.",
     tags: ["picture", "responsive-images", "images"]
   },
@@ -397,24 +385,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly uses <picture> for responsive image selection?",
     options: [
-      {
-        id: "A",
-        text: "<picture><source media=\"(min-width: 800px)\" srcset=\"large.jpg\"><img src=\"small.jpg\" alt=\"Landscape\"></picture>"
-      },
-      {
-        id: "B",
-        text: "<picture><img media=\"(min-width: 800px)\" src=\"large.jpg\" fallback=\"small.jpg\"></picture>"
-      },
-      {
-        id: "C",
-        text: "<picture><responsive src=\"large.jpg\"><image src=\"small.jpg\"></picture>"
-      },
-      {
-        id: "D",
-        text: "<picture srcset=\"large.jpg\" fallback=\"small.jpg\"></picture>"
-      }
+      { id: "A", text: "<picture><img media=\"(min-width: 800px)\" src=\"large.jpg\" fallback=\"small.jpg\"></picture>" },
+      { id: "B", text: "<picture><responsive src=\"large.jpg\"><image src=\"small.jpg\"></picture>" },
+      { id: "C", text: "<picture><source media=\"(min-width: 800px)\" srcset=\"large.jpg\"><img src=\"small.jpg\" alt=\"Landscape\"></picture>" },
+      { id: "D", text: "<picture srcset=\"large.jpg\" fallback=\"small.jpg\"></picture>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A <source> inside <picture> can provide conditional resources, while the nested <img> acts as the fallback and actual image element.",
     tags: ["picture", "source", "srcset", "responsive-images"]
   },
@@ -427,12 +403,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of srcset on an <img> element?",
     options: [
-      { id: "A", text: "To provide multiple image candidates so the browser can choose an appropriate resource" },
-      { id: "B", text: "To provide multiple alt texts" },
-      { id: "C", text: "To specify multiple CSS classes" },
-      { id: "D", text: "To define multiple image captions" }
+      { id: "A", text: "To provide multiple alt texts" },
+      { id: "B", text: "To specify multiple CSS classes" },
+      { id: "C", text: "To define multiple image captions" },
+      { id: "D", text: "To provide multiple image candidates so the browser can choose an appropriate resource" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "srcset provides a set of image candidates, allowing the browser to select an appropriate resource based on factors such as display characteristics and device conditions.",
     tags: ["srcset", "responsive-images", "images"]
   },
@@ -463,24 +439,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which implementation provides responsive image candidates with a fallback?",
     options: [
-      {
-        id: "A",
-        text: "<img src=\"small.jpg\" srcset=\"small.jpg 480w, medium.jpg 800w, large.jpg 1200w\" sizes=\"(max-width: 600px) 480px, 800px\" alt=\"City skyline\">"
-      },
-      {
-        id: "B",
-        text: "<img sources=\"small.jpg,medium.jpg,large.jpg\" alt=\"City skyline\">"
-      },
-      {
-        id: "C",
-        text: "<img responsive=\"small.jpg medium.jpg large.jpg\" alt=\"City skyline\">"
-      },
-      {
-        id: "D",
-        text: "<img srcset=\"small.jpg,medium.jpg,large.jpg\" dimensions=\"responsive\" alt=\"City skyline\">"
-      }
+      { id: "A", text: "<img sources=\"small.jpg,medium.jpg,large.jpg\" alt=\"City skyline\">" },
+      { id: "B", text: "<img src=\"small.jpg\" srcset=\"small.jpg 480w, medium.jpg 800w, large.jpg 1200w\" sizes=\"(max-width: 600px) 480px, 800px\" alt=\"City skyline\">" },
+      { id: "C", text: "<img responsive=\"small.jpg medium.jpg large.jpg\" alt=\"City skyline\">" },
+      { id: "D", text: "<img srcset=\"small.jpg,medium.jpg,large.jpg\" dimensions=\"responsive\" alt=\"City skyline\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The srcset candidates use width descriptors and sizes describes the expected display width. The src attribute provides a fallback/default source.",
     tags: ["srcset", "sizes", "responsive-images"]
   },
@@ -493,12 +457,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which element is used to provide captions or subtitles for HTML video?",
     options: [
-      { id: "A", text: "<track>" },
-      { id: "B", text: "<caption>" },
-      { id: "C", text: "<subtitle>" },
+      { id: "A", text: "<caption>" },
+      { id: "B", text: "<subtitle>" },
+      { id: "C", text: "<track>" },
       { id: "D", text: "<text-track>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The <track> element provides timed text tracks such as subtitles, captions, descriptions, and chapters for audio and video.",
     tags: ["track", "video", "captions", "accessibility"]
   },
@@ -511,24 +475,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly adds an English caption track to a video?",
     options: [
-      {
-        id: "A",
-        text: "<video controls><source src=\"lecture.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions-en.vtt\" srclang=\"en\" label=\"English\"></video>"
-      },
-      {
-        id: "B",
-        text: "<video captions=\"captions-en.vtt\" language=\"en\"></video>"
-      },
-      {
-        id: "C",
-        text: "<video><caption src=\"captions-en.vtt\" lang=\"en\"></caption></video>"
-      },
-      {
-        id: "D",
-        text: "<video><subtitle file=\"captions-en.vtt\" language=\"en\"></subtitle></video>"
-      }
+      { id: "A", text: "<video captions=\"captions-en.vtt\" language=\"en\"></video>" },
+      { id: "B", text: "<video><caption src=\"captions-en.vtt\" lang=\"en\"></caption></video>" },
+      { id: "C", text: "<video><subtitle file=\"captions-en.vtt\" language=\"en\"></subtitle></video>" },
+      { id: "D", text: "<video controls><source src=\"lecture.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions-en.vtt\" srclang=\"en\" label=\"English\"></video>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The <track> element with kind=\"captions\", a VTT source, language metadata, and a label is the standard approach for video captions.",
     tags: ["track", "captions", "video", "vtt"]
   },
@@ -559,12 +511,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which <track> kind is specifically intended for captions for users who are deaf or hard of hearing?",
     options: [
-      { id: "A", text: "captions" },
-      { id: "B", text: "subtitle-only" },
+      { id: "A", text: "subtitle-only" },
+      { id: "B", text: "captions" },
       { id: "C", text: "audio-text" },
       { id: "D", text: "hearing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The captions kind is intended for captions that can include dialogue and relevant audio information.",
     tags: ["track", "captions", "accessibility"]
   },
@@ -577,12 +529,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What is one important accessibility consideration when embedding video?",
     options: [
-      { id: "A", text: "Provide captions when the video's audio contains meaningful spoken or relevant audible information" },
-      { id: "B", text: "Always autoplay the video with sound" },
-      { id: "C", text: "Remove all controls" },
+      { id: "A", text: "Always autoplay the video with sound" },
+      { id: "B", text: "Remove all controls" },
+      { id: "C", text: "Provide captions when the video's audio contains meaningful spoken or relevant audible information" },
       { id: "D", text: "Use only visual cues" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Captions make spoken dialogue and relevant audio information accessible to users who cannot hear the audio.",
     tags: ["video", "captions", "accessibility"]
   },
@@ -595,12 +547,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the preload attribute on audio or video?",
     options: [
-      { id: "A", text: "It provides a hint about how much media data the browser should preload" },
-      { id: "B", text: "It guarantees that the entire file downloads before rendering" },
-      { id: "C", text: "It forces autoplay" },
-      { id: "D", text: "It compresses the media" }
+      { id: "A", text: "It guarantees that the entire file downloads before rendering" },
+      { id: "B", text: "It forces autoplay" },
+      { id: "C", text: "It compresses the media" },
+      { id: "D", text: "It provides a hint about how much media data the browser should preload" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "preload provides a hint to the browser about whether and how much media should be fetched before playback.",
     tags: ["preload", "audio", "video", "performance"]
   },
@@ -631,12 +583,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "What is one reason to avoid unnecessary autoplaying media with sound?",
     options: [
-      { id: "A", text: "Unexpected audio can disrupt users and create accessibility and usability problems" },
-      { id: "B", text: "Browsers cannot display video with audio" },
+      { id: "A", text: "Browsers cannot display video with audio" },
+      { id: "B", text: "Unexpected audio can disrupt users and create accessibility and usability problems" },
       { id: "C", text: "Audio always prevents CSS from loading" },
       { id: "D", text: "Autoplay deletes the media file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Unexpected sound can be disruptive, particularly for screen-reader users and people in shared or quiet environments. Browsers also commonly restrict audible autoplay.",
     tags: ["autoplay", "accessibility", "usability"]
   },
@@ -649,12 +601,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which element can be used to embed content such as an SVG or other external resource, depending on the resource type?",
     options: [
-      { id: "A", text: "<object>" },
-      { id: "B", text: "<resource>" },
-      { id: "C", text: "<external>" },
+      { id: "A", text: "<resource>" },
+      { id: "B", text: "<external>" },
+      { id: "C", text: "<object>" },
       { id: "D", text: "<content>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The <object> element represents an external resource, although modern applications often use more specialized elements such as <img>, <iframe>, or native media elements when appropriate.",
     tags: ["object", "embedding", "external-content"]
   },
@@ -667,12 +619,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Intermediate",
     question: "Which element is specifically designed for embedding external content in a separate browsing context?",
     options: [
-      { id: "A", text: "<iframe>" },
-      { id: "B", text: "<object>" },
-      { id: "C", text: "<img>" },
-      { id: "D", text: "<source>" }
+      { id: "A", text: "<object>" },
+      { id: "B", text: "<img>" },
+      { id: "C", text: "<source>" },
+      { id: "D", text: "<iframe>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An iframe embeds another HTML document in a nested browsing context. This is different from simply embedding an image or media resource.",
     tags: ["iframe", "embedding", "browsing-context"]
   },
@@ -703,12 +655,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "What does sandbox=\"allow-scripts\" generally permit inside an iframe?",
     options: [
-      { id: "A", text: "It permits scripts to execute while the other sandbox restrictions remain in effect" },
-      { id: "B", text: "It removes every sandbox restriction" },
+      { id: "A", text: "It removes every sandbox restriction" },
+      { id: "B", text: "It permits scripts to execute while the other sandbox restrictions remain in effect" },
       { id: "C", text: "It permits unrestricted navigation to every website" },
       { id: "D", text: "It disables JavaScript in the parent page" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "allow-scripts enables script execution inside the sandboxed iframe but does not automatically remove all other sandbox restrictions.",
     tags: ["iframe", "sandbox", "security", "allow-scripts"]
   },
@@ -721,12 +673,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of the iframe allow attribute?",
     options: [
-      { id: "A", text: "It can delegate specific browser capabilities or permissions to the embedded document" },
-      { id: "B", text: "It specifies the iframe's URL" },
-      { id: "C", text: "It changes the iframe's width" },
+      { id: "A", text: "It specifies the iframe's URL" },
+      { id: "B", text: "It changes the iframe's width" },
+      { id: "C", text: "It can delegate specific browser capabilities or permissions to the embedded document" },
       { id: "D", text: "It automatically disables JavaScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The allow attribute is used for Permissions Policy-related delegation to an embedded browsing context, such as allowing particular features when appropriate.",
     tags: ["iframe", "allow", "permissions-policy", "security"]
   },
@@ -739,12 +691,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "Which iframe implementation demonstrates a useful security restriction for untrusted embedded content?",
     options: [
-      { id: "A", text: "<iframe src=\"https://example.com/widget\" sandbox title=\"Example widget\"></iframe>" },
-      { id: "B", text: "<iframe src=\"https://example.com/widget\" security=\"maximum\"></iframe>" },
-      { id: "C", text: "<iframe src=\"https://example.com/widget\" safe=\"true\"></iframe>" },
-      { id: "D", text: "<iframe src=\"https://example.com/widget\" secure=\"yes\"></iframe>" }
+      { id: "A", text: "<iframe src=\"https://example.com/widget\" security=\"maximum\"></iframe>" },
+      { id: "B", text: "<iframe src=\"https://example.com/widget\" safe=\"true\"></iframe>" },
+      { id: "C", text: "<iframe src=\"https://example.com/widget\" secure=\"yes\"></iframe>" },
+      { id: "D", text: "<iframe src=\"https://example.com/widget\" sandbox title=\"Example widget\"></iframe>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The sandbox attribute is a real browser security mechanism for restricting iframe capabilities. A meaningful title also improves accessibility.",
     tags: ["iframe", "sandbox", "security", "accessibility"]
   },
@@ -775,12 +727,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "Which approach is most appropriate for a decorative background video that should silently loop?",
     options: [
-      { id: "A", text: "<video autoplay muted loop playsinline aria-hidden=\"true\">...</video>" },
-      { id: "B", text: "<video autoplay loop>...</video>" },
+      { id: "A", text: "<video autoplay loop>...</video>" },
+      { id: "B", text: "<video autoplay muted loop playsinline aria-hidden=\"true\">...</video>" },
       { id: "C", text: "<video autoplay sound=\"on\" loop>...</video>" },
       { id: "D", text: "<video play=\"background\">...</video>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "For genuinely decorative video, autoplay, muted, loop, and playsinline are commonly used together. If the video is purely decorative and adds no useful information, aria-hidden can prevent redundant accessibility exposure.",
     tags: ["video", "autoplay", "muted", "loop", "accessibility"]
   },
@@ -793,12 +745,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of playsinline on video?",
     options: [
-      { id: "A", text: "It requests that video play inline rather than automatically switching to a separate fullscreen-style playback mode on supported mobile environments" },
-      { id: "B", text: "It forces video playback to start" },
-      { id: "C", text: "It disables all video controls" },
+      { id: "A", text: "It forces video playback to start" },
+      { id: "B", text: "It disables all video controls" },
+      { id: "C", text: "It requests that video play inline rather than automatically switching to a separate fullscreen-style playback mode on supported mobile environments" },
       { id: "D", text: "It makes the video responsive automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "playsinline is particularly useful for mobile experiences where video should remain within the page rather than being automatically presented through a separate playback mode.",
     tags: ["video", "playsinline", "mobile"]
   },
@@ -811,12 +763,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "A product page contains a large hero image that is visible immediately. Which approach is generally more appropriate than lazy-loading it?",
     options: [
-      { id: "A", text: "Load it normally because it is immediately needed for the initial viewport" },
-      { id: "B", text: "Always use loading=\"lazy\" for every image" },
-      { id: "C", text: "Hide it until the user scrolls" },
-      { id: "D", text: "Load it only after a click" }
+      { id: "A", text: "Always use loading=\"lazy\" for every image" },
+      { id: "B", text: "Hide it until the user scrolls" },
+      { id: "C", text: "Load it only after a click" },
+      { id: "D", text: "Load it normally because it is immediately needed for the initial viewport" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Lazy loading is most useful for resources that are not immediately needed. Deferring an important above-the-fold image can delay visible content.",
     tags: ["images", "lazy-loading", "performance", "hero-image"]
   },
@@ -847,12 +799,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "Which image markup best communicates the dimensions of a 1200×800 image?",
     options: [
-      { id: "A", text: "<img src=\"photo.jpg\" width=\"1200\" height=\"800\" alt=\"Mountain landscape\">" },
-      { id: "B", text: "<img src=\"photo.jpg\" size=\"1200x800\" alt=\"Mountain landscape\">" },
+      { id: "A", text: "<img src=\"photo.jpg\" size=\"1200x800\" alt=\"Mountain landscape\">" },
+      { id: "B", text: "<img src=\"photo.jpg\" width=\"1200\" height=\"800\" alt=\"Mountain landscape\">" },
       { id: "C", text: "<img src=\"photo.jpg\" dimensions=\"1200,800\" alt=\"Mountain landscape\">" },
       { id: "D", text: "<img src=\"photo.jpg\" ratio=\"1200/800\" alt=\"Mountain landscape\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The width and height attributes provide the image's intrinsic dimensions, allowing the browser to reserve appropriate space before the image loads.",
     tags: ["img", "width", "height", "layout-shift"]
   },
@@ -865,12 +817,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "A video contains important spoken instructions but has no captions. What is the biggest accessibility issue?",
     options: [
-      { id: "A", text: "Users who cannot hear the audio may miss essential information" },
-      { id: "B", text: "The video will always fail to load" },
-      { id: "C", text: "The video cannot be paused" },
+      { id: "A", text: "The video will always fail to load" },
+      { id: "B", text: "The video cannot be paused" },
+      { id: "C", text: "Users who cannot hear the audio may miss essential information" },
       { id: "D", text: "The video cannot have a poster image" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "If spoken information is essential, captions provide an equivalent text representation for users who cannot access the audio.",
     tags: ["video", "captions", "accessibility"]
   },
@@ -883,24 +835,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "Which implementation is the strongest general-purpose video setup for a normal user-controlled instructional video?",
     options: [
-      {
-        id: "A",
-        text: "<video controls preload=\"metadata\" poster=\"preview.jpg\"><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions.vtt\" srclang=\"en\" label=\"English\"></video>"
-      },
-      {
-        id: "B",
-        text: "<video autoplay loop muted><source src=\"lesson.mp4\"></video>"
-      },
-      {
-        id: "C",
-        text: "<div video=\"lesson.mp4\"></div>"
-      },
-      {
-        id: "D",
-        text: "<video src=\"lesson.mp4\" autoplay sound=\"on\"></video>"
-      }
+      { id: "A", text: "<video autoplay loop muted><source src=\"lesson.mp4\"></video>" },
+      { id: "B", text: "<div video=\"lesson.mp4\"></div>" },
+      { id: "C", text: "<video src=\"lesson.mp4\" autoplay sound=\"on\"></video>" },
+      { id: "D", text: "<video controls preload=\"metadata\" poster=\"preview.jpg\"><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"captions.vtt\" srclang=\"en\" label=\"English\"></video>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The setup gives users native controls, avoids unnecessarily downloading the entire video immediately, provides a preview image, and includes an English caption track.",
     tags: ["video", "controls", "captions", "preload", "accessibility"]
   },
@@ -913,22 +853,10 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "Which iframe markup is the strongest basic implementation for an embedded map?",
     options: [
-      {
-        id: "A",
-        text: "<iframe src=\"https://maps.example.com/embed\" title=\"Office location map\" loading=\"lazy\"></iframe>"
-      },
-      {
-        id: "B",
-        text: "<iframe url=\"https://maps.example.com/embed\" name=\"map\"></iframe>"
-      },
-      {
-        id: "C",
-        text: "<div iframe=\"https://maps.example.com/embed\"></div>"
-      },
-      {
-        id: "D",
-        text: "<iframe src=\"https://maps.example.com/embed\" title=\"map\"></iframe>"
-      }
+      { id: "A", text: "<iframe src=\"https://maps.example.com/embed\" title=\"Office location map\" loading=\"lazy\"></iframe>" },
+      { id: "B", text: "<iframe url=\"https://maps.example.com/embed\" name=\"map\"></iframe>" },
+      { id: "C", text: "<div iframe=\"https://maps.example.com/embed\"></div>" },
+      { id: "D", text: "<iframe src=\"https://maps.example.com/embed\" title=\"map\"></iframe>" }
     ],
     correctOptionId: "A",
     explanation: "The iframe uses src for the embedded resource, a meaningful title for accessibility, and lazy loading when the map is not immediately needed.",
@@ -943,12 +871,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "A developer embeds a third-party video player using an iframe. Which consideration is most appropriate?",
     options: [
-      { id: "A", text: "Only grant the embedded player the capabilities it actually needs and provide a meaningful iframe title" },
-      { id: "B", text: "Always grant every available browser permission" },
+      { id: "A", text: "Always grant every available browser permission" },
+      { id: "B", text: "Only grant the embedded player the capabilities it actually needs and provide a meaningful iframe title" },
       { id: "C", text: "Remove the iframe title because the video already has a title" },
       { id: "D", text: "Disable all browser security features" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Third-party embeds should be given only the permissions they require. The iframe itself should also have an accessible title describing the embedded content.",
     tags: ["iframe", "security", "permissions", "accessibility"]
   },
@@ -961,24 +889,12 @@ const htmlMediaEmbeddingQuestions = [
     difficulty: "Advanced",
     question: "You are building a production article page containing a hero image, an instructional video, and a third-party map below the fold. Which approach demonstrates the strongest overall implementation?",
     options: [
-      {
-        id: "A",
-        text: "<img src=\"hero.jpg\" width=\"1200\" height=\"700\" alt=\"Team working together\"><video controls preload=\"metadata\" poster=\"lesson.jpg\"><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"lesson-en.vtt\" srclang=\"en\" label=\"English\"></video><iframe src=\"https://maps.example.com/embed\" title=\"Office location map\" loading=\"lazy\" sandbox></iframe>"
-      },
-      {
-        id: "B",
-        text: "<img src=\"hero.jpg\" loading=\"lazy\"><video autoplay loop><source src=\"lesson.mp4\"></video><iframe src=\"https://maps.example.com/embed\"></iframe>"
-      },
-      {
-        id: "C",
-        text: "<div><img src=\"hero.jpg\"><div video=\"lesson.mp4\"></div><div map=\"https://maps.example.com/embed\"></div></div>"
-      },
-      {
-        id: "D",
-        text: "<img src=\"hero.jpg\" alt=\"image\"><video autoplay muted loop><source src=\"lesson.mp4\"></video><iframe src=\"https://maps.example.com/embed\" allow=\"*\" title=\"map\"></iframe>"
-      }
+      { id: "A", text: "<img src=\"hero.jpg\" loading=\"lazy\"><video autoplay loop><source src=\"lesson.mp4\"></video><iframe src=\"https://maps.example.com/embed\"></iframe>" },
+      { id: "B", text: "<div><img src=\"hero.jpg\"><div video=\"lesson.mp4\"></div><div map=\"https://maps.example.com/embed\"></div></div>" },
+      { id: "C", text: "<img src=\"hero.jpg\" width=\"1200\" height=\"700\" alt=\"Team working together\"><video controls preload=\"metadata\" poster=\"lesson.jpg\"><source src=\"lesson.mp4\" type=\"video/mp4\"><track kind=\"captions\" src=\"lesson-en.vtt\" srclang=\"en\" label=\"English\"></video><iframe src=\"https://maps.example.com/embed\" title=\"Office location map\" loading=\"lazy\" sandbox></iframe>" },
+      { id: "D", text: "<img src=\"hero.jpg\" alt=\"image\"><video autoplay muted loop><source src=\"lesson.mp4\"></video><iframe src=\"https://maps.example.com/embed\" allow=\"*\" title=\"map\"></iframe>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first implementation treats each resource according to its role: the immediately visible hero image has dimensions reserved, the instructional video has controls, a poster, metadata preload, and captions, and the below-the-fold third-party iframe has a meaningful title, lazy loading, and sandbox restrictions. It avoids unnecessary autoplay and excessive permissions.",
     tags: ["images", "video", "iframe", "captions", "lazy-loading", "sandbox", "accessibility", "performance"]
   }

@@ -7,12 +7,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which keyword declares a block-scoped variable that can be reassigned?",
     options: [
-      { id: "A", text: "let" },
-      { id: "B", text: "const" },
-      { id: "C", text: "var" },
+      { id: "A", text: "const" },
+      { id: "B", text: "var" },
+      { id: "C", text: "let" },
       { id: "D", text: "static" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`let` creates a block-scoped variable and allows its binding to be reassigned. `const` is also block-scoped but does not allow reassignment of the binding.",
     tags: ["variables", "let", "scope"]
   },
@@ -25,12 +25,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is the result of `typeof null` in JavaScript?",
     options: [
-      { id: "A", text: "\"object\"" },
-      { id: "B", text: "\"null\"" },
-      { id: "C", text: "\"undefined\"" },
-      { id: "D", text: "\"boolean\"" }
+      { id: "A", text: "\"null\"" },
+      { id: "B", text: "\"undefined\"" },
+      { id: "C", text: "\"boolean\"" },
+      { id: "D", text: "\"object\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`typeof null` returns the string `\"object\"`. This is a long-standing historical behavior of JavaScript and is considered a language quirk.",
     tags: ["types", "typeof", "null"]
   },
@@ -61,12 +61,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is the output?",
     options: [
-      { id: "A", text: "1020" },
-      { id: "B", text: "30" },
+      { id: "A", text: "30" },
+      { id: "B", text: "1020" },
       { id: "C", text: "10 + 20" },
       { id: "D", text: "NaN" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `+` operator performs string concatenation when one operand is a string. Therefore `\"10\" + 20` produces the string `\"1020\"`.",
     tags: ["operators", "strings", "type-coercion"]
   },
@@ -79,12 +79,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which value is falsy in JavaScript?",
     options: [
-      { id: "A", text: "0" },
-      { id: "B", text: "\"0\"" },
-      { id: "C", text: "[]" },
+      { id: "A", text: "\"0\"" },
+      { id: "B", text: "[]" },
+      { id: "C", text: "0" },
       { id: "D", text: "{}" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`0` is one of JavaScript's falsy values. The string `\"0\"`, empty arrays, and empty objects are truthy.",
     tags: ["truthy", "falsy", "boolean"]
   },
@@ -98,11 +98,11 @@ const javascriptAllInOneQuestions = [
     question: "What is printed?",
     options: [
       { id: "A", text: "10" },
-      { id: "B", text: "15" },
-      { id: "C", text: "510" },
-      { id: "D", text: "NaN" }
+      { id: "B", text: "510" },
+      { id: "C", text: "NaN" },
+      { id: "D", text: "15" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The `+` operator is evaluated left to right. `5 + 10` produces `15`, and there is no string involved in this expression.",
     tags: ["operators", "arithmetic", "evaluation"]
   },
@@ -133,12 +133,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which loop is most appropriate when you need to iterate over the values of an iterable such as an array?",
     options: [
-      { id: "A", text: "for...of" },
-      { id: "B", text: "for...in" },
+      { id: "A", text: "for...in" },
+      { id: "B", text: "for...of" },
       { id: "C", text: "switch" },
       { id: "D", text: "while...in" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`for...of` iterates over values produced by an iterable. `for...in` is designed for enumerable property keys and is generally not the preferred way to iterate array values.",
     tags: ["loops", "iteration", "for-of"]
   },
@@ -152,11 +152,11 @@ const javascriptAllInOneQuestions = [
     question: "What is the output?",
     options: [
       { id: "A", text: "1, 2, 3" },
-      { id: "B", text: "2, 4, 6" },
-      { id: "C", text: "1, 4, 9" },
+      { id: "B", text: "1, 4, 9" },
+      { id: "C", text: "2, 4, 6" },
       { id: "D", text: "3, 6, 9" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`map` creates a new array by applying the callback to every element. Each number is multiplied by 2, producing `[2, 4, 6]`.",
     tags: ["arrays", "map", "callbacks"]
   },
@@ -169,12 +169,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which array method returns a new array containing only elements that satisfy a condition?",
     options: [
-      { id: "A", text: "filter" },
-      { id: "B", text: "find" },
-      { id: "C", text: "some" },
-      { id: "D", text: "every" }
+      { id: "A", text: "find" },
+      { id: "B", text: "some" },
+      { id: "C", text: "every" },
+      { id: "D", text: "filter" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`filter` creates a new array containing every element for which the callback returns a truthy value.",
     tags: ["arrays", "filter", "higher-order-functions"]
   },
@@ -205,12 +205,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?",
     options: [
-      { id: "A", text: "6" },
-      { id: "B", text: "5" },
+      { id: "A", text: "5" },
+      { id: "B", text: "6" },
       { id: "C", text: "15" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The accumulator starts at 0. The values are added sequentially: `0 + 1 + 2 + 3 = 6`.",
     tags: ["arrays", "reduce", "accumulator"]
   },
@@ -223,12 +223,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What does a function return when it reaches the end without encountering a return statement?",
     options: [
-      { id: "A", text: "undefined" },
-      { id: "B", text: "null" },
-      { id: "C", text: "false" },
+      { id: "A", text: "null" },
+      { id: "B", text: "false" },
+      { id: "C", text: "undefined" },
       { id: "D", text: "0" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A JavaScript function that does not explicitly return a value returns `undefined`.",
     tags: ["functions", "return", "undefined"]
   },
@@ -241,12 +241,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a higher-order function?",
     options: [
-      { id: "A", text: "A function that accepts another function, returns a function, or both." },
-      { id: "B", text: "A function with more than ten parameters." },
-      { id: "C", text: "A function that can only be used inside classes." },
-      { id: "D", text: "A function that always executes asynchronously." }
+      { id: "A", text: "A function with more than ten parameters." },
+      { id: "B", text: "A function that can only be used inside classes." },
+      { id: "C", text: "A function that always executes asynchronously." },
+      { id: "D", text: "A function that accepts another function, returns a function, or both." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript treats functions as first-class values. A higher-order function uses functions as inputs or outputs, such as `map`, `filter`, or a custom function factory.",
     tags: ["functions", "higher-order-functions", "callbacks"]
   },
@@ -259,12 +259,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "World" },
+      { id: "A", text: "World" },
+      { id: "B", text: "Hello" },
+      { id: "C", text: "undefined" },
       { id: "D", text: "Hello World" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The function receives `\"World\"` as its argument and returns `Hello ${name}`. Therefore the result is `Hello World`, not just World.",
     tags: ["functions", "template-literals", "parameters"]
   },
@@ -277,12 +277,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is lexical scope?",
     options: [
-      { id: "A", text: "The scope determined by where variables and functions are written in the source code." },
-      { id: "B", text: "The scope determined randomly at runtime." },
+      { id: "A", text: "The scope determined randomly at runtime." },
+      { id: "B", text: "The scope determined by where variables and functions are written in the source code." },
       { id: "C", text: "The scope created only by objects." },
       { id: "D", text: "The scope used only inside asynchronous callbacks." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript uses lexical scoping. A function's access to surrounding variables is determined by where the function is defined in the source code.",
     tags: ["scope", "lexical-scope", "functions"]
   },
@@ -295,12 +295,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "20" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "20" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "10" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The inner function closes over the `count` variable from `createCounter`. Even after `createCounter` finishes, the returned function retains access to that variable. The first call increments it from 0 to 1, so the exact result depends on the provided initialization. Here the closure returns the captured value after its defined update.",
     tags: ["closures", "scope", "functions"]
   },
@@ -313,12 +313,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Why are closures useful in JavaScript?",
     options: [
-      { id: "A", text: "They allow a function to retain access to variables from its lexical environment." },
-      { id: "B", text: "They make every variable globally accessible." },
-      { id: "C", text: "They automatically convert functions into classes." },
-      { id: "D", text: "They disable garbage collection." }
+      { id: "A", text: "They make every variable globally accessible." },
+      { id: "B", text: "They automatically convert functions into classes." },
+      { id: "C", text: "They disable garbage collection." },
+      { id: "D", text: "They allow a function to retain access to variables from its lexical environment." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A closure allows an inner function to retain access to variables from its surrounding lexical scope even after the outer function has finished executing.",
     tags: ["closures", "lexical-scope", "functions"]
   },
@@ -349,12 +349,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What happens when a `let` variable is accessed before its declaration is initialized?",
     options: [
-      { id: "A", text: "A ReferenceError is thrown because the variable is in the temporal dead zone." },
-      { id: "B", text: "It returns undefined." },
+      { id: "A", text: "It returns undefined." },
+      { id: "B", text: "A ReferenceError is thrown because the variable is in the temporal dead zone." },
       { id: "C", text: "It automatically becomes global." },
       { id: "D", text: "It returns null." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`let` and `const` bindings exist before their declaration is evaluated but cannot be accessed during the temporal dead zone. Accessing them early results in a ReferenceError.",
     tags: ["let", "const", "hoisting", "TDZ"]
   },
@@ -367,12 +367,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about object property access is correct?",
     options: [
-      { id: "A", text: "Dot notation is convenient for valid identifier-like property names, while bracket notation can use dynamic expressions." },
-      { id: "B", text: "Bracket notation can only access numeric properties." },
-      { id: "C", text: "Dot notation always performs deep cloning." },
+      { id: "A", text: "Bracket notation can only access numeric properties." },
+      { id: "B", text: "Dot notation always performs deep cloning." },
+      { id: "C", text: "Dot notation is convenient for valid identifier-like property names, while bracket notation can use dynamic expressions." },
       { id: "D", text: "Both forms create a new object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Dot notation such as `user.name` is concise. Bracket notation such as `user[key]` is especially useful when the property name is dynamic or cannot be expressed through normal identifier syntax.",
     tags: ["objects", "property-access", "bracket-notation"]
   },
@@ -385,12 +385,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?",
     options: [
-      { id: "A", text: "2" },
-      { id: "B", text: "1" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "ReferenceError" }
+      { id: "A", text: "1" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "ReferenceError" },
+      { id: "D", text: "2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The object is mutated through the `user` reference. `user.age = 2` changes the object's property, and `console.log(user.age)` therefore prints 2.",
     tags: ["objects", "references", "mutation"]
   },
@@ -421,12 +421,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does destructuring allow you to do?",
     options: [
-      { id: "A", text: "Extract values from arrays or properties from objects into variables." },
-      { id: "B", text: "Convert every object into JSON." },
+      { id: "A", text: "Convert every object into JSON." },
+      { id: "B", text: "Extract values from arrays or properties from objects into variables." },
       { id: "C", text: "Freeze an object recursively." },
       { id: "D", text: "Remove all properties from an object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Destructuring provides concise syntax for extracting values from arrays and object properties and assigning them to variables.",
     tags: ["destructuring", "arrays", "objects"]
   },
@@ -439,12 +439,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "Developer" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "Developer" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Avi" },
       { id: "D", text: "Avi Developer" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Object destructuring extracts the `name` property and assigns it to the variable `name`. The value is `Avi`.",
     tags: ["objects", "destructuring"]
   },
@@ -457,12 +457,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about the spread syntax for arrays is correct?",
     options: [
-      { id: "A", text: "It can create a new array containing the elements of an existing iterable, but the copy is shallow." },
-      { id: "B", text: "It recursively deep-clones all nested objects." },
-      { id: "C", text: "It only works with objects." },
-      { id: "D", text: "It permanently modifies the original array." }
+      { id: "A", text: "It recursively deep-clones all nested objects." },
+      { id: "B", text: "It only works with objects." },
+      { id: "C", text: "It permanently modifies the original array." },
+      { id: "D", text: "It can create a new array containing the elements of an existing iterable, but the copy is shallow." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Array spread such as `[...items]` creates a new outer array. If elements are objects, their references are copied rather than recursively cloned.",
     tags: ["spread", "arrays", "shallow-copy"]
   },
@@ -511,12 +511,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does an `async` function always return?",
     options: [
-      { id: "A", text: "A Promise" },
-      { id: "B", text: "A string" },
-      { id: "C", text: "An iterator" },
+      { id: "A", text: "A string" },
+      { id: "B", text: "An iterator" },
+      { id: "C", text: "A Promise" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An `async` function always returns a Promise. A normal returned value becomes the fulfillment value of that Promise, while a thrown error causes rejection.",
     tags: ["async", "Promises", "async-function"]
   },
@@ -529,12 +529,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `await` do inside an async function?",
     options: [
-      { id: "A", text: "It pauses that async function's execution until the awaited Promise settles, without blocking the JavaScript thread." },
-      { id: "B", text: "It blocks the entire browser until the Promise completes." },
-      { id: "C", text: "It converts every Promise into a synchronous value globally." },
-      { id: "D", text: "It cancels the Promise." }
+      { id: "A", text: "It blocks the entire browser until the Promise completes." },
+      { id: "B", text: "It converts every Promise into a synchronous value globally." },
+      { id: "C", text: "It cancels the Promise." },
+      { id: "D", text: "It pauses that async function's execution until the awaited Promise settles, without blocking the JavaScript thread." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`await` suspends execution of the current async function until the awaited value settles. Other JavaScript work can continue while the operation is pending.",
     tags: ["async-await", "Promises", "event-loop"]
   },
@@ -565,12 +565,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `finally` in a Promise chain?",
     options: [
-      { id: "A", text: "Run cleanup logic after the Promise settles regardless of fulfillment or rejection." },
-      { id: "B", text: "Convert a rejected Promise into a fulfilled one automatically." },
+      { id: "A", text: "Convert a rejected Promise into a fulfilled one automatically." },
+      { id: "B", text: "Run cleanup logic after the Promise settles regardless of fulfillment or rejection." },
       { id: "C", text: "Cancel the Promise." },
       { id: "D", text: "Retry the Promise forever." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`finally` is useful for cleanup operations that should happen regardless of whether the asynchronous operation succeeds or fails.",
     tags: ["Promises", "finally", "cleanup"]
   },
@@ -583,12 +583,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `try...catch` primarily provide?",
     options: [
-      { id: "A", text: "A way to handle exceptions thrown during execution." },
-      { id: "B", text: "A way to prevent all JavaScript errors." },
-      { id: "C", text: "A way to retry every failed function automatically." },
+      { id: "A", text: "A way to prevent all JavaScript errors." },
+      { id: "B", text: "A way to retry every failed function automatically." },
+      { id: "C", text: "A way to handle exceptions thrown during execution." },
       { id: "D", text: "A way to catch syntax errors before JavaScript parses the file." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`try...catch` allows runtime exceptions to be handled rather than terminating the current execution path without handling.",
     tags: ["error-handling", "try-catch", "exceptions"]
   },
@@ -601,12 +601,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `throw new Error('Something went wrong')` do?",
     options: [
-      { id: "A", text: "Creates and throws an Error object." },
-      { id: "B", text: "Logs the error without interrupting execution." },
-      { id: "C", text: "Returns an Error object to the caller." },
-      { id: "D", text: "Automatically catches the error." }
+      { id: "A", text: "Logs the error without interrupting execution." },
+      { id: "B", text: "Returns an Error object to the caller." },
+      { id: "C", text: "Automatically catches the error." },
+      { id: "D", text: "Creates and throws an Error object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`throw` interrupts the current normal execution flow and propagates the thrown value until it is caught by an appropriate handler.",
     tags: ["error-handling", "throw", "Error"]
   },
@@ -637,12 +637,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `this` usually represent inside a regular object method called as `obj.method()`?",
     options: [
-      { id: "A", text: "The object used as the receiver of the method call." },
-      { id: "B", text: "The global object in every JavaScript environment." },
+      { id: "A", text: "The global object in every JavaScript environment." },
+      { id: "B", text: "The object used as the receiver of the method call." },
       { id: "C", text: "The function's source code." },
       { id: "D", text: "The parent class automatically." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "For a regular function called as a property method, the receiver before the dot becomes the `this` value. Therefore `obj.method()` normally gives `this === obj` inside the method.",
     tags: ["this", "objects", "methods"]
   },
@@ -655,12 +655,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which statement about arrow functions and `this` is correct?",
     options: [
-      { id: "A", text: "Arrow functions do not create their own `this`; they use the surrounding lexical `this`." },
-      { id: "B", text: "Arrow functions always bind `this` to the object before the dot." },
-      { id: "C", text: "Arrow functions always use the global object as `this`." },
+      { id: "A", text: "Arrow functions always bind `this` to the object before the dot." },
+      { id: "B", text: "Arrow functions always use the global object as `this`." },
+      { id: "C", text: "Arrow functions do not create their own `this`; they use the surrounding lexical `this`." },
       { id: "D", text: "Arrow functions cannot access `this`." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Arrow functions capture `this` lexically from their surrounding scope rather than creating a new `this` based on how they are called.",
     tags: ["this", "arrow-functions", "lexical-this"]
   },
@@ -673,12 +673,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `bind` do when used with a function?",
     options: [
-      { id: "A", text: "Creates a new function with a specified `this` value and optionally pre-filled arguments." },
-      { id: "B", text: "Immediately executes the function." },
-      { id: "C", text: "Converts the function into an arrow function." },
-      { id: "D", text: "Copies all properties from the function's return value." }
+      { id: "A", text: "Immediately executes the function." },
+      { id: "B", text: "Converts the function into an arrow function." },
+      { id: "C", text: "Copies all properties from the function's return value." },
+      { id: "D", text: "Creates a new function with a specified `this` value and optionally pre-filled arguments." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`bind` returns a new function with its `this` value fixed to the supplied value. It can also partially apply arguments.",
     tags: ["this", "bind", "functions"]
   },
@@ -709,12 +709,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What do JavaScript classes primarily provide?",
     options: [
-      { id: "A", text: "Syntax for creating objects and expressing prototype-based inheritance in a class-oriented style." },
-      { id: "B", text: "A completely separate inheritance system unrelated to prototypes." },
+      { id: "A", text: "A completely separate inheritance system unrelated to prototypes." },
+      { id: "B", text: "Syntax for creating objects and expressing prototype-based inheritance in a class-oriented style." },
       { id: "C", text: "A way to create only static objects." },
       { id: "D", text: "A replacement for functions." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript classes provide a more familiar syntax for constructing objects and defining inheritance, but the underlying inheritance model remains prototype-based.",
     tags: ["classes", "prototypes", "inheritance"]
   },
@@ -727,12 +727,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of ES modules?",
     options: [
-      { id: "A", text: "To organize JavaScript into reusable modules with explicit imports and exports." },
-      { id: "B", text: "To make every variable globally accessible." },
-      { id: "C", text: "To replace all asynchronous programming." },
+      { id: "A", text: "To make every variable globally accessible." },
+      { id: "B", text: "To replace all asynchronous programming." },
+      { id: "C", text: "To organize JavaScript into reusable modules with explicit imports and exports." },
       { id: "D", text: "To prevent functions from being reused." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ES modules provide explicit dependency boundaries through `import` and `export`, making larger codebases easier to organize and maintain.",
     tags: ["modules", "ESM", "import", "export"]
   },
@@ -745,12 +745,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which statement is valid ES module syntax?",
     options: [
-      { id: "A", text: "export const apiUrl = '/api';" },
-      { id: "B", text: "module export apiUrl;" },
-      { id: "C", text: "send apiUrl;" },
-      { id: "D", text: "public export apiUrl;" }
+      { id: "A", text: "module export apiUrl;" },
+      { id: "B", text: "send apiUrl;" },
+      { id: "C", text: "public export apiUrl;" },
+      { id: "D", text: "export const apiUrl = '/api';" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`export` is part of the ECMAScript module syntax and can be used to expose declarations from a module.",
     tags: ["modules", "ESM", "export"]
   },
@@ -781,12 +781,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the event loop responsible for in JavaScript environments?",
     options: [
-      { id: "A", text: "Coordinating execution of queued asynchronous callbacks and tasks with the JavaScript execution stack." },
-      { id: "B", text: "Making JavaScript execute every operation in parallel." },
+      { id: "A", text: "Making JavaScript execute every operation in parallel." },
+      { id: "B", text: "Coordinating execution of queued asynchronous callbacks and tasks with the JavaScript execution stack." },
       { id: "C", text: "Replacing the call stack." },
       { id: "D", text: "Turning asynchronous code into machine code." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The event loop coordinates when queued tasks and microtasks can run relative to the current execution stack. It is a key part of JavaScript's asynchronous execution model.",
     tags: ["event-loop", "async", "call-stack"]
   },
@@ -800,11 +800,11 @@ const javascriptAllInOneQuestions = [
     question: "What is the output order?",
     options: [
       { id: "A", text: "start, timeout, promise, end" },
-      { id: "B", text: "start, end, promise, timeout" },
-      { id: "C", text: "start, promise, end, timeout" },
+      { id: "B", text: "start, promise, end, timeout" },
+      { id: "C", text: "start, end, promise, timeout" },
       { id: "D", text: "promise, start, end, timeout" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The synchronous logs `start` and `end` run first. The resolved Promise callback is a microtask and runs before the timer callback, which is a task. Therefore the order is start, end, promise, timeout.",
     tags: ["event-loop", "microtasks", "setTimeout", "Promises"]
   },
@@ -817,12 +817,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why can a long-running synchronous loop prevent a Promise callback from executing immediately?",
     options: [
-      { id: "A", text: "The JavaScript execution stack must become available before queued asynchronous callbacks can run." },
-      { id: "B", text: "Promises are always lower priority than CSS." },
-      { id: "C", text: "Promise callbacks run in a separate JavaScript thread by default." },
-      { id: "D", text: "Promises cannot execute while loops exist anywhere in the program." }
+      { id: "A", text: "Promises are always lower priority than CSS." },
+      { id: "B", text: "Promise callbacks run in a separate JavaScript thread by default." },
+      { id: "C", text: "Promises cannot execute while loops exist anywhere in the program." },
+      { id: "D", text: "The JavaScript execution stack must become available before queued asynchronous callbacks can run." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript execution is generally single-threaded at the language level. A long synchronous task keeps the execution stack busy, preventing queued callbacks and microtasks from being processed until the current work yields.",
     tags: ["event-loop", "call-stack", "Promises", "performance"]
   },
@@ -853,12 +853,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What happens when one Promise passed to `Promise.all` rejects?",
     options: [
-      { id: "A", text: "The returned Promise rejects with that rejection." },
-      { id: "B", text: "The returned Promise always fulfills with the successful results." },
+      { id: "A", text: "The returned Promise always fulfills with the successful results." },
+      { id: "B", text: "The returned Promise rejects with that rejection." },
       { id: "C", text: "The rejected Promise is silently ignored." },
       { id: "D", text: "All Promises are automatically retried." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Promise.all` fulfills only when all supplied Promises fulfill. If any input rejects, the combined Promise rejects with that rejection.",
     tags: ["Promises", "Promise.all", "error-handling"]
   },
@@ -871,12 +871,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes functional programming practices in JavaScript?",
     options: [
-      { id: "A", text: "They often emphasize pure functions, avoiding unnecessary mutation, and treating functions as values." },
-      { id: "B", text: "They require every function to be asynchronous." },
-      { id: "C", text: "They prohibit arrays and objects." },
+      { id: "A", text: "They require every function to be asynchronous." },
+      { id: "B", text: "They prohibit arrays and objects." },
+      { id: "C", text: "They often emphasize pure functions, avoiding unnecessary mutation, and treating functions as values." },
       { id: "D", text: "They require all code to use classes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Functional programming techniques commonly emphasize predictable pure functions, minimizing side effects, and composing functions. JavaScript supports these practices because functions are first-class values.",
     tags: ["functional-programming", "pure-functions", "immutability"]
   },
@@ -889,24 +889,12 @@ const javascriptAllInOneQuestions = [
     difficulty: "Advanced",
     question: "You are building a dashboard that fetches a user profile, loads notifications, transforms the returned data, and renders the result. Which approach best reflects strong modern JavaScript practices?",
     options: [
-      {
-        id: "A",
-        text: "Use clear functions with focused responsibilities, appropriate array/object methods, async/await with error handling, Promise concurrency for independent requests, and modules to separate concerns."
-      },
-      {
-        id: "B",
-        text: "Put all logic inside one large function, mutate every object directly, and nest callbacks for every asynchronous operation."
-      },
-      {
-        id: "C",
-        text: "Use global variables for all fetched data and rely on implicit type coercion to simplify the code."
-      },
-      {
-        id: "D",
-        text: "Make every operation synchronous and block execution until all network requests finish."
-      }
+      { id: "A", text: "Put all logic inside one large function, mutate every object directly, and nest callbacks for every asynchronous operation." },
+      { id: "B", text: "Use global variables for all fetched data and rely on implicit type coercion to simplify the code." },
+      { id: "C", text: "Make every operation synchronous and block execution until all network requests finish." },
+      { id: "D", text: "Use clear functions with focused responsibilities, appropriate array/object methods, async/await with error handling, Promise concurrency for independent requests, and modules to separate concerns." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A maintainable JavaScript application benefits from separation of concerns, explicit data transformations, structured asynchronous code, proper error handling, and modular organization. Independent network operations can run concurrently, while focused functions make the code easier to test and maintain.",
     tags: ["architecture", "async", "modules", "functions", "best-practices"]
   }

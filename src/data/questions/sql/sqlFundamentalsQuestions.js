@@ -7,12 +7,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which SQL keyword is used to retrieve data from a table?",
     options: [
-      { id: "A", text: "GET" },
-      { id: "B", text: "FETCH" },
-      { id: "C", text: "SELECT" },
+      { id: "A", text: "SELECT" },
+      { id: "B", text: "GET" },
+      { id: "C", text: "FETCH" },
       { id: "D", text: "READ" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "SELECT is used to retrieve data from one or more database tables.",
     tags: ["select", "basics"]
   },
@@ -25,12 +25,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which query correctly retrieves every column from a `users` table?",
     options: [
-      { id: "A", text: "SELECT * FROM users;" },
-      { id: "B", text: "GET ALL FROM users;" },
+      { id: "A", text: "GET ALL FROM users;" },
+      { id: "B", text: "SELECT * FROM users;" },
       { id: "C", text: "SELECT ALL users;" },
       { id: "D", text: "READ * FROM users;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `*` wildcard in SELECT means all columns, so `SELECT * FROM users` returns every column.",
     tags: ["select", "wildcard"]
   },
@@ -44,11 +44,11 @@ const sqlFundamentalsQuestions = [
     question: "What does this query return?\n\n```sql\nSELECT name, email FROM users;\n```",
     options: [
       { id: "A", text: "Only the email column" },
-      { id: "B", text: "The name and email columns for all rows" },
-      { id: "C", text: "Only users whose name is not NULL" },
+      { id: "B", text: "Only users whose name is not NULL" },
+      { id: "C", text: "The name and email columns for all rows" },
       { id: "D", text: "The entire users table including hidden columns" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The query explicitly selects the `name` and `email` columns for every row because there is no WHERE condition.",
     tags: ["select", "columns"]
   },
@@ -79,12 +79,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does this query return?\n\n```sql\nSELECT *\nFROM users\nWHERE age >= 18;\n```",
     options: [
-      { id: "A", text: "Users younger than 18" },
-      { id: "B", text: "Only users exactly 18 years old" },
-      { id: "C", text: "Users who are 18 or older" },
+      { id: "A", text: "Users who are 18 or older" },
+      { id: "B", text: "Users younger than 18" },
+      { id: "C", text: "Only users exactly 18 years old" },
       { id: "D", text: "All users regardless of age" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The `>=` operator means greater than or equal to, so users aged 18 or older are returned.",
     tags: ["where", "comparison"]
   },
@@ -115,12 +115,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which query finds users whose age is between 18 and 25, inclusive?",
     options: [
-      { id: "A", text: "SELECT * FROM users WHERE age BETWEEN 18 AND 25;" },
-      { id: "B", text: "SELECT * FROM users WHERE age FROM 18 TO 25;" },
-      { id: "C", text: "SELECT * FROM users WHERE age RANGE 18, 25;" },
+      { id: "A", text: "SELECT * FROM users WHERE age FROM 18 TO 25;" },
+      { id: "B", text: "SELECT * FROM users WHERE age RANGE 18, 25;" },
+      { id: "C", text: "SELECT * FROM users WHERE age BETWEEN 18 AND 25;" },
       { id: "D", text: "SELECT * FROM users WHERE age IN 18 TO 25;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "BETWEEN is inclusive of both boundary values in standard SQL.",
     tags: ["where", "between"]
   },
@@ -135,10 +135,10 @@ const sqlFundamentalsQuestions = [
     options: [
       { id: "A", text: "MATCHES" },
       { id: "B", text: "PATTERN" },
-      { id: "C", text: "LIKE" },
-      { id: "D", text: "SEARCH" }
+      { id: "C", text: "SEARCH" },
+      { id: "D", text: "LIKE" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "LIKE is used for pattern matching, commonly with `%` and `_` wildcards.",
     tags: ["where", "like", "pattern-matching"]
   },
@@ -151,12 +151,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "In a SQL LIKE pattern, what does `%` generally represent?",
     options: [
-      { id: "A", text: "Exactly one character" },
-      { id: "B", text: "One numeric value" },
-      { id: "C", text: "A NULL value" },
-      { id: "D", text: "Zero or more characters" }
+      { id: "A", text: "Zero or more characters" },
+      { id: "B", text: "Exactly one character" },
+      { id: "C", text: "One numeric value" },
+      { id: "D", text: "A NULL value" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "The `%` wildcard matches zero or more characters in a LIKE pattern.",
     tags: ["like", "wildcards"]
   },
@@ -187,12 +187,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does `ORDER BY name ASC` do?",
     options: [
-      { id: "A", text: "Sorts names in ascending order" },
-      { id: "B", text: "Sorts names in descending order" },
-      { id: "C", text: "Filters names alphabetically" },
+      { id: "A", text: "Sorts names in descending order" },
+      { id: "B", text: "Filters names alphabetically" },
+      { id: "C", text: "Sorts names in ascending order" },
       { id: "D", text: "Groups identical names together and removes duplicates" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "ASC means ascending order. For typical text values, this generally means alphabetical order.",
     tags: ["order-by", "asc"]
   },
@@ -207,10 +207,10 @@ const sqlFundamentalsQuestions = [
     options: [
       { id: "A", text: "DESC" },
       { id: "B", text: "RANDOM" },
-      { id: "C", text: "ASC" },
-      { id: "D", text: "UNSORTED" }
+      { id: "C", text: "UNSORTED" },
+      { id: "D", text: "ASC" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "If no direction is specified, ORDER BY generally uses ascending order.",
     tags: ["order-by", "asc"]
   },
@@ -223,12 +223,12 @@ const sqlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which query returns users sorted from oldest to youngest?",
     options: [
-      { id: "A", text: "SELECT * FROM users ORDER BY age ASC;" },
-      { id: "B", text: "SELECT * FROM users SORT age DESC;" },
-      { id: "C", text: "SELECT * FROM users ORDER age ASC;" },
-      { id: "D", text: "SELECT * FROM users ORDER BY age DESC;" }
+      { id: "A", text: "SELECT * FROM users ORDER BY age DESC;" },
+      { id: "B", text: "SELECT * FROM users ORDER BY age ASC;" },
+      { id: "C", text: "SELECT * FROM users SORT age DESC;" },
+      { id: "D", text: "SELECT * FROM users ORDER age ASC;" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "Older users have larger age values, so DESC places the largest ages first.",
     tags: ["order-by", "desc"]
   },

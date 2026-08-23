@@ -7,12 +7,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of a JavaScript function?",
     options: [
-      { id: "A", text: "To package reusable behavior that can be executed when called." },
-      { id: "B", text: "To permanently store data in the browser." },
-      { id: "C", text: "To create HTML elements automatically." },
-      { id: "D", text: "To define CSS styles." }
+      { id: "A", text: "To permanently store data in the browser." },
+      { id: "B", text: "To create HTML elements automatically." },
+      { id: "C", text: "To define CSS styles." },
+      { id: "D", text: "To package reusable behavior that can be executed when called." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A function packages a set of instructions into a reusable unit that can be invoked whenever the program needs that behavior.",
     tags: ["functions", "fundamentals", "reusability"]
   },
@@ -43,12 +43,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nfunction greet() {\n  console.log(\"Hello\");\n}\n\ngreet();",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "greet" },
+      { id: "A", text: "greet" },
+      { id: "B", text: "Hello" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Calling `greet()` executes the function body, which logs `Hello`.",
     tags: ["function-call", "function-declaration"]
   },
@@ -61,12 +61,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is a parameter?",
     options: [
-      { id: "A", text: "A named variable listed in a function definition that receives an argument when the function is called." },
-      { id: "B", text: "The value printed by console.log." },
-      { id: "C", text: "The name of the JavaScript file." },
+      { id: "A", text: "The value printed by console.log." },
+      { id: "B", text: "The name of the JavaScript file." },
+      { id: "C", text: "A named variable listed in a function definition that receives an argument when the function is called." },
       { id: "D", text: "A function that calls another function." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Parameters are placeholders declared by the function. Arguments are the actual values supplied when the function is invoked.",
     tags: ["parameters", "arguments", "functions"]
   },
@@ -79,12 +79,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nfunction greet(name) {\n  console.log(name);\n}\n\ngreet(\"Avi\");",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "name" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "\"name\"" }
+      { id: "A", text: "name" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "\"name\"" },
+      { id: "D", text: "Avi" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`\"Avi\"` is passed as the argument and becomes the value of the `name` parameter during the call.",
     tags: ["parameters", "arguments", "function-call"]
   },
@@ -115,12 +115,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is returned?\n\nfunction add(a, b) {\n  return a + b;\n}\n\nconst result = add(4, 6);",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "46" },
+      { id: "A", text: "46" },
+      { id: "B", text: "10" },
       { id: "C", text: "undefined" },
       { id: "D", text: "4" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The function adds the two parameters and explicitly returns the result. Therefore `result` becomes 10.",
     tags: ["return", "parameters", "function-call"]
   },
@@ -133,12 +133,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What happens when a function reaches a `return` statement?",
     options: [
-      { id: "A", text: "The function immediately completes and provides the specified return value to its caller." },
-      { id: "B", text: "The function automatically runs again." },
-      { id: "C", text: "All functions in the program stop." },
+      { id: "A", text: "The function automatically runs again." },
+      { id: "B", text: "All functions in the program stop." },
+      { id: "C", text: "The function immediately completes and provides the specified return value to its caller." },
       { id: "D", text: "The return value is automatically printed." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`return` ends the current function invocation and optionally supplies a value to the caller.",
     tags: ["return", "functions"]
   },
@@ -151,12 +151,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is the value of `result`?\n\nfunction multiply(a, b) {\n  return a * b;\n}\n\nconst result = multiply(3, 5);",
     options: [
-      { id: "A", text: "15" },
-      { id: "B", text: "8" },
-      { id: "C", text: "35" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "8" },
+      { id: "B", text: "35" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "15" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The function returns 3 × 5, which is 15.",
     tags: ["return", "parameters", "arithmetic"]
   },
@@ -187,12 +187,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "Which syntax creates a function expression?",
     options: [
-      { id: "A", text: "const greet = function() { };" },
-      { id: "B", text: "function = greet() { };" },
+      { id: "A", text: "function = greet() { };" },
+      { id: "B", text: "const greet = function() { };" },
       { id: "C", text: "const function greet() { };" },
       { id: "D", text: "greet function() { };" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A function expression creates a function value and assigns it to a variable. Here the function is assigned to `greet`.",
     tags: ["function-expression", "functions"]
   },
@@ -205,12 +205,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst greet = function() {\n  return \"Hello\";\n};\n\nconsole.log(greet());",
     options: [
-      { id: "A", text: "Hello" },
-      { id: "B", text: "greet" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "greet" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Hello" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The function expression is stored in `greet`, and calling `greet()` executes it and returns `Hello`.",
     tags: ["function-expression", "return", "function-call"]
   },
@@ -223,12 +223,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is an anonymous function?",
     options: [
-      { id: "A", text: "A function expression that does not have its own function name." },
-      { id: "B", text: "A function that cannot be called." },
-      { id: "C", text: "A function with no parameters." },
-      { id: "D", text: "A function that always returns undefined." }
+      { id: "A", text: "A function that cannot be called." },
+      { id: "B", text: "A function with no parameters." },
+      { id: "C", text: "A function that always returns undefined." },
+      { id: "D", text: "A function expression that does not have its own function name." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An anonymous function is a function without an explicit function name, commonly used in function expressions and callbacks.",
     tags: ["anonymous-functions", "function-expression"]
   },
@@ -259,12 +259,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst double = n => n * 2;\nconsole.log(double(7));",
     options: [
-      { id: "A", text: "14" },
-      { id: "B", text: "7" },
+      { id: "A", text: "7" },
+      { id: "B", text: "14" },
       { id: "C", text: "72" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The arrow function implicitly returns `n * 2`. With n equal to 7, the result is 14.",
     tags: ["arrow-functions", "implicit-return"]
   },
@@ -277,12 +277,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "Which arrow function syntax correctly handles multiple parameters?",
     options: [
-      { id: "A", text: "const add = (a, b) => a + b;" },
-      { id: "B", text: "const add = a, b => a + b;" },
-      { id: "C", text: "const add = [a, b] => a + b;" },
+      { id: "A", text: "const add = a, b => a + b;" },
+      { id: "B", text: "const add = [a, b] => a + b;" },
+      { id: "C", text: "const add = (a, b) => a + b;" },
       { id: "D", text: "const add = function(a, b) => a + b;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Arrow functions require parentheses around multiple parameters.",
     tags: ["arrow-functions", "parameters"]
   },
@@ -295,12 +295,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst add = (a, b) => a + b;\nconsole.log(add(2, 8));",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "28" },
-      { id: "C", text: "16" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "28" },
+      { id: "B", text: "16" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "10" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The arrow function receives 2 and 8 and implicitly returns their sum, 10.",
     tags: ["arrow-functions", "parameters", "implicit-return"]
   },
@@ -331,12 +331,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst getValue = () => {\n  42;\n};\n\nconsole.log(getValue());",
     options: [
-      { id: "A", text: "undefined" },
-      { id: "B", text: "42" },
+      { id: "A", text: "42" },
+      { id: "B", text: "undefined" },
       { id: "C", text: "\"42\"" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Because the arrow function uses a block body, the expression `42` is not automatically returned. An explicit `return 42` would be required.",
     tags: ["arrow-functions", "return", "block-body"]
   },
@@ -349,12 +349,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about arrow functions is correct?",
     options: [
-      { id: "A", text: "They provide a concise function syntax and have lexical `this` behavior." },
-      { id: "B", text: "They always create their own dynamic `this`." },
-      { id: "C", text: "They cannot return values." },
+      { id: "A", text: "They always create their own dynamic `this`." },
+      { id: "B", text: "They cannot return values." },
+      { id: "C", text: "They provide a concise function syntax and have lexical `this` behavior." },
       { id: "D", text: "They cannot accept parameters." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Arrow functions have concise syntax and do not create their own `this`; their `this` comes from the surrounding lexical context.",
     tags: ["arrow-functions", "this"]
   },
@@ -367,12 +367,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "What happens if a function is called with fewer arguments than it declares parameters?",
     options: [
-      { id: "A", text: "Missing parameters receive `undefined` unless a different value is supplied through other parameter behavior." },
-      { id: "B", text: "JavaScript automatically throws an error." },
-      { id: "C", text: "Missing parameters become null." },
-      { id: "D", text: "The function cannot execute." }
+      { id: "A", text: "JavaScript automatically throws an error." },
+      { id: "B", text: "Missing parameters become null." },
+      { id: "C", text: "The function cannot execute." },
+      { id: "D", text: "Missing parameters receive `undefined` unless a different value is supplied through other parameter behavior." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript does not require every declared parameter to receive an argument. Missing arguments result in `undefined` for those parameters.",
     tags: ["parameters", "arguments", "undefined"]
   },
@@ -403,12 +403,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Beginner",
     question: "Can a JavaScript function accept more arguments than the number of declared parameters?",
     options: [
-      { id: "A", text: "Yes, JavaScript allows extra arguments." },
-      { id: "B", text: "No, JavaScript throws an error immediately." },
+      { id: "A", text: "No, JavaScript throws an error immediately." },
+      { id: "B", text: "Yes, JavaScript allows extra arguments." },
       { id: "C", text: "Only arrow functions can do this." },
       { id: "D", text: "Only function declarations can do this." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript permits callers to supply more arguments than there are named parameters. Extra arguments can be accessed through mechanisms such as rest parameters or the arguments object in applicable functions.",
     tags: ["parameters", "arguments"]
   },
@@ -421,12 +421,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction add(a, b) {\n  return a + b;\n}\n\nconsole.log(add(2, 3, 4));",
     options: [
-      { id: "A", text: "5" },
-      { id: "B", text: "9" },
-      { id: "C", text: "234" },
+      { id: "A", text: "9" },
+      { id: "B", text: "234" },
+      { id: "C", text: "5" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Only the named parameters `a` and `b` participate in the function body. The extra argument 4 is not used by this implementation.",
     tags: ["arguments", "parameters", "function-call"]
   },
@@ -439,12 +439,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is a callback function?",
     options: [
-      { id: "A", text: "A function passed to another function so that it can be invoked by that function." },
-      { id: "B", text: "A function that must always call itself." },
-      { id: "C", text: "A function that can only return strings." },
-      { id: "D", text: "A function that automatically runs when JavaScript starts." }
+      { id: "A", text: "A function that must always call itself." },
+      { id: "B", text: "A function that can only return strings." },
+      { id: "C", text: "A function that automatically runs when JavaScript starts." },
+      { id: "D", text: "A function passed to another function so that it can be invoked by that function." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Functions are first-class values in JavaScript, so one function can receive another function as an argument and invoke it when appropriate.",
     tags: ["callbacks", "higher-order-functions"]
   },
@@ -475,12 +475,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is a higher-order function?",
     options: [
-      { id: "A", text: "A function that accepts functions as arguments, returns a function, or both." },
-      { id: "B", text: "A function that has more than five parameters." },
+      { id: "A", text: "A function that has more than five parameters." },
+      { id: "B", text: "A function that accepts functions as arguments, returns a function, or both." },
       { id: "C", text: "A function that only runs asynchronously." },
       { id: "D", text: "A function declared inside an object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Higher-order functions use other functions as inputs or outputs. JavaScript supports this because functions are first-class values.",
     tags: ["higher-order-functions", "callbacks", "functions"]
   },
@@ -493,12 +493,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is the value of `result`?\n\nfunction createMultiplier(multiplier) {\n  return function(value) {\n    return value * multiplier;\n  };\n}\n\nconst double = createMultiplier(2);\nconst result = double(6);",
     options: [
-      { id: "A", text: "12" },
-      { id: "B", text: "8" },
-      { id: "C", text: "6" },
+      { id: "A", text: "8" },
+      { id: "B", text: "6" },
+      { id: "C", text: "12" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`createMultiplier(2)` returns a function that multiplies its input by 2. Calling `double(6)` therefore returns 12.",
     tags: ["functions", "higher-order-functions", "function-return"]
   },
@@ -511,12 +511,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What does it mean that JavaScript functions are first-class values?",
     options: [
-      { id: "A", text: "Functions can be stored in variables, passed as arguments, and returned from other functions." },
-      { id: "B", text: "Functions must always be declared before variables." },
-      { id: "C", text: "Functions can only be used once." },
-      { id: "D", text: "Functions cannot be stored in objects." }
+      { id: "A", text: "Functions must always be declared before variables." },
+      { id: "B", text: "Functions can only be used once." },
+      { id: "C", text: "Functions cannot be stored in objects." },
+      { id: "D", text: "Functions can be stored in variables, passed as arguments, and returned from other functions." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "JavaScript treats functions as values, allowing them to be assigned, passed around, stored, and returned like other values.",
     tags: ["first-class-functions", "functions"]
   },
@@ -547,12 +547,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is the main difference between passing `fn` and passing `fn()` as an argument?",
     options: [
-      { id: "A", text: "`fn` passes the function itself, while `fn()` immediately calls the function and passes its result." },
-      { id: "B", text: "They are always identical." },
+      { id: "A", text: "They are always identical." },
+      { id: "B", text: "`fn` passes the function itself, while `fn()` immediately calls the function and passes its result." },
       { id: "C", text: "`fn` calls the function while `fn()` stores it." },
       { id: "D", text: "`fn()` is only valid for arrow functions." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Without parentheses, the function value is passed. With parentheses, the function is invoked immediately and its returned value is passed instead.",
     tags: ["function-call", "callbacks", "first-class-functions"]
   },
@@ -565,12 +565,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfunction getNumber() {\n  return 10;\n}\n\nfunction show(value) {\n  console.log(value);\n}\n\nshow(getNumber());",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "getNumber" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "getNumber" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "10" },
       { id: "D", text: "show" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`getNumber()` is executed first and returns 10. That returned value is then passed to `show`.",
     tags: ["function-call", "return", "arguments"]
   },
@@ -583,12 +583,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "Can a function return another function?",
     options: [
-      { id: "A", text: "Yes, because functions are first-class values." },
-      { id: "B", text: "No, functions can only return primitive values." },
-      { id: "C", text: "Only class methods can do this." },
-      { id: "D", text: "Only asynchronous functions can do this." }
+      { id: "A", text: "No, functions can only return primitive values." },
+      { id: "B", text: "Only class methods can do this." },
+      { id: "C", text: "Only asynchronous functions can do this." },
+      { id: "D", text: "Yes, because functions are first-class values." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because functions are values in JavaScript, one function can return another function.",
     tags: ["function-return", "first-class-functions"]
   },
@@ -619,12 +619,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is a pure function?",
     options: [
-      { id: "A", text: "A function that produces the same output for the same inputs and does not cause observable side effects." },
-      { id: "B", text: "A function that always returns a string." },
+      { id: "A", text: "A function that always returns a string." },
+      { id: "B", text: "A function that produces the same output for the same inputs and does not cause observable side effects." },
       { id: "C", text: "A function that cannot accept parameters." },
       { id: "D", text: "A function that must be an arrow function." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Pure functions depend only on their inputs and avoid observable side effects such as mutating external state or performing uncontrolled I/O.",
     tags: ["pure-functions", "functions", "side-effects"]
   },
@@ -637,12 +637,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "Which function is pure?",
     options: [
-      { id: "A", text: "function add(a, b) { return a + b; }" },
-      { id: "B", text: "function add(a) { total += a; return total; }" },
-      { id: "C", text: "function log(a) { console.log(a); }" },
+      { id: "A", text: "function add(a) { total += a; return total; }" },
+      { id: "B", text: "function log(a) { console.log(a); }" },
+      { id: "C", text: "function add(a, b) { return a + b; }" },
       { id: "D", text: "function random() { return Math.random(); }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`add(a, b)` depends only on its parameters and does not modify external state or perform an external side effect.",
     tags: ["pure-functions", "side-effects"]
   },
@@ -655,12 +655,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is a side effect in the context of a function?",
     options: [
-      { id: "A", text: "An observable interaction with state or the outside world beyond simply producing a return value." },
-      { id: "B", text: "Any value returned by a function." },
-      { id: "C", text: "A parameter passed into a function." },
-      { id: "D", text: "A syntax error." }
+      { id: "A", text: "Any value returned by a function." },
+      { id: "B", text: "A parameter passed into a function." },
+      { id: "C", text: "A syntax error." },
+      { id: "D", text: "An observable interaction with state or the outside world beyond simply producing a return value." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Mutating external state, writing to the console, modifying the DOM, making a network request, or changing a file are examples of side effects.",
     tags: ["side-effects", "pure-functions"]
   },
@@ -691,12 +691,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement best describes function composition?",
     options: [
-      { id: "A", text: "Combining functions so that the output of one becomes the input of another." },
-      { id: "B", text: "Putting every function into one large function." },
+      { id: "A", text: "Putting every function into one large function." },
+      { id: "B", text: "Combining functions so that the output of one becomes the input of another." },
       { id: "C", text: "Calling a function only once." },
       { id: "D", text: "Converting functions into objects." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Function composition builds larger behavior by combining smaller functions, where one function's result can feed another function.",
     tags: ["function-composition", "functions"]
   },
@@ -709,12 +709,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst double = n => n * 2;\nconst addOne = n => n + 1;\n\nconsole.log(addOne(double(4)));",
     options: [
-      { id: "A", text: "9" },
-      { id: "B", text: "10" },
-      { id: "C", text: "8" },
+      { id: "A", text: "10" },
+      { id: "B", text: "8" },
+      { id: "C", text: "9" },
       { id: "D", text: "5" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`double(4)` produces 8, then `addOne(8)` produces 9. This demonstrates composing small functions.",
     tags: ["function-composition", "arrow-functions"]
   },
@@ -727,12 +727,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of a function's return value?",
     options: [
-      { id: "A", text: "To provide a result back to the code that called the function." },
-      { id: "B", text: "To automatically print the result to the console." },
-      { id: "C", text: "To define the function's parameters." },
-      { id: "D", text: "To make the function execute asynchronously." }
+      { id: "A", text: "To automatically print the result to the console." },
+      { id: "B", text: "To define the function's parameters." },
+      { id: "C", text: "To make the function execute asynchronously." },
+      { id: "D", text: "To provide a result back to the code that called the function." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A return value allows the caller to receive and use the result produced by the function.",
     tags: ["return", "functions"]
   },
@@ -763,12 +763,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "A function has three parameters but the caller supplies only one argument. What should the function designer assume about the missing parameters?",
     options: [
-      { id: "A", text: "They are `undefined` unless the function defines another mechanism such as a default value." },
-      { id: "B", text: "They automatically become 0." },
+      { id: "A", text: "They automatically become 0." },
+      { id: "B", text: "They are `undefined` unless the function defines another mechanism such as a default value." },
       { id: "C", text: "They automatically become null." },
       { id: "D", text: "The function call always throws an exception." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript allows missing arguments. The corresponding parameters receive `undefined` unless other parameter behavior supplies a value.",
     tags: ["parameters", "arguments", "undefined"]
   },
@@ -781,12 +781,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction process(value, callback) {\n  return callback(value);\n}\n\nconst result = process(5, value => value * 3);\nconsole.log(result);",
     options: [
-      { id: "A", text: "15" },
-      { id: "B", text: "5" },
-      { id: "C", text: "8" },
+      { id: "A", text: "5" },
+      { id: "B", text: "8" },
+      { id: "C", text: "15" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`process` invokes the callback with 5. The callback multiplies it by 3 and returns 15, which `process` then returns.",
     tags: ["callbacks", "higher-order-functions", "return"]
   },
@@ -799,12 +799,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "What is the main advantage of breaking a large operation into smaller functions?",
     options: [
-      { id: "A", text: "It can improve readability, reuse, testing, and separation of responsibilities." },
-      { id: "B", text: "It guarantees the program will execute faster." },
-      { id: "C", text: "It eliminates all possible bugs." },
-      { id: "D", text: "It removes the need for parameters." }
+      { id: "A", text: "It guarantees the program will execute faster." },
+      { id: "B", text: "It eliminates all possible bugs." },
+      { id: "C", text: "It removes the need for parameters." },
+      { id: "D", text: "It can improve readability, reuse, testing, and separation of responsibilities." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Focused functions make code easier to understand, reuse, test, and maintain. They do not automatically guarantee better performance or bug-free code.",
     tags: ["functions", "code-quality", "separation-of-concerns"]
   },
@@ -835,12 +835,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "What is the difference between a function reference and a function call?",
     options: [
-      { id: "A", text: "A reference points to the function value, while a call executes the function." },
-      { id: "B", text: "A reference always executes the function asynchronously." },
+      { id: "A", text: "A reference always executes the function asynchronously." },
+      { id: "B", text: "A reference points to the function value, while a call executes the function." },
       { id: "C", text: "A call only stores the function." },
       { id: "D", text: "There is no difference." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Using a function name without parentheses generally refers to the function value. Adding `()` invokes it.",
     tags: ["function-reference", "function-call"]
   },
@@ -853,12 +853,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfunction applyOperation(a, b, operation) {\n  return operation(a, b);\n}\n\nconst multiply = (x, y) => x * y;\n\nconsole.log(applyOperation(4, 5, multiply));",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "9" },
-      { id: "C", text: "45" },
+      { id: "A", text: "9" },
+      { id: "B", text: "45" },
+      { id: "C", text: "20" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`multiply` is passed as a function value. `applyOperation` calls it with 4 and 5, producing 20.",
     tags: ["callbacks", "higher-order-functions", "function-reference"]
   },
@@ -871,12 +871,12 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "Which design best demonstrates a function with a single focused responsibility?",
     options: [
-      { id: "A", text: "A function that validates one piece of input and returns whether it is valid." },
-      { id: "B", text: "A function that validates input, fetches data, updates the DOM, saves files, and sends analytics all at once." },
-      { id: "C", text: "A function that contains every operation in the application." },
-      { id: "D", text: "A function that depends on several unrelated global variables." }
+      { id: "A", text: "A function that validates input, fetches data, updates the DOM, saves files, and sends analytics all at once." },
+      { id: "B", text: "A function that contains every operation in the application." },
+      { id: "C", text: "A function that depends on several unrelated global variables." },
+      { id: "D", text: "A function that validates one piece of input and returns whether it is valid." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A focused function is easier to understand, test, reuse, and change because its responsibility is narrow and clear.",
     tags: ["functions", "single-responsibility", "code-quality"]
   },
@@ -889,22 +889,10 @@ const javascriptFunctionsQuestions = [
     difficulty: "Advanced",
     question: "You are designing a reusable JavaScript utility. Which approach best follows good function design?",
     options: [
-      {
-        id: "A",
-        text: "Accept clear inputs through parameters, perform one well-defined responsibility, return a predictable result, and avoid unnecessary external side effects."
-      },
-      {
-        id: "B",
-        text: "Use global variables instead of parameters so every caller can modify the function's state."
-      },
-      {
-        id: "C",
-        text: "Make the function responsible for unrelated tasks so fewer functions are needed."
-      },
-      {
-        id: "D",
-        text: "Always mutate external data instead of returning a result."
-      }
+      { id: "A", text: "Accept clear inputs through parameters, perform one well-defined responsibility, return a predictable result, and avoid unnecessary external side effects." },
+      { id: "B", text: "Use global variables instead of parameters so every caller can modify the function's state." },
+      { id: "C", text: "Make the function responsible for unrelated tasks so fewer functions are needed." },
+      { id: "D", text: "Always mutate external data instead of returning a result." }
     ],
     correctOptionId: "A",
     explanation: "Well-designed functions tend to have clear inputs, focused responsibilities, predictable outputs, and controlled side effects. This makes them easier to reuse, test, and maintain.",

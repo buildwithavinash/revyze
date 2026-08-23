@@ -7,12 +7,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the <head> element in an HTML document?",
     options: [
-      { id: "A", text: "To contain metadata and resources describing or supporting the document" },
-      { id: "B", text: "To contain all visible page content" },
-      { id: "C", text: "To contain only the website navigation" },
+      { id: "A", text: "To contain all visible page content" },
+      { id: "B", text: "To contain only the website navigation" },
+      { id: "C", text: "To contain metadata and resources describing or supporting the document" },
       { id: "D", text: "To contain the page footer" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The <head> contains metadata and supporting resources such as the title, character encoding, stylesheets, icons, and other document information.",
     tags: ["head", "metadata", "html"]
   },
@@ -25,12 +25,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which element defines the title of an HTML document?",
     options: [
-      { id: "A", text: "<title>" },
-      { id: "B", text: "<meta-title>" },
-      { id: "C", text: "<h1>" },
-      { id: "D", text: "<document-title>" }
+      { id: "A", text: "<meta-title>" },
+      { id: "B", text: "<h1>" },
+      { id: "C", text: "<document-title>" },
+      { id: "D", text: "<title>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The <title> element defines the document's title and is typically displayed in the browser tab.",
     tags: ["title", "head", "metadata"]
   },
@@ -61,12 +61,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which element is commonly used to provide metadata about an HTML document?",
     options: [
-      { id: "A", text: "<meta>" },
-      { id: "B", text: "<metadata>" },
+      { id: "A", text: "<metadata>" },
+      { id: "B", text: "<meta>" },
       { id: "C", text: "<info>" },
       { id: "D", text: "<data>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The <meta> element represents metadata that cannot be represented by other head elements.",
     tags: ["meta", "metadata", "head"]
   },
@@ -79,12 +79,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What does this tag specify?\n\n<meta charset=\"UTF-8\">",
     options: [
-      { id: "A", text: "The character encoding used by the document" },
-      { id: "B", text: "The page's default font" },
-      { id: "C", text: "The page's language" },
+      { id: "A", text: "The page's default font" },
+      { id: "B", text: "The page's language" },
+      { id: "C", text: "The character encoding used by the document" },
       { id: "D", text: "The page's URL" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The charset declaration specifies the character encoding. UTF-8 is the standard choice for modern web documents.",
     tags: ["meta", "charset", "utf-8"]
   },
@@ -97,12 +97,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Why is UTF-8 commonly used for web documents?",
     options: [
-      { id: "A", text: "It supports a very large range of characters and symbols" },
-      { id: "B", text: "It makes every website load instantly" },
-      { id: "C", text: "It automatically translates content" },
-      { id: "D", text: "It replaces CSS encoding" }
+      { id: "A", text: "It makes every website load instantly" },
+      { id: "B", text: "It automatically translates content" },
+      { id: "C", text: "It replaces CSS encoding" },
+      { id: "D", text: "It supports a very large range of characters and symbols" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "UTF-8 can represent characters from a very broad range of writing systems and symbols, making it a suitable default encoding for modern websites.",
     tags: ["utf-8", "charset", "metadata"]
   },
@@ -133,12 +133,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What does width=device-width mean in the viewport meta tag?",
     options: [
-      { id: "A", text: "Use the device's viewport width as the layout viewport width" },
-      { id: "B", text: "Set every element's width to the device width" },
+      { id: "A", text: "Set every element's width to the device width" },
+      { id: "B", text: "Use the device's viewport width as the layout viewport width" },
       { id: "C", text: "Make images exactly as wide as the device" },
       { id: "D", text: "Force desktop mode on mobile" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "width=device-width tells the browser to use the device's viewport width as the page's layout viewport width.",
     tags: ["viewport", "responsive", "mobile"]
   },
@@ -151,12 +151,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the meta description?",
     options: [
-      { id: "A", text: "To provide a concise description of the page that search engines may use in search results" },
-      { id: "B", text: "To force the page to rank first" },
-      { id: "C", text: "To replace the page's visible content" },
+      { id: "A", text: "To force the page to rank first" },
+      { id: "B", text: "To replace the page's visible content" },
+      { id: "C", text: "To provide a concise description of the page that search engines may use in search results" },
       { id: "D", text: "To define the browser's character encoding" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A meta description summarizes the page. Search engines may use it as the search-result snippet, although they can choose different text.",
     tags: ["meta-description", "seo", "search"]
   },
@@ -169,12 +169,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which is a correctly structured meta description?",
     options: [
-      { id: "A", text: "<meta name=\"description\" content=\"Learn modern JavaScript fundamentals with practical examples.\">" },
-      { id: "B", text: "<meta description=\"Learn JavaScript fundamentals\">" },
-      { id: "C", text: "<description meta=\"Learn JavaScript fundamentals\">" },
-      { id: "D", text: "<meta name=\"seo\" text=\"Learn JavaScript fundamentals\">" }
+      { id: "A", text: "<meta description=\"Learn JavaScript fundamentals\">" },
+      { id: "B", text: "<description meta=\"Learn JavaScript fundamentals\">" },
+      { id: "C", text: "<meta name=\"seo\" text=\"Learn JavaScript fundamentals\">" },
+      { id: "D", text: "<meta name=\"description\" content=\"Learn modern JavaScript fundamentals with practical examples.\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The standard form uses name=\"description\" and places the description itself in the content attribute.",
     tags: ["meta-description", "meta", "seo"]
   },
@@ -205,12 +205,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What is the main SEO purpose of a page's <title>?",
     options: [
-      { id: "A", text: "It identifies the page and helps search engines and users understand what the page is about" },
-      { id: "B", text: "It hides the page from search engines" },
+      { id: "A", text: "It hides the page from search engines" },
+      { id: "B", text: "It identifies the page and helps search engines and users understand what the page is about" },
       { id: "C", text: "It automatically creates backlinks" },
       { id: "D", text: "It replaces all headings on the page" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A clear, descriptive title helps communicate the page's topic and is commonly displayed as the title of a search result.",
     tags: ["title", "seo", "search"]
   },
@@ -223,12 +223,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which is generally the strongest title for an article about React performance optimization?",
     options: [
-      { id: "A", text: "React Performance Optimization: Practical Techniques" },
-      { id: "B", text: "Home" },
-      { id: "C", text: "Page 17" },
+      { id: "A", text: "Home" },
+      { id: "B", text: "Page 17" },
+      { id: "C", text: "React Performance Optimization: Practical Techniques" },
       { id: "D", text: "React React React React React" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A useful title should be descriptive, concise, and aligned with the actual content rather than relying on vague or repetitive wording.",
     tags: ["title", "seo", "content"]
   },
@@ -241,12 +241,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "What does the robots meta tag generally control?",
     options: [
-      { id: "A", text: "Instructions about how search engine crawlers may handle the page" },
-      { id: "B", text: "The browser's JavaScript engine" },
-      { id: "C", text: "The page's CSS reset" },
-      { id: "D", text: "The server's database permissions" }
+      { id: "A", text: "The browser's JavaScript engine" },
+      { id: "B", text: "The page's CSS reset" },
+      { id: "C", text: "The server's database permissions" },
+      { id: "D", text: "Instructions about how search engine crawlers may handle the page" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The robots meta tag can provide crawler directives such as whether a page should be indexed or its links followed.",
     tags: ["robots", "seo", "crawlers"]
   },
@@ -277,12 +277,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which HTML attribute is used to specify the language of the document?",
     options: [
-      { id: "A", text: "lang" },
-      { id: "B", text: "language" },
+      { id: "A", text: "language" },
+      { id: "B", text: "lang" },
       { id: "C", text: "locale" },
       { id: "D", text: "doc-lang" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The lang attribute on the html element identifies the primary language of the document.",
     tags: ["lang", "accessibility", "seo"]
   },
@@ -295,12 +295,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Beginner",
     question: "Which is the correct way to declare that a page is primarily in English?",
     options: [
-      { id: "A", text: "<html lang=\"en\">" },
-      { id: "B", text: "<html language=\"English\">" },
-      { id: "C", text: "<html locale=\"en\">" },
+      { id: "A", text: "<html language=\"English\">" },
+      { id: "B", text: "<html locale=\"en\">" },
+      { id: "C", text: "<html lang=\"en\">" },
       { id: "D", text: "<html lang=\"English-US\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "lang=\"en\" uses the standard language tag for English. More specific tags such as en-US can be used when regional distinction matters.",
     tags: ["lang", "html", "accessibility"]
   },
@@ -313,12 +313,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Why is the lang attribute important beyond SEO?",
     options: [
-      { id: "A", text: "It helps assistive technologies and browsers determine how the document's language should be interpreted" },
-      { id: "B", text: "It automatically translates the page" },
-      { id: "C", text: "It changes the page's URL" },
-      { id: "D", text: "It selects the website's hosting server" }
+      { id: "A", text: "It automatically translates the page" },
+      { id: "B", text: "It changes the page's URL" },
+      { id: "C", text: "It selects the website's hosting server" },
+      { id: "D", text: "It helps assistive technologies and browsers determine how the document's language should be interpreted" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Language metadata can affect pronunciation and language-specific behavior in assistive technologies and other user agents.",
     tags: ["lang", "accessibility", "metadata"]
   },
@@ -349,12 +349,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which markup declares a canonical URL?",
     options: [
-      { id: "A", text: "<link rel=\"canonical\" href=\"https://example.com/products/widget\">" },
-      { id: "B", text: "<meta canonical=\"https://example.com/products/widget\">" },
+      { id: "A", text: "<meta canonical=\"https://example.com/products/widget\">" },
+      { id: "B", text: "<link rel=\"canonical\" href=\"https://example.com/products/widget\">" },
       { id: "C", text: "<link canonical=\"true\" src=\"https://example.com/products/widget\">" },
       { id: "D", text: "<canonical href=\"https://example.com/products/widget\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The canonical URL is specified using a link element with rel=\"canonical\" and an href containing the preferred URL.",
     tags: ["canonical", "link", "seo"]
   },
@@ -367,12 +367,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Why can canonical URLs be useful for SEO?",
     options: [
-      { id: "A", text: "They help search engines understand which URL should be treated as the preferred version of similar content" },
-      { id: "B", text: "They guarantee that duplicate pages disappear immediately" },
-      { id: "C", text: "They create backlinks automatically" },
+      { id: "A", text: "They guarantee that duplicate pages disappear immediately" },
+      { id: "B", text: "They create backlinks automatically" },
+      { id: "C", text: "They help search engines understand which URL should be treated as the preferred version of similar content" },
       { id: "D", text: "They force every visitor to use HTTPS" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Canonicalization helps search engines consolidate signals and identify the preferred URL among similar versions.",
     tags: ["canonical", "seo", "duplicate-content"]
   },
@@ -385,12 +385,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of rel=\"alternate\" in appropriate link relationships?",
     options: [
-      { id: "A", text: "It can identify an alternative representation or version of the current resource depending on the associated attributes" },
-      { id: "B", text: "It always means the page should not be indexed" },
-      { id: "C", text: "It replaces rel=\"canonical\"" },
-      { id: "D", text: "It disables all stylesheets" }
+      { id: "A", text: "It always means the page should not be indexed" },
+      { id: "B", text: "It replaces rel=\"canonical\"" },
+      { id: "C", text: "It disables all stylesheets" },
+      { id: "D", text: "It can identify an alternative representation or version of the current resource depending on the associated attributes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "rel=\"alternate\" indicates an alternative representation or relationship. Its meaning becomes more specific when combined with attributes such as hreflang or type.",
     tags: ["link", "alternate", "metadata"]
   },
@@ -421,12 +421,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which link correctly indicates an English version of a page?",
     options: [
-      { id: "A", text: "<link rel=\"alternate\" hreflang=\"en\" href=\"https://example.com/en/page\">" },
-      { id: "B", text: "<link language=\"en\" src=\"https://example.com/en/page\">" },
+      { id: "A", text: "<link language=\"en\" src=\"https://example.com/en/page\">" },
+      { id: "B", text: "<link rel=\"alternate\" hreflang=\"en\" href=\"https://example.com/en/page\">" },
       { id: "C", text: "<link rel=\"language\" href=\"https://example.com/en/page\">" },
       { id: "D", text: "<meta hreflang=\"en\" url=\"https://example.com/en/page\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "hreflang annotations use a link element with rel=\"alternate\", a language/region value, and the URL of the corresponding version.",
     tags: ["hreflang", "link", "international-seo"]
   },
@@ -439,12 +439,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "What are Open Graph meta tags primarily used for?",
     options: [
-      { id: "A", text: "Controlling how a page is represented when shared on platforms that support Open Graph metadata" },
-      { id: "B", text: "Controlling browser JavaScript execution" },
-      { id: "C", text: "Replacing all SEO metadata" },
+      { id: "A", text: "Controlling browser JavaScript execution" },
+      { id: "B", text: "Replacing all SEO metadata" },
+      { id: "C", text: "Controlling how a page is represented when shared on platforms that support Open Graph metadata" },
       { id: "D", text: "Defining database indexes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Open Graph metadata provides information such as a shared page title, description, URL, and image for supported social sharing systems.",
     tags: ["open-graph", "social-sharing", "metadata"]
   },
@@ -457,12 +457,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which is a valid Open Graph title tag?",
     options: [
-      { id: "A", text: "<meta property=\"og:title\" content=\"Learn React Hooks\">" },
-      { id: "B", text: "<meta name=\"og-title\" value=\"Learn React Hooks\">" },
-      { id: "C", text: "<meta og:title=\"Learn React Hooks\">" },
-      { id: "D", text: "<og title=\"Learn React Hooks\">" }
+      { id: "A", text: "<meta name=\"og-title\" value=\"Learn React Hooks\">" },
+      { id: "B", text: "<meta og:title=\"Learn React Hooks\">" },
+      { id: "C", text: "<og title=\"Learn React Hooks\">" },
+      { id: "D", text: "<meta property=\"og:title\" content=\"Learn React Hooks\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Open Graph properties are conventionally declared using meta elements with a property attribute such as og:title and a content attribute.",
     tags: ["open-graph", "og:title", "social-sharing"]
   },
@@ -493,12 +493,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which Open Graph property specifies the image associated with shared content?",
     options: [
-      { id: "A", text: "og:image" },
-      { id: "B", text: "og:photo" },
+      { id: "A", text: "og:photo" },
+      { id: "B", text: "og:image" },
       { id: "C", text: "og:thumbnail" },
       { id: "D", text: "og:picture" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "og:image specifies the image URL that can be used when the page is shared through Open Graph-aware systems.",
     tags: ["open-graph", "og:image", "social-sharing"]
   },
@@ -511,12 +511,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "What are Twitter/X Card meta tags used for?",
     options: [
-      { id: "A", text: "To provide metadata that can influence how URLs are presented when shared on X and compatible systems" },
-      { id: "B", text: "To control Twitter/X account permissions" },
-      { id: "C", text: "To authenticate API requests" },
+      { id: "A", text: "To control Twitter/X account permissions" },
+      { id: "B", text: "To authenticate API requests" },
+      { id: "C", text: "To provide metadata that can influence how URLs are presented when shared on X and compatible systems" },
       { id: "D", text: "To hide pages from search engines" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Card metadata describes how shared URLs should be represented, such as the card type, title, description, and image.",
     tags: ["twitter-cards", "social-sharing", "metadata"]
   },
@@ -529,12 +529,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which tag specifies a large summary card with an image for supported X/Twitter card processing?",
     options: [
-      { id: "A", text: "<meta name=\"twitter:card\" content=\"summary_large_image\">" },
-      { id: "B", text: "<meta property=\"twitter:image-card\" content=\"large\">" },
-      { id: "C", text: "<meta name=\"x:card\" content=\"large\">" },
-      { id: "D", text: "<twitter card=\"summary_large_image\">" }
+      { id: "A", text: "<meta property=\"twitter:image-card\" content=\"large\">" },
+      { id: "B", text: "<meta name=\"x:card\" content=\"large\">" },
+      { id: "C", text: "<twitter card=\"summary_large_image\">" },
+      { id: "D", text: "<meta name=\"twitter:card\" content=\"summary_large_image\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "twitter:card identifies the card type. summary_large_image is the common card type for a large preview image.",
     tags: ["twitter-card", "social-sharing", "metadata"]
   },
@@ -565,12 +565,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which format is commonly used to add Schema.org structured data to HTML?",
     options: [
-      { id: "A", text: "JSON-LD" },
-      { id: "B", text: "JSON-CSS" },
+      { id: "A", text: "JSON-CSS" },
+      { id: "B", text: "JSON-LD" },
       { id: "C", text: "XML-HTML" },
       { id: "D", text: "SEO-LD" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JSON-LD is a widely used format for embedding Schema.org structured data in web pages.",
     tags: ["json-ld", "schema", "structured-data"]
   },
@@ -583,12 +583,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly begins a JSON-LD structured-data block?",
     options: [
-      { id: "A", text: "<script type=\"application/ld+json\">{ \"@context\": \"https://schema.org\", \"@type\": \"Article\" }</script>" },
-      { id: "B", text: "<jsonld type=\"schema\">{ \"type\": \"Article\" }</jsonld>" },
-      { id: "C", text: "<meta type=\"application/ld+json\">Article</meta>" },
+      { id: "A", text: "<jsonld type=\"schema\">{ \"type\": \"Article\" }</jsonld>" },
+      { id: "B", text: "<meta type=\"application/ld+json\">Article</meta>" },
+      { id: "C", text: "<script type=\"application/ld+json\">{ \"@context\": \"https://schema.org\", \"@type\": \"Article\" }</script>" },
       { id: "D", text: "<script type=\"application/schema\">Article</script>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JSON-LD is commonly embedded in a script element using type=\"application/ld+json\".",
     tags: ["json-ld", "schema", "structured-data"]
   },
@@ -601,12 +601,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the @type property in Schema.org JSON-LD?",
     options: [
-      { id: "A", text: "It identifies the type of entity being described" },
-      { id: "B", text: "It specifies the JSON file extension" },
-      { id: "C", text: "It sets the browser's content type" },
-      { id: "D", text: "It specifies the page's CSS type" }
+      { id: "A", text: "It specifies the JSON file extension" },
+      { id: "B", text: "It sets the browser's content type" },
+      { id: "C", text: "It specifies the page's CSS type" },
+      { id: "D", text: "It identifies the type of entity being described" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "@type identifies what kind of Schema.org entity is being described, such as Article, Product, Organization, or Person.",
     tags: ["schema", "json-ld", "structured-data"]
   },
@@ -637,12 +637,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which markup correctly links a favicon?",
     options: [
-      { id: "A", text: "<link rel=\"icon\" href=\"/favicon.ico\">" },
-      { id: "B", text: "<icon src=\"/favicon.ico\">" },
+      { id: "A", text: "<icon src=\"/favicon.ico\">" },
+      { id: "B", text: "<link rel=\"icon\" href=\"/favicon.ico\">" },
       { id: "C", text: "<meta name=\"favicon\" content=\"/favicon.ico\">" },
       { id: "D", text: "<favicon href=\"/favicon.ico\"></favicon>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The standard approach is a link element with rel=\"icon\" and an href pointing to the icon resource.",
     tags: ["favicon", "link", "metadata"]
   },
@@ -655,12 +655,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "What does rel=\"stylesheet\" on a <link> element indicate?",
     options: [
-      { id: "A", text: "The linked resource is a stylesheet for the document" },
-      { id: "B", text: "The linked resource is the canonical URL" },
-      { id: "C", text: "The linked resource is a sitemap" },
+      { id: "A", text: "The linked resource is the canonical URL" },
+      { id: "B", text: "The linked resource is a sitemap" },
+      { id: "C", text: "The linked resource is a stylesheet for the document" },
       { id: "D", text: "The linked resource is a favicon" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "rel=\"stylesheet\" establishes a relationship indicating that the linked resource contains CSS styles for the document.",
     tags: ["link", "stylesheet", "head"]
   },
@@ -673,12 +673,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Intermediate",
     question: "Which relationship is commonly used to establish an early connection to another origin?",
     options: [
-      { id: "A", text: "preconnect" },
-      { id: "B", text: "early-connect" },
-      { id: "C", text: "connect" },
-      { id: "D", text: "origin-link" }
+      { id: "A", text: "early-connect" },
+      { id: "B", text: "connect" },
+      { id: "C", text: "origin-link" },
+      { id: "D", text: "preconnect" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "rel=\"preconnect\" allows the browser to perform connection setup to an origin early when that connection is expected to be needed.",
     tags: ["preconnect", "performance", "link"]
   },
@@ -709,12 +709,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "Which preload declaration correctly identifies a font resource?",
     options: [
-      { id: "A", text: "<link rel=\"preload\" href=\"/fonts/inter.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>" },
-      { id: "B", text: "<link preload=\"font\" src=\"/fonts/inter.woff2\">" },
+      { id: "A", text: "<link preload=\"font\" src=\"/fonts/inter.woff2\">" },
+      { id: "B", text: "<link rel=\"preload\" href=\"/fonts/inter.woff2\" as=\"font\" type=\"font/woff2\" crossorigin>" },
       { id: "C", text: "<font rel=\"preload\" href=\"/fonts/inter.woff2\">" },
       { id: "D", text: "<meta rel=\"preload\" href=\"/fonts/inter.woff2\" type=\"font\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A font preload uses rel=\"preload\", identifies the destination with as=\"font\", supplies the appropriate MIME type, and commonly uses crossorigin for font fetching.",
     tags: ["preload", "fonts", "performance"]
   },
@@ -727,12 +727,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "What is the main purpose of a sitemap.xml file?",
     options: [
-      { id: "A", text: "To provide search engines with information about URLs that are available for crawling" },
-      { id: "B", text: "To define the site's CSS architecture" },
-      { id: "C", text: "To store user login credentials" },
+      { id: "A", text: "To define the site's CSS architecture" },
+      { id: "B", text: "To store user login credentials" },
+      { id: "C", text: "To provide search engines with information about URLs that are available for crawling" },
       { id: "D", text: "To replace HTML navigation" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An XML sitemap provides crawlers with a list of URLs and optional metadata about those URLs. It can help discovery, especially on larger or more complex sites.",
     tags: ["sitemap", "seo", "crawling"]
   },
@@ -745,12 +745,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "Where is robots.txt normally located?",
     options: [
-      { id: "A", text: "At the root of the site's origin, such as https://example.com/robots.txt" },
-      { id: "B", text: "Inside every HTML document's <head>" },
-      { id: "C", text: "Inside the site's CSS folder" },
-      { id: "D", text: "Inside the browser cache" }
+      { id: "A", text: "Inside every HTML document's <head>" },
+      { id: "B", text: "Inside the site's CSS folder" },
+      { id: "C", text: "Inside the browser cache" },
+      { id: "D", text: "At the root of the site's origin, such as https://example.com/robots.txt" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The robots.txt file is conventionally served from the root path of an origin. It provides crawler access directives and can also reference a sitemap.",
     tags: ["robots.txt", "seo", "crawling"]
   },
@@ -781,24 +781,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "Which page has the strongest basic metadata foundation for an SEO-focused article?",
     options: [
-      {
-        id: "A",
-        text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>JavaScript Closures Explained</title><meta name=\"description\" content=\"Understand JavaScript closures with practical examples and mental models.\"><link rel=\"canonical\" href=\"https://example.com/javascript-closures\"></head>"
-      },
-      {
-        id: "B",
-        text: "<head><title>Page</title><meta name=\"keywords\" content=\"javascript javascript javascript javascript\"></head>"
-      },
-      {
-        id: "C",
-        text: "<head><meta name=\"description\" content=\"Buy now!!!\"><title>Untitled</title></head>"
-      },
-      {
-        id: "D",
-        text: "<head><h1>JavaScript Closures Explained</h1><p>Learn closures</p></head>"
-      }
+      { id: "A", text: "<head><title>Page</title><meta name=\"keywords\" content=\"javascript javascript javascript javascript\"></head>" },
+      { id: "B", text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>JavaScript Closures Explained</title><meta name=\"description\" content=\"Understand JavaScript closures with practical examples and mental models.\"><link rel=\"canonical\" href=\"https://example.com/javascript-closures\"></head>" },
+      { id: "C", text: "<head><meta name=\"description\" content=\"Buy now!!!\"><title>Untitled</title></head>" },
+      { id: "D", text: "<head><h1>JavaScript Closures Explained</h1><p>Learn closures</p></head>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The first option establishes language metadata, character encoding, responsive viewport behavior, a descriptive title, a useful description, and a canonical URL.",
     tags: ["metadata", "seo", "title", "description", "canonical"]
   },
@@ -811,24 +799,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "A developer wants a product page to have a useful social preview and basic SEO metadata. Which implementation is strongest?",
     options: [
-      {
-        id: "A",
-        text: "<title>Mechanical Keyboard | Example Store</title><meta name=\"description\" content=\"Shop the Example Store mechanical keyboard with hot-swappable switches and RGB lighting.\"><meta property=\"og:title\" content=\"Mechanical Keyboard | Example Store\"><meta property=\"og:description\" content=\"Hot-swappable mechanical keyboard with RGB lighting.\"><meta property=\"og:image\" content=\"https://example.com/images/keyboard.jpg\"><meta property=\"og:url\" content=\"https://example.com/products/keyboard\">"
-      },
-      {
-        id: "B",
-        text: "<title>Keyboard</title><meta name=\"keywords\" content=\"keyboard keyboard keyboard\"><meta property=\"image\" content=\"keyboard.jpg\">"
-      },
-      {
-        id: "C",
-        text: "<meta social=\"keyboard\"><title>Product</title><meta description=\"Buy keyboard\">"
-      },
-      {
-        id: "D",
-        text: "<h1>Mechanical Keyboard</h1><meta social-preview=\"keyboard.jpg\">"
-      }
+      { id: "A", text: "<title>Keyboard</title><meta name=\"keywords\" content=\"keyboard keyboard keyboard\"><meta property=\"image\" content=\"keyboard.jpg\">" },
+      { id: "B", text: "<meta social=\"keyboard\"><title>Product</title><meta description=\"Buy keyboard\">" },
+      { id: "C", text: "<title>Mechanical Keyboard | Example Store</title><meta name=\"description\" content=\"Shop the Example Store mechanical keyboard with hot-swappable switches and RGB lighting.\"><meta property=\"og:title\" content=\"Mechanical Keyboard | Example Store\"><meta property=\"og:description\" content=\"Hot-swappable mechanical keyboard with RGB lighting.\"><meta property=\"og:image\" content=\"https://example.com/images/keyboard.jpg\"><meta property=\"og:url\" content=\"https://example.com/products/keyboard\">" },
+      { id: "D", text: "<h1>Mechanical Keyboard</h1><meta social-preview=\"keyboard.jpg\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first option combines a descriptive document title and meta description with the key Open Graph properties used to describe the shared page.",
     tags: ["seo", "open-graph", "social-sharing", "metadata"]
   },
@@ -841,12 +817,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "Which statement about the meta keywords tag is most accurate for modern SEO?",
     options: [
-      { id: "A", text: "Major modern search engines generally do not use meta keywords as a meaningful ranking signal" },
-      { id: "B", text: "Adding hundreds of keywords guarantees high rankings" },
-      { id: "C", text: "Meta keywords are required for every HTML page" },
-      { id: "D", text: "Meta keywords replace the page title" }
+      { id: "A", text: "Adding hundreds of keywords guarantees high rankings" },
+      { id: "B", text: "Meta keywords are required for every HTML page" },
+      { id: "C", text: "Meta keywords replace the page title" },
+      { id: "D", text: "Major modern search engines generally do not use meta keywords as a meaningful ranking signal" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The old practice of stuffing keywords into a meta keywords tag is not a useful modern SEO strategy. Search engines evaluate the actual content and many other signals.",
     tags: ["meta-keywords", "seo", "common-mistakes"]
   },
@@ -877,24 +853,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "A multilingual website has English and Hindi versions of the same article. Which approach is appropriate for helping search engines understand the relationship between the localized URLs?",
     options: [
-      {
-        id: "A",
-        text: "<link rel=\"alternate\" hreflang=\"en\" href=\"https://example.com/en/article\"><link rel=\"alternate\" hreflang=\"hi\" href=\"https://example.com/hi/article\">"
-      },
-      {
-        id: "B",
-        text: "<meta language=\"en,hi\" content=\"same-page\">"
-      },
-      {
-        id: "C",
-        text: "<link rel=\"translation\" href=\"https://example.com/hi/article\">"
-      },
-      {
-        id: "D",
-        text: "<meta name=\"languages\" content=\"en,hi\">"
-      }
+      { id: "A", text: "<meta language=\"en,hi\" content=\"same-page\">" },
+      { id: "B", text: "<link rel=\"alternate\" hreflang=\"en\" href=\"https://example.com/en/article\"><link rel=\"alternate\" hreflang=\"hi\" href=\"https://example.com/hi/article\">" },
+      { id: "C", text: "<link rel=\"translation\" href=\"https://example.com/hi/article\">" },
+      { id: "D", text: "<meta name=\"languages\" content=\"en,hi\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "hreflang annotations identify alternate localized versions and their intended language or region.",
     tags: ["hreflang", "international-seo", "metadata"]
   },
@@ -907,24 +871,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "Which setup is most appropriate for a production article page that needs strong basic metadata and structured data?",
     options: [
-      {
-        id: "A",
-        text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>React Hooks Guide | Example</title><meta name=\"description\" content=\"A practical guide to React Hooks with examples of useState and useEffect.\"><link rel=\"canonical\" href=\"https://example.com/react-hooks\"><meta property=\"og:title\" content=\"React Hooks Guide | Example\"><meta property=\"og:description\" content=\"Learn React Hooks with practical examples.\"><meta property=\"og:image\" content=\"https://example.com/react-hooks.jpg\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"React Hooks Guide\"}</script></head>"
-      },
-      {
-        id: "B",
-        text: "<head><title>React React React</title><meta name=\"keywords\" content=\"react,react,react,react\"><script>SEO=true</script></head>"
-      },
-      {
-        id: "C",
-        text: "<head><meta description=\"React Hooks\"><meta seo=\"article\"><title>Guide</title></head>"
-      },
-      {
-        id: "D",
-        text: "<head><h1>React Hooks Guide</h1><meta social=\"true\"></head>"
-      }
+      { id: "A", text: "<head><title>React React React</title><meta name=\"keywords\" content=\"react,react,react,react\"><script>SEO=true</script></head>" },
+      { id: "B", text: "<head><meta description=\"React Hooks\"><meta seo=\"article\"><title>Guide</title></head>" },
+      { id: "C", text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>React Hooks Guide | Example</title><meta name=\"description\" content=\"A practical guide to React Hooks with examples of useState and useEffect.\"><link rel=\"canonical\" href=\"https://example.com/react-hooks\"><meta property=\"og:title\" content=\"React Hooks Guide | Example\"><meta property=\"og:description\" content=\"Learn React Hooks with practical examples.\"><meta property=\"og:image\" content=\"https://example.com/react-hooks.jpg\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"React Hooks Guide\"}</script></head>" },
+      { id: "D", text: "<head><h1>React Hooks Guide</h1><meta social=\"true\"></head>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The first implementation provides the major pieces of a strong basic metadata foundation: language, encoding, viewport, descriptive title, meta description, canonical URL, social metadata, and JSON-LD structured data.",
     tags: ["metadata", "seo", "structured-data", "open-graph", "canonical"]
   },
@@ -937,24 +889,12 @@ const htmlMetadataSeoQuestions = [
     difficulty: "Advanced",
     question: "You are reviewing a production website's <head>. Which approach demonstrates the strongest overall understanding of metadata and basic on-page SEO?",
     options: [
-      {
-        id: "A",
-        text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Frontend Development Roadmap | Example</title><meta name=\"description\" content=\"A practical frontend development roadmap covering HTML, CSS, JavaScript, React, testing, and deployment.\"><link rel=\"canonical\" href=\"https://example.com/frontend-roadmap\"><meta property=\"og:title\" content=\"Frontend Development Roadmap | Example\"><meta property=\"og:description\" content=\"A practical roadmap for becoming a frontend developer.\"><meta property=\"og:image\" content=\"https://example.com/images/frontend-roadmap.jpg\"><meta property=\"og:url\" content=\"https://example.com/frontend-roadmap\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Frontend Development Roadmap\"}</script></head>"
-      },
-      {
-        id: "B",
-        text: "<html><head><meta name=\"keywords\" content=\"frontend,developer,html,css,javascript,react,frontend,developer\"><title>Frontend Frontend Frontend</title><meta description=\"Best frontend website\"></head>"
-      },
-      {
-        id: "C",
-        text: "<html><head><h1>Frontend Development Roadmap</h1><meta seo=\"true\"><meta ranking=\"high\"></head>"
-      },
-      {
-        id: "D",
-        text: "<html><head><title>Home</title><meta name=\"description\" content=\"Click here now!!!\"><meta name=\"keywords\" content=\"best,number1,cheap,amazing\"></head>"
-      }
+      { id: "A", text: "<html><head><meta name=\"keywords\" content=\"frontend,developer,html,css,javascript,react,frontend,developer\"><title>Frontend Frontend Frontend</title><meta description=\"Best frontend website\"></head>" },
+      { id: "B", text: "<html><head><h1>Frontend Development Roadmap</h1><meta seo=\"true\"><meta ranking=\"high\"></head>" },
+      { id: "C", text: "<html><head><title>Home</title><meta name=\"description\" content=\"Click here now!!!\"><meta name=\"keywords\" content=\"best,number1,cheap,amazing\"></head>" },
+      { id: "D", text: "<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Frontend Development Roadmap | Example</title><meta name=\"description\" content=\"A practical frontend development roadmap covering HTML, CSS, JavaScript, React, testing, and deployment.\"><link rel=\"canonical\" href=\"https://example.com/frontend-roadmap\"><meta property=\"og:title\" content=\"Frontend Development Roadmap | Example\"><meta property=\"og:description\" content=\"A practical roadmap for becoming a frontend developer.\"><meta property=\"og:image\" content=\"https://example.com/images/frontend-roadmap.jpg\"><meta property=\"og:url\" content=\"https://example.com/frontend-roadmap\"><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Frontend Development Roadmap\"}</script></head>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The first implementation combines core document metadata, responsive viewport configuration, a descriptive title and description, canonicalization, social sharing metadata, and structured data. It focuses on accurately describing the page rather than relying on outdated keyword stuffing or imaginary ranking attributes.",
     tags: ["seo", "metadata", "structured-data", "canonical", "open-graph", "head"]
   }

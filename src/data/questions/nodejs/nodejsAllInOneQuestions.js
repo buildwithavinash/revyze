@@ -7,12 +7,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is Node.js?",
     options: [
-      { id: "A", text: "A JavaScript runtime built on Google's V8 engine" },
-      { id: "B", text: "A JavaScript framework for building React components" },
-      { id: "C", text: "A relational database" },
+      { id: "A", text: "A JavaScript framework for building React components" },
+      { id: "B", text: "A relational database" },
+      { id: "C", text: "A JavaScript runtime built on Google's V8 engine" },
       { id: "D", text: "A CSS preprocessor" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Node.js is a JavaScript runtime that allows JavaScript to execute outside the browser, using the V8 JavaScript engine.",
     tags: ["node", "runtime", "v8"]
   },
@@ -26,11 +26,11 @@ const nodejsAllInOneQuestions = [
     question: "Which engine executes JavaScript in Node.js?",
     options: [
       { id: "A", text: "SpiderMonkey" },
-      { id: "B", text: "V8" },
-      { id: "C", text: "JavaScriptCore only" },
-      { id: "D", text: "Chakra" }
+      { id: "B", text: "JavaScriptCore only" },
+      { id: "C", text: "Chakra" },
+      { id: "D", text: "V8" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Node.js uses Google's V8 JavaScript engine, the same engine family used by Chromium-based browsers.",
     tags: ["node", "v8"]
   },
@@ -61,12 +61,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What does `package.json` usually contain?",
     options: [
-      { id: "A", text: "Project metadata, scripts, and dependency information" },
-      { id: "B", text: "Only compiled JavaScript" },
+      { id: "A", text: "Only compiled JavaScript" },
+      { id: "B", text: "Project metadata, scripts, and dependency information" },
       { id: "C", text: "Only environment variables" },
       { id: "D", text: "The Node.js source code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`package.json` describes the project and commonly contains scripts, dependencies, metadata, and configuration.",
     tags: ["npm", "package-json"]
   },
@@ -80,11 +80,11 @@ const nodejsAllInOneQuestions = [
     question: "Which command initializes a new npm project using default answers?",
     options: [
       { id: "A", text: "npm start" },
-      { id: "B", text: "npm init --yes" },
-      { id: "C", text: "npm create-project" },
+      { id: "B", text: "npm create-project" },
+      { id: "C", text: "npm init --yes" },
       { id: "D", text: "node init --default" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`npm init --yes` or `npm init -y` creates a package.json using default values.",
     tags: ["npm", "package-json"]
   },
@@ -99,10 +99,10 @@ const nodejsAllInOneQuestions = [
     options: [
       { id: "A", text: "window" },
       { id: "B", text: "document" },
-      { id: "C", text: "process" },
-      { id: "D", text: "browser" }
+      { id: "C", text: "browser" },
+      { id: "D", text: "process" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Node.js exposes information and controls for the current process through the global `process` object.",
     tags: ["process", "node-runtime"]
   },
@@ -133,12 +133,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which Node.js global is commonly used to access command-line arguments?",
     options: [
-      { id: "A", text: "process.argv" },
-      { id: "B", text: "process.args" },
+      { id: "A", text: "process.args" },
+      { id: "B", text: "process.argv" },
       { id: "C", text: "console.argv" },
       { id: "D", text: "node.arguments" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`process.argv` contains the command-line arguments passed to the Node.js process.",
     tags: ["process", "cli"]
   },
@@ -152,11 +152,11 @@ const nodejsAllInOneQuestions = [
     question: "Which built-in module is used for working with files and directories?",
     options: [
       { id: "A", text: "http" },
-      { id: "B", text: "fs" },
-      { id: "C", text: "events" },
+      { id: "B", text: "events" },
+      { id: "C", text: "fs" },
       { id: "D", text: "url" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The `fs` module provides APIs for interacting with the file system.",
     tags: ["fs", "file-system"]
   },
@@ -169,12 +169,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is the main purpose of Node.js's `http` module?",
     options: [
-      { id: "A", text: "Creating HTTP servers and making HTTP-related requests" },
-      { id: "B", text: "Managing files" },
-      { id: "C", text: "Encrypting passwords automatically" },
-      { id: "D", text: "Connecting to Git" }
+      { id: "A", text: "Managing files" },
+      { id: "B", text: "Encrypting passwords automatically" },
+      { id: "C", text: "Connecting to Git" },
+      { id: "D", text: "Creating HTTP servers and making HTTP-related requests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The built-in `http` module provides functionality for HTTP servers and clients.",
     tags: ["http", "servers"]
   },
@@ -205,12 +205,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is the event loop responsible for?",
     options: [
-      { id: "A", text: "Coordinating execution of JavaScript and asynchronous callbacks" },
-      { id: "B", text: "Compiling TypeScript types" },
+      { id: "A", text: "Compiling TypeScript types" },
+      { id: "B", text: "Coordinating execution of JavaScript and asynchronous callbacks" },
       { id: "C", text: "Managing npm dependencies" },
       { id: "D", text: "Rendering HTML" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The event loop enables Node.js to handle asynchronous operations while JavaScript execution remains coordinated on its main thread.",
     tags: ["event-loop", "async"]
   },
@@ -223,12 +223,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Why is synchronous file I/O potentially problematic in a Node.js server?",
     options: [
-      { id: "A", text: "It can block JavaScript execution while the operation completes" },
-      { id: "B", text: "It always deletes the file" },
-      { id: "C", text: "It cannot read files larger than 1 KB" },
+      { id: "A", text: "It always deletes the file" },
+      { id: "B", text: "It cannot read files larger than 1 KB" },
+      { id: "C", text: "It can block JavaScript execution while the operation completes" },
       { id: "D", text: "It automatically crashes Node.js" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Synchronous I/O blocks the executing JavaScript thread, which can reduce responsiveness when used during request handling.",
     tags: ["async", "fs", "performance"]
   },
@@ -242,11 +242,11 @@ const nodejsAllInOneQuestions = [
     question: "Which method is an asynchronous way to read a file using the promise-based fs API?",
     options: [
       { id: "A", text: "fs.readFileSync()" },
-      { id: "B", text: "fs.promises.readFile()" },
-      { id: "C", text: "fs.file()" },
-      { id: "D", text: "fs.asyncRead()" }
+      { id: "B", text: "fs.file()" },
+      { id: "C", text: "fs.asyncRead()" },
+      { id: "D", text: "fs.promises.readFile()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`fs.promises.readFile()` returns a Promise that resolves with the file contents.",
     tags: ["fs", "promises", "async"]
   },
@@ -277,12 +277,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does an `async` function always return?",
     options: [
-      { id: "A", text: "A Promise" },
-      { id: "B", text: "A callback" },
+      { id: "A", text: "A callback" },
+      { id: "B", text: "A Promise" },
       { id: "C", text: "A stream" },
       { id: "D", text: "An EventEmitter" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An async function wraps its return value in a Promise, even when the function returns a normal value.",
     tags: ["async", "promises"]
   },
@@ -295,12 +295,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Where should errors from an awaited Promise commonly be handled?",
     options: [
-      { id: "A", text: "Inside a try/catch around the await" },
-      { id: "B", text: "Inside package.json" },
-      { id: "C", text: "Inside node_modules" },
+      { id: "A", text: "Inside package.json" },
+      { id: "B", text: "Inside node_modules" },
+      { id: "C", text: "Inside a try/catch around the await" },
       { id: "D", text: "Only with console.log()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A rejected Promise awaited inside an async function can be handled with `try/catch`.",
     tags: ["async", "errors", "try-catch"]
   },
@@ -313,12 +313,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a common problem with deeply nested callbacks?",
     options: [
-      { id: "A", text: "They can create difficult-to-read and difficult-to-maintain control flow" },
-      { id: "B", text: "They always run in parallel" },
-      { id: "C", text: "They cannot perform asynchronous work" },
-      { id: "D", text: "They are only available in browsers" }
+      { id: "A", text: "They always run in parallel" },
+      { id: "B", text: "They cannot perform asynchronous work" },
+      { id: "C", text: "They are only available in browsers" },
+      { id: "D", text: "They can create difficult-to-read and difficult-to-maintain control flow" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Deep callback nesting can lead to complex control flow, often called callback hell.",
     tags: ["callbacks", "async"]
   },
@@ -349,12 +349,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "If you need several independent API requests to complete before continuing, which approach is often appropriate?",
     options: [
-      { id: "A", text: "await Promise.all([requestA(), requestB(), requestC()])" },
-      { id: "B", text: "await requestA(); requestB(); requestC(); without waiting" },
+      { id: "A", text: "await requestA(); requestB(); requestC(); without waiting" },
+      { id: "B", text: "await Promise.all([requestA(), requestB(), requestC()])" },
       { id: "C", text: "Use only setTimeout()" },
       { id: "D", text: "Convert every request into synchronous I/O" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Independent asynchronous operations can be started together and awaited collectively with `Promise.all()`.",
     tags: ["promises", "concurrency"]
   },
@@ -367,12 +367,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between `Promise.all()` and `Promise.allSettled()`?",
     options: [
-      { id: "A", text: "allSettled waits for every input and reports each outcome, while all rejects when one rejects" },
-      { id: "B", text: "They are exactly identical" },
-      { id: "C", text: "allSettled only works with synchronous functions" },
+      { id: "A", text: "They are exactly identical" },
+      { id: "B", text: "allSettled only works with synchronous functions" },
+      { id: "C", text: "allSettled waits for every input and reports each outcome, while all rejects when one rejects" },
       { id: "D", text: "all never waits for Promises" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Promise.allSettled()` provides the status of every input after all settle, regardless of fulfillment or rejection.",
     tags: ["promises", "allSettled"]
   },
@@ -385,12 +385,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which module provides Node.js's EventEmitter?",
     options: [
-      { id: "A", text: "events" },
-      { id: "B", text: "emitter" },
-      { id: "C", text: "event-loop" },
-      { id: "D", text: "signals" }
+      { id: "A", text: "emitter" },
+      { id: "B", text: "event-loop" },
+      { id: "C", text: "signals" },
+      { id: "D", text: "events" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The built-in `events` module provides `EventEmitter` and related event functionality.",
     tags: ["events", "EventEmitter"]
   },
@@ -421,12 +421,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `EventEmitter.emit()` do?",
     options: [
-      { id: "A", text: "Triggers an event and passes arguments to registered listeners" },
-      { id: "B", text: "Removes all listeners" },
+      { id: "A", text: "Removes all listeners" },
+      { id: "B", text: "Triggers an event and passes arguments to registered listeners" },
       { id: "C", text: "Creates a Promise" },
       { id: "D", text: "Stops the Node process" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`emit()` synchronously invokes listeners registered for the specified event.",
     tags: ["events", "EventEmitter"]
   },
@@ -439,12 +439,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a Buffer in Node.js?",
     options: [
-      { id: "A", text: "A way to work with raw binary data" },
-      { id: "B", text: "A replacement for Promise" },
-      { id: "C", text: "A database connection" },
+      { id: "A", text: "A replacement for Promise" },
+      { id: "B", text: "A database connection" },
+      { id: "C", text: "A way to work with raw binary data" },
       { id: "D", text: "An HTML element" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Node.js Buffers represent raw binary data and are commonly used with files, streams, and network operations.",
     tags: ["buffer", "binary-data"]
   },
@@ -457,12 +457,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a stream useful for?",
     options: [
-      { id: "A", text: "Processing data incrementally rather than loading everything into memory at once" },
-      { id: "B", text: "Only storing environment variables" },
-      { id: "C", text: "Replacing all databases" },
-      { id: "D", text: "Defining TypeScript interfaces" }
+      { id: "A", text: "Only storing environment variables" },
+      { id: "B", text: "Replacing all databases" },
+      { id: "C", text: "Defining TypeScript interfaces" },
+      { id: "D", text: "Processing data incrementally rather than loading everything into memory at once" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Streams allow data to be processed piece by piece, which is useful for large files and network data.",
     tags: ["streams", "performance"]
   },
@@ -493,12 +493,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is backpressure in streams?",
     options: [
-      { id: "A", text: "A mechanism for preventing a fast producer from overwhelming a slower consumer" },
-      { id: "B", text: "A database rollback" },
+      { id: "A", text: "A database rollback" },
+      { id: "B", text: "A mechanism for preventing a fast producer from overwhelming a slower consumer" },
       { id: "C", text: "A failed HTTP request" },
       { id: "D", text: "A JavaScript syntax error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Backpressure allows streams to regulate data flow when the destination cannot consume data as quickly as the source produces it.",
     tags: ["streams", "backpressure"]
   },
@@ -511,12 +511,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which built-in module is commonly used for creating file paths safely across operating systems?",
     options: [
-      { id: "A", text: "path" },
-      { id: "B", text: "file-paths" },
-      { id: "C", text: "filesystem-path" },
+      { id: "A", text: "file-paths" },
+      { id: "B", text: "filesystem-path" },
+      { id: "C", text: "path" },
       { id: "D", text: "directory" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `path` module provides utilities for working with file and directory paths.",
     tags: ["path", "file-system"]
   },
@@ -529,12 +529,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `path.join()` do?",
     options: [
-      { id: "A", text: "Joins path segments using the platform's path separator" },
-      { id: "B", text: "Joins arrays into strings only" },
-      { id: "C", text: "Creates a database connection" },
-      { id: "D", text: "Joins HTTP requests" }
+      { id: "A", text: "Joins arrays into strings only" },
+      { id: "B", text: "Creates a database connection" },
+      { id: "C", text: "Joins HTTP requests" },
+      { id: "D", text: "Joins path segments using the platform's path separator" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`path.join()` combines path segments and normalizes the resulting path.",
     tags: ["path"]
   },
@@ -565,12 +565,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which built-in module is commonly used for cryptographic functionality?",
     options: [
-      { id: "A", text: "crypto" },
-      { id: "B", text: "secure" },
+      { id: "A", text: "secure" },
+      { id: "B", text: "crypto" },
       { id: "C", text: "hashing-only" },
       { id: "D", text: "encrypt-node" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Node.js's built-in `crypto` module provides cryptographic primitives and utilities.",
     tags: ["crypto", "security"]
   },
@@ -583,12 +583,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is middleware in a typical Node.js web framework?",
     options: [
-      { id: "A", text: "A function that can inspect or modify a request/response and control the request flow" },
-      { id: "B", text: "A database table" },
-      { id: "C", text: "A CSS component" },
+      { id: "A", text: "A database table" },
+      { id: "B", text: "A CSS component" },
+      { id: "C", text: "A function that can inspect or modify a request/response and control the request flow" },
       { id: "D", text: "A replacement for the event loop" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Middleware functions can run during request processing, perform tasks such as authentication or logging, and pass control onward.",
     tags: ["middleware", "http", "express"]
   },
@@ -601,12 +601,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "In Express, what does `next()` generally do in middleware?",
     options: [
-      { id: "A", text: "Passes control to the next matching middleware or route handler" },
-      { id: "B", text: "Ends the Node process" },
-      { id: "C", text: "Creates a new database" },
-      { id: "D", text: "Automatically sends a 200 response" }
+      { id: "A", text: "Ends the Node process" },
+      { id: "B", text: "Creates a new database" },
+      { id: "C", text: "Automatically sends a 200 response" },
+      { id: "D", text: "Passes control to the next matching middleware or route handler" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`next()` tells Express to continue processing the middleware chain.",
     tags: ["express", "middleware"]
   },
@@ -655,12 +655,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does HTTP status code 404 normally mean?",
     options: [
-      { id: "A", text: "The requested resource was not found" },
-      { id: "B", text: "The request succeeded" },
-      { id: "C", text: "The server restarted" },
+      { id: "A", text: "The request succeeded" },
+      { id: "B", text: "The server restarted" },
+      { id: "C", text: "The requested resource was not found" },
       { id: "D", text: "The client was authenticated" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "HTTP 404 indicates that the requested resource could not be found.",
     tags: ["http", "status-codes"]
   },
@@ -673,12 +673,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does HTTP status code 500 generally indicate?",
     options: [
-      { id: "A", text: "A server-side error" },
-      { id: "B", text: "Successful resource creation" },
-      { id: "C", text: "Permanent redirect" },
-      { id: "D", text: "Client authentication success" }
+      { id: "A", text: "Successful resource creation" },
+      { id: "B", text: "Permanent redirect" },
+      { id: "C", text: "Client authentication success" },
+      { id: "D", text: "A server-side error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "500 is a generic server error status indicating that the server encountered an unexpected condition.",
     tags: ["http", "status-codes", "errors"]
   },
@@ -709,12 +709,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of centralized error-handling middleware in an Express application?",
     options: [
-      { id: "A", text: "To provide a consistent way to handle and format application errors" },
-      { id: "B", text: "To prevent every route from running" },
+      { id: "A", text: "To prevent every route from running" },
+      { id: "B", text: "To provide a consistent way to handle and format application errors" },
       { id: "C", text: "To replace HTTP status codes" },
       { id: "D", text: "To automatically fix database errors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Centralized error handling avoids duplicating response logic and provides consistent API error responses.",
     tags: ["express", "errors", "middleware"]
   },
@@ -727,12 +727,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the key difference between authentication and authorization?",
     options: [
-      { id: "A", text: "Authentication verifies identity; authorization determines what that identity is allowed to access" },
-      { id: "B", text: "Authentication controls permissions; authorization verifies passwords only" },
-      { id: "C", text: "They are exactly the same concept" },
+      { id: "A", text: "Authentication controls permissions; authorization verifies passwords only" },
+      { id: "B", text: "They are exactly the same concept" },
+      { id: "C", text: "Authentication verifies identity; authorization determines what that identity is allowed to access" },
       { id: "D", text: "Authorization only applies to databases" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Authentication answers 'Who are you?', while authorization answers 'What are you allowed to do?'.",
     tags: ["authentication", "authorization", "security"]
   },
@@ -745,12 +745,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why should passwords generally not be stored as plain text in a Node.js application?",
     options: [
-      { id: "A", text: "A database compromise could expose users' actual passwords" },
-      { id: "B", text: "Plain text passwords cannot be sent over HTTP" },
-      { id: "C", text: "Node.js cannot read strings" },
-      { id: "D", text: "Databases only support numbers" }
+      { id: "A", text: "Plain text passwords cannot be sent over HTTP" },
+      { id: "B", text: "Node.js cannot read strings" },
+      { id: "C", text: "Databases only support numbers" },
+      { id: "D", text: "A database compromise could expose users' actual passwords" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Passwords should be stored using a password-hashing algorithm designed for password storage, not as recoverable plain text.",
     tags: ["security", "passwords"]
   },
@@ -781,12 +781,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What happens if CPU-heavy synchronous JavaScript runs for a long time on Node's main thread?",
     options: [
-      { id: "A", text: "It can block the event loop and delay other requests and callbacks" },
-      { id: "B", text: "It automatically moves to another CPU core" },
+      { id: "A", text: "It automatically moves to another CPU core" },
+      { id: "B", text: "It can block the event loop and delay other requests and callbacks" },
       { id: "C", text: "It becomes asynchronous automatically" },
       { id: "D", text: "It only affects console output" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Long-running CPU-bound JavaScript blocks the main event-loop thread and can make the server unresponsive.",
     tags: ["event-loop", "performance", "cpu"]
   },
@@ -799,12 +799,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which Node.js feature can help move CPU-intensive JavaScript work off the main thread?",
     options: [
-      { id: "A", text: "worker_threads" },
-      { id: "B", text: "fs.readFileSync" },
-      { id: "C", text: "console.log" },
+      { id: "A", text: "fs.readFileSync" },
+      { id: "B", text: "console.log" },
+      { id: "C", text: "worker_threads" },
       { id: "D", text: "process.env" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `worker_threads` module allows JavaScript to run in separate threads, which can be useful for CPU-intensive tasks.",
     tags: ["worker-threads", "performance"]
   },
@@ -817,12 +817,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of clustering or running multiple Node.js processes?",
     options: [
-      { id: "A", text: "To use multiple processes and potentially take advantage of multiple CPU cores" },
-      { id: "B", text: "To make JavaScript synchronous" },
-      { id: "C", text: "To replace HTTP" },
-      { id: "D", text: "To eliminate the event loop" }
+      { id: "A", text: "To make JavaScript synchronous" },
+      { id: "B", text: "To replace HTTP" },
+      { id: "C", text: "To eliminate the event loop" },
+      { id: "D", text: "To use multiple processes and potentially take advantage of multiple CPU cores" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Multiple Node.js processes can distribute work across CPU cores and improve throughput for suitable workloads.",
     tags: ["cluster", "performance", "scaling"]
   },
@@ -853,12 +853,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which approach is generally best for an API route that performs three independent external requests and only needs the combined results?",
     options: [
-      { id: "A", text: "Start all three operations and await them with Promise.all()" },
-      { id: "B", text: "Perform them synchronously one after another" },
+      { id: "A", text: "Perform them synchronously one after another" },
+      { id: "B", text: "Start all three operations and await them with Promise.all()" },
       { id: "C", text: "Use setTimeout() to guess when they finish" },
       { id: "D", text: "Ignore the returned Promises" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When operations are independent, running them concurrently with `Promise.all()` can reduce total waiting time.",
     tags: ["promises", "concurrency", "api"]
   },
@@ -871,12 +871,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "A production Node.js API suddenly becomes slow because one endpoint performs a huge CPU-intensive calculation synchronously. What is the most likely underlying issue?",
     options: [
-      { id: "A", text: "The calculation is blocking the event loop" },
-      { id: "B", text: "The HTTP protocol cannot handle JSON" },
-      { id: "C", text: "npm is deleting requests" },
+      { id: "A", text: "The HTTP protocol cannot handle JSON" },
+      { id: "B", text: "npm is deleting requests" },
+      { id: "C", text: "The calculation is blocking the event loop" },
       { id: "D", text: "Promises automatically serialize all requests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "CPU-heavy synchronous JavaScript can monopolize the event-loop thread and prevent other callbacks and requests from being processed promptly.",
     tags: ["event-loop", "performance", "api"]
   },
@@ -889,12 +889,12 @@ const nodejsAllInOneQuestions = [
     difficulty: "Advanced",
     question: "You are designing a production Node.js REST API. Which architecture is the strongest overall choice?",
     options: [
-      { id: "A", text: "Validate input, use asynchronous I/O, separate routes/services/data access, centralize error handling, protect secrets, and avoid blocking the event loop" },
-      { id: "B", text: "Put all logic in one route, store passwords in plain text, and use synchronous I/O" },
-      { id: "C", text: "Return 200 for every request and ignore errors" },
-      { id: "D", text: "Use global variables for every request and disable validation" }
+      { id: "A", text: "Put all logic in one route, store passwords in plain text, and use synchronous I/O" },
+      { id: "B", text: "Return 200 for every request and ignore errors" },
+      { id: "C", text: "Use global variables for every request and disable validation" },
+      { id: "D", text: "Validate input, use asynchronous I/O, separate routes/services/data access, centralize error handling, protect secrets, and avoid blocking the event loop" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Production Node.js applications benefit from clear separation of concerns, validation, asynchronous I/O, proper error handling, secure configuration, and careful event-loop usage.",
     tags: ["node", "api", "architecture", "security", "performance"]
   }

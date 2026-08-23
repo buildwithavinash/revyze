@@ -7,6 +7,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/public/revyze_favicon/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Revyze - Your Go to place for Revision</title>
+    <script>
+      (() => {
+        try {
+          const storageKey = "revyze-theme";
+          const storedTheme = window.localStorage.getItem(storageKey);
+          const theme =
+            storedTheme === "dark" || storedTheme === "light"
+              ? storedTheme
+              : window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+
+          document.documentElement.classList.toggle("dark", theme === "dark");
+        } catch (error) {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

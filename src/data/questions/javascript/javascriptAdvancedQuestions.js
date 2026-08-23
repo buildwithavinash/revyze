@@ -25,12 +25,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is the call stack?",
     options: [
-      { id: "A", text: "A structure that tracks currently executing function calls" },
-      { id: "B", text: "A queue containing only Promise callbacks" },
+      { id: "A", text: "A queue containing only Promise callbacks" },
+      { id: "B", text: "A structure that tracks currently executing function calls" },
       { id: "C", text: "A storage area for all browser events" },
       { id: "D", text: "A list of variables that have been garbage collected" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The call stack keeps track of active execution contexts. When a function is called, an execution frame is pushed onto the stack, and it is removed when that function finishes.",
     tags: ["call-stack", "execution-context", "event-loop"]
   },
@@ -43,12 +43,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is logged first?\n\nconsole.log(\"A\");\n\nsetTimeout(() => {\n  console.log(\"B\");\n}, 0);\n\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "A" },
-      { id: "B", text: "B" },
-      { id: "C", text: "C" },
+      { id: "A", text: "B" },
+      { id: "B", text: "C" },
+      { id: "C", text: "A" },
       { id: "D", text: "The order is nondeterministic" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The synchronous `console.log(\"A\")` executes immediately. The timer callback cannot execute until the current synchronous work has completed and the callback is eligible to be processed.",
     tags: ["event-loop", "setTimeout", "synchronous"]
   },
@@ -61,12 +61,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is the output order?\n\nconsole.log(1);\n\nsetTimeout(() => console.log(2), 0);\n\nPromise.resolve().then(() => console.log(3));\n\nconsole.log(4);",
     options: [
-      { id: "A", text: "1, 4, 3, 2" },
-      { id: "B", text: "1, 3, 4, 2" },
-      { id: "C", text: "1, 4, 2, 3" },
-      { id: "D", text: "1, 2, 3, 4" }
+      { id: "A", text: "1, 3, 4, 2" },
+      { id: "B", text: "1, 4, 2, 3" },
+      { id: "C", text: "1, 2, 3, 4" },
+      { id: "D", text: "1, 4, 3, 2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The synchronous logs run first: `1` then `4`. The Promise reaction is a microtask and is processed before the timer task, so `3` comes before `2`.",
     tags: ["event-loop", "microtasks", "macrotasks", "Promise"]
   },
@@ -97,12 +97,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What happens here?\n\nconsole.log(\"start\");\n\nqueueMicrotask(() => console.log(\"microtask\"));\n\nconsole.log(\"end\");",
     options: [
-      { id: "A", text: "start, end, microtask" },
-      { id: "B", text: "start, microtask, end" },
+      { id: "A", text: "start, microtask, end" },
+      { id: "B", text: "start, end, microtask" },
       { id: "C", text: "microtask, start, end" },
       { id: "D", text: "end, start, microtask" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The microtask is queued while synchronous code is still executing. Therefore `end` is logged first, and the microtask runs after the current synchronous stack completes.",
     tags: ["microtasks", "queueMicrotask", "synchronous"]
   },
@@ -115,12 +115,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nPromise.resolve()\n  .then(() => console.log(\"A\"))\n  .then(() => console.log(\"B\"));\n\nconsole.log(\"C\");",
     options: [
-      { id: "A", text: "C, A, B" },
-      { id: "B", text: "A, B, C" },
-      { id: "C", text: "C, B, A" },
+      { id: "A", text: "A, B, C" },
+      { id: "B", text: "C, B, A" },
+      { id: "C", text: "C, A, B" },
       { id: "D", text: "A, C, B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`console.log(\"C\")` is synchronous. The first `.then()` runs afterward as a microtask, and the second `.then()` is scheduled by the first reaction, so `B` follows `A`.",
     tags: ["Promise", "microtasks", "chaining", "event-loop"]
   },
@@ -133,12 +133,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the output order?\n\nsetTimeout(() => console.log(\"timer\"), 0);\n\nPromise.resolve().then(() => {\n  console.log(\"promise\");\n});\n\nconsole.log(\"sync\");",
     options: [
-      { id: "A", text: "sync, promise, timer" },
-      { id: "B", text: "promise, sync, timer" },
-      { id: "C", text: "timer, sync, promise" },
-      { id: "D", text: "sync, timer, promise" }
+      { id: "A", text: "promise, sync, timer" },
+      { id: "B", text: "timer, sync, promise" },
+      { id: "C", text: "sync, timer, promise" },
+      { id: "D", text: "sync, promise, timer" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Synchronous code executes first. The Promise reaction is a microtask, which is processed before the timer task.",
     tags: ["event-loop", "microtasks", "setTimeout", "Promise"]
   },
@@ -169,12 +169,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes JavaScript's usual single-threaded execution model?",
     options: [
-      { id: "A", text: "JavaScript code generally executes one call-stack operation at a time, while the host can provide asynchronous facilities" },
-      { id: "B", text: "Every JavaScript function executes simultaneously" },
+      { id: "A", text: "Every JavaScript function executes simultaneously" },
+      { id: "B", text: "JavaScript code generally executes one call-stack operation at a time, while the host can provide asynchronous facilities" },
       { id: "C", text: "Promises create a new JavaScript thread for every callback" },
       { id: "D", text: "The event loop makes all JavaScript code parallel" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The JavaScript execution model generally processes one piece of JavaScript at a time on the main execution thread. The host environment can perform or coordinate asynchronous operations outside the JavaScript call stack.",
     tags: ["single-threaded", "event-loop", "async"]
   },
@@ -187,12 +187,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is a closure?",
     options: [
-      { id: "A", text: "A function together with access to variables from its surrounding lexical scope" },
-      { id: "B", text: "A function that must return another function" },
-      { id: "C", text: "A function that can only run once" },
+      { id: "A", text: "A function that must return another function" },
+      { id: "B", text: "A function that can only run once" },
+      { id: "C", text: "A function together with access to variables from its surrounding lexical scope" },
       { id: "D", text: "A variable stored automatically on window" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A closure occurs when a function retains access to bindings from its lexical environment even after the surrounding function has finished executing.",
     tags: ["closures", "lexical-scope", "functions"]
   },
@@ -205,12 +205,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nfunction createCounter() {\n  let count = 0;\n\n  return () => ++count;\n}\n\nconst counter = createCounter();\n\nconsole.log(counter());\nconsole.log(counter());",
     options: [
-      { id: "A", text: "1 then 2" },
-      { id: "B", text: "1 then 1" },
-      { id: "C", text: "0 then 0" },
-      { id: "D", text: "2 then 2" }
+      { id: "A", text: "1 then 1" },
+      { id: "B", text: "0 then 0" },
+      { id: "C", text: "2 then 2" },
+      { id: "D", text: "1 then 2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The returned function closes over `count`. The binding remains accessible between calls, so the first call changes it to 1 and the second changes it to 2.",
     tags: ["closures", "lexical-scope", "state"]
   },
@@ -241,12 +241,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Why are closures useful for encapsulation?",
     options: [
-      { id: "A", text: "They can keep state accessible to selected functions without exposing the binding directly as a global" },
-      { id: "B", text: "They automatically encrypt variables in memory" },
+      { id: "A", text: "They automatically encrypt variables in memory" },
+      { id: "B", text: "They can keep state accessible to selected functions without exposing the binding directly as a global" },
       { id: "C", text: "They prevent garbage collection" },
       { id: "D", text: "They make every variable immutable" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Closures allow functions to retain access to private lexical bindings. Other code cannot directly access those local bindings unless the closure exposes operations that interact with them.",
     tags: ["closures", "encapsulation", "private-state"]
   },
@@ -259,12 +259,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nfunction outer() {\n  let value = 10;\n\n  return function inner() {\n    return value;\n  };\n}\n\nconst fn = outer();\nconsole.log(fn());",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "null" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "null" },
+      { id: "C", text: "10" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`inner` closes over the lexical environment of `outer`, so it retains access to `value` after `outer()` has returned.",
     tags: ["closures", "lexical-scope", "execution"]
   },
@@ -277,12 +277,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this function demonstrate?\n\nfunction once(fn) {\n  let called = false;\n  let result;\n\n  return (...args) => {\n    if (!called) {\n      called = true;\n      result = fn(...args);\n    }\n    return result;\n  };\n}",
     options: [
-      { id: "A", text: "A closure-based function that preserves private state between calls" },
-      { id: "B", text: "A function that always executes fn twice" },
-      { id: "C", text: "A recursive function" },
-      { id: "D", text: "A function that disables lexical scope" }
+      { id: "A", text: "A function that always executes fn twice" },
+      { id: "B", text: "A recursive function" },
+      { id: "C", text: "A function that disables lexical scope" },
+      { id: "D", text: "A closure-based function that preserves private state between calls" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The returned function closes over `called` and `result`, allowing it to remember whether `fn` has already executed and reuse its result.",
     tags: ["closures", "higher-order-functions", "encapsulation"]
   },
@@ -313,12 +313,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nconst funcs = [];\n\nfor (var i = 0; i < 3; i++) {\n  funcs.push(() => i);\n}\n\nconsole.log(funcs[0](), funcs[1](), funcs[2]());",
     options: [
-      { id: "A", text: "3, 3, 3" },
-      { id: "B", text: "0, 1, 2" },
+      { id: "A", text: "0, 1, 2" },
+      { id: "B", text: "3, 3, 3" },
       { id: "C", text: "0, 0, 0" },
       { id: "D", text: "2, 2, 2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`var` creates one function-scoped binding for `i`. All three closures reference that same binding, whose value is 3 after the loop finishes.",
     tags: ["closures", "var", "loops", "lexical-scope"]
   },
@@ -331,12 +331,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is lexical scoping?",
     options: [
-      { id: "A", text: "The rule that determines variable access based on where code is written in the source" },
-      { id: "B", text: "A rule where variables are resolved based on which function calls them" },
-      { id: "C", text: "A mechanism that makes all variables global" },
+      { id: "A", text: "A rule where variables are resolved based on which function calls them" },
+      { id: "B", text: "A mechanism that makes all variables global" },
+      { id: "C", text: "The rule that determines variable access based on where code is written in the source" },
       { id: "D", text: "A special form of dynamic import" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript uses lexical scoping: the structure of the source code determines which surrounding bindings a function can access.",
     tags: ["lexical-scope", "closures", "scope"]
   },
@@ -349,12 +349,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does this usually refer to in a normal JavaScript function?",
     options: [
-      { id: "A", text: "The object or context determined by how the function is called" },
-      { id: "B", text: "Always the object where the function was originally written" },
-      { id: "C", text: "Always the global object" },
-      { id: "D", text: "Always the function itself" }
+      { id: "A", text: "Always the object where the function was originally written" },
+      { id: "B", text: "Always the global object" },
+      { id: "C", text: "Always the function itself" },
+      { id: "D", text: "The object or context determined by how the function is called" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "For normal functions, `this` is determined by the call site and invocation form. It is not simply determined by where the function was defined.",
     tags: ["this", "function-invocation", "binding"]
   },
@@ -385,12 +385,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the likely result in strict mode?\n\n\"use strict\";\n\nconst user = {\n  name: \"Avi\",\n  greet() {\n    return this.name;\n  }\n};\n\nconst fn = user.greet;\nconsole.log(fn());",
     options: [
-      { id: "A", text: "A TypeError because this is undefined and accessing this.name fails" },
-      { id: "B", text: "Avi" },
+      { id: "A", text: "Avi" },
+      { id: "B", text: "A TypeError because this is undefined and accessing this.name fails" },
       { id: "C", text: "undefined" },
       { id: "D", text: "user" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Extracting the method removes the `user.` receiver. In strict mode, a plain function call gives `this` the value `undefined`, so `this.name` throws.",
     tags: ["this", "strict-mode", "method-extraction"]
   },
@@ -403,12 +403,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "How does an arrow function's this behavior differ from a normal function?",
     options: [
-      { id: "A", text: "An arrow function does not have its own this binding and instead uses the surrounding lexical this" },
-      { id: "B", text: "An arrow function always binds this to window" },
-      { id: "C", text: "An arrow function always binds this to the object before the dot" },
+      { id: "A", text: "An arrow function always binds this to window" },
+      { id: "B", text: "An arrow function always binds this to the object before the dot" },
+      { id: "C", text: "An arrow function does not have its own this binding and instead uses the surrounding lexical this" },
       { id: "D", text: "An arrow function creates a new this object on every call" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Arrow functions capture `this` lexically from their surrounding context. They do not establish their own dynamic `this` binding.",
     tags: ["this", "arrow-functions", "lexical-this"]
   },
@@ -421,12 +421,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nconst user = {\n  name: \"Avi\",\n  greet() {\n    const fn = () => this.name;\n    return fn();\n  }\n};\n\nconsole.log(user.greet());",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "TypeError" },
-      { id: "D", text: "fn" }
+      { id: "A", text: "undefined" },
+      { id: "B", text: "TypeError" },
+      { id: "C", text: "fn" },
+      { id: "D", text: "Avi" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`greet()` is called as a method, so its `this` is `user`. The arrow function captures that same `this` lexically.",
     tags: ["this", "arrow-functions", "closures"]
   },
@@ -457,12 +457,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nfunction greet() {\n  return `Hi ${this.name}`;\n}\n\nconst user = { name: \"Avi\" };\n\nconsole.log(greet.call(user));",
     options: [
-      { id: "A", text: "Hi Avi" },
-      { id: "B", text: "Hi undefined" },
+      { id: "A", text: "Hi undefined" },
+      { id: "B", text: "Hi Avi" },
       { id: "C", text: "Hi user" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`call(user)` explicitly sets `this` to the `user` object for that invocation, so `this.name` is `Avi`.",
     tags: ["this", "call", "explicit-binding"]
   },
@@ -475,12 +475,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What is the primary difference between call() and apply()?",
     options: [
-      { id: "A", text: "call() receives arguments individually, while apply() receives them as an array-like collection" },
-      { id: "B", text: "apply() permanently binds this while call() does not" },
-      { id: "C", text: "call() is asynchronous while apply() is synchronous" },
+      { id: "A", text: "apply() permanently binds this while call() does not" },
+      { id: "B", text: "call() is asynchronous while apply() is synchronous" },
+      { id: "C", text: "call() receives arguments individually, while apply() receives them as an array-like collection" },
       { id: "D", text: "apply() only works with arrow functions" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Both invoke a function immediately with an explicit `this`. The main difference is how arguments are supplied.",
     tags: ["this", "call", "apply"]
   },
@@ -493,12 +493,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does bind() do?",
     options: [
-      { id: "A", text: "Creates a new function with this and optionally some arguments permanently bound for future calls" },
-      { id: "B", text: "Immediately executes the original function" },
-      { id: "C", text: "Queues the function as a microtask" },
-      { id: "D", text: "Creates a Promise from the function" }
+      { id: "A", text: "Immediately executes the original function" },
+      { id: "B", text: "Queues the function as a microtask" },
+      { id: "C", text: "Creates a Promise from the function" },
+      { id: "D", text: "Creates a new function with this and optionally some arguments permanently bound for future calls" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`bind()` does not invoke the function immediately. It returns a new function whose `this` and optionally initial arguments are bound.",
     tags: ["this", "bind", "explicit-binding"]
   },
@@ -529,12 +529,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a higher-order function?",
     options: [
-      { id: "A", text: "A function that accepts another function as an argument, returns a function, or both" },
-      { id: "B", text: "A function that can only contain more than ten lines" },
+      { id: "A", text: "A function that can only contain more than ten lines" },
+      { id: "B", text: "A function that accepts another function as an argument, returns a function, or both" },
       { id: "C", text: "A function that must be recursive" },
       { id: "D", text: "A function that executes only asynchronously" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Functions are first-class values in JavaScript, so functions can be passed around and returned. A higher-order function uses that capability by accepting and/or returning functions.",
     tags: ["higher-order-functions", "first-class-functions", "functional-programming"]
   },
@@ -547,12 +547,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Why is map() considered a higher-order function?",
     options: [
-      { id: "A", text: "It accepts a callback function as an argument" },
-      { id: "B", text: "It always returns a function" },
-      { id: "C", text: "It creates a Promise" },
+      { id: "A", text: "It always returns a function" },
+      { id: "B", text: "It creates a Promise" },
+      { id: "C", text: "It accepts a callback function as an argument" },
       { id: "D", text: "It changes this automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`map()` accepts a callback function that determines how each element is transformed. Accepting a function makes it a higher-order function.",
     tags: ["higher-order-functions", "map", "callbacks"]
   },
@@ -565,12 +565,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "What does this function return?\n\nfunction multiplier(factor) {\n  return function (value) {\n    return value * factor;\n  };\n}\n\nconst double = multiplier(2);\nconsole.log(double(5));",
     options: [
-      { id: "A", text: "10" },
-      { id: "B", text: "7" },
-      { id: "C", text: "5" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "7" },
+      { id: "B", text: "5" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "10" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The returned function closes over `factor`. `double` therefore retains the value 2 and multiplies its argument 5 by it.",
     tags: ["closures", "higher-order-functions", "factory-functions"]
   },
@@ -601,12 +601,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Intermediate",
     question: "Which implementation is a curried version of add(a, b)?",
     options: [
-      { id: "A", text: "const add = a => b => a + b;" },
-      { id: "B", text: "const add = (a, b) => a + b;" },
+      { id: "A", text: "const add = (a, b) => a + b;" },
+      { id: "B", text: "const add = a => b => a + b;" },
       { id: "C", text: "const add = a + b;" },
       { id: "D", text: "const add = () => a + b;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`a => b => a + b` returns a function after receiving `a`. That returned function receives `b`, making the function curried.",
     tags: ["currying", "arrow-functions", "higher-order-functions"]
   },
@@ -619,12 +619,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nconst add = a => b => a + b;\n\nconsole.log(add(2)(3));",
     options: [
-      { id: "A", text: "5" },
-      { id: "B", text: "23" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "23" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "5" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`add(2)` returns a function that closes over `a = 2`. Calling that function with 3 produces `2 + 3`, which is 5.",
     tags: ["currying", "closures", "higher-order-functions"]
   },
@@ -637,12 +637,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is partial application?",
     options: [
-      { id: "A", text: "Creating a new function by pre-filling some arguments of an existing function" },
-      { id: "B", text: "Executing only half of a function's statements" },
-      { id: "C", text: "Converting every function into a Promise" },
-      { id: "D", text: "Removing some parameters from a function declaration" }
+      { id: "A", text: "Executing only half of a function's statements" },
+      { id: "B", text: "Converting every function into a Promise" },
+      { id: "C", text: "Removing some parameters from a function declaration" },
+      { id: "D", text: "Creating a new function by pre-filling some arguments of an existing function" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Partial application fixes some arguments ahead of time and returns a new function that accepts the remaining arguments.",
     tags: ["partial-application", "functional-programming", "bind"]
   },
@@ -673,12 +673,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this function demonstrate?\n\nconst compose = (f, g) => value => f(g(value));\n\nconst double = x => x * 2;\nconst addOne = x => x + 1;\n\nconst result = compose(double, addOne);\nconsole.log(result(3));",
     options: [
-      { id: "A", text: "8" },
-      { id: "B", text: "7" },
+      { id: "A", text: "7" },
+      { id: "B", text: "8" },
       { id: "C", text: "6" },
       { id: "D", text: "4" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`compose(double, addOne)` creates a function that first applies `addOne` to 3, producing 4, then applies `double`, producing 8.",
     tags: ["function-composition", "higher-order-functions", "closures"]
   },
@@ -691,12 +691,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is function composition?",
     options: [
-      { id: "A", text: "Combining functions so the output of one becomes the input of another" },
-      { id: "B", text: "Combining two objects into one prototype" },
-      { id: "C", text: "Calling two unrelated functions simultaneously" },
+      { id: "A", text: "Combining two objects into one prototype" },
+      { id: "B", text: "Calling two unrelated functions simultaneously" },
+      { id: "C", text: "Combining functions so the output of one becomes the input of another" },
       { id: "D", text: "Creating a class from multiple constructors" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Composition builds a larger operation by connecting smaller functions, where one function's result feeds into another function.",
     tags: ["function-composition", "higher-order-functions", "functional-programming"]
   },
@@ -709,12 +709,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the main issue with this debounce implementation if the returned function is recreated on every render of a UI component?\n\nfunction debounce(fn, delay) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), delay);\n  };\n}",
     options: [
-      { id: "A", text: "Recreating it can create separate timer state, preventing calls from being coordinated through one persistent closure" },
-      { id: "B", text: "debounce cannot use closures" },
-      { id: "C", text: "clearTimeout always cancels every timer in the application" },
-      { id: "D", text: "setTimeout executes synchronously" }
+      { id: "A", text: "debounce cannot use closures" },
+      { id: "B", text: "clearTimeout always cancels every timer in the application" },
+      { id: "C", text: "setTimeout executes synchronously" },
+      { id: "D", text: "Recreating it can create separate timer state, preventing calls from being coordinated through one persistent closure" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `timer` variable belongs to the closure created by each returned function. If a new debounced function is created repeatedly, each instance can have its own timer, defeating the intended shared debounce behavior.",
     tags: ["closures", "debounce", "higher-order-functions", "state"]
   },
@@ -745,12 +745,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the output?\n\nconsole.log(\"start\");\n\nsetTimeout(() => {\n  console.log(\"timeout\");\n}, 0);\n\nPromise.resolve().then(() => {\n  console.log(\"promise-1\");\n}).then(() => {\n  console.log(\"promise-2\");\n});\n\nconsole.log(\"end\");",
     options: [
-      { id: "A", text: "start, end, promise-1, promise-2, timeout" },
-      { id: "B", text: "start, end, timeout, promise-1, promise-2" },
+      { id: "A", text: "start, end, timeout, promise-1, promise-2" },
+      { id: "B", text: "start, end, promise-1, promise-2, timeout" },
       { id: "C", text: "start, promise-1, promise-2, end, timeout" },
       { id: "D", text: "start, timeout, end, promise-1, promise-2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The synchronous logs happen first. Promise reactions are microtasks, so both Promise callbacks are processed before the timer task. The second reaction is queued by the first.",
     tags: ["event-loop", "microtasks", "Promise", "setTimeout"]
   },
@@ -763,12 +763,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nconst obj = {\n  value: 10,\n  getValue() {\n    return this.value;\n  }\n};\n\nconst get = obj.getValue.bind(obj);\nobj.value = 20;\n\nconsole.log(get());",
     options: [
-      { id: "A", text: "20" },
-      { id: "B", text: "10" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "10" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "20" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`bind(obj)` permanently binds `this` to the object reference. The function reads `this.value` when it is called, after the object's value has changed to 20.",
     tags: ["this", "bind", "object-mutation"]
   },
@@ -781,12 +781,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nfunction createMultiplier(multiplier) {\n  return value => value * multiplier;\n}\n\nconst triple = createMultiplier(3);\n\nconsole.log(triple(4));",
     options: [
-      { id: "A", text: "12" },
-      { id: "B", text: "7" },
-      { id: "C", text: "4" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "7" },
+      { id: "B", text: "4" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "12" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`triple` is a closure over `multiplier = 3`. When called with 4, it evaluates `4 * 3` and returns 12.",
     tags: ["closures", "higher-order-functions", "factory-functions"]
   },
@@ -817,12 +817,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "A developer wants to preserve an object's method context when passing the method as a callback. Which option is appropriate?\n\nconst user = {\n  name: \"Avi\",\n  greet() {\n    return this.name;\n  }\n};",
     options: [
-      { id: "A", text: "const callback = user.greet.bind(user);" },
-      { id: "B", text: "const callback = user.greet;" },
+      { id: "A", text: "const callback = user.greet;" },
+      { id: "B", text: "const callback = user.greet.bind(user);" },
       { id: "C", text: "const callback = () => user;" },
       { id: "D", text: "const callback = user.greet.call;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Passing `user.greet` by itself can lose the receiver. `bind(user)` creates a function whose `this` is explicitly fixed to the `user` object.",
     tags: ["this", "bind", "callbacks"]
   },
@@ -835,12 +835,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does this pattern demonstrate?\n\nfunction withLogging(fn) {\n  return (...args) => {\n    console.log(\"calling\");\n    return fn(...args);\n  };\n}",
     options: [
-      { id: "A", text: "A higher-order function used to wrap another function and add behavior" },
-      { id: "B", text: "A recursive function that calls itself" },
-      { id: "C", text: "A constructor function using prototype inheritance" },
+      { id: "A", text: "A recursive function that calls itself" },
+      { id: "B", text: "A constructor function using prototype inheritance" },
+      { id: "C", text: "A higher-order function used to wrap another function and add behavior" },
       { id: "D", text: "A function that changes the event loop priority" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`withLogging` accepts a function and returns a new function that adds logging before delegating to the original function. This is a common higher-order function/decorator pattern.",
     tags: ["higher-order-functions", "closures", "decorators", "callbacks"]
   },
@@ -853,12 +853,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\nfunction curryAdd(a) {\n  return function (b) {\n    return function (c) {\n      return a + b + c;\n    };\n  };\n}\n\nconst result = curryAdd(1)(2)(3);\n\nWhat is result?",
     options: [
-      { id: "A", text: "6" },
-      { id: "B", text: "5" },
-      { id: "C", text: "123" },
-      { id: "D", text: "A function" }
+      { id: "A", text: "5" },
+      { id: "B", text: "123" },
+      { id: "C", text: "A function" },
+      { id: "D", text: "6" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Each invocation supplies one argument and returns the next function. The final function has access to all three arguments through closures and returns `1 + 2 + 3`.",
     tags: ["currying", "closures", "higher-order-functions"]
   },
@@ -889,24 +889,12 @@ const javascriptAdvancedQuestions = [
     difficulty: "Advanced",
     question: "A frontend application needs a reusable search utility that waits until the user stops typing before making an API request. The utility must preserve its timer between calls and allow the original search function to receive the latest arguments. Which design best matches the required concepts?",
     options: [
-      {
-        id: "A",
-        text: "Create a higher-order debounce function that returns a closure containing the timer, clears the previous timer on each call, and schedules the latest invocation"
-      },
-      {
-        id: "B",
-        text: "Call the API synchronously on every keystroke and rely on the event loop to remove duplicate requests"
-      },
-      {
-        id: "C",
-        text: "Use a global timer variable shared by every search input in the application"
-      },
-      {
-        id: "D",
-        text: "Use Promise.resolve() on every keystroke and assume microtasks automatically debounce the requests"
-      }
+      { id: "A", text: "Call the API synchronously on every keystroke and rely on the event loop to remove duplicate requests" },
+      { id: "B", text: "Create a higher-order debounce function that returns a closure containing the timer, clears the previous timer on each call, and schedules the latest invocation" },
+      { id: "C", text: "Use a global timer variable shared by every search input in the application" },
+      { id: "D", text: "Use Promise.resolve() on every keystroke and assume microtasks automatically debounce the requests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A debounce utility is naturally implemented as a higher-order function that returns a closure. The closure preserves timer state between calls, `clearTimeout()` cancels the previous pending call, and the latest arguments can be captured for the eventual invocation.",
     tags: ["closures", "higher-order-functions", "debounce", "event-loop", "callbacks"]
   }

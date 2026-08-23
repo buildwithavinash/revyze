@@ -8,11 +8,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "What does `git stash` primarily do?",
     options: [
       { id: "A", text: "Pushes local commits to GitHub" },
-      { id: "B", text: "Temporarily stores uncommitted changes so you can work with a clean working tree" },
-      { id: "C", text: "Deletes all uncommitted changes permanently" },
+      { id: "B", text: "Deletes all uncommitted changes permanently" },
+      { id: "C", text: "Temporarily stores uncommitted changes so you can work with a clean working tree" },
       { id: "D", text: "Creates a new remote repository" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`git stash` temporarily saves eligible working-tree and index changes so you can return to a clean working tree without committing them.",
     tags: ["stash", "working-tree"]
   },
@@ -25,12 +25,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Beginner",
     question: "Which command applies the most recent stash while keeping it in the stash list?",
     options: [
-      { id: "A", text: "git stash apply" },
-      { id: "B", text: "git stash restore" },
-      { id: "C", text: "git stash use" },
-      { id: "D", text: "git stash replay" }
+      { id: "A", text: "git stash restore" },
+      { id: "B", text: "git stash use" },
+      { id: "C", text: "git stash replay" },
+      { id: "D", text: "git stash apply" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git stash apply` reapplies the stash but does not remove it from the stash list.",
     tags: ["stash", "stash-apply"]
   },
@@ -43,12 +43,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Beginner",
     question: "How does `git stash pop` differ from `git stash apply`?",
     options: [
-      { id: "A", text: "pop creates a new branch automatically" },
-      { id: "B", text: "pop applies the stash and normally removes it from the stash list if successful" },
+      { id: "A", text: "pop applies the stash and normally removes it from the stash list if successful" },
+      { id: "B", text: "pop creates a new branch automatically" },
       { id: "C", text: "pop permanently deletes the working tree" },
       { id: "D", text: "pop only works with remote branches" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`git stash pop` applies the stash and then drops it from the stash list if the application succeeds.",
     tags: ["stash", "stash-pop"]
   },
@@ -62,11 +62,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "Which command lists your saved stashes?",
     options: [
       { id: "A", text: "git stash show-all" },
-      { id: "B", text: "git saved" },
-      { id: "C", text: "git stash list" },
+      { id: "B", text: "git stash list" },
+      { id: "C", text: "git saved" },
       { id: "D", text: "git stash history" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`git stash list` displays the stash entries currently stored in the repository.",
     tags: ["stash", "stash-list"]
   },
@@ -79,12 +79,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Beginner",
     question: "What does `git stash drop` do?",
     options: [
-      { id: "A", text: "Deletes a selected stash entry" },
-      { id: "B", text: "Deletes the current branch" },
-      { id: "C", text: "Removes all Git history" },
+      { id: "A", text: "Deletes the current branch" },
+      { id: "B", text: "Removes all Git history" },
+      { id: "C", text: "Deletes a selected stash entry" },
       { id: "D", text: "Deletes the remote repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`git stash drop` removes a specified stash entry from the stash list.",
     tags: ["stash", "stash-drop"]
   },
@@ -97,12 +97,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Beginner",
     question: "What does `git stash clear` do?",
     options: [
-      { id: "A", text: "Removes all stash entries" },
-      { id: "B", text: "Deletes the current branch" },
-      { id: "C", text: "Resets the repository to HEAD" },
-      { id: "D", text: "Clears the Git index only" }
+      { id: "A", text: "Deletes the current branch" },
+      { id: "B", text: "Resets the repository to HEAD" },
+      { id: "C", text: "Clears the Git index only" },
+      { id: "D", text: "Removes all stash entries" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git stash clear` removes all entries from the stash list.",
     tags: ["stash", "stash-clear"]
   },
@@ -151,12 +151,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is `git stash -u` useful for?",
     options: [
-      { id: "A", text: "Including untracked files in the stash" },
-      { id: "B", text: "Deleting untracked files" },
-      { id: "C", text: "Pushing the stash to a remote" },
+      { id: "A", text: "Deleting untracked files" },
+      { id: "B", text: "Pushing the stash to a remote" },
+      { id: "C", text: "Including untracked files in the stash" },
       { id: "D", text: "Creating a Git tag" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`-u` means `--include-untracked`, causing untracked files to be included in the stash.",
     tags: ["stash", "untracked-files"]
   },
@@ -169,12 +169,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is cherry-picking in Git?",
     options: [
-      { id: "A", text: "Selecting a specific commit and applying its changes onto the current branch" },
-      { id: "B", text: "Deleting a specific commit from every branch" },
-      { id: "C", text: "Creating a GitHub fork" },
-      { id: "D", text: "Merging every branch into main" }
+      { id: "A", text: "Deleting a specific commit from every branch" },
+      { id: "B", text: "Creating a GitHub fork" },
+      { id: "C", text: "Merging every branch into main" },
+      { id: "D", text: "Selecting a specific commit and applying its changes onto the current branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git cherry-pick` takes the changes introduced by one or more existing commits and applies them as new commits on the current branch.",
     tags: ["cherry-pick", "commits"]
   },
@@ -187,12 +187,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "Which command cherry-picks a commit identified by `abc1234`?",
     options: [
-      { id: "A", text: "git apply abc1234" },
-      { id: "B", text: "git cherry-pick abc1234" },
+      { id: "A", text: "git cherry-pick abc1234" },
+      { id: "B", text: "git apply abc1234" },
       { id: "C", text: "git commit --pick abc1234" },
       { id: "D", text: "git merge --single abc1234" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`git cherry-pick <commit>` applies the changes introduced by the specified commit onto the current branch.",
     tags: ["cherry-pick"]
   },
@@ -205,12 +205,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "Why might cherry-picking be useful?",
     options: [
-      { id: "A", text: "To selectively bring one useful fix from another branch without merging the entire branch" },
-      { id: "B", text: "To automatically rewrite every branch" },
+      { id: "A", text: "To automatically rewrite every branch" },
+      { id: "B", text: "To selectively bring one useful fix from another branch without merging the entire branch" },
       { id: "C", text: "To remove all merge conflicts" },
       { id: "D", text: "To create a new Git repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Cherry-picking is useful when you need a specific commit's change without bringing the complete branch history into the current branch.",
     tags: ["cherry-pick", "workflow"]
   },
@@ -224,11 +224,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "What happens to the commit ID when a commit is cherry-picked?",
     options: [
       { id: "A", text: "It always remains identical" },
-      { id: "B", text: "The change is normally recorded as a new commit with a different ID" },
-      { id: "C", text: "The commit becomes a tag" },
+      { id: "B", text: "The commit becomes a tag" },
+      { id: "C", text: "The change is normally recorded as a new commit with a different ID" },
       { id: "D", text: "The original commit is deleted" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Cherry-pick creates a new commit containing the selected change, so its commit ID normally differs from the original.",
     tags: ["cherry-pick", "commit-hash"]
   },
@@ -241,12 +241,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What can happen if the cherry-picked commit conflicts with the current branch?",
     options: [
-      { id: "A", text: "Git may stop and require you to resolve the conflict before continuing" },
-      { id: "B", text: "Git automatically deletes both branches" },
-      { id: "C", text: "Git always chooses the oldest version" },
-      { id: "D", text: "GitHub automatically resolves the code" }
+      { id: "A", text: "Git automatically deletes both branches" },
+      { id: "B", text: "Git always chooses the oldest version" },
+      { id: "C", text: "GitHub automatically resolves the code" },
+      { id: "D", text: "Git may stop and require you to resolve the conflict before continuing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Cherry-picking performs a change integration operation, so incompatible changes can result in conflicts requiring manual resolution.",
     tags: ["cherry-pick", "conflicts"]
   },
@@ -295,12 +295,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is `git reset` primarily used for?",
     options: [
-      { id: "A", text: "Moving the current branch reference and optionally changing the index and working tree" },
-      { id: "B", text: "Creating a GitHub pull request" },
-      { id: "C", text: "Downloading a remote repository" },
+      { id: "A", text: "Creating a GitHub pull request" },
+      { id: "B", text: "Downloading a remote repository" },
+      { id: "C", text: "Moving the current branch reference and optionally changing the index and working tree" },
       { id: "D", text: "Creating Git hooks" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`git reset` moves the current branch reference to a specified commit and, depending on the mode, can also update the index and working tree.",
     tags: ["reset", "history"]
   },
@@ -314,11 +314,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "What does `git reset --soft HEAD~1` do?",
     options: [
       { id: "A", text: "Deletes the previous commit and discards its changes" },
-      { id: "B", text: "Moves HEAD back one commit while keeping the changes staged" },
-      { id: "C", text: "Deletes all untracked files" },
-      { id: "D", text: "Creates a revert commit" }
+      { id: "B", text: "Deletes all untracked files" },
+      { id: "C", text: "Creates a revert commit" },
+      { id: "D", text: "Moves HEAD back one commit while keeping the changes staged" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`--soft` moves the branch reference while leaving the index and working tree unchanged, so the undone commit's changes remain staged.",
     tags: ["reset", "soft-reset"]
   },
@@ -349,12 +349,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is the major danger of `git reset --hard`?",
     options: [
-      { id: "A", text: "It can discard tracked working-tree and index changes that are not preserved elsewhere" },
-      { id: "B", text: "It always deletes the remote repository" },
+      { id: "A", text: "It always deletes the remote repository" },
+      { id: "B", text: "It can discard tracked working-tree and index changes that are not preserved elsewhere" },
       { id: "C", text: "It automatically creates a pull request" },
       { id: "D", text: "It prevents Git from making future commits" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`--hard` updates the branch, index, and working tree to the target commit, potentially discarding local tracked changes.",
     tags: ["reset", "hard-reset", "data-loss"]
   },
@@ -367,12 +367,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "When is `git revert` generally preferred over reset for a published branch?",
     options: [
-      { id: "A", text: "When you want to undo a change while preserving the existing shared history" },
-      { id: "B", text: "When you want to erase the branch's history" },
-      { id: "C", text: "When you want to delete the remote" },
+      { id: "A", text: "When you want to erase the branch's history" },
+      { id: "B", text: "When you want to delete the remote" },
+      { id: "C", text: "When you want to undo a change while preserving the existing shared history" },
       { id: "D", text: "When you want to remove Git metadata" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`git revert` creates a new commit that reverses an earlier commit, making it appropriate for preserving shared history.",
     tags: ["revert", "reset", "shared-history"]
   },
@@ -386,11 +386,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "What does `git revert HEAD` generally do?",
     options: [
       { id: "A", text: "Deletes the HEAD commit from history" },
-      { id: "B", text: "Creates a new commit that reverses the changes introduced by HEAD" },
-      { id: "C", text: "Moves HEAD to the parent without creating a commit" },
-      { id: "D", text: "Stashes the HEAD commit" }
+      { id: "B", text: "Moves HEAD to the parent without creating a commit" },
+      { id: "C", text: "Stashes the HEAD commit" },
+      { id: "D", text: "Creates a new commit that reverses the changes introduced by HEAD" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`git revert` records an inverse change as a new commit rather than removing the original commit.",
     tags: ["revert"]
   },
@@ -439,12 +439,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is a Git hook?",
     options: [
-      { id: "A", text: "A script that can run automatically in response to specific Git events" },
-      { id: "B", text: "A remote branch name" },
-      { id: "C", text: "A special type of commit" },
+      { id: "A", text: "A remote branch name" },
+      { id: "B", text: "A special type of commit" },
+      { id: "C", text: "A script that can run automatically in response to specific Git events" },
       { id: "D", text: "A GitHub issue template" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Git hooks are scripts triggered by specific Git operations, such as committing or receiving pushed changes.",
     tags: ["git-hooks", "automation"]
   },
@@ -457,12 +457,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "Where are local Git hooks typically stored?",
     options: [
-      { id: "A", text: ".git/hooks" },
-      { id: "B", text: ".github/hooks" },
-      { id: "C", text: `hooks/ at the project root by default` },
-      { id: "D", text: "node_modules/hooks" }
+      { id: "A", text: ".github/hooks" },
+      { id: "B", text: "hooks/ at the project root by default" },
+      { id: "C", text: "node_modules/hooks" },
+      { id: "D", text: ".git/hooks" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Repository-specific Git hooks are typically located inside `.git/hooks`.",
     tags: ["git-hooks", "git-directory"]
   },
@@ -511,12 +511,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between client-side and server-side Git hooks?",
     options: [
-      { id: "A", text: "Client-side hooks run on the developer's machine, while server-side hooks can run on the receiving repository/server" },
-      { id: "B", text: "Client-side hooks only run on GitHub" },
-      { id: "C", text: "Server-side hooks only run before local commits" },
+      { id: "A", text: "Client-side hooks only run on GitHub" },
+      { id: "B", text: "Server-side hooks only run before local commits" },
+      { id: "C", text: "Client-side hooks run on the developer's machine, while server-side hooks can run on the receiving repository/server" },
       { id: "D", text: "There is no distinction" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Client-side hooks execute in the local repository, while server-side hooks operate on the receiving side of repository operations.",
     tags: ["git-hooks", "server-hooks"]
   },
@@ -529,12 +529,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "Why can Git hooks be problematic when shared only through `.git/hooks`?",
     options: [
-      { id: "A", text: "The `.git` directory is not normally committed, so hooks are not automatically shared through the repository" },
-      { id: "B", text: "Git cannot execute shell scripts" },
-      { id: "C", text: "Hooks can only run on Windows" },
-      { id: "D", text: "GitHub deletes all hooks immediately" }
+      { id: "A", text: "Git cannot execute shell scripts" },
+      { id: "B", text: "Hooks can only run on Windows" },
+      { id: "C", text: "GitHub deletes all hooks immediately" },
+      { id: "D", text: "The `.git` directory is not normally committed, so hooks are not automatically shared through the repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `.git` directory is repository metadata and is not part of normal versioned project files, so local hooks need another sharing strategy.",
     tags: ["git-hooks", "collaboration"]
   },
@@ -565,12 +565,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "You have uncommitted changes and discover they belong on a different feature branch. Which workflow can help?",
     options: [
-      { id: "A", text: "Stash the changes, switch/create the correct branch, then apply the stash" },
-      { id: "B", text: "Delete the .git directory" },
+      { id: "A", text: "Delete the .git directory" },
+      { id: "B", text: "Stash the changes, switch/create the correct branch, then apply the stash" },
       { id: "C", text: "Force-push the working tree" },
       { id: "D", text: "Run git revert without a commit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Stashing allows you to temporarily put aside the changes, move to the appropriate branch, and then restore them.",
     tags: ["stash", "branching", "workflow"]
   },
@@ -584,11 +584,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "Which command displays the changes contained in the latest stash without applying them?",
     options: [
       { id: "A", text: "git stash inspect" },
-      { id: "B", text: "git stash show" },
-      { id: "C", text: "git stash diff-only" },
+      { id: "B", text: "git stash diff-only" },
+      { id: "C", text: "git stash show" },
       { id: "D", text: "git show-stash" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`git stash show` displays information about the changes stored in a stash. Options such as `-p` can show the patch.",
     tags: ["stash", "stash-show"]
   },
@@ -601,12 +601,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Intermediate",
     question: "What does `git stash show -p` provide?",
     options: [
-      { id: "A", text: "The patch/diff represented by the stash" },
-      { id: "B", text: "The list of GitHub pull requests" },
-      { id: "C", text: "The repository's commit graph only" },
-      { id: "D", text: "A new stash entry" }
+      { id: "A", text: "The list of GitHub pull requests" },
+      { id: "B", text: "The repository's commit graph only" },
+      { id: "C", text: "A new stash entry" },
+      { id: "D", text: "The patch/diff represented by the stash" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `-p` option asks Git to show the patch represented by the stash.",
     tags: ["stash", "diff"]
   },
@@ -619,12 +619,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "A bug fix exists as commit `abc123` on a development branch, but you need that fix on a release branch without merging all development changes. What is a suitable tool?",
     options: [
-      { id: "A", text: "git stash" },
-      { id: "B", text: "git reset --hard" },
-      { id: "C", text: "git cherry-pick abc123" },
+      { id: "A", text: "git cherry-pick abc123" },
+      { id: "B", text: "git stash" },
+      { id: "C", text: "git reset --hard" },
       { id: "D", text: "git clean" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Cherry-pick selectively applies the changes from a particular commit without merging the entire source branch.",
     tags: ["cherry-pick", "release-workflow"]
   },
@@ -637,12 +637,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "What is a potential downside of cherry-picking the same logical change into multiple branches?",
     options: [
-      { id: "A", text: "It can create duplicated changes with separate commit identities and increase future maintenance complexity" },
-      { id: "B", text: "It prevents commits from having messages" },
+      { id: "A", text: "It prevents commits from having messages" },
+      { id: "B", text: "It can create duplicated changes with separate commit identities and increase future maintenance complexity" },
       { id: "C", text: "It automatically deletes the source branch" },
       { id: "D", text: "It disables merge operations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Cherry-picking creates new commits, so the same logical change can exist as separate commits across branches, potentially complicating history and later merges.",
     tags: ["cherry-pick", "history", "maintenance"]
   },
@@ -656,11 +656,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "What is the safest general principle when deciding between reset and revert?",
     options: [
       { id: "A", text: "Use reset freely on shared branches because it never changes history" },
-      { id: "B", text: "Consider whether the history has been shared before choosing a history-rewriting operation" },
-      { id: "C", text: "Always use reset --hard for published commits" },
+      { id: "B", text: "Always use reset --hard for published commits" },
+      { id: "C", text: "Consider whether the history has been shared before choosing a history-rewriting operation" },
       { id: "D", text: "Always use revert for uncommitted changes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The key consideration is whether other people depend on the existing history. Rewriting shared history can disrupt collaborators.",
     tags: ["reset", "revert", "shared-history"]
   },
@@ -673,12 +673,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "What does `git reset --keep` attempt to do?",
     options: [
-      { id: "A", text: "Move HEAD while preserving local working-tree changes when possible and refusing if they would be overwritten" },
-      { id: "B", text: "Delete all local changes" },
-      { id: "C", text: "Create a revert commit" },
-      { id: "D", text: "Push the current branch" }
+      { id: "A", text: "Delete all local changes" },
+      { id: "B", text: "Create a revert commit" },
+      { id: "C", text: "Push the current branch" },
+      { id: "D", text: "Move HEAD while preserving local working-tree changes when possible and refusing if they would be overwritten" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`--keep` resets the branch while trying to preserve local changes, aborting if the reset would overwrite those changes.",
     tags: ["reset", "reset-keep"]
   },
@@ -727,12 +727,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "Why might `git stash apply` be safer than `git stash pop` while experimenting with a complex stash?",
     options: [
-      { id: "A", text: "The stash remains available in case you need to retry or inspect it" },
-      { id: "B", text: "It prevents all conflicts" },
-      { id: "C", text: "It automatically creates a backup branch" },
+      { id: "A", text: "It prevents all conflicts" },
+      { id: "B", text: "It automatically creates a backup branch" },
+      { id: "C", text: "The stash remains available in case you need to retry or inspect it" },
       { id: "D", text: "It pushes the stash to GitHub" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Keeping the stash gives you another copy of the saved changes if applying them causes problems.",
     tags: ["stash", "workflow"]
   },
@@ -745,12 +745,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "What is one limitation of relying only on local Git hooks for enforcing project standards?",
     options: [
-      { id: "A", text: "Developers can configure or bypass local hooks, so server-side or CI checks may still be necessary" },
-      { id: "B", text: "Local hooks cannot execute scripts" },
-      { id: "C", text: "Local hooks only work on GitHub" },
-      { id: "D", text: "Hooks automatically rewrite history" }
+      { id: "A", text: "Local hooks cannot execute scripts" },
+      { id: "B", text: "Local hooks only work on GitHub" },
+      { id: "C", text: "Hooks automatically rewrite history" },
+      { id: "D", text: "Developers can configure or bypass local hooks, so server-side or CI checks may still be necessary" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Local hooks are useful but are not a complete enforcement mechanism because they live on individual machines and can be skipped or configured differently.",
     tags: ["git-hooks", "ci", "best-practices"]
   },
@@ -781,12 +781,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "You accidentally committed changes locally but have not pushed them. You want to edit the files and create a new commit instead. Which approach can be appropriate?",
     options: [
-      { id: "A", text: "Reset the commit while preserving the changes, then recommit" },
-      { id: "B", text: "Delete the entire repository" },
+      { id: "A", text: "Delete the entire repository" },
+      { id: "B", text: "Reset the commit while preserving the changes, then recommit" },
       { id: "C", text: "Run git revert and push immediately" },
       { id: "D", text: "Create a remote fork" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "For private local history, a soft or mixed reset can move the branch back while preserving the changes so they can be adjusted and recommitted.",
     tags: ["reset", "local-history"]
   },
@@ -800,11 +800,11 @@ const gitAdvancedWorkflowsQuestions = [
     question: "A commit has already been pushed to a shared production branch and introduced a bug. Which approach is generally safer for the shared history?",
     options: [
       { id: "A", text: "git reset --hard and force-push" },
-      { id: "B", text: "git revert the problematic commit and push the new revert commit" },
-      { id: "C", text: "Delete the production branch" },
+      { id: "B", text: "Delete the production branch" },
+      { id: "C", text: "git revert the problematic commit and push the new revert commit" },
       { id: "D", text: "Delete the repository and recreate it" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Reverting preserves the shared history while adding a new commit that undoes the problematic change.",
     tags: ["revert", "production", "shared-history"]
   },
@@ -817,12 +817,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "What happens conceptually when you cherry-pick a merge commit?",
     options: [
-      { id: "A", text: "Git may require you to specify which parent should be considered the mainline" },
-      { id: "B", text: "Git automatically cherry-picks every parent into every branch" },
-      { id: "C", text: "The merge commit is converted into a tag" },
-      { id: "D", text: "The entire repository is reset" }
+      { id: "A", text: "Git automatically cherry-picks every parent into every branch" },
+      { id: "B", text: "The merge commit is converted into a tag" },
+      { id: "C", text: "The entire repository is reset" },
+      { id: "D", text: "Git may require you to specify which parent should be considered the mainline" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A merge commit has multiple parents, so Git needs a mainline parent to determine which side should be treated as the baseline when applying its changes.",
     tags: ["cherry-pick", "merge-commit", "advanced-git"]
   },
@@ -853,12 +853,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "You are in the middle of a cherry-pick and decide that the selected commit should not be applied at all. What is the appropriate operation?",
     options: [
-      { id: "A", text: "git cherry-pick --abort" },
-      { id: "B", text: "git stash clear" },
+      { id: "A", text: "git stash clear" },
+      { id: "B", text: "git cherry-pick --abort" },
       { id: "C", text: "git reset --remote" },
       { id: "D", text: "git branch --cancel" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git cherry-pick --abort` cancels the in-progress cherry-pick and returns the repository toward its pre-operation state.",
     tags: ["cherry-pick", "abort"]
   },
@@ -871,12 +871,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "Which scenario best demonstrates the difference between stash and commit?",
     options: [
-      { id: "A", text: "A stash is temporary local saved work, while a commit is a permanent recorded point in repository history" },
-      { id: "B", text: "A stash is always pushed to GitHub automatically" },
-      { id: "C", text: "A commit can only contain one file" },
+      { id: "A", text: "A stash is always pushed to GitHub automatically" },
+      { id: "B", text: "A commit can only contain one file" },
+      { id: "C", text: "A stash is temporary local saved work, while a commit is a permanent recorded point in repository history" },
       { id: "D", text: "A stash permanently changes the branch history" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Commits become part of the repository's history, while stashes are intended as temporary saved working-state snapshots.",
     tags: ["stash", "commit", "history"]
   },
@@ -889,12 +889,12 @@ const gitAdvancedWorkflowsQuestions = [
     difficulty: "Advanced",
     question: "A developer needs to temporarily save unfinished work, selectively move one bug fix from another branch, and safely undo a published bad commit. Which combination is most appropriate?",
     options: [
-      { id: "A", text: "stash, cherry-pick, revert" },
-      { id: "B", text: "reset --hard, merge, stash clear" },
-      { id: "C", text: "revert, stash, reset --hard" },
-      { id: "D", text: "cherry-pick, reset --hard, stash" }
+      { id: "A", text: "reset --hard, merge, stash clear" },
+      { id: "B", text: "revert, stash, reset --hard" },
+      { id: "C", text: "cherry-pick, reset --hard, stash" },
+      { id: "D", text: "stash, cherry-pick, revert" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git stash` temporarily stores unfinished work, `git cherry-pick` selectively applies a specific commit, and `git revert` safely undoes a published change without rewriting shared history.",
     tags: ["stash", "cherry-pick", "revert", "workflow"]
   }

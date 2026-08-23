@@ -58,7 +58,9 @@ const HistoryReviewAnswersPage = () => {
 
 
         // Load questions
-        const questionData = await loadQuestionsForQuiz(quizData);
+        const questionData = await loadQuestionsForQuiz(quizData, {
+          seed: savedAttempt.shuffleSeed ?? "__legacy__",
+        });
 
         setQuestions(questionData);
 

@@ -7,12 +7,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "What is the main goal of React performance optimization?",
     options: [
-      { id: "A", text: "Reduce unnecessary work while keeping the application's behavior correct." },
-      { id: "B", text: "Prevent React from rendering entirely." },
-      { id: "C", text: "Replace all state with refs." },
+      { id: "A", text: "Prevent React from rendering entirely." },
+      { id: "B", text: "Replace all state with refs." },
+      { id: "C", text: "Reduce unnecessary work while keeping the application's behavior correct." },
       { id: "D", text: "Make every component use useMemo." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Performance optimization is about reducing unnecessary computation, rendering, network work, or JavaScript delivered to the user without changing the application's intended behavior.",
     tags: ["performance", "optimization", "rendering"]
   },
@@ -25,12 +25,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "What is an unnecessary re-render?",
     options: [
-      { id: "A", text: "A render that occurs even though the component's relevant inputs did not require its output to change." },
-      { id: "B", text: "Any render caused by state." },
-      { id: "C", text: "Any render that takes more than one millisecond." },
-      { id: "D", text: "A render that happens after mounting." }
+      { id: "A", text: "Any render caused by state." },
+      { id: "B", text: "Any render that takes more than one millisecond." },
+      { id: "C", text: "A render that happens after mounting." },
+      { id: "D", text: "A render that occurs even though the component's relevant inputs did not require its output to change." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A re-render is not automatically bad. The performance concern is work that React performs without needing to produce a meaningfully different result or because a component could have safely skipped the work.",
     tags: ["re-render", "performance", "rendering"]
   },
@@ -61,12 +61,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "What does React.memo primarily do?",
     options: [
-      { id: "A", text: "It allows a component to skip re-rendering when its props have not changed according to the memoization comparison." },
-      { id: "B", text: "It caches every API response." },
+      { id: "A", text: "It caches every API response." },
+      { id: "B", text: "It allows a component to skip re-rendering when its props have not changed according to the memoization comparison." },
       { id: "C", text: "It prevents the component from ever rendering again." },
       { id: "D", text: "It automatically memoizes every child component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "React.memo memoizes a component so React can skip rendering it when its props are considered equal. It is an optimization, not a guarantee that the component will never render.",
     tags: ["React.memo", "memoization", "props", "re-render"]
   },
@@ -79,12 +79,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "Which statement about React.memo is correct?",
     options: [
-      { id: "A", text: "It is most useful when a component receives the same props frequently and rendering that component is meaningfully expensive." },
-      { id: "B", text: "It should automatically be added to every component." },
-      { id: "C", text: "It prevents state updates inside the component." },
+      { id: "A", text: "It should automatically be added to every component." },
+      { id: "B", text: "It prevents state updates inside the component." },
+      { id: "C", text: "It is most useful when a component receives the same props frequently and rendering that component is meaningfully expensive." },
       { id: "D", text: "It converts a function component into a class component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Memoization has a cost and is most valuable when it prevents meaningful repeated work. Automatically memoizing every component can add complexity without producing a useful performance benefit.",
     tags: ["React.memo", "memoization", "performance"]
   },
@@ -97,12 +97,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "What does useMemo return?",
     options: [
-      { id: "A", text: "The memoized result of a calculation." },
-      { id: "B", text: "A stable event handler function." },
-      { id: "C", text: "A DOM node." },
-      { id: "D", text: "A React component instance." }
+      { id: "A", text: "A stable event handler function." },
+      { id: "B", text: "A DOM node." },
+      { id: "C", text: "A React component instance." },
+      { id: "D", text: "The memoized result of a calculation." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "useMemo caches the result of a calculation and can recalculate it when one of its dependencies changes.",
     tags: ["useMemo", "memoization", "hooks"]
   },
@@ -133,12 +133,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "What is the key difference between useMemo and useCallback?",
     options: [
-      { id: "A", text: "useMemo memoizes a calculated value, while useCallback memoizes a function reference." },
-      { id: "B", text: "useMemo only works with strings, while useCallback only works with numbers." },
+      { id: "A", text: "useMemo only works with strings, while useCallback only works with numbers." },
+      { id: "B", text: "useMemo memoizes a calculated value, while useCallback memoizes a function reference." },
       { id: "C", text: "useCallback prevents all component renders, while useMemo prevents all state updates." },
       { id: "D", text: "They are completely unrelated APIs." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The APIs solve related memoization problems. useMemo caches the result of a calculation, while useCallback caches the function itself.",
     tags: ["useMemo", "useCallback", "memoization"]
   },
@@ -151,12 +151,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "Which example is a reasonable candidate for useMemo?",
     options: [
-      { id: "A", text: "Filtering and sorting a very large list when the calculation is expensive and its inputs change infrequently." },
-      { id: "B", text: "Adding two numbers once." },
-      { id: "C", text: "Rendering a simple heading." },
+      { id: "A", text: "Adding two numbers once." },
+      { id: "B", text: "Rendering a simple heading." },
+      { id: "C", text: "Filtering and sorting a very large list when the calculation is expensive and its inputs change infrequently." },
       { id: "D", text: "Changing a CSS class name." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "useMemo is useful when a calculation is expensive enough that avoiding repeated execution matters. Small calculations often cost less than the memoization machinery and complexity.",
     tags: ["useMemo", "memoization", "expensive-calculation"]
   },
@@ -169,12 +169,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "Which is a common misconception about useMemo?",
     options: [
-      { id: "A", text: "Assuming useMemo automatically makes every component faster." },
-      { id: "B", text: "Using dependencies to control recalculation." },
-      { id: "C", text: "Memoizing an expensive calculation." },
-      { id: "D", text: "Returning a calculated value." }
+      { id: "A", text: "Using dependencies to control recalculation." },
+      { id: "B", text: "Memoizing an expensive calculation." },
+      { id: "C", text: "Returning a calculated value." },
+      { id: "D", text: "Assuming useMemo automatically makes every component faster." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "useMemo itself has overhead and complexity. It is a performance optimization that should be used when avoiding recalculation provides a real benefit.",
     tags: ["useMemo", "misconceptions", "performance"]
   },
@@ -205,12 +205,12 @@ const reactPerformanceQuestions = [
     difficulty: "Beginner",
     question: "Consider:\n\nconst result = useMemo(() => expensiveCalculation(a), [a]);\n\nWhen is expensiveCalculation expected to be recalculated?",
     options: [
-      { id: "A", text: "When a changes, rather than on every render where the memoized value can be reused." },
-      { id: "B", text: "Only when the component unmounts." },
+      { id: "A", text: "Only when the component unmounts." },
+      { id: "B", text: "When a changes, rather than on every render where the memoized value can be reused." },
       { id: "C", text: "Whenever any component in the application renders." },
       { id: "D", text: "Never." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The dependency array tells React that the calculation's relevant reactive input is a. When a remains the same, React can reuse the memoized result.",
     tags: ["useMemo", "dependencies", "performance"]
   },
@@ -223,12 +223,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Why can useCallback be useful when passing a function to a memoized child?",
     options: [
-      { id: "A", text: "It can preserve the function reference so the child does not see a changed function prop on every parent render." },
-      { id: "B", text: "It prevents the function from ever executing." },
-      { id: "C", text: "It converts the function into state." },
+      { id: "A", text: "It prevents the function from ever executing." },
+      { id: "B", text: "It converts the function into state." },
+      { id: "C", text: "It can preserve the function reference so the child does not see a changed function prop on every parent render." },
       { id: "D", text: "It automatically caches every argument passed to the function." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A new function created during every parent render has a new identity. When a memoized child receives that function as a prop, useCallback can preserve the reference when its dependencies remain unchanged.",
     tags: ["useCallback", "React.memo", "function-identity", "re-render"]
   },
@@ -241,12 +241,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Consider:\n\nconst handleClick = () => {\n  setCount(c => c + 1);\n};\n\nWhy might React.memo still consider handleClick a changed prop on every parent render?",
     options: [
-      { id: "A", text: "The function expression creates a new function object on each render." },
-      { id: "B", text: "React.memo compares function bodies instead of references." },
-      { id: "C", text: "setCount makes functions immutable." },
-      { id: "D", text: "Functions cannot be passed as props." }
+      { id: "A", text: "React.memo compares function bodies instead of references." },
+      { id: "B", text: "setCount makes functions immutable." },
+      { id: "C", text: "Functions cannot be passed as props." },
+      { id: "D", text: "The function expression creates a new function object on each render." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Function identity is based on the function object. A new function expression creates a new object on each render, so a memoized child receiving it can see the prop as changed.",
     tags: ["function-identity", "React.memo", "re-render"]
   },
@@ -259,22 +259,10 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which implementation can stabilize the handleClick function from the previous example?",
     options: [
-      {
-        id: "A",
-        text: "const handleClick = useCallback(() => { setCount(c => c + 1); }, []);"
-      },
-      {
-        id: "B",
-        text: "const handleClick = useMemo(() => setCount(c => c + 1), []);"
-      },
-      {
-        id: "C",
-        text: "const handleClick = useEffect(() => setCount(c => c + 1), []);"
-      },
-      {
-        id: "D",
-        text: "const handleClick = useState(() => setCount(c => c + 1));"
-      }
+      { id: "A", text: "const handleClick = useCallback(() => { setCount(c => c + 1); }, []);" },
+      { id: "B", text: "const handleClick = useMemo(() => setCount(c => c + 1), []);" },
+      { id: "C", text: "const handleClick = useEffect(() => setCount(c => c + 1), []);" },
+      { id: "D", text: "const handleClick = useState(() => setCount(c => c + 1));" }
     ],
     correctOptionId: "A",
     explanation: "useCallback returns a function reference and can keep it stable because the callback uses the functional state updater and therefore does not need count as a dependency.",
@@ -289,12 +277,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Why is an empty dependency array appropriate in this useCallback?\n\nconst increment = useCallback(() => {\n  setCount(c => c + 1);\n}, []);",
     options: [
-      { id: "A", text: "The callback uses the functional updater and therefore does not need to capture the current count value." },
-      { id: "B", text: "Empty dependency arrays always make callbacks correct." },
+      { id: "A", text: "Empty dependency arrays always make callbacks correct." },
+      { id: "B", text: "The callback uses the functional updater and therefore does not need to capture the current count value." },
       { id: "C", text: "State setters cannot be called inside callbacks." },
       { id: "D", text: "count is automatically converted into a ref." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The callback does not read count from its closure. Instead, it asks React for the latest state through the functional updater, allowing the callback to remain independent of count.",
     tags: ["useCallback", "state-updater", "closures", "dependencies"]
   },
@@ -307,12 +295,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "What is the main performance benefit of code splitting?",
     options: [
-      { id: "A", text: "It can reduce the amount of JavaScript that must be loaded and parsed before the user needs certain features." },
-      { id: "B", text: "It makes JavaScript execute infinitely faster." },
-      { id: "C", text: "It eliminates the need for React components." },
+      { id: "A", text: "It makes JavaScript execute infinitely faster." },
+      { id: "B", text: "It eliminates the need for React components." },
+      { id: "C", text: "It can reduce the amount of JavaScript that must be loaded and parsed before the user needs certain features." },
       { id: "D", text: "It prevents network requests entirely." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Code splitting divides application code into chunks that can be loaded when needed. This can reduce the initial JavaScript payload and improve initial loading performance.",
     tags: ["code-splitting", "performance", "bundling"]
   },
@@ -325,12 +313,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which React API is commonly used to lazily load a component?",
     options: [
-      { id: "A", text: "lazy" },
-      { id: "B", text: "loadComponentNow" },
-      { id: "C", text: "deferComponentOnly" },
-      { id: "D", text: "asyncComponentState" }
+      { id: "A", text: "loadComponentNow" },
+      { id: "B", text: "deferComponentOnly" },
+      { id: "C", text: "asyncComponentState" },
+      { id: "D", text: "lazy" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "React.lazy can defer loading a component until React attempts to render it. It works with dynamic imports and is typically paired with Suspense.",
     tags: ["lazy", "code-splitting", "React"]
   },
@@ -361,12 +349,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which feature is a strong candidate for route-level code splitting?",
     options: [
-      { id: "A", text: "A large admin dashboard that most first-time visitors do not immediately need." },
-      { id: "B", text: "A tiny logo component used on every page." },
+      { id: "A", text: "A tiny logo component used on every page." },
+      { id: "B", text: "A large admin dashboard that most first-time visitors do not immediately need." },
       { id: "C", text: "A basic button used above the fold." },
       { id: "D", text: "A short static heading." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Large feature areas that are not required for the initial screen are good candidates for lazy loading because their code can be downloaded when the user navigates to that feature.",
     tags: ["code-splitting", "lazy-loading", "routes"]
   },
@@ -379,24 +367,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which code correctly lazy-loads a Dashboard component?",
     options: [
-      {
-        id: "A",
-        text: "const Dashboard = lazy(() => import('./Dashboard'));"
-      },
-      {
-        id: "B",
-        text: "const Dashboard = lazy('./Dashboard');"
-      },
-      {
-        id: "C",
-        text: "const Dashboard = import('./Dashboard');"
-      },
-      {
-        id: "D",
-        text: "const Dashboard = useMemo('./Dashboard');"
-      }
+      { id: "A", text: "const Dashboard = lazy('./Dashboard');" },
+      { id: "B", text: "const Dashboard = import('./Dashboard');" },
+      { id: "C", text: "const Dashboard = lazy(() => import('./Dashboard'));" },
+      { id: "D", text: "const Dashboard = useMemo('./Dashboard');" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "React.lazy expects a function that returns a promise resolving to a module with a default component export. Dynamic import provides that promise.",
     tags: ["lazy", "dynamic-import", "code-splitting"]
   },
@@ -409,12 +385,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about React.memo and useMemo is correct?",
     options: [
-      { id: "A", text: "React.memo memoizes a component's rendering based on props, while useMemo memoizes a calculated value inside a component." },
-      { id: "B", text: "They are identical APIs with different names." },
-      { id: "C", text: "React.memo memoizes network requests and useMemo memoizes components." },
-      { id: "D", text: "useMemo prevents parent components from rendering." }
+      { id: "A", text: "They are identical APIs with different names." },
+      { id: "B", text: "React.memo memoizes network requests and useMemo memoizes components." },
+      { id: "C", text: "useMemo prevents parent components from rendering." },
+      { id: "D", text: "React.memo memoizes a component's rendering based on props, while useMemo memoizes a calculated value inside a component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "React.memo operates at the component boundary, while useMemo caches the result of a calculation within a component.",
     tags: ["React.memo", "useMemo", "memoization"]
   },
@@ -445,12 +421,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which approach can help prevent the object-identity problem in the previous question when the object itself is expensive or meaningful to stabilize?",
     options: [
-      { id: "A", text: "Memoize the object with useMemo using the values that actually determine it." },
-      { id: "B", text: "Put the object in JSX text." },
+      { id: "A", text: "Put the object in JSX text." },
+      { id: "B", text: "Memoize the object with useMemo using the values that actually determine it." },
       { id: "C", text: "Create a new object more frequently." },
       { id: "D", text: "Replace the object with a random value." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "useMemo can preserve an object reference when its dependencies remain unchanged. This can be useful when that object is passed to a memoized child.",
     tags: ["useMemo", "object-identity", "React.memo"]
   },
@@ -463,12 +439,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which is generally the best first step before optimizing a slow React component?",
     options: [
-      { id: "A", text: "Measure or profile the application's behavior to identify the actual bottleneck." },
-      { id: "B", text: "Add useMemo to every calculation." },
-      { id: "C", text: "Wrap every component in React.memo." },
+      { id: "A", text: "Add useMemo to every calculation." },
+      { id: "B", text: "Wrap every component in React.memo." },
+      { id: "C", text: "Measure or profile the application's behavior to identify the actual bottleneck." },
       { id: "D", text: "Replace every function with useCallback." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Optimization should be evidence-driven. Profiling helps determine whether the bottleneck is rendering, computation, network activity, bundle size, or something else.",
     tags: ["profiling", "performance", "optimization"]
   },
@@ -481,12 +457,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Why can blindly adding useCallback hurt rather than help?",
     options: [
-      { id: "A", text: "Memoization itself has overhead and adds complexity, so it may provide no benefit when child renders are already cheap." },
-      { id: "B", text: "useCallback always causes infinite loops." },
-      { id: "C", text: "useCallback prevents functions from being called." },
-      { id: "D", text: "useCallback deletes dependencies." }
+      { id: "A", text: "useCallback always causes infinite loops." },
+      { id: "B", text: "useCallback prevents functions from being called." },
+      { id: "C", text: "useCallback deletes dependencies." },
+      { id: "D", text: "Memoization itself has overhead and adds complexity, so it may provide no benefit when child renders are already cheap." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "useCallback is not free. If no meaningful consumer benefits from a stable function identity, the optimization may add complexity without improving performance.",
     tags: ["useCallback", "performance", "memoization", "best-practices"]
   },
@@ -517,12 +493,12 @@ const reactPerformanceQuestions = [
     difficulty: "Intermediate",
     question: "Which is usually preferable for a cheap calculation such as `const doubled = count * 2`?",
     options: [
-      { id: "A", text: "Calculate it directly during rendering." },
-      { id: "B", text: "Always wrap it in useMemo." },
+      { id: "A", text: "Always wrap it in useMemo." },
+      { id: "B", text: "Calculate it directly during rendering." },
       { id: "C", text: "Store it in state and synchronize it with useEffect." },
       { id: "D", text: "Store it in localStorage." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A trivial calculation is usually cheaper and simpler to perform directly than to memoize. Memoization should be justified by meaningful repeated work.",
     tags: ["useMemo", "derived-values", "performance"]
   },
@@ -535,12 +511,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\nconst filtered = useMemo(\n  () => items.filter(item => item.active),\n  [items]\n);\n\nWhat is the main benefit if items retains the same reference across renders?",
     options: [
-      { id: "A", text: "React can reuse the previously calculated filtered result instead of running filter again." },
-      { id: "B", text: "The items array becomes immutable automatically." },
-      { id: "C", text: "React stops rendering the component." },
+      { id: "A", text: "The items array becomes immutable automatically." },
+      { id: "B", text: "React stops rendering the component." },
+      { id: "C", text: "React can reuse the previously calculated filtered result instead of running filter again." },
       { id: "D", text: "filter runs asynchronously." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When items has the same dependency identity, the memoized calculation can be reused. If items changes, the filtering calculation is recalculated.",
     tags: ["useMemo", "arrays", "dependencies", "performance"]
   },
@@ -553,12 +529,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "What is wrong with this optimization?\n\nconst result = useMemo(() => expensiveCalculation(), []);\n\nThe calculation depends on `query`.",
     options: [
-      { id: "A", text: "query is missing from the dependency list, so the memoized result may not update when query changes." },
-      { id: "B", text: "useMemo cannot call functions." },
-      { id: "C", text: "Empty dependency arrays always recalculate." },
-      { id: "D", text: "expensiveCalculation must be asynchronous." }
+      { id: "A", text: "useMemo cannot call functions." },
+      { id: "B", text: "Empty dependency arrays always recalculate." },
+      { id: "C", text: "expensiveCalculation must be asynchronous." },
+      { id: "D", text: "query is missing from the dependency list, so the memoized result may not update when query changes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "If the calculation reads query, query is a reactive dependency. Omitting it can cause the calculation to remain based on stale data.",
     tags: ["useMemo", "dependencies", "stale-values", "debugging"]
   },
@@ -589,12 +565,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Why can a React.memo child still render when its parent renders?",
     options: [
-      { id: "A", text: "Its props may have changed, its own state may have changed, or a relevant context value may have changed." },
-      { id: "B", text: "React.memo guarantees zero renders after the first render." },
+      { id: "A", text: "React.memo guarantees zero renders after the first render." },
+      { id: "B", text: "Its props may have changed, its own state may have changed, or a relevant context value may have changed." },
       { id: "C", text: "React.memo only works on class components." },
       { id: "D", text: "Parent rendering is always ignored by React.memo." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "React.memo primarily optimizes parent-to-child prop-driven rendering. It does not prevent the component from rendering because of its own state or relevant context updates.",
     tags: ["React.memo", "state", "context", "re-render"]
   },
@@ -607,12 +583,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which statement about context and React.memo is correct?",
     options: [
-      { id: "A", text: "A memoized component that consumes a context can still update when the relevant context value changes." },
-      { id: "B", text: "React.memo prevents all context updates." },
-      { id: "C", text: "Context changes only affect class components." },
+      { id: "A", text: "React.memo prevents all context updates." },
+      { id: "B", text: "Context changes only affect class components." },
+      { id: "C", text: "A memoized component that consumes a context can still update when the relevant context value changes." },
       { id: "D", text: "Context values are never compared." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Memoization does not isolate a component from context it consumes. When the relevant context value changes, consumers can update even if their props remain unchanged.",
     tags: ["React.memo", "context", "re-render", "performance"]
   },
@@ -625,12 +601,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which architecture can help reduce unnecessary updates caused by a frequently changing context value?",
     options: [
-      { id: "A", text: "Split contexts so components subscribe only to the state they actually need." },
-      { id: "B", text: "Put every application value into one context." },
-      { id: "C", text: "Force every component to use useMemo." },
-      { id: "D", text: "Move the context provider into every leaf node." }
+      { id: "A", text: "Put every application value into one context." },
+      { id: "B", text: "Force every component to use useMemo." },
+      { id: "C", text: "Move the context provider into every leaf node." },
+      { id: "D", text: "Split contexts so components subscribe only to the state they actually need." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Splitting unrelated context concerns can reduce the number of components affected by a particular context update and make the state architecture easier to reason about.",
     tags: ["context", "performance", "state-architecture", "re-render"]
   },
@@ -661,12 +637,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Why can stable React keys matter for performance as well as correctness?",
     options: [
-      { id: "A", text: "Stable keys help React preserve element identity and avoid unnecessary mounting, unmounting, or DOM work when list items move or change." },
-      { id: "B", text: "Keys directly memoize every row." },
+      { id: "A", text: "Keys directly memoize every row." },
+      { id: "B", text: "Stable keys help React preserve element identity and avoid unnecessary mounting, unmounting, or DOM work when list items move or change." },
       { id: "C", text: "Keys prevent all list renders." },
       { id: "D", text: "Keys reduce JavaScript bundle size." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Keys allow React to identify which list items correspond across renders. Stable keys help React reconcile changes efficiently and preserve component state correctly.",
     tags: ["keys", "lists", "reconciliation", "performance"]
   },
@@ -679,12 +655,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which key choice can cause unnecessary remounting when list items are reordered?",
     options: [
-      { id: "A", text: "Using the array index as the key when item order can change." },
-      { id: "B", text: "Using a stable unique ID from the data." },
-      { id: "C", text: "Using an immutable database ID." },
+      { id: "A", text: "Using a stable unique ID from the data." },
+      { id: "B", text: "Using an immutable database ID." },
+      { id: "C", text: "Using the array index as the key when item order can change." },
       { id: "D", text: "Using a stable identifier tied to the item." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When list order changes, index-based keys can associate the wrong key with a different item. Stable item IDs preserve identity across reordering.",
     tags: ["keys", "lists", "reconciliation", "performance"]
   },
@@ -697,12 +673,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which change can reduce unnecessary child rendering when only one part of a large parent changes?",
     options: [
-      { id: "A", text: "Split the UI into smaller components so updates are isolated to the relevant parts when possible." },
-      { id: "B", text: "Put all UI into one component." },
-      { id: "C", text: "Use one giant useMemo around the entire application." },
-      { id: "D", text: "Replace all props with global variables." }
+      { id: "A", text: "Put all UI into one component." },
+      { id: "B", text: "Use one giant useMemo around the entire application." },
+      { id: "C", text: "Replace all props with global variables." },
+      { id: "D", text: "Split the UI into smaller components so updates are isolated to the relevant parts when possible." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Component boundaries can isolate rendering work. When state is placed close to where it is needed and the UI is appropriately split, unrelated portions can avoid unnecessary work.",
     tags: ["component-design", "re-render", "performance", "state-locality"]
   },
@@ -733,12 +709,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which situation is most likely to benefit from React.memo?",
     options: [
-      { id: "A", text: "A large chart component receives stable data props while a parent frequently updates unrelated UI state." },
-      { id: "B", text: "A tiny component containing one static span." },
+      { id: "A", text: "A tiny component containing one static span." },
+      { id: "B", text: "A large chart component receives stable data props while a parent frequently updates unrelated UI state." },
       { id: "C", text: "A component whose props change on every render anyway." },
       { id: "D", text: "A component that always depends on changing context." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "React.memo is most useful when a component is relatively expensive and its props often remain unchanged while its parent renders for unrelated reasons.",
     tags: ["React.memo", "re-render", "performance", "component-boundaries"]
   },
@@ -751,12 +727,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "A parent is wrapped in React.memo but its child is expensive and receives a new object prop every render. What is the likely result?",
     options: [
-      { id: "A", text: "The child may still re-render because the parent can pass a new object identity as a prop." },
-      { id: "B", text: "The child automatically becomes memoized." },
-      { id: "C", text: "The child can never render again." },
+      { id: "A", text: "The child automatically becomes memoized." },
+      { id: "B", text: "The child can never render again." },
+      { id: "C", text: "The child may still re-render because the parent can pass a new object identity as a prop." },
       { id: "D", text: "React.memo recursively memoizes all descendants." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "React.memo does not recursively memoize descendants. Each component's rendering behavior is considered separately, and changing object identity can make a child prop appear changed.",
     tags: ["React.memo", "children", "object-identity", "re-render"]
   },
@@ -769,12 +745,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "What is a potential downside of excessive memoization?",
     options: [
-      { id: "A", text: "More code complexity, memory usage, dependency management, and comparison overhead without necessarily improving performance." },
-      { id: "B", text: "It makes React unable to render JSX." },
-      { id: "C", text: "It automatically causes a full page reload." },
-      { id: "D", text: "It prevents all browser events." }
+      { id: "A", text: "It makes React unable to render JSX." },
+      { id: "B", text: "It automatically causes a full page reload." },
+      { id: "C", text: "It prevents all browser events." },
+      { id: "D", text: "More code complexity, memory usage, dependency management, and comparison overhead without necessarily improving performance." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Memoization is an optimization technique with its own cost. Overusing it can make code harder to maintain while providing little or no measurable benefit.",
     tags: ["memoization", "performance", "tradeoffs"]
   },
@@ -805,12 +781,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which statement about useCallback dependencies is correct?",
     options: [
-      { id: "A", text: "The dependency list must reflect reactive values used by the callback so the callback does not accidentally capture stale values." },
-      { id: "B", text: "useCallback never needs dependencies." },
+      { id: "A", text: "useCallback never needs dependencies." },
+      { id: "B", text: "The dependency list must reflect reactive values used by the callback so the callback does not accidentally capture stale values." },
       { id: "C", text: "The dependency array should always contain every state variable in the application." },
       { id: "D", text: "Dependencies determine when the callback executes." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The dependencies determine when React should provide a new function definition. Omitting reactive values used by the callback can make it close over stale data.",
     tags: ["useCallback", "dependencies", "closures", "stale-values"]
   },
@@ -823,12 +799,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "Which statement about useMemo dependencies is correct?",
     options: [
-      { id: "A", text: "They should represent the reactive values used by the calculation so the memoized result corresponds to the current inputs." },
-      { id: "B", text: "They are only used for debugging." },
-      { id: "C", text: "They determine when the component mounts." },
+      { id: "A", text: "They are only used for debugging." },
+      { id: "B", text: "They determine when the component mounts." },
+      { id: "C", text: "They should represent the reactive values used by the calculation so the memoized result corresponds to the current inputs." },
       { id: "D", text: "They are ignored by React." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The dependency list tells React which inputs determine the calculation. If those inputs change, the cached result needs to be recalculated.",
     tags: ["useMemo", "dependencies", "memoization"]
   },
@@ -841,12 +817,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "A page contains a rarely visited analytics section that imports a large charting library. What is a strong optimization strategy?",
     options: [
-      { id: "A", text: "Lazy-load the analytics section so its large code dependency can be loaded when the feature is needed." },
-      { id: "B", text: "Use useCallback for every chart function." },
-      { id: "C", text: "Wrap the chart library in React.memo." },
-      { id: "D", text: "Move the library import into localStorage." }
+      { id: "A", text: "Use useCallback for every chart function." },
+      { id: "B", text: "Wrap the chart library in React.memo." },
+      { id: "C", text: "Move the library import into localStorage." },
+      { id: "D", text: "Lazy-load the analytics section so its large code dependency can be loaded when the feature is needed." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The biggest cost here may be initial bundle size rather than repeated rendering. Code splitting can defer the large dependency until the analytics feature is actually needed.",
     tags: ["code-splitting", "lazy-loading", "bundle-size", "performance"]
   },
@@ -877,12 +853,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "A developer says, 'I used useMemo everywhere, but the application is still slow.' What is the most appropriate response?",
     options: [
-      { id: "A", text: "Profile the application because the real bottleneck may be elsewhere, such as network requests, bundle size, DOM work, or expensive rendering." },
-      { id: "B", text: "Add another useMemo around every component." },
+      { id: "A", text: "Add another useMemo around every component." },
+      { id: "B", text: "Profile the application because the real bottleneck may be elsewhere, such as network requests, bundle size, DOM work, or expensive rendering." },
       { id: "C", text: "Replace useMemo with useCallback everywhere." },
       { id: "D", text: "Memoize the React root." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Memoization only addresses certain kinds of repeated work. Performance problems can come from many layers, so profiling is necessary to identify the actual bottleneck.",
     tags: ["profiling", "useMemo", "performance", "debugging"]
   },
@@ -895,12 +871,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "A parent renders a memoized child with a stable primitive prop, but the child still performs expensive work whenever its own state changes. Which statement is correct?",
     options: [
-      { id: "A", text: "React.memo does not prevent the child from rendering because of its own state updates." },
-      { id: "B", text: "React.memo should prevent all state updates." },
-      { id: "C", text: "The child must be moved outside React." },
+      { id: "A", text: "React.memo should prevent all state updates." },
+      { id: "B", text: "The child must be moved outside React." },
+      { id: "C", text: "React.memo does not prevent the child from rendering because of its own state updates." },
       { id: "D", text: "The primitive prop must be converted into an object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "React.memo optimizes parent-to-child prop-driven updates. A component still needs to render when its own state changes because its output may depend on that state.",
     tags: ["React.memo", "state", "re-render", "performance"]
   },
@@ -913,24 +889,12 @@ const reactPerformanceQuestions = [
     difficulty: "Advanced",
     question: "You are optimizing a production React dashboard. A large table contains thousands of rows, an expensive derived dataset, several memoized row components, and a rarely used analytics page with a large charting library. Which strategy is the most technically sound?",
     options: [
-      {
-        id: "A",
-        text: "Profile first; virtualize the large table, memoize genuinely expensive derived calculations when inputs justify it, stabilize props only where memoized children benefit, and lazy-load the rarely used analytics feature."
-      },
-      {
-        id: "B",
-        text: "Wrap every component in React.memo, every value in useMemo, and every function in useCallback without measuring."
-      },
-      {
-        id: "C",
-        text: "Move all state into one global context and memoize the provider."
-      },
-      {
-        id: "D",
-        text: "Disable React re-renders and load every feature eagerly to avoid asynchronous code."
-      }
+      { id: "A", text: "Wrap every component in React.memo, every value in useMemo, and every function in useCallback without measuring." },
+      { id: "B", text: "Move all state into one global context and memoize the provider." },
+      { id: "C", text: "Disable React re-renders and load every feature eagerly to avoid asynchronous code." },
+      { id: "D", text: "Profile first; virtualize the large table, memoize genuinely expensive derived calculations when inputs justify it, stabilize props only where memoized children benefit, and lazy-load the rarely used analytics feature." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Different bottlenecks require different solutions. Large lists benefit from virtualization, expensive calculations can benefit from useMemo when justified, stable prop identities can help React.memo boundaries, and large rarely used features are strong candidates for code splitting. Profiling should guide which optimizations actually matter.",
     tags: ["performance", "profiling", "virtualization", "useMemo", "useCallback", "React.memo", "code-splitting"]
   }

@@ -8,11 +8,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "What does the union type `string | number` mean?",
     options: [
       { id: "A", text: "The value must be both a string and a number" },
-      { id: "B", text: "The value can be either a string or a number" },
-      { id: "C", text: "The value can only be a string" },
-      { id: "D", text: "The value is automatically converted to a number" }
+      { id: "B", text: "The value can only be a string" },
+      { id: "C", text: "The value is automatically converted to a number" },
+      { id: "D", text: "The value can be either a string or a number" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A union type represents a value that can belong to one of several possible types.",
     tags: ["unions", "advanced-types"]
   },
@@ -61,12 +61,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is a literal type?",
     options: [
-      { id: "A", text: "A type that represents a specific literal value" },
-      { id: "B", text: "A type that always represents any object" },
-      { id: "C", text: "A runtime JavaScript object" },
+      { id: "A", text: "A type that always represents any object" },
+      { id: "B", text: "A runtime JavaScript object" },
+      { id: "C", text: "A type that represents a specific literal value" },
       { id: "D", text: "A type that disables strict checking" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Literal types restrict values to specific literals such as `\"success\"`, `42`, or `true`.",
     tags: ["literal-types"]
   },
@@ -80,11 +80,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "What values are allowed by `type Status = \"loading\" | \"success\" | \"error\"`?",
     options: [
       { id: "A", text: "Any string" },
-      { id: "B", text: "Only `loading`, `success`, or `error`" },
-      { id: "C", text: "Any object containing status" },
-      { id: "D", text: "Only boolean values" }
+      { id: "B", text: "Any object containing status" },
+      { id: "C", text: "Only boolean values" },
+      { id: "D", text: "Only `loading`, `success`, or `error`" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "This is a union of three string literal types, so no other string value is assignable.",
     tags: ["literal-types", "unions"]
   },
@@ -97,12 +97,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of discriminated unions?",
     options: [
-      { id: "A", text: "To combine unrelated primitive types into any" },
-      { id: "B", text: "To model related variants using a shared discriminating property" },
+      { id: "A", text: "To model related variants using a shared discriminating property" },
+      { id: "B", text: "To combine unrelated primitive types into any" },
       { id: "C", text: "To make every property optional" },
       { id: "D", text: "To prevent narrowing" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A discriminated union uses a common literal property, such as `kind`, to identify which variant is being handled.",
     tags: ["unions", "discriminated-unions", "narrowing"]
   },
@@ -115,12 +115,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "Given `type Result = { kind: \"success\"; data: string } | { kind: \"error\"; message: string }`, what does checking `result.kind === \"success\"` allow TypeScript to do?",
     options: [
-      { id: "A", text: "Narrow result to the success variant" },
-      { id: "B", text: "Convert result to any" },
+      { id: "A", text: "Convert result to any" },
+      { id: "B", text: "Narrow result to the success variant" },
       { id: "C", text: "Remove the data property" },
       { id: "D", text: "Make both variants simultaneously available" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The literal discriminant `kind` lets TypeScript narrow the union to the matching object variant.",
     tags: ["discriminated-unions", "narrowing"]
   },
@@ -133,12 +133,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is type narrowing?",
     options: [
-      { id: "A", text: "Reducing a broad type to a more specific type based on control-flow checks" },
-      { id: "B", text: "Removing all properties from a type" },
-      { id: "C", text: "Converting TypeScript into JavaScript" },
+      { id: "A", text: "Removing all properties from a type" },
+      { id: "B", text: "Converting TypeScript into JavaScript" },
+      { id: "C", text: "Reducing a broad type to a more specific type based on control-flow checks" },
       { id: "D", text: "Making a type parameter generic" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "TypeScript analyzes conditions and control flow to determine when a value can safely be treated as a more specific type.",
     tags: ["narrowing", "control-flow"]
   },
@@ -151,12 +151,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which check narrows `value: string | number` to `string`?",
     options: [
-      { id: "A", text: "if (typeof value === \"string\")" },
-      { id: "B", text: "if (value instanceof Number)" },
-      { id: "C", text: "if (value === Number)" },
-      { id: "D", text: "if (typeof value === \"object\")" }
+      { id: "A", text: "if (value instanceof Number)" },
+      { id: "B", text: "if (value === Number)" },
+      { id: "C", text: "if (typeof value === \"object\")" },
+      { id: "D", text: "if (typeof value === \"string\")" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`typeof value === \"string\"` is a built-in type guard that narrows the value to string.",
     tags: ["narrowing", "typeof", "type-guards"]
   },
@@ -187,12 +187,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is a user-defined type guard?",
     options: [
-      { id: "A", text: "A function whose return type uses a type predicate such as `value is User`" },
-      { id: "B", text: "A function that always returns any" },
+      { id: "A", text: "A function that always returns any" },
+      { id: "B", text: "A function whose return type uses a type predicate such as `value is User`" },
       { id: "C", text: "A class with only private properties" },
       { id: "D", text: "An interface with no members" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A type predicate tells TypeScript that when the function returns true, the value can be treated as the specified type.",
     tags: ["type-guards", "narrowing"]
   },
@@ -206,11 +206,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "Which return type is a valid type predicate for checking whether `value` is a User?",
     options: [
       { id: "A", text: "value -> User" },
-      { id: "B", text: "value is User" },
-      { id: "C", text: "value instanceof User" },
+      { id: "B", text: "value instanceof User" },
+      { id: "C", text: "value is User" },
       { id: "D", text: "User(value)" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "TypeScript type predicates use the syntax `parameterName is Type`.",
     tags: ["type-guards", "type-predicates"]
   },
@@ -223,12 +223,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does the `in` operator help with when narrowing object unions?",
     options: [
-      { id: "A", text: "It can narrow based on whether a property exists" },
-      { id: "B", text: "It converts properties into strings" },
-      { id: "C", text: "It removes optional properties" },
-      { id: "D", text: "It creates an intersection automatically" }
+      { id: "A", text: "It converts properties into strings" },
+      { id: "B", text: "It removes optional properties" },
+      { id: "C", text: "It creates an intersection automatically" },
+      { id: "D", text: "It can narrow based on whether a property exists" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Checking `\"property\" in value` can narrow a union to members containing that property.",
     tags: ["narrowing", "in-operator"]
   },
@@ -241,12 +241,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `keyof User` produce?",
     options: [
-      { id: "A", text: "The values of User" },
-      { id: "B", text: "A union of the known property keys of User" },
+      { id: "A", text: "A union of the known property keys of User" },
+      { id: "B", text: "The values of User" },
       { id: "C", text: "A new User object" },
       { id: "D", text: "The constructor of User" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`keyof` produces a union representing the property keys of a type.",
     tags: ["keyof", "advanced-types"]
   },
@@ -277,12 +277,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `typeof` do in a type position?",
     options: [
-      { id: "A", text: "It can obtain the type of an existing value or variable" },
-      { id: "B", text: "It converts a type into a runtime object" },
-      { id: "C", text: "It creates a union automatically" },
+      { id: "A", text: "It converts a type into a runtime object" },
+      { id: "B", text: "It creates a union automatically" },
+      { id: "C", text: "It can obtain the type of an existing value or variable" },
       { id: "D", text: "It removes literal types" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "In a type context, `typeof` can derive a type from an existing value.",
     tags: ["typeof", "advanced-types"]
   },
@@ -295,12 +295,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is the type of `typeof config` when `config` is an existing object variable?",
     options: [
-      { id: "A", text: "The type shape of the value stored in config" },
-      { id: "B", text: "Always `object`" },
-      { id: "C", text: "Always `any`" },
-      { id: "D", text: "Always `unknown`" }
+      { id: "A", text: "Always `object`" },
+      { id: "B", text: "Always `any`" },
+      { id: "C", text: "Always `unknown`" },
+      { id: "D", text: "The type shape of the value stored in config" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "TypeScript can derive the static type of the existing variable using `typeof`.",
     tags: ["typeof", "type-inference"]
   },
@@ -349,12 +349,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `User[keyof User]` generally represent?",
     options: [
-      { id: "A", text: "The union of all property value types in User" },
-      { id: "B", text: "Only the first property's type" },
-      { id: "C", text: "The keys of User" },
+      { id: "A", text: "Only the first property's type" },
+      { id: "B", text: "The keys of User" },
+      { id: "C", text: "The union of all property value types in User" },
       { id: "D", text: "The User constructor" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Indexing with `keyof User` accesses all known properties, producing a union of their value types.",
     tags: ["indexed-access", "keyof"]
   },
@@ -367,12 +367,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is a mapped type?",
     options: [
-      { id: "A", text: "A type that transforms or iterates over the properties of another type" },
-      { id: "B", text: "A runtime Map object" },
-      { id: "C", text: "A class inheritance mechanism" },
-      { id: "D", text: "A type that only works with arrays" }
+      { id: "A", text: "A runtime Map object" },
+      { id: "B", text: "A class inheritance mechanism" },
+      { id: "C", text: "A type that only works with arrays" },
+      { id: "D", text: "A type that transforms or iterates over the properties of another type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Mapped types iterate over keys and create a new type based on those keys.",
     tags: ["mapped-types"]
   },
@@ -403,12 +403,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which syntax makes every property of T optional using a mapped type?",
     options: [
-      { id: "A", text: "{ [K in keyof T]?: T[K] }" },
-      { id: "B", text: "{ optional keyof T: T }" },
+      { id: "A", text: "{ optional keyof T: T }" },
+      { id: "B", text: "{ [K in keyof T]?: T[K] }" },
       { id: "C", text: "{ [K keyof T]: optional T[K] }" },
       { id: "D", text: "{ T?: keyof T }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `?` modifier in a mapped type makes each mapped property optional.",
     tags: ["mapped-types", "optional-properties"]
   },
@@ -422,11 +422,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "Which built-in utility type is conceptually similar to making every property optional?",
     options: [
       { id: "A", text: "Required<T>" },
-      { id: "B", text: "Partial<T>" },
-      { id: "C", text: "Readonly<T>" },
+      { id: "B", text: "Readonly<T>" },
+      { id: "C", text: "Partial<T>" },
       { id: "D", text: "Pick<T, K>" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`Partial<T>` constructs a type with all properties of T optional.",
     tags: ["utility-types", "mapped-types", "Partial"]
   },
@@ -439,12 +439,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `Required<T>` do?",
     options: [
-      { id: "A", text: "Makes all properties of T required" },
-      { id: "B", text: "Makes all properties readonly" },
-      { id: "C", text: "Removes all properties" },
-      { id: "D", text: "Converts T into a union" }
+      { id: "A", text: "Makes all properties readonly" },
+      { id: "B", text: "Removes all properties" },
+      { id: "C", text: "Converts T into a union" },
+      { id: "D", text: "Makes all properties of T required" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Required<T>` removes optional modifiers from the properties of T.",
     tags: ["utility-types", "mapped-types"]
   },
@@ -475,12 +475,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `Omit<User, \"password\">` do?",
     options: [
-      { id: "A", text: "Creates a type without the password property" },
-      { id: "B", text: "Makes password optional" },
+      { id: "A", text: "Makes password optional" },
+      { id: "B", text: "Creates a type without the password property" },
       { id: "C", text: "Makes password readonly" },
       { id: "D", text: "Changes password to boolean" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Omit<T, K>` constructs a type by removing the specified keys.",
     tags: ["utility-types", "Omit"]
   },
@@ -493,12 +493,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `Record<\"admin\" | \"user\", boolean>` represent?",
     options: [
-      { id: "A", text: "An object type with admin and user keys whose values are boolean" },
-      { id: "B", text: "A tuple containing admin and user" },
-      { id: "C", text: "A class named Record" },
+      { id: "A", text: "A tuple containing admin and user" },
+      { id: "B", text: "A class named Record" },
+      { id: "C", text: "An object type with admin and user keys whose values are boolean" },
       { id: "D", text: "A union of two booleans" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Record<K, V>` creates an object type whose keys are K and whose values are V.",
     tags: ["utility-types", "Record", "mapped-types"]
   },
@@ -511,12 +511,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is a conditional type?",
     options: [
-      { id: "A", text: "A type that selects one type or another based on a type relationship" },
-      { id: "B", text: "A runtime if statement" },
-      { id: "C", text: "A class that requires conditions" },
-      { id: "D", text: "A union that only contains strings" }
+      { id: "A", text: "A runtime if statement" },
+      { id: "B", text: "A class that requires conditions" },
+      { id: "C", text: "A union that only contains strings" },
+      { id: "D", text: "A type that selects one type or another based on a type relationship" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Conditional types use syntax similar to a type-level condition: `T extends U ? X : Y`.",
     tags: ["conditional-types"]
   },
@@ -548,11 +548,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "What does `type IsString<T> = T extends string ? true : false` produce for `IsString<string>`?",
     options: [
       { id: "A", text: "false" },
-      { id: "B", text: "string" },
-      { id: "C", text: "true" },
+      { id: "B", text: "true" },
+      { id: "C", text: "string" },
       { id: "D", text: "never" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Since `string extends string` is true, the conditional type selects `true`.",
     tags: ["conditional-types"]
   },
@@ -566,11 +566,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "What does `IsString<number>` produce for `type IsString<T> = T extends string ? true : false`?",
     options: [
       { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "number" },
+      { id: "B", text: "number" },
+      { id: "C", text: "false" },
       { id: "D", text: "string" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`number` does not extend `string`, so the false branch is selected.",
     tags: ["conditional-types"]
   },
@@ -583,12 +583,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What does the `infer` keyword allow inside a conditional type?",
     options: [
-      { id: "A", text: "It allows TypeScript to infer a type from part of another type" },
-      { id: "B", text: "It creates a runtime variable" },
-      { id: "C", text: "It disables generic inference" },
-      { id: "D", text: "It makes all properties optional" }
+      { id: "A", text: "It creates a runtime variable" },
+      { id: "B", text: "It disables generic inference" },
+      { id: "C", text: "It makes all properties optional" },
+      { id: "D", text: "It allows TypeScript to infer a type from part of another type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`infer` introduces a type variable whose type TypeScript can infer from a matched structure.",
     tags: ["conditional-types", "infer"]
   },
@@ -601,12 +601,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What does this type extract?\n\n`type Return<T> = T extends (...args: any[]) => infer R ? R : never`",
     options: [
-      { id: "A", text: "The parameter list of a function" },
-      { id: "B", text: "The return type of a function" },
+      { id: "A", text: "The return type of a function" },
+      { id: "B", text: "The parameter list of a function" },
       { id: "C", text: "The function name" },
       { id: "D", text: "The number of parameters" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`infer R` captures the return type of the function matched by the conditional type.",
     tags: ["conditional-types", "infer", "functions"]
   },
@@ -637,12 +637,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What does `Parameters<typeof fn>` extract?",
     options: [
-      { id: "A", text: "The function's parameter types as a tuple" },
-      { id: "B", text: "The function's return value" },
-      { id: "C", text: "The function's property keys" },
+      { id: "A", text: "The function's return value" },
+      { id: "B", text: "The function's property keys" },
+      { id: "C", text: "The function's parameter types as a tuple" },
       { id: "D", text: "The function's runtime source code" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Parameters<T>` extracts the parameter types of a function type as a tuple.",
     tags: ["utility-types", "Parameters", "typeof"]
   },
@@ -656,11 +656,11 @@ const typescriptAdvancedTypesQuestions = [
     question: "What does `NonNullable<T>` remove from T?",
     options: [
       { id: "A", text: "string and number" },
-      { id: "B", text: "null and undefined" },
-      { id: "C", text: "all object properties" },
-      { id: "D", text: "all union members" }
+      { id: "B", text: "all object properties" },
+      { id: "C", text: "all union members" },
+      { id: "D", text: "null and undefined" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`NonNullable<T>` excludes `null` and `undefined` from a type.",
     tags: ["utility-types", "NonNullable"]
   },
@@ -691,12 +691,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What does `Extract<T, U>` do?",
     options: [
-      { id: "A", text: "Keeps from T the union members assignable to U" },
-      { id: "B", text: "Removes every member from T" },
+      { id: "A", text: "Removes every member from T" },
+      { id: "B", text: "Keeps from T the union members assignable to U" },
       { id: "C", text: "Converts T into any" },
       { id: "D", text: "Makes T readonly" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Extract<T, U>` is effectively a union filter that keeps members compatible with U.",
     tags: ["utility-types", "Extract", "unions"]
   },
@@ -709,12 +709,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What is a distributive conditional type?",
     options: [
-      { id: "A", text: "A conditional type that can distribute over each member of a union when given a naked type parameter" },
-      { id: "B", text: "A type that always creates an intersection" },
-      { id: "C", text: "A type that only works with classes" },
+      { id: "A", text: "A type that always creates an intersection" },
+      { id: "B", text: "A type that only works with classes" },
+      { id: "C", text: "A conditional type that can distribute over each member of a union when given a naked type parameter" },
       { id: "D", text: "A runtime conditional statement" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Conditional types of the form `T extends U ? X : Y` distribute over union members when T is a naked type parameter.",
     tags: ["conditional-types", "distributive-types", "unions"]
   },
@@ -727,12 +727,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "Why would wrapping a type parameter in a tuple, such as `[T] extends [U]`, affect conditional-type distribution?",
     options: [
-      { id: "A", text: "It prevents the conditional from distributing over a union in the usual way" },
-      { id: "B", text: "It converts the type into a tuple at runtime" },
-      { id: "C", text: "It forces T to be string" },
-      { id: "D", text: "It makes U optional" }
+      { id: "A", text: "It converts the type into a tuple at runtime" },
+      { id: "B", text: "It forces T to be string" },
+      { id: "C", text: "It makes U optional" },
+      { id: "D", text: "It prevents the conditional from distributing over a union in the usual way" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Distribution occurs with a naked type parameter. Wrapping the parameter prevents that distributive behavior.",
     tags: ["conditional-types", "distributive-types"]
   },
@@ -763,12 +763,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "Which mapped-type syntax removes optional modifiers?",
     options: [
-      { id: "A", text: "{ -? [K in keyof T]: T[K] }" },
-      { id: "B", text: "{ optional- [K in keyof T]: T[K] }" },
+      { id: "A", text: "{ optional- [K in keyof T]: T[K] }" },
+      { id: "B", text: "{ -? [K in keyof T]: T[K] }" },
       { id: "C", text: "{ remove? [K in keyof T]: T[K] }" },
       { id: "D", text: "{ required [K in keyof T]: T[K] }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Mapped types use `-?` to remove the optional property modifier.",
     tags: ["mapped-types", "optional-properties", "modifiers"]
   },
@@ -781,12 +781,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What are key remapping in mapped types and the `as` clause used for?",
     options: [
-      { id: "A", text: "To transform or filter the property keys of the resulting type" },
-      { id: "B", text: "To execute JavaScript during compilation" },
-      { id: "C", text: "To change every property value to any" },
+      { id: "A", text: "To execute JavaScript during compilation" },
+      { id: "B", text: "To change every property value to any" },
+      { id: "C", text: "To transform or filter the property keys of the resulting type" },
       { id: "D", text: "To create runtime objects" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `as` clause allows mapped types to remap keys and can use `never` to filter keys.",
     tags: ["mapped-types", "key-remapping"]
   },
@@ -799,12 +799,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What happens when a mapped type remaps a key to `never`?",
     options: [
-      { id: "A", text: "That property is omitted from the resulting type" },
-      { id: "B", text: "That property becomes nullable" },
-      { id: "C", text: "That property becomes readonly" },
-      { id: "D", text: "The entire type becomes never" }
+      { id: "A", text: "That property becomes nullable" },
+      { id: "B", text: "That property becomes readonly" },
+      { id: "C", text: "The entire type becomes never" },
+      { id: "D", text: "That property is omitted from the resulting type" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Mapping a property key to `never` effectively filters that property out.",
     tags: ["mapped-types", "key-remapping", "never"]
   },
@@ -835,12 +835,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "Why is `never` useful in exhaustive discriminated-union checks?",
     options: [
-      { id: "A", text: "It can expose at compile time that an unhandled union variant remains" },
-      { id: "B", text: "It makes every branch optional" },
+      { id: "A", text: "It makes every branch optional" },
+      { id: "B", text: "It can expose at compile time that an unhandled union variant remains" },
       { id: "C", text: "It converts all variants to strings" },
       { id: "D", text: "It disables control-flow analysis" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Assigning the remaining value to `never` causes TypeScript to report an error if a supposedly exhaustive switch is missing a variant.",
     tags: ["never", "discriminated-unions", "exhaustiveness"]
   },
@@ -853,12 +853,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "What is the key difference between `unknown` and `any`?",
     options: [
-      { id: "A", text: "unknown requires narrowing before most operations, while any largely disables type checking" },
-      { id: "B", text: "unknown is always a string" },
-      { id: "C", text: "any requires narrowing but unknown does not" },
+      { id: "A", text: "unknown is always a string" },
+      { id: "B", text: "any requires narrowing but unknown does not" },
+      { id: "C", text: "unknown requires narrowing before most operations, while any largely disables type checking" },
       { id: "D", text: "They are exactly identical" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`unknown` is type-safe because operations generally require narrowing first, whereas `any` opts out of much static checking.",
     tags: ["unknown", "any", "narrowing"]
   },
@@ -871,12 +871,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "Which design best uses advanced TypeScript types to create a type-safe API response model with multiple variants?",
     options: [
-      { id: "A", text: "Use a discriminated union with literal status values and variant-specific properties" },
-      { id: "B", text: "Use `any` for every response" },
-      { id: "C", text: "Use only `object` for every response" },
-      { id: "D", text: "Use one object where every property is optional" }
+      { id: "A", text: "Use `any` for every response" },
+      { id: "B", text: "Use only `object` for every response" },
+      { id: "C", text: "Use one object where every property is optional" },
+      { id: "D", text: "Use a discriminated union with literal status values and variant-specific properties" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Discriminated unions accurately model different valid states and allow TypeScript to narrow each response variant safely.",
     tags: ["discriminated-unions", "api", "narrowing"]
   },
@@ -889,12 +889,12 @@ const typescriptAdvancedTypesQuestions = [
     difficulty: "Advanced",
     question: "A reusable utility needs to take an object type, transform every property, preserve its keys, and conditionally change the resulting property types. Which combination of TypeScript features is most appropriate?",
     options: [
-      { id: "A", text: "Only a union type" },
-      { id: "B", text: "A mapped type combined with conditional types" },
+      { id: "A", text: "A mapped type combined with conditional types" },
+      { id: "B", text: "Only a union type" },
       { id: "C", text: "Only an enum" },
       { id: "D", text: "Only a tuple" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Mapped types iterate over and transform properties, while conditional types allow each property's resulting type to depend on its original type.",
     tags: ["mapped-types", "conditional-types", "advanced-types"]
   }

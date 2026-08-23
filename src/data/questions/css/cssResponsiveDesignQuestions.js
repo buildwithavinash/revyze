@@ -8,11 +8,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is the primary goal of responsive web design?",
     options: [
       { id: "A", text: "To make every website use the same fixed width" },
-      { id: "B", text: "To make websites adapt their layout and content to different screen sizes and devices" },
-      { id: "C", text: "To eliminate CSS media queries" },
+      { id: "B", text: "To eliminate CSS media queries" },
+      { id: "C", text: "To make websites adapt their layout and content to different screen sizes and devices" },
       { id: "D", text: "To make every element use absolute positioning" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Responsive design allows a website to adapt its layout, sizing, spacing, and sometimes content presentation to different viewport sizes and device capabilities.",
     tags: ["responsive-design", "fundamentals"]
   },
@@ -27,10 +27,10 @@ const cssResponsiveDesignQuestions = [
     options: [
       { id: "A", text: "CSS variables" },
       { id: "B", text: "Pseudo-elements" },
-      { id: "C", text: "Media queries" },
-      { id: "D", text: "Float" }
+      { id: "C", text: "Float" },
+      { id: "D", text: "Media queries" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Media queries allow CSS rules to conditionally apply based on conditions such as viewport width, height, orientation, and user preferences.",
     tags: ["media-queries", "responsive-design"]
   },
@@ -62,11 +62,11 @@ const cssResponsiveDesignQuestions = [
     question: "What does min-width: 768px mean inside a media query?",
     options: [
       { id: "A", text: "The styles apply only below 768px" },
-      { id: "B", text: "The styles apply only at exactly 768px" },
-      { id: "C", text: "The styles apply when the viewport is at least 768px wide" },
+      { id: "B", text: "The styles apply when the viewport is at least 768px wide" },
+      { id: "C", text: "The styles apply only at exactly 768px" },
       { id: "D", text: "The element must have a width of 768px" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A min-width condition matches when the viewport width is greater than or equal to the specified value.",
     tags: ["media-queries", "min-width"]
   },
@@ -80,11 +80,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is a mobile-first CSS strategy?",
     options: [
       { id: "A", text: "Designing only for mobile devices and ignoring larger screens" },
-      { id: "B", text: "Starting with the small-screen layout and progressively enhancing it for larger screens" },
-      { id: "C", text: "Using JavaScript to detect every mobile device" },
+      { id: "B", text: "Using JavaScript to detect every mobile device" },
+      { id: "C", text: "Starting with the small-screen layout and progressively enhancing it for larger screens" },
       { id: "D", text: "Using only fixed pixel units" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Mobile-first development starts with a simple small-screen baseline and adds enhancements through min-width media queries as more space becomes available.",
     tags: ["mobile-first", "responsive-design"]
   },
@@ -97,12 +97,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "Which approach represents a typical mobile-first pattern?",
     options: [
-      { id: "A", text: "Base styles for mobile, then @media (min-width: ...) for larger screens" },
-      { id: "B", text: "Base styles for desktop, then only max-width queries for mobile" },
-      { id: "C", text: "Use JavaScript for every breakpoint" },
-      { id: "D", text: "Use only fixed-width containers" }
+      { id: "A", text: "Base styles for desktop, then only max-width queries for mobile" },
+      { id: "B", text: "Use JavaScript for every breakpoint" },
+      { id: "C", text: "Use only fixed-width containers" },
+      { id: "D", text: "Base styles for mobile, then @media (min-width: ...) for larger screens" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Mobile-first CSS usually establishes the smallest layout as the default and uses min-width breakpoints to progressively enhance it.",
     tags: ["mobile-first", "min-width"]
   },
@@ -115,12 +115,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "What does 1rem represent by default in most browsers?",
     options: [
-      { id: "A", text: "1% of the viewport width" },
-      { id: "B", text: "The font size of the root element" },
+      { id: "A", text: "The font size of the root element" },
+      { id: "B", text: "1% of the viewport width" },
       { id: "C", text: "The width of the parent element" },
       { id: "D", text: "Exactly 10px" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "rem is relative to the font size of the root HTML element. In a typical browser default, that is commonly 16px, but it can be changed.",
     tags: ["rem", "units", "responsive-design"]
   },
@@ -134,11 +134,11 @@ const cssResponsiveDesignQuestions = [
     question: "What does 1em represent when used for an element's font-size?",
     options: [
       { id: "A", text: "1% of the viewport height" },
-      { id: "B", text: "The font size of the root element only" },
-      { id: "C", text: "The element's inherited or otherwise applicable font size" },
+      { id: "B", text: "The element's inherited or otherwise applicable font size" },
+      { id: "C", text: "The font size of the root element only" },
       { id: "D", text: "Exactly 16px in every situation" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "For font-size, em is relative to the inherited font size of the element. For other properties, em is generally relative to the element's own font size.",
     tags: ["em", "units"]
   },
@@ -151,12 +151,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "What does 100vw represent?",
     options: [
-      { id: "A", text: "100% of the viewport width" },
-      { id: "B", text: "100% of the parent width" },
-      { id: "C", text: "100px" },
+      { id: "A", text: "100% of the parent width" },
+      { id: "B", text: "100px" },
+      { id: "C", text: "100% of the viewport width" },
       { id: "D", text: "100% of the viewport height" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "vw is a viewport-width unit. 1vw represents 1% of the viewport's width, so 100vw represents the viewport width.",
     tags: ["vw", "viewport-units"]
   },
@@ -187,12 +187,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "Which unit is directly relative to the viewport width?",
     options: [
-      { id: "A", text: "rem" },
-      { id: "B", text: "em" },
-      { id: "C", text: "vw" },
+      { id: "A", text: "vw" },
+      { id: "B", text: "rem" },
+      { id: "C", text: "em" },
       { id: "D", text: "ch" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "vw is based on the viewport width.",
     tags: ["vw", "units"]
   },
@@ -205,12 +205,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "Which unit is directly relative to the viewport height?",
     options: [
-      { id: "A", text: "vh" },
-      { id: "B", text: "rem" },
+      { id: "A", text: "rem" },
+      { id: "B", text: "vh" },
       { id: "C", text: "em" },
       { id: "D", text: "%" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "vh represents a percentage of the viewport height.",
     tags: ["vh", "units"]
   },
@@ -224,11 +224,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is the main difference between rem and em?",
     options: [
       { id: "A", text: "rem is viewport-based while em is pixel-based" },
-      { id: "B", text: "rem is relative to the root font size, while em can be relative to the element's applicable font size" },
-      { id: "C", text: "em only works in media queries" },
+      { id: "B", text: "em only works in media queries" },
+      { id: "C", text: "rem is relative to the root font size, while em can be relative to the element's applicable font size" },
       { id: "D", text: "rem and em always behave identically" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "rem is tied to the root element's font size, while em is context-dependent and can compound through nested elements.",
     tags: ["rem", "em", "units"]
   },
@@ -243,10 +243,10 @@ const cssResponsiveDesignQuestions = [
     options: [
       { id: "A", text: "limit()" },
       { id: "B", text: "range()" },
-      { id: "C", text: "clamp()" },
-      { id: "D", text: "bound()" }
+      { id: "C", text: "bound()" },
+      { id: "D", text: "clamp()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "clamp(min, preferred, max) allows a value to scale while remaining within specified minimum and maximum limits.",
     tags: ["clamp", "responsive-units"]
   },
@@ -259,12 +259,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What does this do?\n\nfont-size: clamp(1rem, 2vw, 2rem);",
     options: [
-      { id: "A", text: "Always makes the font exactly 2vw" },
-      { id: "B", text: "Makes the font responsive while keeping it between 1rem and 2rem" },
+      { id: "A", text: "Makes the font responsive while keeping it between 1rem and 2rem" },
+      { id: "B", text: "Always makes the font exactly 2vw" },
       { id: "C", text: "Makes the font responsive without any upper limit" },
       { id: "D", text: "Makes the font exactly 1rem on every device" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The preferred value is 2vw, but the resulting font size cannot go below 1rem or above 2rem.",
     tags: ["clamp", "typography", "responsive"]
   },
@@ -277,12 +277,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Why are relative units often useful in responsive design?",
     options: [
-      { id: "A", text: "They can allow dimensions and typography to adapt to context instead of remaining completely fixed" },
-      { id: "B", text: "They prevent all elements from resizing" },
+      { id: "A", text: "They prevent all elements from resizing" },
+      { id: "B", text: "They can allow dimensions and typography to adapt to context instead of remaining completely fixed" },
       { id: "C", text: "They only work on desktop" },
       { id: "D", text: "They eliminate the need for HTML" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Relative units such as %, rem, em, vw, and vh can create layouts that respond naturally to parent sizes, typography, or viewport dimensions.",
     tags: ["responsive-units", "units"]
   },
@@ -296,11 +296,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is a breakpoint in responsive design?",
     options: [
       { id: "A", text: "A JavaScript error in mobile browsers" },
-      { id: "B", text: "A viewport condition where the layout or styles change" },
-      { id: "C", text: "A fixed height assigned to every component" },
+      { id: "B", text: "A fixed height assigned to every component" },
+      { id: "C", text: "A viewport condition where the layout or styles change" },
       { id: "D", text: "A CSS animation frame" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A breakpoint is a condition—commonly a viewport width—at which the design changes to better suit the available space.",
     tags: ["breakpoints", "responsive-design"]
   },
@@ -314,11 +314,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is generally a better way to choose responsive breakpoints?",
     options: [
       { id: "A", text: "Use only famous device widths such as iPhone and iPad sizes" },
-      { id: "B", text: "Choose breakpoints based on where the content or layout actually needs to change" },
-      { id: "C", text: "Always create exactly 10 breakpoints" },
-      { id: "D", text: "Use a breakpoint for every 10px of width" }
+      { id: "B", text: "Always create exactly 10 breakpoints" },
+      { id: "C", text: "Use a breakpoint for every 10px of width" },
+      { id: "D", text: "Choose breakpoints based on where the content or layout actually needs to change" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Content-driven breakpoints are usually more robust than designing specifically around individual device models.",
     tags: ["breakpoints", "responsive-design", "best-practices"]
   },
@@ -331,12 +331,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which media query targets a viewport that is at least 768px wide?",
     options: [
-      { id: "A", text: "@media (max-width: 768px)" },
-      { id: "B", text: "@media (width: 768px)" },
-      { id: "C", text: "@media (min-width: 768px)" },
+      { id: "A", text: "@media (min-width: 768px)" },
+      { id: "B", text: "@media (max-width: 768px)" },
+      { id: "C", text: "@media (width: 768px)" },
       { id: "D", text: "@media (viewport: 768px)" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "min-width: 768px matches viewport widths of 768px and above.",
     tags: ["media-queries", "min-width"]
   },
@@ -349,12 +349,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS is a typical mobile-first pattern for changing a single-column layout into two columns on larger screens?",
     options: [
-      { id: "A", text: ".cards { display: grid; grid-template-columns: 1fr; } @media (min-width: 768px) { .cards { grid-template-columns: 1fr 1fr; } }" },
-      { id: "B", text: ".cards { display: fixed; }" },
+      { id: "A", text: ".cards { display: fixed; }" },
+      { id: "B", text: ".cards { display: grid; grid-template-columns: 1fr; } @media (min-width: 768px) { .cards { grid-template-columns: 1fr 1fr; } }" },
       { id: "C", text: ".cards { grid-template-columns: 1fr 1fr; } @media (max-width: 768px) { .cards { grid-template-columns: 1fr 1fr 1fr; } }" },
       { id: "D", text: ".cards { width: 768px; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The base rule establishes one column for smaller screens, and the min-width query enhances it to two columns when more space is available.",
     tags: ["mobile-first", "grid", "media-queries"]
   },
@@ -367,12 +367,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS property is particularly useful for preventing an image from overflowing its container horizontally?",
     options: [
-      { id: "A", text: "max-width: 100%;" },
-      { id: "B", text: "min-width: 100vw;" },
-      { id: "C", text: "width: 1000px;" },
+      { id: "A", text: "min-width: 100vw;" },
+      { id: "B", text: "width: 1000px;" },
+      { id: "C", text: "max-width: 100%;" },
       { id: "D", text: "position: fixed;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "max-width: 100% allows the image to shrink to fit within its containing block while still being smaller when its intrinsic size is smaller.",
     tags: ["images", "responsive", "max-width"]
   },
@@ -386,11 +386,11 @@ const cssResponsiveDesignQuestions = [
     question: "What does this rule accomplish?\n\nimg {\n  max-width: 100%;\n  height: auto;\n}",
     options: [
       { id: "A", text: "It forces every image to be exactly the viewport width" },
-      { id: "B", text: "It allows images to shrink within their container while preserving their aspect ratio" },
-      { id: "C", text: "It crops every image" },
-      { id: "D", text: "It makes images fixed to the viewport" }
+      { id: "B", text: "It crops every image" },
+      { id: "C", text: "It makes images fixed to the viewport" },
+      { id: "D", text: "It allows images to shrink within their container while preserving their aspect ratio" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "max-width: 100% prevents horizontal overflow, while height: auto preserves the image's intrinsic aspect ratio as its width changes.",
     tags: ["images", "responsive", "aspect-ratio"]
   },
@@ -403,12 +403,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the viewport meta tag commonly used in responsive websites?",
     options: [
-      { id: "A", text: "To control JavaScript execution speed" },
-      { id: "B", text: "To tell mobile browsers how to size and scale the page viewport" },
+      { id: "A", text: "To tell mobile browsers how to size and scale the page viewport" },
+      { id: "B", text: "To control JavaScript execution speed" },
       { id: "C", text: "To define CSS colors" },
       { id: "D", text: "To enable CSS Grid" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The viewport meta tag helps mobile browsers use the device's viewport width appropriately instead of treating the page as a wider desktop-style layout.",
     tags: ["viewport", "mobile", "responsive"]
   },
@@ -421,12 +421,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Beginner",
     question: "Which viewport declaration is commonly used for responsive websites?",
     options: [
-      { id: "A", text: "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" },
-      { id: "B", text: "<meta responsive=\"true\">" },
+      { id: "A", text: "<meta responsive=\"true\">" },
+      { id: "B", text: "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" },
       { id: "C", text: "<viewport width=\"mobile\">" },
       { id: "D", text: "<meta name=\"screen\" content=\"responsive\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "This is the standard viewport declaration used to establish the viewport width as the device width and set the initial scale.",
     tags: ["viewport", "meta", "mobile"]
   },
@@ -440,11 +440,11 @@ const cssResponsiveDesignQuestions = [
     question: "Why can using width: 100vw sometimes create unexpected horizontal scrolling?",
     options: [
       { id: "A", text: "vw is always calculated from the parent width" },
-      { id: "B", text: "100vw can include the viewport's scrollbar area in environments where scrollbars consume layout space" },
-      { id: "C", text: "100vw always means 100px" },
+      { id: "B", text: "100vw always means 100px" },
+      { id: "C", text: "100vw can include the viewport's scrollbar area in environments where scrollbars consume layout space" },
       { id: "D", text: "vw cannot be used on block elements" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "In some desktop environments, viewport units can account for the scrollbar area, causing 100vw to be slightly wider than the available content area.",
     tags: ["vw", "overflow", "responsive"]
   },
@@ -458,11 +458,11 @@ const cssResponsiveDesignQuestions = [
     question: "What is generally preferable for a content container on large screens?",
     options: [
       { id: "A", text: "An unlimited width with no constraints" },
-      { id: "B", text: "A reasonable max-width combined with responsive horizontal sizing" },
-      { id: "C", text: "A fixed width of exactly 1200px on every device" },
-      { id: "D", text: "Absolute positioning" }
+      { id: "B", text: "A fixed width of exactly 1200px on every device" },
+      { id: "C", text: "Absolute positioning" },
+      { id: "D", text: "A reasonable max-width combined with responsive horizontal sizing" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A max-width can prevent content lines from becoming excessively wide while allowing the container to shrink on smaller screens.",
     tags: ["max-width", "containers", "responsive"]
   },
@@ -493,12 +493,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What is the benefit of using CSS Grid's minmax() and auto-fit for responsive cards?",
     options: [
-      { id: "A", text: "The layout can adapt the number and size of columns based on available space without requiring many breakpoints" },
-      { id: "B", text: "It forces every device to use exactly four columns" },
+      { id: "A", text: "It forces every device to use exactly four columns" },
+      { id: "B", text: "The layout can adapt the number and size of columns based on available space without requiring many breakpoints" },
       { id: "C", text: "It disables wrapping" },
       { id: "D", text: "It requires JavaScript viewport detection" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Patterns such as repeat(auto-fit, minmax(...)) allow the grid to automatically fit as many suitable columns as available space permits.",
     tags: ["grid", "minmax", "auto-fit", "responsive"]
   },
@@ -511,12 +511,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What does the CSS media feature prefers-reduced-motion allow developers to detect?",
     options: [
-      { id: "A", text: "Whether the user prefers reduced motion effects" },
-      { id: "B", text: "Whether the device has a high-resolution camera" },
-      { id: "C", text: "Whether the viewport is exactly 768px wide" },
+      { id: "A", text: "Whether the device has a high-resolution camera" },
+      { id: "B", text: "Whether the viewport is exactly 768px wide" },
+      { id: "C", text: "Whether the user prefers reduced motion effects" },
       { id: "D", text: "Whether the user prefers dark-colored text only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "prefers-reduced-motion allows websites to adapt animations and transitions for users who have requested reduced motion at the operating-system or browser level.",
     tags: ["media-queries", "accessibility", "prefers-reduced-motion"]
   },
@@ -529,12 +529,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which is an appropriate way to reduce animation for users who prefer less motion?",
     options: [
-      { id: "A", text: "@media (prefers-reduced-motion: reduce) { * { animation: none; transition: none; } }" },
-      { id: "B", text: "@media (motion: none) { * { display: none; } }" },
-      { id: "C", text: "@media (reduced: true) { * { position: static; } }" },
-      { id: "D", text: "@media (animation: reduce) { * { transform: fixed; } }" }
+      { id: "A", text: "@media (motion: none) { * { display: none; } }" },
+      { id: "B", text: "@media (reduced: true) { * { position: static; } }" },
+      { id: "C", text: "@media (animation: reduce) { * { transform: fixed; } }" },
+      { id: "D", text: "@media (prefers-reduced-motion: reduce) { * { animation: none; transition: none; } }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The prefers-reduced-motion media feature is designed specifically for adapting motion-heavy UI to user preferences.",
     tags: ["prefers-reduced-motion", "accessibility"]
   },
@@ -547,12 +547,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What does orientation: landscape represent in a media query?",
     options: [
-      { id: "A", text: "The device has a horizontal scrolling layout" },
-      { id: "B", text: "The viewport is wider than it is tall" },
+      { id: "A", text: "The viewport is wider than it is tall" },
+      { id: "B", text: "The device has a horizontal scrolling layout" },
       { id: "C", text: "The screen has exactly 16:9 dimensions" },
       { id: "D", text: "The browser is running on a laptop" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Landscape orientation means the viewport's width is greater than its height.",
     tags: ["media-queries", "orientation"]
   },
@@ -565,12 +565,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which media query targets portrait orientation?",
     options: [
-      { id: "A", text: "@media (orientation: portrait)" },
-      { id: "B", text: "@media (screen: vertical)" },
+      { id: "A", text: "@media (screen: vertical)" },
+      { id: "B", text: "@media (orientation: portrait)" },
       { id: "C", text: "@media (height > width)" },
       { id: "D", text: "@media (orientation: vertical-screen)" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The orientation media feature accepts portrait and landscape values.",
     tags: ["orientation", "media-queries"]
   },
@@ -583,12 +583,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Why should responsive designs not rely exclusively on exact device names?",
     options: [
-      { id: "A", text: "Because device dimensions and viewport sizes vary widely, including across browser windows and orientations" },
-      { id: "B", text: "Because CSS cannot detect width" },
-      { id: "C", text: "Because media queries only work on desktop" },
+      { id: "A", text: "Because CSS cannot detect width" },
+      { id: "B", text: "Because media queries only work on desktop" },
+      { id: "C", text: "Because device dimensions and viewport sizes vary widely, including across browser windows and orientations" },
       { id: "D", text: "Because responsive websites cannot use breakpoints" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Responsive layouts should respond to available space and content needs rather than assuming a small fixed set of device dimensions.",
     tags: ["breakpoints", "responsive-design"]
   },
@@ -602,11 +602,11 @@ const cssResponsiveDesignQuestions = [
     question: "Which approach generally produces more maintainable responsive CSS?",
     options: [
       { id: "A", text: "Hundreds of device-specific breakpoints" },
-      { id: "B", text: "Content-driven breakpoints and a simple base layout enhanced progressively" },
-      { id: "C", text: "JavaScript-based width checks for every element" },
-      { id: "D", text: "Fixed widths everywhere" }
+      { id: "B", text: "JavaScript-based width checks for every element" },
+      { id: "C", text: "Fixed widths everywhere" },
+      { id: "D", text: "Content-driven breakpoints and a simple base layout enhanced progressively" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A small set of meaningful, content-driven breakpoints is generally easier to maintain than device-specific CSS for every possible screen.",
     tags: ["responsive-design", "maintainability", "breakpoints"]
   },
@@ -619,12 +619,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What is the likely problem with this CSS?\n\n.container {\n  width: 1200px;\n}",
     options: [
-      { id: "A", text: "It guarantees perfect responsiveness" },
-      { id: "B", text: "It can overflow or require horizontal scrolling on viewports narrower than 1200px" },
+      { id: "A", text: "It can overflow or require horizontal scrolling on viewports narrower than 1200px" },
+      { id: "B", text: "It guarantees perfect responsiveness" },
       { id: "C", text: "It makes the container automatically shrink" },
       { id: "D", text: "It converts the container into Grid" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A fixed width larger than the viewport can cause horizontal overflow on smaller screens.",
     tags: ["fixed-width", "overflow", "responsive"]
   },
@@ -637,12 +637,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "Which property is useful when you want an element to grow with available space but never exceed a limit?",
     options: [
-      { id: "A", text: "max-width" },
-      { id: "B", text: "position" },
+      { id: "A", text: "position" },
+      { id: "B", text: "max-width" },
       { id: "C", text: "z-index" },
       { id: "D", text: "float" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "max-width provides an upper limit while allowing the element to remain flexible below that limit.",
     tags: ["max-width", "responsive"]
   },
@@ -655,12 +655,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What is the advantage of using min() or max() in responsive CSS?",
     options: [
-      { id: "A", text: "They allow a CSS value to choose between responsive constraints without necessarily requiring a media query" },
-      { id: "B", text: "They only work for colors" },
-      { id: "C", text: "They create HTML elements" },
+      { id: "A", text: "They only work for colors" },
+      { id: "B", text: "They create HTML elements" },
+      { id: "C", text: "They allow a CSS value to choose between responsive constraints without necessarily requiring a media query" },
       { id: "D", text: "They disable responsive behavior" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "CSS min() and max() functions can express responsive sizing constraints directly in a property value.",
     tags: ["min", "max", "responsive-units"]
   },
@@ -673,12 +673,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Intermediate",
     question: "What does this do?\n\nwidth: min(90%, 1200px);",
     options: [
-      { id: "A", text: "The width becomes whichever is smaller: 90% of the containing context or 1200px" },
-      { id: "B", text: "The width is always 1200px" },
-      { id: "C", text: "The width is always 90px" },
-      { id: "D", text: "The width becomes whichever is larger" }
+      { id: "A", text: "The width is always 1200px" },
+      { id: "B", text: "The width is always 90px" },
+      { id: "C", text: "The width becomes whichever is larger" },
+      { id: "D", text: "The width becomes whichever is smaller: 90% of the containing context or 1200px" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "min() selects the smallest computed value, allowing the element to remain responsive while being capped at 1200px.",
     tags: ["min", "responsive", "max-width"]
   },
@@ -727,12 +727,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Advanced",
     question: "Which is a valid container query pattern?",
     options: [
-      { id: "A", text: "@container (min-width: 500px) { .card { display: grid; } }" },
-      { id: "B", text: "@viewport-container 500px { .card { display: grid; } }" },
-      { id: "C", text: "@media-container width > 500px { .card { display: grid; } }" },
+      { id: "A", text: "@viewport-container 500px { .card { display: grid; } }" },
+      { id: "B", text: "@media-container width > 500px { .card { display: grid; } }" },
+      { id: "C", text: "@container (min-width: 500px) { .card { display: grid; } }" },
       { id: "D", text: "@query (container: 500px) { .card { display: grid; } }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The @container at-rule applies styles based on the size of an eligible query container.",
     tags: ["container-queries", "responsive-design"]
   },
@@ -745,12 +745,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Advanced",
     question: "Why can container queries be particularly valuable for reusable UI components?",
     options: [
-      { id: "A", text: "A component can adapt to its available container space even when placed in different parts of an application" },
-      { id: "B", text: "They force every component to have the same layout" },
-      { id: "C", text: "They eliminate CSS inheritance" },
-      { id: "D", text: "They only work on full-screen pages" }
+      { id: "A", text: "They force every component to have the same layout" },
+      { id: "B", text: "They eliminate CSS inheritance" },
+      { id: "C", text: "They only work on full-screen pages" },
+      { id: "D", text: "A component can adapt to its available container space even when placed in different parts of an application" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A reusable card might appear in a sidebar, main content area, or modal. Container queries allow it to adapt to its actual available space rather than assuming the viewport width tells the whole story.",
     tags: ["container-queries", "components", "responsive"]
   },
@@ -781,12 +781,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Advanced",
     question: "A developer creates breakpoints at 320px, 375px, 390px, 414px, 430px, 768px, 820px, 834px, 1024px, 1280px, and many more. What is the biggest concern?",
     options: [
-      { id: "A", text: "The CSS becomes unnecessarily device-specific and harder to maintain" },
-      { id: "B", text: "More breakpoints always improve performance" },
+      { id: "A", text: "More breakpoints always improve performance" },
+      { id: "B", text: "The CSS becomes unnecessarily device-specific and harder to maintain" },
       { id: "C", text: "CSS allows only five breakpoints" },
       { id: "D", text: "Media queries stop working after ten breakpoints" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A large number of device-specific breakpoints can make responsive CSS brittle. Breakpoints should generally be driven by content and layout needs.",
     tags: ["breakpoints", "maintainability", "responsive-design"]
   },
@@ -800,11 +800,11 @@ const cssResponsiveDesignQuestions = [
     question: "Which approach is most appropriate for responsive typography that scales smoothly but stays within reasonable limits?",
     options: [
       { id: "A", text: "font-size: 72px;" },
-      { id: "B", text: "font-size: clamp(1.5rem, 4vw, 3rem);" },
-      { id: "C", text: "font-size: 100vw;" },
+      { id: "B", text: "font-size: 100vw;" },
+      { id: "C", text: "font-size: clamp(1.5rem, 4vw, 3rem);" },
       { id: "D", text: "font-size: fixed(1rem, 3rem);" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "clamp() provides a minimum, preferred responsive value, and maximum, making it useful for fluid typography.",
     tags: ["clamp", "fluid-typography"]
   },
@@ -817,12 +817,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Advanced",
     question: "Why is mobile-first CSS often considered beneficial for performance and maintainability?",
     options: [
-      { id: "A", text: "It starts with a simpler baseline and progressively adds complexity where larger screens need it" },
-      { id: "B", text: "It prevents desktop users from downloading CSS" },
-      { id: "C", text: "It eliminates all media queries" },
-      { id: "D", text: "It requires every component to use mobile-only HTML" }
+      { id: "A", text: "It prevents desktop users from downloading CSS" },
+      { id: "B", text: "It eliminates all media queries" },
+      { id: "C", text: "It requires every component to use mobile-only HTML" },
+      { id: "D", text: "It starts with a simpler baseline and progressively adds complexity where larger screens need it" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Mobile-first encourages a simple baseline and progressive enhancement, which can reduce unnecessary overrides and make the cascade easier to reason about.",
     tags: ["mobile-first", "maintainability", "performance"]
   },
@@ -871,12 +871,12 @@ const cssResponsiveDesignQuestions = [
     difficulty: "Advanced",
     question: "Which statement best reflects a strong responsive-design mindset?",
     options: [
-      { id: "A", text: "Build around content and available space rather than around a fixed list of devices" },
-      { id: "B", text: "Every device needs its own exact breakpoint" },
-      { id: "C", text: "Desktop layouts should always be designed first" },
+      { id: "A", text: "Every device needs its own exact breakpoint" },
+      { id: "B", text: "Desktop layouts should always be designed first" },
+      { id: "C", text: "Build around content and available space rather than around a fixed list of devices" },
       { id: "D", text: "Responsive design means simply making everything 100% wide" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Good responsive design focuses on how content and components behave as available space changes, rather than targeting only a handful of named devices.",
     tags: ["responsive-design", "best-practices"]
   },
@@ -890,11 +890,11 @@ const cssResponsiveDesignQuestions = [
     question: "A production React application contains reusable cards, dashboards, forms, and navigation. Which responsive strategy demonstrates the strongest overall approach?",
     options: [
       { id: "A", text: "Use fixed pixel dimensions everywhere and add JavaScript device detection" },
-      { id: "B", text: "Use a mobile-first baseline, flexible units and sizing functions, content-driven breakpoints, responsive Grid/Flexbox layouts, and container queries where component-level responsiveness is useful" },
-      { id: "C", text: "Create a separate CSS file for every phone model" },
-      { id: "D", text: "Use viewport width as the width of every component" }
+      { id: "B", text: "Create a separate CSS file for every phone model" },
+      { id: "C", text: "Use viewport width as the width of every component" },
+      { id: "D", text: "Use a mobile-first baseline, flexible units and sizing functions, content-driven breakpoints, responsive Grid/Flexbox layouts, and container queries where component-level responsiveness is useful" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A production-quality responsive system combines several techniques: mobile-first defaults, flexible sizing, meaningful media queries, modern layout systems, and container queries where local component context matters.",
     tags: ["responsive-design", "mobile-first", "media-queries", "container-queries", "best-practices"]
   }

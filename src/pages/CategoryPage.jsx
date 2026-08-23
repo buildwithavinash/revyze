@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router";
 import Header from "../components/common/Header";
 import Container from "../components/ui/Container";
 import QuizInfoModal from "../components/quiz/QuizInfoModal";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   getCategoryBySlug,
@@ -34,7 +34,10 @@ const CategoryPage = () => {
 
   const category = getCategoryBySlug(slug);
 
-  const quizzes = category ? getQuizzesByCategory(category.id) : [];
+  const quizzes = useMemo(
+    () => (category ? getQuizzesByCategory(category.id) : []),
+    [category],
+  );
 
   // Load progress + attempt history
   useEffect(() => {
@@ -63,7 +66,7 @@ const CategoryPage = () => {
     };
 
     loadQuizData();
-  }, [category?.id]);
+  }, [category, quizzes]);
 
   // Search + difficulty filtering
   const filteredQuizzes = quizzes.filter((quiz) => {

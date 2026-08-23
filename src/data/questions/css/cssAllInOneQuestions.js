@@ -25,12 +25,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which CSS property changes the background color of an element?",
     options: [
-      { id: "A", text: "background-color" },
-      { id: "B", text: "color-background" },
+      { id: "A", text: "color-background" },
+      { id: "B", text: "background-color" },
       { id: "C", text: "bg-color" },
       { id: "D", text: "background-fill" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "background-color sets the background color of an element.",
     tags: ["background", "color"]
   },
@@ -62,11 +62,11 @@ const cssAllInOneQuestions = [
     question: "Which selector targets an element with class=\"card\"?",
     options: [
       { id: "A", text: "#card" },
-      { id: "B", text: ".card" },
-      { id: "C", text: "card" },
-      { id: "D", text: "*card" }
+      { id: "B", text: "card" },
+      { id: "C", text: "*card" },
+      { id: "D", text: ".card" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A period followed by the class name creates a class selector.",
     tags: ["selectors", "classes"]
   },
@@ -79,12 +79,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which selector targets an element with id=\"header\"?",
     options: [
-      { id: "A", text: ".header" },
-      { id: "B", text: "header" },
-      { id: "C", text: "#header" },
+      { id: "A", text: "#header" },
+      { id: "B", text: ".header" },
+      { id: "C", text: "header" },
       { id: "D", text: "*header" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The # prefix is used for an ID selector.",
     tags: ["selectors", "id"]
   },
@@ -116,11 +116,11 @@ const cssAllInOneQuestions = [
     question: "Which property controls the font size of text?",
     options: [
       { id: "A", text: "text-size" },
-      { id: "B", text: "font-size" },
-      { id: "C", text: "font-scale" },
+      { id: "B", text: "font-scale" },
+      { id: "C", text: "font-size" },
       { id: "D", text: "size" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "font-size controls the size of text.",
     tags: ["typography", "font-size"]
   },
@@ -134,11 +134,11 @@ const cssAllInOneQuestions = [
     question: "Which property controls the space between the content and an element's border?",
     options: [
       { id: "A", text: "margin" },
-      { id: "B", text: "padding" },
-      { id: "C", text: "gap" },
-      { id: "D", text: "spacing" }
+      { id: "B", text: "gap" },
+      { id: "C", text: "spacing" },
+      { id: "D", text: "padding" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Padding creates space inside the element, between its content and border.",
     tags: ["box-model", "padding"]
   },
@@ -151,12 +151,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which property creates space outside an element's border?",
     options: [
-      { id: "A", text: "padding" },
-      { id: "B", text: "margin" },
+      { id: "A", text: "margin" },
+      { id: "B", text: "padding" },
       { id: "C", text: "gap" },
       { id: "D", text: "outside-space" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Margin creates space outside an element's border.",
     tags: ["box-model", "margin"]
   },
@@ -169,12 +169,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which parts make up the traditional CSS box model?",
     options: [
-      { id: "A", text: "Content, padding, border, and margin" },
-      { id: "B", text: "Content, grid, flex, and margin" },
+      { id: "A", text: "Content, grid, flex, and margin" },
+      { id: "B", text: "Content, padding, border, and margin" },
       { id: "C", text: "Width, height, display, and position" },
       { id: "D", text: "Text, background, shadow, and border" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The CSS box model consists of content, padding, border, and margin.",
     tags: ["box-model", "layout"]
   },
@@ -187,12 +187,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What does box-sizing: border-box do?",
     options: [
-      { id: "A", text: "Includes padding and border within the declared width and height" },
-      { id: "B", text: "Removes the border" },
-      { id: "C", text: "Makes margin part of the width" },
+      { id: "A", text: "Removes the border" },
+      { id: "B", text: "Makes margin part of the width" },
+      { id: "C", text: "Includes padding and border within the declared width and height" },
       { id: "D", text: "Makes every element inline" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "With border-box, the declared width and height include the content, padding, and border.",
     tags: ["box-sizing", "box-model"]
   },
@@ -206,11 +206,11 @@ const cssAllInOneQuestions = [
     question: "Given box-sizing: border-box; width: 200px; padding: 20px; border: 5px solid; what is the total outer width of the element, ignoring margin?",
     options: [
       { id: "A", text: "150px" },
-      { id: "B", text: "200px" },
-      { id: "C", text: "230px" },
-      { id: "D", text: "250px" }
+      { id: "B", text: "230px" },
+      { id: "C", text: "250px" },
+      { id: "D", text: "200px" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "With border-box, the declared width already includes the 20px padding on both sides and 5px border on both sides.",
     tags: ["box-sizing", "box-model", "width"]
   },
@@ -241,12 +241,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is a key difference between inline and block elements?",
     options: [
-      { id: "A", text: "Block elements normally start on a new line, while inline elements participate in the surrounding inline flow" },
-      { id: "B", text: "Inline elements can never contain text" },
+      { id: "A", text: "Inline elements can never contain text" },
+      { id: "B", text: "Block elements normally start on a new line, while inline elements participate in the surrounding inline flow" },
       { id: "C", text: "Block elements cannot have padding" },
       { id: "D", text: "Inline elements always occupy the full viewport width" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Block-level boxes generally start on a new line and can take available width, while inline boxes flow alongside surrounding inline content.",
     tags: ["display", "inline", "block"]
   },
@@ -260,11 +260,11 @@ const cssAllInOneQuestions = [
     question: "What does display: none do?",
     options: [
       { id: "A", text: "Makes the element transparent but keeps its layout space" },
-      { id: "B", text: "Removes the element from the layout" },
-      { id: "C", text: "Moves the element behind other elements" },
+      { id: "B", text: "Moves the element behind other elements" },
+      { id: "C", text: "Removes the element from the layout" },
       { id: "D", text: "Makes the element inline" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "display: none causes the element to generate no box, so it does not occupy layout space.",
     tags: ["display", "none"]
   },
@@ -277,12 +277,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which declaration creates a flex container?",
     options: [
-      { id: "A", text: "display: flex;" },
-      { id: "B", text: "position: flex;" },
-      { id: "C", text: "layout: flex;" },
-      { id: "D", text: "flex: container;" }
+      { id: "A", text: "position: flex;" },
+      { id: "B", text: "layout: flex;" },
+      { id: "C", text: "flex: container;" },
+      { id: "D", text: "display: flex;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "display: flex establishes a flex formatting context for the element's children.",
     tags: ["flexbox", "display"]
   },
@@ -332,11 +332,11 @@ const cssAllInOneQuestions = [
     question: "Which flexbox property controls alignment along the cross axis for a single-line flex container?",
     options: [
       { id: "A", text: "justify-content" },
-      { id: "B", text: "align-items" },
-      { id: "C", text: "cross-content" },
+      { id: "B", text: "cross-content" },
+      { id: "C", text: "align-items" },
       { id: "D", text: "item-position" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "align-items controls the cross-axis alignment of flex items.",
     tags: ["flexbox", "align-items"]
   },
@@ -349,12 +349,12 @@ const cssAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which combination is commonly used to center an item horizontally and vertically inside a flex container?",
     options: [
-      { id: "A", text: "justify-content: center; align-items: center;" },
-      { id: "B", text: "text-align: center; vertical-align: center;" },
-      { id: "C", text: "margin: center; padding: center;" },
-      { id: "D", text: "position: center; display: block;" }
+      { id: "A", text: "text-align: center; vertical-align: center;" },
+      { id: "B", text: "margin: center; padding: center;" },
+      { id: "C", text: "position: center; display: block;" },
+      { id: "D", text: "justify-content: center; align-items: center;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "For a default row-direction flex container, justify-content centers along the main axis and align-items centers along the cross axis.",
     tags: ["flexbox", "alignment", "centering"]
   },
@@ -385,12 +385,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does this declaration create?\n\ngrid-template-columns: repeat(3, 1fr);",
     options: [
-      { id: "A", text: "Three equal-width grid columns" },
-      { id: "B", text: "Three rows of fixed height" },
+      { id: "A", text: "Three rows of fixed height" },
+      { id: "B", text: "Three equal-width grid columns" },
       { id: "C", text: "One column spanning three rows" },
       { id: "D", text: "Three flex containers" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "repeat(3, 1fr) creates three tracks, each taking one equal fraction of the available grid space.",
     tags: ["grid", "columns", "fr"]
   },
@@ -403,12 +403,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does the fr unit represent in CSS Grid?",
     options: [
-      { id: "A", text: "A fraction of the available grid space" },
-      { id: "B", text: "A fixed number of pixels" },
-      { id: "C", text: "A percentage of the viewport only" },
+      { id: "A", text: "A fixed number of pixels" },
+      { id: "B", text: "A percentage of the viewport only" },
+      { id: "C", text: "A fraction of the available grid space" },
       { id: "D", text: "A font-relative unit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The fr unit represents a fraction of the available space in the grid container.",
     tags: ["grid", "fr", "layout"]
   },
@@ -421,12 +421,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which property creates space between grid or flex items?",
     options: [
-      { id: "A", text: "gap" },
-      { id: "B", text: "spacing" },
-      { id: "C", text: "item-gap-only" },
-      { id: "D", text: "space-between" }
+      { id: "A", text: "spacing" },
+      { id: "B", text: "item-gap-only" },
+      { id: "C", text: "space-between" },
+      { id: "D", text: "gap" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The gap property controls gutters between rows and columns in grid and flex layouts.",
     tags: ["grid", "flexbox", "gap"]
   },
@@ -457,12 +457,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a key characteristic of position: absolute?",
     options: [
-      { id: "A", text: "The element is removed from normal flow and positioned relative to an appropriate containing block" },
-      { id: "B", text: "The element always stays in normal flow" },
+      { id: "A", text: "The element always stays in normal flow" },
+      { id: "B", text: "The element is removed from normal flow and positioned relative to an appropriate containing block" },
       { id: "C", text: "The element is always positioned relative to the viewport" },
       { id: "D", text: "The element cannot use top, right, bottom, or left" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Absolutely positioned elements are removed from normal flow and positioned relative to their containing block.",
     tags: ["position", "absolute", "layout"]
   },
@@ -475,12 +475,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "An absolutely positioned element is commonly positioned relative to which ancestor when one establishes the appropriate containing block?",
     options: [
-      { id: "A", text: "A positioned ancestor" },
-      { id: "B", text: "The nearest sibling" },
-      { id: "C", text: "The first text node" },
+      { id: "A", text: "The nearest sibling" },
+      { id: "B", text: "The first text node" },
+      { id: "C", text: "A positioned ancestor" },
       { id: "D", text: "The browser's CSS file" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A positioned ancestor can establish the containing block used for an absolutely positioned descendant.",
     tags: ["position", "absolute", "containing-block"]
   },
@@ -493,12 +493,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does position: fixed generally do?",
     options: [
-      { id: "A", text: "Positions the element relative to the viewport and keeps it fixed during scrolling, subject to relevant containing-block behavior" },
-      { id: "B", text: "Keeps the element in normal document flow" },
-      { id: "C", text: "Makes the element relative to its previous sibling" },
-      { id: "D", text: "Automatically places the element at the center" }
+      { id: "A", text: "Keeps the element in normal document flow" },
+      { id: "B", text: "Makes the element relative to its previous sibling" },
+      { id: "C", text: "Automatically places the element at the center" },
+      { id: "D", text: "Positions the element relative to the viewport and keeps it fixed during scrolling, subject to relevant containing-block behavior" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Fixed positioning generally removes the element from normal flow and anchors it to the viewport, although certain properties can establish a different containing block.",
     tags: ["position", "fixed"]
   },
@@ -529,12 +529,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of z-index?",
     options: [
-      { id: "A", text: "To influence the stacking order of positioned or stacking-context elements" },
-      { id: "B", text: "To control horizontal width" },
+      { id: "A", text: "To control horizontal width" },
+      { id: "B", text: "To influence the stacking order of positioned or stacking-context elements" },
       { id: "C", text: "To control font size" },
       { id: "D", text: "To change the DOM order" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "z-index participates in determining stacking order within the relevant stacking contexts. It does not change DOM order.",
     tags: ["z-index", "stacking-context", "position"]
   },
@@ -548,11 +548,11 @@ const cssAllInOneQuestions = [
     question: "Which CSS unit is relative to the root element's font size?",
     options: [
       { id: "A", text: "em" },
-      { id: "B", text: "rem" },
-      { id: "C", text: "vh" },
+      { id: "B", text: "vh" },
+      { id: "C", text: "rem" },
       { id: "D", text: "vw" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "rem is relative to the root element's font size, typically the html element's computed font size.",
     tags: ["units", "rem", "typography"]
   },
@@ -565,12 +565,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is em generally relative to when used for font-size?",
     options: [
-      { id: "A", text: "The element's inherited or computed font-size context" },
-      { id: "B", text: "Always the viewport width" },
-      { id: "C", text: "Always the root font size" },
-      { id: "D", text: "The screen resolution" }
+      { id: "A", text: "Always the viewport width" },
+      { id: "B", text: "Always the root font size" },
+      { id: "C", text: "The screen resolution" },
+      { id: "D", text: "The element's inherited or computed font-size context" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The em unit is relative to the relevant font-size. For font-size itself, its relative calculation is based on the parent's font size.",
     tags: ["units", "em", "typography"]
   },
@@ -601,12 +601,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which CSS feature is primarily used to apply styles based on viewport or device conditions?",
     options: [
-      { id: "A", text: "Media queries" },
-      { id: "B", text: "Pseudo-elements" },
+      { id: "A", text: "Pseudo-elements" },
+      { id: "B", text: "Media queries" },
       { id: "C", text: "CSS variables" },
       { id: "D", text: "Keyframes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Media queries allow CSS rules to be conditionally applied based on characteristics such as viewport width, orientation, and user preferences.",
     tags: ["responsive-design", "media-queries"]
   },
@@ -619,12 +619,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does this media query do?\n\n@media (max-width: 768px) { ... }",
     options: [
-      { id: "A", text: "Applies the enclosed styles when the viewport matches a maximum width of 768px" },
-      { id: "B", text: "Applies the styles only when the viewport is wider than 768px" },
-      { id: "C", text: "Sets every element to 768px wide" },
+      { id: "A", text: "Applies the styles only when the viewport is wider than 768px" },
+      { id: "B", text: "Sets every element to 768px wide" },
+      { id: "C", text: "Applies the enclosed styles when the viewport matches a maximum width of 768px" },
       { id: "D", text: "Creates a 768px margin" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The max-width condition matches viewports at or below the specified threshold, subject to media-query evaluation.",
     tags: ["media-queries", "responsive-design"]
   },
@@ -637,12 +637,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is CSS specificity used for?",
     options: [
-      { id: "A", text: "Determining which competing CSS declarations have priority" },
-      { id: "B", text: "Determining the number of HTML elements" },
-      { id: "C", text: "Determining browser screen resolution" },
-      { id: "D", text: "Determining file size" }
+      { id: "A", text: "Determining the number of HTML elements" },
+      { id: "B", text: "Determining browser screen resolution" },
+      { id: "C", text: "Determining file size" },
+      { id: "D", text: "Determining which competing CSS declarations have priority" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Specificity is one part of the cascade that determines which declaration wins when multiple declarations apply to the same element and property.",
     tags: ["specificity", "cascade", "selectors"]
   },
@@ -655,12 +655,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which selector generally has greater specificity?",
     options: [
-      { id: "A", text: ".card" },
-      { id: "B", text: "#card" },
+      { id: "A", text: "#card" },
+      { id: "B", text: ".card" },
       { id: "C", text: "div" },
       { id: "D", text: "*" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "An ID selector has greater specificity than a class selector, type selector, or universal selector.",
     tags: ["specificity", "selectors", "id"]
   },
@@ -673,12 +673,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does CSS inheritance mean?",
     options: [
-      { id: "A", text: "Some property values can be inherited by descendants from their ancestors" },
-      { id: "B", text: "Every CSS property automatically inherits" },
+      { id: "A", text: "Every CSS property automatically inherits" },
+      { id: "B", text: "Some property values can be inherited by descendants from their ancestors" },
       { id: "C", text: "Child elements always override parent styles" },
       { id: "D", text: "Inheritance only applies to CSS variables" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Certain CSS properties inherit by default, while others do not. The inherit keyword can explicitly request inheritance.",
     tags: ["inheritance", "cascade"]
   },
@@ -691,12 +691,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does the CSS cascade determine?",
     options: [
-      { id: "A", text: "Which applicable declarations win based on origin, importance, specificity, scope, and source order" },
-      { id: "B", text: "How HTML elements are parsed into the DOM only" },
-      { id: "C", text: "How JavaScript functions execute" },
+      { id: "A", text: "How HTML elements are parsed into the DOM only" },
+      { id: "B", text: "How JavaScript functions execute" },
+      { id: "C", text: "Which applicable declarations win based on origin, importance, specificity, scope, and source order" },
       { id: "D", text: "How images are compressed" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The cascade is the algorithm that resolves competing CSS declarations using several factors, including origin, importance, specificity, scope, and order.",
     tags: ["cascade", "specificity", "css"]
   },
@@ -709,12 +709,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does a CSS custom property allow developers to do?",
     options: [
-      { id: "A", text: "Store reusable CSS values that can be referenced with var()" },
-      { id: "B", text: "Create JavaScript variables automatically" },
-      { id: "C", text: "Create new HTML elements" },
-      { id: "D", text: "Replace media queries" }
+      { id: "A", text: "Create JavaScript variables automatically" },
+      { id: "B", text: "Create new HTML elements" },
+      { id: "C", text: "Replace media queries" },
+      { id: "D", text: "Store reusable CSS values that can be referenced with var()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom properties such as --primary-color can store reusable values and be consumed with var(--primary-color).",
     tags: ["css-variables", "custom-properties"]
   },
@@ -745,12 +745,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a pseudo-class?",
     options: [
-      { id: "A", text: "A selector keyword that targets an element based on a state or condition" },
-      { id: "B", text: "A CSS variable" },
+      { id: "A", text: "A CSS variable" },
+      { id: "B", text: "A selector keyword that targets an element based on a state or condition" },
       { id: "C", text: "A replacement for an HTML element" },
       { id: "D", text: "A JavaScript class" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Pseudo-classes such as :hover, :focus, and :checked select elements based on state or structural conditions.",
     tags: ["pseudo-classes", "selectors"]
   },
@@ -763,12 +763,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a pseudo-element?",
     options: [
-      { id: "A", text: "A selector that represents a conceptual part of an element, such as ::before or ::after" },
-      { id: "B", text: "A real HTML element automatically inserted into the DOM" },
-      { id: "C", text: "A JavaScript-generated component" },
+      { id: "A", text: "A real HTML element automatically inserted into the DOM" },
+      { id: "B", text: "A JavaScript-generated component" },
+      { id: "C", text: "A selector that represents a conceptual part of an element, such as ::before or ::after" },
       { id: "D", text: "A CSS media query" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Pseudo-elements represent conceptual portions of elements and can be styled with selectors such as ::before and ::after.",
     tags: ["pseudo-elements", "selectors"]
   },
@@ -781,12 +781,12 @@ const cssAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which property controls the transparency of an entire element, including its descendants?",
     options: [
-      { id: "A", text: "opacity" },
-      { id: "B", text: "alpha-only" },
-      { id: "C", text: "transparent" },
-      { id: "D", text: "visibility-alpha" }
+      { id: "A", text: "alpha-only" },
+      { id: "B", text: "transparent" },
+      { id: "C", text: "visibility-alpha" },
+      { id: "D", text: "opacity" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "opacity controls the opacity of the element and its rendered descendants as a whole.",
     tags: ["opacity", "visual-effects"]
   },
@@ -817,12 +817,12 @@ const cssAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which situation can create a new stacking context?",
     options: [
-      { id: "A", text: "An element with certain properties such as opacity less than 1 or transform applied" },
-      { id: "B", text: "Every element with margin: 0" },
+      { id: "A", text: "Every element with margin: 0" },
+      { id: "B", text: "An element with certain properties such as opacity less than 1 or transform applied" },
       { id: "C", text: "Every paragraph element" },
       { id: "D", text: "Any element with color set" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Several CSS features can establish stacking contexts, including opacity below 1 and transform values other than none. Stacking contexts affect how z-index is resolved.",
     tags: ["stacking-context", "z-index", "advanced-css"]
   },
@@ -835,12 +835,12 @@ const cssAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why might z-index: 9999 fail to place an element above another element with z-index: 10?",
     options: [
-      { id: "A", text: "The elements may belong to different stacking contexts, so the numbers are not compared globally" },
-      { id: "B", text: "z-index only accepts values below 100" },
-      { id: "C", text: "z-index only works with Grid" },
+      { id: "A", text: "z-index only accepts values below 100" },
+      { id: "B", text: "z-index only works with Grid" },
+      { id: "C", text: "The elements may belong to different stacking contexts, so the numbers are not compared globally" },
       { id: "D", text: "Large z-index values are automatically ignored" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "z-index values are resolved within stacking contexts. A child with a huge z-index cannot escape its parent's stacking context to outrank an unrelated stacking context.",
     tags: ["z-index", "stacking-context", "advanced-css"]
   },
@@ -853,12 +853,12 @@ const cssAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which approach is generally most appropriate for a responsive card grid that should automatically adapt to available width?",
     options: [
-      { id: "A", text: "CSS Grid with repeat(auto-fit, minmax(...))" },
-      { id: "B", text: "A fixed width for every card with no media queries or flexible layout" },
-      { id: "C", text: "Absolute positioning every card using pixel coordinates" },
-      { id: "D", text: "Using <br> elements to create columns" }
+      { id: "A", text: "A fixed width for every card with no media queries or flexible layout" },
+      { id: "B", text: "Absolute positioning every card using pixel coordinates" },
+      { id: "C", text: "Using <br> elements to create columns" },
+      { id: "D", text: "CSS Grid with repeat(auto-fit, minmax(...))" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Grid's auto-fit combined with minmax() can create responsive tracks that adapt to the available container width without requiring a breakpoint for every possible size.",
     tags: ["grid", "responsive-design", "minmax", "auto-fit"]
   },
@@ -889,24 +889,12 @@ const cssAllInOneQuestions = [
     difficulty: "Advanced",
     question: "A developer is building a responsive dashboard. Which architecture demonstrates the strongest overall CSS understanding?",
     options: [
-      {
-        id: "A",
-        text: "Use Grid/Flexbox for layout, box-sizing: border-box, semantic class-based selectors, CSS custom properties for reusable values, responsive units and media queries where appropriate, and controlled stacking contexts"
-      },
-      {
-        id: "B",
-        text: "Use absolute positioning for every component and fixed pixel dimensions for every screen size"
-      },
-      {
-        id: "C",
-        text: "Use IDs for every element, !important everywhere, and hundreds of arbitrary z-index values"
-      },
-      {
-        id: "D",
-        text: "Use inline styles and <br> elements for layout and spacing"
-      }
+      { id: "A", text: "Use absolute positioning for every component and fixed pixel dimensions for every screen size" },
+      { id: "B", text: "Use Grid/Flexbox for layout, box-sizing: border-box, semantic class-based selectors, CSS custom properties for reusable values, responsive units and media queries where appropriate, and controlled stacking contexts" },
+      { id: "C", text: "Use IDs for every element, !important everywhere, and hundreds of arbitrary z-index values" },
+      { id: "D", text: "Use inline styles and <br> elements for layout and spacing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A maintainable responsive CSS architecture uses the platform's layout systems, predictable box sizing, reusable custom properties, appropriate selectors, responsive sizing, and deliberate stacking behavior rather than relying on brittle positioning and specificity hacks.",
     tags: ["css-architecture", "responsive-design", "grid", "flexbox", "maintainability"]
   }

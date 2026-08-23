@@ -1,11 +1,15 @@
 import { Link, useNavigate, useParams } from "react-router";
-import { calculateQuizResults, getQuizBySlug } from "../services/quizService";
+import { useEffect, useState } from "react";
+import {
+  calculateQuizResults,
+  getQuizBySlug,
+} from "../services/quizService";
 import QuizHeader from "../components/quiz/QuizHeader";
 import QuestionCard from "../components/quiz/QuestionCard";
 import Container from "../components/ui/Container";
 import QuizFooter from "../components/quiz/QuizFooter";
-import { useEffect, useState } from "react";
 import FinishQuizModal from "../components/quiz/FinishQuizModal";
+import ResumeQuizModal from "../components/quiz/ResumeQuizModal";
 import { loadQuestionsForQuiz } from "../services/questionService";
 import {
   deleteQuizProgress,
@@ -13,7 +17,8 @@ import {
   saveQuizAttempt,
   saveQuizProgress,
 } from "../services/storageService";
-import ResumeQuizModal from "../components/quiz/ResumeQuizModal";
+
+const createQuizSessionSeed = () => crypto.randomUUID();
 
 const QuizPage = () => {
   const { slug } = useParams();
@@ -25,56 +30,68 @@ const QuizPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [savedProgress, setSavedProgress] = useState(null);
+  const [quizSessionSeed, setQuizSessionSeed] = useState(null);
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showFinishModal, setShowFinishModal] = useState(false);
-  const [quizStartedAt] = useState(() => Date.now());
+  const [quizStartedAt, setQuizStartedAt] = useState(() => Date.now());
   const [showResumeModal, setShowResumeModal] = useState(false);
 
-  // Load questions for the selected quiz
   useEffect(() => {
-    if (!quiz) return;
+    if (!quiz) {
+      return;
+    }
 
-    const loadQuizQuestions = async () => {
+    let isActive = true;
+
+    const loadQuizData = async () => {
       try {
         setIsLoading(true);
         setError(null);
+        setShowFinishModal(false);
+        setShowResumeModal(false);
 
-        const data = await loadQuestionsForQuiz(quiz);
-
-        setQuestions(data);
-      } catch (error) {
-        console.error(error);
-        setError("Unable to load quiz questions.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadQuizQuestions();
-  }, [quiz?.id]);
-
-  // Load saved progress
-  useEffect(() => {
-    if (!quiz) return;
-
-    const loadSavedProgress = async () => {
-      try {
         const progress = await getQuizProgress(quiz.id);
+        const seed = progress?.shuffleSeed
+          ? progress.shuffleSeed
+          : progress
+            ? "__legacy__"
+            : createQuizSessionSeed();
 
-        if (progress) {
-          setSavedProgress(progress);
-          setShowResumeModal(true);
+        const data = await loadQuestionsForQuiz(quiz, { seed });
+
+        if (!isActive) {
+          return;
         }
-      } catch (error) {
-        console.error("Failed to laod quiz progress:", error);
+
+        setSavedProgress(progress || null);
+        setQuizSessionSeed(seed);
+        setQuestions(data);
+        setAnswers(progress?.answers || {});
+        setCurrentQuestionIndex(progress?.currentQuestionIndex ?? 0);
+        setQuizStartedAt(progress?.startedAt ?? Date.now());
+        setShowResumeModal(Boolean(progress));
+      } catch (loadError) {
+        console.error(loadError);
+
+        if (isActive) {
+          setError("Unable to load quiz questions.");
+        }
+      } finally {
+        if (isActive) {
+          setIsLoading(false);
+        }
       }
     };
 
-    loadSavedProgress();
-  }, [quiz?.id]);
-  // Invalid quiz
+    loadQuizData();
+
+    return () => {
+      isActive = false;
+    };
+  }, [quiz]);
+
   if (!quiz) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
@@ -87,16 +104,14 @@ const QuizPage = () => {
     );
   }
 
-  // Loading
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p>Loading quiz...</p>
+        <p className="text-sm text-text-secondary">Loading quiz...</p>
       </div>
     );
   }
 
-  // Loading error
   if (error) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
@@ -113,7 +128,6 @@ const QuizPage = () => {
     );
   }
 
-  // Quiz exists, loading finished, but no questions
   if (questions.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
@@ -130,36 +144,39 @@ const QuizPage = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const handleNext = async () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      const nextQuestionIndex = currentQuestionIndex + 1;
-
-      setCurrentQuestionIndex(nextQuestionIndex);
-
-      await saveQuizProgress({
-        quizId: quiz.id,
-        currentQuestionIndex: nextQuestionIndex,
-        answers,
-        startedAt: quizStartedAt,
-        updatedAt: Date.now(),
-      });
+  const persistProgress = async (nextAnswers, nextQuestionIndex) => {
+    if (!quizSessionSeed) {
+      return;
     }
+
+    await saveQuizProgress({
+      quizId: quiz.id,
+      currentQuestionIndex: nextQuestionIndex,
+      answers: nextAnswers,
+      startedAt: quizStartedAt,
+      shuffleSeed: quizSessionSeed,
+      updatedAt: Date.now(),
+    });
+  };
+
+  const handleNext = async () => {
+    if (currentQuestionIndex >= questions.length - 1) {
+      return;
+    }
+
+    const nextQuestionIndex = currentQuestionIndex + 1;
+    setCurrentQuestionIndex(nextQuestionIndex);
+    await persistProgress(answers, nextQuestionIndex);
   };
 
   const handlePrevious = async () => {
-    if (currentQuestionIndex > 0) {
-      const previousQuestionIndex = currentQuestionIndex - 1;
-
-      setCurrentQuestionIndex(previousQuestionIndex);
-
-      await saveQuizProgress({
-        quizId: quiz.id,
-        currentQuestionIndex: previousQuestionIndex,
-        answers,
-        startedAt: quizStartedAt,
-        updatedAt: Date.now(),
-      });
+    if (currentQuestionIndex <= 0) {
+      return;
     }
+
+    const previousQuestionIndex = currentQuestionIndex - 1;
+    setCurrentQuestionIndex(previousQuestionIndex);
+    await persistProgress(answers, previousQuestionIndex);
   };
 
   const handleAnswerSelect = async (questionId, optionId) => {
@@ -169,32 +186,32 @@ const QuizPage = () => {
     };
 
     setAnswers(updatedAnswers);
-
-    await saveQuizProgress({
-      quizId: quiz.id,
-      currentQuestionIndex,
-      answers: updatedAnswers,
-      startedAt: quizStartedAt,
-      updatedAt: Date.now(),
-    });
+    await persistProgress(updatedAnswers, currentQuestionIndex);
   };
 
   const handleContinueQuiz = () => {
-    if (!savedProgress) return;
+    if (!savedProgress) {
+      return;
+    }
 
     setAnswers(savedProgress.answers || {});
-
     setCurrentQuestionIndex(savedProgress.currentQuestionIndex || 0);
-
+    setQuizStartedAt(savedProgress.startedAt || Date.now());
     setShowResumeModal(false);
   };
 
   const handleStartAgain = async () => {
+    const freshSeed = createQuizSessionSeed();
+    const freshQuestions = await loadQuestionsForQuiz(quiz, { seed: freshSeed });
+
     await deleteQuizProgress(quiz.id);
 
+    setSavedProgress(null);
+    setQuizSessionSeed(freshSeed);
+    setQuestions(freshQuestions);
     setAnswers({});
     setCurrentQuestionIndex(0);
-    setSavedProgress(null);
+    setQuizStartedAt(Date.now());
     setShowResumeModal(false);
   };
 
@@ -206,29 +223,34 @@ const QuizPage = () => {
     setShowFinishModal(false);
 
     const results = calculateQuizResults(questions, answers);
-
     const attempt = {
       quizId: quiz.id,
       answers,
       results,
       startedAt: quizStartedAt,
       completedAt: Date.now(),
+      shuffleSeed: quizSessionSeed,
     };
 
     try {
-      await saveQuizAttempt(attempt);
+      const attemptId = await saveQuizAttempt(attempt);
 
       await deleteQuizProgress(quiz.id);
+
+      sessionStorage.setItem("revyze:lastAttemptId", String(attemptId));
 
       navigate("/results", {
         state: {
           quiz,
           results,
           answers,
+          attemptId,
+          shuffleSeed: quizSessionSeed,
         },
       });
-    } catch (error) {
-      console.error("Failed to finish quiz:", error);
+    } catch (finishError) {
+      console.error("Failed to finish quiz:", finishError);
+      setError("Unable to save your quiz attempt.");
     }
   };
 

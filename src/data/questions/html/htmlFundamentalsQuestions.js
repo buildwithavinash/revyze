@@ -25,12 +25,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of HTML?",
     options: [
-      { id: "A", text: "To structure and describe the content of a web document" },
-      { id: "B", text: "To style every element with colors and animations" },
+      { id: "A", text: "To style every element with colors and animations" },
+      { id: "B", text: "To structure and describe the content of a web document" },
       { id: "C", text: "To create database tables" },
       { id: "D", text: "To execute server-side JavaScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "HTML provides the structure and meaning of web content. CSS is primarily responsible for presentation, while JavaScript provides behavior and interactivity.",
     tags: ["html", "structure", "fundamentals"]
   },
@@ -43,12 +43,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which declaration is normally placed at the beginning of a modern HTML document?",
     options: [
-      { id: "A", text: "<!DOCTYPE html>" },
-      { id: "B", text: "<DOCTYPE HTML5>" },
-      { id: "C", text: "<html version=\"5\">" },
+      { id: "A", text: "<DOCTYPE HTML5>" },
+      { id: "B", text: "<html version=\"5\">" },
+      { id: "C", text: "<!DOCTYPE html>" },
       { id: "D", text: "<meta doctype=\"html\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<!DOCTYPE html>` is the HTML5 doctype declaration. It tells the browser to interpret the document using standards mode.",
     tags: ["doctype", "html5", "document-structure"]
   },
@@ -61,12 +61,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is the root element of an HTML document?",
     options: [
-      { id: "A", text: "<html>" },
-      { id: "B", text: "<body>" },
-      { id: "C", text: "<document>" },
-      { id: "D", text: "<root>" }
+      { id: "A", text: "<body>" },
+      { id: "B", text: "<document>" },
+      { id: "C", text: "<root>" },
+      { id: "D", text: "<html>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<html>` element is the root of the document and contains the `<head>` and `<body>` elements.",
     tags: ["html", "root-element", "document-structure"]
   },
@@ -97,12 +97,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the <head> element?",
     options: [
-      { id: "A", text: "To contain document metadata and linked resources" },
-      { id: "B", text: "To contain all visible page content" },
+      { id: "A", text: "To contain all visible page content" },
+      { id: "B", text: "To contain document metadata and linked resources" },
       { id: "C", text: "To contain only the website header" },
       { id: "D", text: "To contain JavaScript variables" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<head>` contains metadata and resources such as the document title, character encoding, stylesheets, and other information about the document.",
     tags: ["head", "metadata", "document-structure"]
   },
@@ -115,12 +115,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the <body> element?",
     options: [
-      { id: "A", text: "To contain the document's main content presented to the user" },
-      { id: "B", text: "To define only the browser tab title" },
-      { id: "C", text: "To store HTTP request headers" },
+      { id: "A", text: "To define only the browser tab title" },
+      { id: "B", text: "To store HTTP request headers" },
+      { id: "C", text: "To contain the document's main content presented to the user" },
       { id: "D", text: "To define the HTML version" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<body>` contains the content of the HTML document, including headings, paragraphs, images, links, forms, and other page content.",
     tags: ["body", "document-structure", "html"]
   },
@@ -133,12 +133,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element defines the title of the HTML document?",
     options: [
-      { id: "A", text: "<title>" },
-      { id: "B", text: "<h1>" },
-      { id: "C", text: "<heading>" },
-      { id: "D", text: "<document-title>" }
+      { id: "A", text: "<h1>" },
+      { id: "B", text: "<heading>" },
+      { id: "C", text: "<document-title>" },
+      { id: "D", text: "<title>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<title>` element defines the document title, which browsers commonly display in the browser tab or window title.",
     tags: ["title", "head", "metadata"]
   },
@@ -169,12 +169,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element creates the largest heading level in HTML?",
     options: [
-      { id: "A", text: "<h1>" },
-      { id: "B", text: "<h6>" },
+      { id: "A", text: "<h6>" },
+      { id: "B", text: "<h1>" },
       { id: "C", text: "<heading>" },
       { id: "D", text: "<h0>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "HTML provides heading elements from `<h1>` through `<h6>`, with `<h1>` representing the highest heading level.",
     tags: ["headings", "h1", "html-elements"]
   },
@@ -187,12 +187,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element represents a paragraph?",
     options: [
-      { id: "A", text: "<p>" },
-      { id: "B", text: "<paragraph>" },
-      { id: "C", text: "<text>" },
+      { id: "A", text: "<paragraph>" },
+      { id: "B", text: "<text>" },
+      { id: "C", text: "<p>" },
       { id: "D", text: "<para>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<p>` element represents a paragraph of text.",
     tags: ["paragraphs", "p", "text"]
   },
@@ -205,12 +205,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What will the browser interpret this as?\n\n<h1>Welcome</h1>\n<p>Hello, developer!</p>",
     options: [
-      { id: "A", text: "A heading followed by a paragraph" },
-      { id: "B", text: "Two paragraphs" },
-      { id: "C", text: "One heading containing a paragraph" },
-      { id: "D", text: "Invalid HTML because headings cannot contain text" }
+      { id: "A", text: "Two paragraphs" },
+      { id: "B", text: "One heading containing a paragraph" },
+      { id: "C", text: "Invalid HTML because headings cannot contain text" },
+      { id: "D", text: "A heading followed by a paragraph" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<h1>` creates a heading and the `<p>` creates a separate paragraph. Both are valid elements inside the document body.",
     tags: ["headings", "paragraphs", "html-structure"]
   },
@@ -241,12 +241,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is an HTML attribute?",
     options: [
-      { id: "A", text: "Additional information specified on an element's opening tag" },
-      { id: "B", text: "The visible text between two tags" },
+      { id: "A", text: "The visible text between two tags" },
+      { id: "B", text: "Additional information specified on an element's opening tag" },
       { id: "C", text: "A replacement for the element itself" },
       { id: "D", text: "A CSS declaration" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Attributes provide additional information or configuration for an element, such as `id`, `class`, `href`, and `src`.",
     tags: ["attributes", "syntax", "html-elements"]
   },
@@ -259,12 +259,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "In this markup, what is `href`?\n\n<a href=\"/about\">About</a>",
     options: [
-      { id: "A", text: "An attribute" },
-      { id: "B", text: "An element" },
-      { id: "C", text: "The tag name" },
+      { id: "A", text: "An element" },
+      { id: "B", text: "The tag name" },
+      { id: "C", text: "An attribute" },
       { id: "D", text: "Text content" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`href` is an attribute of the `<a>` element. It specifies the destination of the hyperlink.",
     tags: ["attributes", "anchor", "href"]
   },
@@ -277,12 +277,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element creates a hyperlink?",
     options: [
-      { id: "A", text: "<a>" },
-      { id: "B", text: "<link>" },
-      { id: "C", text: "<href>" },
-      { id: "D", text: "<url>" }
+      { id: "A", text: "<link>" },
+      { id: "B", text: "<href>" },
+      { id: "C", text: "<url>" },
+      { id: "D", text: "<a>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<a>` element creates hyperlinks. The `href` attribute specifies where the link points.",
     tags: ["links", "anchor", "href"]
   },
@@ -313,12 +313,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to display an image?",
     options: [
-      { id: "A", text: "<img>" },
-      { id: "B", text: "<image>" },
+      { id: "A", text: "<image>" },
+      { id: "B", text: "<img>" },
       { id: "C", text: "<picture-image>" },
       { id: "D", text: "<photo>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<img>` element embeds an image resource into the document.",
     tags: ["images", "img", "media"]
   },
@@ -331,12 +331,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly displays an image located at /images/logo.png?",
     options: [
-      { id: "A", text: "<img src=\"/images/logo.png\" alt=\"Logo\">" },
-      { id: "B", text: "<image href=\"/images/logo.png\">Logo</image>" },
-      { id: "C", text: "<img href=\"/images/logo.png\">Logo</img>" },
+      { id: "A", text: "<image href=\"/images/logo.png\">Logo</image>" },
+      { id: "B", text: "<img href=\"/images/logo.png\">Logo</img>" },
+      { id: "C", text: "<img src=\"/images/logo.png\" alt=\"Logo\">" },
       { id: "D", text: "<photo src=\"/images/logo.png\"></photo>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `src` attribute specifies the image resource, while `alt` provides a text alternative.",
     tags: ["images", "img", "src", "alt"]
   },
@@ -349,12 +349,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the src attribute on an <img> element?",
     options: [
-      { id: "A", text: "It specifies the image resource to load" },
-      { id: "B", text: "It specifies the image's alternative text" },
-      { id: "C", text: "It specifies the image's CSS class" },
-      { id: "D", text: "It specifies the image's heading" }
+      { id: "A", text: "It specifies the image's alternative text" },
+      { id: "B", text: "It specifies the image's CSS class" },
+      { id: "C", text: "It specifies the image's heading" },
+      { id: "D", text: "It specifies the image resource to load" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`src` stands for source and specifies the URL or path from which the browser should load the image.",
     tags: ["images", "src", "attributes"]
   },
@@ -385,12 +385,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element creates an unordered list?",
     options: [
-      { id: "A", text: "<ul>" },
-      { id: "B", text: "<ol>" },
+      { id: "A", text: "<ol>" },
+      { id: "B", text: "<ul>" },
       { id: "C", text: "<list>" },
       { id: "D", text: "<unordered>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<ul>` represents an unordered list. Individual items are normally represented using `<li>`.",
     tags: ["lists", "ul", "li"]
   },
@@ -403,12 +403,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element creates an ordered list?",
     options: [
-      { id: "A", text: "<ol>" },
-      { id: "B", text: "<ul>" },
-      { id: "C", text: "<ordered>" },
+      { id: "A", text: "<ul>" },
+      { id: "B", text: "<ordered>" },
+      { id: "C", text: "<ol>" },
       { id: "D", text: "<sequence>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<ol>` represents an ordered list where the sequence of items has meaning.",
     tags: ["lists", "ol", "li"]
   },
@@ -421,12 +421,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly creates a list containing two items?",
     options: [
-      { id: "A", text: "<ul><li>HTML</li><li>CSS</li></ul>" },
-      { id: "B", text: "<list><item>HTML</item><item>CSS</item></list>" },
-      { id: "C", text: "<ul><item>HTML</item><item>CSS</item></ul>" },
-      { id: "D", text: "<ol><ul>HTML</ul><ul>CSS</ul></ol>" }
+      { id: "A", text: "<list><item>HTML</item><item>CSS</item></list>" },
+      { id: "B", text: "<ul><item>HTML</item><item>CSS</item></ul>" },
+      { id: "C", text: "<ol><ul>HTML</ul><ul>CSS</ul></ol>" },
+      { id: "D", text: "<ul><li>HTML</li><li>CSS</li></ul>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `<ul>` contains `<li>` elements, with each `<li>` representing one list item.",
     tags: ["lists", "ul", "li", "html-structure"]
   },
@@ -457,12 +457,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is a generic inline container with no inherent semantic meaning?",
     options: [
-      { id: "A", text: "<span>" },
-      { id: "B", text: "<inline>" },
+      { id: "A", text: "<inline>" },
+      { id: "B", text: "<span>" },
       { id: "C", text: "<text-container>" },
       { id: "D", text: "<inline-box>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<span>` is a generic inline container commonly used when a piece of text or inline content needs styling or scripting hooks.",
     tags: ["span", "inline", "containers"]
   },
@@ -475,12 +475,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to create a table?",
     options: [
-      { id: "A", text: "<table>" },
-      { id: "B", text: "<tab>" },
-      { id: "C", text: "<data-table>" },
+      { id: "A", text: "<tab>" },
+      { id: "B", text: "<data-table>" },
+      { id: "C", text: "<table>" },
       { id: "D", text: "<grid>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<table>` element represents tabular data. Rows and cells are created using elements such as `<tr>`, `<td>`, and `<th>`.",
     tags: ["tables", "table", "html-elements"]
   },
@@ -493,12 +493,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element represents a table row?",
     options: [
-      { id: "A", text: "<tr>" },
-      { id: "B", text: "<row>" },
-      { id: "C", text: "<table-row>" },
-      { id: "D", text: "<r>" }
+      { id: "A", text: "<row>" },
+      { id: "B", text: "<table-row>" },
+      { id: "C", text: "<r>" },
+      { id: "D", text: "<tr>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<tr>` stands for table row and contains table cells such as `<td>` or `<th>`.",
     tags: ["tables", "tr", "rows"]
   },
@@ -529,12 +529,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element represents a table header cell?",
     options: [
-      { id: "A", text: "<th>" },
-      { id: "B", text: "<thead-cell>" },
+      { id: "A", text: "<thead-cell>" },
+      { id: "B", text: "<th>" },
       { id: "C", text: "<header>" },
       { id: "D", text: "<tc>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<th>` represents a header cell in a table and communicates that the cell provides header information.",
     tags: ["tables", "th", "headers"]
   },
@@ -547,12 +547,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to create a form?",
     options: [
-      { id: "A", text: "<form>" },
-      { id: "B", text: "<input-form>" },
-      { id: "C", text: "<fields>" },
+      { id: "A", text: "<input-form>" },
+      { id: "B", text: "<fields>" },
+      { id: "C", text: "<form>" },
       { id: "D", text: "<form-container>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<form>` element groups controls used to collect and submit user-provided information.",
     tags: ["forms", "form", "user-input"]
   },
@@ -565,12 +565,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is used for a basic single-line form control?",
     options: [
-      { id: "A", text: "<input>" },
-      { id: "B", text: "<field>" },
-      { id: "C", text: "<textbox>" },
-      { id: "D", text: "<control>" }
+      { id: "A", text: "<field>" },
+      { id: "B", text: "<textbox>" },
+      { id: "C", text: "<control>" },
+      { id: "D", text: "<input>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<input>` element represents a form control. Its `type` attribute determines what kind of input it provides.",
     tags: ["forms", "input", "controls"]
   },
@@ -601,12 +601,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element provides a visible label for a form control?",
     options: [
-      { id: "A", text: "<label>" },
-      { id: "B", text: "<caption>" },
+      { id: "A", text: "<caption>" },
+      { id: "B", text: "<label>" },
       { id: "C", text: "<name>" },
       { id: "D", text: "<form-label>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<label>` element identifies a form control and improves usability and accessibility.",
     tags: ["forms", "label", "accessibility"]
   },
@@ -619,12 +619,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly associates the label with the input?",
     options: [
-      { id: "A", text: "<label for=\"name\">Name</label><input id=\"name\" type=\"text\">" },
-      { id: "B", text: "<label id=\"name\">Name</label><input for=\"name\" type=\"text\">" },
-      { id: "C", text: "<label href=\"name\">Name</label><input id=\"name\" type=\"text\">" },
+      { id: "A", text: "<label id=\"name\">Name</label><input for=\"name\" type=\"text\">" },
+      { id: "B", text: "<label href=\"name\">Name</label><input id=\"name\" type=\"text\">" },
+      { id: "C", text: "<label for=\"name\">Name</label><input id=\"name\" type=\"text\">" },
       { id: "D", text: "<label target=\"name\">Name</label><input name=\"name\" type=\"text\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The label's `for` attribute is matched with the input's `id`, creating an explicit association between them.",
     tags: ["forms", "label", "id", "accessibility"]
   },
@@ -637,12 +637,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element creates a button?",
     options: [
-      { id: "A", text: "<button>" },
-      { id: "B", text: "<btn>" },
-      { id: "C", text: "<control-button>" },
-      { id: "D", text: "<click>" }
+      { id: "A", text: "<btn>" },
+      { id: "B", text: "<control-button>" },
+      { id: "C", text: "<click>" },
+      { id: "D", text: "<button>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<button>` element represents a clickable button and can be used for actions or form submission.",
     tags: ["buttons", "forms", "html-elements"]
   },
@@ -673,12 +673,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element provides a line break within text?",
     options: [
-      { id: "A", text: "<br>" },
-      { id: "B", text: "<break>" },
+      { id: "A", text: "<break>" },
+      { id: "B", text: "<br>" },
       { id: "C", text: "<lb>" },
       { id: "D", text: "<newline>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<br>` represents a line break. It is a void element and does not require a closing tag.",
     tags: ["br", "text", "void-elements"]
   },
@@ -691,12 +691,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which statement about <br> is correct?",
     options: [
-      { id: "A", text: "It is a void element and does not have a closing tag" },
-      { id: "B", text: "It must always contain text" },
-      { id: "C", text: "It creates a new paragraph semantically" },
+      { id: "A", text: "It must always contain text" },
+      { id: "B", text: "It creates a new paragraph semantically" },
+      { id: "C", text: "It is a void element and does not have a closing tag" },
       { id: "D", text: "It can only be used inside forms" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<br>` is a void element. It creates a line break but does not represent a new paragraph.",
     tags: ["br", "void-elements", "paragraphs"]
   },
@@ -709,12 +709,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to add a horizontal thematic break?",
     options: [
-      { id: "A", text: "<hr>" },
-      { id: "B", text: "<line>" },
-      { id: "C", text: "<horizontal>" },
-      { id: "D", text: "<break-line>" }
+      { id: "A", text: "<line>" },
+      { id: "B", text: "<horizontal>" },
+      { id: "C", text: "<break-line>" },
+      { id: "D", text: "<hr>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<hr>` represents a thematic break between sections of content. Its default visual appearance can be changed with CSS.",
     tags: ["hr", "semantic-html", "void-elements"]
   },
@@ -745,12 +745,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of the class attribute?",
     options: [
-      { id: "A", text: "To assign one or more reusable class names to an element" },
-      { id: "B", text: "To give every element a unique identifier" },
+      { id: "A", text: "To give every element a unique identifier" },
+      { id: "B", text: "To assign one or more reusable class names to an element" },
       { id: "C", text: "To define the element's HTML tag" },
       { id: "D", text: "To specify an element's URL" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `class` attribute assigns one or more class names that can be used by CSS and JavaScript. Unlike `id`, class names can be shared by many elements.",
     tags: ["class", "attributes", "css-hooks"]
   },
@@ -763,12 +763,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "What is wrong with this markup if the developer intends to give two elements the same class?\n\n<p class=\"card\">One</p>\n<p class=\"card\">Two</p>",
     options: [
-      { id: "A", text: "Nothing; using the same class on multiple elements is valid" },
-      { id: "B", text: "The class must be unique like an id" },
-      { id: "C", text: "Only one element can have a class attribute" },
+      { id: "A", text: "The class must be unique like an id" },
+      { id: "B", text: "Only one element can have a class attribute" },
+      { id: "C", text: "Nothing; using the same class on multiple elements is valid" },
       { id: "D", text: "Class names must contain numbers" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Classes are intentionally reusable. Multiple elements can share the same class name, which is commonly used for applying shared styles or behavior.",
     tags: ["class", "attributes", "css-hooks"]
   },
@@ -781,12 +781,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which structure is correctly nested?",
     options: [
-      { id: "A", text: "<div><p>Hello</p></div>" },
-      { id: "B", text: "<div><p>Hello</div></p>" },
-      { id: "C", text: "<p><div>Hello</p></div>" },
-      { id: "D", text: "<section><h1>Title</section></h1>" }
+      { id: "A", text: "<div><p>Hello</div></p>" },
+      { id: "B", text: "<p><div>Hello</p></div>" },
+      { id: "C", text: "<section><h1>Title</section></h1>" },
+      { id: "D", text: "<div><p>Hello</p></div>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "HTML elements should be properly nested so that an element opened inside another element is closed before the parent element closes.",
     tags: ["nesting", "syntax", "html-structure"]
   },
@@ -799,22 +799,10 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which document is structurally the most appropriate?",
     options: [
-      {
-        id: "A",
-        text: "<!DOCTYPE html><html><head><title>My Page</title></head><body><h1>Hello</h1></body></html>"
-      },
-      {
-        id: "B",
-        text: "<!DOCTYPE html><head><body><title>My Page</title><h1>Hello</h1></body></head>"
-      },
-      {
-        id: "C",
-        text: "<html><body><head><h1>Hello</h1></head></body></html>"
-      },
-      {
-        id: "D",
-        text: "<html><title>My Page</title><head></head><h1>Hello</h1></html>"
-      }
+      { id: "A", text: "<!DOCTYPE html><html><head><title>My Page</title></head><body><h1>Hello</h1></body></html>" },
+      { id: "B", text: "<!DOCTYPE html><head><body><title>My Page</title><h1>Hello</h1></body></head>" },
+      { id: "C", text: "<html><body><head><h1>Hello</h1></head></body></html>" },
+      { id: "D", text: "<html><title>My Page</title><head></head><h1>Hello</h1></html>" }
     ],
     correctOptionId: "A",
     explanation: "The first option follows the basic document structure: doctype, root `<html>`, `<head>` containing metadata such as `<title>`, and `<body>` containing page content.",
@@ -829,12 +817,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "A developer wants a clickable link that opens /contact. Which option is correct?",
     options: [
-      { id: "A", text: "<a href=\"/contact\">Contact</a>" },
-      { id: "B", text: "<button href=\"/contact\">Contact</button>" },
+      { id: "A", text: "<button href=\"/contact\">Contact</button>" },
+      { id: "B", text: "<a href=\"/contact\">Contact</a>" },
       { id: "C", text: "<link src=\"/contact\">Contact</link>" },
       { id: "D", text: "<a src=\"/contact\">Contact</a>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Navigation to another URL is the purpose of an anchor element. The `href` attribute specifies the destination.",
     tags: ["links", "anchor", "href", "navigation"]
   },
@@ -847,12 +835,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "A developer wants to display a profile picture. Which markup is the best basic choice?",
     options: [
-      { id: "A", text: "<img src=\"profile.jpg\" alt=\"Profile picture\">" },
-      { id: "B", text: "<image href=\"profile.jpg\">Profile picture</image>" },
-      { id: "C", text: "<picture src=\"profile.jpg\">Profile picture</picture>" },
+      { id: "A", text: "<image href=\"profile.jpg\">Profile picture</image>" },
+      { id: "B", text: "<picture src=\"profile.jpg\">Profile picture</picture>" },
+      { id: "C", text: "<img src=\"profile.jpg\" alt=\"Profile picture\">" },
       { id: "D", text: "<img href=\"profile.jpg\">Profile picture</img>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<img>` uses `src` for the image resource and `alt` for its text alternative. This gives both the browser and assistive technologies the appropriate information.",
     tags: ["images", "img", "src", "alt", "accessibility"]
   },
@@ -865,24 +853,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "A developer wants three navigation links displayed as a list. Which HTML structure best represents the content?",
     options: [
-      {
-        id: "A",
-        text: "<nav><ul><li><a href=\"/\">Home</a></li><li><a href=\"/about\">About</a></li><li><a href=\"/contact\">Contact</a></li></ul></nav>"
-      },
-      {
-        id: "B",
-        text: "<nav><div><link href=\"/\">Home</link><link href=\"/about\">About</link><link href=\"/contact\">Contact</link></div></nav>"
-      },
-      {
-        id: "C",
-        text: "<links><item>Home</item><item>About</item><item>Contact</item></links>"
-      },
-      {
-        id: "D",
-        text: "<nav><p href=\"/\">Home</p><p href=\"/about\">About</p><p href=\"/contact\">Contact</p></nav>"
-      }
+      { id: "A", text: "<nav><div><link href=\"/\">Home</link><link href=\"/about\">About</link><link href=\"/contact\">Contact</link></div></nav>" },
+      { id: "B", text: "<links><item>Home</item><item>About</item><item>Contact</item></links>" },
+      { id: "C", text: "<nav><p href=\"/\">Home</p><p href=\"/about\">About</p><p href=\"/contact\">Contact</p></nav>" },
+      { id: "D", text: "<nav><ul><li><a href=\"/\">Home</a></li><li><a href=\"/about\">About</a></li><li><a href=\"/contact\">Contact</a></li></ul></nav>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The first structure uses semantic navigation, a list to represent the collection of links, list items for each entry, and anchors for the actual destinations.",
     tags: ["navigation", "nav", "lists", "links", "semantic-html"]
   },
@@ -913,24 +889,12 @@ const htmlFundamentalsQuestions = [
     difficulty: "Advanced",
     question: "You are creating a simple personal portfolio page. Which structure gives the strongest basic HTML foundation?",
     options: [
-      {
-        id: "A",
-        text: "<!DOCTYPE html><html><head><title>Avinash Portfolio</title></head><body><header><h1>Avinash</h1><nav><a href=\"/projects\">Projects</a></nav></header><main><section><h2>About Me</h2><p>Frontend developer.</p></section></main><footer><p>Copyright</p></footer></body></html>"
-      },
-      {
-        id: "B",
-        text: "<html><body><div>Avinash</div><div>Projects</div><div>Frontend developer</div></body></html>"
-      },
-      {
-        id: "C",
-        text: "<!DOCTYPE html><head><h1>Avinash</h1><p>Frontend developer</p></head><body><title>Portfolio</title></body>"
-      },
-      {
-        id: "D",
-        text: "<html><header><title>Portfolio</title></header><footer><h1>Avinash</h1></footer></html>"
-      }
+      { id: "A", text: "<html><body><div>Avinash</div><div>Projects</div><div>Frontend developer</div></body></html>" },
+      { id: "B", text: "<!DOCTYPE html><html><head><title>Avinash Portfolio</title></head><body><header><h1>Avinash</h1><nav><a href=\"/projects\">Projects</a></nav></header><main><section><h2>About Me</h2><p>Frontend developer.</p></section></main><footer><p>Copyright</p></footer></body></html>" },
+      { id: "C", text: "<!DOCTYPE html><head><h1>Avinash</h1><p>Frontend developer</p></head><body><title>Portfolio</title></body>" },
+      { id: "D", text: "<html><header><title>Portfolio</title></header><footer><h1>Avinash</h1></footer></html>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The first structure establishes the correct document foundation and uses semantic elements to communicate the purpose of different regions: metadata in `head`, introductory/navigation content in `header`, primary content in `main`, a subsection with `section`, and closing information in `footer`.",
     tags: ["document-structure", "semantic-html", "headings", "navigation", "main", "html-fundamentals"]
   }

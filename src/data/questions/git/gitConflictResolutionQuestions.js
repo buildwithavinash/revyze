@@ -7,12 +7,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "What is a merge conflict?",
     options: [
-      { id: "A", text: "A GitHub account authentication failure" },
-      { id: "B", text: "A situation where Git cannot automatically determine how competing changes should be combined" },
+      { id: "A", text: "A situation where Git cannot automatically determine how competing changes should be combined" },
+      { id: "B", text: "A GitHub account authentication failure" },
       { id: "C", text: "A branch that has no commits" },
       { id: "D", text: "A failed Git installation" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A merge conflict occurs when Git cannot automatically reconcile changes from different lines of development and needs human input.",
     tags: ["merge-conflicts", "merge"]
   },
@@ -25,12 +25,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "Which situation is most likely to produce a merge conflict?",
     options: [
-      { id: "A", text: "Two branches modify the same lines of a file differently" },
-      { id: "B", text: "Two branches have identical histories" },
+      { id: "A", text: "Two branches have identical histories" },
+      { id: "B", text: "Two branches modify the same lines of a file differently" },
       { id: "C", text: "A repository contains a .gitignore file" },
       { id: "D", text: "A developer creates a new empty branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Conflicts commonly occur when separate branches make incompatible changes to the same part of a file.",
     tags: ["merge-conflicts", "conflict-causes"]
   },
@@ -61,12 +61,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "What does the `<<<<<<<` marker generally indicate?",
     options: [
-      { id: "A", text: "The beginning of one side of a conflict" },
-      { id: "B", text: "The successful completion of a merge" },
-      { id: "C", text: "The beginning of the Git repository" },
-      { id: "D", text: "The end of the conflicting section" }
+      { id: "A", text: "The successful completion of a merge" },
+      { id: "B", text: "The beginning of the Git repository" },
+      { id: "C", text: "The end of the conflicting section" },
+      { id: "D", text: "The beginning of one side of a conflict" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<<<<<<<` marker starts the section containing one side of the conflicting changes.",
     tags: ["conflict-markers"]
   },
@@ -79,12 +79,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "What does the `=======` conflict marker separate?",
     options: [
-      { id: "A", text: "Two repositories" },
-      { id: "B", text: "The two conflicting versions of the content" },
+      { id: "A", text: "The two conflicting versions of the content" },
+      { id: "B", text: "Two repositories" },
       { id: "C", text: "The local and remote repositories" },
       { id: "D", text: "Two Git branches permanently" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The `=======` marker separates the two competing versions inside a conflict block.",
     tags: ["conflict-markers"]
   },
@@ -98,11 +98,11 @@ const gitConflictResolutionQuestions = [
     question: "After manually resolving a merge conflict, what should you normally do?",
     options: [
       { id: "A", text: "Delete the .git directory" },
-      { id: "B", text: "Run git init again" },
-      { id: "C", text: "Stage the resolved files" },
+      { id: "B", text: "Stage the resolved files" },
+      { id: "C", text: "Run git init again" },
       { id: "D", text: "Clone the repository again" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "After resolving the contents, stage the files with `git add` to tell Git that those conflicts have been resolved.",
     tags: ["conflicts", "git-add", "merge"]
   },
@@ -117,10 +117,10 @@ const gitConflictResolutionQuestions = [
     options: [
       { id: "A", text: "git resolve app.js" },
       { id: "B", text: "git merge --resolved app.js" },
-      { id: "C", text: "git status --resolve app.js" },
-      { id: "D", text: "git add app.js" }
+      { id: "C", text: "git add app.js" },
+      { id: "D", text: "git status --resolve app.js" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "Once the conflict has been manually resolved, `git add app.js` stages the resolved version.",
     tags: ["conflicts", "git-add"]
   },
@@ -133,12 +133,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "How can you check which files still have unresolved merge conflicts?",
     options: [
-      { id: "A", text: "git status" },
-      { id: "B", text: "git conflicts" },
-      { id: "C", text: "git unresolved" },
-      { id: "D", text: "git log --conflicts-only" }
+      { id: "A", text: "git conflicts" },
+      { id: "B", text: "git unresolved" },
+      { id: "C", text: "git log --conflicts-only" },
+      { id: "D", text: "git status" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git status` reports files that are still unmerged and provides guidance about resolving the merge.",
     tags: ["conflicts", "git-status"]
   },
@@ -151,12 +151,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Beginner",
     question: "After resolving all conflicts and staging the files during a merge, what normally completes the merge?",
     options: [
-      { id: "A", text: "git init" },
-      { id: "B", text: "The merge commit, usually created by git commit" },
+      { id: "A", text: "The merge commit, usually created by git commit" },
+      { id: "B", text: "git init" },
       { id: "C", text: "git clone" },
       { id: "D", text: "git fetch" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "After conflict resolution and staging, the merge can be completed by creating the merge commit, typically with `git commit`.",
     tags: ["merge", "conflicts", "merge-commit"]
   },
@@ -170,11 +170,11 @@ const gitConflictResolutionQuestions = [
     question: "What does `git merge --abort` generally do during an in-progress conflicted merge?",
     options: [
       { id: "A", text: "Deletes the repository" },
-      { id: "B", text: "Commits all conflict markers" },
-      { id: "C", text: "Attempts to return the repository to the state it was in before the merge began" },
+      { id: "B", text: "Attempts to return the repository to the state it was in before the merge began" },
+      { id: "C", text: "Commits all conflict markers" },
       { id: "D", text: "Pushes the conflict to GitHub" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`git merge --abort` attempts to cancel the current merge and restore the pre-merge state.",
     tags: ["merge-abort", "conflicts"]
   },
@@ -188,11 +188,11 @@ const gitConflictResolutionQuestions = [
     question: "Which statement about conflict resolution is correct?",
     options: [
       { id: "A", text: "Git always knows which developer's change is correct" },
-      { id: "B", text: "Resolving a conflict may require understanding the intended behavior before choosing or combining changes" },
-      { id: "C", text: "The newest commit is always automatically correct" },
+      { id: "B", text: "The newest commit is always automatically correct" },
+      { id: "C", text: "Resolving a conflict may require understanding the intended behavior before choosing or combining changes" },
       { id: "D", text: "Conflicts can only occur in text files" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Git can identify conflicting changes but cannot determine the project's intended behavior. A developer must decide how the changes should be combined.",
     tags: ["conflicts", "best-practices"]
   },
@@ -207,10 +207,10 @@ const gitConflictResolutionQuestions = [
     options: [
       { id: "A", text: "Deleting all commits from a branch" },
       { id: "B", text: "Creating a GitHub fork" },
-      { id: "C", text: "Moving or replaying commits onto a new base commit" },
-      { id: "D", text: "Converting a branch into a tag" }
+      { id: "C", text: "Converting a branch into a tag" },
+      { id: "D", text: "Moving or replaying commits onto a new base commit" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Rebase takes commits from one line of development and replays them on top of another base.",
     tags: ["rebase", "history"]
   },
@@ -241,12 +241,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Suppose you are on `feature` and want to rebase your feature commits onto the latest `main`. Which command is appropriate after obtaining the latest main history?",
     options: [
-      { id: "A", text: "git rebase main" },
-      { id: "B", text: "git rebase --delete main" },
+      { id: "A", text: "git rebase --delete main" },
+      { id: "B", text: "git rebase main" },
       { id: "C", text: "git merge --rebase-only main" },
       { id: "D", text: "git branch --rebase main" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "While on the feature branch, `git rebase main` replays the feature's commits on top of the current `main` commit.",
     tags: ["rebase", "feature-branch"]
   },
@@ -277,12 +277,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "After resolving a conflict during a rebase and staging the file, which command continues the rebase?",
     options: [
-      { id: "A", text: "git rebase --continue" },
-      { id: "B", text: "git merge --continue" },
-      { id: "C", text: "git rebase --finish" },
-      { id: "D", text: "git continue-rebase" }
+      { id: "A", text: "git merge --continue" },
+      { id: "B", text: "git rebase --finish" },
+      { id: "C", text: "git continue-rebase" },
+      { id: "D", text: "git rebase --continue" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`git rebase --continue` tells Git to continue replaying the remaining commits after the conflict has been resolved and staged.",
     tags: ["rebase", "rebase-continue", "conflicts"]
   },
@@ -295,12 +295,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Which command abandons an in-progress rebase?",
     options: [
-      { id: "A", text: "git rebase --delete" },
-      { id: "B", text: "git rebase --abort" },
+      { id: "A", text: "git rebase --abort" },
+      { id: "B", text: "git rebase --delete" },
       { id: "C", text: "git rebase --stop" },
       { id: "D", text: "git reset --rebase-abort" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`git rebase --abort` cancels the current rebase and attempts to return the branch to its previous state.",
     tags: ["rebase", "rebase-abort"]
   },
@@ -313,12 +313,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What does `git rebase --skip` do during a rebase?",
     options: [
-      { id: "A", text: "Skips the current commit being replayed" },
-      { id: "B", text: "Skips every future commit" },
+      { id: "A", text: "Skips every future commit" },
+      { id: "B", text: "Skips the current commit being replayed" },
       { id: "C", text: "Deletes the target branch" },
       { id: "D", text: "Creates a merge commit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git rebase --skip` tells Git to omit the current commit from the rebase sequence.",
     tags: ["rebase", "rebase-skip"]
   },
@@ -332,11 +332,11 @@ const gitConflictResolutionQuestions = [
     question: "What happens to commit IDs when commits are rebased?",
     options: [
       { id: "A", text: "They are guaranteed to remain identical" },
-      { id: "B", text: "They are often changed because the commits are recreated with different ancestry" },
-      { id: "C", text: "They become branch names" },
+      { id: "B", text: "They become branch names" },
+      { id: "C", text: "They are often changed because the commits are recreated with different ancestry" },
       { id: "D", text: "They are converted into tags" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A rebased commit is generally recreated with a different parent, which changes its commit ID.",
     tags: ["rebase", "commit-hash", "history"]
   },
@@ -349,12 +349,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Why is rebasing shared public history potentially dangerous?",
     options: [
-      { id: "A", text: "It can rewrite commit IDs that other developers may already have based work on" },
-      { id: "B", text: "It disables GitHub permanently" },
-      { id: "C", text: "It removes all files from the working tree" },
-      { id: "D", text: "It prevents any future commits" }
+      { id: "A", text: "It disables GitHub permanently" },
+      { id: "B", text: "It removes all files from the working tree" },
+      { id: "C", text: "It prevents any future commits" },
+      { id: "D", text: "It can rewrite commit IDs that other developers may already have based work on" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Rewriting shared history can cause collaborators to have different versions of the same commits and may require force-pushing.",
     tags: ["rebase", "shared-history", "collaboration"]
   },
@@ -367,12 +367,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Which is generally safer when you need to undo a published commit without rewriting shared history?",
     options: [
-      { id: "A", text: "git reset --hard" },
-      { id: "B", text: "git rebase -i" },
-      { id: "C", text: "git revert" },
+      { id: "A", text: "git revert" },
+      { id: "B", text: "git reset --hard" },
+      { id: "C", text: "git rebase -i" },
       { id: "D", text: "git branch -D" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`git revert` creates a new commit that reverses the earlier change while preserving the existing commit history.",
     tags: ["revert", "shared-history"]
   },
@@ -385,12 +385,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What does interactive rebase allow you to do?",
     options: [
-      { id: "A", text: "Edit, reorder, squash, or otherwise manipulate a sequence of commits during the rebase" },
-      { id: "B", text: "Automatically merge every remote repository" },
+      { id: "A", text: "Automatically merge every remote repository" },
+      { id: "B", text: "Edit, reorder, squash, or otherwise manipulate a sequence of commits during the rebase" },
       { id: "C", text: "Delete GitHub accounts" },
       { id: "D", text: "Create database migrations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Interactive rebase provides an editor for controlling how selected commits are replayed.",
     tags: ["interactive-rebase", "rebase"]
   },
@@ -404,11 +404,11 @@ const gitConflictResolutionQuestions = [
     question: "Which command starts an interactive rebase over the last five commits?",
     options: [
       { id: "A", text: "git rebase --interactive 5" },
-      { id: "B", text: "git rebase -i HEAD~5" },
-      { id: "C", text: "git interactive-rebase 5" },
+      { id: "B", text: "git interactive-rebase 5" },
+      { id: "C", text: "git rebase -i HEAD~5" },
       { id: "D", text: "git rebase --edit 5" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`git rebase -i HEAD~5` opens the last five commits in an interactive rebase sequence.",
     tags: ["interactive-rebase", "HEAD"]
   },
@@ -423,10 +423,10 @@ const gitConflictResolutionQuestions = [
     options: [
       { id: "A", text: "Delete the entire branch" },
       { id: "B", text: "Push the commit to GitHub" },
-      { id: "C", text: "Combine the commit with the previous commit and allow editing the resulting message" },
-      { id: "D", text: "Create a merge commit" }
+      { id: "C", text: "Create a merge commit" },
+      { id: "D", text: "Combine the commit with the previous commit and allow editing the resulting message" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "`squash` combines the selected commit with the previous commit and lets you edit the resulting commit message.",
     tags: ["interactive-rebase", "squash"]
   },
@@ -493,12 +493,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What is the main conceptual difference between merging and rebasing?",
     options: [
-      { id: "A", text: "Merging combines histories while preserving their existing ancestry; rebasing recreates commits on a new base" },
-      { id: "B", text: "Merging deletes history while rebasing preserves every commit ID" },
-      { id: "C", text: "They always produce exactly the same history" },
-      { id: "D", text: "Rebase only works with remote repositories" }
+      { id: "A", text: "Merging deletes history while rebasing preserves every commit ID" },
+      { id: "B", text: "They always produce exactly the same history" },
+      { id: "C", text: "Rebase only works with remote repositories" },
+      { id: "D", text: "Merging combines histories while preserving their existing ancestry; rebasing recreates commits on a new base" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A merge joins existing histories, while rebase changes the ancestry by replaying commits onto another base.",
     tags: ["merge", "rebase", "history"]
   },
@@ -529,12 +529,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "During a rebase conflict, what does `git status` help you determine?",
     options: [
-      { id: "A", text: "Which files remain conflicted and what Git expects you to do next" },
-      { id: "B", text: "Which GitHub users are online" },
+      { id: "A", text: "Which GitHub users are online" },
+      { id: "B", text: "Which files remain conflicted and what Git expects you to do next" },
       { id: "C", text: "Which commits will be created next with certainty" },
       { id: "D", text: "Whether the remote repository has been deleted" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`git status` reports the state of the ongoing rebase and identifies files that need attention.",
     tags: ["rebase", "conflicts", "git-status"]
   },
@@ -547,12 +547,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What does it mean when Git says a rebase is stopped because of conflicts?",
     options: [
-      { id: "A", text: "Git is waiting for you to resolve the current conflict before continuing the commit replay" },
-      { id: "B", text: "The repository has been permanently corrupted" },
-      { id: "C", text: "All feature commits have been deleted" },
+      { id: "A", text: "The repository has been permanently corrupted" },
+      { id: "B", text: "All feature commits have been deleted" },
+      { id: "C", text: "Git is waiting for you to resolve the current conflict before continuing the commit replay" },
       { id: "D", text: "The remote branch has automatically been force-pushed" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The rebase pauses at the problematic commit so you can resolve the conflict before continuing.",
     tags: ["rebase", "conflicts"]
   },
@@ -565,12 +565,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What should you generally verify after completing a complex rebase?",
     options: [
-      { id: "A", text: "That tests pass and the resulting history and behavior are correct" },
-      { id: "B", text: "That all branches have been deleted" },
-      { id: "C", text: "That every commit has the same hash as before" },
-      { id: "D", text: "That the repository has no remote" }
+      { id: "A", text: "That all branches have been deleted" },
+      { id: "B", text: "That every commit has the same hash as before" },
+      { id: "C", text: "That the repository has no remote" },
+      { id: "D", text: "That tests pass and the resulting history and behavior are correct" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because rebase can rewrite history and replay changes, running tests and reviewing the resulting history is important.",
     tags: ["rebase", "testing", "best-practices"]
   },
@@ -583,12 +583,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What is a common mistake when resolving a conflict?",
     options: [
-      { id: "A", text: "Understanding both sides before choosing the final content" },
-      { id: "B", text: "Running tests after resolving the conflict" },
-      { id: "C", text: "Removing conflict markers but accidentally leaving incorrect code" },
+      { id: "A", text: "Removing conflict markers but accidentally leaving incorrect code" },
+      { id: "B", text: "Understanding both sides before choosing the final content" },
+      { id: "C", text: "Running tests after resolving the conflict" },
       { id: "D", text: "Reviewing the resulting diff" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "A file can be syntactically valid after removing conflict markers but still contain incorrect behavior if the resolution was not understood carefully.",
     tags: ["conflicts", "common-mistakes"]
   },
@@ -601,12 +601,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Why should you not simply choose 'ours' or 'theirs' for every conflict without reviewing the context?",
     options: [
-      { id: "A", text: "Because the correct resolution depends on the intended behavior and may require combining both changes" },
-      { id: "B", text: "Because Git does not support those concepts" },
+      { id: "A", text: "Because Git does not support those concepts" },
+      { id: "B", text: "Because the correct resolution depends on the intended behavior and may require combining both changes" },
       { id: "C", text: "Because choosing either side deletes the repository" },
       { id: "D", text: "Because conflict resolution never affects application behavior" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Conflict resolution is a semantic decision. Sometimes one side is correct, while other situations require combining parts of both changes.",
     tags: ["conflicts", "ours-theirs", "best-practices"]
   },
@@ -620,11 +620,11 @@ const gitConflictResolutionQuestions = [
     question: "What does `git checkout --ours <file>` historically refer to during a conflicted merge?",
     options: [
       { id: "A", text: "The version from the branch being merged in" },
-      { id: "B", text: "The version from the currently checked-out side of the merge" },
-      { id: "C", text: "The version from GitHub's main branch" },
+      { id: "B", text: "The version from GitHub's main branch" },
+      { id: "C", text: "The version from the currently checked-out side of the merge" },
       { id: "D", text: "The version from the oldest commit" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "During a merge, 'ours' refers to the current branch side of the conflict, while 'theirs' refers to the branch being merged.",
     tags: ["conflicts", "ours-theirs"]
   },
@@ -637,12 +637,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "During a merge, what does 'theirs' generally refer to?",
     options: [
-      { id: "A", text: "The branch being merged into the current branch" },
-      { id: "B", text: "The current branch" },
-      { id: "C", text: "The oldest repository version" },
-      { id: "D", text: "The remote called origin" }
+      { id: "A", text: "The current branch" },
+      { id: "B", text: "The oldest repository version" },
+      { id: "C", text: "The remote called origin" },
+      { id: "D", text: "The branch being merged into the current branch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "In a normal merge, 'theirs' refers to the other side of the merge — the branch whose changes are being integrated.",
     tags: ["conflicts", "ours-theirs"]
   },
@@ -673,12 +673,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "Why can a rebase require a force push afterward?",
     options: [
-      { id: "A", text: "Because rebase can rewrite the commit history, making the local branch no longer a fast-forward update of the remote branch" },
-      { id: "B", text: "Because GitHub requires force pushes for every branch" },
+      { id: "A", text: "Because GitHub requires force pushes for every branch" },
+      { id: "B", text: "Because rebase can rewrite the commit history, making the local branch no longer a fast-forward update of the remote branch" },
       { id: "C", text: "Because rebase deletes the remote repository" },
       { id: "D", text: "Because rebase disables normal pushes permanently" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "After rewriting commit ancestry, the remote branch may contain the old commit IDs, so a normal push may be rejected.",
     tags: ["rebase", "force-push", "history"]
   },
@@ -692,11 +692,11 @@ const gitConflictResolutionQuestions = [
     question: "Which command is generally safer than `git push --force` after rewriting your own branch history?",
     options: [
       { id: "A", text: "git push --delete" },
-      { id: "B", text: "git push --force-with-lease" },
-      { id: "C", text: "git push --overwrite-all" },
+      { id: "B", text: "git push --overwrite-all" },
+      { id: "C", text: "git push --force-with-lease" },
       { id: "D", text: "git push --unsafe" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`--force-with-lease` performs a safety check before allowing the forced update.",
     tags: ["force-with-lease", "rebase", "push"]
   },
@@ -709,12 +709,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `git rerere`?",
     options: [
-      { id: "A", text: "It can remember previously recorded conflict resolutions and reuse them when the same conflict occurs again" },
-      { id: "B", text: "It permanently deletes merge conflicts" },
-      { id: "C", text: "It creates remote repositories" },
-      { id: "D", text: "It converts merge commits into tags" }
+      { id: "A", text: "It permanently deletes merge conflicts" },
+      { id: "B", text: "It creates remote repositories" },
+      { id: "C", text: "It converts merge commits into tags" },
+      { id: "D", text: "It can remember previously recorded conflict resolutions and reuse them when the same conflict occurs again" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`rerere` stands for reuse recorded resolution and can help Git reuse a conflict resolution that has previously been recorded.",
     tags: ["rerere", "conflicts", "advanced-git"]
   },
@@ -763,12 +763,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Advanced",
     question: "Why might `git rebase --onto` be useful in a stacked-branch workflow?",
     options: [
-      { id: "A", text: "It can move a series of commits from one base to another without replaying unrelated history" },
-      { id: "B", text: "It automatically creates pull requests" },
-      { id: "C", text: "It prevents branches from diverging forever" },
+      { id: "A", text: "It automatically creates pull requests" },
+      { id: "B", text: "It prevents branches from diverging forever" },
+      { id: "C", text: "It can move a series of commits from one base to another without replaying unrelated history" },
       { id: "D", text: "It removes all merge commits from the repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`--onto` can selectively transplant a range of commits onto a different base, which is useful when branch dependencies change.",
     tags: ["rebase-onto", "stacked-branches"]
   },
@@ -781,12 +781,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Advanced",
     question: "What is a common reason to rebase a feature branch before opening or updating a pull request?",
     options: [
-      { id: "A", text: "To incorporate the latest target-branch changes and present a more linear history" },
-      { id: "B", text: "To delete the pull request" },
-      { id: "C", text: "To remove all feature commits" },
-      { id: "D", text: "To bypass all automated checks" }
+      { id: "A", text: "To delete the pull request" },
+      { id: "B", text: "To remove all feature commits" },
+      { id: "C", text: "To bypass all automated checks" },
+      { id: "D", text: "To incorporate the latest target-branch changes and present a more linear history" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Rebasing can bring the feature branch onto the current target branch and may make its history easier to review.",
     tags: ["rebase", "pull-request", "workflow"]
   },
@@ -835,12 +835,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Advanced",
     question: "Which practice is most useful after resolving a complicated conflict?",
     options: [
-      { id: "A", text: "Run relevant tests and inspect the resulting diff/history" },
-      { id: "B", text: "Immediately delete the branch" },
-      { id: "C", text: "Force-push every remote branch" },
+      { id: "A", text: "Immediately delete the branch" },
+      { id: "B", text: "Force-push every remote branch" },
+      { id: "C", text: "Run relevant tests and inspect the resulting diff/history" },
       { id: "D", text: "Remove the test suite to avoid failures" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Conflict resolution changes code from multiple development lines, so tests and review help detect incorrect resolutions.",
     tags: ["conflicts", "testing", "best-practices"]
   },
@@ -853,12 +853,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Advanced",
     question: "A developer has a feature branch with local commits. Main has advanced significantly, and the feature branch has not been shared with anyone else. Which approach is generally reasonable if the team prefers linear history?",
     options: [
-      { id: "A", text: "Rebase the feature branch onto the updated main" },
-      { id: "B", text: "Force-reset main to the feature branch" },
-      { id: "C", text: "Delete main and recreate it" },
-      { id: "D", text: "Delete all feature commits" }
+      { id: "A", text: "Force-reset main to the feature branch" },
+      { id: "B", text: "Delete main and recreate it" },
+      { id: "C", text: "Delete all feature commits" },
+      { id: "D", text: "Rebase the feature branch onto the updated main" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because the feature history is private, rebasing it onto the updated main is generally safe and can produce a clean linear history.",
     tags: ["rebase", "feature-branch", "workflow"]
   },
@@ -889,12 +889,12 @@ const gitConflictResolutionQuestions = [
     difficulty: "Advanced",
     question: "You are rebasing a private feature branch onto the latest `main`. Git stops because of a conflict. Which sequence best represents the normal recovery workflow?",
     options: [
-      { id: "A", text: "Resolve files → stage resolutions → git rebase --continue → repeat if necessary → test the final result" },
-      { id: "B", text: "Delete the repository → clone again → force-push main" },
+      { id: "A", text: "Delete the repository → clone again → force-push main" },
+      { id: "B", text: "Resolve files → stage resolutions → git rebase --continue → repeat if necessary → test the final result" },
       { id: "C", text: "Run git init → delete the conflict markers automatically → push" },
       { id: "D", text: "Run git rebase --abort → delete the feature branch → recreate it without commits" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "During a conflicted rebase, resolve each conflict, stage the resolved files, continue the rebase, repeat for later conflicts, and verify the final result with tests and review.",
     tags: ["rebase", "conflicts", "workflow", "best-practices"]
   }

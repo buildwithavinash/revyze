@@ -25,12 +25,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst fruits = [\"apple\", \"banana\", \"mango\"];\nconsole.log(fruits.length);",
     options: [
-      { id: "A", text: "3" },
-      { id: "B", text: "2" },
+      { id: "A", text: "2" },
+      { id: "B", text: "3" },
       { id: "C", text: "4" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The array contains three elements, so its `length` is 3.",
     tags: ["arrays", "length"]
   },
@@ -43,12 +43,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is the index of the first element in a JavaScript array?",
     options: [
-      { id: "A", text: "0" },
-      { id: "B", text: "1" },
-      { id: "C", text: "-1" },
+      { id: "A", text: "1" },
+      { id: "B", text: "-1" },
+      { id: "C", text: "0" },
       { id: "D", text: "It depends on the array." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript arrays are zero-indexed, so the first element is at index 0.",
     tags: ["arrays", "indexing"]
   },
@@ -61,12 +61,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst colors = [\"red\", \"blue\", \"green\"];\nconsole.log(colors[1]);",
     options: [
-      { id: "A", text: "blue" },
-      { id: "B", text: "red" },
-      { id: "C", text: "green" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "red" },
+      { id: "B", text: "green" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "blue" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Index 0 is `red`, index 1 is `blue`, and index 2 is `green`.",
     tags: ["arrays", "indexing"]
   },
@@ -97,12 +97,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method adds one or more elements to the end of an array?",
     options: [
-      { id: "A", text: "push()" },
-      { id: "B", text: "pop()" },
+      { id: "A", text: "pop()" },
+      { id: "B", text: "push()" },
       { id: "C", text: "shift()" },
       { id: "D", text: "unshift()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`push()` adds elements to the end of an array.",
     tags: ["push", "arrays", "mutation"]
   },
@@ -115,12 +115,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [1, 2];\nnumbers.push(3);\nconsole.log(numbers);",
     options: [
-      { id: "A", text: "[1, 2, 3]" },
-      { id: "B", text: "[3, 1, 2]" },
-      { id: "C", text: "[1, 2]" },
+      { id: "A", text: "[3, 1, 2]" },
+      { id: "B", text: "[1, 2]" },
+      { id: "C", text: "[1, 2, 3]" },
       { id: "D", text: "[1, 3, 2]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`push(3)` appends 3 to the end of the array.",
     tags: ["push", "arrays"]
   },
@@ -133,12 +133,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method removes and returns the last element of an array?",
     options: [
-      { id: "A", text: "pop()" },
-      { id: "B", text: "push()" },
-      { id: "C", text: "shift()" },
-      { id: "D", text: "slice()" }
+      { id: "A", text: "push()" },
+      { id: "B", text: "shift()" },
+      { id: "C", text: "slice()" },
+      { id: "D", text: "pop()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`pop()` removes the last element and returns that removed value.",
     tags: ["pop", "arrays", "mutation"]
   },
@@ -169,12 +169,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method adds elements to the beginning of an array?",
     options: [
-      { id: "A", text: "unshift()" },
-      { id: "B", text: "push()" },
+      { id: "A", text: "push()" },
+      { id: "B", text: "unshift()" },
       { id: "C", text: "shift()" },
       { id: "D", text: "prepend()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`unshift()` adds one or more elements to the beginning of an array.",
     tags: ["unshift", "arrays"]
   },
@@ -187,12 +187,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [2, 3];\nnumbers.unshift(1);\nconsole.log(numbers);",
     options: [
-      { id: "A", text: "[1, 2, 3]" },
-      { id: "B", text: "[2, 3, 1]" },
-      { id: "C", text: "[2, 1, 3]" },
+      { id: "A", text: "[2, 3, 1]" },
+      { id: "B", text: "[2, 1, 3]" },
+      { id: "C", text: "[1, 2, 3]" },
       { id: "D", text: "[1]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`unshift(1)` inserts 1 at index 0 and moves the existing elements to the right.",
     tags: ["unshift", "arrays"]
   },
@@ -205,12 +205,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method removes and returns the first element of an array?",
     options: [
-      { id: "A", text: "shift()" },
-      { id: "B", text: "unshift()" },
-      { id: "C", text: "pop()" },
-      { id: "D", text: "slice()" }
+      { id: "A", text: "unshift()" },
+      { id: "B", text: "pop()" },
+      { id: "C", text: "slice()" },
+      { id: "D", text: "shift()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`shift()` removes the first element and returns the removed value.",
     tags: ["shift", "arrays"]
   },
@@ -241,12 +241,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method creates a new array containing a portion of an existing array without modifying the original array?",
     options: [
-      { id: "A", text: "slice()" },
-      { id: "B", text: "splice()" },
+      { id: "A", text: "splice()" },
+      { id: "B", text: "slice()" },
       { id: "C", text: "pop()" },
       { id: "D", text: "shift()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`slice()` returns a shallow copy of a selected portion of an array and does not mutate the original array.",
     tags: ["slice", "arrays", "non-mutating"]
   },
@@ -259,12 +259,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [10, 20, 30, 40];\nconsole.log(numbers.slice(1, 3));",
     options: [
-      { id: "A", text: "[20, 30]" },
-      { id: "B", text: "[20, 30, 40]" },
-      { id: "C", text: "[10, 20]" },
+      { id: "A", text: "[20, 30, 40]" },
+      { id: "B", text: "[10, 20]" },
+      { id: "C", text: "[20, 30]" },
       { id: "D", text: "[10, 20, 30]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`slice(1, 3)` starts at index 1 and stops before index 3, selecting 20 and 30.",
     tags: ["slice", "arrays", "indexing"]
   },
@@ -277,12 +277,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "Which method can remove, replace, or insert elements at any position and mutates the original array?",
     options: [
-      { id: "A", text: "splice()" },
-      { id: "B", text: "slice()" },
-      { id: "C", text: "map()" },
-      { id: "D", text: "filter()" }
+      { id: "A", text: "slice()" },
+      { id: "B", text: "map()" },
+      { id: "C", text: "filter()" },
+      { id: "D", text: "splice()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`splice()` modifies the original array and can delete, insert, or replace elements.",
     tags: ["splice", "arrays", "mutation"]
   },
@@ -313,12 +313,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [1, 2, 4];\nnumbers.splice(2, 0, 3);\nconsole.log(numbers);",
     options: [
-      { id: "A", text: "[1, 2, 3, 4]" },
-      { id: "B", text: "[1, 2, 4, 3]" },
+      { id: "A", text: "[1, 2, 4, 3]" },
+      { id: "B", text: "[1, 2, 3, 4]" },
       { id: "C", text: "[1, 3, 2, 4]" },
       { id: "D", text: "[3, 1, 2, 4]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Starting at index 2, `splice` removes zero elements and inserts 3 before the existing 4.",
     tags: ["splice", "arrays", "insertion"]
   },
@@ -331,12 +331,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "Which method checks whether an array contains a particular value?",
     options: [
-      { id: "A", text: "includes()" },
-      { id: "B", text: "contains()" },
-      { id: "C", text: "hasValue()" },
+      { id: "A", text: "contains()" },
+      { id: "B", text: "hasValue()" },
+      { id: "C", text: "includes()" },
       { id: "D", text: "exists()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`includes()` returns a boolean indicating whether the array contains the specified value.",
     tags: ["includes", "arrays"]
   },
@@ -349,12 +349,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst fruits = [\"apple\", \"banana\", \"mango\"];\nconsole.log(fruits.includes(\"banana\"));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "\"banana\"" },
-      { id: "D", text: "1" }
+      { id: "A", text: "false" },
+      { id: "B", text: "\"banana\"" },
+      { id: "C", text: "1" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`banana` exists in the array, so `includes()` returns true.",
     tags: ["includes", "arrays"]
   },
@@ -385,12 +385,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [5, 10, 15, 10];\nconsole.log(numbers.indexOf(10));",
     options: [
-      { id: "A", text: "1" },
-      { id: "B", text: "3" },
+      { id: "A", text: "3" },
+      { id: "B", text: "1" },
       { id: "C", text: "0" },
       { id: "D", text: "-1" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The first occurrence of 10 is at index 1, so `indexOf(10)` returns 1.",
     tags: ["indexOf", "arrays"]
   },
@@ -403,12 +403,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What does `for...of` provide when iterating over an array?",
     options: [
-      { id: "A", text: "The array's values." },
-      { id: "B", text: "The array's indexes only." },
-      { id: "C", text: "The array's length only." },
+      { id: "A", text: "The array's indexes only." },
+      { id: "B", text: "The array's length only." },
+      { id: "C", text: "The array's values." },
       { id: "D", text: "The array object itself." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`for...of` iterates over the values produced by an iterable such as an array.",
     tags: ["for-of", "iteration", "arrays"]
   },
@@ -421,12 +421,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [2, 4, 6];\n\nfor (const number of numbers) {\n  console.log(number);\n}",
     options: [
-      { id: "A", text: "2 4 6" },
-      { id: "B", text: "0 1 2" },
-      { id: "C", text: "1 2 3" },
-      { id: "D", text: "numbers" }
+      { id: "A", text: "0 1 2" },
+      { id: "B", text: "1 2 3" },
+      { id: "C", text: "numbers" },
+      { id: "D", text: "2 4 6" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`for...of` directly provides each array value: 2, then 4, then 6.",
     tags: ["for-of", "iteration"]
   },
@@ -457,12 +457,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [1, 2, 3];\n\nnumbers.forEach(number => {\n  console.log(number * 2);\n});",
     options: [
-      { id: "A", text: "2 4 6" },
-      { id: "B", text: "1 2 3" },
+      { id: "A", text: "1 2 3" },
+      { id: "B", text: "2 4 6" },
       { id: "C", text: "[2, 4, 6]" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The callback runs once for each value and logs twice that value.",
     tags: ["forEach", "arrays", "callbacks"]
   },
@@ -475,12 +475,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is the primary purpose of `map()`?",
     options: [
-      { id: "A", text: "To create a new array by transforming each element." },
-      { id: "B", text: "To remove the first element." },
-      { id: "C", text: "To sort the original array." },
+      { id: "A", text: "To remove the first element." },
+      { id: "B", text: "To sort the original array." },
+      { id: "C", text: "To create a new array by transforming each element." },
       { id: "D", text: "To stop iteration early." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`map()` calls a callback for every element and builds a new array from the callback's returned values.",
     tags: ["map", "arrays", "transformation"]
   },
@@ -493,12 +493,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [1, 2, 3];\nconst doubled = numbers.map(number => number * 2);\nconsole.log(doubled);",
     options: [
-      { id: "A", text: "[2, 4, 6]" },
-      { id: "B", text: "[1, 2, 3]" },
-      { id: "C", text: "[2, 3, 4]" },
-      { id: "D", text: "6" }
+      { id: "A", text: "[1, 2, 3]" },
+      { id: "B", text: "[2, 3, 4]" },
+      { id: "C", text: "6" },
+      { id: "D", text: "[2, 4, 6]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`map()` transforms each element using `number * 2` and returns a new array.",
     tags: ["map", "arrays"]
   },
@@ -529,12 +529,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is the primary purpose of `filter()`?",
     options: [
-      { id: "A", text: "To create a new array containing elements that pass a condition." },
-      { id: "B", text: "To transform every element into a different value." },
+      { id: "A", text: "To transform every element into a different value." },
+      { id: "B", text: "To create a new array containing elements that pass a condition." },
       { id: "C", text: "To combine all elements into one value." },
       { id: "D", text: "To sort the array." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`filter()` keeps elements for which the callback returns a truthy value.",
     tags: ["filter", "arrays"]
   },
@@ -547,12 +547,12 @@ const javascriptArraysQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst numbers = [1, 2, 3, 4, 5];\nconst result = numbers.filter(number => number % 2 === 0);\nconsole.log(result);",
     options: [
-      { id: "A", text: "[2, 4]" },
-      { id: "B", text: "[1, 3, 5]" },
-      { id: "C", text: "[2, 3, 4]" },
+      { id: "A", text: "[1, 3, 5]" },
+      { id: "B", text: "[2, 3, 4]" },
+      { id: "C", text: "[2, 4]" },
       { id: "D", text: "6" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Only 2 and 4 satisfy the even-number condition.",
     tags: ["filter", "arrays", "conditions"]
   },
@@ -565,12 +565,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What does `reduce()` primarily do?",
     options: [
-      { id: "A", text: "It processes array elements to produce a single accumulated result." },
-      { id: "B", text: "It always removes elements from the original array." },
-      { id: "C", text: "It sorts elements alphabetically." },
-      { id: "D", text: "It returns only the first matching element." }
+      { id: "A", text: "It always removes elements from the original array." },
+      { id: "B", text: "It sorts elements alphabetically." },
+      { id: "C", text: "It returns only the first matching element." },
+      { id: "D", text: "It processes array elements to produce a single accumulated result." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`reduce()` uses an accumulator to combine array elements into a single result, such as a sum, object, or other value.",
     tags: ["reduce", "arrays", "accumulator"]
   },
@@ -601,12 +601,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the second argument passed to `reduce()`?",
     options: [
-      { id: "A", text: "It provides the initial accumulator value." },
-      { id: "B", text: "It specifies the final array index." },
+      { id: "A", text: "It specifies the final array index." },
+      { id: "B", text: "It provides the initial accumulator value." },
       { id: "C", text: "It determines the number of callback executions." },
       { id: "D", text: "It sorts the array." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The second argument to `reduce()` is used as the initial value of the accumulator.",
     tags: ["reduce", "accumulator"]
   },
@@ -619,12 +619,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst words = [\"a\", \"bb\", \"ccc\"];\nconst total = words.reduce((sum, word) => sum + word.length, 0);\nconsole.log(total);",
     options: [
-      { id: "A", text: "6" },
-      { id: "B", text: "3" },
-      { id: "C", text: "5" },
+      { id: "A", text: "3" },
+      { id: "B", text: "5" },
+      { id: "C", text: "6" },
       { id: "D", text: "\"abbccc\"" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The callback adds the lengths: 1 + 2 + 3 = 6.",
     tags: ["reduce", "arrays", "accumulator"]
   },
@@ -637,12 +637,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of `find()`?",
     options: [
-      { id: "A", text: "To return the first element that satisfies a condition." },
-      { id: "B", text: "To return all matching elements." },
-      { id: "C", text: "To return the index of every element." },
-      { id: "D", text: "To modify every matching element." }
+      { id: "A", text: "To return all matching elements." },
+      { id: "B", text: "To return the index of every element." },
+      { id: "C", text: "To modify every matching element." },
+      { id: "D", text: "To return the first element that satisfies a condition." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`find()` returns the first element for which the callback returns a truthy value.",
     tags: ["find", "arrays"]
   },
@@ -673,12 +673,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What does `findIndex()` return?",
     options: [
-      { id: "A", text: "The index of the first element that satisfies the condition, or -1 if none does." },
-      { id: "B", text: "The matching element itself." },
+      { id: "A", text: "The matching element itself." },
+      { id: "B", text: "The index of the first element that satisfies the condition, or -1 if none does." },
       { id: "C", text: "An array of all matching indexes." },
       { id: "D", text: "The array length." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`findIndex()` searches using a callback and returns the first matching element's index, or -1 if there is no match.",
     tags: ["findIndex", "arrays"]
   },
@@ -691,12 +691,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What does `some()` return?",
     options: [
-      { id: "A", text: "true if at least one element satisfies the condition." },
-      { id: "B", text: "true only if every element satisfies the condition." },
-      { id: "C", text: "The first matching element." },
+      { id: "A", text: "true only if every element satisfies the condition." },
+      { id: "B", text: "The first matching element." },
+      { id: "C", text: "true if at least one element satisfies the condition." },
       { id: "D", text: "An array of matching elements." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`some()` checks whether at least one element passes the callback condition.",
     tags: ["some", "arrays"]
   },
@@ -709,12 +709,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [1, 3, 5, 8];\nconsole.log(numbers.some(number => number % 2 === 0));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "8" },
-      { id: "D", text: "[8]" }
+      { id: "A", text: "false" },
+      { id: "B", text: "8" },
+      { id: "C", text: "[8]" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "8 is even, so at least one element satisfies the condition and `some()` returns true.",
     tags: ["some", "arrays", "conditions"]
   },
@@ -745,12 +745,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [2, 4, 6, 8];\nconsole.log(numbers.every(number => number % 2 === 0));",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
+      { id: "A", text: "false" },
+      { id: "B", text: "true" },
       { id: "C", text: "2" },
       { id: "D", text: "[2, 4, 6, 8]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Every element is even, so the condition succeeds for all elements.",
     tags: ["every", "arrays", "conditions"]
   },
@@ -763,12 +763,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about `sort()` is correct?",
     options: [
-      { id: "A", text: "It sorts the array in place and, by default, compares elements as strings." },
-      { id: "B", text: "It always returns a new sorted array without modifying the original." },
-      { id: "C", text: "It always sorts numbers numerically without a callback." },
+      { id: "A", text: "It always returns a new sorted array without modifying the original." },
+      { id: "B", text: "It always sorts numbers numerically without a callback." },
+      { id: "C", text: "It sorts the array in place and, by default, compares elements as strings." },
       { id: "D", text: "It can only sort strings." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`sort()` mutates the array. Without a compare function, elements are generally sorted according to their string representations.",
     tags: ["sort", "arrays", "mutation"]
   },
@@ -781,12 +781,12 @@ const javascriptArraysQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst numbers = [10, 2, 30, 4];\nnumbers.sort();\nconsole.log(numbers);",
     options: [
-      { id: "A", text: "[10, 2, 30, 4]" },
-      { id: "B", text: "[2, 4, 10, 30]" },
-      { id: "C", text: "[30, 10, 4, 2]" },
-      { id: "D", text: "[2, 10, 30, 4]" }
+      { id: "A", text: "[2, 4, 10, 30]" },
+      { id: "B", text: "[30, 10, 4, 2]" },
+      { id: "C", text: "[2, 10, 30, 4]" },
+      { id: "D", text: "[10, 2, 30, 4]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Default `sort()` compares elements as strings, so the lexical order is `\"10\"`, `\"2\"`, `\"30\"`, `\"4\"`.",
     tags: ["sort", "arrays", "strings"]
   },
@@ -817,12 +817,12 @@ const javascriptArraysQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst numbers = [1, 2, 3, 4, 5];\n\nconst result = numbers\n  .filter(number => number % 2 !== 0)\n  .map(number => number * 10);\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "[10, 30, 50]" },
-      { id: "B", text: "[20, 40]" },
+      { id: "A", text: "[20, 40]" },
+      { id: "B", text: "[10, 30, 50]" },
       { id: "C", text: "[1, 3, 5]" },
       { id: "D", text: "[10, 20, 30, 40, 50]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`filter()` first keeps 1, 3, and 5. `map()` then transforms them into 10, 30, and 50.",
     tags: ["filter", "map", "method-chaining"]
   },
@@ -835,12 +835,12 @@ const javascriptArraysQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst products = [\n  { name: \"A\", price: 10 },\n  { name: \"B\", price: 25 },\n  { name: \"C\", price: 15 }\n];\n\nconst total = products\n  .filter(product => product.price >= 15)\n  .reduce((sum, product) => sum + product.price, 0);\n\nconsole.log(total);",
     options: [
-      { id: "A", text: "40" },
-      { id: "B", text: "50" },
-      { id: "C", text: "25" },
+      { id: "A", text: "50" },
+      { id: "B", text: "25" },
+      { id: "C", text: "40" },
       { id: "D", text: "15" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`filter()` keeps B and C. Their prices are 25 and 15, which `reduce()` adds to produce 40.",
     tags: ["filter", "reduce", "arrays", "objects"]
   },
@@ -853,12 +853,12 @@ const javascriptArraysQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst numbers = [1, 2, 3];\n\nconst result = numbers.reduce((acc, number) => {\n  acc.push(number * 2);\n  return acc;\n}, []);\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "[2, 4, 6]" },
-      { id: "B", text: "[1, 2, 3]" },
-      { id: "C", text: "6" },
-      { id: "D", text: "undefined" }
+      { id: "A", text: "[1, 2, 3]" },
+      { id: "B", text: "6" },
+      { id: "C", text: "undefined" },
+      { id: "D", text: "[2, 4, 6]" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The accumulator starts as an empty array. Each iteration pushes the doubled value into it, producing `[2, 4, 6]`.",
     tags: ["reduce", "arrays", "accumulator"]
   },
@@ -889,24 +889,12 @@ const javascriptArraysQuestions = [
     difficulty: "Advanced",
     question: "Which approach is generally best when processing an array to produce transformed data without unnecessarily changing the original array?",
     options: [
-      {
-        id: "A",
-        text: "Use non-mutating methods such as map, filter, slice, or reduce as appropriate."
-      },
-      {
-        id: "B",
-        text: "Always use splice and sort because they are faster."
-      },
-      {
-        id: "C",
-        text: "Always modify the original array directly."
-      },
-      {
-        id: "D",
-        text: "Convert the array to a string before every operation."
-      }
+      { id: "A", text: "Always use splice and sort because they are faster." },
+      { id: "B", text: "Use non-mutating methods such as map, filter, slice, or reduce as appropriate." },
+      { id: "C", text: "Always modify the original array directly." },
+      { id: "D", text: "Convert the array to a string before every operation." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Methods such as `map`, `filter`, `slice`, and `reduce` are useful for producing derived results without directly mutating the source array. This is especially valuable when predictable state management and immutability matter.",
     tags: ["arrays", "immutability", "map", "filter", "reduce", "best-practices"]
   }

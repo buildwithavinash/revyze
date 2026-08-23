@@ -7,12 +7,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of error handling in JavaScript?",
     options: [
-      { id: "A", text: "To detect, handle, or propagate failures that occur during program execution" },
-      { id: "B", text: "To prevent JavaScript from executing any functions" },
+      { id: "A", text: "To prevent JavaScript from executing any functions" },
+      { id: "B", text: "To detect, handle, or propagate failures that occur during program execution" },
       { id: "C", text: "To automatically fix every bug in the application" },
       { id: "D", text: "To make all asynchronous code synchronous" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Error handling provides mechanisms for responding to runtime failures rather than allowing unexpected exceptions to propagate without being handled.",
     tags: ["error-handling", "fundamentals", "exceptions"]
   },
@@ -25,12 +25,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which JavaScript construct is specifically designed to catch exceptions?",
     options: [
-      { id: "A", text: "try...catch" },
-      { id: "B", text: "if...else" },
-      { id: "C", text: "switch...case" },
+      { id: "A", text: "if...else" },
+      { id: "B", text: "switch...case" },
+      { id: "C", text: "try...catch" },
       { id: "D", text: "for...of" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `try...catch` construct executes potentially failing code in `try` and transfers control to `catch` when an exception is thrown.",
     tags: ["try-catch", "exceptions", "fundamentals"]
   },
@@ -43,12 +43,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What happens when an exception is thrown inside the try block?",
     options: [
-      { id: "A", text: "Execution of the remaining try-block statements stops and control moves to catch" },
-      { id: "B", text: "The remaining try-block statements always continue normally" },
-      { id: "C", text: "The finally block is permanently skipped" },
-      { id: "D", text: "The exception is automatically converted into undefined" }
+      { id: "A", text: "The remaining try-block statements always continue normally" },
+      { id: "B", text: "The finally block is permanently skipped" },
+      { id: "C", text: "The exception is automatically converted into undefined" },
+      { id: "D", text: "Execution of the remaining try-block statements stops and control moves to catch" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Once an exception is thrown, normal execution of the current `try` block stops and control transfers to the corresponding `catch` block.",
     tags: ["try-catch", "throw", "control-flow"]
   },
@@ -79,12 +79,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "When does the catch block execute?",
     options: [
-      { id: "A", text: "When an exception is thrown from the associated try block" },
-      { id: "B", text: "Every time the try block finishes" },
+      { id: "A", text: "Every time the try block finishes" },
+      { id: "B", text: "When an exception is thrown from the associated try block" },
       { id: "C", text: "Only when finally throws" },
       { id: "D", text: "Before the try block executes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "If the `try` block completes without throwing, its `catch` block is skipped. If an exception occurs, control transfers to `catch`.",
     tags: ["try-catch", "catch", "control-flow"]
   },
@@ -97,12 +97,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What is logged?\n\ntry {\n  console.log(\"Success\");\n} catch (error) {\n  console.log(\"Error\");\n}",
     options: [
-      { id: "A", text: "Success" },
-      { id: "B", text: "Error" },
-      { id: "C", text: "Success, then Error" },
+      { id: "A", text: "Error" },
+      { id: "B", text: "Success, then Error" },
+      { id: "C", text: "Success" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Because the `try` block completes successfully without throwing, the `catch` block is skipped.",
     tags: ["try-catch", "control-flow"]
   },
@@ -115,12 +115,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of the finally block?",
     options: [
-      { id: "A", text: "To execute cleanup code regardless of whether an exception occurred" },
-      { id: "B", text: "To catch only TypeError exceptions" },
-      { id: "C", text: "To replace the catch block" },
-      { id: "D", text: "To automatically retry failed code" }
+      { id: "A", text: "To catch only TypeError exceptions" },
+      { id: "B", text: "To replace the catch block" },
+      { id: "C", text: "To automatically retry failed code" },
+      { id: "D", text: "To execute cleanup code regardless of whether an exception occurred" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `finally` block executes as control leaves the try/catch construct, whether the operation succeeds, fails, returns, or throws.",
     tags: ["finally", "cleanup", "control-flow"]
   },
@@ -151,12 +151,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What is logged?\n\ntry {\n  throw new Error(\"Oops\");\n} catch (error) {\n  console.log(\"caught\");\n} finally {\n  console.log(\"cleanup\");\n}",
     options: [
-      { id: "A", text: "caught, then cleanup" },
-      { id: "B", text: "cleanup only" },
+      { id: "A", text: "cleanup only" },
+      { id: "B", text: "caught, then cleanup" },
       { id: "C", text: "caught only" },
       { id: "D", text: "Oops only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The thrown error transfers execution to catch, which logs `caught`. The finally block then executes and logs `cleanup`.",
     tags: ["finally", "catch", "throw"]
   },
@@ -169,12 +169,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which of the following is a valid JavaScript error-handling structure?",
     options: [
-      { id: "A", text: "try { } catch (error) { } finally { }" },
-      { id: "B", text: "catch { } try { }" },
-      { id: "C", text: "error { } catch { }" },
+      { id: "A", text: "catch { } try { }" },
+      { id: "B", text: "error { } catch { }" },
+      { id: "C", text: "try { } catch (error) { } finally { }" },
       { id: "D", text: "try { } error { }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "JavaScript supports `try...catch`, `try...finally`, and `try...catch...finally` forms.",
     tags: ["try-catch", "finally", "syntax"]
   },
@@ -187,12 +187,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What does the throw statement do?",
     options: [
-      { id: "A", text: "It raises an exception and transfers control to an appropriate error handler" },
-      { id: "B", text: "It silently logs an error" },
-      { id: "C", text: "It automatically catches the current error" },
-      { id: "D", text: "It restarts the current function" }
+      { id: "A", text: "It silently logs an error" },
+      { id: "B", text: "It automatically catches the current error" },
+      { id: "C", text: "It restarts the current function" },
+      { id: "D", text: "It raises an exception and transfers control to an appropriate error handler" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`throw` explicitly raises an exception. If a matching handler exists, control moves there; otherwise the error continues propagating.",
     tags: ["throw", "exceptions", "control-flow"]
   },
@@ -223,12 +223,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which is generally the preferred way to create a standard JavaScript exception?",
     options: [
-      { id: "A", text: "throw new Error(\"Something went wrong\")" },
-      { id: "B", text: "throw \"Something went wrong\"" },
+      { id: "A", text: "throw \"Something went wrong\"" },
+      { id: "B", text: "throw new Error(\"Something went wrong\")" },
       { id: "C", text: "console.error(\"Something went wrong\")" },
       { id: "D", text: "return Error.message" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript allows many values to be thrown, but throwing an `Error` object provides standard properties such as `message`, `name`, and stack information.",
     tags: ["throw", "Error", "best-practices"]
   },
@@ -241,12 +241,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "Which property usually contains the human-readable description of an Error?",
     options: [
-      { id: "A", text: "message" },
-      { id: "B", text: "descriptionText" },
-      { id: "C", text: "reason" },
+      { id: "A", text: "descriptionText" },
+      { id: "B", text: "reason" },
+      { id: "C", text: "message" },
       { id: "D", text: "detailsOnly" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `message` property contains the descriptive error message supplied when the Error was created.",
     tags: ["Error", "message", "error-properties"]
   },
@@ -259,12 +259,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Beginner",
     question: "What is logged?\n\ntry {\n  throw new Error(\"Database failed\");\n} catch (error) {\n  console.log(error.message);\n}",
     options: [
-      { id: "A", text: "Database failed" },
-      { id: "B", text: "Error" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "DatabaseError" }
+      { id: "A", text: "Error" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "DatabaseError" },
+      { id: "D", text: "Database failed" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The Error object's `message` property contains the string supplied to the Error constructor.",
     tags: ["Error", "message", "catch"]
   },
@@ -295,12 +295,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which error usually indicates that JavaScript encountered invalid syntax?",
     options: [
-      { id: "A", text: "SyntaxError" },
-      { id: "B", text: "TypeError" },
+      { id: "A", text: "TypeError" },
+      { id: "B", text: "SyntaxError" },
       { id: "C", text: "RangeError" },
       { id: "D", text: "ReferenceError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`SyntaxError` indicates that the JavaScript parser encountered code that does not conform to valid JavaScript syntax.",
     tags: ["SyntaxError", "error-types", "syntax"]
   },
@@ -313,12 +313,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which error commonly occurs when code references a variable that does not exist in the accessible scope?",
     options: [
-      { id: "A", text: "ReferenceError" },
-      { id: "B", text: "RangeError" },
-      { id: "C", text: "SyntaxError" },
+      { id: "A", text: "RangeError" },
+      { id: "B", text: "SyntaxError" },
+      { id: "C", text: "ReferenceError" },
       { id: "D", text: "EvalError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A `ReferenceError` commonly occurs when JavaScript cannot resolve an identifier being referenced.",
     tags: ["ReferenceError", "error-types", "scope"]
   },
@@ -331,12 +331,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What happens here?\n\ntry {\n  JSON.parse(\"{invalid json}\");\n} catch (error) {\n  console.log(error instanceof SyntaxError);\n}",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "It always throws a TypeError" }
+      { id: "A", text: "false" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "It always throws a TypeError" },
+      { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Invalid JSON passed to `JSON.parse()` results in a `SyntaxError`, which can be identified using `instanceof SyntaxError`.",
     tags: ["SyntaxError", "JSON.parse", "instanceof"]
   },
@@ -367,12 +367,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nfunction test() {\n  try {\n    throw new Error(\"Boom\");\n  } catch (error) {\n    console.log(\"caught\");\n  }\n  console.log(\"after\");\n}\n\ntest();",
     options: [
-      { id: "A", text: "caught, then after" },
-      { id: "B", text: "caught only" },
+      { id: "A", text: "caught only" },
+      { id: "B", text: "caught, then after" },
       { id: "C", text: "after only" },
       { id: "D", text: "Boom only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The error is handled by catch, so execution continues after the entire try/catch construct and logs `after`.",
     tags: ["try-catch", "control-flow", "recovery"]
   },
@@ -385,12 +385,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What happens when a function called inside a try block throws an error and does not catch it itself?",
     options: [
-      { id: "A", text: "The error can be caught by the surrounding try/catch" },
-      { id: "B", text: "The error is automatically ignored" },
-      { id: "C", text: "The caller can never catch it" },
+      { id: "A", text: "The error is automatically ignored" },
+      { id: "B", text: "The caller can never catch it" },
+      { id: "C", text: "The error can be caught by the surrounding try/catch" },
       { id: "D", text: "The function automatically returns null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Exceptions propagate up the call stack. A surrounding try/catch can catch an exception thrown by a function invoked from inside its try block.",
     tags: ["error-propagation", "call-stack", "try-catch"]
   },
@@ -403,12 +403,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nfunction inner() {\n  throw new Error(\"Failed\");\n}\n\nfunction outer() {\n  try {\n    inner();\n  } catch (error) {\n    console.log(error.message);\n  }\n}\n\nouter();",
     options: [
-      { id: "A", text: "Failed" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "outer" },
-      { id: "D", text: "Nothing" }
+      { id: "A", text: "undefined" },
+      { id: "B", text: "outer" },
+      { id: "C", text: "Nothing" },
+      { id: "D", text: "Failed" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`inner()` throws, and because it does not catch the error, the exception propagates to `outer()`, whose catch block handles it.",
     tags: ["error-propagation", "call-stack", "catch"]
   },
@@ -439,12 +439,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What does this code demonstrate?\n\ntry {\n  riskyOperation();\n} catch (error) {\n  console.error(\"Logging error\");\n  throw error;\n}",
     options: [
-      { id: "A", text: "The error is logged locally and then re-thrown for a higher-level handler" },
-      { id: "B", text: "The error is permanently swallowed" },
+      { id: "A", text: "The error is permanently swallowed" },
+      { id: "B", text: "The error is logged locally and then re-thrown for a higher-level handler" },
       { id: "C", text: "The error is converted into a successful result" },
       { id: "D", text: "The original error is automatically deleted" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Re-throwing allows the current layer to perform useful local handling, such as logging, while still informing callers that the operation failed.",
     tags: ["rethrow", "error-propagation", "catch"]
   },
@@ -457,12 +457,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "When is re-throwing an error particularly appropriate?",
     options: [
-      { id: "A", text: "When the current layer cannot fully handle the problem but needs to perform some local work first" },
-      { id: "B", text: "Whenever the code succeeds" },
-      { id: "C", text: "Only for SyntaxError" },
+      { id: "A", text: "Whenever the code succeeds" },
+      { id: "B", text: "Only for SyntaxError" },
+      { id: "C", text: "When the current layer cannot fully handle the problem but needs to perform some local work first" },
       { id: "D", text: "When you want to hide the error from callers" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A lower-level layer may log, add context, or clean up before re-throwing an error so a higher-level layer can make the final decision about handling it.",
     tags: ["rethrow", "error-propagation", "architecture"]
   },
@@ -475,12 +475,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is the result?\n\nfunction test() {\n  try {\n    return \"try\";\n  } finally {\n    return \"finally\";\n  }\n}\n\nconsole.log(test());",
     options: [
-      { id: "A", text: "finally" },
-      { id: "B", text: "try" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "It throws a SyntaxError" }
+      { id: "A", text: "try" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "It throws a SyntaxError" },
+      { id: "D", text: "finally" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A control-flow statement such as `return` in `finally` overrides the pending return from `try`. This is why returning from finally is generally discouraged.",
     tags: ["finally", "return", "control-flow", "edge-cases"]
   },
@@ -511,12 +511,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Why is returning from a finally block generally discouraged?",
     options: [
-      { id: "A", text: "It can override a return value or exception that was already pending from try or catch" },
-      { id: "B", text: "finally cannot contain return statements syntactically" },
+      { id: "A", text: "finally cannot contain return statements syntactically" },
+      { id: "B", text: "It can override a return value or exception that was already pending from try or catch" },
       { id: "C", text: "It always creates an infinite loop" },
       { id: "D", text: "It prevents cleanup code from executing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A return in finally takes precedence over pending control flow from try/catch. It can therefore accidentally suppress an error or replace a return value.",
     tags: ["finally", "return", "edge-cases", "best-practices"]
   },
@@ -529,12 +529,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nfunction test() {\n  try {\n    throw new Error(\"A\");\n  } catch (error) {\n    console.log(\"caught\");\n    throw error;\n  } finally {\n    console.log(\"finally\");\n  }\n}\n\ntry {\n  test();\n} catch {\n  console.log(\"outer\");\n}",
     options: [
-      { id: "A", text: "caught → finally → outer" },
-      { id: "B", text: "caught → outer → finally" },
-      { id: "C", text: "finally → caught → outer" },
+      { id: "A", text: "caught → outer → finally" },
+      { id: "B", text: "finally → caught → outer" },
+      { id: "C", text: "caught → finally → outer" },
       { id: "D", text: "caught only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The error enters the inner catch, which logs `caught` and rethrows. Before that rethrow leaves the function, finally executes. The outer catch then handles the propagated error.",
     tags: ["finally", "rethrow", "error-propagation", "control-flow"]
   },
@@ -547,12 +547,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is a custom error class useful for?",
     options: [
-      { id: "A", text: "Representing domain-specific failure types with meaningful names and optional extra information" },
-      { id: "B", text: "Preventing all errors from occurring" },
-      { id: "C", text: "Replacing JavaScript functions with classes" },
-      { id: "D", text: "Making every exception a SyntaxError" }
+      { id: "A", text: "Preventing all errors from occurring" },
+      { id: "B", text: "Replacing JavaScript functions with classes" },
+      { id: "C", text: "Making every exception a SyntaxError" },
+      { id: "D", text: "Representing domain-specific failure types with meaningful names and optional extra information" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom Error subclasses allow applications to distinguish domain-specific failures such as authentication, validation, or resource-not-found errors.",
     tags: ["custom-errors", "Error", "classes"]
   },
@@ -565,22 +565,10 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which is a valid custom Error class?",
     options: [
-      {
-        id: "A",
-        text: "class ValidationError extends Error { constructor(message) { super(message); this.name = \"ValidationError\"; } }"
-      },
-      {
-        id: "B",
-        text: "class ValidationError Error { message() {} }"
-      },
-      {
-        id: "C",
-        text: "class ValidationError throws Error { }"
-      },
-      {
-        id: "D",
-        text: "Error.class ValidationError extends throw"
-      }
+      { id: "A", text: "class ValidationError extends Error { constructor(message) { super(message); this.name = \"ValidationError\"; } }" },
+      { id: "B", text: "class ValidationError Error { message() {} }" },
+      { id: "C", text: "class ValidationError throws Error { }" },
+      { id: "D", text: "Error.class ValidationError extends throw" }
     ],
     correctOptionId: "A",
     explanation: "A custom error can extend `Error`, call `super(message)` to initialize the base Error, and assign a meaningful name.",
@@ -595,12 +583,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What is logged?\n\nclass ValidationError extends Error {}\n\nconst error = new ValidationError(\"Invalid email\");\nconsole.log(error instanceof Error);",
     options: [
-      { id: "A", text: "true" },
-      { id: "B", text: "false" },
+      { id: "A", text: "false" },
+      { id: "B", text: "true" },
       { id: "C", text: "undefined" },
       { id: "D", text: "ValidationError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A subclass instance is also an instance of its parent class. Therefore a `ValidationError` is also an `Error`.",
     tags: ["custom-errors", "instanceof", "inheritance"]
   },
@@ -613,24 +601,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "Which catch block correctly handles a custom ValidationError differently from other errors?",
     options: [
-      {
-        id: "A",
-        text: "catch (error) { if (error instanceof ValidationError) showValidationMessage(); else throw error; }"
-      },
-      {
-        id: "B",
-        text: "catch (error) { if (error === ValidationError) showValidationMessage(); }"
-      },
-      {
-        id: "C",
-        text: "catch { ValidationError(error); }"
-      },
-      {
-        id: "D",
-        text: "catch (ValidationError) { }"
-      }
+      { id: "A", text: "catch (error) { if (error === ValidationError) showValidationMessage(); }" },
+      { id: "B", text: "catch { ValidationError(error); }" },
+      { id: "C", text: "catch (error) { if (error instanceof ValidationError) showValidationMessage(); else throw error; }" },
+      { id: "D", text: "catch (ValidationError) { }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The caught value is an instance, so `instanceof ValidationError` checks whether it belongs to that custom error class. Other errors can then be re-thrown.",
     tags: ["custom-errors", "instanceof", "rethrow"]
   },
@@ -643,12 +619,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Intermediate",
     question: "What does an empty catch block like this do?\n\ntry {\n  riskyOperation();\n} catch (error) {\n}",
     options: [
-      { id: "A", text: "It catches the error and silently discards it" },
-      { id: "B", text: "It automatically fixes the error" },
-      { id: "C", text: "It rethrows the error" },
-      { id: "D", text: "It causes a syntax error" }
+      { id: "A", text: "It automatically fixes the error" },
+      { id: "B", text: "It rethrows the error" },
+      { id: "C", text: "It causes a syntax error" },
+      { id: "D", text: "It catches the error and silently discards it" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The exception is caught and no action is taken. This silently swallows the error, which can make failures difficult to diagnose.",
     tags: ["catch", "common-mistakes", "error-handling"]
   },
@@ -679,12 +655,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Why does this not catch the error?\n\ntry {\n  setTimeout(() => {\n    throw new Error(\"Failed\");\n  }, 0);\n} catch (error) {\n  console.log(\"caught\");\n}",
     options: [
-      { id: "A", text: "The throw occurs later in a different asynchronous callback, after the try/catch has already finished" },
-      { id: "B", text: "setTimeout cannot throw errors" },
+      { id: "A", text: "setTimeout cannot throw errors" },
+      { id: "B", text: "The throw occurs later in a different asynchronous callback, after the try/catch has already finished" },
       { id: "C", text: "try/catch only catches SyntaxError" },
       { id: "D", text: "The callback executes before try starts" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `try` block schedules the timer and finishes before the callback runs. When the callback later throws, the original synchronous try/catch is no longer active.",
     tags: ["async-errors", "setTimeout", "try-catch", "event-loop"]
   },
@@ -697,24 +673,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Which approach correctly catches a rejection from an async function?",
     options: [
-      {
-        id: "A",
-        text: "try { await loadData(); } catch (error) { handleError(error); }"
-      },
-      {
-        id: "B",
-        text: "try { setTimeout(loadData, 0); } catch (error) { handleError(error); }"
-      },
-      {
-        id: "C",
-        text: "catch (loadData()) { }"
-      },
-      {
-        id: "D",
-        text: "finally { await loadData(); }"
-      }
+      { id: "A", text: "try { setTimeout(loadData, 0); } catch (error) { handleError(error); }" },
+      { id: "B", text: "catch (loadData()) { }" },
+      { id: "C", text: "try { await loadData(); } catch (error) { handleError(error); }" },
+      { id: "D", text: "finally { await loadData(); }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Awaiting a Promise inside a try block allows a rejection to be converted into a thrown exception at the await expression, where catch can handle it.",
     tags: ["async-errors", "async-await", "try-catch", "promises"]
   },
@@ -727,12 +691,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What happens here?\n\nasync function load() {\n  try {\n    await Promise.reject(new Error(\"Failed\"));\n  } catch (error) {\n    console.log(\"handled\");\n  }\n}\n\nload();",
     options: [
-      { id: "A", text: "handled is logged and load() returns a fulfilled Promise unless another error is thrown" },
-      { id: "B", text: "handled is never logged" },
-      { id: "C", text: "load() always returns a rejected Promise" },
-      { id: "D", text: "The rejection cannot be caught with async/await" }
+      { id: "A", text: "handled is never logged" },
+      { id: "B", text: "load() always returns a rejected Promise" },
+      { id: "C", text: "The rejection cannot be caught with async/await" },
+      { id: "D", text: "handled is logged and load() returns a fulfilled Promise unless another error is thrown" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The rejection is caught by the catch block. Since the catch completes normally without rethrowing, the async function's returned Promise fulfills.",
     tags: ["async-errors", "async-await", "catch", "promises"]
   },
@@ -763,13 +727,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is logged?\n\nfunction parseUser(json) {\n  try {\n    return JSON.parse(json);\n  } catch (error) {\n    throw new Error(\"Invalid user data\");\n  }\n}\n\ntry {\n  parseUser(\"bad json\");\n} catch (error) {\n  console.log(error.message);\n}",
     options: [
-      { id: "A", text: "Invalid user data" },
-      { id: "B", text: "Unexpected token"
-      },
+      { id: "A", text: "Unexpected token" },
+      { id: "B", text: "Invalid user data" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The original parsing error is caught and replaced by a new Error with the message `Invalid user data`. The caller catches that new error.",
     tags: ["JSON.parse", "custom-errors", "error-transformation"]
   },
@@ -782,12 +745,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is a potential drawback of replacing an original error with a new generic Error without preserving its cause or context?",
     options: [
-      { id: "A", text: "Useful debugging information from the original failure may be lost" },
-      { id: "B", text: "The new Error can never be caught" },
-      { id: "C", text: "The application becomes synchronous" },
+      { id: "A", text: "The new Error can never be caught" },
+      { id: "B", text: "The application becomes synchronous" },
+      { id: "C", text: "Useful debugging information from the original failure may be lost" },
       { id: "D", text: "finally blocks stop running" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Wrapping errors can be useful, but blindly replacing the original error may discard valuable details. Modern JavaScript supports an Error `cause` option for preserving the underlying failure.",
     tags: ["error-wrapping", "Error", "cause", "debugging"]
   },
@@ -800,24 +763,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Which approach preserves the original error as the cause of a higher-level error?",
     options: [
-      {
-        id: "A",
-        text: "throw new Error(\"Failed to load user\", { cause: error });"
-      },
-      {
-        id: "B",
-        text: "throw cause(error, \"Failed to load user\");"
-      },
-      {
-        id: "C",
-        text: "throw Error.cause(error);"
-      },
-      {
-        id: "D",
-        text: "return new Error(\"Failed to load user\", error)"
-      }
+      { id: "A", text: "throw cause(error, \"Failed to load user\");" },
+      { id: "B", text: "throw Error.cause(error);" },
+      { id: "C", text: "return new Error(\"Failed to load user\", error)" },
+      { id: "D", text: "throw new Error(\"Failed to load user\", { cause: error });" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `Error` constructor supports an options object with a `cause` property, allowing higher-level code to preserve the underlying error while providing more useful context.",
     tags: ["Error", "cause", "error-wrapping", "debugging"]
   },
@@ -848,12 +799,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What happens here?\n\ntry {\n  throw new Error(\"A\");\n} catch (error) {\n  console.log(\"B\");\n} finally {\n  throw new Error(\"C\");\n}",
     options: [
-      { id: "A", text: "B is logged, then the error C propagates" },
-      { id: "B", text: "A propagates and C is ignored" },
+      { id: "A", text: "A propagates and C is ignored" },
+      { id: "B", text: "B is logged, then the error C propagates" },
       { id: "C", text: "Nothing happens because finally cannot throw" },
       { id: "D", text: "A and C are both caught automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The original error is caught and `B` is logged. The finally block then throws a new error, which becomes the active exception leaving the construct.",
     tags: ["finally", "throw", "error-propagation", "edge-cases"]
   },
@@ -866,12 +817,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "What is the benefit of using a specific custom error type instead of checking error.message strings everywhere?",
     options: [
-      { id: "A", text: "The application can identify the semantic error category using the error's type rather than fragile message text" },
-      { id: "B", text: "Custom errors cannot be caught" },
-      { id: "C", text: "Message strings are required to be unique globally" },
+      { id: "A", text: "Custom errors cannot be caught" },
+      { id: "B", text: "Message strings are required to be unique globally" },
+      { id: "C", text: "The application can identify the semantic error category using the error's type rather than fragile message text" },
       { id: "D", text: "Custom errors automatically retry operations" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Error messages can change and are primarily intended for human-readable context. A custom error class gives code a stable semantic category that can be checked with `instanceof`.",
     tags: ["custom-errors", "instanceof", "architecture", "best-practices"]
   },
@@ -884,24 +835,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Which implementation best follows the principle of handling only errors the current layer understands?\n\nfunction loadConfig() {\n  try {\n    return parseConfig();\n  } catch (error) {",
     options: [
-      {
-        id: "A",
-        text: "if (error instanceof SyntaxError) return defaultConfig(); throw error;"
-      },
-      {
-        id: "B",
-        text: "return null;"
-      },
-      {
-        id: "C",
-        text: "console.log(\"ignored\");"
-      },
-      {
-        id: "D",
-        text: "throw new Error(\"Something happened\");"
-      }
+      { id: "A", text: "return null;" },
+      { id: "B", text: "console.log(\"ignored\");" },
+      { id: "C", text: "throw new Error(\"Something happened\");" },
+      { id: "D", text: "if (error instanceof SyntaxError) return defaultConfig(); throw error;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "If this layer knows how to recover from malformed configuration syntax, it can handle that specific error. Other unexpected errors should continue propagating rather than being silently hidden.",
     tags: ["error-propagation", "instanceof", "rethrow", "best-practices"]
   },
@@ -932,12 +871,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "Which statement about try/catch and asynchronous Promise errors is correct?",
     options: [
-      { id: "A", text: "A try/catch can catch a Promise rejection when the Promise is awaited inside the try block" },
-      { id: "B", text: "A try/catch automatically catches every future asynchronous callback" },
+      { id: "A", text: "A try/catch automatically catches every future asynchronous callback" },
+      { id: "B", text: "A try/catch can catch a Promise rejection when the Promise is awaited inside the try block" },
       { id: "C", text: "Promise rejections cannot be handled with catch" },
       { id: "D", text: "await prevents all Promise rejections" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When an awaited Promise rejects, the await expression throws within the async function, allowing the surrounding try/catch to handle it.",
     tags: ["async-errors", "promises", "await", "try-catch"]
   },
@@ -950,12 +889,12 @@ const javascriptErrorHandlingQuestions = [
     difficulty: "Advanced",
     question: "A production application has this pattern:\n\ntry {\n  await saveUser(user);\n} catch (error) {\n  console.log(\"failed\");\n}\n\nWhat is the biggest concern if this is the only handling performed?",
     options: [
-      { id: "A", text: "The failure may be silently hidden from the rest of the application, leaving the caller unable to know that saving failed" },
-      { id: "B", text: "try/catch automatically retries saveUser forever" },
-      { id: "C", text: "await converts the failure into success" },
+      { id: "A", text: "try/catch automatically retries saveUser forever" },
+      { id: "B", text: "await converts the failure into success" },
+      { id: "C", text: "The failure may be silently hidden from the rest of the application, leaving the caller unable to know that saving failed" },
       { id: "D", text: "console.log causes the Promise to resolve" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Catching an error and merely logging it means the function may continue as though the operation succeeded unless it explicitly returns a failure result or rethrows. Production error handling should preserve the application's ability to respond correctly to the failure.",
     tags: ["async-errors", "error-propagation", "rethrow", "production-code"]
   }

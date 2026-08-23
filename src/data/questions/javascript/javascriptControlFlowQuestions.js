@@ -7,12 +7,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "Which statement is primarily used to execute code only when a condition is truthy?",
     options: [
-      { id: "A", text: "if" },
-      { id: "B", text: "switch" },
-      { id: "C", text: "for" },
-      { id: "D", text: "continue" }
+      { id: "A", text: "switch" },
+      { id: "B", text: "for" },
+      { id: "C", text: "continue" },
+      { id: "D", text: "if" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An `if` statement conditionally executes a block when its condition evaluates to a truthy value.",
     tags: ["if", "conditionals"]
   },
@@ -43,12 +43,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of an `else` block?",
     options: [
-      { id: "A", text: "To execute alternative code when the preceding if condition is falsy." },
-      { id: "B", text: "To repeat an if statement." },
+      { id: "A", text: "To repeat an if statement." },
+      { id: "B", text: "To execute alternative code when the preceding if condition is falsy." },
       { id: "C", text: "To terminate the JavaScript program." },
       { id: "D", text: "To create a loop." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An `else` block provides the alternative branch when its associated `if` condition is falsy.",
     tags: ["if", "else", "conditionals"]
   },
@@ -61,12 +61,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst age = 20;\n\nif (age >= 18) {\n  console.log(\"adult\");\n} else {\n  console.log(\"minor\");\n}",
     options: [
-      { id: "A", text: "adult" },
-      { id: "B", text: "minor" },
-      { id: "C", text: "20" },
+      { id: "A", text: "minor" },
+      { id: "B", text: "20" },
+      { id: "C", text: "adult" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "20 satisfies `age >= 18`, so the first branch executes.",
     tags: ["if-else", "comparison"]
   },
@@ -79,12 +79,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst score = 45;\n\nif (score >= 50) {\n  console.log(\"pass\");\n} else {\n  console.log(\"fail\");\n}",
     options: [
-      { id: "A", text: "fail" },
-      { id: "B", text: "pass" },
-      { id: "C", text: "45" },
-      { id: "D", text: "Nothing" }
+      { id: "A", text: "pass" },
+      { id: "B", text: "45" },
+      { id: "C", text: "Nothing" },
+      { id: "D", text: "fail" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "45 is not greater than or equal to 50, so the `else` branch runs.",
     tags: ["if-else", "comparisons"]
   },
@@ -115,12 +115,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst score = 75;\n\nif (score >= 90) {\n  console.log(\"A\");\n} else if (score >= 70) {\n  console.log(\"B\");\n} else {\n  console.log(\"C\");\n}",
     options: [
-      { id: "A", text: "B" },
-      { id: "B", text: "A" },
+      { id: "A", text: "A" },
+      { id: "B", text: "B" },
       { id: "C", text: "C" },
       { id: "D", text: "A B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "75 does not satisfy the first condition but does satisfy `score >= 70`, so `B` is printed.",
     tags: ["else-if", "conditionals"]
   },
@@ -133,12 +133,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "When an `if` / `else if` chain finds its first truthy condition, what happens to the remaining branches?",
     options: [
-      { id: "A", text: "They are skipped." },
-      { id: "B", text: "They all execute." },
-      { id: "C", text: "Only the final else executes." },
+      { id: "A", text: "They all execute." },
+      { id: "B", text: "Only the final else executes." },
+      { id: "C", text: "They are skipped." },
       { id: "D", text: "They are evaluated again." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Once a branch in the chain is selected, the remaining branches are skipped.",
     tags: ["else-if", "control-flow"]
   },
@@ -151,12 +151,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst value = 0;\n\nif (value) {\n  console.log(\"A\");\n} else {\n  console.log(\"B\");\n}",
     options: [
-      { id: "A", text: "B" },
-      { id: "B", text: "A" },
-      { id: "C", text: "0" },
-      { id: "D", text: "Nothing" }
+      { id: "A", text: "A" },
+      { id: "B", text: "0" },
+      { id: "C", text: "Nothing" },
+      { id: "D", text: "B" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "0 is falsy, so the `else` branch executes.",
     tags: ["truthy", "falsy", "if"]
   },
@@ -187,12 +187,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst age = 25;\nconst hasID = true;\n\nif (age >= 18 && hasID) {\n  console.log(\"allowed\");\n} else {\n  console.log(\"denied\");\n}",
     options: [
-      { id: "A", text: "allowed" },
-      { id: "B", text: "denied" },
+      { id: "A", text: "denied" },
+      { id: "B", text: "allowed" },
       { id: "C", text: "true" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Both conditions are truthy, so the combined `&&` expression is truthy.",
     tags: ["logical-and", "conditions"]
   },
@@ -205,12 +205,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst isAdmin = false;\nconst isOwner = true;\n\nif (isAdmin || isOwner) {\n  console.log(\"access\");\n}",
     options: [
-      { id: "A", text: "access" },
-      { id: "B", text: "Nothing" },
-      { id: "C", text: "false" },
+      { id: "A", text: "Nothing" },
+      { id: "B", text: "false" },
+      { id: "C", text: "access" },
       { id: "D", text: "TypeError" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "With `||`, only one operand needs to be truthy. `isOwner` is true, so the condition succeeds.",
     tags: ["logical-or", "conditions"]
   },
@@ -223,12 +223,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is the main purpose of a `switch` statement?",
     options: [
-      { id: "A", text: "To select among multiple branches based on a value." },
-      { id: "B", text: "To declare variables." },
-      { id: "C", text: "To create asynchronous operations." },
-      { id: "D", text: "To iterate over object properties only." }
+      { id: "A", text: "To declare variables." },
+      { id: "B", text: "To create asynchronous operations." },
+      { id: "C", text: "To iterate over object properties only." },
+      { id: "D", text: "To select among multiple branches based on a value." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`switch` provides a structured way to select a branch based on matching a value against `case` clauses.",
     tags: ["switch", "conditionals"]
   },
@@ -259,12 +259,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is the purpose of `break` inside a `switch` case?",
     options: [
-      { id: "A", text: "To exit the switch statement." },
-      { id: "B", text: "To restart the switch." },
+      { id: "A", text: "To restart the switch." },
+      { id: "B", text: "To exit the switch statement." },
       { id: "C", text: "To skip only the current expression." },
       { id: "D", text: "To execute the default case." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`break` exits the current `switch` statement and prevents execution from falling through to later cases.",
     tags: ["switch", "break"]
   },
@@ -277,12 +277,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst value = 2;\n\nswitch (value) {\n  case 1:\n    console.log(\"one\");\n  case 2:\n    console.log(\"two\");\n  case 3:\n    console.log(\"three\");\n}",
     options: [
-      { id: "A", text: "two three" },
-      { id: "B", text: "two" },
-      { id: "C", text: "three" },
+      { id: "A", text: "two" },
+      { id: "B", text: "three" },
+      { id: "C", text: "two three" },
       { id: "D", text: "one two three" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Without `break`, execution falls through from the matching `case 2` into `case 3`.",
     tags: ["switch", "fall-through", "break"]
   },
@@ -295,12 +295,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "When does the `default` branch of a switch execute?",
     options: [
-      { id: "A", text: "When none of the case values match." },
-      { id: "B", text: "Every time after a case." },
-      { id: "C", text: "Only when the value is undefined." },
-      { id: "D", text: "Only when break is missing." }
+      { id: "A", text: "Every time after a case." },
+      { id: "B", text: "Only when the value is undefined." },
+      { id: "C", text: "Only when break is missing." },
+      { id: "D", text: "When none of the case values match." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`default` acts as the fallback branch when no `case` matches the switch expression.",
     tags: ["switch", "default"]
   },
@@ -331,12 +331,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "How does a switch case compare its value with the switch expression?",
     options: [
-      { id: "A", text: "Using strict equality semantics." },
-      { id: "B", text: "Using loose equality with automatic conversion." },
+      { id: "A", text: "Using loose equality with automatic conversion." },
+      { id: "B", text: "Using strict equality semantics." },
       { id: "C", text: "By converting both values to strings." },
       { id: "D", text: "By comparing object references only." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Switch matching uses strict comparison semantics, so type differences matter.",
     tags: ["switch", "strict-equality"]
   },
@@ -349,12 +349,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst value = \"1\";\n\nswitch (value) {\n  case 1:\n    console.log(\"number\");\n    break;\n  case \"1\":\n    console.log(\"string\");\n    break;\n}",
     options: [
-      { id: "A", text: "string" },
-      { id: "B", text: "number" },
-      { id: "C", text: "number string" },
+      { id: "A", text: "number" },
+      { id: "B", text: "number string" },
+      { id: "C", text: "string" },
       { id: "D", text: "Nothing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The switch value is a string, so it matches `case \"1\"`, not the numeric `case 1`.",
     tags: ["switch", "strict-equality", "types"]
   },
@@ -367,12 +367,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "Which loop is generally appropriate when you know the number of iterations or have a clear initialization, condition, and update?",
     options: [
-      { id: "A", text: "for" },
-      { id: "B", text: "switch" },
-      { id: "C", text: "if" },
-      { id: "D", text: "try" }
+      { id: "A", text: "switch" },
+      { id: "B", text: "if" },
+      { id: "C", text: "try" },
+      { id: "D", text: "for" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `for` loop places initialization, condition, and update in one compact loop structure.",
     tags: ["for-loop", "loops"]
   },
@@ -403,12 +403,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "In a standard `for` loop, which part executes before the first iteration?",
     options: [
-      { id: "A", text: "Initialization" },
-      { id: "B", text: "Update" },
+      { id: "A", text: "Update" },
+      { id: "B", text: "Initialization" },
       { id: "C", text: "Condition body" },
       { id: "D", text: "break" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The initialization expression runs once before the loop's first condition check.",
     tags: ["for-loop", "initialization"]
   },
@@ -421,12 +421,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "In a standard `for` loop, when is the update expression executed?",
     options: [
-      { id: "A", text: "After each completed iteration of the loop body." },
-      { id: "B", text: "Before initialization." },
-      { id: "C", text: "Only when the condition is false." },
+      { id: "A", text: "Before initialization." },
+      { id: "B", text: "Only when the condition is false." },
+      { id: "C", text: "After each completed iteration of the loop body." },
       { id: "D", text: "Only once before the loop starts." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "After the loop body finishes normally, the update expression executes before the next condition check.",
     tags: ["for-loop", "iteration"]
   },
@@ -439,12 +439,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nfor (let i = 1; i <= 3; i++) {\n  console.log(i);\n}",
     options: [
-      { id: "A", text: "1 2 3" },
-      { id: "B", text: "0 1 2" },
-      { id: "C", text: "1 2" },
-      { id: "D", text: "0 1 2 3" }
+      { id: "A", text: "0 1 2" },
+      { id: "B", text: "1 2" },
+      { id: "C", text: "0 1 2 3" },
+      { id: "D", text: "1 2 3" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The loop begins at 1 and continues while `i <= 3`, so it prints 1, 2, and 3.",
     tags: ["for-loop", "comparison"]
   },
@@ -475,12 +475,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "Which loop checks its condition before each iteration, including before the first one?",
     options: [
-      { id: "A", text: "while" },
-      { id: "B", text: "do...while" },
+      { id: "A", text: "do...while" },
+      { id: "B", text: "while" },
       { id: "C", text: "switch" },
       { id: "D", text: "for...of only" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A `while` loop checks its condition before executing the body, so the body may execute zero times.",
     tags: ["while-loop", "loops"]
   },
@@ -493,12 +493,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nlet count = 0;\n\nwhile (count < 3) {\n  console.log(count);\n  count++;\n}",
     options: [
-      { id: "A", text: "0 1 2" },
-      { id: "B", text: "1 2 3" },
-      { id: "C", text: "0 1 2 3" },
+      { id: "A", text: "1 2 3" },
+      { id: "B", text: "0 1 2 3" },
+      { id: "C", text: "0 1 2" },
       { id: "D", text: "3" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The condition is checked before each iteration. Values 0, 1, and 2 satisfy `count < 3`.",
     tags: ["while-loop", "iteration"]
   },
@@ -511,12 +511,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is the key difference between `while` and `do...while`?",
     options: [
-      { id: "A", text: "`do...while` executes its body at least once before checking the condition." },
-      { id: "B", text: "`while` always executes at least once." },
-      { id: "C", text: "`do...while` cannot have a condition." },
-      { id: "D", text: "There is no difference." }
+      { id: "A", text: "`while` always executes at least once." },
+      { id: "B", text: "`do...while` cannot have a condition." },
+      { id: "C", text: "There is no difference." },
+      { id: "D", text: "`do...while` executes its body at least once before checking the condition." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `do...while` loop executes the body first and checks its condition afterward, guaranteeing at least one execution.",
     tags: ["do-while", "while", "loops"]
   },
@@ -547,12 +547,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What does `break` do inside a loop?",
     options: [
-      { id: "A", text: "Immediately exits the loop." },
-      { id: "B", text: "Skips only the current iteration." },
+      { id: "A", text: "Skips only the current iteration." },
+      { id: "B", text: "Immediately exits the loop." },
       { id: "C", text: "Restarts the loop." },
       { id: "D", text: "Pauses the loop permanently without exiting." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`break` terminates the nearest enclosing loop immediately.",
     tags: ["break", "loops"]
   },
@@ -565,12 +565,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nfor (let i = 0; i < 5; i++) {\n  if (i === 3) break;\n  console.log(i);\n}",
     options: [
-      { id: "A", text: "0 1 2" },
-      { id: "B", text: "0 1 2 3" },
-      { id: "C", text: "3 4" },
+      { id: "A", text: "0 1 2 3" },
+      { id: "B", text: "3 4" },
+      { id: "C", text: "0 1 2" },
       { id: "D", text: "0 1 2 3 4" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When `i` reaches 3, `break` immediately exits the loop before 3 is logged.",
     tags: ["break", "for-loop"]
   },
@@ -583,12 +583,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What does `continue` do inside a loop?",
     options: [
-      { id: "A", text: "Skips the remainder of the current iteration and proceeds with the next iteration." },
-      { id: "B", text: "Terminates the entire loop." },
-      { id: "C", text: "Restarts the JavaScript runtime." },
-      { id: "D", text: "Repeats the current iteration forever." }
+      { id: "A", text: "Terminates the entire loop." },
+      { id: "B", text: "Restarts the JavaScript runtime." },
+      { id: "C", text: "Repeats the current iteration forever." },
+      { id: "D", text: "Skips the remainder of the current iteration and proceeds with the next iteration." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`continue` skips the remaining statements in the current iteration and moves toward the next iteration.",
     tags: ["continue", "loops"]
   },
@@ -619,12 +619,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "In a `for` loop, what happens to the update expression after `continue` is executed?",
     options: [
-      { id: "A", text: "For a normal for-loop, the update expression still runs before the next condition check." },
-      { id: "B", text: "The update expression is permanently skipped." },
+      { id: "A", text: "The update expression is permanently skipped." },
+      { id: "B", text: "For a normal for-loop, the update expression still runs before the next condition check." },
       { id: "C", text: "The initialization runs again." },
       { id: "D", text: "The loop terminates." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "In a traditional `for` loop, `continue` proceeds to the loop's update expression and then the next condition check.",
     tags: ["continue", "for-loop", "iteration"]
   },
@@ -637,12 +637,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "Which loop is designed to iterate directly over the values of an iterable such as an array?",
     options: [
-      { id: "A", text: "for...of" },
-      { id: "B", text: "for...in" },
-      { id: "C", text: "switch" },
+      { id: "A", text: "for...in" },
+      { id: "B", text: "switch" },
+      { id: "C", text: "for...of" },
       { id: "D", text: "while...in" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`for...of` iterates over values produced by an iterable.",
     tags: ["for-of", "iteration", "iterables"]
   },
@@ -655,12 +655,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst colors = [\"red\", \"blue\", \"green\"];\n\nfor (const color of colors) {\n  console.log(color);\n}",
     options: [
-      { id: "A", text: "red blue green" },
-      { id: "B", text: "0 1 2" },
-      { id: "C", text: "colors" },
-      { id: "D", text: "undefined undefined undefined" }
+      { id: "A", text: "0 1 2" },
+      { id: "B", text: "colors" },
+      { id: "C", text: "undefined undefined undefined" },
+      { id: "D", text: "red blue green" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`for...of` gives each array value directly, so the strings are printed.",
     tags: ["for-of", "arrays", "iteration"]
   },
@@ -691,12 +691,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\n\nfor (const key in user) {\n  console.log(key);\n}",
     options: [
-      { id: "A", text: "name age" },
-      { id: "B", text: "Avi 23" },
+      { id: "A", text: "Avi 23" },
+      { id: "B", text: "name age" },
       { id: "C", text: "0 1" },
       { id: "D", text: "user" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`for...in` iterates over the object's enumerable property keys, which are `name` and `age`.",
     tags: ["for-in", "objects"]
   },
@@ -709,12 +709,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "Why should `for...of` generally be preferred over `for...in` when you want the values of an array?",
     options: [
-      { id: "A", text: "`for...of` directly produces array values, while `for...in` produces enumerable keys." },
-      { id: "B", text: "`for...in` cannot run on arrays." },
-      { id: "C", text: "`for...of` only works with objects." },
+      { id: "A", text: "`for...in` cannot run on arrays." },
+      { id: "B", text: "`for...of` only works with objects." },
+      { id: "C", text: "`for...of` directly produces array values, while `for...in` produces enumerable keys." },
       { id: "D", text: "They always produce exactly the same values." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`for...of` is designed for iterable values, whereas `for...in` enumerates property keys.",
     tags: ["for-of", "for-in", "arrays"]
   },
@@ -727,12 +727,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "Which statement can create an intentional infinite loop?",
     options: [
-      { id: "A", text: "while (true) { }" },
-      { id: "B", text: "while (false) { }" },
-      { id: "C", text: "if (true) { }" },
-      { id: "D", text: "switch (true) { }" }
+      { id: "A", text: "while (false) { }" },
+      { id: "B", text: "if (true) { }" },
+      { id: "C", text: "switch (true) { }" },
+      { id: "D", text: "while (true) { }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Because `true` never becomes false, `while (true)` continues indefinitely unless something such as `break`, an exception, or external termination stops it.",
     tags: ["while-loop", "infinite-loop"]
   },
@@ -763,12 +763,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What is a nested loop?",
     options: [
-      { id: "A", text: "A loop placed inside another loop." },
-      { id: "B", text: "A loop that never ends." },
+      { id: "A", text: "A loop that never ends." },
+      { id: "B", text: "A loop placed inside another loop." },
       { id: "C", text: "A loop that contains only an if statement." },
       { id: "D", text: "A loop declared with const." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A nested loop is simply a loop whose body contains another loop.",
     tags: ["nested-loops", "loops"]
   },
@@ -781,12 +781,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "How many times does `\"x\"` get printed?\n\nfor (let i = 0; i < 3; i++) {\n  for (let j = 0; j < 2; j++) {\n    console.log(\"x\");\n  }\n}",
     options: [
-      { id: "A", text: "6" },
-      { id: "B", text: "3" },
-      { id: "C", text: "5" },
+      { id: "A", text: "3" },
+      { id: "B", text: "5" },
+      { id: "C", text: "6" },
       { id: "D", text: "2" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The outer loop runs 3 times and the inner loop runs 2 times for each outer iteration: 3 × 2 = 6.",
     tags: ["nested-loops", "iteration"]
   },
@@ -799,12 +799,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Intermediate",
     question: "What does a labeled `break` allow you to do?",
     options: [
-      { id: "A", text: "Exit a specific labeled outer statement or loop." },
-      { id: "B", text: "Restart a labeled loop." },
-      { id: "C", text: "Skip a function call." },
-      { id: "D", text: "Create a new variable scope automatically." }
+      { id: "A", text: "Restart a labeled loop." },
+      { id: "B", text: "Skip a function call." },
+      { id: "C", text: "Create a new variable scope automatically." },
+      { id: "D", text: "Exit a specific labeled outer statement or loop." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A labeled `break` can terminate the specified labeled statement, which is useful when exiting an outer loop from inside nested loops.",
     tags: ["break", "labels", "nested-loops"]
   },
@@ -835,12 +835,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Advanced",
     question: "What is the main risk of modifying the counter incorrectly inside a `while` loop?",
     options: [
-      { id: "A", text: "The loop may never reach a falsy condition and become infinite." },
-      { id: "B", text: "JavaScript automatically converts the loop to a for loop." },
+      { id: "A", text: "JavaScript automatically converts the loop to a for loop." },
+      { id: "B", text: "The loop may never reach a falsy condition and become infinite." },
       { id: "C", text: "The loop always executes exactly once." },
       { id: "D", text: "The condition is automatically deleted." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "If the loop's state never progresses toward making its condition false, the loop can continue indefinitely.",
     tags: ["while-loop", "infinite-loop", "loop-control"]
   },
@@ -853,12 +853,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nfor (let i = 0; i < 5; i++) {\n  if (i % 2 === 0) continue;\n  console.log(i);\n}",
     options: [
-      { id: "A", text: "1 3" },
-      { id: "B", text: "0 2 4" },
-      { id: "C", text: "1 2 3 4" },
+      { id: "A", text: "0 2 4" },
+      { id: "B", text: "1 2 3 4" },
+      { id: "C", text: "1 3" },
       { id: "D", text: "0 1 2 3 4" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Even numbers make `i % 2 === 0` true, so those iterations are skipped. Only 1 and 3 are logged.",
     tags: ["continue", "modulo", "loop-filtering"]
   },
@@ -871,12 +871,12 @@ const javascriptControlFlowQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nlet result = 0;\n\nfor (let i = 1; i <= 5; i++) {\n  if (i === 3) continue;\n  result += i;\n}\n\nconsole.log(result);",
     options: [
-      { id: "A", text: "12" },
-      { id: "B", text: "15" },
-      { id: "C", text: "9" },
-      { id: "D", text: "3" }
+      { id: "A", text: "15" },
+      { id: "B", text: "9" },
+      { id: "C", text: "3" },
+      { id: "D", text: "12" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The loop would normally sum 1+2+3+4+5 = 15. Since 3 is skipped, the result is 1+2+4+5 = 12.",
     tags: ["continue", "accumulator", "loops"]
   },

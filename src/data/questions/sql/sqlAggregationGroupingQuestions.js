@@ -7,12 +7,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Beginner",
     question: "What is the primary purpose of SQL aggregate functions?",
     options: [
-      { id: "A", text: "To combine multiple values into a summarized result" },
-      { id: "B", text: "To create database users" },
+      { id: "A", text: "To create database users" },
+      { id: "B", text: "To combine multiple values into a summarized result" },
       { id: "C", text: "To rename tables" },
       { id: "D", text: "To sort columns alphabetically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Aggregate functions calculate a single summarized value from multiple rows, such as a count, sum, or average.",
     tags: ["aggregation", "fundamentals"]
   },
@@ -26,11 +26,11 @@ const sqlAggregationGroupingQuestions = [
     question: "Which function counts rows?",
     options: [
       { id: "A", text: "SUM()" },
-      { id: "B", text: "COUNT()" },
-      { id: "C", text: "TOTAL()" },
+      { id: "B", text: "TOTAL()" },
+      { id: "C", text: "COUNT()" },
       { id: "D", text: "NUMBER()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "COUNT() counts rows or non-NULL values depending on the expression being counted.",
     tags: ["count", "aggregation"]
   },
@@ -45,10 +45,10 @@ const sqlAggregationGroupingQuestions = [
     options: [
       { id: "A", text: "The average salary" },
       { id: "B", text: "The highest salary" },
-      { id: "C", text: "The total of the salary values" },
-      { id: "D", text: "The number of salaries" }
+      { id: "C", text: "The number of salaries" },
+      { id: "D", text: "The total of the salary values" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "SUM() adds together the numeric values supplied to it.",
     tags: ["sum", "aggregation"]
   },
@@ -61,12 +61,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Beginner",
     question: "Which aggregate function calculates an average?",
     options: [
-      { id: "A", text: "MEAN()" },
-      { id: "B", text: "MID()" },
-      { id: "C", text: "AVG()" },
+      { id: "A", text: "AVG()" },
+      { id: "B", text: "MEAN()" },
+      { id: "C", text: "MID()" },
       { id: "D", text: "AVERAGE()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "AVG() calculates the arithmetic average of the supplied numeric values.",
     tags: ["avg", "aggregation"]
   },
@@ -99,10 +99,10 @@ const sqlAggregationGroupingQuestions = [
     options: [
       { id: "A", text: "Deleting duplicate rows" },
       { id: "B", text: "Sorting all rows" },
-      { id: "C", text: "Filtering individual rows before a query" },
-      { id: "D", text: "Creating groups of rows so aggregate calculations can be performed per group" }
+      { id: "C", text: "Creating groups of rows so aggregate calculations can be performed per group" },
+      { id: "D", text: "Filtering individual rows before a query" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "GROUP BY divides rows into groups based on one or more columns, allowing aggregates to be calculated for each group.",
     tags: ["group-by", "aggregation"]
   },
@@ -115,12 +115,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Intermediate",
     question: "What does this query produce?\n\n```sql\nSELECT department, COUNT(*)\nFROM employees\nGROUP BY department;\n```",
     options: [
-      { id: "A", text: "The number of employees in each department" },
-      { id: "B", text: "The total number of departments only" },
-      { id: "C", text: "One employee from each department" },
-      { id: "D", text: "All employees sorted by department" }
+      { id: "A", text: "The total number of departments only" },
+      { id: "B", text: "One employee from each department" },
+      { id: "C", text: "All employees sorted by department" },
+      { id: "D", text: "The number of employees in each department" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "GROUP BY creates one group per department, and COUNT(*) counts the rows within each group.",
     tags: ["group-by", "count"]
   },
@@ -133,12 +133,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Intermediate",
     question: "Which clause is used to filter grouped/aggregated results?",
     options: [
-      { id: "A", text: "WHERE" },
-      { id: "B", text: "FILTER BY" },
-      { id: "C", text: "HAVING" },
+      { id: "A", text: "HAVING" },
+      { id: "B", text: "WHERE" },
+      { id: "C", text: "FILTER BY" },
       { id: "D", text: "GROUP WHERE" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "HAVING filters groups after GROUP BY and is commonly used with aggregate expressions.",
     tags: ["having", "group-by"]
   },
@@ -188,11 +188,11 @@ const sqlAggregationGroupingQuestions = [
     question: "What does COUNT(column_name) generally count?",
     options: [
       { id: "A", text: "All rows including rows where the column is NULL" },
-      { id: "B", text: "Only rows where that column is not NULL" },
-      { id: "C", text: "The number of columns in the table" },
-      { id: "D", text: "Only rows containing zero" }
+      { id: "B", text: "The number of columns in the table" },
+      { id: "C", text: "Only rows containing zero" },
+      { id: "D", text: "Only rows where that column is not NULL" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "COUNT(column_name) counts non-NULL values in that column, unlike COUNT(*), which counts rows.",
     tags: ["count", "null"]
   },
@@ -205,12 +205,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Advanced",
     question: "Suppose a table has salaries: 1000, 2000, NULL, 3000. What does AVG(salary) generally calculate?",
     options: [
-      { id: "A", text: "1500" },
-      { id: "B", text: "2000" },
+      { id: "A", text: "2000" },
+      { id: "B", text: "1500" },
       { id: "C", text: "3000" },
       { id: "D", text: "NULL" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Aggregate functions such as AVG generally ignore NULL values. The average is (1000 + 2000 + 3000) / 3 = 2000.",
     tags: ["avg", "null", "aggregation"]
   },
@@ -223,12 +223,12 @@ const sqlAggregationGroupingQuestions = [
     difficulty: "Advanced",
     question: "Which query calculates the average salary for each department?",
     options: [
-      { id: "A", text: "SELECT department, AVG(salary) FROM employees GROUP BY department;" },
-      { id: "B", text: "SELECT AVG(department, salary) FROM employees;" },
+      { id: "A", text: "SELECT AVG(department, salary) FROM employees;" },
+      { id: "B", text: "SELECT department, AVG(salary) FROM employees GROUP BY department;" },
       { id: "C", text: "SELECT department FROM employees AVG(salary);" },
       { id: "D", text: "SELECT department, salary FROM employees GROUP AVG(salary);" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The department is the grouping column and AVG(salary) calculates the aggregate for each department.",
     tags: ["avg", "group-by"]
   },
@@ -260,11 +260,11 @@ const sqlAggregationGroupingQuestions = [
     question: "Which query finds the department with an average salary greater than 50,000?",
     options: [
       { id: "A", text: "SELECT department FROM employees WHERE AVG(salary) > 50000 GROUP BY department;" },
-      { id: "B", text: "SELECT department FROM employees GROUP BY department HAVING AVG(salary) > 50000;" },
-      { id: "C", text: "SELECT department FROM employees HAVING salary > 50000;" },
-      { id: "D", text: "SELECT department, AVG(salary) FROM employees WHERE AVG(salary) > 50000;" }
+      { id: "B", text: "SELECT department FROM employees HAVING salary > 50000;" },
+      { id: "C", text: "SELECT department, AVG(salary) FROM employees WHERE AVG(salary) > 50000;" },
+      { id: "D", text: "SELECT department FROM employees GROUP BY department HAVING AVG(salary) > 50000;" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "AVG(salary) is calculated per department, so the aggregate condition belongs in HAVING.",
     tags: ["avg", "group-by", "having"]
   }

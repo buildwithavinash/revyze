@@ -25,12 +25,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  age: 23\n};\n\nconsole.log(user.name);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "name" },
+      { id: "A", text: "name" },
+      { id: "B", text: "Avi" },
       { id: "C", text: "23" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Dot notation accesses the `name` property of the `user` object.",
     tags: ["objects", "property-access", "dot-notation"]
   },
@@ -43,12 +43,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "Which syntax accesses an object property using a variable as the property name?",
     options: [
-      { id: "A", text: "user[key]" },
-      { id: "B", text: "user.key()" },
-      { id: "C", text: "user->key" },
+      { id: "A", text: "user.key()" },
+      { id: "B", text: "user->key" },
+      { id: "C", text: "user[key]" },
       { id: "D", text: "user.(key)" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Bracket notation evaluates the expression inside the brackets, making it useful for dynamic property access.",
     tags: ["objects", "bracket-notation", "property-access"]
   },
@@ -61,12 +61,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconst key = \"age\";\n\nconsole.log(user[key]);",
     options: [
-      { id: "A", text: "23" },
-      { id: "B", text: "\"age\"" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "user.age" }
+      { id: "A", text: "\"age\"" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "user.age" },
+      { id: "D", text: "23" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`key` contains the string `\"age\"`, so `user[key]` accesses `user.age`.",
     tags: ["objects", "bracket-notation", "dynamic-properties"]
   },
@@ -97,12 +97,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "How can you update an existing object's property?",
     options: [
-      { id: "A", text: "user.age = 24;" },
-      { id: "B", text: "user.update(age, 24);" },
+      { id: "A", text: "user.update(age, 24);" },
+      { id: "B", text: "user.age = 24;" },
       { id: "C", text: "user.age := 24;" },
       { id: "D", text: "update user.age with 24;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A property can be reassigned using dot or bracket notation.",
     tags: ["objects", "properties", "mutation"]
   },
@@ -115,12 +115,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nuser.age = 24;\n\nconsole.log(user.age);",
     options: [
-      { id: "A", text: "24" },
-      { id: "B", text: "23" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "23" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "24" },
       { id: "D", text: "null" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The assignment changes the `age` property's value from 23 to 24.",
     tags: ["objects", "properties", "mutation"]
   },
@@ -133,12 +133,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "Which operator can be used to check whether an object contains a property, including inherited properties?",
     options: [
-      { id: "A", text: "in" },
-      { id: "B", text: "contains" },
-      { id: "C", text: "hasProperty" },
-      { id: "D", text: "exists" }
+      { id: "A", text: "contains" },
+      { id: "B", text: "hasProperty" },
+      { id: "C", text: "exists" },
+      { id: "D", text: "in" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `in` operator checks whether a property key exists anywhere in the object's property chain.",
     tags: ["objects", "in", "properties"]
   },
@@ -169,12 +169,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What does `delete user.age` do?",
     options: [
-      { id: "A", text: "Removes the age property from user." },
-      { id: "B", text: "Sets age to 0." },
+      { id: "A", text: "Sets age to 0." },
+      { id: "B", text: "Removes the age property from user." },
       { id: "C", text: "Sets age to null." },
       { id: "D", text: "Deletes the entire user object." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `delete` operator removes an object's own configurable property.",
     tags: ["objects", "delete", "properties"]
   },
@@ -187,12 +187,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\ndelete user.age;\n\nconsole.log(user);",
     options: [
-      { id: "A", text: "{ name: \"Avi\" }" },
-      { id: "B", text: "{ name: \"Avi\", age: 23 }" },
-      { id: "C", text: "{ age: undefined }" },
+      { id: "A", text: "{ name: \"Avi\", age: 23 }" },
+      { id: "B", text: "{ age: undefined }" },
+      { id: "C", text: "{ name: \"Avi\" }" },
       { id: "D", text: "{}" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `age` property is removed, leaving only the `name` property.",
     tags: ["objects", "delete"]
   },
@@ -205,12 +205,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What happens when you access a property that does not exist on an object?",
     options: [
-      { id: "A", text: "The result is undefined." },
-      { id: "B", text: "JavaScript throws an error immediately." },
-      { id: "C", text: "The result is null." },
-      { id: "D", text: "The result is false." }
+      { id: "A", text: "JavaScript throws an error immediately." },
+      { id: "B", text: "The result is null." },
+      { id: "C", text: "The result is false." },
+      { id: "D", text: "The result is undefined." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Accessing a missing property normally returns `undefined`.",
     tags: ["objects", "undefined", "property-access"]
   },
@@ -241,12 +241,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "Which syntax correctly creates a method inside an object?",
     options: [
-      { id: "A", text: "greet() { return \"Hello\"; }" },
-      { id: "B", text: "method greet => \"Hello\";" },
+      { id: "A", text: "method greet => \"Hello\";" },
+      { id: "B", text: "greet() { return \"Hello\"; }" },
       { id: "C", text: "function: greet() { }" },
       { id: "D", text: "greet -> function() { }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Modern object method shorthand allows `greet() { ... }` directly inside an object literal.",
     tags: ["objects", "methods", "syntax"]
   },
@@ -259,12 +259,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  greet() {\n    return `Hello ${this.name}`;\n  }\n};\n\nconsole.log(user.greet());",
     options: [
-      { id: "A", text: "Hello Avi" },
-      { id: "B", text: "Hello undefined" },
-      { id: "C", text: "Avi" },
+      { id: "A", text: "Hello undefined" },
+      { id: "B", text: "Avi" },
+      { id: "C", text: "Hello Avi" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When called as `user.greet()`, `this` refers to the `user` object, so `this.name` is `Avi`.",
     tags: ["objects", "methods", "this"]
   },
@@ -277,12 +277,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is object destructuring?",
     options: [
-      { id: "A", text: "Extracting properties from an object into variables." },
-      { id: "B", text: "Deleting all properties from an object." },
-      { id: "C", text: "Converting an object into a class." },
-      { id: "D", text: "Sorting an object's properties." }
+      { id: "A", text: "Deleting all properties from an object." },
+      { id: "B", text: "Converting an object into a class." },
+      { id: "C", text: "Sorting an object's properties." },
+      { id: "D", text: "Extracting properties from an object into variables." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Object destructuring provides a concise way to extract property values into variables.",
     tags: ["objects", "destructuring"]
   },
@@ -313,12 +313,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconst { name: userName } = user;\n\nconsole.log(userName);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "userName" },
+      { id: "A", text: "userName" },
+      { id: "B", text: "Avi" },
       { id: "C", text: "undefined" },
       { id: "D", text: "name" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The syntax `name: userName` extracts the `name` property and stores its value in the variable `userName`.",
     tags: ["objects", "destructuring", "renaming"]
   },
@@ -331,12 +331,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\" };\nconst { age = 18 } = user;\n\nconsole.log(age);",
     options: [
-      { id: "A", text: "18" },
-      { id: "B", text: "undefined" },
-      { id: "C", text: "null" },
+      { id: "A", text: "undefined" },
+      { id: "B", text: "null" },
+      { id: "C", text: "18" },
       { id: "D", text: "Error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The default value is used because `age` is missing from the object.",
     tags: ["objects", "destructuring", "default-values"]
   },
@@ -349,12 +349,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement correctly uses object shorthand property syntax?",
     options: [
-      { id: "A", text: "const name = \"Avi\"; const user = { name };" },
-      { id: "B", text: "const name = \"Avi\"; const user = { name: name() };" },
-      { id: "C", text: "const name = \"Avi\"; const user = [name];" },
-      { id: "D", text: "const name = \"Avi\"; const user = { : name };" }
+      { id: "A", text: "const name = \"Avi\"; const user = { name: name() };" },
+      { id: "B", text: "const name = \"Avi\"; const user = [name];" },
+      { id: "C", text: "const name = \"Avi\"; const user = { : name };" },
+      { id: "D", text: "const name = \"Avi\"; const user = { name };" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "When the variable name and property name are the same, `{ name }` is shorthand for `{ name: name }`.",
     tags: ["objects", "shorthand", "es6"]
   },
@@ -385,12 +385,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconst updatedUser = { ...user, age: 24 };\n\nconsole.log(updatedUser.age);",
     options: [
-      { id: "A", text: "24" },
-      { id: "B", text: "23" },
+      { id: "A", text: "23" },
+      { id: "B", text: "24" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The later `age: 24` property overwrites the copied `age: 23` property.",
     tags: ["objects", "spread", "overwriting"]
   },
@@ -403,12 +403,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst defaults = { theme: \"light\", language: \"en\" };\nconst settings = { ...defaults, theme: \"dark\" };\n\nconsole.log(settings);",
     options: [
-      { id: "A", text: "{ theme: \"dark\", language: \"en\" }" },
-      { id: "B", text: "{ theme: \"light\", language: \"en\" }" },
-      { id: "C", text: "{ theme: \"dark\" }" },
+      { id: "A", text: "{ theme: \"light\", language: \"en\" }" },
+      { id: "B", text: "{ theme: \"dark\" }" },
+      { id: "C", text: "{ theme: \"dark\", language: \"en\" }" },
       { id: "D", text: "Error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The spread copies both properties, then the later `theme: \"dark\"` overrides the earlier theme value.",
     tags: ["objects", "spread", "configuration"]
   },
@@ -421,12 +421,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "Which method returns an array containing an object's own enumerable property names?",
     options: [
-      { id: "A", text: "Object.keys()" },
-      { id: "B", text: "Object.names()" },
-      { id: "C", text: "Object.properties()" },
-      { id: "D", text: "Object.entries()" }
+      { id: "A", text: "Object.names()" },
+      { id: "B", text: "Object.properties()" },
+      { id: "C", text: "Object.entries()" },
+      { id: "D", text: "Object.keys()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Object.keys()` returns an array of the object's own enumerable property keys.",
     tags: ["objects", "Object.keys"]
   },
@@ -457,12 +457,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "Which method returns an array containing an object's own enumerable property values?",
     options: [
-      { id: "A", text: "Object.values()" },
-      { id: "B", text: "Object.data()" },
+      { id: "A", text: "Object.data()" },
+      { id: "B", text: "Object.values()" },
       { id: "C", text: "Object.items()" },
       { id: "D", text: "Object.getValues()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Object.values()` returns the values corresponding to the object's own enumerable properties.",
     tags: ["objects", "Object.values"]
   },
@@ -475,12 +475,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Beginner",
     question: "What is printed?\n\nconst user = { name: \"Avi\", age: 23 };\nconsole.log(Object.values(user));",
     options: [
-      { id: "A", text: "[\"Avi\", 23]" },
-      { id: "B", text: "[\"name\", \"age\"]" },
-      { id: "C", text: "2" },
+      { id: "A", text: "[\"name\", \"age\"]" },
+      { id: "B", text: "2" },
+      { id: "C", text: "[\"Avi\", 23]" },
       { id: "D", text: "{ name: \"Avi\", age: 23 }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Object.values()` returns the values of the object's enumerable own properties.",
     tags: ["objects", "Object.values"]
   },
@@ -493,12 +493,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What does `Object.entries()` return?",
     options: [
-      { id: "A", text: "An array of [key, value] pairs." },
-      { id: "B", text: "An array containing only keys." },
-      { id: "C", text: "An array containing only values." },
-      { id: "D", text: "A Map object." }
+      { id: "A", text: "An array containing only keys." },
+      { id: "B", text: "An array containing only values." },
+      { id: "C", text: "A Map object." },
+      { id: "D", text: "An array of [key, value] pairs." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Object.entries()` returns an array where each element is a `[key, value]` pair.",
     tags: ["objects", "Object.entries"]
   },
@@ -529,12 +529,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "Which method can create an object from an array of [key, value] pairs?",
     options: [
-      { id: "A", text: "Object.fromEntries()" },
-      { id: "B", text: "Object.fromArray()" },
+      { id: "A", text: "Object.fromArray()" },
+      { id: "B", text: "Object.fromEntries()" },
       { id: "C", text: "Object.createEntries()" },
       { id: "D", text: "Object.toObject()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Object.fromEntries()` transforms an iterable of key-value pairs into an object.",
     tags: ["objects", "Object.fromEntries"]
   },
@@ -547,12 +547,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst entries = [\n  [\"name\", \"Avi\"],\n  [\"age\", 23]\n];\n\nconst user = Object.fromEntries(entries);\nconsole.log(user.name);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "name" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "name" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Avi" },
       { id: "D", text: "23" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`Object.fromEntries()` converts the key-value pairs into an object with `name` and `age` properties.",
     tags: ["objects", "Object.fromEntries"]
   },
@@ -565,12 +565,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is the key difference between `Object.keys(obj)` and `Object.entries(obj)`?",
     options: [
-      { id: "A", text: "keys returns keys, while entries returns [key, value] pairs." },
-      { id: "B", text: "keys returns values, while entries returns keys." },
-      { id: "C", text: "keys mutates the object, while entries deletes it." },
-      { id: "D", text: "There is no difference." }
+      { id: "A", text: "keys returns values, while entries returns keys." },
+      { id: "B", text: "keys mutates the object, while entries deletes it." },
+      { id: "C", text: "There is no difference." },
+      { id: "D", text: "keys returns keys, while entries returns [key, value] pairs." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Object.keys()` gives property names, while `Object.entries()` gives key-value pairs.",
     tags: ["objects", "Object.keys", "Object.entries"]
   },
@@ -601,12 +601,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is printed?\n\nconst target = { a: 1 };\nconst source = { b: 2 };\n\nObject.assign(target, source);\nconsole.log(target);",
     options: [
-      { id: "A", text: "{ a: 1, b: 2 }" },
-      { id: "B", text: "{ b: 2 }" },
+      { id: "A", text: "{ b: 2 }" },
+      { id: "B", text: "{ a: 1, b: 2 }" },
       { id: "C", text: "{ a: 1 }" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`Object.assign()` copies `b` from `source` into `target`.",
     tags: ["objects", "Object.assign"]
   },
@@ -619,12 +619,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is the main limitation of `{ ...obj }` when copying an object?",
     options: [
-      { id: "A", text: "It performs a shallow copy." },
-      { id: "B", text: "It cannot copy strings." },
-      { id: "C", text: "It only works with arrays." },
+      { id: "A", text: "It cannot copy strings." },
+      { id: "B", text: "It only works with arrays." },
+      { id: "C", text: "It performs a shallow copy." },
       { id: "D", text: "It always mutates the source." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Nested objects and arrays remain shared references because object spread performs a shallow copy.",
     tags: ["objects", "spread", "shallow-copy", "references"]
   },
@@ -637,12 +637,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  address: {\n    city: \"Asansol\"\n  }\n};\n\nconst copy = { ...user };\ncopy.address.city = \"Kolkata\";\n\nconsole.log(user.address.city);",
     options: [
-      { id: "A", text: "Kolkata" },
-      { id: "B", text: "Asansol" },
-      { id: "C", text: "undefined" },
-      { id: "D", text: "Error" }
+      { id: "A", text: "Asansol" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Error" },
+      { id: "D", text: "Kolkata" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The spread copy is shallow. `copy.address` and `user.address` refer to the same nested object.",
     tags: ["objects", "spread", "references", "shallow-copy"]
   },
@@ -673,12 +673,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst a = { name: \"Avi\" };\nconst b = { name: \"Avi\" };\n\nconsole.log(a === b);",
     options: [
-      { id: "A", text: "false" },
-      { id: "B", text: "true" },
+      { id: "A", text: "true" },
+      { id: "B", text: "false" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Although the objects contain the same data, they are two separate object references.",
     tags: ["objects", "equality", "references"]
   },
@@ -691,12 +691,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst a = { name: \"Avi\" };\nconst b = a;\n\nb.name = \"Sam\";\n\nconsole.log(a.name);",
     options: [
-      { id: "A", text: "Sam" },
-      { id: "B", text: "Avi" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "Avi" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Sam" },
       { id: "D", text: "Error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`a` and `b` reference the same object. Changing the object through `b` is therefore visible through `a`.",
     tags: ["objects", "references", "mutation"]
   },
@@ -709,12 +709,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "Which syntax correctly destructures a nested object?",
     options: [
-      { id: "A", text: "const { address: { city } } = user;" },
-      { id: "B", text: "const { address.city } = user;" },
-      { id: "C", text: "const [address.city] = user;" },
-      { id: "D", text: "const city = { address } = user;" }
+      { id: "A", text: "const { address.city } = user;" },
+      { id: "B", text: "const [address.city] = user;" },
+      { id: "C", text: "const city = { address } = user;" },
+      { id: "D", text: "const { address: { city } } = user;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Nested destructuring mirrors the structure of the object and allows direct extraction of nested properties.",
     tags: ["objects", "destructuring", "nested-objects"]
   },
@@ -745,12 +745,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "What is a computed property name?",
     options: [
-      { id: "A", text: "Using an expression inside square brackets to determine an object's property key." },
-      { id: "B", text: "A property that is automatically calculated by JavaScript." },
+      { id: "A", text: "A property that is automatically calculated by JavaScript." },
+      { id: "B", text: "Using an expression inside square brackets to determine an object's property key." },
       { id: "C", text: "A property that can only contain numbers." },
       { id: "D", text: "A property created by Object.keys()." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Computed property syntax such as `{ [key]: value }` evaluates `key` to determine the actual property name.",
     tags: ["objects", "computed-properties", "es6"]
   },
@@ -763,12 +763,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst key = \"username\";\nconst value = \"Avi\";\n\nconst user = {\n  [key]: value\n};\n\nconsole.log(user.username);",
     options: [
-      { id: "A", text: "Avi" },
-      { id: "B", text: "username" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "username" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "Avi" },
       { id: "D", text: "{ key: value }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The computed property `[key]` evaluates to `username`, creating a `username` property with the value `Avi`.",
     tags: ["objects", "computed-properties"]
   },
@@ -781,12 +781,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement correctly describes `Object.freeze()`?",
     options: [
-      { id: "A", text: "It prevents changes to an object's own properties at the top level." },
-      { id: "B", text: "It deeply freezes every nested object automatically." },
-      { id: "C", text: "It converts the object into a string." },
-      { id: "D", text: "It deletes all writable properties." }
+      { id: "A", text: "It deeply freezes every nested object automatically." },
+      { id: "B", text: "It converts the object into a string." },
+      { id: "C", text: "It deletes all writable properties." },
+      { id: "D", text: "It prevents changes to an object's own properties at the top level." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Object.freeze()` prevents adding, deleting, or changing top-level own properties. It is shallow; nested objects are not automatically frozen.",
     tags: ["objects", "Object.freeze", "immutability"]
   },
@@ -817,12 +817,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  age: 23\n};\n\nconst { name, ...rest } = user;\nconsole.log(rest);",
     options: [
-      { id: "A", text: "{ age: 23 }" },
-      { id: "B", text: "{ name: \"Avi\" }" },
+      { id: "A", text: "{ name: \"Avi\" }" },
+      { id: "B", text: "{ age: 23 }" },
       { id: "C", text: "[23]" },
       { id: "D", text: "undefined" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Object rest collects the remaining properties after `name` has been extracted.",
     tags: ["objects", "destructuring", "rest"]
   },
@@ -835,12 +835,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  age: 23,\n  role: \"developer\"\n};\n\nconst updated = {\n  ...user,\n  role: \"frontend developer\",\n  active: true\n};\n\nconsole.log(updated.role);",
     options: [
-      { id: "A", text: "frontend developer" },
-      { id: "B", text: "developer" },
-      { id: "C", text: "undefined" },
+      { id: "A", text: "developer" },
+      { id: "B", text: "undefined" },
+      { id: "C", text: "frontend developer" },
       { id: "D", text: "true" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The spread copies the existing properties, then the later `role` property overwrites the original value.",
     tags: ["objects", "spread", "immutable-updates"]
   },
@@ -853,12 +853,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "What is printed?\n\nconst scores = {\n  math: 90,\n  science: 85,\n  english: 95\n};\n\nconst total = Object.values(scores)\n  .reduce((sum, score) => sum + score, 0);\n\nconsole.log(total);",
     options: [
-      { id: "A", text: "270" },
-      { id: "B", text: "90" },
-      { id: "C", text: "95" },
-      { id: "D", text: "[90, 85, 95]" }
+      { id: "A", text: "90" },
+      { id: "B", text: "95" },
+      { id: "C", text: "[90, 85, 95]" },
+      { id: "D", text: "270" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`Object.values()` produces `[90, 85, 95]`, and `reduce()` sums those values to 270.",
     tags: ["objects", "Object.values", "reduce"]
   },
@@ -889,12 +889,12 @@ const javascriptObjectsQuestions = [
     difficulty: "Advanced",
     question: "Which approach is generally best when updating an object in state while preserving the original object?",
     options: [
-      { id: "A", text: "Create a new object with spread syntax and override the property that changed." },
-      { id: "B", text: "Always mutate the existing object directly." },
+      { id: "A", text: "Always mutate the existing object directly." },
+      { id: "B", text: "Create a new object with spread syntax and override the property that changed." },
       { id: "C", text: "Delete the object and recreate every object in the application." },
       { id: "D", text: "Convert the object to JSON before every update." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Using `{ ...object, changedProperty: newValue }` creates a new object reference while preserving unchanged properties. This pattern is especially useful for predictable state updates in modern JavaScript and React applications.",
     tags: ["objects", "spread", "immutability", "state-management", "best-practices"]
   }

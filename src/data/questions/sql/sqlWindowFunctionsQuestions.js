@@ -8,11 +8,11 @@ const sqlWindowFunctionsQuestions = [
     question: "What is the main characteristic of a SQL window function?",
     options: [
       { id: "A", text: "It permanently modifies the table" },
-      { id: "B", text: "It performs a calculation across related rows while generally preserving individual rows in the result" },
-      { id: "C", text: "It can only be used with GROUP BY" },
-      { id: "D", text: "It always removes duplicate rows" }
+      { id: "B", text: "It can only be used with GROUP BY" },
+      { id: "C", text: "It always removes duplicate rows" },
+      { id: "D", text: "It performs a calculation across related rows while generally preserving individual rows in the result" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Unlike GROUP BY, window functions calculate values across related rows without collapsing those rows into a single result row.",
     tags: ["window-functions", "fundamentals"]
   },
@@ -44,11 +44,11 @@ const sqlWindowFunctionsQuestions = [
     question: "What does PARTITION BY do inside an OVER clause?",
     options: [
       { id: "A", text: "Deletes rows from each partition" },
-      { id: "B", text: "Sorts the entire final result set" },
-      { id: "C", text: "Divides rows into groups for the window calculation without collapsing them" },
+      { id: "B", text: "Divides rows into groups for the window calculation without collapsing them" },
+      { id: "C", text: "Sorts the entire final result set" },
       { id: "D", text: "Creates permanent database partitions" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "PARTITION BY divides the rows into independent groups for the window calculation while preserving the individual result rows.",
     tags: ["partition-by", "over"]
   },
@@ -62,11 +62,11 @@ const sqlWindowFunctionsQuestions = [
     question: "What does ORDER BY inside OVER() primarily control?",
     options: [
       { id: "A", text: "The physical storage order of the table" },
-      { id: "B", text: "The ordering used by the window calculation" },
-      { id: "C", text: "The database server's operating system" },
+      { id: "B", text: "The database server's operating system" },
+      { id: "C", text: "The ordering used by the window calculation" },
       { id: "D", text: "The order in which columns are created" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "ORDER BY within OVER() determines the logical order in which the window function evaluates rows.",
     tags: ["over", "order-by"]
   },
@@ -116,11 +116,11 @@ const sqlWindowFunctionsQuestions = [
     question: "What is an important difference between RANK() and ROW_NUMBER()?",
     options: [
       { id: "A", text: "RANK() cannot use ORDER BY" },
-      { id: "B", text: "ROW_NUMBER() only works with text" },
-      { id: "C", text: "RANK() can assign the same rank to tied rows, while ROW_NUMBER() assigns distinct row numbers" },
+      { id: "B", text: "RANK() can assign the same rank to tied rows, while ROW_NUMBER() assigns distinct row numbers" },
+      { id: "C", text: "ROW_NUMBER() only works with text" },
       { id: "D", text: "They are always identical" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "RANK() gives tied rows the same rank and leaves gaps after ties, while ROW_NUMBER() always assigns a different sequential number to each row.",
     tags: ["rank", "row-number"]
   },
@@ -134,11 +134,11 @@ const sqlWindowFunctionsQuestions = [
     question: "How does DENSE_RANK() differ from RANK()?",
     options: [
       { id: "A", text: "DENSE_RANK() cannot handle ties" },
-      { id: "B", text: "DENSE_RANK() does not leave gaps after tied rankings" },
-      { id: "C", text: "DENSE_RANK() always returns random numbers" },
+      { id: "B", text: "DENSE_RANK() always returns random numbers" },
+      { id: "C", text: "DENSE_RANK() does not leave gaps after tied rankings" },
       { id: "D", text: "DENSE_RANK() can only rank text values" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "RANK() may skip numbers after ties, while DENSE_RANK() continues with the next consecutive rank.",
     tags: ["dense-rank", "rank"]
   },
@@ -152,11 +152,11 @@ const sqlWindowFunctionsQuestions = [
     question: "Suppose salaries are 100, 100, 90. What ranks would RANK() generally assign when ordering salary DESC?",
     options: [
       { id: "A", text: "1, 2, 3" },
-      { id: "B", text: "1, 1, 3" },
-      { id: "C", text: "1, 1, 2" },
-      { id: "D", text: "2, 2, 1" }
+      { id: "B", text: "1, 1, 2" },
+      { id: "C", text: "2, 2, 1" },
+      { id: "D", text: "1, 1, 3" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The two salaries of 100 tie at rank 1. Because two rows occupy that rank, the next rank is 3.",
     tags: ["rank", "ties"]
   },
@@ -169,12 +169,12 @@ const sqlWindowFunctionsQuestions = [
     difficulty: "Advanced",
     question: "What ranks would DENSE_RANK() generally assign to salaries 100, 100, 90 when ordering DESC?",
     options: [
-      { id: "A", text: "1, 2, 3" },
-      { id: "B", text: "1, 1, 3" },
-      { id: "C", text: "2, 2, 1" },
-      { id: "D", text: "1, 1, 2" }
+      { id: "A", text: "1, 1, 2" },
+      { id: "B", text: "1, 2, 3" },
+      { id: "C", text: "1, 1, 3" },
+      { id: "D", text: "2, 2, 1" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "A",
     explanation: "The tied 100 values receive rank 1, and 90 receives the next consecutive rank, 2.",
     tags: ["dense-rank", "ties"]
   },
@@ -187,12 +187,12 @@ const sqlWindowFunctionsQuestions = [
     difficulty: "Advanced",
     question: "Which query pattern can be used to calculate a running total?",
     options: [
-      { id: "A", text: "SUM(amount) OVER (ORDER BY date)" },
-      { id: "B", text: "SUM(amount) GROUP ONLY BY date" },
+      { id: "A", text: "SUM(amount) GROUP ONLY BY date" },
+      { id: "B", text: "SUM(amount) OVER (ORDER BY date)" },
       { id: "C", text: "RUNNING_SUM(amount) WITHOUT OVER()" },
       { id: "D", text: "TOTAL(amount) ORDER BY date" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "SUM() used as a window function with an appropriate ORDER BY can calculate a cumulative/running total.",
     tags: ["running-total", "sum", "over"]
   },
@@ -206,11 +206,11 @@ const sqlWindowFunctionsQuestions = [
     question: "Why might a window function be preferred over GROUP BY for ranking employees?",
     options: [
       { id: "A", text: "GROUP BY cannot process numeric values" },
-      { id: "B", text: "Window functions can calculate the rank while retaining each employee row" },
-      { id: "C", text: "Window functions permanently store ranks in the database" },
+      { id: "B", text: "Window functions permanently store ranks in the database" },
+      { id: "C", text: "Window functions can calculate the rank while retaining each employee row" },
       { id: "D", text: "GROUP BY always deletes employee records" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "GROUP BY collapses rows into groups, while window functions can calculate ranking information while retaining the underlying rows.",
     tags: ["window-functions", "group-by", "ranking"]
   },
@@ -223,24 +223,12 @@ const sqlWindowFunctionsQuestions = [
     difficulty: "Advanced",
     question: "Which query finds the highest-paid employee in each department using ROW_NUMBER()?",
     options: [
-      {
-        id: "A",
-        text: "SELECT * FROM employees WHERE ROW_NUMBER() = 1;"
-      },
-      {
-        id: "B",
-        text: "SELECT *, ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS rn FROM employees;"
-      },
-      {
-        id: "C",
-        text: "SELECT department, MAX(salary) OVER () FROM employees;"
-      },
-      {
-        id: "D",
-        text: "SELECT * FROM employees GROUP BY ROW_NUMBER(department);"
-      }
+      { id: "A", text: "SELECT * FROM employees WHERE ROW_NUMBER() = 1;" },
+      { id: "B", text: "SELECT department, MAX(salary) OVER () FROM employees;" },
+      { id: "C", text: "SELECT * FROM employees GROUP BY ROW_NUMBER(department);" },
+      { id: "D", text: "SELECT *, ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS rn FROM employees;" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The window expression assigns row numbers within each department. An outer query can then filter for rn = 1.",
     tags: ["row-number", "partition-by", "top-n"]
   },
@@ -253,12 +241,12 @@ const sqlWindowFunctionsQuestions = [
     difficulty: "Advanced",
     question: "Why can't you generally use a window function directly in a WHERE clause of the same SELECT level?",
     options: [
-      { id: "A", text: "Window functions only work on strings" },
-      { id: "B", text: "WHERE runs after window functions" },
-      { id: "C", text: "Window functions are evaluated at a later logical stage than WHERE" },
+      { id: "A", text: "Window functions are evaluated at a later logical stage than WHERE" },
+      { id: "B", text: "Window functions only work on strings" },
+      { id: "C", text: "WHERE runs after window functions" },
       { id: "D", text: "WHERE cannot contain aliases" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Window functions are evaluated after the WHERE filtering stage. A subquery or CTE is commonly used when you need to filter based on a window-function result.",
     tags: ["window-functions", "where", "query-order"]
   },
@@ -272,11 +260,11 @@ const sqlWindowFunctionsQuestions = [
     question: "What is a common mistake when using ROW_NUMBER() to find the top employee in each department?",
     options: [
       { id: "A", text: "Using PARTITION BY department" },
-      { id: "B", text: "Ordering salary in descending order" },
-      { id: "C", text: "Filtering the generated row number in an outer query" },
+      { id: "B", text: "Filtering the generated row number in an outer query" },
+      { id: "C", text: "Ordering salary in descending order" },
       { id: "D", text: "Using an outer query or CTE to filter the window result" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The key mistake is trying to filter ROW_NUMBER() directly in the same WHERE clause where it is created. The window result normally needs to be produced first and filtered by an outer query or CTE.",
     tags: ["row-number", "common-mistakes", "top-n"]
   }

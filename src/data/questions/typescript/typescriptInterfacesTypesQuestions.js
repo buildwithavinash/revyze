@@ -8,11 +8,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which syntax correctly declares an interface named User?",
     options: [
       { id: "A", text: "type User = interface { name: string }" },
-      { id: "B", text: "interface User { name: string }" },
-      { id: "C", text: "interface = User { name: string }" },
-      { id: "D", text: "User interface { name: string }" }
+      { id: "B", text: "interface = User { name: string }" },
+      { id: "C", text: "User interface { name: string }" },
+      { id: "D", text: "interface User { name: string }" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "An interface is declared with `interface Name { ... }`, followed by its properties or members.",
     tags: ["interfaces", "syntax"]
   },
@@ -44,11 +44,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "What is the main purpose of an interface?",
     options: [
       { id: "A", text: "To create a runtime database schema" },
-      { id: "B", text: "To convert objects into JSON" },
-      { id: "C", text: "To describe the expected structure of values" },
+      { id: "B", text: "To describe the expected structure of values" },
+      { id: "C", text: "To convert objects into JSON" },
       { id: "D", text: "To replace JavaScript objects at runtime" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Interfaces describe the structure and capabilities a value is expected to have. They are primarily compile-time constructs.",
     tags: ["interfaces", "object-shapes"]
   },
@@ -63,10 +63,10 @@ const typescriptInterfacesTypesQuestions = [
     options: [
       { id: "A", text: "The property is readonly" },
       { id: "B", text: "The property must be null" },
-      { id: "C", text: "The property is private" },
-      { id: "D", text: "The property is optional" }
+      { id: "C", text: "The property is optional" },
+      { id: "D", text: "The property is private" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "An optional property may be omitted from an object. With appropriate compiler settings, reading it may produce a value typed as `string | undefined`.",
     tags: ["interfaces", "optional-properties"]
   },
@@ -81,10 +81,10 @@ const typescriptInterfacesTypesQuestions = [
     options: [
       { id: "A", text: "{ id: \"101\", name: \"Laptop\" }" },
       { id: "B", text: "{ id: 101 }" },
-      { id: "C", text: "{ id: 101, name: \"Laptop\" }" },
-      { id: "D", text: "{ name: 101, id: \"101\" }" }
+      { id: "C", text: "{ name: 101, id: \"101\" }" },
+      { id: "D", text: "{ id: 101, name: \"Laptop\" }" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "The object supplies both required properties with the correct types.",
     tags: ["interfaces", "object-shapes"]
   },
@@ -97,12 +97,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Beginner",
     question: "What does `readonly id: number` communicate inside an interface?",
     options: [
-      { id: "A", text: "The property cannot be read" },
-      { id: "B", text: "The property cannot be assigned through the type after initialization" },
+      { id: "A", text: "The property cannot be assigned through the type after initialization" },
+      { id: "B", text: "The property cannot be read" },
       { id: "C", text: "The property is automatically private at runtime" },
       { id: "D", text: "The property becomes optional" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`readonly` prevents assignment to the property through the type system after its initial assignment.",
     tags: ["interfaces", "readonly"]
   },
@@ -115,12 +115,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Beginner",
     question: "Can an interface contain a method signature?",
     options: [
-      { id: "A", text: "Yes, for example `login(): boolean`" },
-      { id: "B", text: "No, interfaces only support primitive properties" },
+      { id: "A", text: "No, interfaces only support primitive properties" },
+      { id: "B", text: "Yes, for example `login(): boolean`" },
       { id: "C", text: "Only if the interface is generic" },
       { id: "D", text: "Only inside a class" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Interfaces can describe callable members and method signatures as part of an object's expected shape.",
     tags: ["interfaces", "methods"]
   },
@@ -133,12 +133,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does interface extension allow?",
     options: [
-      { id: "A", text: "An interface to inherit members from another interface" },
-      { id: "B", text: "An interface to execute another interface at runtime" },
-      { id: "C", text: "An interface to become a JavaScript class automatically" },
+      { id: "A", text: "An interface to execute another interface at runtime" },
+      { id: "B", text: "An interface to become a JavaScript class automatically" },
+      { id: "C", text: "An interface to inherit members from another interface" },
       { id: "D", text: "An interface to remove all inherited properties" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "An interface can extend one or more other interfaces and inherit their members.",
     tags: ["interfaces", "extends", "inheritance"]
   },
@@ -152,11 +152,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which declaration correctly extends `Person`?",
     options: [
       { id: "A", text: "interface Employee implements Person" },
-      { id: "B", text: "interface Employee extends Person" },
-      { id: "C", text: "interface Employee inherits Person" },
-      { id: "D", text: "interface Employee -> Person" }
+      { id: "B", text: "interface Employee inherits Person" },
+      { id: "C", text: "interface Employee -> Person" },
+      { id: "D", text: "interface Employee extends Person" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Interfaces use the `extends` keyword to inherit members from another interface.",
     tags: ["interfaces", "extends"]
   },
@@ -169,12 +169,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Can one interface extend multiple interfaces?",
     options: [
-      { id: "A", text: "No, interfaces support only single inheritance" },
-      { id: "B", text: "Only if they are classes" },
-      { id: "C", text: "Yes, using a comma-separated list" },
+      { id: "A", text: "Yes, using a comma-separated list" },
+      { id: "B", text: "No, interfaces support only single inheritance" },
+      { id: "C", text: "Only if they are classes" },
       { id: "D", text: "Only when all interfaces are empty" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "TypeScript supports multiple interface inheritance, such as `interface C extends A, B {}`.",
     tags: ["interfaces", "multiple-inheritance"]
   },
@@ -187,12 +187,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is declaration merging in TypeScript?",
     options: [
-      { id: "A", text: "Combining compatible declarations with the same name into one resulting declaration" },
-      { id: "B", text: "Converting interfaces into JavaScript objects" },
+      { id: "A", text: "Converting interfaces into JavaScript objects" },
+      { id: "B", text: "Combining compatible declarations with the same name into one resulting declaration" },
       { id: "C", text: "Merging two runtime objects automatically" },
       { id: "D", text: "Combining every type alias in a project" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Certain declarations, especially interfaces, can be declared multiple times and have their members merged by TypeScript.",
     tags: ["interfaces", "declaration-merging"]
   },
@@ -206,11 +206,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "What happens when two compatible interface declarations have the same name?",
     options: [
       { id: "A", text: "The second declaration completely replaces the first" },
-      { id: "B", text: "TypeScript generally merges their members" },
-      { id: "C", text: "Both declarations are ignored" },
+      { id: "B", text: "Both declarations are ignored" },
+      { id: "C", text: "TypeScript generally merges their members" },
       { id: "D", text: "They automatically become a union type" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Interfaces support declaration merging, so separate declarations with the same name can contribute members to the resulting interface.",
     tags: ["interfaces", "declaration-merging"]
   },
@@ -223,12 +223,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What is a key limitation of declaration merging with interfaces?",
     options: [
-      { id: "A", text: "Conflicting non-function property declarations generally cause a type error" },
-      { id: "B", text: "Interfaces cannot contain methods" },
-      { id: "C", text: "Interfaces cannot be imported" },
-      { id: "D", text: "Merged interfaces become runtime objects" }
+      { id: "A", text: "Interfaces cannot contain methods" },
+      { id: "B", text: "Interfaces cannot be imported" },
+      { id: "C", text: "Merged interfaces become runtime objects" },
+      { id: "D", text: "Conflicting non-function property declarations generally cause a type error" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Merged declarations must remain compatible. For example, a property with the same name generally cannot be declared with incompatible types.",
     tags: ["interfaces", "declaration-merging", "compatibility"]
   },
@@ -241,12 +241,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about type aliases is correct?",
     options: [
-      { id: "A", text: "They can only describe objects" },
-      { id: "B", text: "They can represent unions, intersections, primitives, tuples, objects, and more" },
+      { id: "A", text: "They can represent unions, intersections, primitives, tuples, objects, and more" },
+      { id: "B", text: "They can only describe objects" },
       { id: "C", text: "They always create runtime constructors" },
       { id: "D", text: "They cannot be generic" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Type aliases can name many kinds of types, including primitive aliases, unions, intersections, tuples, object types, and generic types.",
     tags: ["type-aliases"]
   },
@@ -259,12 +259,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which is a valid type alias for a union?",
     options: [
-      { id: "A", text: "type Status = \"loading\" | \"success\" | \"error\"" },
-      { id: "B", text: "interface Status = \"loading\" | \"success\"" },
+      { id: "A", text: "interface Status = \"loading\" | \"success\"" },
+      { id: "B", text: "type Status = \"loading\" | \"success\" | \"error\"" },
       { id: "C", text: "type Status extends \"loading\" | \"success\"" },
       { id: "D", text: "alias Status(\"loading\", \"success\")" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Type aliases can directly represent union types, including unions of string literals.",
     tags: ["type-aliases", "unions", "literal-types"]
   },
@@ -296,11 +296,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which operator creates an intersection type?",
     options: [
       { id: "A", text: "|" },
-      { id: "B", text: "&" },
-      { id: "C", text: "+" },
-      { id: "D", text: "&&" }
+      { id: "B", text: "+" },
+      { id: "C", text: "&&" },
+      { id: "D", text: "&" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The `&` operator combines types into an intersection.",
     tags: ["intersections", "type-aliases"]
   },
@@ -313,12 +313,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does `type Admin = User & { permissions: string[] }` mean?",
     options: [
-      { id: "A", text: "Admin can be either User or the permissions object" },
-      { id: "B", text: "Admin contains the members required by User and also has permissions" },
+      { id: "A", text: "Admin contains the members required by User and also has permissions" },
+      { id: "B", text: "Admin can be either User or the permissions object" },
       { id: "C", text: "Admin removes all User properties" },
       { id: "D", text: "Admin is a runtime subclass of User" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The intersection requires a value to satisfy both `User` and the additional object type.",
     tags: ["intersections", "type-aliases"]
   },
@@ -331,12 +331,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which approach is generally useful for sharing a common object shape across several interfaces?",
     options: [
-      { id: "A", text: "Use interface extension" },
-      { id: "B", text: "Use JSON.stringify" },
+      { id: "A", text: "Use JSON.stringify" },
+      { id: "B", text: "Use interface extension" },
       { id: "C", text: "Use console.log" },
       { id: "D", text: "Use Object.freeze" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Interface extension allows a base interface to define shared members that more specialized interfaces can inherit.",
     tags: ["interfaces", "extends", "reuse"]
   },
@@ -349,12 +349,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which declaration correctly defines a generic interface?",
     options: [
-      { id: "A", text: "interface Box<T> { value: T }" },
-      { id: "B", text: "interface<T> Box { value: T }" },
-      { id: "C", text: "generic interface Box<T> = { value: T }" },
+      { id: "A", text: "interface<T> Box { value: T }" },
+      { id: "B", text: "generic interface Box<T> = { value: T }" },
+      { id: "C", text: "interface Box<T> { value: T }" },
       { id: "D", text: "interface Box = <T> { value: T }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Generic parameters are declared after the interface name: `interface Box<T> { ... }`.",
     tags: ["interfaces", "generics"]
   },
@@ -367,12 +367,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Why would you make an interface generic?",
     options: [
-      { id: "A", text: "To make the interface work with different types while preserving type relationships" },
-      { id: "B", text: "To remove all type checking" },
-      { id: "C", text: "To make it a runtime object" },
-      { id: "D", text: "To prevent property access" }
+      { id: "A", text: "To remove all type checking" },
+      { id: "B", text: "To make it a runtime object" },
+      { id: "C", text: "To prevent property access" },
+      { id: "D", text: "To make the interface work with different types while preserving type relationships" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Generics allow reusable interfaces to preserve the specific type supplied by the consumer.",
     tags: ["interfaces", "generics"]
   },
@@ -385,12 +385,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does this index signature mean?\n\n`interface Scores { [player: string]: number }`",
     options: [
-      { id: "A", text: "Every property must have a string value" },
-      { id: "B", text: "String keys are allowed and their corresponding values must be numbers" },
+      { id: "A", text: "String keys are allowed and their corresponding values must be numbers" },
+      { id: "B", text: "Every property must have a string value" },
       { id: "C", text: "Only one property named player is allowed" },
       { id: "D", text: "The object must be an array" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The index signature describes dynamically named string properties whose values are numbers.",
     tags: ["interfaces", "index-signatures"]
   },
@@ -422,11 +422,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "What does structural typing mean when assigning an object to an interface?",
     options: [
       { id: "A", text: "The object's class name must exactly match the interface name" },
-      { id: "B", text: "The object must have the required compatible structure" },
-      { id: "C", text: "The object must explicitly extend the interface" },
+      { id: "B", text: "The object must explicitly extend the interface" },
+      { id: "C", text: "The object must have the required compatible structure" },
       { id: "D", text: "The object must be created with a constructor" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "TypeScript primarily uses structural typing. A value is generally compatible when it has the required compatible members.",
     tags: ["interfaces", "structural-typing"]
   },
@@ -441,10 +441,10 @@ const typescriptInterfacesTypesQuestions = [
     options: [
       { id: "A", text: "Yes, always" },
       { id: "B", text: "Only if User contains methods" },
-      { id: "C", text: "No, structural compatibility can exist without the implements keyword" },
-      { id: "D", text: "Only if User is generic" }
+      { id: "C", text: "Only if User is generic" },
+      { id: "D", text: "No, structural compatibility can exist without the implements keyword" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "A class can structurally satisfy an interface even without explicitly declaring `implements`. The keyword is useful for having TypeScript check that the class intentionally satisfies the interface.",
     tags: ["interfaces", "structural-typing", "classes"]
   },
@@ -457,12 +457,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "What does the `implements` keyword on a class primarily do?",
     options: [
-      { id: "A", text: "It makes the interface exist at runtime" },
-      { id: "B", text: "It tells TypeScript to check that the class conforms to the interface" },
+      { id: "A", text: "It tells TypeScript to check that the class conforms to the interface" },
+      { id: "B", text: "It makes the interface exist at runtime" },
       { id: "C", text: "It causes JavaScript inheritance from the interface" },
       { id: "D", text: "It copies interface properties into the class at runtime" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`implements` is a compile-time check that the class satisfies the interface's requirements.",
     tags: ["interfaces", "implements", "classes"]
   },
@@ -493,12 +493,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about type aliases at runtime is correct?",
     options: [
-      { id: "A", text: "Type aliases generally have no runtime representation" },
-      { id: "B", text: "Every type alias becomes a JavaScript class" },
-      { id: "C", text: "Every type alias becomes a runtime object" },
+      { id: "A", text: "Every type alias becomes a JavaScript class" },
+      { id: "B", text: "Every type alias becomes a runtime object" },
+      { id: "C", text: "Type aliases generally have no runtime representation" },
       { id: "D", text: "Type aliases are stored in localStorage" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Type aliases are also compile-time constructs and are erased from normal JavaScript output.",
     tags: ["type-aliases", "runtime", "type-erasure"]
   },
@@ -511,12 +511,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which construct is generally more suitable when you specifically want declaration merging?",
     options: [
-      { id: "A", text: "Interface" },
-      { id: "B", text: "Type alias" },
-      { id: "C", text: "Tuple" },
-      { id: "D", text: "Union literal" }
+      { id: "A", text: "Type alias" },
+      { id: "B", text: "Tuple" },
+      { id: "C", text: "Union literal" },
+      { id: "D", text: "Interface" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Interfaces support declaration merging, whereas type aliases cannot be redeclared with the same name in the same scope for merging.",
     tags: ["interfaces", "declaration-merging"]
   },
@@ -529,12 +529,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about extending interfaces and intersecting types is most accurate?",
     options: [
-      { id: "A", text: "They are completely unrelated and cannot express similar combinations" },
-      { id: "B", text: "Both can be used to compose object shapes, although their syntax and type-system behavior differ" },
+      { id: "A", text: "Both can be used to compose object shapes, although their syntax and type-system behavior differ" },
+      { id: "B", text: "They are completely unrelated and cannot express similar combinations" },
       { id: "C", text: "Only intersections can describe objects" },
       { id: "D", text: "Only interface extension can combine types" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Interface extension and intersection types are both useful composition mechanisms, but they are distinct TypeScript features.",
     tags: ["interfaces", "intersections", "composition"]
   },
@@ -565,12 +565,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Intermediate",
     question: "Which declaration uses a function type alias?",
     options: [
-      { id: "A", text: "type Formatter = (value: string) => string" },
-      { id: "B", text: "type Formatter = function(value: string): string" },
-      { id: "C", text: "function Formatter = (value: string) => string" },
+      { id: "A", text: "type Formatter = function(value: string): string" },
+      { id: "B", text: "function Formatter = (value: string) => string" },
+      { id: "C", text: "type Formatter = (value: string) => string" },
       { id: "D", text: "alias Formatter(value: string): string" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A type alias can describe a function signature using `(parameters) => returnType` syntax.",
     tags: ["type-aliases", "function-types"]
   },
@@ -584,11 +584,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which interface syntax describes a callable object?",
     options: [
       { id: "A", text: "interface Handler { call: function }" },
-      { id: "B", text: "interface Handler { (event: Event): void }" },
-      { id: "C", text: "interface Handler => (event: Event): void" },
-      { id: "D", text: "interface Handler { function(event: Event): void }" }
+      { id: "B", text: "interface Handler => (event: Event): void" },
+      { id: "C", text: "interface Handler { function(event: Event): void }" },
+      { id: "D", text: "interface Handler { (event: Event): void }" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Interfaces can contain call signatures, allowing them to describe callable objects.",
     tags: ["interfaces", "call-signatures"]
   },
@@ -637,12 +637,12 @@ const typescriptInterfacesTypesQuestions = [
     difficulty: "Advanced",
     question: "What is the main reason a type alias is often preferred for expressing a discriminated union?",
     options: [
-      { id: "A", text: "Type aliases can directly compose union members into a named type" },
-      { id: "B", text: "Interfaces cannot contain properties" },
-      { id: "C", text: "Type aliases create runtime validation" },
+      { id: "A", text: "Interfaces cannot contain properties" },
+      { id: "B", text: "Type aliases create runtime validation" },
+      { id: "C", text: "Type aliases can directly compose union members into a named type" },
       { id: "D", text: "Interfaces cannot use literal values" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A named union is naturally expressed with a type alias, for example `type Result = Success | Failure`.",
     tags: ["type-aliases", "discriminated-unions"]
   },
@@ -656,11 +656,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which pattern best models a user with different roles using a discriminated union?",
     options: [
       { id: "A", text: "type User = { role: string; permissions?: string[] }" },
-      { id: "B", text: "type User = Admin | Customer, where each member has a literal `role` property" },
-      { id: "C", text: "interface User = Admin | Customer" },
-      { id: "D", text: "type User = any" }
+      { id: "B", text: "interface User = Admin | Customer" },
+      { id: "C", text: "type User = any" },
+      { id: "D", text: "type User = Admin | Customer, where each member has a literal `role` property" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A discriminated union gives each variant a specific literal discriminant, enabling precise narrowing.",
     tags: ["type-aliases", "discriminated-unions", "narrowing"]
   },
@@ -710,11 +710,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Why might this work?\n\n`const data = { name: \"Avi\", age: 23, role: \"admin\" };`\n`const user: User = data;`\n\nwhere User only requires `name` and `age`?",
     options: [
       { id: "A", text: "TypeScript ignores all property types" },
-      { id: "B", text: "Structural typing allows the source value to have additional compatible properties" },
-      { id: "C", text: "The role property is automatically deleted" },
+      { id: "B", text: "The role property is automatically deleted" },
+      { id: "C", text: "Structural typing allows the source value to have additional compatible properties" },
       { id: "D", text: "User becomes any" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Structural typing generally allows a value with at least the required compatible members to be assigned to the target type. Excess property checking behaves differently for fresh object literals.",
     tags: ["interfaces", "structural-typing", "excess-property-checking"]
   },
@@ -729,10 +729,10 @@ const typescriptInterfacesTypesQuestions = [
     options: [
       { id: "A", text: "Interfaces can describe objects, while type aliases cannot" },
       { id: "B", text: "They have completely identical capabilities in every TypeScript feature" },
-      { id: "C", text: "Both can describe object shapes, but interfaces support declaration merging and type aliases can directly express broader type compositions" },
-      { id: "D", text: "Type aliases always generate better runtime code" }
+      { id: "C", text: "Type aliases always generate better runtime code" },
+      { id: "D", text: "Both can describe object shapes, but interfaces support declaration merging and type aliases can directly express broader type compositions" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "There is significant overlap, but interfaces support features such as declaration merging, while type aliases can name unions, intersections, and other type expressions directly.",
     tags: ["interfaces", "type-aliases", "comparison"]
   },
@@ -764,11 +764,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which type alias correctly combines two object types?",
     options: [
       { id: "A", text: "type Profile = User + Settings" },
-      { id: "B", text: "type Profile = User | Settings" },
-      { id: "C", text: "type Profile = User & Settings" },
+      { id: "B", text: "type Profile = User & Settings" },
+      { id: "C", text: "type Profile = User | Settings" },
       { id: "D", text: "type Profile = merge(User, Settings)" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The intersection operator `&` combines the requirements of both object types.",
     tags: ["type-aliases", "intersections"]
   },
@@ -800,11 +800,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "Which statement about generic type aliases is correct?",
     options: [
       { id: "A", text: "They cannot have type parameters" },
-      { id: "B", text: "They can define reusable parameterized types such as `type Result<T> = { data: T }`" },
-      { id: "C", text: "They only support primitive types" },
-      { id: "D", text: "They automatically create generic classes" }
+      { id: "B", text: "They only support primitive types" },
+      { id: "C", text: "They automatically create generic classes" },
+      { id: "D", text: "They can define reusable parameterized types such as `type Result<T> = { data: T }`" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Type aliases can be generic and are useful for reusable type transformations and structures.",
     tags: ["type-aliases", "generics"]
   },
@@ -854,11 +854,11 @@ const typescriptInterfacesTypesQuestions = [
     question: "What is the main advantage of extracting a repeated object shape into an interface or type alias?",
     options: [
       { id: "A", text: "It creates runtime validation automatically" },
-      { id: "B", text: "It improves reuse, consistency, readability, and maintainability of the type contract" },
-      { id: "C", text: "It makes all objects immutable" },
+      { id: "B", text: "It makes all objects immutable" },
+      { id: "C", text: "It improves reuse, consistency, readability, and maintainability of the type contract" },
       { id: "D", text: "It removes the need for JavaScript objects" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Named types centralize contracts, making them easier to reuse and update consistently across a codebase.",
     tags: ["interfaces", "type-aliases", "maintainability"]
   },
@@ -873,10 +873,10 @@ const typescriptInterfacesTypesQuestions = [
     options: [
       { id: "A", text: "Use `any` for the response" },
       { id: "B", text: "Use one interface with every property optional" },
-      { id: "C", text: "Use a discriminated union of specific object types" },
-      { id: "D", text: "Use a single `object` type" }
+      { id: "C", text: "Use a single `object` type" },
+      { id: "D", text: "Use a discriminated union of specific object types" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Discriminated unions model mutually exclusive variants precisely and allow TypeScript to narrow based on the discriminant.",
     tags: ["type-aliases", "interfaces", "discriminated-unions", "api"]
   },

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, MoonStar, SunMedium, X } from "lucide-react";
 import Container from "../ui/Container";
 
 const navLinks = [
@@ -9,16 +9,46 @@ const navLinks = [
   { label: "History", href: "/history" },
 ];
 
+const THEME_STORAGE_KEY = "revyze-theme";
+
+const getPreferredTheme = () => {
+  if (typeof window === "undefined") {
+    return "light";
+  }
+
+  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => getPreferredTheme());
 
-  // lock background scroll while the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("dark", theme === "dark");
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) =>
+      currentTheme === "dark" ? "light" : "dark",
+    );
+  };
 
   return (
     <header className="py-2 md:py-4 relative z-50 border-b border-b-border/40 shadow-xs">
@@ -28,35 +58,69 @@ const Header = () => {
             <h2 className="text-2xl font-bold text-primary">Revyze</h2>
           </Link>
 
-          {/* desktop nav */}
           <div className="hidden md:flex items-center gap-6">
             <ul className="flex gap-6 items-center text-sm text-text-secondary">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.href} className="hover:text-text transition-colors duration-200">
+                  <Link
+                    to={link.href}
+                    className="hover:text-text transition-colors duration-200"
+                  >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            {/* <button className="px-4 py-1.5 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer">
-              Login
-            </button> */}
+            <button
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+              }
+              aria-pressed={theme === "dark"}
+              className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <>
+                  <SunMedium className="w-4 h-4" strokeWidth={2} />
+                  Light
+                </>
+              ) : (
+                <>
+                  <MoonStar className="w-4 h-4" strokeWidth={2} />
+                  Dark
+                </>
+              )}
+            </button>
           </div>
 
-          {/* mobile hamburger trigger */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
-            className="md:hidden p-2 -mr-2 rounded-button hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
-          >
-            <Menu className="w-6 h-6 text-text" strokeWidth={1.75} />
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+              }
+              aria-pressed={theme === "dark"}
+              className="inline-flex items-center justify-center p-2 rounded-button border border-border hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <SunMedium className="w-5 h-5 text-text" strokeWidth={2} />
+              ) : (
+                <MoonStar className="w-5 h-5 text-text" strokeWidth={2} />
+              )}
+            </button>
+
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Open menu"
+              className="p-2 -mr-2 rounded-button hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
+            >
+              <Menu className="w-6 h-6 text-text" strokeWidth={1.75} />
+            </button>
+          </div>
         </div>
       </Container>
 
-      {/* mobile menu overlay */}
       <div
         onClick={() => setIsMenuOpen(false)}
         className={`fixed inset-0 bg-black/50 transition-opacity duration-300 md:hidden ${
@@ -64,7 +128,6 @@ const Header = () => {
         }`}
       />
 
-      {/* mobile menu panel — slides in from the right */}
       <div
         className={`fixed top-0 right-0 h-full w-72 max-w-[80%] bg-background border-l border-border z-50 md:hidden
           transform transition-transform duration-300 ease-in-out
@@ -72,13 +135,30 @@ const Header = () => {
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-border">
           <span className="font-semibold text-text">Menu</span>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            aria-label="Close menu"
-            className="p-2 -mr-2 rounded-button hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
-          >
-            <X className="w-5 h-5 text-text" strokeWidth={1.75} />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+              }
+              aria-pressed={theme === "dark"}
+              className="inline-flex items-center justify-center p-2 rounded-button border border-border hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
+            >
+              {theme === "dark" ? (
+                <SunMedium className="w-4 h-4 text-text" strokeWidth={2} />
+              ) : (
+                <MoonStar className="w-4 h-4 text-text" strokeWidth={2} />
+              )}
+            </button>
+
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+              className="p-2 -mr-2 rounded-button hover:bg-surface-hover transition-colors duration-200 cursor-pointer"
+            >
+              <X className="w-5 h-5 text-text" strokeWidth={1.75} />
+            </button>
+          </div>
         </div>
 
         <ul className="flex flex-col p-3">
@@ -94,15 +174,6 @@ const Header = () => {
             </li>
           ))}
         </ul>
-
-        {/* <div className="px-3 mt-2">
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="w-full px-4 py-2.5 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200 cursor-pointer"
-          >
-            Login
-          </button>
-        </div> */}
       </div>
     </header>
   );

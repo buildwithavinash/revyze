@@ -7,12 +7,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which declaration tells the browser that the document uses HTML5?",
     options: [
-      { id: "A", text: "<!DOCTYPE html>" },
-      { id: "B", text: "<html5>" },
-      { id: "C", text: "<doctype HTML5>" },
+      { id: "A", text: "<html5>" },
+      { id: "B", text: "<doctype HTML5>" },
+      { id: "C", text: "<!DOCTYPE html>" },
       { id: "D", text: "<meta html=\"5\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<!DOCTYPE html>` is the HTML5 doctype declaration. It tells the browser to use standards mode when interpreting the document.",
     tags: ["html", "doctype", "document-structure"]
   },
@@ -25,12 +25,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element is the root element of an HTML document?",
     options: [
-      { id: "A", text: "<html>" },
-      { id: "B", text: "<body>" },
-      { id: "C", text: "<main>" },
-      { id: "D", text: "<document>" }
+      { id: "A", text: "<body>" },
+      { id: "B", text: "<main>" },
+      { id: "C", text: "<document>" },
+      { id: "D", text: "<html>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<html>` element is the root element containing the document's `<head>` and `<body>` sections.",
     tags: ["html", "document-structure", "root-element"]
   },
@@ -61,12 +61,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element defines the title shown in the browser tab?",
     options: [
-      { id: "A", text: "<title>" },
-      { id: "B", text: "<heading>" },
+      { id: "A", text: "<heading>" },
+      { id: "B", text: "<title>" },
       { id: "C", text: "<h1>" },
       { id: "D", text: "<meta-title>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<title>` element provides the document title displayed by browsers and is also important for search results and accessibility.",
     tags: ["title", "metadata", "seo"]
   },
@@ -79,12 +79,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element represents the primary content of a document?",
     options: [
-      { id: "A", text: "<main>" },
-      { id: "B", text: "<content>" },
-      { id: "C", text: "<primary>" },
+      { id: "A", text: "<content>" },
+      { id: "B", text: "<primary>" },
+      { id: "C", text: "<main>" },
       { id: "D", text: "<section-main>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<main>` element identifies the dominant content of the document. It should not normally contain repeated site-wide content such as navigation or footers.",
     tags: ["semantic-html", "main", "document-structure"]
   },
@@ -97,12 +97,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which semantic element is most appropriate for a website's primary navigation links?",
     options: [
-      { id: "A", text: "<nav>" },
-      { id: "B", text: "<navigate>" },
-      { id: "C", text: "<links>" },
-      { id: "D", text: "<menu-bar>" }
+      { id: "A", text: "<navigate>" },
+      { id: "B", text: "<links>" },
+      { id: "C", text: "<menu-bar>" },
+      { id: "D", text: "<nav>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<nav>` element represents a section containing navigation links.",
     tags: ["semantic-html", "nav", "navigation"]
   },
@@ -133,12 +133,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element is generally appropriate for a thematic grouping of related content?",
     options: [
-      { id: "A", text: "<section>" },
-      { id: "B", text: "<group>" },
+      { id: "A", text: "<group>" },
+      { id: "B", text: "<section>" },
       { id: "C", text: "<content-group>" },
       { id: "D", text: "<theme>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<section>` represents a thematic grouping of content. Sections commonly have a heading describing their topic.",
     tags: ["semantic-html", "section", "content-structure"]
   },
@@ -151,12 +151,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element is intended for content that is related to the surrounding content but not part of its main flow?",
     options: [
-      { id: "A", text: "<aside>" },
-      { id: "B", text: "<side>" },
-      { id: "C", text: "<secondary>" },
+      { id: "A", text: "<side>" },
+      { id: "B", text: "<secondary>" },
+      { id: "C", text: "<aside>" },
       { id: "D", text: "<related>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<aside>` represents tangentially related content, such as a sidebar, related links, or supplementary information.",
     tags: ["semantic-html", "aside", "content-structure"]
   },
@@ -169,12 +169,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element is appropriate for introductory content for a page or section?",
     options: [
-      { id: "A", text: "<header>" },
-      { id: "B", text: "<intro>" },
-      { id: "C", text: "<top>" },
-      { id: "D", text: "<heading-area>" }
+      { id: "A", text: "<intro>" },
+      { id: "B", text: "<top>" },
+      { id: "C", text: "<heading-area>" },
+      { id: "D", text: "<header>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A `<header>` represents introductory or navigational content for its nearest sectioning context. It can contain headings, logos, navigation, and related introductory material.",
     tags: ["semantic-html", "header", "sections"]
   },
@@ -205,12 +205,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which heading represents the highest-level heading in normal HTML heading structure?",
     options: [
-      { id: "A", text: "<h1>" },
-      { id: "B", text: "<h6>" },
+      { id: "A", text: "<h6>" },
+      { id: "B", text: "<h1>" },
       { id: "C", text: "<heading1>" },
       { id: "D", text: "<head>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<h1>` is the highest-level heading element, while `<h6>` is the lowest level in the HTML heading hierarchy.",
     tags: ["headings", "semantic-html", "document-structure"]
   },
@@ -223,12 +223,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the main reason headings should represent the logical structure of content rather than simply being chosen for their visual size?",
     options: [
-      { id: "A", text: "Assistive technologies and users rely on heading structure to understand and navigate content" },
-      { id: "B", text: "Browsers refuse to display headings with incorrect visual sizes" },
-      { id: "C", text: "CSS cannot style headings" },
+      { id: "A", text: "Browsers refuse to display headings with incorrect visual sizes" },
+      { id: "B", text: "CSS cannot style headings" },
+      { id: "C", text: "Assistive technologies and users rely on heading structure to understand and navigate content" },
       { id: "D", text: "Search engines only index h6 elements" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Heading elements communicate document structure. Screen-reader users can navigate by headings, so choosing heading levels based only on visual appearance can damage the semantic structure.",
     tags: ["headings", "accessibility", "semantic-html"]
   },
@@ -241,12 +241,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element creates a hyperlink to another resource?",
     options: [
-      { id: "A", text: "<a>" },
-      { id: "B", text: "<link>" },
-      { id: "C", text: "<href>" },
-      { id: "D", text: "<url>" }
+      { id: "A", text: "<link>" },
+      { id: "B", text: "<href>" },
+      { id: "C", text: "<url>" },
+      { id: "D", text: "<a>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The `<a>` element creates hyperlinks. Its `href` attribute specifies the destination.",
     tags: ["links", "anchor", "href"]
   },
@@ -259,10 +259,10 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly creates a link to example.com?",
     options: [
-      { id: "A", text: '<a href="https://example.com">Visit</a>' },
-      { id: "B", text: '<link src="https://example.com">Visit</link>' },
-      { id: "C", text: '<a src="https://example.com">Visit</a>' },
-      { id: "D", text: '<href="https://example.com">Visit</href>' }
+      { id: "A", text: "<a href=\"https://example.com\">Visit</a>" },
+      { id: "B", text: "<link src=\"https://example.com\">Visit</link>" },
+      { id: "C", text: "<a src=\"https://example.com\">Visit</a>" },
+      { id: "D", text: "<href=\"https://example.com\">Visit</href>" }
     ],
     correctOptionId: "A",
     explanation: "The anchor element uses the `href` attribute for its destination, and the text between the opening and closing tags becomes the link's accessible name.",
@@ -277,12 +277,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Why is descriptive anchor text generally better than a link labeled only 'Click here'?",
     options: [
-      { id: "A", text: "It communicates the destination or purpose of the link more clearly, including to assistive-technology users" },
-      { id: "B", text: "Browsers do not support the text 'Click here'" },
+      { id: "A", text: "Browsers do not support the text 'Click here'" },
+      { id: "B", text: "It communicates the destination or purpose of the link more clearly, including to assistive-technology users" },
       { id: "C", text: "Search engines reject short links" },
       { id: "D", text: "Links must always contain at least five words" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Descriptive link text provides useful context about where the link leads or what action it performs. This is especially useful when links are encountered outside their surrounding paragraph.",
     tags: ["links", "accessibility", "anchor-text"]
   },
@@ -295,12 +295,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute provides alternative text for an image?",
     options: [
-      { id: "A", text: "alt" },
-      { id: "B", text: "alternative" },
-      { id: "C", text: "description" },
+      { id: "A", text: "alternative" },
+      { id: "B", text: "description" },
+      { id: "C", text: "alt" },
       { id: "D", text: "caption" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `alt` attribute provides a text alternative for an image. It is important for accessibility and can communicate the image's purpose when it cannot be perceived.",
     tags: ["images", "alt", "accessibility"]
   },
@@ -313,12 +313,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What should alt=\"\" generally communicate for a purely decorative image?",
     options: [
-      { id: "A", text: "That the image is decorative and does not add meaningful information" },
-      { id: "B", text: "That the image failed to load" },
-      { id: "C", text: "That the image should be hidden visually" },
-      { id: "D", text: "That the image is the most important content" }
+      { id: "A", text: "That the image failed to load" },
+      { id: "B", text: "That the image should be hidden visually" },
+      { id: "C", text: "That the image is the most important content" },
+      { id: "D", text: "That the image is decorative and does not add meaningful information" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "An empty `alt` attribute marks a decorative image as having no useful text alternative, allowing assistive technologies to avoid announcing unnecessary content.",
     tags: ["images", "alt", "accessibility", "decorative-content"]
   },
@@ -349,12 +349,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element is used to collect user input that can be submitted?",
     options: [
-      { id: "A", text: "<form>" },
-      { id: "B", text: "<input-form>" },
+      { id: "A", text: "<input-form>" },
+      { id: "B", text: "<form>" },
       { id: "C", text: "<submit>" },
       { id: "D", text: "<data-form>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<form>` element groups controls used for submitting user-provided data and can define how and where that data is submitted.",
     tags: ["forms", "form", "user-input"]
   },
@@ -367,12 +367,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element should normally be associated with a form control to provide its visible label?",
     options: [
-      { id: "A", text: "<label>" },
-      { id: "B", text: "<caption>" },
-      { id: "C", text: "<name>" },
+      { id: "A", text: "<caption>" },
+      { id: "B", text: "<name>" },
+      { id: "C", text: "<label>" },
       { id: "D", text: "<description>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<label>` element provides a label for a form control and can be associated explicitly using `for` and the control's `id`.",
     tags: ["forms", "label", "accessibility"]
   },
@@ -385,12 +385,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which markup correctly associates the label with the input?",
     options: [
-      { id: "A", text: '<label for="email">Email</label><input id="email" type="email">' },
-      { id: "B", text: '<label id="email">Email</label><input for="email" type="email">' },
-      { id: "C", text: '<label target="email">Email</label><input name="email" type="email">' },
-      { id: "D", text: '<label href="email">Email</label><input id="email" type="email">' }
+      { id: "A", text: "<label id=\"email\">Email</label><input for=\"email\" type=\"email\">" },
+      { id: "B", text: "<label target=\"email\">Email</label><input name=\"email\" type=\"email\">" },
+      { id: "C", text: "<label href=\"email\">Email</label><input id=\"email\" type=\"email\">" },
+      { id: "D", text: "<label for=\"email\">Email</label><input id=\"email\" type=\"email\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The label's `for` attribute must match the input's `id`. This explicitly associates the two elements and improves usability and accessibility.",
     tags: ["forms", "label", "input", "accessibility"]
   },
@@ -421,12 +421,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute makes a form control mandatory before successful form submission?",
     options: [
-      { id: "A", text: "required" },
-      { id: "B", text: "mandatory" },
+      { id: "A", text: "mandatory" },
+      { id: "B", text: "required" },
       { id: "C", text: "must-fill" },
       { id: "D", text: "validate-required" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The boolean `required` attribute participates in the browser's built-in constraint validation and prevents submission when the required control is invalid or empty.",
     tags: ["forms", "validation", "required"]
   },
@@ -439,12 +439,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the name attribute on a successful form control?",
     options: [
-      { id: "A", text: "It provides the field name used when constructing submitted form data" },
-      { id: "B", text: "It determines the CSS class of the control" },
-      { id: "C", text: "It replaces the label automatically" },
+      { id: "A", text: "It determines the CSS class of the control" },
+      { id: "B", text: "It replaces the label automatically" },
+      { id: "C", text: "It provides the field name used when constructing submitted form data" },
       { id: "D", text: "It determines the browser tab title" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `name` identifies the form field when its value is included in the form submission data. An input without a relevant `name` generally does not contribute its value to submitted form data.",
     tags: ["forms", "name", "form-submission"]
   },
@@ -457,12 +457,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element creates a multiline text input?",
     options: [
-      { id: "A", text: "<textarea>" },
-      { id: "B", text: "<input type=\"multiline\">" },
-      { id: "C", text: "<text-area-input>" },
-      { id: "D", text: "<multiline>" }
+      { id: "A", text: "<input type=\"multiline\">" },
+      { id: "B", text: "<text-area-input>" },
+      { id: "C", text: "<multiline>" },
+      { id: "D", text: "<textarea>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<textarea>` is designed for multiline user-entered text.",
     tags: ["forms", "textarea", "input"]
   },
@@ -493,12 +493,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which button type should be used for a button inside a form that should perform an action without submitting the form?",
     options: [
-      { id: "A", text: "button" },
-      { id: "B", text: "action" },
+      { id: "A", text: "action" },
+      { id: "B", text: "button" },
       { id: "C", text: "none" },
       { id: "D", text: "cancel-submit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`type=\"button\"` creates a button with no automatic form-submission behavior. This is useful for actions such as opening a picker or adding an item dynamically.",
     tags: ["forms", "button", "submission"]
   },
@@ -511,12 +511,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element represents an unordered list?",
     options: [
-      { id: "A", text: "<ul>" },
-      { id: "B", text: "<ol>" },
-      { id: "C", text: "<list>" },
+      { id: "A", text: "<ol>" },
+      { id: "B", text: "<list>" },
+      { id: "C", text: "<ul>" },
       { id: "D", text: "<items>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<ul>` represents a list where item order is not inherently meaningful. Individual items are represented using `<li>`.",
     tags: ["lists", "ul", "li"]
   },
@@ -529,12 +529,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element represents an ordered list?",
     options: [
-      { id: "A", text: "<ol>" },
-      { id: "B", text: "<ul>" },
-      { id: "C", text: "<ordered>" },
-      { id: "D", text: "<sequence>" }
+      { id: "A", text: "<ul>" },
+      { id: "B", text: "<ordered>" },
+      { id: "C", text: "<sequence>" },
+      { id: "D", text: "<ol>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<ol>` represents a list where the order of items is meaningful, such as a sequence of steps.",
     tags: ["lists", "ol", "li"]
   },
@@ -565,12 +565,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which element is used to create a table row?",
     options: [
-      { id: "A", text: "<tr>" },
-      { id: "B", text: "<row>" },
+      { id: "A", text: "<row>" },
+      { id: "B", text: "<tr>" },
       { id: "C", text: "<td-row>" },
       { id: "D", text: "<table-row>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`<tr>` represents a table row. Cells inside the row are generally represented using `<td>` or `<th>`.",
     tags: ["tables", "tr", "table-structure"]
   },
@@ -583,12 +583,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which element represents a header cell in a table?",
     options: [
-      { id: "A", text: "<th>" },
-      { id: "B", text: "<thead-cell>" },
-      { id: "C", text: "<header-cell>" },
+      { id: "A", text: "<thead-cell>" },
+      { id: "B", text: "<header-cell>" },
+      { id: "C", text: "<th>" },
       { id: "D", text: "<tc>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<th>` represents a table header cell. It provides semantic information about the column or row represented by that cell.",
     tags: ["tables", "th", "accessibility"]
   },
@@ -601,12 +601,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Why should <th> be used instead of making a normal <td> visually bold for table headers?",
     options: [
-      { id: "A", text: "<th> provides semantic header information that assistive technologies can use" },
-      { id: "B", text: "<td> cannot contain text" },
-      { id: "C", text: "CSS cannot style <td>" },
-      { id: "D", text: "Browsers only display <th> cells" }
+      { id: "A", text: "<td> cannot contain text" },
+      { id: "B", text: "CSS cannot style <td>" },
+      { id: "C", text: "Browsers only display <th> cells" },
+      { id: "D", text: "<th> provides semantic header information that assistive technologies can use" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Visual styling alone does not communicate table relationships. `<th>` provides semantic information that helps users understand which data cells are associated with which headers.",
     tags: ["tables", "th", "accessibility", "semantics"]
   },
@@ -637,12 +637,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element embeds video content?",
     options: [
-      { id: "A", text: "<video>" },
-      { id: "B", text: "<movie>" },
+      { id: "A", text: "<movie>" },
+      { id: "B", text: "<video>" },
       { id: "C", text: "<media-video>" },
       { id: "D", text: "<film>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `<video>` element provides native HTML support for embedding video content.",
     tags: ["media", "video", "html5"]
   },
@@ -655,12 +655,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Beginner",
     question: "Which element embeds audio content?",
     options: [
-      { id: "A", text: "<audio>" },
-      { id: "B", text: "<sound>" },
-      { id: "C", text: "<music>" },
+      { id: "A", text: "<sound>" },
+      { id: "B", text: "<music>" },
+      { id: "C", text: "<audio>" },
       { id: "D", text: "<audio-player>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The `<audio>` element provides native HTML support for embedding audio resources.",
     tags: ["media", "audio", "html5"]
   },
@@ -673,12 +673,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the controls attribute on <video> or <audio>?",
     options: [
-      { id: "A", text: "It asks the browser to display native playback controls" },
-      { id: "B", text: "It automatically downloads the entire media file" },
-      { id: "C", text: "It converts the media to another format" },
-      { id: "D", text: "It prevents the media from playing" }
+      { id: "A", text: "It automatically downloads the entire media file" },
+      { id: "B", text: "It converts the media to another format" },
+      { id: "C", text: "It prevents the media from playing" },
+      { id: "D", text: "It asks the browser to display native playback controls" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The boolean `controls` attribute instructs the browser to provide its native user interface for controlling playback.",
     tags: ["media", "audio", "video", "controls"]
   },
@@ -709,12 +709,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which meta element is commonly used to declare the document's character encoding?",
     options: [
-      { id: "A", text: '<meta charset="UTF-8">' },
-      { id: "B", text: '<meta encoding="UTF-8">' },
-      { id: "C", text: '<charset value="UTF-8">' },
-      { id: "D", text: '<meta type="UTF-8">' }
+      { id: "A", text: "<meta encoding=\"UTF-8\">" },
+      { id: "B", text: "<meta charset=\"UTF-8\">" },
+      { id: "C", text: "<charset value=\"UTF-8\">" },
+      { id: "D", text: "<meta type=\"UTF-8\">" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The `charset` attribute on `<meta>` declares the character encoding. UTF-8 is the standard encoding commonly used for modern HTML documents.",
     tags: ["metadata", "charset", "html"]
   },
@@ -727,12 +727,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the purpose of the viewport meta tag commonly used on responsive websites?",
     options: [
-      { id: "A", text: "It helps control the viewport's layout and scaling behavior on mobile devices" },
-      { id: "B", text: "It changes the browser's default font permanently" },
-      { id: "C", text: "It automatically makes every element responsive" },
+      { id: "A", text: "It changes the browser's default font permanently" },
+      { id: "B", text: "It automatically makes every element responsive" },
+      { id: "C", text: "It helps control the viewport's layout and scaling behavior on mobile devices" },
       { id: "D", text: "It enables JavaScript execution" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The viewport meta tag communicates how the page should be sized and scaled within the device viewport, which is important for responsive layouts.",
     tags: ["metadata", "viewport", "responsive-design"]
   },
@@ -745,12 +745,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which attribute provides a short description of an input's expected value and can disappear when the user types?",
     options: [
-      { id: "A", text: "placeholder" },
-      { id: "B", text: "hint" },
-      { id: "C", text: "description" },
-      { id: "D", text: "input-help" }
+      { id: "A", text: "hint" },
+      { id: "B", text: "description" },
+      { id: "C", text: "input-help" },
+      { id: "D", text: "placeholder" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`placeholder` provides a hint about expected input. It should not replace a proper `<label>` because placeholder text disappears and is not an adequate persistent label.",
     tags: ["forms", "placeholder", "accessibility"]
   },
@@ -781,12 +781,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why is replacing a native <button> with a <div> plus role=\"button\" often a poor choice?",
     options: [
-      { id: "A", text: "A native button already provides built-in semantics, keyboard behavior, and interaction support" },
-      { id: "B", text: "ARIA roles cannot be used on div elements" },
+      { id: "A", text: "ARIA roles cannot be used on div elements" },
+      { id: "B", text: "A native button already provides built-in semantics, keyboard behavior, and interaction support" },
       { id: "C", text: "div elements cannot receive CSS" },
       { id: "D", text: "Buttons cannot contain text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Native controls provide built-in accessibility behavior. Recreating that behavior with a generic element requires additional keyboard handling, focus management, states, and interaction logic.",
     tags: ["accessibility", "aria", "button", "semantic-html"]
   },
@@ -799,12 +799,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which HTML element is most appropriate for marking up emphasized text semantically?",
     options: [
-      { id: "A", text: "<em>" },
-      { id: "B", text: "<italic>" },
-      { id: "C", text: "<i-text>" },
+      { id: "A", text: "<italic>" },
+      { id: "B", text: "<i-text>" },
+      { id: "C", text: "<em>" },
       { id: "D", text: "<emphasis-style>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`<em>` represents stress emphasis semantically. Its default visual presentation is often italic, but its meaning is more important than its default styling.",
     tags: ["semantic-html", "text", "emphasis"]
   },
@@ -817,12 +817,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which element represents strong importance rather than merely bold visual styling?",
     options: [
-      { id: "A", text: "<strong>" },
-      { id: "B", text: "<bold>" },
-      { id: "C", text: "<important>" },
-      { id: "D", text: "<b-strong>" }
+      { id: "A", text: "<bold>" },
+      { id: "B", text: "<important>" },
+      { id: "C", text: "<b-strong>" },
+      { id: "D", text: "<strong>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`<strong>` communicates strong importance semantically. Its default appearance is typically bold, but the semantic meaning is the important part.",
     tags: ["semantic-html", "text", "strong"]
   },
@@ -853,12 +853,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "A developer creates an image link like this:\n\n<a href=\"/products\">\n  <img src=\"products.png\" alt=\"Products\">\n</a>\n\nWhy is this generally accessible?",
     options: [
-      { id: "A", text: "The image's alt text can provide the accessible name for the link" },
-      { id: "B", text: "Images automatically receive the text 'Products' as a heading" },
+      { id: "A", text: "Images automatically receive the text 'Products' as a heading" },
+      { id: "B", text: "The image's alt text can provide the accessible name for the link" },
       { id: "C", text: "The browser converts every image into a button" },
       { id: "D", text: "The href attribute automatically creates alt text" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "When an image is the content of a link, its alternative text can serve as the accessible name of that link. Here, 'Products' communicates the destination's purpose.",
     tags: ["accessibility", "images", "alt", "links"]
   },
@@ -871,12 +871,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "A developer writes:\n\n<form>\n  <input type=\"text\" placeholder=\"Enter your name\">\n  <button>Save</button>\n</form>\n\nWhat is the biggest accessibility issue with this markup?",
     options: [
-      { id: "A", text: "The input has no proper persistent label" },
-      { id: "B", text: "Forms cannot contain buttons" },
-      { id: "C", text: "Text inputs cannot use placeholder attributes" },
+      { id: "A", text: "Forms cannot contain buttons" },
+      { id: "B", text: "Text inputs cannot use placeholder attributes" },
+      { id: "C", text: "The input has no proper persistent label" },
       { id: "D", text: "Buttons cannot be placed after inputs" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A placeholder is only a temporary hint and disappears when the user enters text. A proper `<label>` should identify the field persistently and accessibly.",
     tags: ["forms", "accessibility", "label", "placeholder"]
   },
@@ -889,24 +889,12 @@ const htmlAllInOneQuestions = [
     difficulty: "Advanced",
     question: "You are building a blog article page. Which structure is the most semantically appropriate?",
     options: [
-      {
-        id: "A",
-        text: "<header>site header/navigation</header><main><article><h1>Post title</h1><p>Post content</p></article></main><footer>site footer</footer>"
-      },
-      {
-        id: "B",
-        text: "<div><div>site header</div><div><span>Post title</span><div>Post content</div></div><div>site footer</div></div>"
-      },
-      {
-        id: "C",
-        text: "<header><footer>Post title</footer></header><main><div>Post content</div></main>"
-      },
-      {
-        id: "D",
-        text: "<nav><h1>Post title</h1></nav><aside><p>Post content</p></aside>"
-      }
+      { id: "A", text: "<div><div>site header</div><div><span>Post title</span><div>Post content</div></div><div>site footer</div></div>" },
+      { id: "B", text: "<header><footer>Post title</footer></header><main><div>Post content</div></main>" },
+      { id: "C", text: "<nav><h1>Post title</h1></nav><aside><p>Post content</p></aside>" },
+      { id: "D", text: "<header>site header/navigation</header><main><article><h1>Post title</h1><p>Post content</p></article></main><footer>site footer</footer>" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The first structure communicates the document hierarchy clearly: site-level introductory/navigation content in `header`, the primary content in `main`, the self-contained post in `article`, and site-level closing information in `footer`. Semantic HTML provides useful structure for users, assistive technologies, and other consumers of the document.",
     tags: ["semantic-html", "article", "main", "header", "footer", "accessibility", "seo"]
   }

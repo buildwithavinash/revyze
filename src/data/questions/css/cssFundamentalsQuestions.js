@@ -7,12 +7,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is CSS primarily used for?",
     options: [
-      { id: "A", text: "Styling and controlling the presentation of HTML documents" },
-      { id: "B", text: "Creating database tables" },
-      { id: "C", text: "Executing server-side JavaScript" },
+      { id: "A", text: "Creating database tables" },
+      { id: "B", text: "Executing server-side JavaScript" },
+      { id: "C", text: "Styling and controlling the presentation of HTML documents" },
       { id: "D", text: "Defining HTTP requests" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "CSS controls the presentation of HTML, including colors, spacing, typography, layout, and visual appearance.",
     tags: ["css", "fundamentals"]
   },
@@ -27,10 +27,10 @@ const cssFundamentalsQuestions = [
     options: [
       { id: "A", text: ".p" },
       { id: "B", text: "#p" },
-      { id: "C", text: "p" },
-      { id: "D", text: "*p" }
+      { id: "C", text: "*p" },
+      { id: "D", text: "p" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "p is a type selector and matches all paragraph elements.",
     tags: ["selectors", "type-selector"]
   },
@@ -43,12 +43,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which selector targets elements with class=\"card\"?",
     options: [
-      { id: "A", text: "#card" },
-      { id: "B", text: ".card" },
+      { id: "A", text: ".card" },
+      { id: "B", text: "#card" },
       { id: "C", text: "card" },
       { id: "D", text: "*card" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A class selector starts with a period followed by the class name.",
     tags: ["selectors", "class-selector"]
   },
@@ -62,11 +62,11 @@ const cssFundamentalsQuestions = [
     question: "Which selector targets an element with id=\"main\"?",
     options: [
       { id: "A", text: ".main" },
-      { id: "B", text: "main" },
-      { id: "C", text: "#main" },
+      { id: "B", text: "#main" },
+      { id: "C", text: "main" },
       { id: "D", text: "*main" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The # symbol creates an ID selector.",
     tags: ["selectors", "id-selector"]
   },
@@ -80,11 +80,11 @@ const cssFundamentalsQuestions = [
     question: "What does the universal selector (*) match?",
     options: [
       { id: "A", text: "Only elements with classes" },
-      { id: "B", text: "All elements within its applicable scope" },
-      { id: "C", text: "Only the body element" },
+      { id: "B", text: "Only the body element" },
+      { id: "C", text: "All elements within its applicable scope" },
       { id: "D", text: "Only direct children" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The universal selector matches every element in the scope where it is applied.",
     tags: ["selectors", "universal-selector"]
   },
@@ -99,10 +99,10 @@ const cssFundamentalsQuestions = [
     options: [
       { id: "A", text: ".card .active" },
       { id: "B", text: ".card, .active" },
-      { id: "C", text: ".card.active" },
-      { id: "D", text: "#card.active" }
+      { id: "C", text: "#card.active" },
+      { id: "D", text: ".card.active" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Combining class selectors without a space targets an element that has both classes.",
     tags: ["selectors", "classes", "compound-selector"]
   },
@@ -115,12 +115,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the selector .card .title target?",
     options: [
-      { id: "A", text: "An element with both card and title classes" },
-      { id: "B", text: "An element with class title that is a descendant of an element with class card" },
+      { id: "A", text: "An element with class title that is a descendant of an element with class card" },
+      { id: "B", text: "An element with both card and title classes" },
       { id: "C", text: "Only direct children with class title" },
       { id: "D", text: "An element with ID title inside card" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The descendant combinator is represented by whitespace. It matches .title elements anywhere inside .card.",
     tags: ["selectors", "descendant-combinator"]
   },
@@ -170,11 +170,11 @@ const cssFundamentalsQuestions = [
     question: "Which selector targets an input whose type attribute is \"email\"?",
     options: [
       { id: "A", text: "input.email" },
-      { id: "B", text: "input[type=\"email\"]" },
-      { id: "C", text: "input#email" },
-      { id: "D", text: "input::email" }
+      { id: "B", text: "input#email" },
+      { id: "C", text: "input::email" },
+      { id: "D", text: "input[type=\"email\"]" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Square brackets create an attribute selector. input[type=\"email\"] matches input elements whose type attribute equals email.",
     tags: ["selectors", "attribute-selector"]
   },
@@ -187,12 +187,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which pseudo-class applies styles when a user points at an element with a pointing device?",
     options: [
-      { id: "A", text: ":active" },
-      { id: "B", text: ":hover" },
+      { id: "A", text: ":hover" },
+      { id: "B", text: ":active" },
       { id: "C", text: ":focus" },
       { id: "D", text: ":visited" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: ":hover matches an element while the pointing device is over it.",
     tags: ["selectors", "pseudo-class", "hover"]
   },
@@ -205,12 +205,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which pseudo-class represents an element that currently has focus?",
     options: [
-      { id: "A", text: ":focus" },
-      { id: "B", text: ":focused" },
+      { id: "A", text: ":focused" },
+      { id: "B", text: ":focus" },
       { id: "C", text: ":selected" },
       { id: "D", text: ":input" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: ":focus matches an element when it has focus, such as a focused form control.",
     tags: ["selectors", "pseudo-class", "focus"]
   },
@@ -223,12 +223,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is CSS specificity used for?",
     options: [
-      { id: "A", text: "Determining which competing declarations have priority" },
-      { id: "B", text: "Determining the HTML document language" },
-      { id: "C", text: "Determining browser width" },
+      { id: "A", text: "Determining the HTML document language" },
+      { id: "B", text: "Determining browser width" },
+      { id: "C", text: "Determining which competing declarations have priority" },
       { id: "D", text: "Determining how many stylesheets exist" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Specificity is one of the mechanisms used by the cascade to resolve competing declarations.",
     tags: ["specificity", "cascade"]
   },
@@ -243,10 +243,10 @@ const cssFundamentalsQuestions = [
     options: [
       { id: "A", text: "p" },
       { id: "B", text: ".text" },
-      { id: "C", text: "#text" },
-      { id: "D", text: "*" }
+      { id: "C", text: "*" },
+      { id: "D", text: "#text" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "An ID selector has greater specificity than a class selector, type selector, or universal selector.",
     tags: ["specificity", "selectors"]
   },
@@ -278,11 +278,11 @@ const cssFundamentalsQuestions = [
     question: "Which declaration wins for the paragraph below?\n\n<p id=\"intro\" class=\"text\">Hello</p>\n\np { color: blue; }\n.text { color: green; }\n#intro { color: red; }",
     options: [
       { id: "A", text: "blue" },
-      { id: "B", text: "green" },
-      { id: "C", text: "red" },
+      { id: "B", text: "red" },
+      { id: "C", text: "green" },
       { id: "D", text: "The browser ignores all three" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "The ID selector has greater specificity than the class and type selectors, so red wins.",
     tags: ["specificity", "cascade", "id-selector"]
   },
@@ -295,12 +295,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What is the CSS cascade?",
     options: [
-      { id: "A", text: "The process used to determine which applicable CSS declarations win" },
-      { id: "B", text: "A method for creating animations" },
-      { id: "C", text: "A way to convert CSS to JavaScript" },
+      { id: "A", text: "A method for creating animations" },
+      { id: "B", text: "A way to convert CSS to JavaScript" },
+      { id: "C", text: "The process used to determine which applicable CSS declarations win" },
       { id: "D", text: "A browser's HTML parser" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The cascade resolves competing CSS declarations by considering factors such as origin, importance, specificity, scope, and order.",
     tags: ["cascade", "specificity"]
   },
@@ -314,11 +314,11 @@ const cssFundamentalsQuestions = [
     question: "If two declarations have equal specificity and importance, which one normally wins?",
     options: [
       { id: "A", text: "The earlier declaration" },
-      { id: "B", text: "The later declaration in the cascade order" },
-      { id: "C", text: "The declaration with more characters" },
-      { id: "D", text: "The declaration closest to the HTML opening tag" }
+      { id: "B", text: "The declaration with more characters" },
+      { id: "C", text: "The declaration closest to the HTML opening tag" },
+      { id: "D", text: "The later declaration in the cascade order" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "When competing declarations are otherwise equal, the later one in the relevant cascade order generally wins.",
     tags: ["cascade", "source-order"]
   },
@@ -331,12 +331,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What color will this paragraph have?\n\np { color: blue; }\np { color: red; }",
     options: [
-      { id: "A", text: "blue" },
-      { id: "B", text: "red" },
+      { id: "A", text: "red" },
+      { id: "B", text: "blue" },
       { id: "C", text: "purple" },
       { id: "D", text: "The browser chooses randomly" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Both selectors have equal specificity, so the later declaration wins.",
     tags: ["cascade", "source-order"]
   },
@@ -349,12 +349,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the !important annotation do?",
     options: [
-      { id: "A", text: "It gives the declaration higher importance in the cascade" },
-      { id: "B", text: "It makes the declaration load faster" },
+      { id: "A", text: "It makes the declaration load faster" },
+      { id: "B", text: "It gives the declaration higher importance in the cascade" },
       { id: "C", text: "It increases the element's width" },
       { id: "D", text: "It converts the property into an inherited property" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "!important changes the declaration's cascade importance. It should be used deliberately because excessive use makes styles harder to maintain.",
     tags: ["cascade", "important"]
   },
@@ -368,11 +368,11 @@ const cssFundamentalsQuestions = [
     question: "Which of these is generally the best first choice for resolving an ordinary specificity conflict?",
     options: [
       { id: "A", text: "Use !important everywhere" },
-      { id: "B", text: "Use a clearer selector structure with appropriate specificity" },
-      { id: "C", text: "Add random IDs to elements" },
+      { id: "B", text: "Add random IDs to elements" },
+      { id: "C", text: "Use a clearer selector structure with appropriate specificity" },
       { id: "D", text: "Duplicate the declaration ten times" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Maintainable CSS generally benefits from predictable selector specificity rather than escalating every conflict with !important or excessive IDs.",
     tags: ["specificity", "best-practices"]
   },
@@ -385,12 +385,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does CSS inheritance mean?",
     options: [
-      { id: "A", text: "Some property values can pass from an ancestor to descendants" },
-      { id: "B", text: "Every CSS property automatically inherits" },
-      { id: "C", text: "Child elements always inherit every parent style" },
-      { id: "D", text: "Only class selectors inherit" }
+      { id: "A", text: "Every CSS property automatically inherits" },
+      { id: "B", text: "Child elements always inherit every parent style" },
+      { id: "C", text: "Only class selectors inherit" },
+      { id: "D", text: "Some property values can pass from an ancestor to descendants" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Some CSS properties inherit by default, while others do not. Inheritance can also be explicitly requested with the inherit keyword.",
     tags: ["inheritance", "cascade"]
   },
@@ -421,12 +421,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the inherit keyword do?",
     options: [
-      { id: "A", text: "Forces the property to use the inherited value from the parent" },
-      { id: "B", text: "Prevents inheritance" },
+      { id: "A", text: "Prevents inheritance" },
+      { id: "B", text: "Forces the property to use the inherited value from the parent" },
       { id: "C", text: "Resets the property to the browser default" },
       { id: "D", text: "Makes the property !important" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "inherit explicitly tells the property to use the value inherited from the parent element.",
     tags: ["inheritance", "inherit"]
   },
@@ -440,11 +440,11 @@ const cssFundamentalsQuestions = [
     question: "Which value tells a property to use its initial value as defined by CSS?",
     options: [
       { id: "A", text: "inherit" },
-      { id: "B", text: "initial" },
-      { id: "C", text: "parent" },
+      { id: "B", text: "parent" },
+      { id: "C", text: "initial" },
       { id: "D", text: "default-parent" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "The initial keyword resets a property to its initial value defined by the CSS specification.",
     tags: ["inheritance", "initial", "reset"]
   },
@@ -457,12 +457,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the unset keyword generally do?",
     options: [
-      { id: "A", text: "It acts as inherit for inherited properties and initial for non-inherited properties" },
-      { id: "B", text: "It always means initial" },
-      { id: "C", text: "It always means inherit" },
-      { id: "D", text: "It deletes the HTML element" }
+      { id: "A", text: "It always means initial" },
+      { id: "B", text: "It always means inherit" },
+      { id: "C", text: "It deletes the HTML element" },
+      { id: "D", text: "It acts as inherit for inherited properties and initial for non-inherited properties" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "unset effectively resets a property according to whether that property naturally inherits.",
     tags: ["inheritance", "unset"]
   },
@@ -493,12 +493,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does padding control?",
     options: [
-      { id: "A", text: "Space between an element's content and its border" },
-      { id: "B", text: "Space outside the element's border" },
+      { id: "A", text: "Space outside the element's border" },
+      { id: "B", text: "Space between an element's content and its border" },
       { id: "C", text: "Space between sibling elements only" },
       { id: "D", text: "The element's font size" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Padding is the internal spacing between content and the border.",
     tags: ["box-model", "padding"]
   },
@@ -511,12 +511,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does margin control?",
     options: [
-      { id: "A", text: "Space outside an element's border" },
-      { id: "B", text: "Space between content and border" },
-      { id: "C", text: "The thickness of the border" },
+      { id: "A", text: "Space between content and border" },
+      { id: "B", text: "The thickness of the border" },
+      { id: "C", text: "Space outside an element's border" },
       { id: "D", text: "The element's text color" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Margin creates external spacing around an element.",
     tags: ["box-model", "margin"]
   },
@@ -529,12 +529,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does the border represent in the CSS box model?",
     options: [
-      { id: "A", text: "The area surrounding the padding and content" },
-      { id: "B", text: "The space outside the element" },
-      { id: "C", text: "The element's text content" },
-      { id: "D", text: "The browser viewport" }
+      { id: "A", text: "The space outside the element" },
+      { id: "B", text: "The element's text content" },
+      { id: "C", text: "The browser viewport" },
+      { id: "D", text: "The area surrounding the padding and content" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The border lies between the padding and margin areas.",
     tags: ["box-model", "border"]
   },
@@ -547,12 +547,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "With the default box-sizing: content-box, an element has width: 200px and padding: 20px on both sides. Ignoring borders and margins, what is its outer width?",
     options: [
-      { id: "A", text: "200px" },
-      { id: "B", text: "220px" },
-      { id: "C", text: "240px" },
+      { id: "A", text: "240px" },
+      { id: "B", text: "200px" },
+      { id: "C", text: "220px" },
       { id: "D", text: "260px" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "With content-box, the declared width applies only to content. 200px + 20px + 20px = 240px.",
     tags: ["box-model", "content-box", "width"]
   },
@@ -583,12 +583,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does box-sizing: border-box change?",
     options: [
-      { id: "A", text: "It includes padding and border inside the declared width and height" },
-      { id: "B", text: "It removes padding" },
-      { id: "C", text: "It makes margin part of the declared width" },
+      { id: "A", text: "It removes padding" },
+      { id: "B", text: "It makes margin part of the declared width" },
+      { id: "C", text: "It includes padding and border inside the declared width and height" },
       { id: "D", text: "It makes every element inline" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "border-box changes the sizing calculation so the declared dimensions include padding and border.",
     tags: ["box-model", "box-sizing"]
   },
@@ -601,12 +601,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which declaration is commonly used as part of a predictable global box-sizing setup?",
     options: [
-      { id: "A", text: "* { box-sizing: border-box; }" },
-      { id: "B", text: "* { sizing: border-box; }" },
-      { id: "C", text: "body { box: border-box; }" },
-      { id: "D", text: "html { model: border-box; }" }
+      { id: "A", text: "* { sizing: border-box; }" },
+      { id: "B", text: "body { box: border-box; }" },
+      { id: "C", text: "html { model: border-box; }" },
+      { id: "D", text: "* { box-sizing: border-box; }" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A universal selector with box-sizing: border-box is a common baseline. Many projects also apply box-sizing to pseudo-elements.",
     tags: ["box-sizing", "box-model", "reset"]
   },
@@ -637,12 +637,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which property controls an element's content height?",
     options: [
-      { id: "A", text: "height" },
-      { id: "B", text: "content-height" },
+      { id: "A", text: "content-height" },
+      { id: "B", text: "height" },
       { id: "C", text: "element-height" },
       { id: "D", text: "size-y" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The height property controls the element's height according to its box-sizing model and layout constraints.",
     tags: ["box-model", "height"]
   },
@@ -655,12 +655,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which property can prevent an element from becoming narrower than a specified size?",
     options: [
-      { id: "A", text: "min-width" },
-      { id: "B", text: "minimum-width" },
-      { id: "C", text: "width-min" },
+      { id: "A", text: "minimum-width" },
+      { id: "B", text: "width-min" },
+      { id: "C", text: "min-width" },
       { id: "D", text: "lower-width" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "min-width establishes a minimum used width for an element.",
     tags: ["box-model", "min-width"]
   },
@@ -673,12 +673,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which property can prevent an element from becoming wider than a specified size?",
     options: [
-      { id: "A", text: "max-width" },
-      { id: "B", text: "maximum-width" },
-      { id: "C", text: "width-max" },
-      { id: "D", text: "upper-width" }
+      { id: "A", text: "maximum-width" },
+      { id: "B", text: "width-max" },
+      { id: "C", text: "upper-width" },
+      { id: "D", text: "max-width" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "max-width establishes a maximum used width.",
     tags: ["box-model", "max-width"]
   },
@@ -709,12 +709,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does overflow: hidden generally do?",
     options: [
-      { id: "A", text: "Clips content that overflows the element's overflow area" },
-      { id: "B", text: "Deletes the overflowing DOM nodes" },
+      { id: "A", text: "Deletes the overflowing DOM nodes" },
+      { id: "B", text: "Clips content that overflows the element's overflow area" },
       { id: "C", text: "Automatically adds a scrollbar" },
       { id: "D", text: "Makes the element transparent" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "overflow: hidden clips overflowing content rather than displaying it outside the box.",
     tags: ["overflow", "box-model"]
   },
@@ -727,12 +727,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "Which value makes overflowing content scrollable when needed?",
     options: [
-      { id: "A", text: "overflow: auto" },
-      { id: "B", text: "overflow: scroll-only-when-needed" },
-      { id: "C", text: "overflow: dynamic" },
+      { id: "A", text: "overflow: scroll-only-when-needed" },
+      { id: "B", text: "overflow: dynamic" },
+      { id: "C", text: "overflow: auto" },
       { id: "D", text: "overflow: fit" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "overflow: auto allows the browser to provide scrolling when the content overflows.",
     tags: ["overflow", "scrolling"]
   },
@@ -745,12 +745,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Beginner",
     question: "What does margin: 0 auto commonly accomplish on a block with a constrained width?",
     options: [
-      { id: "A", text: "It commonly centers the block horizontally within its containing block" },
-      { id: "B", text: "It centers the text vertically" },
-      { id: "C", text: "It centers every child element" },
-      { id: "D", text: "It makes the element position: fixed" }
+      { id: "A", text: "It centers the text vertically" },
+      { id: "B", text: "It centers every child element" },
+      { id: "C", text: "It makes the element position: fixed" },
+      { id: "D", text: "It commonly centers the block horizontally within its containing block" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "When the block has a used width smaller than its containing block, auto horizontal margins can distribute the remaining space equally and center it.",
     tags: ["margin", "box-model", "centering"]
   },
@@ -782,11 +782,11 @@ const cssFundamentalsQuestions = [
     question: "Two normal-flow block elements have adjacent vertical margins of 20px and 30px that collapse. What is the resulting collapsed margin?",
     options: [
       { id: "A", text: "10px" },
-      { id: "B", text: "20px" },
-      { id: "C", text: "30px" },
+      { id: "B", text: "30px" },
+      { id: "C", text: "20px" },
       { id: "D", text: "50px" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "When positive vertical margins collapse, the larger margin wins. Therefore max(20px, 30px) = 30px.",
     tags: ["margin-collapsing", "box-model"]
   },
@@ -799,12 +799,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which statement about margin and padding is correct?",
     options: [
-      { id: "A", text: "Padding is inside the border; margin is outside the border" },
-      { id: "B", text: "Margin is inside the border; padding is outside" },
-      { id: "C", text: "Both are always outside the border" },
+      { id: "A", text: "Margin is inside the border; padding is outside" },
+      { id: "B", text: "Both are always outside the border" },
+      { id: "C", text: "Padding is inside the border; margin is outside the border" },
       { id: "D", text: "Both are always inside the content box" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Padding sits between content and border, while margin sits outside the border.",
     tags: ["box-model", "margin", "padding"]
   },
@@ -818,11 +818,11 @@ const cssFundamentalsQuestions = [
     question: "Which rule applies red text to elements that are both buttons and disabled?",
     options: [
       { id: "A", text: "button .disabled { color: red; }" },
-      { id: "B", text: "button.disabled { color: red; }" },
-      { id: "C", text: "button#disabled { color: red; }" },
-      { id: "D", text: "button > disabled { color: red; }" }
+      { id: "B", text: "button#disabled { color: red; }" },
+      { id: "C", text: "button > disabled { color: red; }" },
+      { id: "D", text: "button.disabled { color: red; }" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "button.disabled is a compound selector that matches button elements having the disabled class.",
     tags: ["selectors", "compound-selector", "classes"]
   },
@@ -835,12 +835,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Which selector has greater specificity?",
     options: [
-      { id: "A", text: ".card .title" },
-      { id: "B", text: "#app .title" },
+      { id: "A", text: "#app .title" },
+      { id: "B", text: ".card .title" },
       { id: "C", text: "div.card" },
       { id: "D", text: "section article" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "#app .title contains one ID selector and one class selector, giving it greater specificity than the alternatives, which contain no ID selector.",
     tags: ["specificity", "selectors"]
   },
@@ -871,12 +871,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "Why can adding more and more specificity to every CSS rule become a maintenance problem?",
     options: [
-      { id: "A", text: "It makes future overrides harder and encourages increasingly complex selectors or !important" },
-      { id: "B", text: "It makes CSS invalid" },
-      { id: "C", text: "It prevents browsers from parsing HTML" },
+      { id: "A", text: "It makes CSS invalid" },
+      { id: "B", text: "It prevents browsers from parsing HTML" },
+      { id: "C", text: "It makes future overrides harder and encourages increasingly complex selectors or !important" },
       { id: "D", text: "It automatically disables inheritance" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Specificity escalation creates a cycle where future rules must become even more specific to override earlier rules, making CSS difficult to reason about.",
     tags: ["specificity", "cascade", "maintainability"]
   },
@@ -889,12 +889,12 @@ const cssFundamentalsQuestions = [
     difficulty: "Intermediate",
     question: "A developer says, \"My CSS isn't working because I changed the declaration later in the stylesheet.\" The new rule has lower specificity than the old rule. What is the most likely explanation?",
     options: [
-      { id: "A", text: "The older declaration wins because it has greater specificity" },
-      { id: "B", text: "CSS always prefers earlier declarations" },
-      { id: "C", text: "CSS ignores all declarations after the first one" },
-      { id: "D", text: "The browser automatically prefers shorter selectors" }
+      { id: "A", text: "CSS always prefers earlier declarations" },
+      { id: "B", text: "CSS ignores all declarations after the first one" },
+      { id: "C", text: "The browser automatically prefers shorter selectors" },
+      { id: "D", text: "The older declaration wins because it has greater specificity" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Source order only resolves conflicts after the declarations are otherwise equal in the relevant cascade steps. A more specific selector can beat a later less-specific selector.",
     tags: ["specificity", "cascade", "debugging"]
   }

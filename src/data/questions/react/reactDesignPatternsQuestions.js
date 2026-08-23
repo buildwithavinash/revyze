@@ -7,12 +7,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "What is the primary idea behind composition in React?",
     options: [
-      { id: "A", text: "Build complex UI by combining smaller components and passing behavior or content between them." },
-      { id: "B", text: "Make every component inherit from a common React base class." },
+      { id: "A", text: "Make every component inherit from a common React base class." },
+      { id: "B", text: "Build complex UI by combining smaller components and passing behavior or content between them." },
       { id: "C", text: "Move all component logic into global state." },
       { id: "D", text: "Prevent components from receiving children." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Composition is a core React design approach. Instead of relying heavily on inheritance, components can be combined and customized through props, children, and other composition techniques.",
     tags: ["composition", "components", "architecture"]
   },
@@ -25,12 +25,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "Which React feature is most directly associated with component composition?",
     options: [
-      { id: "A", text: "The children prop." },
-      { id: "B", text: "The key attribute only." },
-      { id: "C", text: "The CSS className attribute only." },
+      { id: "A", text: "The key attribute only." },
+      { id: "B", text: "The CSS className attribute only." },
+      { id: "C", text: "The children prop." },
       { id: "D", text: "The browser's DOMContentLoaded event." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The children prop allows a component to receive arbitrary JSX content from its parent, making it possible to create flexible wrapper and layout components.",
     tags: ["composition", "children", "props"]
   },
@@ -43,12 +43,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "What is a Higher-Order Component (HOC)?",
     options: [
-      { id: "A", text: "A function that takes a component and returns an enhanced component." },
-      { id: "B", text: "A component that must always be rendered above the root component." },
-      { id: "C", text: "A component that can only contain other components." },
-      { id: "D", text: "A special React component that replaces Hooks." }
+      { id: "A", text: "A component that must always be rendered above the root component." },
+      { id: "B", text: "A component that can only contain other components." },
+      { id: "C", text: "A special React component that replaces Hooks." },
+      { id: "D", text: "A function that takes a component and returns an enhanced component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A Higher-Order Component is a reusable abstraction expressed as a function. It receives a component and returns another component with additional behavior or data.",
     tags: ["HOC", "higher-order-components", "composition"]
   },
@@ -79,12 +79,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "What is the main purpose of a render prop pattern?",
     options: [
-      { id: "A", text: "Allow a component to share behavior while letting the consumer decide what UI to render." },
-      { id: "B", text: "Prevent a component from rendering children." },
+      { id: "A", text: "Prevent a component from rendering children." },
+      { id: "B", text: "Allow a component to share behavior while letting the consumer decide what UI to render." },
       { id: "C", text: "Replace all props with global variables." },
       { id: "D", text: "Make every component a class component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A render prop is typically a function passed as a prop. The component owns reusable behavior or state and calls that function to let the consumer determine the resulting UI.",
     tags: ["render-props", "composition", "reusable-logic"]
   },
@@ -97,24 +97,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "Which example demonstrates a render prop?",
     options: [
-      {
-        id: "A",
-        text: "<MouseTracker render={(position) => <Cursor x={position.x} y={position.y} />} />"
-      },
-      {
-        id: "B",
-        text: "<MouseTracker color=\"red\" />"
-      },
-      {
-        id: "C",
-        text: "<MouseTracker />"
-      },
-      {
-        id: "D",
-        text: "<MouseTracker onClick=\"track\" />"
-      }
+      { id: "A", text: "<MouseTracker color=\"red\" />" },
+      { id: "B", text: "<MouseTracker />" },
+      { id: "C", text: "<MouseTracker render={(position) => <Cursor x={position.x} y={position.y} />} />" },
+      { id: "D", text: "<MouseTracker onClick=\"track\" />" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The render prop is the render function passed through the render prop. The MouseTracker can provide reusable mouse-tracking behavior while the consumer controls the UI.",
     tags: ["render-props", "functions-as-props", "composition"]
   },
@@ -127,12 +115,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Beginner",
     question: "What is a compound component pattern?",
     options: [
-      { id: "A", text: "A group of components designed to work together through shared state or context while exposing a flexible declarative API." },
-      { id: "B", text: "Several unrelated components placed in one file." },
-      { id: "C", text: "A single component containing hundreds of lines of JSX." },
-      { id: "D", text: "A component that always renders another React application." }
+      { id: "A", text: "Several unrelated components placed in one file." },
+      { id: "B", text: "A single component containing hundreds of lines of JSX." },
+      { id: "C", text: "A component that always renders another React application." },
+      { id: "D", text: "A group of components designed to work together through shared state or context while exposing a flexible declarative API." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Compound components provide a coordinated set of components such as Tabs and TabList. The parent component manages shared behavior while child components participate in that behavior.",
     tags: ["compound-components", "composition", "context"]
   },
@@ -163,12 +151,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "Consider this API:\n\n<Tabs>\n  <Tabs.List />\n  <Tabs.Panel />\n</Tabs>\n\nWhat pattern does this most closely represent?",
     options: [
-      { id: "A", text: "Compound components." },
-      { id: "B", text: "Higher-order component." },
+      { id: "A", text: "Higher-order component." },
+      { id: "B", text: "Compound components." },
       { id: "C", text: "Render prop only." },
       { id: "D", text: "Inheritance-based component design." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Tabs, Tabs.List, Tabs.Tab, and Tabs.Panel are a classic compound-component API. The components form a coordinated family while giving the consumer a declarative structure.",
     tags: ["compound-components", "Tabs", "composition"]
   },
@@ -181,12 +169,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "What is one major advantage of composition over creating a huge configurable component?",
     options: [
-      { id: "A", text: "Consumers can combine smaller pieces in different ways without adding an ever-growing list of configuration props." },
-      { id: "B", text: "Composition eliminates the need for props." },
-      { id: "C", text: "Composition guarantees fewer components." },
+      { id: "A", text: "Composition eliminates the need for props." },
+      { id: "B", text: "Composition guarantees fewer components." },
+      { id: "C", text: "Consumers can combine smaller pieces in different ways without adding an ever-growing list of configuration props." },
       { id: "D", text: "Composition prevents reusable components." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Highly configurable components can become difficult to understand as boolean and mode props multiply. Composition lets consumers construct the desired UI from smaller pieces.",
     tags: ["composition", "component-design", "API-design"]
   },
@@ -199,12 +187,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "Which is a common problem with Higher-Order Components?",
     options: [
-      { id: "A", text: "Multiple HOCs can create wrapper nesting that makes component trees and debugging harder to understand." },
-      { id: "B", text: "HOCs cannot accept components as arguments." },
-      { id: "C", text: "HOCs cannot return React components." },
-      { id: "D", text: "HOCs automatically mutate the original component." }
+      { id: "A", text: "HOCs cannot accept components as arguments." },
+      { id: "B", text: "HOCs cannot return React components." },
+      { id: "C", text: "HOCs automatically mutate the original component." },
+      { id: "D", text: "Multiple HOCs can create wrapper nesting that makes component trees and debugging harder to understand." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "HOCs can compose reusable behavior, but deeply wrapping a component with multiple HOCs can produce wrapper-heavy trees and make debugging and prop flow harder to follow.",
     tags: ["HOC", "composition", "tradeoffs"]
   },
@@ -235,24 +223,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "Which implementation best represents a non-mutating HOC?",
     options: [
-      {
-        id: "A",
-        text: "const withLoading = Component => props => props.loading ? <Spinner /> : <Component {...props} />;"
-      },
-      {
-        id: "B",
-        text: "const withLoading = Component => { Component.loading = true; return Component; };"
-      },
-      {
-        id: "C",
-        text: "const withLoading = Component => Component.prototype.render = Spinner;"
-      },
-      {
-        id: "D",
-        text: "const withLoading = Component => delete Component;"
-      }
+      { id: "A", text: "const withLoading = Component => { Component.loading = true; return Component; };" },
+      { id: "B", text: "const withLoading = Component => props => props.loading ? <Spinner /> : <Component {...props} />;" },
+      { id: "C", text: "const withLoading = Component => Component.prototype.render = Spinner;" },
+      { id: "D", text: "const withLoading = Component => delete Component;" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The HOC returns a new wrapper component and leaves the original Component untouched. This makes the enhancement composable and avoids modifying shared component behavior.",
     tags: ["HOC", "immutability", "wrapper-components"]
   },
@@ -265,12 +241,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "Why should a HOC usually pass unrelated props through to the wrapped component?",
     options: [
-      { id: "A", text: "So consumers can continue supplying the wrapped component's normal API." },
-      { id: "B", text: "Because React requires every prop to be copied." },
-      { id: "C", text: "Because HOCs cannot create their own props." },
+      { id: "A", text: "Because React requires every prop to be copied." },
+      { id: "B", text: "Because HOCs cannot create their own props." },
+      { id: "C", text: "So consumers can continue supplying the wrapped component's normal API." },
       { id: "D", text: "So the wrapped component receives only strings." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A good HOC generally adds its own behavior while preserving the wrapped component's existing public interface. Passing unrelated props through makes the abstraction composable.",
     tags: ["HOC", "props", "API-design"]
   },
@@ -283,12 +259,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "What can happen if a HOC accidentally fails to forward a required prop?",
     options: [
-      { id: "A", text: "The wrapped component may receive undefined or incorrect data and behave incorrectly." },
-      { id: "B", text: "React automatically forwards the missing prop." },
-      { id: "C", text: "The browser adds the prop automatically." },
-      { id: "D", text: "The HOC becomes a render prop." }
+      { id: "A", text: "React automatically forwards the missing prop." },
+      { id: "B", text: "The browser adds the prop automatically." },
+      { id: "C", text: "The HOC becomes a render prop." },
+      { id: "D", text: "The wrapped component may receive undefined or incorrect data and behave incorrectly." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Props are not automatically forwarded through arbitrary wrapper components. If the HOC consumes or forgets to forward a prop, the wrapped component may not receive the data it expects.",
     tags: ["HOC", "props", "prop-forwarding", "debugging"]
   },
@@ -319,12 +295,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "What is a potential drawback of render props?",
     options: [
-      { id: "A", text: "Heavy nesting of function-based render APIs can make JSX harder to read." },
-      { id: "B", text: "Render props cannot receive data." },
+      { id: "A", text: "Render props cannot receive data." },
+      { id: "B", text: "Heavy nesting of function-based render APIs can make JSX harder to read." },
       { id: "C", text: "Render props cannot share behavior." },
       { id: "D", text: "Render props always require Redux." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Render props can be powerful, but composing many nested render functions can create deeply nested JSX and make the resulting UI harder to scan.",
     tags: ["render-props", "tradeoffs", "composition"]
   },
@@ -337,12 +313,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "A component tracks mouse coordinates and exposes them through a render prop. What should the component primarily own?",
     options: [
-      { id: "A", text: "The mouse-tracking behavior and state." },
-      { id: "B", text: "Every possible UI design the consumer might want." },
-      { id: "C", text: "The consumer's CSS files." },
+      { id: "A", text: "Every possible UI design the consumer might want." },
+      { id: "B", text: "The consumer's CSS files." },
+      { id: "C", text: "The mouse-tracking behavior and state." },
       { id: "D", text: "The entire application's routing configuration." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "The value of the render prop pattern is separating reusable behavior from presentation. The tracking component owns the behavior while the consumer decides how the data is displayed.",
     tags: ["render-props", "separation-of-concerns", "reusable-logic"]
   },
@@ -355,12 +331,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Intermediate",
     question: "Which pattern is particularly well suited to APIs such as <Accordion><Accordion.Item /></Accordion>?",
     options: [
-      { id: "A", text: "Compound components." },
-      { id: "B", text: "Higher-order component only." },
-      { id: "C", text: "Render prop only." },
-      { id: "D", text: "Inheritance." }
+      { id: "A", text: "Higher-order component only." },
+      { id: "B", text: "Render prop only." },
+      { id: "C", text: "Inheritance." },
+      { id: "D", text: "Compound components." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Accordion and Accordion.Item form a natural component family. A compound-component API can coordinate their state while giving users a readable declarative structure.",
     tags: ["compound-components", "Accordion", "composition"]
   },
@@ -391,24 +367,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which design gives consumers the most declarative control over the structure of a compound component?",
     options: [
-      {
-        id: "A",
-        text: "<Tabs><Tabs.List><Tabs.Tab /></Tabs.List><Tabs.Panel /></Tabs>"
-      },
-      {
-        id: "B",
-        text: "<Tabs config=\"large-string-containing-all-markup\" />"
-      },
-      {
-        id: "C",
-        text: "<Tabs mode=\"everything\" />"
-      },
-      {
-        id: "D",
-        text: "<Tabs renderEntireApplication />"
-      }
+      { id: "A", text: "<Tabs config=\"large-string-containing-all-markup\" />" },
+      { id: "B", text: "<Tabs><Tabs.List><Tabs.Tab /></Tabs.List><Tabs.Panel /></Tabs>" },
+      { id: "C", text: "<Tabs mode=\"everything\" />" },
+      { id: "D", text: "<Tabs renderEntireApplication />" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The compound API exposes meaningful building blocks while the parent coordinates their behavior. This makes the consumer's intended UI structure explicit in JSX.",
     tags: ["compound-components", "declarative-API", "composition"]
   },
@@ -421,12 +385,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "What is one trade-off of compound components compared with a single configuration-heavy component?",
     options: [
-      { id: "A", text: "The implementation can be more complex because related components need coordination and clear rules about how they work together." },
-      { id: "B", text: "Compound components cannot share state." },
-      { id: "C", text: "Compound components cannot accept children." },
+      { id: "A", text: "Compound components cannot share state." },
+      { id: "B", text: "Compound components cannot accept children." },
+      { id: "C", text: "The implementation can be more complex because related components need coordination and clear rules about how they work together." },
       { id: "D", text: "Compound components always require class components." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Compound APIs improve flexibility but require careful coordination between the parent and its subcomponents, often involving context and validation of usage.",
     tags: ["compound-components", "tradeoffs", "architecture"]
   },
@@ -439,12 +403,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A developer builds a Button component with 14 boolean props such as isPrimary, isDanger, isCompact, isOutlined, isLoading, and isIconOnly. Which design concern does this illustrate?",
     options: [
-      { id: "A", text: "A potentially over-configurable component that may benefit from composition or a more focused API." },
-      { id: "B", text: "A requirement to use a HOC." },
-      { id: "C", text: "A requirement to use render props." },
-      { id: "D", text: "A React limitation on boolean props." }
+      { id: "A", text: "A requirement to use a HOC." },
+      { id: "B", text: "A requirement to use render props." },
+      { id: "C", text: "A React limitation on boolean props." },
+      { id: "D", text: "A potentially over-configurable component that may benefit from composition or a more focused API." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Many configuration flags can create a combinatorial API and make the component difficult to reason about. Composition or smaller focused components can sometimes provide a cleaner API.",
     tags: ["composition", "API-design", "component-design"]
   },
@@ -457,22 +421,10 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which approach best demonstrates composition for a reusable Card?",
     options: [
-      {
-        id: "A",
-        text: "<Card><Card.Header /><Card.Body /><Card.Footer /></Card>"
-      },
-      {
-        id: "B",
-        text: "<Card everyPossibleLayout=\"true\" />"
-      },
-      {
-        id: "C",
-        text: "<Card inheritFrom=\"HeaderBodyFooter\" />"
-      },
-      {
-        id: "D",
-        text: "<Card useAllModes=\"true\" />"
-      }
+      { id: "A", text: "<Card><Card.Header /><Card.Body /><Card.Footer /></Card>" },
+      { id: "B", text: "<Card everyPossibleLayout=\"true\" />" },
+      { id: "C", text: "<Card inheritFrom=\"HeaderBodyFooter\" />" },
+      { id: "D", text: "<Card useAllModes=\"true\" />" }
     ],
     correctOptionId: "A",
     explanation: "The Card exposes composable pieces that consumers can arrange according to their needs. This avoids forcing every possible layout into a large collection of conditional props.",
@@ -487,12 +439,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A HOC receives a component and adds authentication-related behavior. What should the returned wrapper generally do after authentication succeeds?",
     options: [
-      { id: "A", text: "Render the wrapped component while forwarding the appropriate props." },
-      { id: "B", text: "Delete the wrapped component." },
+      { id: "A", text: "Delete the wrapped component." },
+      { id: "B", text: "Render the wrapped component while forwarding the appropriate props." },
       { id: "C", text: "Convert the wrapped component into CSS." },
       { id: "D", text: "Always render the login page regardless of authentication state." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "An authentication HOC can decide whether to render protected UI or another state. When access is allowed, it should render the wrapped component and preserve its expected props.",
     tags: ["HOC", "authentication", "prop-forwarding"]
   },
@@ -505,12 +457,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Why can creating a HOC inside a component render function be problematic?",
     options: [
-      { id: "A", text: "It can create a new component type on every render, potentially causing remounting and losing component state." },
-      { id: "B", text: "React forbids all functions inside components." },
-      { id: "C", text: "HOCs can only be created in CSS files." },
+      { id: "A", text: "React forbids all functions inside components." },
+      { id: "B", text: "HOCs can only be created in CSS files." },
+      { id: "C", text: "It can create a new component type on every render, potentially causing remounting and losing component state." },
       { id: "D", text: "The browser cannot execute nested functions." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Component identity matters to React. Creating a new enhanced component during every render can produce a different component type and cause the wrapped subtree to remount.",
     tags: ["HOC", "component-identity", "remounting", "performance"]
   },
@@ -523,12 +475,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which statement about HOC composition is correct?",
     options: [
-      { id: "A", text: "Multiple HOCs can be applied to a component, although excessive wrapping can reduce readability." },
-      { id: "B", text: "A component can only ever be wrapped by one HOC." },
-      { id: "C", text: "HOCs cannot return other enhanced components." },
-      { id: "D", text: "Applying two HOCs automatically merges their source code." }
+      { id: "A", text: "A component can only ever be wrapped by one HOC." },
+      { id: "B", text: "HOCs cannot return other enhanced components." },
+      { id: "C", text: "Applying two HOCs automatically merges their source code." },
+      { id: "D", text: "Multiple HOCs can be applied to a component, although excessive wrapping can reduce readability." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "HOCs are composable functions, so one enhanced component can be passed into another HOC. The trade-off is that many wrappers can make the component hierarchy harder to understand.",
     tags: ["HOC", "composition", "wrapping"]
   },
@@ -559,12 +511,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which pattern most naturally separates reusable stateful behavior from consumer-controlled rendering?",
     options: [
-      { id: "A", text: "Render props." },
-      { id: "B", text: "A giant component with hard-coded markup." },
+      { id: "A", text: "A giant component with hard-coded markup." },
+      { id: "B", text: "Render props." },
       { id: "C", text: "CSS inheritance." },
       { id: "D", text: "A global variable." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "The component can manage the reusable behavior while invoking a supplied render function with the resulting data. This gives consumers control over presentation.",
     tags: ["render-props", "reusable-logic", "separation-of-concerns"]
   },
@@ -577,12 +529,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Consider:\n\n<DataProvider render={(data) => <List data={data} />} />\n\nWhat responsibility does the render function have?",
     options: [
-      { id: "A", text: "It decides how the data supplied by DataProvider should be represented in the UI." },
-      { id: "B", text: "It owns the browser's HTTP implementation." },
-      { id: "C", text: "It replaces the React renderer." },
+      { id: "A", text: "It owns the browser's HTTP implementation." },
+      { id: "B", text: "It replaces the React renderer." },
+      { id: "C", text: "It decides how the data supplied by DataProvider should be represented in the UI." },
       { id: "D", text: "It creates the DataProvider component." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "DataProvider owns the reusable data behavior, while the render prop gives the consumer control over how that data is presented.",
     tags: ["render-props", "data-fetching", "composition"]
   },
@@ -595,12 +547,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes why Hooks reduced the need for some older render-prop and HOC use cases?",
     options: [
-      { id: "A", text: "Hooks allow reusable stateful logic to be extracted into functions that components can call directly." },
-      { id: "B", text: "Hooks make composition impossible." },
-      { id: "C", text: "Hooks automatically convert every HOC into a component." },
-      { id: "D", text: "Hooks eliminate the need for components." }
+      { id: "A", text: "Hooks make composition impossible." },
+      { id: "B", text: "Hooks automatically convert every HOC into a component." },
+      { id: "C", text: "Hooks eliminate the need for components." },
+      { id: "D", text: "Hooks allow reusable stateful logic to be extracted into functions that components can call directly." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Custom Hooks provide a direct way to reuse stateful logic without necessarily introducing wrapper components or nested render functions.",
     tags: ["Hooks", "HOC", "render-props", "reusable-logic"]
   },
@@ -631,12 +583,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which pattern is most appropriate when the API should let consumers control exactly which subcomponents appear and in what order?",
     options: [
-      { id: "A", text: "Composition." },
-      { id: "B", text: "A fixed monolithic component." },
+      { id: "A", text: "A fixed monolithic component." },
+      { id: "B", text: "Composition." },
       { id: "C", text: "A global singleton." },
       { id: "D", text: "Inheritance-only design." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Composition lets consumers supply and arrange children or subcomponents. This makes it particularly useful for flexible UI structures.",
     tags: ["composition", "children", "API-design"]
   },
@@ -649,12 +601,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A reusable Modal needs shared state for open/close behavior while allowing consumers to define Header, Body, and Footer. Which architecture is a strong fit?",
     options: [
-      { id: "A", text: "A compound component API with shared state managed by the parent and exposed through context." },
-      { id: "B", text: "A single component with dozens of HTML strings." },
-      { id: "C", text: "A separate global variable for every Modal instance." },
+      { id: "A", text: "A single component with dozens of HTML strings." },
+      { id: "B", text: "A separate global variable for every Modal instance." },
+      { id: "C", text: "A compound component API with shared state managed by the parent and exposed through context." },
       { id: "D", text: "A HOC around every individual paragraph." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "A compound Modal can coordinate shared behavior while giving consumers flexible composition of its subcomponents. Context can provide the shared state to those subcomponents.",
     tags: ["compound-components", "Modal", "context", "composition"]
   },
@@ -667,12 +619,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "What is the main architectural benefit of separating behavior from presentation?",
     options: [
-      { id: "A", text: "The same behavior can potentially be reused with different UI representations." },
-      { id: "B", text: "The application no longer needs state." },
-      { id: "C", text: "Presentation becomes impossible to customize." },
-      { id: "D", text: "All components become global." }
+      { id: "A", text: "The application no longer needs state." },
+      { id: "B", text: "Presentation becomes impossible to customize." },
+      { id: "C", text: "All components become global." },
+      { id: "D", text: "The same behavior can potentially be reused with different UI representations." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Separating behavior from presentation can make abstractions more reusable. Render props, HOCs, custom Hooks, and compound components can all address different versions of this separation.",
     tags: ["separation-of-concerns", "composition", "reusability"]
   },
@@ -703,12 +655,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "What is a potential readability problem with excessive render props?",
     options: [
-      { id: "A", text: "Deeply nested callback functions can make JSX structure difficult to scan and maintain." },
-      { id: "B", text: "Render props automatically remove indentation." },
+      { id: "A", text: "Render props automatically remove indentation." },
+      { id: "B", text: "Deeply nested callback functions can make JSX structure difficult to scan and maintain." },
       { id: "C", text: "Render props cannot return JSX." },
       { id: "D", text: "Render props always cause infinite recursion." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Nested render functions can create a callback-heavy component tree. When many layers are composed this way, the resulting JSX may become difficult to understand.",
     tags: ["render-props", "readability", "maintainability"]
   },
@@ -721,12 +673,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which statement about composition and inheritance in React is generally most accurate?",
     options: [
-      { id: "A", text: "React commonly favors composition because components can be combined flexibly through props and children." },
-      { id: "B", text: "React requires every reusable component to inherit from another component." },
-      { id: "C", text: "Composition is only possible with class components." },
+      { id: "A", text: "React requires every reusable component to inherit from another component." },
+      { id: "B", text: "Composition is only possible with class components." },
+      { id: "C", text: "React commonly favors composition because components can be combined flexibly through props and children." },
       { id: "D", text: "Inheritance automatically provides better component reuse in every case." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "React's component model is designed around composition. Props, children, context, and component boundaries allow behavior and UI to be assembled without requiring inheritance-based component hierarchies.",
     tags: ["composition", "inheritance", "architecture"]
   },
@@ -739,12 +691,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A component accepts `children` and renders them inside a styled container. What kind of abstraction is this?",
     options: [
-      { id: "A", text: "A simple composition-based wrapper." },
-      { id: "B", text: "A Higher-Order Component." },
-      { id: "C", text: "A render prop." },
-      { id: "D", text: "A compound component by definition." }
+      { id: "A", text: "A Higher-Order Component." },
+      { id: "B", text: "A render prop." },
+      { id: "C", text: "A compound component by definition." },
+      { id: "D", text: "A simple composition-based wrapper." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Accepting children and placing them inside a wrapper is a straightforward form of composition. It does not automatically make the component an HOC or render-prop component.",
     tags: ["composition", "children", "wrapper"]
   },
@@ -775,12 +727,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "What should a compound component generally do when one of its subcomponents is rendered outside the required provider context?",
     options: [
-      { id: "A", text: "Fail clearly or provide a sensible fallback rather than silently relying on unavailable shared state." },
-      { id: "B", text: "Automatically search the entire application for another provider." },
+      { id: "A", text: "Automatically search the entire application for another provider." },
+      { id: "B", text: "Fail clearly or provide a sensible fallback rather than silently relying on unavailable shared state." },
       { id: "C", text: "Create a global provider automatically." },
       { id: "D", text: "Convert the component into a HOC." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Compound components often depend on shared context. Clear failure behavior helps developers identify incorrect usage instead of producing confusing undefined-state behavior.",
     tags: ["compound-components", "context", "error-handling", "API-design"]
   },
@@ -793,12 +745,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A HOC adds a `user` prop to the wrapped component, but the wrapped component already receives a `user` prop from its parent. What design issue should be considered?",
     options: [
-      { id: "A", text: "The HOC's injected prop can conflict with the consumer-provided prop, so the API needs a clear ownership rule." },
-      { id: "B", text: "React automatically merges both user objects." },
-      { id: "C", text: "React prevents HOCs from injecting props." },
+      { id: "A", text: "React automatically merges both user objects." },
+      { id: "B", text: "React prevents HOCs from injecting props." },
+      { id: "C", text: "The HOC's injected prop can conflict with the consumer-provided prop, so the API needs a clear ownership rule." },
       { id: "D", text: "The browser resolves the conflict automatically." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Injected props are part of the component's API. If the same property can come from multiple sources, developers need a clear contract about which source wins or whether the name should be changed.",
     tags: ["HOC", "props", "API-design", "prop-conflicts"]
   },
@@ -811,12 +763,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which abstraction would be most appropriate if a reusable component needs to expose internal state to consumers while allowing them to completely control the rendered markup?",
     options: [
-      { id: "A", text: "A render prop." },
-      { id: "B", text: "A fixed visual component with no children." },
-      { id: "C", text: "A CSS selector." },
-      { id: "D", text: "A static HTML file." }
+      { id: "A", text: "A fixed visual component with no children." },
+      { id: "B", text: "A CSS selector." },
+      { id: "C", text: "A static HTML file." },
+      { id: "D", text: "A render prop." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Render props explicitly allow a component to provide state or behavior to a consumer-controlled rendering function, making the presentation highly flexible.",
     tags: ["render-props", "reusable-logic", "presentation"]
   },
@@ -847,12 +799,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "Which is the strongest reason to choose composition instead of adding another boolean prop to an already complex component?",
     options: [
-      { id: "A", text: "Composition can let consumers express different structures directly instead of increasing the component's internal conditional logic." },
-      { id: "B", text: "Boolean props are forbidden in React." },
+      { id: "A", text: "Boolean props are forbidden in React." },
+      { id: "B", text: "Composition can let consumers express different structures directly instead of increasing the component's internal conditional logic." },
       { id: "C", text: "Composition always produces fewer lines of code." },
       { id: "D", text: "Composition removes the need for testing." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "As configuration props multiply, the component can become a collection of interacting modes. Composition can move structural decisions to the consumer and keep individual components more focused.",
     tags: ["composition", "boolean-props", "component-design", "API-design"]
   },
@@ -865,12 +817,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A team has a reusable behavior that is needed by many unrelated components. The behavior exposes state and event handlers, but each component needs a completely different UI. Which approach is generally the cleanest modern abstraction?",
     options: [
-      { id: "A", text: "Extract the behavior into a reusable custom Hook and let each component compose it into its own UI." },
-      { id: "B", text: "Force every component to use the same rendered markup." },
-      { id: "C", text: "Create a separate HOC for every visual variation." },
+      { id: "A", text: "Force every component to use the same rendered markup." },
+      { id: "B", text: "Create a separate HOC for every visual variation." },
+      { id: "C", text: "Extract the behavior into a reusable custom Hook and let each component compose it into its own UI." },
       { id: "D", text: "Store the behavior in a global DOM element." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "When the shared concern is stateful behavior rather than a specific UI structure, a custom Hook can provide reusable logic while allowing each component to control its own presentation.",
     tags: ["composition", "custom-hooks", "reusable-logic", "architecture"]
   },
@@ -883,12 +835,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "A component library wants an API where consumers can use `<Menu.Item>`, `<Menu.Separator>`, and `<Menu.Group>` while Menu internally manages open state and keyboard behavior. Which design best matches this requirement?",
     options: [
-      { id: "A", text: "A compound component system with shared internal state and behavior." },
-      { id: "B", text: "A single component with no children." },
-      { id: "C", text: "A separate HOC for every Menu.Item." },
-      { id: "D", text: "A render prop that returns the entire application." }
+      { id: "A", text: "A single component with no children." },
+      { id: "B", text: "A separate HOC for every Menu.Item." },
+      { id: "C", text: "A render prop that returns the entire application." },
+      { id: "D", text: "A compound component system with shared internal state and behavior." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The Menu family needs coordinated behavior while exposing multiple declarative subcomponents. A compound component architecture is a natural fit for this kind of component-library API.",
     tags: ["compound-components", "Menu", "context", "component-library"]
   },
@@ -919,24 +871,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "You are designing a reusable Tabs component for a component library. Requirements: consumers should choose which tab pieces appear, the Tabs system should manage active-tab state, individual subcomponents should access that state, and the API should remain declarative. Which architecture is the strongest fit?",
     options: [
-      {
-        id: "A",
-        text: "Compound components using a parent Tabs component with shared state and context for its coordinated subcomponents."
-      },
-      {
-        id: "B",
-        text: "One component with dozens of boolean props describing every possible layout."
-      },
-      {
-        id: "C",
-        text: "A separate global state variable shared by every Tabs instance."
-      },
-      {
-        id: "D",
-        text: "A HOC that hard-codes the complete Tabs markup."
-      }
+      { id: "A", text: "One component with dozens of boolean props describing every possible layout." },
+      { id: "B", text: "Compound components using a parent Tabs component with shared state and context for its coordinated subcomponents." },
+      { id: "C", text: "A separate global state variable shared by every Tabs instance." },
+      { id: "D", text: "A HOC that hard-codes the complete Tabs markup." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Compound components fit the requirements directly: the parent owns the shared interaction state, context can make that state available to related subcomponents, and consumers retain a declarative composition API.",
     tags: ["compound-components", "Tabs", "context", "shared-state", "API-design"]
   },
@@ -949,24 +889,12 @@ const reactDesignPatternsQuestions = [
     difficulty: "Advanced",
     question: "You are designing a production component library. Some abstractions need reusable behavior with completely consumer-controlled UI, some need coordinated families such as Tabs and Menu, and some legacy integrations already use component enhancement. Which design strategy is the most appropriate?",
     options: [
-      {
-        id: "A",
-        text: "Use composition and custom Hooks where behavior should be reusable independently, render props when consumers need explicit control over rendering, compound components for coordinated component families, and HOCs where component enhancement is a suitable existing abstraction."
-      },
-      {
-        id: "B",
-        text: "Use HOCs for every problem because all React abstractions should create wrapper components."
-      },
-      {
-        id: "C",
-        text: "Use render props for every component, including simple static UI."
-      },
-      {
-        id: "D",
-        text: "Use one monolithic component with configuration props for every possible use case."
-      }
+      { id: "A", text: "Use HOCs for every problem because all React abstractions should create wrapper components." },
+      { id: "B", text: "Use render props for every component, including simple static UI." },
+      { id: "C", text: "Use composition and custom Hooks where behavior should be reusable independently, render props when consumers need explicit control over rendering, compound components for coordinated component families, and HOCs where component enhancement is a suitable existing abstraction." },
+      { id: "D", text: "Use one monolithic component with configuration props for every possible use case." }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "There is no single universal React pattern. Composition and Hooks are strong choices for reusable behavior, render props are useful when consumers need direct control over rendering, compound components work well for coordinated component families, and HOCs remain useful when enhancement through wrapping fits the problem. Good architecture chooses the smallest abstraction that clearly solves the actual reuse problem.",
     tags: ["composition", "HOC", "render-props", "compound-components", "custom-hooks", "architecture"]
   }

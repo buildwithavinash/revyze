@@ -8,11 +8,11 @@ const gitAllInOneQuestions = [
     question: "What does Git primarily do?",
     options: [
       { id: "A", text: "Host websites online" },
-      { id: "B", text: "Manage and track changes to files over time" },
-      { id: "C", text: "Compile JavaScript into machine code" },
+      { id: "B", text: "Compile JavaScript into machine code" },
+      { id: "C", text: "Manage and track changes to files over time" },
       { id: "D", text: "Create databases" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Git is a distributed version control system used to track changes, create branches, and collaborate on code.",
     tags: ["git", "version-control"]
   },
@@ -27,10 +27,10 @@ const gitAllInOneQuestions = [
     options: [
       { id: "A", text: "git start" },
       { id: "B", text: "git create" },
-      { id: "C", text: "git init" },
-      { id: "D", text: "git repo" }
+      { id: "C", text: "git repo" },
+      { id: "D", text: "git init" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "git init creates a new .git directory and initializes the current directory as a Git repository.",
     tags: ["git-init", "repository"]
   },
@@ -81,10 +81,10 @@ const gitAllInOneQuestions = [
     options: [
       { id: "A", text: "git commit file.js" },
       { id: "B", text: "git stage file.js" },
-      { id: "C", text: "git push file.js" },
-      { id: "D", text: "git add file.js" }
+      { id: "C", text: "git add file.js" },
+      { id: "D", text: "git push file.js" }
     ],
-    correctOptionId: "D",
+    correctOptionId: "C",
     explanation: "git add places changes for the specified file into the staging area.",
     tags: ["git-add", "staging"]
   },
@@ -98,11 +98,11 @@ const gitAllInOneQuestions = [
     question: "Which command creates a commit?",
     options: [
       { id: "A", text: "git save" },
-      { id: "B", text: "git commit" },
-      { id: "C", text: "git snapshot" },
-      { id: "D", text: "git record" }
+      { id: "B", text: "git snapshot" },
+      { id: "C", text: "git record" },
+      { id: "D", text: "git commit" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "git commit records the staged changes as a new commit in the repository history.",
     tags: ["git-commit", "history"]
   },
@@ -169,12 +169,12 @@ const gitAllInOneQuestions = [
     difficulty: "Beginner",
     question: "What is a Git branch?",
     options: [
-      { id: "A", text: "A separate line of development represented by a movable reference to commits" },
-      { id: "B", text: "A copy of the entire Git installation" },
-      { id: "C", text: "A GitHub organization" },
-      { id: "D", text: "A compressed repository backup" }
+      { id: "A", text: "A copy of the entire Git installation" },
+      { id: "B", text: "A GitHub organization" },
+      { id: "C", text: "A compressed repository backup" },
+      { id: "D", text: "A separate line of development represented by a movable reference to commits" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A branch is a lightweight reference to a commit that provides an independent line of development.",
     tags: ["branches", "git-branch"]
   },
@@ -187,12 +187,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which command creates a new branch named feature-login?",
     options: [
-      { id: "A", text: "git new feature-login" },
-      { id: "B", text: "git branch feature-login" },
+      { id: "A", text: "git branch feature-login" },
+      { id: "B", text: "git new feature-login" },
       { id: "C", text: "git create-branch feature-login" },
       { id: "D", text: "git checkout-new feature-login" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "git branch feature-login creates the branch but does not switch to it.",
     tags: ["branches", "git-branch"]
   },
@@ -206,11 +206,11 @@ const gitAllInOneQuestions = [
     question: "Which command creates and switches to a new branch in one step?",
     options: [
       { id: "A", text: "git branch --switch feature" },
-      { id: "B", text: "git checkout feature" },
-      { id: "C", text: "git switch -c feature" },
+      { id: "B", text: "git switch -c feature" },
+      { id: "C", text: "git checkout feature" },
       { id: "D", text: "git branch feature --new" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "git switch -c creates a new branch and switches HEAD to it.",
     tags: ["git-switch", "branches"]
   },
@@ -224,11 +224,11 @@ const gitAllInOneQuestions = [
     question: "What does merging a branch generally do?",
     options: [
       { id: "A", text: "Deletes all commits from the branch" },
-      { id: "B", text: "Combines the changes from one line of development into another" },
-      { id: "C", text: "Uploads the branch to GitHub automatically" },
+      { id: "B", text: "Uploads the branch to GitHub automatically" },
+      { id: "C", text: "Combines the changes from one line of development into another" },
       { id: "D", text: "Converts the branch into a tag" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A merge incorporates the history and changes of one branch into another.",
     tags: ["merge", "branches"]
   },
@@ -243,10 +243,10 @@ const gitAllInOneQuestions = [
     options: [
       { id: "A", text: "A merge where Git creates two new branches" },
       { id: "B", text: "A merge that always creates a merge commit" },
-      { id: "C", text: "A merge where the target branch reference simply moves forward because no divergent history exists" },
-      { id: "D", text: "A merge performed only on GitHub" }
+      { id: "C", text: "A merge performed only on GitHub" },
+      { id: "D", text: "A merge where the target branch reference simply moves forward because no divergent history exists" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "If the target branch is an ancestor of the branch being merged, Git can move the target reference forward without creating a merge commit.",
     tags: ["fast-forward", "merge"]
   },
@@ -277,12 +277,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `git clone` do?",
     options: [
-      { id: "A", text: "Creates a local copy of an existing repository, including its Git history" },
-      { id: "B", text: "Creates a new empty repository without history" },
+      { id: "A", text: "Creates a new empty repository without history" },
+      { id: "B", text: "Creates a local copy of an existing repository, including its Git history" },
       { id: "C", text: "Only downloads the latest file" },
       { id: "D", text: "Deletes the remote repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "git clone creates a local repository based on an existing repository and configures the remote origin by default.",
     tags: ["git-clone", "remote"]
   },
@@ -296,11 +296,11 @@ const gitAllInOneQuestions = [
     question: "What is a Git remote?",
     options: [
       { id: "A", text: "A special type of commit" },
-      { id: "B", text: "A named reference to another repository" },
-      { id: "C", text: "A branch that cannot be edited" },
+      { id: "B", text: "A branch that cannot be edited" },
+      { id: "C", text: "A named reference to another repository" },
       { id: "D", text: "A local backup directory" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "A remote is a named reference to another repository, commonly a repository hosted on GitHub.",
     tags: ["remotes", "origin"]
   },
@@ -313,12 +313,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does the remote name `origin` usually refer to?",
     options: [
-      { id: "A", text: "The default remote created when cloning a repository" },
-      { id: "B", text: "The main Git branch" },
-      { id: "C", text: "The first commit" },
-      { id: "D", text: "A GitHub issue" }
+      { id: "A", text: "The main Git branch" },
+      { id: "B", text: "The first commit" },
+      { id: "C", text: "A GitHub issue" },
+      { id: "D", text: "The default remote created when cloning a repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "origin is the conventional default name Git assigns to the remote repository when cloning.",
     tags: ["origin", "remotes"]
   },
@@ -367,12 +367,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `git push` do?",
     options: [
-      { id: "A", text: "Transfers local commits to a remote repository" },
-      { id: "B", text: "Downloads commits from GitHub" },
-      { id: "C", text: "Creates a local commit" },
+      { id: "A", text: "Downloads commits from GitHub" },
+      { id: "B", text: "Creates a local commit" },
+      { id: "C", text: "Transfers local commits to a remote repository" },
       { id: "D", text: "Stages files" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "git push sends local commits and related references to a configured remote repository.",
     tags: ["git-push", "remotes"]
   },
@@ -386,11 +386,11 @@ const gitAllInOneQuestions = [
     question: "What does this command commonly accomplish?\n\ngit push -u origin feature-login",
     options: [
       { id: "A", text: "Deletes feature-login from origin" },
-      { id: "B", text: "Pushes feature-login and sets origin/feature-login as its upstream" },
-      { id: "C", text: "Merges feature-login into main locally" },
-      { id: "D", text: "Downloads feature-login from origin" }
+      { id: "B", text: "Merges feature-login into main locally" },
+      { id: "C", text: "Downloads feature-login from origin" },
+      { id: "D", text: "Pushes feature-login and sets origin/feature-login as its upstream" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "The -u option sets the upstream tracking relationship for the pushed branch.",
     tags: ["git-push", "upstream", "branches"]
   },
@@ -403,12 +403,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a GitHub pull request?",
     options: [
-      { id: "A", text: "A request to download a repository" },
-      { id: "B", text: "A mechanism for proposing and reviewing changes before integrating them into another branch" },
+      { id: "A", text: "A mechanism for proposing and reviewing changes before integrating them into another branch" },
+      { id: "B", text: "A request to download a repository" },
       { id: "C", text: "A replacement for git pull" },
       { id: "D", text: "A Git commit stored locally" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A pull request is a collaboration mechanism on GitHub for discussing, reviewing, testing, and eventually integrating changes.",
     tags: ["github", "pull-request", "code-review"]
   },
@@ -439,12 +439,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is the typical workflow when contributing to an open-source repository you cannot directly push to?",
     options: [
-      { id: "A", text: "Fork → clone → create branch → make changes → push → open pull request" },
-      { id: "B", text: "Clone → delete repository → push directly" },
-      { id: "C", text: "Fork → force-push to the original repository" },
+      { id: "A", text: "Clone → delete repository → push directly" },
+      { id: "B", text: "Fork → force-push to the original repository" },
+      { id: "C", text: "Fork → clone → create branch → make changes → push → open pull request" },
       { id: "D", text: "Create an issue → commit to GitHub's database directly" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Forking provides your own remote copy, allowing you to push changes and then propose them to the original repository through a pull request.",
     tags: ["fork", "pull-request", "open-source"]
   },
@@ -458,11 +458,11 @@ const gitAllInOneQuestions = [
     question: "What is a merge conflict?",
     options: [
       { id: "A", text: "A GitHub account error" },
-      { id: "B", text: "A situation where Git cannot automatically reconcile competing changes" },
-      { id: "C", text: "A failed push caused by slow internet" },
-      { id: "D", text: "A branch with no commits" }
+      { id: "B", text: "A failed push caused by slow internet" },
+      { id: "C", text: "A branch with no commits" },
+      { id: "D", text: "A situation where Git cannot automatically reconcile competing changes" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A conflict occurs when Git needs human input to determine how competing changes should be combined.",
     tags: ["merge-conflicts", "merge"]
   },
@@ -475,12 +475,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "After manually resolving a merge conflict, what should you normally do before completing the merge?",
     options: [
-      { id: "A", text: "Run git init again" },
-      { id: "B", text: "Delete the .git directory" },
-      { id: "C", text: "Stage the resolved files" },
+      { id: "A", text: "Stage the resolved files" },
+      { id: "B", text: "Run git init again" },
+      { id: "C", text: "Delete the .git directory" },
       { id: "D", text: "Clone the repository again" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Once conflicts are resolved, the corrected files need to be staged so Git knows those conflicts have been resolved.",
     tags: ["conflicts", "git-add", "merge"]
   },
@@ -493,12 +493,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `git diff` primarily show?",
     options: [
-      { id: "A", text: "Differences between versions or states of files" },
-      { id: "B", text: "Only GitHub pull requests" },
+      { id: "A", text: "Only GitHub pull requests" },
+      { id: "B", text: "Differences between versions or states of files" },
       { id: "C", text: "Only branch names" },
       { id: "D", text: "Only commit messages" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "git diff compares file states and shows line-level changes depending on the references or default state being compared.",
     tags: ["git-diff", "changes"]
   },
@@ -512,11 +512,11 @@ const gitAllInOneQuestions = [
     question: "What is the difference between the working tree and staging area?",
     options: [
       { id: "A", text: "They are always identical" },
-      { id: "B", text: "The working tree contains your current file changes, while the staging area contains changes selected for the next commit" },
-      { id: "C", text: "The working tree exists only on GitHub" },
+      { id: "B", text: "The working tree exists only on GitHub" },
+      { id: "C", text: "The working tree contains your current file changes, while the staging area contains changes selected for the next commit" },
       { id: "D", text: "The staging area contains only remote commits" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Git separates the files you're currently editing from the exact changes you've selected to include in the next commit.",
     tags: ["working-tree", "staging"]
   },
@@ -529,12 +529,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What does `git stash` allow you to do?",
     options: [
-      { id: "A", text: "Temporarily save uncommitted changes so you can switch contexts" },
-      { id: "B", text: "Permanently delete all commits" },
-      { id: "C", text: "Push changes to GitHub" },
-      { id: "D", text: "Merge every branch" }
+      { id: "A", text: "Permanently delete all commits" },
+      { id: "B", text: "Push changes to GitHub" },
+      { id: "C", text: "Merge every branch" },
+      { id: "D", text: "Temporarily save uncommitted changes so you can switch contexts" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Stashing temporarily stores changes that are not ready for a commit, allowing you to work on a clean working tree.",
     tags: ["git-stash", "workflow"]
   },
@@ -547,12 +547,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Which command restores the most recently stashed changes?",
     options: [
-      { id: "A", text: "git stash recover" },
-      { id: "B", text: "git stash load" },
-      { id: "C", text: "git stash pop" },
+      { id: "A", text: "git stash pop" },
+      { id: "B", text: "git stash recover" },
+      { id: "C", text: "git stash load" },
       { id: "D", text: "git stash restore-all" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "git stash pop applies the most recent stash and removes it from the stash list if the operation succeeds.",
     tags: ["git-stash", "stash-pop"]
   },
@@ -565,12 +565,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What is the key difference between `git stash pop` and `git stash apply`?",
     options: [
-      { id: "A", text: "pop applies the stash and removes it; apply applies it while keeping the stash" },
-      { id: "B", text: "apply deletes the stash while pop keeps it" },
+      { id: "A", text: "apply deletes the stash while pop keeps it" },
+      { id: "B", text: "pop applies the stash and removes it; apply applies it while keeping the stash" },
       { id: "C", text: "They always behave identically" },
       { id: "D", text: "pop only works with remote branches" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Both apply the stash, but pop also removes the stash entry after successful application.",
     tags: ["git-stash", "stash-pop", "stash-apply"]
   },
@@ -583,12 +583,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `git reset` generally allow you to do?",
     options: [
-      { id: "A", text: "Move a branch reference and optionally modify the staging area and working tree" },
-      { id: "B", text: "Create a GitHub pull request" },
-      { id: "C", text: "Download remote commits" },
+      { id: "A", text: "Create a GitHub pull request" },
+      { id: "B", text: "Download remote commits" },
+      { id: "C", text: "Move a branch reference and optionally modify the staging area and working tree" },
       { id: "D", text: "Create a new repository on GitHub" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "git reset can move HEAD/branch references and, depending on the mode, alter the index and working tree.",
     tags: ["git-reset", "history"]
   },
@@ -602,11 +602,11 @@ const gitAllInOneQuestions = [
     question: "What is the major difference between `git reset` and `git revert`?",
     options: [
       { id: "A", text: "reset creates a new commit while revert deletes history" },
-      { id: "B", text: "revert creates a new commit that reverses changes, while reset moves references and can rewrite local history" },
-      { id: "C", text: "They are exactly the same" },
-      { id: "D", text: "reset only works with GitHub" }
+      { id: "B", text: "They are exactly the same" },
+      { id: "C", text: "reset only works with GitHub" },
+      { id: "D", text: "revert creates a new commit that reverses changes, while reset moves references and can rewrite local history" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "git revert preserves existing history by adding a new inverse commit, while reset can move a branch reference to another commit.",
     tags: ["git-reset", "git-revert", "history"]
   },
@@ -619,12 +619,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Which reset mode moves HEAD but keeps changes staged?",
     options: [
-      { id: "A", text: "git reset --hard" },
-      { id: "B", text: "git reset --soft" },
+      { id: "A", text: "git reset --soft" },
+      { id: "B", text: "git reset --hard" },
       { id: "C", text: "git reset --clean" },
       { id: "D", text: "git reset --remote" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "A soft reset moves HEAD while leaving the index and working tree unchanged, so changes remain staged.",
     tags: ["git-reset", "soft-reset"]
   },
@@ -637,12 +637,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why should `git reset --hard` be used carefully?",
     options: [
-      { id: "A", text: "It can discard working-tree changes that are not otherwise saved" },
-      { id: "B", text: "It always deletes the remote repository" },
+      { id: "A", text: "It always deletes the remote repository" },
+      { id: "B", text: "It can discard working-tree changes that are not otherwise saved" },
       { id: "C", text: "It creates hundreds of commits" },
       { id: "D", text: "It disables Git permanently" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A hard reset updates HEAD, the index, and working tree to the target commit, potentially destroying uncommitted changes.",
     tags: ["git-reset", "hard-reset", "data-loss"]
   },
@@ -656,11 +656,11 @@ const gitAllInOneQuestions = [
     question: "What does `git revert <commit>` do?",
     options: [
       { id: "A", text: "Deletes the specified commit from all history" },
-      { id: "B", text: "Creates a new commit that reverses the changes introduced by the specified commit" },
-      { id: "C", text: "Moves the branch pointer without creating a commit" },
+      { id: "B", text: "Moves the branch pointer without creating a commit" },
+      { id: "C", text: "Creates a new commit that reverses the changes introduced by the specified commit" },
       { id: "D", text: "Deletes the remote branch" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Revert is designed to undo a commit while preserving the existing history by creating a new commit.",
     tags: ["git-revert", "history"]
   },
@@ -673,12 +673,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `git cherry-pick` do?",
     options: [
-      { id: "A", text: "Copies the changes introduced by selected commits onto the current branch by creating new commits" },
-      { id: "B", text: "Deletes selected commits" },
-      { id: "C", text: "Merges every branch automatically" },
-      { id: "D", text: "Creates a GitHub fork" }
+      { id: "A", text: "Deletes selected commits" },
+      { id: "B", text: "Merges every branch automatically" },
+      { id: "C", text: "Creates a GitHub fork" },
+      { id: "D", text: "Copies the changes introduced by selected commits onto the current branch by creating new commits" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Cherry-picking applies the changes introduced by specific commits onto another branch.",
     tags: ["cherry-pick", "advanced-git"]
   },
@@ -709,12 +709,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does rebasing generally do?",
     options: [
-      { id: "A", text: "Moves or reapplies commits onto a new base commit" },
-      { id: "B", text: "Creates a GitHub organization" },
+      { id: "A", text: "Creates a GitHub organization" },
+      { id: "B", text: "Moves or reapplies commits onto a new base commit" },
       { id: "C", text: "Deletes all branches" },
       { id: "D", text: "Converts Git into SVN" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Rebase replays commits from one line of development on top of another base, often producing a more linear history.",
     tags: ["rebase", "history"]
   },
@@ -727,12 +727,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "Why should you generally avoid rebasing commits that other developers have already based work on?",
     options: [
-      { id: "A", text: "Rebase can rewrite commit identities, causing synchronization problems for collaborators" },
-      { id: "B", text: "Rebase permanently disables Git" },
-      { id: "C", text: "Rebase only works locally" },
+      { id: "A", text: "Rebase permanently disables Git" },
+      { id: "B", text: "Rebase only works locally" },
+      { id: "C", text: "Rebase can rewrite commit identities, causing synchronization problems for collaborators" },
       { id: "D", text: "Rebase automatically deletes GitHub" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Rewriting shared history can cause collaborators to have divergent histories and require complicated recovery.",
     tags: ["rebase", "shared-history", "collaboration"]
   },
@@ -745,12 +745,12 @@ const gitAllInOneQuestions = [
     difficulty: "Advanced",
     question: "What does `git reflog` help you inspect?",
     options: [
-      { id: "A", text: "The history of reference movements such as HEAD and branch updates in the local repository" },
-      { id: "B", text: "Only GitHub pull requests" },
-      { id: "C", text: "Only remote repository names" },
-      { id: "D", text: "Only untracked files" }
+      { id: "A", text: "Only GitHub pull requests" },
+      { id: "B", text: "Only remote repository names" },
+      { id: "C", text: "Only untracked files" },
+      { id: "D", text: "The history of reference movements such as HEAD and branch updates in the local repository" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "The reflog records local movements of references, which can be extremely useful for recovering commits after resets or rebases.",
     tags: ["reflog", "recovery", "advanced-git"]
   },
@@ -781,12 +781,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "Why should .env files containing secrets generally be included in .gitignore?",
     options: [
-      { id: "A", text: "To reduce the chance of accidentally committing sensitive credentials to the repository" },
-      { id: "B", text: "Because Git cannot store text files" },
+      { id: "A", text: "Because Git cannot store text files" },
+      { id: "B", text: "To reduce the chance of accidentally committing sensitive credentials to the repository" },
       { id: "C", text: "Because GitHub cannot display environment files" },
       { id: "D", text: "Because .env files automatically break Git" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Secrets such as API keys and passwords should not normally be committed to source control.",
     tags: ["gitignore", "security", "environment-variables"]
   },
@@ -799,12 +799,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is a Git tag commonly used for?",
     options: [
-      { id: "A", text: "Marking a specific point in repository history, such as a release" },
-      { id: "B", text: "Creating a temporary working directory" },
-      { id: "C", text: "Staging files" },
+      { id: "A", text: "Creating a temporary working directory" },
+      { id: "B", text: "Staging files" },
+      { id: "C", text: "Marking a specific point in repository history, such as a release" },
       { id: "D", text: "Resolving merge conflicts automatically" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Tags are commonly used to mark important commits, especially release versions such as v1.0.0.",
     tags: ["tags", "releases"]
   },
@@ -817,12 +817,12 @@ const gitAllInOneQuestions = [
     difficulty: "Intermediate",
     question: "What is GitHub Actions primarily used for?",
     options: [
-      { id: "A", text: "Automating workflows such as testing, building, and deployment" },
-      { id: "B", text: "Replacing Git branches" },
-      { id: "C", text: "Editing source files directly in Node.js" },
-      { id: "D", text: "Creating local Git commits automatically without configuration" }
+      { id: "A", text: "Replacing Git branches" },
+      { id: "B", text: "Editing source files directly in Node.js" },
+      { id: "C", text: "Creating local Git commits automatically without configuration" },
+      { id: "D", text: "Automating workflows such as testing, building, and deployment" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "GitHub Actions provides automation workflows that can run in response to events such as pushes and pull requests.",
     tags: ["github-actions", "ci-cd", "automation"]
   },
@@ -854,11 +854,11 @@ const gitAllInOneQuestions = [
     question: "A developer accidentally committed a secret API key, then deletes it in a later commit. Is the secret necessarily safe?",
     options: [
       { id: "A", text: "Yes, because Git only stores the latest version" },
-      { id: "B", text: "Yes, because deleting the file removes its Git history" },
-      { id: "C", text: "No. The secret may still exist in repository history and should be considered exposed" },
+      { id: "B", text: "No. The secret may still exist in repository history and should be considered exposed" },
+      { id: "C", text: "Yes, because deleting the file removes its Git history" },
       { id: "D", text: "Yes, if the repository is public" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Git preserves historical commits. Removing a secret in a later commit does not automatically remove it from earlier history, so exposed credentials should be revoked or rotated.",
     tags: ["security", "history", "secrets"]
   },
@@ -872,11 +872,11 @@ const gitAllInOneQuestions = [
     question: "Which workflow is generally safest when collaborating on a feature in a shared repository?",
     options: [
       { id: "A", text: "Develop directly on main and force-push whenever conflicts occur" },
-      { id: "B", text: "Create a feature branch, commit focused changes, push it, open a pull request, review/test it, then merge" },
-      { id: "C", text: "Delete main after every feature" },
+      { id: "B", text: "Delete main after every feature" },
+      { id: "C", text: "Create a feature branch, commit focused changes, push it, open a pull request, review/test it, then merge" },
       { id: "D", text: "Commit secrets first and remove them later" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Feature branches and pull requests provide isolation, review, automated checks, and controlled integration.",
     tags: ["workflow", "branches", "pull-request", "collaboration"]
   },
@@ -891,10 +891,10 @@ const gitAllInOneQuestions = [
     options: [
       { id: "A", text: "git reset --hard A^ followed by a force push" },
       { id: "B", text: "Delete the production branch and recreate it" },
-      { id: "C", text: "git revert A and push the resulting commit" },
-      { id: "D", text: "git rebase -i and delete A from history, then force push" }
+      { id: "C", text: "git rebase -i and delete A from history, then force push" },
+      { id: "D", text: "git revert A and push the resulting commit" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Because the commit is already part of shared history, git revert is generally safer. It creates a new commit that reverses A without rewriting the existing shared history.",
     tags: ["git-revert", "shared-history", "production", "best-practices"]
   }

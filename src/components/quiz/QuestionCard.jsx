@@ -1,20 +1,46 @@
 import OptionButton from "./OptionButton";
 
+const parseQuestionContent = (rawQuestion, type) => {
+  const fencedCodeMatch = rawQuestion.match(
+    /^([\s\S]*?)```(?:[a-zA-Z]+)?\n([\s\S]*?)```([\s\S]*)$/,
+  );
+
+  if (fencedCodeMatch) {
+    const prompt = `${fencedCodeMatch[1]}${fencedCodeMatch[3]}`.trim();
+
+    return {
+      prompt: prompt || rawQuestion,
+      code: fencedCodeMatch[2].trim(),
+    };
+  }
+
+  if (type === "code" || rawQuestion.includes("\n")) {
+    const [promptLine, ...codeLines] = rawQuestion.split("\n");
+
+    return {
+      prompt: promptLine.trim(),
+      code: codeLines.join("\n").trim(),
+    };
+  }
+
+  return {
+    prompt: rawQuestion,
+    code: "",
+  };
+};
+
 const QuestionCard = ({ question, questionNumber, onAnswerSelect, selectedAnswer }) => {
-  const isCodeQuestion = question.question.includes("\n");
-  const questionLines = question.question.split("\n");
-  const questionTitle = isCodeQuestion ? questionLines[0] : question.question;
-  const codeBlock = isCodeQuestion ? questionLines.slice(1).join("\n") : null;
+  const { prompt, code } = parseQuestionContent(question.question, question.type);
 
   return (
     <div className="h-full min-w-0 flex flex-col">
       <h2 className="font-semibold text-base sm:text-lg text-text leading-snug mb-3 flex-shrink-0">
-        {questionNumber}. {questionTitle}
+        {questionNumber}. {prompt}
       </h2>
 
-      {isCodeQuestion && (
-        <pre className="bg-background border border-border rounded-button p-3 sm:p-3.5 text-xs sm:text-sm font-mono text-text overflow-y-auto overflow-x-hidden whitespace-pre-wrap break-words mb-3 sm:mb-4 leading-relaxed flex-1 min-h-0 min-w-0 w-full">
-          {codeBlock.trim()}
+      {code && (
+        <pre className="bg-background border border-border rounded-button p-3 sm:p-3.5 text-[11px] sm:text-sm font-mono text-text overflow-auto whitespace-pre leading-relaxed mb-3 sm:mb-4 flex-1 min-h-0 min-w-0 w-full">
+          {code}
         </pre>
       )}
 

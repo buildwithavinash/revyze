@@ -7,12 +7,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the primary reason Node.js applications may use multiple processes?",
     options: [
-      { id: "A", text: "To make JavaScript syntax stricter" },
-      { id: "B", text: "To avoid using asynchronous APIs" },
-      { id: "C", text: "To utilize multiple CPU cores and improve process-level scalability" },
+      { id: "A", text: "To utilize multiple CPU cores and improve process-level scalability" },
+      { id: "B", text: "To make JavaScript syntax stricter" },
+      { id: "C", text: "To avoid using asynchronous APIs" },
       { id: "D", text: "To eliminate the event loop" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "A single Node.js process primarily runs JavaScript on one main thread. Multiple processes can allow workloads to utilize multiple CPU cores.",
     tags: ["clustering", "scalability", "cpu"]
   },
@@ -25,12 +25,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does the Node.js cluster module primarily allow?",
     options: [
-      { id: "A", text: "Creating multiple Node.js processes that can share a server port" },
-      { id: "B", text: "Converting callbacks into Promises" },
+      { id: "A", text: "Converting callbacks into Promises" },
+      { id: "B", text: "Creating multiple Node.js processes that can share a server port" },
       { id: "C", text: "Replacing HTTP with WebSockets" },
       { id: "D", text: "Running JavaScript directly inside the database" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Node's cluster mechanism can create multiple worker processes that can handle connections on a shared server port.",
     tags: ["cluster", "processes"]
   },
@@ -44,11 +44,11 @@ const nodejsAdvancedQuestions = [
     question: "What is a major limitation of using multiple Node.js processes for scaling?",
     options: [
       { id: "A", text: "Processes cannot listen for HTTP requests" },
-      { id: "B", text: "Each process has its own memory space" },
-      { id: "C", text: "Processes cannot communicate" },
+      { id: "B", text: "Processes cannot communicate" },
+      { id: "C", text: "Each process has its own memory space" },
       { id: "D", text: "Processes automatically share every JavaScript variable" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Separate Node.js processes do not share ordinary JavaScript memory. Shared state therefore requires external mechanisms such as databases, caches, or inter-process communication.",
     tags: ["cluster", "memory", "architecture"]
   },
@@ -98,11 +98,11 @@ const nodejsAdvancedQuestions = [
     question: "Which is generally a better approach for a very large file download?",
     options: [
       { id: "A", text: "Load the entire file into memory before responding" },
-      { id: "B", text: "Convert the file to one enormous string" },
-      { id: "C", text: "Use streaming to process data incrementally" },
+      { id: "B", text: "Use streaming to process data incrementally" },
+      { id: "C", text: "Convert the file to one enormous string" },
       { id: "D", text: "Duplicate the file in memory first" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Streams allow data to be processed incrementally and can significantly reduce memory usage for large payloads.",
     tags: ["streams", "performance", "memory"]
   },
@@ -116,11 +116,11 @@ const nodejsAdvancedQuestions = [
     question: "What is backpressure in Node.js streams?",
     options: [
       { id: "A", text: "A database retry mechanism" },
-      { id: "B", text: "A mechanism that prevents a fast producer from overwhelming a slower consumer" },
-      { id: "C", text: "A way to encrypt stream data" },
+      { id: "B", text: "A way to encrypt stream data" },
+      { id: "C", text: "A mechanism that prevents a fast producer from overwhelming a slower consumer" },
       { id: "D", text: "A method for restarting the process" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Backpressure allows producers and consumers to coordinate so a fast producer does not overwhelm downstream processing.",
     tags: ["streams", "backpressure"]
   },
@@ -133,12 +133,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a common symptom of a memory leak in a long-running Node.js application?",
     options: [
-      { id: "A", text: "Memory usage continually grows without being properly released" },
-      { id: "B", text: "The CPU always stays at exactly 0%" },
-      { id: "C", text: "All HTTP requests become GET requests" },
-      { id: "D", text: "npm packages uninstall themselves" }
+      { id: "A", text: "The CPU always stays at exactly 0%" },
+      { id: "B", text: "All HTTP requests become GET requests" },
+      { id: "C", text: "npm packages uninstall themselves" },
+      { id: "D", text: "Memory usage continually grows without being properly released" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "A memory leak can cause retained objects to accumulate, resulting in increasing memory usage and potentially eventual process termination.",
     tags: ["memory", "performance", "debugging"]
   },
@@ -151,12 +151,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which tool is particularly useful for investigating JavaScript heap memory usage?",
     options: [
-      { id: "A", text: "npm publish" },
-      { id: "B", text: "package.json" },
-      { id: "C", text: "A heap snapshot/profile from Node.js debugging tools" },
+      { id: "A", text: "A heap snapshot/profile from Node.js debugging tools" },
+      { id: "B", text: "npm publish" },
+      { id: "C", text: "package.json" },
       { id: "D", text: "HTTP status 404" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Heap snapshots and profiling tools can help identify retained objects and potential memory leaks.",
     tags: ["memory", "heap", "debugging"]
   },
@@ -187,12 +187,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why can creating a new database connection for every request be inefficient?",
     options: [
-      { id: "A", text: "Connection establishment has overhead and can exhaust database resources under load" },
-      { id: "B", text: "Databases only support one connection" },
-      { id: "C", text: "Node.js cannot use databases asynchronously" },
+      { id: "A", text: "Databases only support one connection" },
+      { id: "B", text: "Node.js cannot use databases asynchronously" },
+      { id: "C", text: "Connection establishment has overhead and can exhaust database resources under load" },
       { id: "D", text: "HTTP requires exactly one database connection" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Repeated connection creation adds latency and resource overhead and can overwhelm the database.",
     tags: ["database", "performance"]
   },
@@ -207,10 +207,10 @@ const nodejsAdvancedQuestions = [
     options: [
       { id: "A", text: "Increasing the size of source files" },
       { id: "B", text: "Replacing all databases permanently" },
-      { id: "C", text: "Reducing repeated expensive computation or data retrieval" },
-      { id: "D", text: "Disabling authentication" }
+      { id: "C", text: "Disabling authentication" },
+      { id: "D", text: "Reducing repeated expensive computation or data retrieval" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "Caching can reduce latency and backend load by reusing previously computed or retrieved data.",
     tags: ["caching", "performance"]
   },
@@ -278,11 +278,11 @@ const nodejsAdvancedQuestions = [
     question: "Which practice helps protect against SQL injection?",
     options: [
       { id: "A", text: "Concatenating user input into SQL strings" },
-      { id: "B", text: "Using parameterized queries or prepared statements" },
-      { id: "C", text: "Disabling database indexes" },
-      { id: "D", text: "Returning SQL errors to users" }
+      { id: "B", text: "Disabling database indexes" },
+      { id: "C", text: "Returning SQL errors to users" },
+      { id: "D", text: "Using parameterized queries or prepared statements" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Parameterized queries keep user-controlled values separate from SQL syntax and are a fundamental SQL injection defense.",
     tags: ["security", "sql-injection", "database"]
   },
@@ -349,12 +349,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a denial-of-service attack generally intended to do?",
     options: [
-      { id: "A", text: "Make a service unavailable by exhausting resources or overwhelming it with traffic/work" },
-      { id: "B", text: "Improve application performance" },
-      { id: "C", text: "Reduce memory usage" },
-      { id: "D", text: "Optimize SQL queries" }
+      { id: "A", text: "Improve application performance" },
+      { id: "B", text: "Reduce memory usage" },
+      { id: "C", text: "Optimize SQL queries" },
+      { id: "D", text: "Make a service unavailable by exhausting resources or overwhelming it with traffic/work" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "DoS attacks attempt to consume enough resources that legitimate users can no longer effectively use the service.",
     tags: ["security", "dos"]
   },
@@ -367,12 +367,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does the event loop primarily coordinate?",
     options: [
-      { id: "A", text: "Only database schemas" },
-      { id: "B", text: "Only CPU calculations" },
-      { id: "C", text: "Asynchronous callbacks and other scheduled work" },
+      { id: "A", text: "Asynchronous callbacks and other scheduled work" },
+      { id: "B", text: "Only database schemas" },
+      { id: "C", text: "Only CPU calculations" },
       { id: "D", text: "Only filesystem permissions" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The event loop coordinates execution of callbacks and asynchronous work so Node.js can handle many I/O-bound operations efficiently.",
     tags: ["event-loop", "async"]
   },
@@ -385,12 +385,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is the main performance danger of a synchronous CPU-heavy function in a request handler?",
     options: [
-      { id: "A", text: "It blocks the event loop while it executes" },
-      { id: "B", text: "It automatically creates a worker thread" },
+      { id: "A", text: "It automatically creates a worker thread" },
+      { id: "B", text: "It blocks the event loop while it executes" },
       { id: "C", text: "It always increases available CPU cores" },
       { id: "D", text: "It disables HTTP status codes" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Synchronous CPU-heavy work occupies the JavaScript thread and delays other event-loop tasks.",
     tags: ["event-loop", "performance"]
   },
@@ -403,12 +403,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What does asynchronous I/O allow Node.js to do?",
     options: [
-      { id: "A", text: "Perform I/O without blocking the JavaScript thread while waiting for completion" },
-      { id: "B", text: "Make CPU calculations disappear" },
-      { id: "C", text: "Remove all callbacks" },
+      { id: "A", text: "Make CPU calculations disappear" },
+      { id: "B", text: "Remove all callbacks" },
+      { id: "C", text: "Perform I/O without blocking the JavaScript thread while waiting for completion" },
       { id: "D", text: "Guarantee zero latency" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Asynchronous I/O lets Node.js continue handling other work while the underlying operation is waiting for completion.",
     tags: ["async", "io", "performance"]
   },
@@ -422,11 +422,11 @@ const nodejsAdvancedQuestions = [
     question: "Which metric is particularly useful when evaluating API performance?",
     options: [
       { id: "A", text: "File extension length" },
-      { id: "B", text: "Response latency" },
-      { id: "C", text: "Variable naming style" },
-      { id: "D", text: "Number of comments" }
+      { id: "B", text: "Variable naming style" },
+      { id: "C", text: "Number of comments" },
+      { id: "D", text: "Response latency" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Latency measures how long requests take and is a key indicator of API responsiveness.",
     tags: ["performance", "latency", "monitoring"]
   },
@@ -457,12 +457,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why is profiling generally preferable to guessing when optimizing Node.js performance?",
     options: [
-      { id: "A", text: "Profiling provides evidence about where time or resources are actually being spent" },
-      { id: "B", text: "Profiling automatically rewrites the application" },
+      { id: "A", text: "Profiling automatically rewrites the application" },
+      { id: "B", text: "Profiling provides evidence about where time or resources are actually being spent" },
       { id: "C", text: "Guessing is required by Node.js" },
       { id: "D", text: "Profiling disables the event loop" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Performance profiling identifies actual bottlenecks so optimization efforts can focus on measurable problems.",
     tags: ["profiling", "performance"]
   },
@@ -475,12 +475,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is horizontal scaling?",
     options: [
-      { id: "A", text: "Adding more instances of an application to distribute load" },
-      { id: "B", text: "Increasing the RAM of one server only" },
-      { id: "C", text: "Reducing database indexes" },
+      { id: "A", text: "Increasing the RAM of one server only" },
+      { id: "B", text: "Reducing database indexes" },
+      { id: "C", text: "Adding more instances of an application to distribute load" },
       { id: "D", text: "Removing load balancing" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Horizontal scaling increases capacity by adding more application instances or servers.",
     tags: ["scalability", "architecture"]
   },
@@ -494,11 +494,11 @@ const nodejsAdvancedQuestions = [
     question: "What is vertical scaling?",
     options: [
       { id: "A", text: "Adding more application instances" },
-      { id: "B", text: "Increasing resources such as CPU or RAM on an existing machine" },
-      { id: "C", text: "Splitting one request into ten requests" },
-      { id: "D", text: "Moving all state to the browser" }
+      { id: "B", text: "Splitting one request into ten requests" },
+      { id: "C", text: "Moving all state to the browser" },
+      { id: "D", text: "Increasing resources such as CPU or RAM on an existing machine" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Vertical scaling increases the resources available to an existing machine or instance.",
     tags: ["scalability", "architecture"]
   },
@@ -529,12 +529,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What problem can occur if authentication/session state is stored only in one Node.js process?",
     options: [
-      { id: "A", text: "A request routed to another instance may not find the required state" },
-      { id: "B", text: "HTTP automatically becomes encrypted" },
+      { id: "A", text: "HTTP automatically becomes encrypted" },
+      { id: "B", text: "A request routed to another instance may not find the required state" },
       { id: "C", text: "The database becomes read-only" },
       { id: "D", text: "The event loop stops permanently" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Process-local state is not automatically shared across instances, which can cause inconsistent behavior when requests are load-balanced.",
     tags: ["scalability", "sessions", "architecture"]
   },
@@ -547,12 +547,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a load balancer responsible for?",
     options: [
-      { id: "A", text: "Distributing incoming traffic among available application instances" },
-      { id: "B", text: "Writing JavaScript code automatically" },
-      { id: "C", text: "Replacing the database schema" },
+      { id: "A", text: "Writing JavaScript code automatically" },
+      { id: "B", text: "Replacing the database schema" },
+      { id: "C", text: "Distributing incoming traffic among available application instances" },
       { id: "D", text: "Encrypting source files" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Load balancers distribute requests among backend instances and can also provide health checks and traffic management.",
     tags: ["load-balancing", "scalability"]
   },
@@ -565,12 +565,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a health check endpoint commonly used for?",
     options: [
-      { id: "A", text: "Allowing infrastructure to determine whether an instance is healthy enough to receive traffic" },
-      { id: "B", text: "Changing database passwords" },
-      { id: "C", text: "Serving frontend CSS" },
-      { id: "D", text: "Generating JWT secrets" }
+      { id: "A", text: "Changing database passwords" },
+      { id: "B", text: "Serving frontend CSS" },
+      { id: "C", text: "Generating JWT secrets" },
+      { id: "D", text: "Allowing infrastructure to determine whether an instance is healthy enough to receive traffic" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Health checks help load balancers or orchestration systems determine whether an instance should continue receiving traffic.",
     tags: ["health-checks", "deployment", "scalability"]
   },
@@ -583,12 +583,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is graceful shutdown?",
     options: [
-      { id: "A", text: "Immediately killing every connection" },
-      { id: "B", text: "Stopping new work while allowing existing work to finish safely before termination" },
+      { id: "A", text: "Stopping new work while allowing existing work to finish safely before termination" },
+      { id: "B", text: "Immediately killing every connection" },
       { id: "C", text: "Ignoring active requests" },
       { id: "D", text: "Deleting application logs" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Graceful shutdown allows the application to stop accepting new work and clean up resources while existing work finishes where possible.",
     tags: ["shutdown", "production", "architecture"]
   },
@@ -601,12 +601,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why should a production server handle termination signals gracefully?",
     options: [
-      { id: "A", text: "To reduce the chance of abruptly terminating active requests or leaving resources in a bad state" },
-      { id: "B", text: "To make JavaScript synchronous" },
+      { id: "A", text: "To make JavaScript synchronous" },
+      { id: "B", text: "To reduce the chance of abruptly terminating active requests or leaving resources in a bad state" },
       { id: "C", text: "To disable load balancing" },
       { id: "D", text: "To avoid all deployments" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Graceful termination improves reliability during deployments, restarts, scaling, and infrastructure changes.",
     tags: ["shutdown", "reliability"]
   },
@@ -619,12 +619,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is a circuit breaker pattern designed to help with?",
     options: [
-      { id: "A", text: "Preventing repeated calls to an unhealthy dependency from making an outage worse" },
-      { id: "B", text: "Encrypting passwords" },
-      { id: "C", text: "Replacing database transactions" },
+      { id: "A", text: "Encrypting passwords" },
+      { id: "B", text: "Replacing database transactions" },
+      { id: "C", text: "Preventing repeated calls to an unhealthy dependency from making an outage worse" },
       { id: "D", text: "Making CPU operations synchronous" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Circuit breakers can temporarily stop calls to a failing dependency, allowing systems to fail faster and recover without continuous pressure.",
     tags: ["resilience", "circuit-breaker"]
   },
@@ -637,12 +637,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is idempotency particularly important for in distributed systems?",
     options: [
-      { id: "A", text: "Ensuring repeated processing of the same operation does not unintentionally create repeated side effects" },
-      { id: "B", text: "Making passwords shorter" },
-      { id: "C", text: "Increasing JavaScript bundle size" },
-      { id: "D", text: "Disabling retries" }
+      { id: "A", text: "Making passwords shorter" },
+      { id: "B", text: "Increasing JavaScript bundle size" },
+      { id: "C", text: "Disabling retries" },
+      { id: "D", text: "Ensuring repeated processing of the same operation does not unintentionally create repeated side effects" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Retries can cause duplicate operations. Idempotency techniques help ensure repeated requests have predictable effects.",
     tags: ["distributed-systems", "idempotency", "reliability"]
   },
@@ -673,12 +673,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is garbage collection responsible for?",
     options: [
-      { id: "A", text: "Automatically reclaiming memory that is no longer reachable by the JavaScript program" },
-      { id: "B", text: "Deleting database rows" },
+      { id: "A", text: "Deleting database rows" },
+      { id: "B", text: "Automatically reclaiming memory that is no longer reachable by the JavaScript program" },
       { id: "C", text: "Closing HTTP ports" },
       { id: "D", text: "Compiling TypeScript" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "JavaScript's garbage collector reclaims memory associated with objects that are no longer reachable.",
     tags: ["memory", "garbage-collection"]
   },
@@ -691,12 +691,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Which situation can prevent an object from being garbage-collected?",
     options: [
-      { id: "A", text: "The object remains reachable through a live reference" },
-      { id: "B", text: "The object has no references" },
-      { id: "C", text: "The process uses async/await" },
+      { id: "A", text: "The object has no references" },
+      { id: "B", text: "The process uses async/await" },
+      { id: "C", text: "The object remains reachable through a live reference" },
       { id: "D", text: "The object was created inside a function" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Objects remain eligible for garbage collection only when they are no longer reachable through active references.",
     tags: ["memory", "garbage-collection"]
   },
@@ -709,12 +709,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why can global variables contribute to memory leaks?",
     options: [
-      { id: "A", text: "They can keep objects reachable for the lifetime of the process" },
-      { id: "B", text: "Global variables are always automatically deleted" },
-      { id: "C", text: "They cannot contain objects" },
-      { id: "D", text: "They disable garbage collection completely" }
+      { id: "A", text: "Global variables are always automatically deleted" },
+      { id: "B", text: "They cannot contain objects" },
+      { id: "C", text: "They disable garbage collection completely" },
+      { id: "D", text: "They can keep objects reachable for the lifetime of the process" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Long-lived references, including globals, can keep objects reachable and prevent them from being reclaimed.",
     tags: ["memory", "globals", "leaks"]
   },
@@ -745,12 +745,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why should developers avoid blindly increasing Node.js memory limits to solve memory problems?",
     options: [
-      { id: "A", text: "It can hide an underlying memory leak rather than fixing the root cause" },
-      { id: "B", text: "Node.js cannot use memory" },
+      { id: "A", text: "Node.js cannot use memory" },
+      { id: "B", text: "It can hide an underlying memory leak rather than fixing the root cause" },
       { id: "C", text: "Memory limits are only for browsers" },
       { id: "D", text: "Increasing memory always makes leaks disappear" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Increasing the heap limit can postpone failure but does not fix code that continually retains unnecessary objects.",
     tags: ["memory", "performance", "debugging"]
   },
@@ -763,12 +763,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is dependency auditing primarily intended to identify?",
     options: [
-      { id: "A", text: "Security vulnerabilities or problematic dependencies in the project" },
-      { id: "B", text: "CSS spacing issues" },
-      { id: "C", text: "Unused HTML headings only" },
+      { id: "A", text: "CSS spacing issues" },
+      { id: "B", text: "Unused HTML headings only" },
+      { id: "C", text: "Security vulnerabilities or problematic dependencies in the project" },
       { id: "D", text: "Database query formatting" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Dependency auditing helps identify known vulnerabilities and security issues in third-party packages.",
     tags: ["security", "dependencies", "npm"]
   },
@@ -781,12 +781,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why is keeping dependencies reasonably up to date important?",
     options: [
-      { id: "A", text: "It can provide security fixes, bug fixes, and compatibility improvements" },
-      { id: "B", text: "It guarantees no bugs will ever exist" },
-      { id: "C", text: "It eliminates the need for tests" },
-      { id: "D", text: "It automatically optimizes every database query" }
+      { id: "A", text: "It guarantees no bugs will ever exist" },
+      { id: "B", text: "It eliminates the need for tests" },
+      { id: "C", text: "It automatically optimizes every database query" },
+      { id: "D", text: "It can provide security fixes, bug fixes, and compatibility improvements" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Maintaining dependencies helps address known vulnerabilities and defects, although updates should still be tested carefully.",
     tags: ["security", "dependencies", "maintenance"]
   },
@@ -817,12 +817,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "Why is HTTPS important for a Node.js API?",
     options: [
-      { id: "A", text: "It encrypts data in transit and helps protect against network interception" },
-      { id: "B", text: "It automatically validates all user input" },
+      { id: "A", text: "It automatically validates all user input" },
+      { id: "B", text: "It encrypts data in transit and helps protect against network interception" },
       { id: "C", text: "It eliminates application vulnerabilities" },
       { id: "D", text: "It makes databases unnecessary" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "HTTPS uses TLS to protect data transmitted between clients and servers from unauthorized interception or modification.",
     tags: ["security", "https", "tls"]
   },
@@ -835,12 +835,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "What is observability concerned with in a production backend?",
     options: [
-      { id: "A", text: "Understanding system behavior through signals such as logs, metrics, and traces" },
-      { id: "B", text: "Only changing CSS styles" },
-      { id: "C", text: "Removing all application logs" },
+      { id: "A", text: "Only changing CSS styles" },
+      { id: "B", text: "Removing all application logs" },
+      { id: "C", text: "Understanding system behavior through signals such as logs, metrics, and traces" },
       { id: "D", text: "Replacing databases with files" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Observability helps teams understand what is happening inside a running system using telemetry such as logs, metrics, and traces.",
     tags: ["observability", "monitoring", "production"]
   },
@@ -854,11 +854,11 @@ const nodejsAdvancedQuestions = [
     question: "Which combination provides the strongest basic foundation for diagnosing production performance problems?",
     options: [
       { id: "A", text: "Random code changes and repeated restarts" },
-      { id: "B", text: "Metrics, logs, tracing/profiling, and reproducible measurements" },
-      { id: "C", text: "Only console.log statements with no context" },
-      { id: "D", text: "Increasing server size without measurement" }
+      { id: "B", text: "Only console.log statements with no context" },
+      { id: "C", text: "Increasing server size without measurement" },
+      { id: "D", text: "Metrics, logs, tracing/profiling, and reproducible measurements" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Multiple observability signals provide evidence about latency, errors, resource usage, and where work is occurring.",
     tags: ["observability", "profiling", "performance"]
   },
@@ -871,12 +871,12 @@ const nodejsAdvancedQuestions = [
     difficulty: "Advanced",
     question: "A Node.js API becomes slow only under heavy traffic. What is the best first step?",
     options: [
-      { id: "A", text: "Immediately rewrite the entire backend" },
-      { id: "B", text: "Add more dependencies" },
-      { id: "C", text: "Measure the system and identify the actual bottleneck before optimizing" },
+      { id: "A", text: "Measure the system and identify the actual bottleneck before optimizing" },
+      { id: "B", text: "Immediately rewrite the entire backend" },
+      { id: "C", text: "Add more dependencies" },
       { id: "D", text: "Disable error logging" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "Performance optimization should begin with measurement. The bottleneck could be CPU, database queries, network latency, memory pressure, or another component.",
     tags: ["performance", "debugging", "profiling"]
   },
@@ -890,11 +890,11 @@ const nodejsAdvancedQuestions = [
     question: "Which architecture best represents a production-ready scalable Node.js API?",
     options: [
       { id: "A", text: "One process with unlimited in-memory state and no monitoring" },
-      { id: "B", text: "A server that exposes database credentials and has no rate limits" },
-      { id: "C", text: "A system using appropriate scaling, externalized shared state, validation, security controls, observability, controlled error handling, and performance monitoring" },
+      { id: "B", text: "A system using appropriate scaling, externalized shared state, validation, security controls, observability, controlled error handling, and performance monitoring" },
+      { id: "C", text: "A server that exposes database credentials and has no rate limits" },
       { id: "D", text: "A system that retries every failed operation forever" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Production architecture combines scalability, security, resilience, observability, appropriate state management, and measured performance practices rather than relying on one optimization.",
     tags: [
       "architecture",

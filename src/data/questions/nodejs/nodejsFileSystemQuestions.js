@@ -8,11 +8,11 @@ const nodejsFileSystemQuestions = [
     question: "Which built-in Node.js module is primarily used for interacting with the file system?",
     options: [
       { id: "A", text: "path" },
-      { id: "B", text: "stream" },
-      { id: "C", text: "fs" },
+      { id: "B", text: "fs" },
+      { id: "C", text: "stream" },
       { id: "D", text: "file" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Node.js provides the `fs` module for working with files and directories.",
     tags: ["fs", "filesystem"]
   },
@@ -25,12 +25,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Beginner",
     question: "Which method reads an entire file asynchronously?",
     options: [
-      { id: "A", text: "fs.readFile()" },
-      { id: "B", text: "fs.read()" },
-      { id: "C", text: "fs.openFile()" },
+      { id: "A", text: "fs.read()" },
+      { id: "B", text: "fs.openFile()" },
+      { id: "C", text: "fs.readFile()" },
       { id: "D", text: "fs.load()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`fs.readFile()` asynchronously reads the entire contents of a file.",
     tags: ["fs", "readFile"]
   },
@@ -44,11 +44,11 @@ const nodejsFileSystemQuestions = [
     question: "What type of value does `fs.readFile()` return when no encoding is specified?",
     options: [
       { id: "A", text: "A JavaScript string" },
-      { id: "B", text: "A Buffer" },
-      { id: "C", text: "A JSON object" },
-      { id: "D", text: "An ArrayBuffer only" }
+      { id: "B", text: "A JSON object" },
+      { id: "C", text: "An ArrayBuffer only" },
+      { id: "D", text: "A Buffer" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Without an encoding such as `utf8`, Node.js returns the file contents as a Buffer.",
     tags: ["fs", "buffer", "readFile"]
   },
@@ -80,11 +80,11 @@ const nodejsFileSystemQuestions = [
     question: "Which method writes data to a file asynchronously?",
     options: [
       { id: "A", text: "fs.putFile()" },
-      { id: "B", text: "fs.save()" },
-      { id: "C", text: "fs.writeFile()" },
+      { id: "B", text: "fs.writeFile()" },
+      { id: "C", text: "fs.save()" },
       { id: "D", text: "fs.writeData()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "`fs.writeFile()` asynchronously writes data to a file, replacing the file by default if it already exists.",
     tags: ["fs", "writeFile"]
   },
@@ -98,11 +98,11 @@ const nodejsFileSystemQuestions = [
     question: "What happens by default when `fs.writeFile()` writes to an existing file?",
     options: [
       { id: "A", text: "The new data is appended" },
-      { id: "B", text: "The existing file contents are replaced" },
-      { id: "C", text: "The operation always fails" },
+      { id: "B", text: "The operation always fails" },
+      { id: "C", text: "The existing file contents are replaced" },
       { id: "D", text: "A second file is automatically created" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "`fs.writeFile()` uses the write flag by default, replacing existing contents.",
     tags: ["fs", "writeFile"]
   },
@@ -115,12 +115,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Beginner",
     question: "Which method is appropriate when you want to append data to an existing file?",
     options: [
-      { id: "A", text: "fs.appendFile()" },
-      { id: "B", text: "fs.addFile()" },
-      { id: "C", text: "fs.pushFile()" },
-      { id: "D", text: "fs.extendFile()" }
+      { id: "A", text: "fs.addFile()" },
+      { id: "B", text: "fs.pushFile()" },
+      { id: "C", text: "fs.extendFile()" },
+      { id: "D", text: "fs.appendFile()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`fs.appendFile()` adds data to the end of an existing file.",
     tags: ["fs", "appendFile"]
   },
@@ -133,12 +133,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Beginner",
     question: "Which method can remove a file?",
     options: [
-      { id: "A", text: "fs.deleteFile()" },
-      { id: "B", text: "fs.unlink()" },
+      { id: "A", text: "fs.unlink()" },
+      { id: "B", text: "fs.deleteFile()" },
       { id: "C", text: "fs.removeFile()" },
       { id: "D", text: "fs.destroyFile()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "`fs.unlink()` removes a file from the file system.",
     tags: ["fs", "unlink"]
   },
@@ -151,12 +151,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Beginner",
     question: "Which method creates a directory?",
     options: [
-      { id: "A", text: "fs.mkdir()" },
-      { id: "B", text: "fs.createFolder()" },
+      { id: "A", text: "fs.createFolder()" },
+      { id: "B", text: "fs.mkdir()" },
       { id: "C", text: "fs.directory()" },
       { id: "D", text: "fs.makeDirSyncOnly()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "`fs.mkdir()` creates a directory.",
     tags: ["fs", "directories"]
   },
@@ -188,11 +188,11 @@ const nodejsFileSystemQuestions = [
     question: "Which method checks information about a file or directory?",
     options: [
       { id: "A", text: "fs.inspect()" },
-      { id: "B", text: "fs.stat()" },
-      { id: "C", text: "fs.info()" },
-      { id: "D", text: "fs.details()" }
+      { id: "B", text: "fs.info()" },
+      { id: "C", text: "fs.details()" },
+      { id: "D", text: "fs.stat()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`fs.stat()` retrieves metadata about a file or directory.",
     tags: ["fs", "stat"]
   },
@@ -205,12 +205,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Beginner",
     question: "Which `fs` API is synchronous?",
     options: [
-      { id: "A", text: "fs.readFile()" },
-      { id: "B", text: "fs.readFileSync()" },
+      { id: "A", text: "fs.readFileSync()" },
+      { id: "B", text: "fs.readFile()" },
       { id: "C", text: "fs.readAsync()" },
       { id: "D", text: "fs.readPromise()" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Methods ending in `Sync`, such as `fs.readFileSync()`, perform synchronous file-system operations.",
     tags: ["fs", "sync"]
   },
@@ -224,11 +224,11 @@ const nodejsFileSystemQuestions = [
     question: "Why should synchronous file-system operations generally be avoided in a request handler for a high-throughput Node.js server?",
     options: [
       { id: "A", text: "They cannot read files larger than 1 MB" },
-      { id: "B", text: "They require Express" },
-      { id: "C", text: "They can block the event loop while the operation completes" },
+      { id: "B", text: "They can block the event loop while the operation completes" },
+      { id: "C", text: "They require Express" },
       { id: "D", text: "They always corrupt files" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "Synchronous file-system operations block the JavaScript thread, potentially delaying other requests and callbacks.",
     tags: ["fs", "sync", "performance"]
   },
@@ -241,12 +241,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What is a Buffer in Node.js?",
     options: [
-      { id: "A", text: "An object used to work with raw binary data" },
-      { id: "B", text: "A replacement for JavaScript arrays" },
-      { id: "C", text: "A database cache" },
+      { id: "A", text: "A replacement for JavaScript arrays" },
+      { id: "B", text: "A database cache" },
+      { id: "C", text: "An object used to work with raw binary data" },
       { id: "D", text: "A file-system path object" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Buffers provide a way to work with sequences of bytes, which is important for files, sockets, and other binary data.",
     tags: ["buffer", "binary"]
   },
@@ -260,11 +260,11 @@ const nodejsFileSystemQuestions = [
     question: "Which expression creates a Buffer from UTF-8 text?",
     options: [
       { id: "A", text: "Buffer.text('hello')" },
-      { id: "B", text: "Buffer.from('hello')" },
-      { id: "C", text: "new BufferText('hello')" },
-      { id: "D", text: "Buffer.createString('hello')" }
+      { id: "B", text: "new BufferText('hello')" },
+      { id: "C", text: "Buffer.createString('hello')" },
+      { id: "D", text: "Buffer.from('hello')" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`Buffer.from()` creates a Buffer from strings and other supported input values.",
     tags: ["buffer", "encoding"]
   },
@@ -277,12 +277,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What is the main advantage of a stream when processing a very large file?",
     options: [
-      { id: "A", text: "It automatically compresses the file" },
-      { id: "B", text: "It allows data to be processed incrementally instead of loading the entire file into memory" },
+      { id: "A", text: "It allows data to be processed incrementally instead of loading the entire file into memory" },
+      { id: "B", text: "It automatically compresses the file" },
       { id: "C", text: "It makes the file smaller on disk" },
       { id: "D", text: "It eliminates all I/O operations" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Streams process data in chunks, which can significantly reduce memory usage for large files.",
     tags: ["streams", "memory"]
   },
@@ -313,12 +313,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "Which method creates a writable stream for a file?",
     options: [
-      { id: "A", text: "fs.createWriteStream()" },
-      { id: "B", text: "fs.writeStream()" },
-      { id: "C", text: "fs.openWrite()" },
+      { id: "A", text: "fs.writeStream()" },
+      { id: "B", text: "fs.openWrite()" },
+      { id: "C", text: "fs.createWriteStream()" },
       { id: "D", text: "fs.streamWriteFile()" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`fs.createWriteStream()` creates a writable stream for writing data to a file.",
     tags: ["streams", "fs", "write"]
   },
@@ -333,10 +333,10 @@ const nodejsFileSystemQuestions = [
     options: [
       { id: "A", text: "connect()" },
       { id: "B", text: "transfer()" },
-      { id: "C", text: "pipe()" },
-      { id: "D", text: "forward()" }
+      { id: "C", text: "forward()" },
+      { id: "D", text: "pipe()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "`readable.pipe(writable)` sends data from the readable stream into the writable stream.",
     tags: ["streams", "pipe"]
   },
@@ -349,12 +349,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What does this code primarily do?\n\n```js\nfs.createReadStream('input.txt')\n  .pipe(fs.createWriteStream('copy.txt'));\n```",
     options: [
-      { id: "A", text: "Deletes input.txt" },
-      { id: "B", text: "Reads input.txt and streams its data into copy.txt" },
+      { id: "A", text: "Reads input.txt and streams its data into copy.txt" },
+      { id: "B", text: "Deletes input.txt" },
       { id: "C", text: "Converts input.txt into JSON" },
       { id: "D", text: "Loads the entire file into memory first" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "The readable stream supplies file data to the writable stream through `pipe()`.",
     tags: ["streams", "pipe", "files"]
   },
@@ -367,12 +367,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "Which event is commonly emitted by a readable stream when a chunk of data is available?",
     options: [
-      { id: "A", text: "data" },
-      { id: "B", text: "chunkReadyOnly" },
+      { id: "A", text: "chunkReadyOnly" },
+      { id: "B", text: "data" },
       { id: "C", text: "receive" },
       { id: "D", text: "chunk" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "Readable streams can emit `data` events when data chunks are available in flowing mode.",
     tags: ["streams", "data"]
   },
@@ -403,12 +403,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "Which event is associated with a writable stream finishing its writes?",
     options: [
-      { id: "A", text: "finish" },
-      { id: "B", text: "end" },
-      { id: "C", text: "done" },
-      { id: "D", text: "written" }
+      { id: "A", text: "end" },
+      { id: "B", text: "done" },
+      { id: "C", text: "written" },
+      { id: "D", text: "finish" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "Writable streams emit `finish` after `end()` has been called and all data has been flushed.",
     tags: ["streams", "writable"]
   },
@@ -421,12 +421,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What does the `error` event on a stream indicate?",
     options: [
-      { id: "A", text: "The stream has successfully completed" },
-      { id: "B", text: "An error occurred during stream operation" },
+      { id: "A", text: "An error occurred during stream operation" },
+      { id: "B", text: "The stream has successfully completed" },
       { id: "C", text: "The stream automatically switched to synchronous mode" },
       { id: "D", text: "The stream received an empty chunk" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Streams emit `error` when an error occurs during their operation.",
     tags: ["streams", "errors"]
   },
@@ -457,12 +457,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "Why is `pipe()` useful beyond simply reducing code?",
     options: [
-      { id: "A", text: "It can coordinate data flow between streams and handle backpressure" },
-      { id: "B", text: "It makes every stream synchronous" },
-      { id: "C", text: "It converts all data into JSON" },
+      { id: "A", text: "It makes every stream synchronous" },
+      { id: "B", text: "It converts all data into JSON" },
+      { id: "C", text: "It can coordinate data flow between streams and handle backpressure" },
       { id: "D", text: "It stores the entire source in memory" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`pipe()` connects streams in a way that coordinates flow and respects backpressure.",
     tags: ["streams", "pipe", "backpressure"]
   },
@@ -476,11 +476,11 @@ const nodejsFileSystemQuestions = [
     question: "What does `highWaterMark` generally control for a stream?",
     options: [
       { id: "A", text: "The maximum file size on disk" },
-      { id: "B", text: "A buffering threshold used to manage how much data the stream keeps in memory" },
-      { id: "C", text: "The encryption strength of the stream" },
-      { id: "D", text: "The number of CPU cores available" }
+      { id: "B", text: "The encryption strength of the stream" },
+      { id: "C", text: "The number of CPU cores available" },
+      { id: "D", text: "A buffering threshold used to manage how much data the stream keeps in memory" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "`highWaterMark` is a buffering threshold that influences stream flow behavior and buffering.",
     tags: ["streams", "highWaterMark"]
   },
@@ -512,11 +512,11 @@ const nodejsFileSystemQuestions = [
     question: "Which stream type is designed for both reading and writing?",
     options: [
       { id: "A", text: "Readable" },
-      { id: "B", text: "Writable" },
-      { id: "C", text: "Duplex" },
+      { id: "B", text: "Duplex" },
+      { id: "C", text: "Writable" },
       { id: "D", text: "Static" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "A Duplex stream has independently readable and writable sides.",
     tags: ["streams", "duplex"]
   },
@@ -529,12 +529,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What is a Transform stream?",
     options: [
-      { id: "A", text: "A stream that can transform data as it passes through" },
-      { id: "B", text: "A stream that only reads files synchronously" },
-      { id: "C", text: "A stream that can only write strings" },
+      { id: "A", text: "A stream that only reads files synchronously" },
+      { id: "B", text: "A stream that can only write strings" },
+      { id: "C", text: "A stream that can transform data as it passes through" },
       { id: "D", text: "A stream that disables backpressure" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "Transform streams are Duplex streams where output is related to transformed input.",
     tags: ["streams", "transform"]
   },
@@ -548,11 +548,11 @@ const nodejsFileSystemQuestions = [
     question: "Which built-in module provides the `Readable`, `Writable`, and `Transform` stream classes?",
     options: [
       { id: "A", text: "buffer" },
-      { id: "B", text: "stream" },
-      { id: "C", text: "events-only" },
-      { id: "D", text: "fs-streams-only" }
+      { id: "B", text: "events-only" },
+      { id: "C", text: "fs-streams-only" },
+      { id: "D", text: "stream" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "Node's `stream` module provides the core stream abstractions.",
     tags: ["streams", "module"]
   },
@@ -565,12 +565,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What does `path.join()` do?",
     options: [
-      { id: "A", text: "Reads a file from disk" },
-      { id: "B", text: "Creates a directory" },
-      { id: "C", text: "Combines path segments using the platform's path separator" },
+      { id: "A", text: "Combines path segments using the platform's path separator" },
+      { id: "B", text: "Reads a file from disk" },
+      { id: "C", text: "Creates a directory" },
       { id: "D", text: "Converts a path into a Buffer" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "`path.join()` combines path segments and normalizes the resulting path.",
     tags: ["path", "filesystem"]
   },
@@ -619,12 +619,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Intermediate",
     question: "What is the difference between `path.basename('/app/data/file.txt')` and `path.dirname('/app/data/file.txt')`?",
     options: [
-      { id: "A", text: "basename gives `file.txt`, while dirname gives `/app/data`" },
-      { id: "B", text: "basename gives `/app/data`, while dirname gives `file.txt`" },
-      { id: "C", text: "Both return `/app/data/file.txt`" },
-      { id: "D", text: "Both return `file.txt`" }
+      { id: "A", text: "basename gives `/app/data`, while dirname gives `file.txt`" },
+      { id: "B", text: "Both return `/app/data/file.txt`" },
+      { id: "C", text: "Both return `file.txt`" },
+      { id: "D", text: "basename gives `file.txt`, while dirname gives `/app/data`" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "D",
     explanation: "`basename()` extracts the final component, while `dirname()` returns the directory portion.",
     tags: ["path", "basename", "dirname"]
   },
@@ -637,12 +637,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "Why can directly concatenating user input into a file path be dangerous?",
     options: [
-      { id: "A", text: "It always causes a syntax error" },
-      { id: "B", text: "It can enable path traversal, allowing access to files outside the intended directory" },
+      { id: "A", text: "It can enable path traversal, allowing access to files outside the intended directory" },
+      { id: "B", text: "It always causes a syntax error" },
       { id: "C", text: "It makes the file read-only" },
       { id: "D", text: "It automatically deletes parent directories" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Untrusted path components can contain traversal sequences such as `../`, potentially allowing access outside an intended directory.",
     tags: ["path", "security", "path-traversal"]
   },
@@ -656,11 +656,11 @@ const nodejsFileSystemQuestions = [
     question: "A server lets users request `/files/<filename>`. Which is the safest general approach?",
     options: [
       { id: "A", text: "Concatenate the filename directly with the server's root path" },
-      { id: "B", text: "Trust the filename because it came from an HTTP request" },
-      { id: "C", text: "Validate/normalize the requested path and ensure the resolved path stays inside the allowed directory" },
+      { id: "B", text: "Validate/normalize the requested path and ensure the resolved path stays inside the allowed directory" },
+      { id: "C", text: "Trust the filename because it came from an HTTP request" },
       { id: "D", text: "Replace every slash with a space" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "B",
     explanation: "File-serving endpoints should validate untrusted input and enforce the intended directory boundary.",
     tags: ["security", "path", "path-traversal"]
   },
@@ -673,12 +673,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "Which statement best describes the relationship between a file stream and a Buffer?",
     options: [
-      { id: "A", text: "A stream can deliver file data incrementally as chunks, commonly represented as Buffers" },
-      { id: "B", text: "Buffers can only contain text" },
-      { id: "C", text: "Streams and Buffers are the same abstraction" },
+      { id: "A", text: "Buffers can only contain text" },
+      { id: "B", text: "Streams and Buffers are the same abstraction" },
+      { id: "C", text: "A stream can deliver file data incrementally as chunks, commonly represented as Buffers" },
       { id: "D", text: "Streams cannot work with binary data" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "File streams commonly deliver chunks of binary data represented by Buffers.",
     tags: ["streams", "buffer"]
   },
@@ -692,11 +692,11 @@ const nodejsFileSystemQuestions = [
     question: "A 5 GB log file needs to be sent to a client. Why is `fs.createReadStream()` generally preferable to `fs.readFile()`?",
     options: [
       { id: "A", text: "readFile() cannot open log files" },
-      { id: "B", text: "createReadStream() can process the file incrementally instead of requiring the entire file in memory" },
-      { id: "C", text: "createReadStream() compresses every file automatically" },
-      { id: "D", text: "readFile() always converts files to JSON" }
+      { id: "B", text: "createReadStream() compresses every file automatically" },
+      { id: "C", text: "readFile() always converts files to JSON" },
+      { id: "D", text: "createReadStream() can process the file incrementally instead of requiring the entire file in memory" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "A readable stream allows large data to be transferred incrementally, reducing memory pressure.",
     tags: ["streams", "performance", "memory"]
   },
@@ -709,12 +709,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "Which approach is most appropriate for copying a very large file while keeping memory usage reasonable?",
     options: [
-      { id: "A", text: "Read the entire file into a string and then write it" },
-      { id: "B", text: "Read the file using a stream and pipe it into a write stream" },
+      { id: "A", text: "Read the file using a stream and pipe it into a write stream" },
+      { id: "B", text: "Read the entire file into a string and then write it" },
       { id: "C", text: "Convert the file to JSON first" },
       { id: "D", text: "Use repeated synchronous reads on the main thread" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "A",
     explanation: "Streaming the file from a readable stream to a writable stream processes it incrementally.",
     tags: ["streams", "pipe", "performance"]
   },
@@ -727,12 +727,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "What is the purpose of a file descriptor?",
     options: [
-      { id: "A", text: "It identifies an open file or other I/O resource within the operating system process" },
-      { id: "B", text: "It stores the complete contents of the file" },
+      { id: "A", text: "It stores the complete contents of the file" },
+      { id: "B", text: "It identifies an open file or other I/O resource within the operating system process" },
       { id: "C", text: "It is always the file's URL" },
       { id: "D", text: "It is a JavaScript class containing the file extension" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "B",
     explanation: "A file descriptor is an OS-level identifier for an open file or I/O resource.",
     tags: ["fs", "file-descriptor"]
   },
@@ -746,11 +746,11 @@ const nodejsFileSystemQuestions = [
     question: "Why is it important to close file descriptors when you are finished with them?",
     options: [
       { id: "A", text: "Closing them changes the file extension" },
-      { id: "B", text: "Open descriptors consume operating-system resources and can accumulate if not released" },
-      { id: "C", text: "The file becomes encrypted otherwise" },
+      { id: "B", text: "The file becomes encrypted otherwise" },
+      { id: "C", text: "Open descriptors consume operating-system resources and can accumulate if not released" },
       { id: "D", text: "Node.js cannot create another file afterward" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "C",
     explanation: "Open file descriptors consume OS resources. Properly releasing them helps avoid resource exhaustion.",
     tags: ["fs", "file-descriptor", "resources"]
   },
@@ -765,10 +765,10 @@ const nodejsFileSystemQuestions = [
     options: [
       { id: "A", text: "fs.open()" },
       { id: "B", text: "fs.fileHandle()" },
-      { id: "C", text: "fs.promises.open()" },
-      { id: "D", text: "fs.getHandle()" }
+      { id: "C", text: "fs.getHandle()" },
+      { id: "D", text: "fs.promises.open()" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "D",
     explanation: "`fs.promises.open()` provides a Promise-based API for opening files and obtaining a FileHandle.",
     tags: ["fs", "promises", "file-handle"]
   },
@@ -781,12 +781,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "What is a practical advantage of the Promise-based `fs/promises` API?",
     options: [
-      { id: "A", text: "It removes the need for the operating system" },
-      { id: "B", text: "It makes every file operation synchronous" },
-      { id: "C", text: "It provides file-system operations that work naturally with async/await and Promises" },
+      { id: "A", text: "It provides file-system operations that work naturally with async/await and Promises" },
+      { id: "B", text: "It removes the need for the operating system" },
+      { id: "C", text: "It makes every file operation synchronous" },
       { id: "D", text: "It automatically stores files in memory" }
     ],
-    correctOptionId: "C",
+    correctOptionId: "A",
     explanation: "The Promise-based API integrates naturally with modern asynchronous JavaScript using `await` and Promise composition.",
     tags: ["fs", "promises", "async-await"]
   },
@@ -817,12 +817,12 @@ const nodejsFileSystemQuestions = [
     difficulty: "Advanced",
     question: "Which error is commonly associated with trying to read a file that does not exist?",
     options: [
-      { id: "A", text: "ENOENT" },
-      { id: "B", text: "EJSON" },
-      { id: "C", text: "NOBUFFER" },
+      { id: "A", text: "EJSON" },
+      { id: "B", text: "NOBUFFER" },
+      { id: "C", text: "ENOENT" },
       { id: "D", text: "FILEMISS" }
     ],
-    correctOptionId: "A",
+    correctOptionId: "C",
     explanation: "`ENOENT` generally indicates that a required file or directory does not exist.",
     tags: ["fs", "errors", "ENOENT"]
   },
@@ -836,11 +836,11 @@ const nodejsFileSystemQuestions = [
     question: "What does the `encoding` option control when reading a text file?",
     options: [
       { id: "A", text: "The file's physical location" },
-      { id: "B", text: "How the raw bytes are decoded into text" },
-      { id: "C", text: "The number of CPU cores used" },
-      { id: "D", text: "Whether the file exists" }
+      { id: "B", text: "The number of CPU cores used" },
+      { id: "C", text: "Whether the file exists" },
+      { id: "D", text: "How the raw bytes are decoded into text" }
     ],
-    correctOptionId: "B",
+    correctOptionId: "D",
     explanation: "An encoding such as UTF-8 determines how bytes are interpreted as characters.",
     tags: ["fs", "encoding", "buffer"]
   },
