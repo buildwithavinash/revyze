@@ -38,3 +38,8 @@ export const getQuizProgress = async (quizId) => {
 export const deleteQuizProgress = async (quizId) => {
     return await db.quizProgress.delete(quizId);
 }
+
+export const getQuizProgressByIds = async (quizIds) => {
+return await db.quizProgress.where('quizId').anyOf(quizIds).toArray();
+}
+
