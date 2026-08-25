@@ -57,9 +57,9 @@ const javascriptAllInOneQuestions = [
     id: "javascript-all-in-one-q-004",
     quizId: "quiz_javascript_all_in_one",
     order: 4,
-    type: "mcq",
+    type: "code",
     difficulty: "Beginner",
-    question: "What is the output?",
+    question: "What is the output?\n\nconsole.log(\"10\" + 20);",
     options: [
       { id: "A", text: "30" },
       { id: "B", text: "1020" },
@@ -95,7 +95,7 @@ const javascriptAllInOneQuestions = [
     order: 6,
     type: "code",
     difficulty: "Beginner",
-    question: "What is printed?",
+    question: "What is printed?\n\nconsole.log(5 + 10);",
     options: [
       { id: "A", text: "10" },
       { id: "B", text: "510" },
@@ -103,7 +103,7 @@ const javascriptAllInOneQuestions = [
       { id: "D", text: "15" }
     ],
     correctOptionId: "D",
-    explanation: "The `+` operator is evaluated left to right. `5 + 10` produces `15`, and there is no string involved in this expression.",
+    explanation: "The `+` operator performs numeric addition when both operands are numbers. Therefore `5 + 10` produces `15`.",
     tags: ["operators", "arithmetic", "evaluation"]
   },
 
@@ -149,7 +149,7 @@ const javascriptAllInOneQuestions = [
     order: 9,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is the output?",
+    question: "What is the output?\n\nconst numbers = [1, 2, 3];\n\nconst result = numbers.map((number) => number * 2);\n\nconsole.log(result);",
     options: [
       { id: "A", text: "1, 2, 3" },
       { id: "B", text: "1, 4, 9" },
@@ -203,7 +203,7 @@ const javascriptAllInOneQuestions = [
     order: 12,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is printed?",
+    question: "What is printed?\n\nconst numbers = [1, 2, 3];\n\nconst total = numbers.reduce((sum, number) => sum + number, 0);\n\nconsole.log(total);",
     options: [
       { id: "A", text: "5" },
       { id: "B", text: "6" },
@@ -257,15 +257,15 @@ const javascriptAllInOneQuestions = [
     order: 15,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is printed?",
+    question: "What is printed?\n\nfunction greet(name) {\n  return `Hello ${name}`;\n}\n\nconsole.log(greet(\"World\"));",
     options: [
       { id: "A", text: "World" },
       { id: "B", text: "Hello" },
       { id: "C", text: "undefined" },
       { id: "D", text: "Hello World" }
     ],
-    correctOptionId: "A",
-    explanation: "The function receives `\"World\"` as its argument and returns `Hello ${name}`. Therefore the result is `Hello World`, not just World.",
+    correctOptionId: "D",
+    explanation: "The function receives `\"World\"` as its argument and returns `Hello World` using a template literal.",
     tags: ["functions", "template-literals", "parameters"]
   },
 
@@ -293,15 +293,15 @@ const javascriptAllInOneQuestions = [
     order: 17,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is printed?",
+    question: "What is printed?\n\nfunction createCounter() {\n  let count = 0;\n\n  return function () {\n    count += 1;\n    return count;\n  };\n}\n\nconst counter = createCounter();\n\nconsole.log(counter());",
     options: [
       { id: "A", text: "20" },
       { id: "B", text: "undefined" },
-      { id: "C", text: "10" },
+      { id: "C", text: "1" },
       { id: "D", text: "ReferenceError" }
     ],
     correctOptionId: "C",
-    explanation: "The inner function closes over the `count` variable from `createCounter`. Even after `createCounter` finishes, the returned function retains access to that variable. The first call increments it from 0 to 1, so the exact result depends on the provided initialization. Here the closure returns the captured value after its defined update.",
+    explanation: "The returned function closes over `count`. The first call increments it from 0 to 1, so the result is `1`.",
     tags: ["closures", "scope", "functions"]
   },
 
@@ -383,7 +383,7 @@ const javascriptAllInOneQuestions = [
     order: 22,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is printed?",
+    question: "What is printed?\n\nconst user = {\n  age: 1\n};\n\nuser.age = 2;\n\nconsole.log(user.age);",
     options: [
       { id: "A", text: "1" },
       { id: "B", text: "undefined" },
@@ -391,7 +391,7 @@ const javascriptAllInOneQuestions = [
       { id: "D", text: "2" }
     ],
     correctOptionId: "D",
-    explanation: "The object is mutated through the `user` reference. `user.age = 2` changes the object's property, and `console.log(user.age)` therefore prints 2.",
+    explanation: "The object is mutated through the `user` reference. `user.age = 2` changes the object's property, so `console.log(user.age)` prints `2`.",
     tags: ["objects", "references", "mutation"]
   },
 
@@ -437,7 +437,7 @@ const javascriptAllInOneQuestions = [
     order: 25,
     type: "code",
     difficulty: "Intermediate",
-    question: "What is printed?",
+    question: "What is printed?\n\nconst user = {\n  name: \"Avi\",\n  role: \"Developer\"\n};\n\nconst { name } = user;\n\nconsole.log(name);",
     options: [
       { id: "A", text: "Developer" },
       { id: "B", text: "undefined" },
@@ -491,7 +491,7 @@ const javascriptAllInOneQuestions = [
     order: 28,
     type: "code",
     difficulty: "Advanced",
-    question: "What is the output order?",
+    question: "What is the output order?\n\nconsole.log(\"A\");\n\nPromise.resolve().then(() => {\n  console.log(\"B\");\n});\n\nconsole.log(\"C\");",
     options: [
       { id: "A", text: "A B C" },
       { id: "B", text: "A C B" },
@@ -797,7 +797,7 @@ const javascriptAllInOneQuestions = [
     order: 45,
     type: "code",
     difficulty: "Advanced",
-    question: "What is the output order?",
+    question: "What is the output order?\n\nconsole.log(\"start\");\n\nsetTimeout(() => {\n  console.log(\"timeout\");\n}, 0);\n\nPromise.resolve().then(() => {\n  console.log(\"promise\");\n});\n\nconsole.log(\"end\");",
     options: [
       { id: "A", text: "start, timeout, promise, end" },
       { id: "B", text: "start, promise, end, timeout" },
@@ -805,7 +805,7 @@ const javascriptAllInOneQuestions = [
       { id: "D", text: "promise, start, end, timeout" }
     ],
     correctOptionId: "C",
-    explanation: "The synchronous logs `start` and `end` run first. The resolved Promise callback is a microtask and runs before the timer callback, which is a task. Therefore the order is start, end, promise, timeout.",
+    explanation: "The synchronous logs `start` and `end` run first. The resolved Promise callback is a microtask and runs before the timer callback. Therefore the order is `start`, `end`, `promise`, `timeout`.",
     tags: ["event-loop", "microtasks", "setTimeout", "Promises"]
   },
 

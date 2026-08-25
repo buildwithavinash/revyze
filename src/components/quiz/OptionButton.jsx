@@ -4,7 +4,7 @@ const OptionButton = ({ option, onAnswerSelect, selectedAnswer, questionId }) =>
   return (
     <button
       onClick={() => onAnswerSelect(questionId, option.id)}
-      className={`w-full flex items-center gap-2.5 sm:gap-3 text-start px-3 py-2 sm:py-2.5 rounded-button border text-xs sm:text-sm transition-all duration-150 cursor-pointer text-text
+      className={`w-full flex items-center gap-2.5 sm:gap-3 text-start px-3 py-2 sm:py-2.5 rounded-button border text-sm transition-all duration-150 cursor-pointer text-text
         ${isSelected
           ? "border-primary bg-primary/10"
           : "border-border bg-background hover:bg-surface-hover"}`}
