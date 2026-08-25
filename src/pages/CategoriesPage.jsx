@@ -12,7 +12,7 @@ const CategoriesPage = () => {
         {/* Back */}
         <Link
           to="/"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-text-secondary mt-4"
+          className="inline-flex items-center gap-1.5 px-3 md:px-20 py-1.5 text-xs text-text-secondary mt-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" strokeWidth={2} />
           Back
