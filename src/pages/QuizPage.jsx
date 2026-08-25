@@ -258,7 +258,7 @@ const QuizPage = () => {
     <div className="min-h-screen flex items-center justify-center px-1 sm:px-4">
       <Container>
         <div className="flex justify-center">
-          <div className="w-full max-w-2xl sm:w-xl lg:w-2xl h-[560px] sm:h-[580px] flex flex-col border border-border rounded-card bg-surface p-4 sm:p-5 md:p-6">
+          <div className="w-full max-w-2xl sm:w-xl lg:w-2xl h-140 sm:h-145 flex flex-col border border-border rounded-card bg-surface p-4 sm:p-5 md:p-6">
             <QuizHeader
               quiz={quiz}
               currentQuestionIndex={currentQuestionIndex + 1}

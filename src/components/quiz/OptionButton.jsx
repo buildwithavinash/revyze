@@ -10,7 +10,7 @@ const OptionButton = ({ option, onAnswerSelect, selectedAnswer, questionId }) =>
           : "border-border bg-background hover:bg-surface-hover"}`}
     >
       <span
-        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-pill border-2 flex-shrink-0 ${
+        className={`w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-pill border-2 shrink-0 ${
           isSelected ? "border-primary bg-primary" : "border-border"
         }`}
       />

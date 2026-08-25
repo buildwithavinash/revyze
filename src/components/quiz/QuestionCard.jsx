@@ -34,7 +34,7 @@ const QuestionCard = ({ question, questionNumber, onAnswerSelect, selectedAnswer
 
   return (
     <div className="h-full min-w-0 flex flex-col">
-      <h2 className="font-semibold text-base sm:text-lg text-text leading-snug mb-3 flex-shrink-0">
+      <h2 className="font-semibold text-base sm:text-lg text-text leading-snug mb-3 shrink-0">
         {questionNumber}. {prompt}
       </h2>
 
@@ -44,7 +44,7 @@ const QuestionCard = ({ question, questionNumber, onAnswerSelect, selectedAnswer
         </pre>
       )}
 
-      <div className="flex flex-col gap-2 sm:gap-2.5 flex-shrink-0">
+      <div className="flex flex-col gap-2 sm:gap-2.5 shrink-0">
         {question.options.map((option) => (
           <OptionButton
             key={option.id}
