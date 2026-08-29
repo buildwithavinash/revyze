@@ -12,6 +12,7 @@ import HistoryAttemptPage from "./pages/HistoryAttemptPage";
 import HistoryReviewAnswersPage from "./pages/HistoryReviewAnswersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { getCategoryBySlug, getQuizBySlug } from "./services/quizService";
+import { supabase } from "./lib/supabase";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
@@ -52,6 +53,7 @@ const PageTitle = () => {
 };
 
 const App = () => {
+  console.log("Supabase client:", supabase);
   return (
     <>
       <UpdatePrompt />
