@@ -29,6 +29,15 @@ export const signIn = async (email, password) => {
 }
 
 // sign out
+export const signOut = async () => {
+    const {error} = await supabase.auth.signOut();
+
+    if(error){
+        throw error;
+    }
+}
+
+// get current session
 export const getSession = async () => {
     const {data, error} = await supabase.auth.getSession();
 

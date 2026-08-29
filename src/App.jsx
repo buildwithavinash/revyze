@@ -13,6 +13,7 @@ import HistoryReviewAnswersPage from "./pages/HistoryReviewAnswersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { getCategoryBySlug, getQuizBySlug } from "./services/quizService";
 import { supabase } from "./lib/supabase";
+import AuthTestPage from "./pages/AuthTestPage";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
@@ -67,6 +68,7 @@ const App = () => {
         <Route path="/quiz/:slug/review" element={<ReviewAnswersPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/history/:attemptId" element={<HistoryAttemptPage />} />
+        <Route path="/auth-test" element={<AuthTestPage />} />
         <Route
           path="/history/:attemptId/review"
           element={<HistoryReviewAnswersPage />}
