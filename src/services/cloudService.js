@@ -36,3 +36,32 @@ export const saveCloudQuizAttempt = async (attempt) => {
 
   return data;
 };
+
+export const getCloudQuizAttempts = async () => {
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw userError;
+  }
+
+  if (!user) {
+    return [];
+  }
+
+  const { data, error } = await supabase
+    .from("quiz_attempts")
+    .select("*")
+    .eq("user_id", user.id)
+    .order("completed_at", {
+      ascending: false,
+    });
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};

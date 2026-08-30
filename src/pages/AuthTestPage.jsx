@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { signIn, signUp, signOut } from "../services/authService";
+import { getCloudQuizAttempts } from "../services/cloudService";
 
 const AuthTestPage = () => {
   const { user, isLoading, isAuthenticated } = useAuth();
@@ -58,6 +59,16 @@ const AuthTestPage = () => {
     }
   };
 
+  const handleCloudTest = async () => {
+  try {
+    const attempts = await getCloudQuizAttempts();
+
+    console.log("☁️ Cloud attempts:", attempts);
+  } catch (error) {
+    console.error("❌ Failed to get cloud attempts:", error);
+  }
+};
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -91,6 +102,13 @@ const AuthTestPage = () => {
             >
               Logout
             </button>
+
+            <button
+  onClick={handleCloudTest}
+  className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
+>
+  Test Cloud Attempts
+</button>
           </div>
         ) : (
           <form
