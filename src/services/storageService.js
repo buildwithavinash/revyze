@@ -1,18 +1,12 @@
 import {db} from "../db/db";
 
 
-const createAttemptId = () => {
-  return crypto.randomUUID();
-};
 // quiz attempts
 export const saveQuizAttempt = async (attempt) => {
+  await db.quizAttempts.add(attempt);
 
-    const attemptWithId = {
-    ...attempt,
-    id: createAttemptId(),
-  }
-    return await db.quizAttempts.add(attemptWithId);
-}
+  return attempt.id;
+};
 
 export const getQuizAttempts = async (quizId) => {
     return await db.quizAttempts.where("quizId").equals(quizId).reverse().sortBy('completedAt');

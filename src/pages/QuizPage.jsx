@@ -1,9 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
-import {
-  calculateQuizResults,
-  getQuizBySlug,
-} from "../services/quizService";
+import { calculateQuizResults, getQuizBySlug } from "../services/quizService";
 import QuizHeader from "../components/quiz/QuizHeader";
 import QuestionCard from "../components/quiz/QuestionCard";
 import Container from "../components/ui/Container";
@@ -17,6 +14,7 @@ import {
   saveQuizAttempt,
   saveQuizProgress,
 } from "../services/storageService";
+import { saveCloudQuizAttempt } from "../services/cloudService";
 
 const createQuizSessionSeed = () => crypto.randomUUID();
 
@@ -202,7 +200,9 @@ const QuizPage = () => {
 
   const handleStartAgain = async () => {
     const freshSeed = createQuizSessionSeed();
-    const freshQuestions = await loadQuestionsForQuiz(quiz, { seed: freshSeed });
+    const freshQuestions = await loadQuestionsForQuiz(quiz, {
+      seed: freshSeed,
+    });
 
     await deleteQuizProgress(quiz.id);
 
@@ -219,40 +219,69 @@ const QuizPage = () => {
     setShowFinishModal(true);
   };
 
-  const finishQuiz = async () => {
-    setShowFinishModal(false);
+const finishQuiz = async () => {
+  setShowFinishModal(false);
 
-    const results = calculateQuizResults(questions, answers);
-    const attempt = {
-      quizId: quiz.id,
-      answers,
-      results,
-      startedAt: quizStartedAt,
-      completedAt: Date.now(),
-      shuffleSeed: quizSessionSeed,
-    };
+  const results = calculateQuizResults(
+    questions,
+    answers
+  );
 
-    try {
-      const attemptId = await saveQuizAttempt(attempt);
-
-      await deleteQuizProgress(quiz.id);
-
-      sessionStorage.setItem("revyze:lastAttemptId", String(attemptId));
-
-      navigate("/results", {
-        state: {
-          quiz,
-          results,
-          answers,
-          attemptId,
-          shuffleSeed: quizSessionSeed,
-        },
-      });
-    } catch (finishError) {
-      console.error("Failed to finish quiz:", finishError);
-      setError("Unable to save your quiz attempt.");
-    }
+  const attempt = {
+    id: crypto.randomUUID(),
+    quizId: quiz.id,
+    answers,
+    results,
+    startedAt: quizStartedAt,
+    completedAt: Date.now(),
+    shuffleSeed: quizSessionSeed,
   };
+
+  try {
+    // 1. Always save locally first
+    await saveQuizAttempt(attempt);
+
+    // 2. Try cloud save
+    try {
+      await saveCloudQuizAttempt(attempt);
+    } catch (cloudError) {
+      console.error(
+        "Cloud sync failed:",
+        cloudError
+      );
+    }
+
+    // 3. Quiz is completed, so remove local progress
+    await deleteQuizProgress(quiz.id);
+
+    // 4. Remember the attempt
+    sessionStorage.setItem(
+      "revyze:lastAttemptId",
+      String(attempt.id)
+    );
+
+    // 5. Go to results
+    navigate("/results", {
+      state: {
+        quiz,
+        results,
+        answers,
+        attemptId: attempt.id,
+        shuffleSeed: quizSessionSeed,
+      },
+    });
+
+  } catch (finishError) {
+    console.error(
+      "Failed to finish quiz:",
+      finishError
+    );
+
+    setError(
+      "Unable to save your quiz attempt."
+    );
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center px-1 sm:px-4">
