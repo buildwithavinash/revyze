@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { signIn, signUp, signOut } from "../services/authService";
 import { getCloudQuizAttempts } from "../services/cloudService";
+import { syncQuizAttempts } from "../services/syncService";
 
 const AuthTestPage = () => {
   const { user, isLoading, isAuthenticated } = useAuth();
@@ -69,6 +70,15 @@ const AuthTestPage = () => {
   }
 };
 
+const handleSyncTest = async () => {
+  try {
+    const result = await syncQuizAttempts();
+    console.log("Sync result:", result);
+  }catch(error){
+    console.log(error);
+  }
+}
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -108,6 +118,13 @@ const AuthTestPage = () => {
   className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
 >
   Test Cloud Attempts
+</button>
+
+<button
+  onClick={handleSyncTest}
+  className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
+>
+  Test Sync
 </button>
           </div>
         ) : (

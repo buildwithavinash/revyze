@@ -1,8 +1,16 @@
-import { getCloudQuizAttempts } from "./cloudService";
-import { getAllQuizAttempts, saveQuizAttempt } from "./storageService";
+import {
+  getAllQuizAttempts,
+  saveQuizAttempt,
+} from "./storageService";
+
+import {
+  getCloudQuizAttempts,
+  saveCloudQuizAttempts,
+} from "./cloudService";
+
 
 const normalizeCloudAttempt = (cloudAttempt) => {
-     return {
+  return {
     id: cloudAttempt.id,
     quizId: cloudAttempt.quiz_id,
     answers: cloudAttempt.answers || {},
@@ -14,17 +22,43 @@ const normalizeCloudAttempt = (cloudAttempt) => {
       ? new Date(cloudAttempt.completed_at).getTime()
       : null,
   };
-}
+};
+
 
 export const syncQuizAttempts = async () => {
-    const localAttempts = await getAllQuizAttempts();
-    const cloudAttempts = await getCloudQuizAttempts();
+  const localAttempts = await getAllQuizAttempts();
+  const cloudAttempts = await getCloudQuizAttempts();
 
-    const localAttemptIds = new Set(localAttempts.map((attempt)=> attempt.id));
+  const cloudAttemptIds = new Set(
+    cloudAttempts.map((attempt) => attempt.id)
+  );
 
-    let importedCount = 0;
+  const localAttemptsToUpload = localAttempts.filter(
+    (attempt) => !cloudAttemptIds.has(attempt.id)
+  );
 
-     for (const cloudAttempt of cloudAttempts) {
+  let uploadedCount = 0;
+
+  if (localAttemptsToUpload.length > 0) {
+    await saveCloudQuizAttempts(
+      localAttemptsToUpload
+    );
+
+    uploadedCount =
+      localAttemptsToUpload.length;
+  }
+
+  // Refresh cloud attempts after uploading
+  const updatedCloudAttempts =
+    await getCloudQuizAttempts();
+
+  const localAttemptIds = new Set(
+    localAttempts.map((attempt) => attempt.id)
+  );
+
+  let importedCount = 0;
+
+  for (const cloudAttempt of updatedCloudAttempts) {
     if (localAttemptIds.has(cloudAttempt.id)) {
       continue;
     }
@@ -34,12 +68,15 @@ export const syncQuizAttempts = async () => {
 
     await saveQuizAttempt(localAttempt);
 
+    localAttemptIds.add(localAttempt.id);
+
     importedCount++;
   }
 
   return {
     localCount: localAttempts.length,
-    cloudCount: cloudAttempts.length,
+    cloudCount: updatedCloudAttempts.length,
+    uploadedCount,
     importedCount,
   };
-}
+};
