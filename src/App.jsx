@@ -14,6 +14,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { getCategoryBySlug, getQuizBySlug } from "./services/quizService";
 import { supabase } from "./lib/supabase";
 import AuthTestPage from "./pages/AuthTestPage";
+import useSync from "./hooks/useSync";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
@@ -54,6 +55,7 @@ const PageTitle = () => {
 };
 
 const App = () => {
+  useSync();
   console.log("Supabase client:", supabase);
   return (
     <>

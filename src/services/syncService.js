@@ -80,3 +80,22 @@ export const syncQuizAttempts = async () => {
     importedCount,
   };
 };
+
+export const trySyncQuizAttempts = async () => {
+  try {
+    const result = await syncQuizAttempts();
+    console.log("Quiz sync coompleted: ", result);
+
+    return {
+      success: true,
+      result,
+    };
+  }catch(error){
+    console.error("Quiz sunc failed: ", error)
+
+    return {
+      success: false,
+      error
+    }
+  }
+}
