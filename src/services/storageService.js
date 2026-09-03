@@ -37,6 +37,10 @@ export const getQuizProgressByIds = async (quizIds) => {
 return await db.quizProgress.where('quizId').anyOf(quizIds).toArray();
 }
 
+export const getAllQuizProgress = async () => {
+    return await db.quizProgress.toArray();
+}
+
 export const getQuizAttemptSummariesByIds = async (quizIds) => {
     const attempts = await db.quizAttempts.where("quizId").anyOf(quizIds).toArray();
 

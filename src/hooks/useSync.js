@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAuth } from "../context/AuthContext"
-import { trySyncQuizAttempts } from "../services/syncService";
+import { syncAll } from "../services/syncService";
 
 const useSync = () => {
     const {isAuthenticated} = useAuth();
@@ -12,7 +12,14 @@ const useSync = () => {
 
         const handleOnline = async () => {
             console.log("Internet connection restrored. Trying cloud sync...");
-            await trySyncQuizAttempts();
+
+            try {
+                const result = await syncAll();
+                console.log("Cloud Sync completed: ", result);
+            }catch(error){
+                console.error("Cloud sync failed: ", error)
+            }
+           
         };
 
         window.addEventListener('online', handleOnline);

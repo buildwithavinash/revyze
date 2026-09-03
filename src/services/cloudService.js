@@ -112,3 +112,119 @@ export const saveCloudQuizAttempts = async (attempts) => {
 
   return data;
 };
+
+export const getCloudQuizProgress = async () => {
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw userError;
+  }
+
+  if (!user) {
+    return [];
+  }
+
+  const { data, error } = await supabase
+    .from("quiz_progress")
+    .select("*")
+    .eq("user_id", user.id);
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
+export const saveCloudQuizProgress = async (progress) => {
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw userError;
+  }
+
+  if (!user) {
+    return null;
+  }
+
+  const { data, error } = await supabase
+    .from("quiz_progress")
+    .upsert(
+      {
+        user_id: user.id,
+        quiz_id: progress.quizId,
+        answers: progress.answers || {},
+        current_question_index: progress.currentQuestionIndex ?? 0,
+        started_at: progress.startedAt
+          ? new Date(progress.startedAt).toISOString()
+          : null,
+        updated_at: progress.updatedAt
+          ? new Date(progress.updatedAt).toISOString()
+          : new Date().toISOString(),
+          shuffle_seed: progress.shuffleSeed || null,
+      },
+      {
+        onConflict: "user_id,quiz_id",
+      }
+    )
+    .select()
+    .single();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};
+
+export const saveCloudQuizProgresses = async (progresses) => {
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw userError;
+  }
+
+  if (!user) {
+    return [];
+  }
+
+  if (progresses.length === 0) {
+    return [];
+  }
+
+  const payload = progresses.map((progress) => ({
+    user_id: user.id,
+    quiz_id: progress.quizId,
+    answers: progress.answers || {},
+    current_question_index: progress.currentQuestionIndex ?? 0,
+    started_at: progress.startedAt
+      ? new Date(progress.startedAt).toISOString()
+      : null,
+    updated_at: progress.updatedAt
+      ? new Date(progress.updatedAt).toISOString()
+      : new Date().toISOString(),
+      shuffle_seed: progress.shuffleSeed || null,
+  }));
+
+  const { data, error } = await supabase
+    .from("quiz_progress")
+    .upsert(payload, {
+      onConflict: "user_id,quiz_id",
+    })
+    .select();
+
+  if (error) {
+    throw error;
+  }
+
+  return data;
+};

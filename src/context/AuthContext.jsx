@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
-import { syncQuizAttempts } from "../services/syncService";
+import { syncAll } from "../services/syncService";
 
 const AuthContext = createContext(null);
 
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
         try {
           setIsSyncing(true);
 
-          await syncQuizAttempts();
+          await syncAll();
 
           console.log("Cloud sync completed.");
         } catch (error) {
