@@ -228,3 +228,23 @@ export const saveCloudQuizProgresses = async (progresses) => {
 
   return data;
 };
+
+export const deleteCloudQuizProgress = async (quizId) => {
+  const {data: {user}, error: userError} = await supabase.auth.getUser();
+
+  if(userError){
+    throw userError
+  }
+
+  if(!user){
+    return null
+  }
+
+  const {error} = await supabase.from("quiz_progress").delete().eq("user_id", user.id).eq("quiz_id", quizId);
+
+  if(error){
+    throw error;
+  }
+
+  return true;
+}

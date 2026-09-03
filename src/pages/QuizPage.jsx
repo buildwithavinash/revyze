@@ -20,6 +20,7 @@ import {
 } from "../services/storageService";
 
 import {
+  deleteCloudQuizProgress,
   saveCloudQuizAttempt,
   saveCloudQuizProgress,
 } from "../services/cloudService";
@@ -82,12 +83,8 @@ const QuizPage = () => {
         setQuizSessionSeed(seed);
         setQuestions(data);
         setAnswers(progress?.answers || {});
-        setCurrentQuestionIndex(
-          progress?.currentQuestionIndex ?? 0
-        );
-        setQuizStartedAt(
-          progress?.startedAt ?? Date.now()
-        );
+        setCurrentQuestionIndex(progress?.currentQuestionIndex ?? 0);
+        setQuizStartedAt(progress?.startedAt ?? Date.now());
         setShowResumeModal(Boolean(progress));
       } catch (loadError) {
         console.error(loadError);
@@ -112,14 +109,9 @@ const QuizPage = () => {
   if (!quiz) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Quiz not found
-        </h1>
+        <h1 className="text-lg font-semibold text-text">Quiz not found</h1>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -129,9 +121,7 @@ const QuizPage = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">
-          Loading quiz...
-        </p>
+        <p className="text-sm text-text-secondary">Loading quiz...</p>
       </div>
     );
   }
@@ -143,14 +133,9 @@ const QuizPage = () => {
           Something went wrong
         </h1>
 
-        <p className="text-sm text-text-secondary">
-          {error}
-        </p>
+        <p className="text-sm text-text-secondary">{error}</p>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -164,10 +149,7 @@ const QuizPage = () => {
           No questions available
         </h1>
 
-        <Link
-          to="/"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/" className="text-sm text-primary hover:underline">
           Back home
         </Link>
       </div>
@@ -176,10 +158,7 @@ const QuizPage = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const persistProgress = async (
-    nextAnswers,
-    nextQuestionIndex
-  ) => {
+  const persistProgress = async (nextAnswers, nextQuestionIndex) => {
     if (!quizSessionSeed) {
       return;
     }
@@ -201,31 +180,21 @@ const QuizPage = () => {
       try {
         await saveCloudQuizProgress(progress);
       } catch (cloudError) {
-        console.error(
-          "Cloud progress sync failed:",
-          cloudError
-        );
+        console.error("Cloud progress sync failed:", cloudError);
       }
     }
   };
 
   const handleNext = async () => {
-    if (
-      currentQuestionIndex >=
-      questions.length - 1
-    ) {
+    if (currentQuestionIndex >= questions.length - 1) {
       return;
     }
 
-    const nextQuestionIndex =
-      currentQuestionIndex + 1;
+    const nextQuestionIndex = currentQuestionIndex + 1;
 
     setCurrentQuestionIndex(nextQuestionIndex);
 
-    await persistProgress(
-      answers,
-      nextQuestionIndex
-    );
+    await persistProgress(answers, nextQuestionIndex);
   };
 
   const handlePrevious = async () => {
@@ -233,23 +202,14 @@ const QuizPage = () => {
       return;
     }
 
-    const previousQuestionIndex =
-      currentQuestionIndex - 1;
+    const previousQuestionIndex = currentQuestionIndex - 1;
 
-    setCurrentQuestionIndex(
-      previousQuestionIndex
-    );
+    setCurrentQuestionIndex(previousQuestionIndex);
 
-    await persistProgress(
-      answers,
-      previousQuestionIndex
-    );
+    await persistProgress(answers, previousQuestionIndex);
   };
 
-  const handleAnswerSelect = async (
-    questionId,
-    optionId
-  ) => {
+  const handleAnswerSelect = async (questionId, optionId) => {
     const updatedAnswers = {
       ...answers,
       [questionId]: optionId,
@@ -257,10 +217,7 @@ const QuizPage = () => {
 
     setAnswers(updatedAnswers);
 
-    await persistProgress(
-      updatedAnswers,
-      currentQuestionIndex
-    );
+    await persistProgress(updatedAnswers, currentQuestionIndex);
   };
 
   const handleContinueQuiz = () => {
@@ -270,13 +227,9 @@ const QuizPage = () => {
 
     setAnswers(savedProgress.answers || {});
 
-    setCurrentQuestionIndex(
-      savedProgress.currentQuestionIndex || 0
-    );
+    setCurrentQuestionIndex(savedProgress.currentQuestionIndex || 0);
 
-    setQuizStartedAt(
-      savedProgress.startedAt || Date.now()
-    );
+    setQuizStartedAt(savedProgress.startedAt || Date.now());
 
     setShowResumeModal(false);
   };
@@ -284,12 +237,19 @@ const QuizPage = () => {
   const handleStartAgain = async () => {
     const freshSeed = createQuizSessionSeed();
 
-    const freshQuestions =
-      await loadQuestionsForQuiz(quiz, {
-        seed: freshSeed,
-      });
+    const freshQuestions = await loadQuestionsForQuiz(quiz, {
+      seed: freshSeed,
+    });
 
     await deleteQuizProgress(quiz.id);
+
+    if (isAuthenticated) {
+      try {
+        await deleteCloudQuizProgress(quiz.id);
+      } catch (cloudError) {
+        console.error("Failed to delete cloud quiz progress: ", cloudError);
+      }
+    }
 
     setSavedProgress(null);
     setQuizSessionSeed(freshSeed);
@@ -307,10 +267,7 @@ const QuizPage = () => {
   const finishQuiz = async () => {
     setShowFinishModal(false);
 
-    const results = calculateQuizResults(
-      questions,
-      answers
-    );
+    const results = calculateQuizResults(questions, answers);
 
     const attempt = {
       id: crypto.randomUUID(),
@@ -330,20 +287,23 @@ const QuizPage = () => {
       try {
         await saveCloudQuizAttempt(attempt);
       } catch (cloudError) {
-        console.error(
-          "Cloud sync failed:",
-          cloudError
-        );
+        console.error("Cloud sync failed:", cloudError);
       }
 
       // 3. Quiz is completed, so remove local progress.
       await deleteQuizProgress(quiz.id);
 
+      // Remove cloud progress for authenticated users
+      if (isAuthenticated) {
+        try {
+          await deleteCloudQuizProgress(quiz.id);
+        } catch (cloudError) {
+          console.error("Failed to delete cloud quiz progress:", cloudError);
+        }
+      }
+
       // 4. Remember the attempt.
-      sessionStorage.setItem(
-        "revyze:lastAttemptId",
-        String(attempt.id)
-      );
+      sessionStorage.setItem("revyze:lastAttemptId", String(attempt.id));
 
       // 5. Go to results.
       navigate("/results", {
@@ -356,14 +316,9 @@ const QuizPage = () => {
         },
       });
     } catch (finishError) {
-      console.error(
-        "Failed to finish quiz:",
-        finishError
-      );
+      console.error("Failed to finish quiz:", finishError);
 
-      setError(
-        "Unable to save your quiz attempt."
-      );
+      setError("Unable to save your quiz attempt.");
     }
   };
 
@@ -374,33 +329,23 @@ const QuizPage = () => {
           <div className="w-full max-w-2xl sm:w-xl lg:w-2xl h-140 sm:h-145 flex flex-col border border-border rounded-card bg-surface p-4 sm:p-5 md:p-6">
             <QuizHeader
               quiz={quiz}
-              currentQuestionIndex={
-                currentQuestionIndex + 1
-              }
+              currentQuestionIndex={currentQuestionIndex + 1}
               totalQuestions={questions.length}
             />
 
             <div className="flex-1 min-h-0 min-w-0 flex flex-col py-3 sm:py-4">
               <QuestionCard
                 question={currentQuestion}
-                questionNumber={
-                  currentQuestionIndex + 1
-                }
-                onAnswerSelect={
-                  handleAnswerSelect
-                }
-                selectedAnswer={
-                  answers[currentQuestion.id]
-                }
+                questionNumber={currentQuestionIndex + 1}
+                onAnswerSelect={handleAnswerSelect}
+                selectedAnswer={answers[currentQuestion.id]}
               />
             </div>
 
             <QuizFooter
               onNext={handleNext}
               onPrevious={handlePrevious}
-              currentQuestionIndex={
-                currentQuestionIndex
-              }
+              currentQuestionIndex={currentQuestionIndex}
               totalQuestions={questions.length}
               onEndQuiz={handleEndQuiz}
             />
@@ -410,24 +355,16 @@ const QuizPage = () => {
 
       {showFinishModal && (
         <FinishQuizModal
-          attemptedQuestions={
-            Object.keys(answers).length
-          }
+          attemptedQuestions={Object.keys(answers).length}
           totalQuestions={questions.length}
-          onClose={() =>
-            setShowFinishModal(false)
-          }
+          onClose={() => setShowFinishModal(false)}
           onFinish={finishQuiz}
         />
       )}
 
       {showResumeModal && savedProgress && (
         <ResumeQuizModal
-          answeredQuestions={
-            Object.keys(
-              savedProgress.answers || {}
-            ).length
-          }
+          answeredQuestions={Object.keys(savedProgress.answers || {}).length}
           onContinue={handleContinueQuiz}
           onStartAgain={handleStartAgain}
         />
