@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 import { signOut } from "../services/authService";
 
 import Container from "../components/ui/Container";
@@ -10,6 +11,7 @@ import ConfirmModal from "../components/common/ConfirmModal";
 
 const AccountPage = () => {
   const { user, isAuthenticated } = useAuth();
+  const { showToast } = useToast();
   const navigate = useNavigate();
 
   const [showSignOutModal, setShowSignOutModal] =
@@ -18,9 +20,11 @@ const AccountPage = () => {
   const handleSignOut = async () => {
     try {
       await signOut();
+      showToast("You've been signed out.", "success");
       navigate("/");
     } catch (error) {
       console.error("Failed to sign out:", error);
+      showToast("Unable to sign out. Please try again.", "error");
     } finally {
       setShowSignOutModal(false);
     }

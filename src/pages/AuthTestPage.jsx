@@ -3,9 +3,12 @@ import { useAuth } from "../context/AuthContext";
 import { signIn, signUp, signOut } from "../services/authService";
 import { getCloudQuizAttempts } from "../services/cloudService";
 import { syncQuizAttempts } from "../services/syncService";
+import { useToast } from "../context/ToastContext";
+import LoadingState from "../components/common/LoadingState";
 
 const AuthTestPage = () => {
   const { user, isLoading, isAuthenticated } = useAuth();
+  const { showToast } = useToast();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,19 +31,20 @@ const AuthTestPage = () => {
 
         console.log("Signup response:", data);
 
-        setMessage(
+        showToast(
           "Signup successful. Check your email if confirmation is required.",
+          "success",
         );
       } else {
         const data = await signIn(email, password);
 
         console.log("Login response:", data);
 
-        setMessage("Login successful.");
+        showToast("Login successful.", "success");
       }
     } catch (error) {
       console.error(error);
-      setError(error.message || "Authentication failed.");
+      showToast(error.message || "Authentication failed.", "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -53,10 +57,10 @@ const AuthTestPage = () => {
 
       await signOut();
 
-      setMessage("Logged out successfully.");
+      showToast("Logged out successfully.", "success");
     } catch (error) {
       console.error(error);
-      setError(error.message || "Logout failed.");
+      showToast(error.message || "Logout failed.", "error");
     }
   };
 
@@ -65,8 +69,10 @@ const AuthTestPage = () => {
     const attempts = await getCloudQuizAttempts();
 
     console.log("☁️ Cloud attempts:", attempts);
+    showToast("Cloud attempts loaded successfully.", "success");
   } catch (error) {
     console.error("❌ Failed to get cloud attempts:", error);
+    showToast("Cloud attempts could not be loaded.", "error");
   }
 };
 
@@ -74,17 +80,15 @@ const handleSyncTest = async () => {
   try {
     const result = await syncQuizAttempts();
     console.log("Sync result:", result);
+    showToast("Sync completed successfully.", "success");
   }catch(error){
     console.log(error);
+    showToast("Sync failed.", "error");
   }
 }
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>Loading authentication...</p>
-      </div>
-    );
+    return <LoadingState message="Loading authentication..." fullScreen />;
   }
 
   return (

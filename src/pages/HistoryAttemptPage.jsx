@@ -7,6 +7,8 @@ import Container from "../components/ui/Container";
 import { getQuizAttemptById } from "../services/storageService";
 
 import { getQuizById } from "../services/quizService";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 const getScoreStyle = (accuracy) => {
   if (accuracy >= 90) {
@@ -54,24 +56,28 @@ const HistoryAttemptPage = () => {
 
   // Loading
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">Loading attempt...</p>
-      </div>
-    );
+    return <LoadingState message="Loading attempt..." fullScreen />;
   }
 
   // Attempt not found
   if (error || !attempt) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">Attempt not found</h1>
-
-        <p className="text-sm text-text-secondary">{error}</p>
-
-        <Link to="/history" className="text-sm text-primary hover:underline">
-          Back to history
-        </Link>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        {error?.startsWith("Unable") ? (
+          <ErrorState
+            title="Unable to load attempt"
+            message={error}
+            onRetry={() => window.location.reload()}
+          />
+        ) : (
+          <div className="text-center">
+            <h1 className="text-lg font-semibold text-text">Attempt not found</h1>
+            <p className="mt-2 text-sm text-text-secondary">{error}</p>
+            <Link to="/history" className="inline-block mt-3 text-sm text-primary hover:underline">
+              Back to history
+            </Link>
+          </div>
+        )}
       </div>
     );
   }

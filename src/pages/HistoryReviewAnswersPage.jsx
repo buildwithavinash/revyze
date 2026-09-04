@@ -16,6 +16,8 @@ import {
 import {
   loadQuestionsForQuiz,
 } from "../services/questionService";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 
 const HistoryReviewAnswersPage = () => {
@@ -78,36 +80,29 @@ const HistoryReviewAnswersPage = () => {
 
   // Loading
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">
-          Loading review...
-        </p>
-      </div>
-    );
+    return <LoadingState message="Loading review..." fullScreen />;
   }
 
 
   // Error
   if (error || !attempt || !quiz) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-
-        <h1 className="text-lg font-semibold text-text">
-          Unable to load review
-        </h1>
-
-        <p className="text-sm text-text-secondary">
-          {error}
-        </p>
-
-        <Link
-          to="/history"
-          className="text-sm text-primary hover:underline"
-        >
-          Back to history
-        </Link>
-
+      <div className="min-h-screen flex items-center justify-center px-4">
+        {error?.startsWith("Unable") ? (
+          <ErrorState
+            title="Unable to load review"
+            message={error}
+            onRetry={() => window.location.reload()}
+          />
+        ) : (
+          <div className="text-center">
+            <h1 className="text-lg font-semibold text-text">Unable to load review</h1>
+            <p className="mt-2 text-sm text-text-secondary">{error}</p>
+            <Link to="/history" className="inline-block mt-3 text-sm text-primary hover:underline">
+              Back to history
+            </Link>
+          </div>
+        )}
       </div>
     );
   }

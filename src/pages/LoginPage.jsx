@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router";
 
 import Container from "../components/ui/Container";
 import Header from "../components/common/Header";
+import { useToast } from "../context/ToastContext";
 import { signIn } from "../services/authService";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { showToast } = useToast();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,6 +34,7 @@ const LoginPage = () => {
 
       await signIn(email.trim(), password);
 
+      showToast("Welcome back.", "success");
       navigate(from, { replace: true });
     } catch (error) {
       console.error("Failed to sign in:", error);

@@ -15,6 +15,7 @@ import {
   getQuizProgressByIds,
   getQuizAttemptSummariesByIds,
 } from "../services/storageService";
+import { useToast } from "../context/ToastContext";
 
 const difficultyStyles = {
   Beginner: "bg-success/10 text-success",
@@ -24,6 +25,7 @@ const difficultyStyles = {
 
 const CategoryPage = () => {
   const { slug } = useParams();
+  const { showToast } = useToast();
 
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -62,6 +64,7 @@ const CategoryPage = () => {
         setQuizAttemptSummaries(attemptSummaries);
       } catch (error) {
         console.error("Failed to load quiz data:", error);
+        showToast("Some quiz progress could not be loaded.", "warning");
       }
     };
 

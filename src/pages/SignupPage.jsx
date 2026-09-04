@@ -3,10 +3,12 @@ import { Link, useNavigate } from "react-router";
 
 import Container from "../components/ui/Container";
 import Header from "../components/common/Header";
+import { useToast } from "../context/ToastContext";
 import { signUp } from "../services/authService";
 
 const SignupPage = () => {
   const navigate = useNavigate();
+  const { showToast } = useToast();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,8 +51,13 @@ const SignupPage = () => {
        * We handle both cases.
        */
       if (data.session) {
+        showToast("Account created successfully.", "success");
         navigate("/profile", { replace: true });
       } else {
+        showToast(
+          "Account created. Check your email to confirm your address.",
+          "success",
+        );
         setIsSignupComplete(true);
       }
     } catch (error) {

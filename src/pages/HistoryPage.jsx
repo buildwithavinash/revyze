@@ -5,6 +5,8 @@ import { ArrowLeft, CheckCircle2, CircleAlert } from "lucide-react";
 import { getAllQuizAttempts } from "../services/storageService";
 import { getQuizById } from "../services/quizService";
 import Container from "../components/ui/Container";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 const getScoreStyle = (accuracy) => {
   if (accuracy >= 90) {
@@ -45,26 +47,17 @@ const HistoryPage = () => {
 
   // Loading
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">Loading history...</p>
-      </div>
-    );
+    return <LoadingState message="Loading history..." fullScreen />;
   }
 
   // Error
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 px-4 text-center">
-        <h1 className="text-lg font-semibold text-text">
-          Something went wrong
-        </h1>
-
-        <p className="text-sm text-text-secondary">{error}</p>
-
-        <Link to="/" className="text-sm text-primary hover:underline">
-          Back home
-        </Link>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <ErrorState
+          message={error}
+          onRetry={() => window.location.reload()}
+        />
       </div>
     );
   }

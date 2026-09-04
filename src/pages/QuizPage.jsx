@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { calculateQuizResults, getQuizBySlug } from "../services/quizService";
 
@@ -9,6 +9,8 @@ import Container from "../components/ui/Container";
 import QuizFooter from "../components/quiz/QuizFooter";
 import FinishQuizModal from "../components/quiz/FinishQuizModal";
 import ResumeQuizModal from "../components/quiz/ResumeQuizModal";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 import { loadQuestionsForQuiz } from "../services/questionService";
 
@@ -26,6 +28,7 @@ import {
 } from "../services/cloudService";
 
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 
 const createQuizSessionSeed = () => crypto.randomUUID();
 
@@ -34,6 +37,8 @@ const QuizPage = () => {
   const navigate = useNavigate();
 
   const { isAuthenticated } = useAuth();
+  const { showToast } = useToast();
+  const cloudSyncWarningShown = useRef(false);
 
   const quiz = getQuizBySlug(slug);
 
@@ -119,25 +124,16 @@ const QuizPage = () => {
   }
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">Loading quiz...</p>
-      </div>
-    );
+    return <LoadingState message="Loading quiz..." fullScreen />;
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Something went wrong
-        </h1>
-
-        <p className="text-sm text-text-secondary">{error}</p>
-
-        <Link to="/" className="text-sm text-primary hover:underline">
-          Back home
-        </Link>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <ErrorState
+          message={error}
+          onRetry={() => window.location.reload()}
+        />
       </div>
     );
   }
@@ -173,14 +169,28 @@ const QuizPage = () => {
     };
 
     // Always save locally first.
-    await saveQuizProgress(progress);
+    try {
+      await saveQuizProgress(progress);
+    } catch (storageError) {
+      console.error("Local progress save failed:", storageError);
+      showToast("Your progress could not be saved locally.", "error");
+      throw storageError;
+    }
 
     // If the user is logged in, also try to save to Supabase.
     if (isAuthenticated) {
       try {
         await saveCloudQuizProgress(progress);
+        cloudSyncWarningShown.current = false;
       } catch (cloudError) {
         console.error("Cloud progress sync failed:", cloudError);
+        if (!cloudSyncWarningShown.current) {
+          showToast(
+            "Progress is saved on this device, but cloud sync failed.",
+            "warning",
+          );
+          cloudSyncWarningShown.current = true;
+        }
       }
     }
   };
@@ -235,29 +245,42 @@ const QuizPage = () => {
   };
 
   const handleStartAgain = async () => {
-    const freshSeed = createQuizSessionSeed();
+    try {
+      const freshSeed = createQuizSessionSeed();
 
-    const freshQuestions = await loadQuestionsForQuiz(quiz, {
-      seed: freshSeed,
-    });
+      const freshQuestions = await loadQuestionsForQuiz(quiz, {
+        seed: freshSeed,
+      });
 
-    await deleteQuizProgress(quiz.id);
+      await deleteQuizProgress(quiz.id);
 
-    if (isAuthenticated) {
-      try {
-        await deleteCloudQuizProgress(quiz.id);
-      } catch (cloudError) {
-        console.error("Failed to delete cloud quiz progress: ", cloudError);
+      if (isAuthenticated) {
+        try {
+          await deleteCloudQuizProgress(quiz.id);
+        } catch (cloudError) {
+          console.error("Failed to delete cloud quiz progress: ", cloudError);
+          showToast(
+            "Quiz restarted, but old cloud progress could not be removed.",
+            "warning",
+          );
+        }
       }
-    }
 
-    setSavedProgress(null);
-    setQuizSessionSeed(freshSeed);
-    setQuestions(freshQuestions);
-    setAnswers({});
-    setCurrentQuestionIndex(0);
-    setQuizStartedAt(Date.now());
-    setShowResumeModal(false);
+      setSavedProgress(null);
+      setQuizSessionSeed(freshSeed);
+      setQuestions(freshQuestions);
+      setAnswers({});
+      setCurrentQuestionIndex(0);
+      setQuizStartedAt(Date.now());
+      setShowResumeModal(false);
+      showToast("Quiz restarted.", "success");
+    } catch (restartError) {
+      console.error("Failed to restart quiz:", restartError);
+      showToast(
+        "Unable to restart the quiz. Your existing progress is still available.",
+        "error",
+      );
+    }
   };
 
   const handleEndQuiz = () => {
@@ -288,6 +311,10 @@ const QuizPage = () => {
         await saveCloudQuizAttempt(attempt);
       } catch (cloudError) {
         console.error("Cloud sync failed:", cloudError);
+        showToast(
+          "Your attempt was saved on this device, but cloud sync failed.",
+          "warning",
+        );
       }
 
       // 3. Quiz is completed, so remove local progress.
@@ -319,6 +346,7 @@ const QuizPage = () => {
       console.error("Failed to finish quiz:", finishError);
 
       setError("Unable to save your quiz attempt.");
+      showToast("We couldn't save your quiz attempt. Please try again.", "error");
     }
   };
 

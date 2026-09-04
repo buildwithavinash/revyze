@@ -7,6 +7,8 @@ import {
   getQuizById,
 } from "../services/quizService";
 import { getQuizAttemptById } from "../services/storageService";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 const LAST_ATTEMPT_KEY = "revyze:lastAttemptId";
 
@@ -85,23 +87,29 @@ const ResultsPage = () => {
   }, [state]);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">Loading results...</p>
-      </div>
-    );
+    return <LoadingState message="Loading results..." fullScreen />;
   }
 
   if (!resolvedState) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">No results found</h1>
-        <p className="text-sm text-text-secondary">
-          {loadError || "Finish a quiz to see your results here."}
-        </p>
-        <Link to="/" className="text-sm text-primary hover:underline">
-          Back home
-        </Link>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        {loadError ? (
+          <ErrorState
+            title="Unable to load results"
+            message={loadError}
+            onRetry={() => window.location.reload()}
+          />
+        ) : (
+          <div className="text-center">
+            <h1 className="text-lg font-semibold text-text">No results found</h1>
+            <p className="mt-2 text-sm text-text-secondary">
+              Finish a quiz to see your results here.
+            </p>
+            <Link to="/" className="inline-block mt-3 text-sm text-primary hover:underline">
+              Back home
+            </Link>
+          </div>
+        )}
       </div>
     );
   }

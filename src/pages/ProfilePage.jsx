@@ -13,23 +13,32 @@ import {
 
 import Container from "../components/ui/Container";
 import Header from "../components/common/Header";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 import { useAuth } from "../context/AuthContext";
 import { getAllQuizAttempts } from "../services/storageService";
 import { getQuizById } from "../services/quizService";
+import { useToast } from "../context/ToastContext";
 
 const ProfilePage = () => {
   const { user, isAuthenticated, isSyncing } = useAuth();
 
+  const { showToast } = useToast();
+
   const [attempts, setAttempts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState(null);
 
   useEffect(() => {
     const loadProfileData = async () => {
       try {
+        setLoadError(null);
         const data = await getAllQuizAttempts();
         setAttempts(data);
       } catch (error) {
         console.error("Failed to load profile data:", error);
+        setLoadError("Unable to load your activity.");
+        showToast("Unable to load your activity.", "error");
       } finally {
         setIsLoading(false);
       }
@@ -126,6 +135,22 @@ const ProfilePage = () => {
           </Container>
         </main>
       </>
+    );
+  }
+
+  if (isLoading) {
+    return <LoadingState message="Loading your profile..." fullScreen />;
+  }
+
+  if (loadError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <ErrorState
+          title="Unable to load your profile"
+          message={loadError}
+          onRetry={() => window.location.reload()}
+        />
+      </div>
     );
   }
 

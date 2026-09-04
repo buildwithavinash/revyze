@@ -6,6 +6,8 @@ import { loadQuestionsForQuiz } from "../services/questionService";
 import { getQuizAttemptById } from "../services/storageService";
 import Container from "../components/ui/Container";
 import ReviewQuestionCard from "../components/quiz/ReviewQuestionCard";
+import LoadingState from "../components/common/LoadingState";
+import ErrorState from "../components/common/ErrorState";
 
 const LAST_ATTEMPT_KEY = "revyze:lastAttemptId";
 
@@ -119,25 +121,16 @@ const ReviewAnswersPage = () => {
   }
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-sm text-text-secondary">Loading review...</p>
-      </div>
-    );
+    return <LoadingState message="Loading review..." fullScreen />;
   }
 
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">
-          Something went wrong
-        </h1>
-
-        <p className="text-sm text-text-secondary">{error}</p>
-
-        <Link to="/" className="text-sm text-primary hover:underline">
-          Back home
-        </Link>
+      <div className="min-h-screen flex items-center justify-center px-4">
+        <ErrorState
+          message={error}
+          onRetry={() => window.location.reload()}
+        />
       </div>
     );
   }
