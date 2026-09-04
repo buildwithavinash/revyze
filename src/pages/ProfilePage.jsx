@@ -15,6 +15,7 @@ import Container from "../components/ui/Container";
 import Header from "../components/common/Header";
 import { useAuth } from "../context/AuthContext";
 import { getAllQuizAttempts } from "../services/storageService";
+import { getQuizById } from "../services/quizService";
 
 const ProfilePage = () => {
   const { user, isAuthenticated, isSyncing } = useAuth();
@@ -42,7 +43,9 @@ const ProfilePage = () => {
   const bestAccuracy =
     attempts.length > 0
       ? Math.max(
-          ...attempts.map((attempt) => attempt.results?.accuracy ?? 0),
+          ...attempts.map(
+            (attempt) => attempt.results?.accuracy ?? 0,
+          ),
         )
       : 0;
 
@@ -63,6 +66,11 @@ const ProfilePage = () => {
 
   const recentAttempts = attempts.slice(0, 5);
 
+  const recentActivity = recentAttempts.map((attempt) => ({
+    ...attempt,
+    quiz: getQuizById(attempt.quizId),
+  }));
+
   const formatDate = (timestamp) => {
     if (!timestamp) return "Unknown date";
 
@@ -70,6 +78,15 @@ const ProfilePage = () => {
       dateStyle: "medium",
     }).format(new Date(timestamp));
   };
+
+  const formatMemberSince = (timestamp) => {
+  if (!timestamp) return "Unknown";
+
+  return new Intl.DateTimeFormat("en", {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(timestamp));
+};
 
   if (!isAuthenticated) {
     return (
@@ -123,7 +140,9 @@ const ProfilePage = () => {
             <section className="border border-border rounded-card bg-surface p-5 sm:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                  <CircleUserRound className="w-8 h-8 text-primary" />
+                  <CircleUserRound
+                    className="w-8 h-8 text-primary"
+                  />
                 </div>
 
                 <div className="min-w-0">
@@ -147,6 +166,8 @@ const ProfilePage = () => {
                 </span>
               </div>
             </section>
+            
+            
 
             {/* Statistics */}
             <section className="mt-6">
@@ -229,7 +250,7 @@ const ProfilePage = () => {
               </div>
 
               <div className="mt-4 border border-border rounded-card bg-surface overflow-hidden">
-                {recentAttempts.length === 0 ? (
+                {recentActivity.length === 0 ? (
                   <div className="p-6 text-center">
                     <p className="text-text">
                       No quiz attempts yet.
@@ -248,7 +269,7 @@ const ProfilePage = () => {
                     </Link>
                   </div>
                 ) : (
-                  recentAttempts.map((attempt) => (
+                  recentActivity.map((attempt) => (
                     <Link
                       key={attempt.id}
                       to={`/history/${attempt.id}`}
@@ -256,7 +277,7 @@ const ProfilePage = () => {
                     >
                       <div className="min-w-0">
                         <p className="text-sm font-medium text-text truncate">
-                          {attempt.quizId}
+                          {attempt.quiz?.title || "Unknown quiz"}
                         </p>
 
                         <div className="flex items-center gap-2 mt-1 text-xs text-text-secondary">
@@ -280,6 +301,67 @@ const ProfilePage = () => {
                 )}
               </div>
             </section>
+
+{/* Account information */}
+<section className="mt-6">
+  <h2 className="text-lg font-semibold text-text">
+    Account information
+  </h2>
+
+  <div className="mt-4 border border-border rounded-card bg-surface divide-y divide-border">
+    <div className="flex items-center justify-between gap-4 p-4">
+      <div>
+        <p className="text-sm font-medium text-text">
+          Email
+        </p>
+
+        <p className="mt-1 text-xs text-text-secondary break-all">
+          {user?.email || "Unknown"}
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-between gap-4 p-4">
+      <div>
+        <p className="text-sm font-medium text-text">
+          Member since
+        </p>
+
+        <p className="mt-1 text-xs text-text-secondary">
+          {formatMemberSince(user?.created_at)}
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-between gap-4 p-4">
+      <div>
+        <p className="text-sm font-medium text-text">
+          Account type
+        </p>
+
+        <p className="mt-1 text-xs text-text-secondary">
+          Revyze account
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-between gap-4 p-4">
+      <div>
+        <p className="text-sm font-medium text-text">
+          Cloud sync
+        </p>
+
+        <p className="mt-1 text-xs text-text-secondary">
+          {isSyncing
+            ? "Currently syncing your data"
+            : "Your quiz data is synced"}
+        </p>
+      </div>
+
+      <Cloud className="w-5 h-5 text-primary shrink-0" />
+    </div>
+  </div>
+</section>
 
             {/* Account management */}
             <section className="mt-8">
