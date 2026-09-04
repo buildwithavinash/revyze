@@ -17,6 +17,7 @@ import AuthTestPage from "./pages/AuthTestPage";
 import useSync from "./hooks/useSync";
 import AccountPage from "./pages/AccountPage";
 import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
@@ -25,6 +26,7 @@ const getPageTitle = (pathname) => {
   if (pathname === "/results") return "Quiz results | Revyze";
   if (pathname === "/account") return "Your account | Revyze";
   if (pathname === "/profile") return "Your profile | Revyze";
+  if (pathname === "/login") return "Sign in | Revyze";
 
   const segments = pathname.split("/").filter(Boolean);
 
@@ -77,6 +79,7 @@ const App = () => {
         <Route path="/auth-test" element={<AuthTestPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/history/:attemptId/review"
           element={<HistoryReviewAnswersPage />}
