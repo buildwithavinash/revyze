@@ -15,12 +15,14 @@ import { getCategoryBySlug, getQuizBySlug } from "./services/quizService";
 import { supabase } from "./lib/supabase";
 import AuthTestPage from "./pages/AuthTestPage";
 import useSync from "./hooks/useSync";
+import AccountPage from "./pages/AccountPage";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
   if (pathname === "/categories") return "Explore quizzes | Revyze";
   if (pathname === "/history") return "Your quiz history | Revyze";
   if (pathname === "/results") return "Quiz results | Revyze";
+  if (pathname === "/account") return "Your account | Revyze";
 
   const segments = pathname.split("/").filter(Boolean);
 
@@ -71,6 +73,7 @@ const App = () => {
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/history/:attemptId" element={<HistoryAttemptPage />} />
         <Route path="/auth-test" element={<AuthTestPage />} />
+        <Route path="/account" element={<AccountPage />} />
         <Route
           path="/history/:attemptId/review"
           element={<HistoryReviewAnswersPage />}
