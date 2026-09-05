@@ -52,7 +52,7 @@ export const getSession = async () => {
 export const getCurrentUser = async () => {
     const {
         data, error
-    } = supabase.auth.getUser();
+    } = await supabase.auth.getUser();
 
     if(error){
         throw error
