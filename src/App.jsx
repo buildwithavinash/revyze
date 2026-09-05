@@ -12,7 +12,6 @@ import HistoryAttemptPage from "./pages/HistoryAttemptPage";
 import HistoryReviewAnswersPage from "./pages/HistoryReviewAnswersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { getCategoryBySlug, getQuizBySlug } from "./services/quizService";
-import { supabase } from "./lib/supabase";
 import AuthTestPage from "./pages/AuthTestPage";
 import useSync from "./hooks/useSync";
 import AccountPage from "./pages/AccountPage";
@@ -64,7 +63,7 @@ const PageTitle = () => {
 
 const App = () => {
   useSync();
-  console.log("Supabase client:", supabase);
+
   return (
     <>
       <UpdatePrompt />
@@ -78,7 +77,9 @@ const App = () => {
         <Route path="/quiz/:slug/review" element={<ReviewAnswersPage />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/history/:attemptId" element={<HistoryAttemptPage />} />
-        <Route path="/auth-test" element={<AuthTestPage />} />
+        {import.meta.env.DEV && (
+          <Route path="/auth-test" element={<AuthTestPage />} />
+        )}
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/login" element={<LoginPage />} />
