@@ -18,7 +18,7 @@ import useSync from "./hooks/useSync";
 import AccountPage from "./pages/AccountPage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
-import SignupPage from "./pages/SignUpPage";
+import SignupPage from "./pages/SignupPage";
 
 const getPageTitle = (pathname) => {
   if (pathname === "/") return "Learn smarter, remember longer | Revyze";
