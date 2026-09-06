@@ -4,7 +4,7 @@
 
 Revyze is a self-testing/spaced-revision app for developers: short, focused quizzes across common web-dev topics, with progress and history that follow you across devices. It works fully offline and requires no account — signing in is optional and only unlocks cross-device sync.
 
-> 🔗 **Live demo:** [add your deployed URL here]
+> 🔗 **Live demo:** (https://revyze-black.vercel.app/)
 
 ---
 
