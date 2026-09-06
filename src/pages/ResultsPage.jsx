@@ -115,18 +115,12 @@ const ResultsPage = () => {
   }
 
   const { quiz, results, answers, attemptId } = resolvedState;
-  const category = getCategoryById(quiz.categoryId);
 
-  if (!category) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-3 text-center px-4">
-        <h1 className="text-lg font-semibold text-text">Category not found</h1>
-        <Link to="/" className="text-sm text-primary hover:underline">
-          Back home
-        </Link>
-      </div>
-    );
-  }
+  // The category is only needed for the "back to category" link below —
+  // a missing/renamed category shouldn't stop someone from seeing their
+  // own quiz score, so this degrades gracefully instead of blocking the
+  // whole page.
+  const category = getCategoryById(quiz.categoryId);
 
   const feedback = getQuizFeedback(results.accuracy, results.completion);
   const reviewHref = attemptId
@@ -217,12 +211,15 @@ const ResultsPage = () => {
             >
               Review answers
             </Link>
-            <Link
-              to={`/category/${category.slug}`}
-              className="flex-1 px-4 py-2 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200"
-            >
-              Back to category
-            </Link>
+
+            {category && (
+              <Link
+                to={`/category/${category.slug}`}
+                className="flex-1 px-4 py-2 rounded-button border border-border text-sm text-text hover:bg-surface-hover transition-all duration-200"
+              >
+                Back to category
+              </Link>
+            )}
           </div>
         </div>
       </div>

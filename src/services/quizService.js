@@ -24,7 +24,7 @@ export const getCategoryById = (id) => {
 
 export const getQuizzesByCategory = (categoryId) => {
   return quizzes.filter(
-    (quiz) => quiz.categoryId === categoryId
+    (quiz) => quiz.categoryId === categoryId && quiz.isPublished
   );
 };
 

@@ -191,8 +191,8 @@ const ProfilePage = () => {
                 </span>
               </div>
             </section>
-            
-            
+
+
 
             {/* Statistics */}
             <section className="mt-6">
@@ -200,61 +200,55 @@ const ProfilePage = () => {
                 Your activity
               </h2>
 
-              {isLoading ? (
-                <div className="mt-4 text-sm text-text-secondary">
-                  Loading your activity...
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+                <div className="border border-border rounded-card bg-surface p-4">
+                  <History className="w-5 h-5 text-primary" />
+
+                  <p className="mt-3 text-2xl font-semibold text-text">
+                    {totalAttempts}
+                  </p>
+
+                  <p className="mt-1 text-xs text-text-secondary">
+                    Attempts
+                  </p>
                 </div>
-              ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-                  <div className="border border-border rounded-card bg-surface p-4">
-                    <History className="w-5 h-5 text-primary" />
 
-                    <p className="mt-3 text-2xl font-semibold text-text">
-                      {totalAttempts}
-                    </p>
+                <div className="border border-border rounded-card bg-surface p-4">
+                  <Trophy className="w-5 h-5 text-primary" />
 
-                    <p className="mt-1 text-xs text-text-secondary">
-                      Attempts
-                    </p>
-                  </div>
+                  <p className="mt-3 text-2xl font-semibold text-text">
+                    {bestAccuracy}%
+                  </p>
 
-                  <div className="border border-border rounded-card bg-surface p-4">
-                    <Trophy className="w-5 h-5 text-primary" />
-
-                    <p className="mt-3 text-2xl font-semibold text-text">
-                      {bestAccuracy}%
-                    </p>
-
-                    <p className="mt-1 text-xs text-text-secondary">
-                      Best accuracy
-                    </p>
-                  </div>
-
-                  <div className="border border-border rounded-card bg-surface p-4">
-                    <BarChart3 className="w-5 h-5 text-primary" />
-
-                    <p className="mt-3 text-2xl font-semibold text-text">
-                      {averageAccuracy}%
-                    </p>
-
-                    <p className="mt-1 text-xs text-text-secondary">
-                      Average accuracy
-                    </p>
-                  </div>
-
-                  <div className="border border-border rounded-card bg-surface p-4">
-                    <Award className="w-5 h-5 text-primary" />
-
-                    <p className="mt-3 text-2xl font-semibold text-text">
-                      {uniqueQuizzes}
-                    </p>
-
-                    <p className="mt-1 text-xs text-text-secondary">
-                      Quizzes practiced
-                    </p>
-                  </div>
+                  <p className="mt-1 text-xs text-text-secondary">
+                    Best accuracy
+                  </p>
                 </div>
-              )}
+
+                <div className="border border-border rounded-card bg-surface p-4">
+                  <BarChart3 className="w-5 h-5 text-primary" />
+
+                  <p className="mt-3 text-2xl font-semibold text-text">
+                    {averageAccuracy}%
+                  </p>
+
+                  <p className="mt-1 text-xs text-text-secondary">
+                    Average accuracy
+                  </p>
+                </div>
+
+                <div className="border border-border rounded-card bg-surface p-4">
+                  <Award className="w-5 h-5 text-primary" />
+
+                  <p className="mt-3 text-2xl font-semibold text-text">
+                    {uniqueQuizzes}
+                  </p>
+
+                  <p className="mt-1 text-xs text-text-secondary">
+                    Quizzes practiced
+                  </p>
+                </div>
+              </div>
             </section>
 
             {/* Recent activity */}

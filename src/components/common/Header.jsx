@@ -41,6 +41,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => getPreferredTheme());
 
+  // Signed-in users go straight to their profile/stats. Guests go to
+  // /account, which explains guest mode and offers sign in/sign up —
+  // more context than dropping them straight into a login form.
+  const accountHref = isAuthenticated ? "/profile" : "/account";
+
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
 
@@ -91,11 +96,11 @@ const Header = () => {
 
             {/* Account */}
             <Link
-              to={isAuthenticated ? "/profile" : "/login"}
+              to={accountHref}
               aria-label={
                 isAuthenticated
                   ? "Open your profile"
-                  : "Sign in"
+                  : "Manage account"
               }
               className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-border text-text hover:bg-surface-hover transition-colors duration-200"
             >
@@ -140,12 +145,12 @@ const Header = () => {
           <div className="flex items-center gap-2 md:hidden">
             {/* Account */}
             <Link
-              to={isAuthenticated ? "/profile" : "/login"}
+              to={accountHref}
               onClick={() => setIsMenuOpen(false)}
               aria-label={
                 isAuthenticated
                   ? "Open your profile"
-                  : "Sign in"
+                  : "Manage account"
               }
               className="inline-flex items-center justify-center p-2 rounded-button border border-border hover:bg-surface-hover transition-colors duration-200"
             >
@@ -272,7 +277,7 @@ const Header = () => {
 
           <li>
             <Link
-              to={isAuthenticated ? "/profile" : "/login"}
+              to={accountHref}
               onClick={() => setIsMenuOpen(false)}
               className="flex items-center gap-3 px-3 py-3 rounded-button text-text hover:bg-surface-hover transition-colors duration-200"
             >
@@ -281,7 +286,7 @@ const Header = () => {
                 strokeWidth={1.75}
               />
 
-              {isAuthenticated ? "Profile" : "Sign in"}
+              {isAuthenticated ? "Profile" : "Account"}
             </Link>
           </li>
         </ul>
