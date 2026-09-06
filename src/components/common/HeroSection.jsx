@@ -1,6 +1,18 @@
 import { Link } from "react-router"
+import categories from "../../data/categories"
+import quizzes from "../../data/quizzes"
 
 const HeroSection = () => {
+  const totalQuestions = quizzes.reduce(
+    (sum, quiz) => sum + (quiz.totalQuestions ?? 0),
+    0,
+  );
+
+  
+  const roundedQuestionCount = Math.floor(totalQuestions / 100) * 100;
+
+  const totalCategories = categories.length;
+
   return (
     <section className="hero-grid">
       <div className="mx-auto max-w-2xl text-center flex flex-col items-center py-34 md:py-24 px-4 md:px-4">
@@ -18,9 +30,9 @@ const HeroSection = () => {
       </Link>
 
       <p className="text-xs sm:text-sm text-text-secondary mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-        <span>3200+ Qs</span>
+        <span>{roundedQuestionCount.toLocaleString()}+ Qs</span>
         <span className="">·</span>
-        <span>15 categories</span>
+        <span>{totalCategories} categories</span>
         <span className="">·</span>
         <span>No sign-up required</span>
       </p>

@@ -27,18 +27,14 @@ const AuthTestPage = () => {
       setError("");
 
       if (mode === "signup") {
-        const data = await signUp(email, password);
-
-        console.log("Signup response:", data);
+        await signUp(email, password);
 
         showToast(
           "Signup successful. Check your email if confirmation is required.",
           "success",
         );
       } else {
-        const data = await signIn(email, password);
-
-        console.log("Login response:", data);
+        await signIn(email, password);
 
         showToast("Login successful.", "success");
       }
@@ -65,27 +61,27 @@ const AuthTestPage = () => {
   };
 
   const handleCloudTest = async () => {
-  try {
-    const attempts = await getCloudQuizAttempts();
+    try {
+      const attempts = await getCloudQuizAttempts();
 
-    console.log("☁️ Cloud attempts:", attempts);
-    showToast("Cloud attempts loaded successfully.", "success");
-  } catch (error) {
-    console.error("❌ Failed to get cloud attempts:", error);
-    showToast("Cloud attempts could not be loaded.", "error");
-  }
-};
+      console.log(`☁️ Cloud attempts loaded: ${attempts.length}`);
+      showToast("Cloud attempts loaded successfully.", "success");
+    } catch (error) {
+      console.error("❌ Failed to get cloud attempts:", error);
+      showToast("Cloud attempts could not be loaded.", "error");
+    }
+  };
 
-const handleSyncTest = async () => {
-  try {
-    const result = await syncQuizAttempts();
-    console.log("Sync result:", result);
-    showToast("Sync completed successfully.", "success");
-  }catch(error){
-    console.log(error);
-    showToast("Sync failed.", "error");
-  }
-}
+  const handleSyncTest = async () => {
+    try {
+      const result = await syncQuizAttempts();
+      console.log("Sync result:", result);
+      showToast("Sync completed successfully.", "success");
+    } catch (error) {
+      console.log(error);
+      showToast("Sync failed.", "error");
+    }
+  };
 
   if (isLoading) {
     return <LoadingState message="Loading authentication..." fullScreen />;
@@ -97,7 +93,7 @@ const handleSyncTest = async () => {
         <h1 className="text-2xl font-semibold text-text">Auth Test</h1>
 
         <p className="text-sm text-text-secondary mt-1">
-          Temporary authentication testing page.
+          Temporary authentication testing page (dev-only — not built into production).
         </p>
 
         {isAuthenticated ? (
@@ -118,18 +114,18 @@ const handleSyncTest = async () => {
             </button>
 
             <button
-  onClick={handleCloudTest}
-  className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
->
-  Test Cloud Attempts
-</button>
+              onClick={handleCloudTest}
+              className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
+            >
+              Test Cloud Attempts
+            </button>
 
-<button
-  onClick={handleSyncTest}
-  className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
->
-  Test Sync
-</button>
+            <button
+              onClick={handleSyncTest}
+              className="mt-4 border border-border px-4 py-2 rounded-button text-sm"
+            >
+              Test Sync
+            </button>
           </div>
         ) : (
           <form

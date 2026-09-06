@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Make Tailwind's `dark:` variant respond to the manual .dark class on
+   <html> (toggled in Header.jsx) instead of the OS-level
+   prefers-color-scheme media query. Without this, components using
+   `dark:` utilities (ErrorState, Login/Signup error banners, Toast)
+   would follow the OS setting instead of the in-app theme toggle. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ---- Local fonts ---- */
 @font-face {
   font-family: 'Space Grotesk';
@@ -173,4 +180,4 @@ bg-primary / text-primary   Main CTA button, active tab, links, progress bar
 text-success / border-success   Correct answer, "passed" state
 text-danger / border-danger     Wrong answer, errors, End quiz
 text-warning / border-warning   Timer/attempt warnings
-*/  
+*/

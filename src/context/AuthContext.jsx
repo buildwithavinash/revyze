@@ -4,6 +4,12 @@ import { syncAll } from "../services/syncService";
 
 const AuthContext = createContext(null);
 
+// Auth events that should trigger a full cloud sync. Supabase also fires
+// onAuthStateChange for things like TOKEN_REFRESHED (roughly hourly) where
+// nothing about the user's data actually changed — syncing on those wastes
+// a handful of network round-trips for no reason.
+const SYNC_ON_EVENTS = new Set(["SIGNED_IN", "INITIAL_SESSION"]);
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,28 +18,18 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     let mounted = true;
 
-    const handleSession = async (session) => {
-      if (!mounted) return;
+    const runSync = async () => {
+      try {
+        setIsSyncing(true);
 
-      const currentUser = session?.user ?? null;
+        await syncAll();
 
-      setUser(currentUser);
-
-      // Sync local attempts with Supabase
-      // only when a user is authenticated.
-      if (currentUser) {
-        try {
-          setIsSyncing(true);
-
-          await syncAll();
-
-          console.log("Cloud sync completed.");
-        } catch (error) {
-          console.error("Initial cloud sync failed:", error);
-        } finally {
-          if (mounted) {
-            setIsSyncing(false);
-          }
+        console.log("Cloud sync completed.");
+      } catch (error) {
+        console.error("Cloud sync failed:", error);
+      } finally {
+        if (mounted) {
+          setIsSyncing(false);
         }
       }
     };
@@ -44,7 +40,14 @@ export const AuthProvider = ({ children }) => {
           data: { session },
         } = await supabase.auth.getSession();
 
-        await handleSession(session);
+        if (!mounted) return;
+
+        const currentUser = session?.user ?? null;
+        setUser(currentUser);
+
+        if (currentUser) {
+          await runSync();
+        }
       } catch (error) {
         console.error("Failed to load auth session:", error);
       } finally {
@@ -58,11 +61,18 @@ export const AuthProvider = ({ children }) => {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        await handleSession(session);
+    } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (!mounted) return;
+
+      const currentUser = session?.user ?? null;
+      setUser(currentUser);
+
+      // Only resync on events that actually represent a fresh login —
+      // skip TOKEN_REFRESHED, SIGNED_OUT, etc.
+      if (currentUser && SYNC_ON_EVENTS.has(event)) {
+        await runSync();
       }
-    );
+    });
 
     return () => {
       mounted = false;
